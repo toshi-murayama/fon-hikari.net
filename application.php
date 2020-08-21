@@ -6,9 +6,9 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
-<title>NURO光 お申し込みサイト</title>
-<meta name="description" content="NURO光のおトク情報満載！今ならお申し込みで【80,000円キャッシュバック中】月額料金も最安級3,680円で使い放題！セキュリティ・電話・テレビなどのサービスも豊富に取り揃えています。お得に申込むなら今がチャンス！">
-<meta name="keywords" content="コミュファ,NURO光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え">
+<title>fon光 お申し込みサイト</title>
+<meta name="description" content="fon光のおトク情報満載！今ならお申し込みで【80,000円キャッシュバック中】月額料金も最安級3,680円で使い放題！セキュリティ・電話・テレビなどのサービスも豊富に取り揃えています。お得に申込むなら今がチャンス！">
+<meta name="keywords" content="コミュファ,fon光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え">
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
@@ -22,26 +22,6 @@
 <script src="js/jquery.autoKana.js"></script>
 <script src="js/application.js"></script>
 <script src="js/script.js"></script>
-<!--//* TAGS *//-->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114374366-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-114374366-2');
-</script>
-
-<!-- Global site tag (gtag.js) - Google AdWords: 817611267 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-817611267"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-817611267');
-</script>
 </head>
 
 <body>

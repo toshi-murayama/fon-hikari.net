@@ -42,11 +42,13 @@ $submit_flg = h($_POST['submit_flg']);
 $address = $prefectures . $address;
 
 // 正常にページ推移したか確認
+
 $ref = $_SERVER['HTTP_REFERER'];
-if ($submit_flg != 1 || strpos($ref,'://sv-nuro-h.site') === false) {
-	$header = 'http://sv-nuro-h.site';
+if ($submit_flg != 1 || strpos($ref,'://dev-fon-hikari.tank.jp') === false) {
+	$header = 'http://dev-fon-hikari.tank.jp';
 	header('Location:' . $header);	
 }
+
 
 // ヴァリデーションチェック
 if($consent != '同意する') {
@@ -94,7 +96,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
 <title>確認画面</title>
 <meta name="description" content="">
-<meta name="keywords" content="ワイファイ,ルーター,wifi,simフリー,ポケットワイファイ,帯域制限,速度制限,プレミアモバイル,データカード,タブレット">
+<meta name="keywords" content="">
 <!----css---->
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">
@@ -103,26 +105,6 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/confirmation.js"></script>
 <script src="js/script.js"></script>
-<!--//* TAGS *//-->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114374366-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-114374366-2');
-</script>
-
-<!-- Global site tag (gtag.js) - Google AdWords: 817611267 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-817611267"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-817611267');
-</script>
 </head>
 
 <body>
@@ -237,37 +219,5 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <footer>
 	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
 </footer>
-<!-- Google Code for CV(&#38651;&#35441;&#65306;&#21839;&#21512;) Conversion Page
-In your html page, add the snippet and call
-goog_report_conversion when someone clicks on the
-phone number link or button. -->
-<script type="text/javascript">
-  /* <![CDATA[ */
-  goog_snippet_vars = function() {
-    var w = window;
-    w.google_conversion_id = 861025052;
-    w.google_conversion_label = "kDzECMTIonAQnObImgM";
-    w.google_remarketing_only = false;
-  }
-  // DO NOT CHANGE THE CODE BELOW.
-  goog_report_conversion = function(url) {
-    goog_snippet_vars();
-    window.google_conversion_format = "3";
-    var opt = new Object();
-    opt.onload_callback = function() {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  }
-  var conv_handler = window['google_trackConversion'];
-  if (typeof(conv_handler) == 'function') {
-    conv_handler(opt);
-  }
-}
-/* ]]> */
-</script>
-<script type="text/javascript"
-  src="//www.googleadservices.com/pagead/conversion_async.js">
-</script>
 </body>
 </html>
