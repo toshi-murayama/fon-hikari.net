@@ -31,9 +31,9 @@
             <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
             <div class="header_c">
                 <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-955-271</p>
+                <p class="tel">0120-955-531</p>
             </div>
-            <div class="header_r"><a href="application.php">24時間いつでも<br>WEB申込</a></div>
+            <div class="header_r"><a href="">マイページ</a></div>
         </div>
     </div>
 
@@ -254,7 +254,7 @@
                 <div class="kiyaku">
                     <p><b>【重要】お申込みをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</b></p>
                     <div class="kiyaku_text">
-                        株式会社ソルヴィーダ (以下、「当社」という。)は、 通信・ネットワークソリューション事業、 営業事業、IT・Webソリューション事業、環境事業、教育事業、美容事業を行っております。<br> 
+                        フォン・ジャパン株式会社 (以下、「当社」という。)は、 通信・ネットワークソリューション事業、 営業事業、IT・Webソリューション事業を行っております。<br> 
                         当社は、当社の事業の用に供するすべての個人情報を適切に取扱うため、 当社全従業者が遵守すべき行動基準として本個人情報保護方針を定め、その遵守の徹底を図ることといたします。<br>
                         <br>    
                         当社は、個人情報の取扱いに関する法令、国が定める指針その他の規範を遵守するため、日本工業規格 「個人情報保護マネジメントシステム-要求事項」 (JIS Q 15001)に準拠した個人情報保護マネジメントシステムを策定し、適切に運用いたします。 <br>
@@ -266,11 +266,9 @@
                         また、当社が保有する開示対象個人情報の開示等の求め(利用目的の通知、 開示、訂正・追加又は削除、利用又は提供の停止）を受け付けます。<br>
                         開示等の求めの手続きにつきましては、以下の「個人情報に関する相談窓口」までご連絡ください。<br>
                         当社は、個人情報保護マネジメントシステムの継続的改善を行ないます。<br>
-                        制定：2011年10月1日<br>
-                        改定：2013年7月20日<br>
                         <br>
-                        株式会社ソルヴィーダ<br>
-                        代表取締役社長 川口 英幸<br>
+                        フォン・ジャパン株式会社<br>
+                        代表取締役社長 横田 和典<br>
                         <br>
                         当社における<br>
                         個人情報の取扱いについて<br>
@@ -283,21 +281,16 @@
                         2.お取引先様から委託を受ける業務において取り扱う個人情報<br>
                         ・「ブロードバンド・モバイル等通信サービスの販売取次業務」に関しては「市販の住宅地図」を取り扱います。<br>
                         ・「ドメイン、サーバー等の取得代行をはじめとしたウェブ関連サービス及びデザイン関連サービス」に関しては、「エンドクライアントの企業情報」を取り扱います。<br>
-                        ・「公共放送の契約に付帯する諸所の手続き及び料金回収業務」に関しては、「契約状況照会用ナビゲーション端末」を取り扱います。<br>
                         <br>
                         当社が保有する開示対象個人情報について<br>
                         <br>    
                         個人情報取り扱い事業者の氏名または名称<br>
                         <br>    
-                        株式会社ソルヴィーダ<br>
-                        <br>
-                        個人情報保護管理者の職名、所属及び連絡先<br>
-                        <br>
-                        企画室 神谷和幸（連絡先は下記「個人情報に関する相談窓口」）<br>
+                        フォン・ジャパン株式会社<br>
                         <br>
                         すべての開示対象個人情報の利用目的<br>
                         <br>
-                        当社が、通信・ネットワークソリューション事業、営業・コンサルティング事業、 IT・webソリューション事業、 環境事業、 語学教育事業を主な事業としていることを踏まえて当社が取扱う個人情報の利用目的を以下のように定めます。<br>
+                        当社が、通信・ネットワークソリューション事業、営業事業、 IT・webソリューション事業を主な事業としていることを踏まえて当社が取扱う個人情報の利用目的を以下のように定めます。<br>
                         <br>
                         <br>
                         1.お客様の個人情報<br>
@@ -385,37 +378,5 @@
 <footer>
 	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
 </footer>
-<!-- Google Code for CV(&#38651;&#35441;&#65306;&#21839;&#21512;) Conversion Page
-In your html page, add the snippet and call
-goog_report_conversion when someone clicks on the
-phone number link or button. -->
-<script type="text/javascript">
-  /* <![CDATA[ */
-  goog_snippet_vars = function() {
-    var w = window;
-    w.google_conversion_id = 861025052;
-    w.google_conversion_label = "kDzECMTIonAQnObImgM";
-    w.google_remarketing_only = false;
-  }
-  // DO NOT CHANGE THE CODE BELOW.
-  goog_report_conversion = function(url) {
-    goog_snippet_vars();
-    window.google_conversion_format = "3";
-    var opt = new Object();
-    opt.onload_callback = function() {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  }
-  var conv_handler = window['google_trackConversion'];
-  if (typeof(conv_handler) == 'function') {
-    conv_handler(opt);
-  }
-}
-/* ]]> */
-</script>
-<script type="text/javascript"
-  src="//www.googleadservices.com/pagead/conversion_async.js">
-</script>
 </body>
 </html>

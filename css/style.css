@@ -114,15 +114,19 @@ a:active{}
 
 /* top */
 #top{
-	max-width: 1650px;
-    min-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
-    background: url(../img/img_top_bg.png) no-repeat 35% 0;
+    background: url(../img/img_top_bg.jpg) no-repeat 50% 20%;
+    background-size: cover;
+    padding: 50px 0;
 }
-#top a{
-	width: 1200px;
+#top p{
+	width: 1000px;
     display: block;
 	margin: 0 auto;
+}
+#top p img{
+	width: 100%;
 }
 
 
@@ -362,12 +366,17 @@ h2{
 	font-size: 55px;
 }
 
+#elected .no02 .no02_l p{
+	
+}
+
 #elected .no02 .no02_l .tit{
 	color: #6bbb0a;
+    font-size: 50%;
 }
 
 #elected .no02 .no02_l span{
-	font-size: 70%;
+	font-size: 60%;
 }
 
 #elected .bottom_no02{
@@ -901,17 +910,15 @@ img{
 	max-width: 100%;
 	min-width: 100%;
 	margin: 0 auto;
-    background: none;
+    padding: 30px 0;
+    background-position: 50% 80%;
+    background-size: 200%;
 }
 
-#top a{
-    width: 100%;
-}
-#top a img{
-    width: 100% !important;
+#top p{
+    width: 96%;
 }
 
-	
 
 /*　エリア確認 */
 #area{

@@ -34,8 +34,8 @@ function decryption_data($data){
 
 // 正常にページ推移したか確認
 $ref = $_SERVER['HTTP_REFERER'];
-if (strpos($ref,'://dev-fon-hikari.tank.jp') === false) {
-	$header = 'http://dev-fon-hikari.tank.jp/';
+if (strpos($ref,'://fon-hikari.net/') === false) {
+	$header = 'http://fon-hikari.net/';
 	header('Location:' . $header);	
 }
 
@@ -86,13 +86,13 @@ if(empty($error)) {
 	mb_internal_encoding("UTF-8");
 
 	//メールの内容
-	$to = "s_kagaya@1onepiece.jp";
+	$to = "support@fon-hikari.net,s_kagaya@1onepiece.jp";
 
 	if(strpos($form_name,'application.php') !== false) {
 		$title = "【fon光お申し込み】";
 	} else if (strpos($form_name,'contact.php') !== false){
 		$title = "【fon光お問い合わせ】";		
-	} else if (strpos($form_name,'https://sv-nuro-h.site/') !== false){
+	} else if (strpos($form_name,'https://fon-hikari.net/') !== false){
 		$title = "【fon光エリア確認】";		
 	}	
 	if(!empty($_COOKIE['ref'])) {
@@ -145,9 +145,9 @@ URL: https://fon.ne.jp/
             <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
             <div class="header_c">
                 <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-955-271</p>
+                <p class="tel">0120-955-531</p>
             </div>
-            <div class="header_r"><a href="application.php">24時間いつでも<br>WEB申込</a></div>
+            <div class="header_r"><a href="">マイページ</a></div>
         </div>
     </div>
 <div id="contents_bg">

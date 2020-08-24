@@ -42,10 +42,9 @@ $submit_flg = h($_POST['submit_flg']);
 $address = $prefectures . $address;
 
 // 正常にページ推移したか確認
-
 $ref = $_SERVER['HTTP_REFERER'];
-if ($submit_flg != 1 || strpos($ref,'://dev-fon-hikari.tank.jp') === false) {
-	$header = 'http://dev-fon-hikari.tank.jp';
+if ($submit_flg != 1 || strpos($ref,'://fon-hikari.net/') === false) {
+	$header = 'http://fon-hikari.net/';
 	header('Location:' . $header);	
 }
 
@@ -114,9 +113,9 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
             <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
             <div class="header_c">
                 <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-955-271</p>
+                <p class="tel">0120-955-531</p>
             </div>
-            <div class="header_r"><a href="application.php">24時間いつでも<br>WEB申込</a></div>
+            <div class="header_r"><a href="">マイページ</a></div>
         </div>
     </div>
 <div id="contents_bg">

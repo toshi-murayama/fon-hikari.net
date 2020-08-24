@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>fon</title>
+<title>fon光</title>
 <meta name="robots" content="noindex" />
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="">
@@ -53,29 +53,19 @@ $(function () {
             <h1><img src="img/img_logo.png" alt=""></h1>
             <div class="header_c">
                 <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-				<p class="tel">0120-955-271</p>
+				<p class="tel">0120-955-531</p>
             </div>
-            <div class="header_r"><a href="application.php">24時間いつでも<br>WEB申込</a></div>
+            <div class="header_r"><a href="">マイページ</a></div>
         </div>
     </div>
-<?php
-/* 参照元によって振り分け処理 */
-$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
-if (preg_match("|^https?://[a-zA-Z0-9-]+\.hoge\.jp|", $referer)) {
-   // "xxx.hoge.jp" サイト内からのアクセス時の処理。
 
-}
-else {
- /* 直接アクセス時の処理 */
-}
-?>
     <div id="top">
-        <p><a href="#reduction"><img src="img/img_top_big.png" width="1200" alt="" class="pc"><img src="img/img_top_big.jpg" alt="" class="sp"></a></p>
+        <p><img src="img/img_top_big.png" width="1200" alt=""></p>
     </div>
     <div class="contact">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-271</p>
+            <p class="tel">0120-955-531</p>
             <p>受付時間 10:00〜21:00<br class="sp">（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -100,8 +90,7 @@ else {
         <div class="top_no02">
             <dl>
                 <dt><img src="img/img_hikari_tel01.jpg" width="176" height="176" alt=""/></dt>
-                <dd>「fon 光 でんわ」は「fon 光」でご利用いただけるソニーネットワークコミュニケーションズ提供の月額基本料・通話料がおトクなIP電話サービスです。
-                    <br> NTT一般加入電話番号をお持ちの場合、現在お使いの電話番号、電話機がそのまま利用可能です。また、番号表示やキャッチ電話などのオプションサービスもご利用いただけます。
+                <dd>fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額3,980円（税抜）でご利用頂ける光ファイバーインターネットサービスです。音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。
                 </dd>
             </dl>
         </div>
@@ -111,7 +100,7 @@ else {
                 <p class="tit">月額基本料金</p>
 				<p><span>月額</span>3,980円<span>（税抜）</span></p>
                 <p class="tit">基本工事費</p>
-                <p>￥40,000<span>（30カ月の分割にてご請求します）</span></p>
+                <p>無料</p>
                 <p class="tit">契約事務手数料</p>
 				<p>3,000円<span>（税抜）</span></p>
                 <p class="tit">契約期間</p>
@@ -119,14 +108,14 @@ else {
                 <p class="tit">契約解除料</p>
                 <p>19,800円</p>
             </div>
-            <div class="no02_r"><img src="img/img_hikari_tel02.jpg" width="543" height="395" alt="" /></div>
+            <div class="no02_r"><img src="img/img_hikari_tel02.jpg"></div>
         </div>
     </div>
 
     <div class="contact">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-271</p>
+            <p class="tel">0120-955-531</p>
             <p>受付時間 10:00〜21:00（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -147,7 +136,7 @@ else {
 
     <div id="notes">
         <h4>注意事項</h4>
-        <p>表記価格は「fon 光G2V」コースの月額基本料金となります。別途契約事務手数料3,000円（税別）と、30ヵ月分割でお支払いいただく基本工事費（1,333 円（税抜）/月）
+        <p>表記価格は「fon 光G2V」コースの月額基本料金となります。別途契約事務手数料3,000円（税別）
           <br> 通信速度はfon ネットワークからお客さま宅内に設置する宅内終端装置へ提供する最大速度です。
             <br> インターネットご利用時の実効速度は、お客さまのご利 用環境や回線の混雑状況などにより変化します。</p>
         <ul>
@@ -159,7 +148,7 @@ else {
         <p>※個人宅向け商用FTTHサービス市場で超高速となります。（Ovum 2015年1月時点調べ）
             <br> 通信速度はfonネットワークからお客さま宅内に設置する宅内終端装置へ提供する最大速度です。インターネットご利用時の実行速度は、お客さまのご利用環境や回線の混雑状況などにより変化します。
             <h5>「提供エリア」について</h5>
-            <p>サービス提携エリアは東京都、神奈川県、千葉県、埼玉県、群馬県、栃木県、茨城県、愛知県、兵庫県、奈良県、大阪府、静岡県、滋賀県、三重県、京都府、岐阜県です。（一部エリアを除く）</p>
+            <p>サービス提携エリアは北海道、東京都、神奈川県、千葉県、埼玉県、群馬県、栃木県、茨城県、愛知県、兵庫県、奈良県、大阪府、静岡県、滋賀県、三重県、京都府、岐阜県、福岡、佐賀です。（一部エリアを除く）</p>
             <h5>「違約金・工事費用」について</h5>
             <p>更新月以外の解約については、9,500円の違約金が発生致します。
                 <br> 30ヶ月未満の解約については、残月数分の工事費用の残高が発生致します。
@@ -172,7 +161,7 @@ else {
     <div class="contact">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-271</p>
+            <p class="tel">0120-955-531</p>
             <p>受付時間 10:00〜21:00（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -191,7 +180,7 @@ else {
     <div class="contact pc">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-271</p>
+            <p class="tel">0120-955-531</p>
             <p>受付時間 10:00〜21:00（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
