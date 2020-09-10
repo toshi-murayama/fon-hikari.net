@@ -101,7 +101,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
             <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
             <div class="header_c">
                 <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-955-531</p>
+                <p class="tel">0120-966-486</p>
             </div>
             <div class="header_r"><a href="">マイページ</a></div>
         </div>

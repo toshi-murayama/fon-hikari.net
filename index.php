@@ -53,7 +53,7 @@ $(function () {
             <h1><img src="img/img_logo.png" alt=""></h1>
             <div class="header_c">
                 <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-				<p class="tel">0120-955-531</p>
+				<p class="tel">0120-966-486</p>
             </div>
             <div class="header_r"><a href="">マイページ</a></div>
         </div>
@@ -65,7 +65,7 @@ $(function () {
     <div class="contact">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-531</p>
+            <p class="tel">0120-966-486</p>
             <p>受付時間 10:00〜21:00<br class="sp">（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -115,7 +115,7 @@ $(function () {
     <div class="contact">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-531</p>
+            <p class="tel">0120-966-486</p>
             <p>受付時間 10:00〜21:00（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -161,7 +161,7 @@ $(function () {
     <div class="contact">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-531</p>
+            <p class="tel">0120-966-486</p>
             <p>受付時間 10:00〜21:00（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -180,7 +180,7 @@ $(function () {
     <div class="contact pc">
         <div class="contact_l">
             <p>お気軽にお問合せ・ご相談ください。</p>
-            <p class="tel">0120-955-531</p>
+            <p class="tel">0120-966-486</p>
             <p>受付時間 10:00〜21:00（年末年始、お盆を除く）</p>
         </div>
         <div class="contact_r">
@@ -193,7 +193,7 @@ $(function () {
 	  
 	  		<div class="sp">
 	  <ul>
-		  <li><a onclick="goog_report_conversion ('tel:0120-011-508')" href="tel:0120-011-508"><img src="img/img_app01.png" alt=""/><br>お電話</a></li>
+		  <li><a onclick="goog_report_conversion ('tel:0120-966-486')" href="tel:0120-966-486"><img src="img/img_app01.png" alt=""/><br>お電話</a></li>
 		  <li><a href="application.php"><img src="img/img_app02.png" alt=""/><br>お申し込み</a></li>
 		  <li><a href="contact.php"><img src="img/img_app03.png" alt=""/><br>お問い合わせ</a></li>
 		  <li><a href="./"><img src="img/img_app04.png" alt=""/><br>トップ</a></li>
