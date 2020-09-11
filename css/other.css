@@ -1,0 +1,185 @@
+/* Scss Document */
+body {
+  font-family: "source-han-sans-japanese",sans-serif;
+  margin: 0px auto;
+  padding: 0px;
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.5; }
+
+h1, h2, h4, h4, h5, h6, div, p, span, ul, li, dl, dt, dd, table, tr, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 13px; }
+
+table {
+  border-collapse: collapse; }
+
+li {
+  list-style: none; }
+
+a:link {
+  color: #333333;
+  text-decoration: none; }
+
+a:visited {
+  color: #333333;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -ms-filter: "alpha(opacity=70)"; }
+
+a:active {
+  color: #333;
+  text-decoration: none; }
+
+a.under {
+  text-decoration: underline; }
+
+a.under:hover {
+  text-decoration: none; }
+
+img {
+  border: none;
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto; }
+
+#other {
+  width: 100%; }
+  #other .company {
+    width: 100%; }
+    #other .company h2 {
+      background: url("../img/img_company.png") no-repeat center bottom;
+      background-size: cover;
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
+      padding: 200px 0;
+      font-weight: bold; }
+    #other .company .company_box {
+      width: 60%;
+      margin: 80px auto;
+      max-width: 1200px; }
+    #other .company dl {
+      display: flex;
+      border-bottom: 1px dotted #999; }
+      #other .company dl dt {
+        width: 30%;
+        font-weight: bold;
+        padding: 25px;
+        box-sizing: border-box; }
+      #other .company dl dd {
+        width: 70%;
+        padding: 25px;
+        box-sizing: border-box; }
+  #other .faq {
+    width: 100%; }
+    #other .faq h2 {
+      background: url("../img/bg_faq.png") no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      font-size: 30px;
+      color: #fff;
+      padding: 200px 0;
+      font-weight: bold; }
+    #other .faq h3 {
+      margin: 50px 0; }
+      #other .faq h3 span {
+        font-size: 30px;
+        border-bottom: 3px solid #ef7b00;
+        padding: 10px 0; }
+    #other .faq .faq_box {
+      width: 1000px;
+      margin: 80px auto; }
+      #other .faq .faq_box dl {
+        border-top: 1px solid #eee;
+        margin-bottom: 30px; }
+        #other .faq .faq_box dl dt {
+          background: #fafafa;
+          display: table;
+          margin-bottom: 20px;
+          width: 100%; }
+          #other .faq .faq_box dl dt p {
+            display: table-cell;
+            vertical-align: middle;
+            box-sizing: border-box;
+            padding: 10px; }
+          #other .faq .faq_box dl dt p.q {
+            vertical-align: top;
+            padding: 10px;
+            color: #ef7b00;
+            font-size: 20px;
+            font-weight: bold;
+            width: 30px;
+            box-sizing: border-box; }
+        #other .faq .faq_box dl dd {
+          display: table;
+          width: 100%; }
+          #other .faq .faq_box dl dd p {
+            display: table-cell;
+            vertical-align: middle;
+            box-sizing: border-box;
+            padding: 10px; }
+          #other .faq .faq_box dl dd p.a {
+            vertical-align: top;
+            padding: 10px;
+            color: #999;
+            font-size: 20px;
+            font-weight: bold;
+            width: 30px;
+            box-sizing: border-box; }
+
+@media screen and (max-width: 750px) {
+  img {
+    width: 100%;
+    height: auto; }
+
+  #other {
+    width: 100%; }
+    #other .company h2 {
+      font-size: 5.5vw;
+      padding: 50px 5px;
+      box-sizing: border-box; }
+    #other .company .company_box {
+      width: 90%;
+      margin: 30px auto; }
+    #other .company dl dt {
+      width: 30%;
+      padding: 15px 5px; }
+    #other .company dl dd {
+      width: 70%;
+      padding: 15px 5px; }
+    #other .faq {
+      width: 100%; }
+      #other .faq h2 {
+        font-size: 5.5vw;
+        padding: 50px 5px;
+        box-sizing: border-box; }
+      #other .faq h3 {
+        margin: 30px 0; }
+        #other .faq h3 span {
+          font-size: 5.5vw; }
+      #other .faq .faq_box {
+        width: 90%;
+        margin: 30px auto; }
+        #other .faq .faq_box dl {
+          margin-bottom: 10px; }
+          #other .faq .faq_box dl dt {
+            margin-bottom: 10px; }
+            #other .faq .faq_box dl dt p {
+              padding: 10px 5px; }
+            #other .faq .faq_box dl dt p.q {
+              padding: 10px 5px;
+              color: #ef7b00;
+              font-size: 5.5vw; }
+          #other .faq .faq_box dl dd p {
+            padding: 10px 5px; }
+          #other .faq .faq_box dl dd p.a {
+            padding: 10px 5px;
+            font-size: 5.5vw; } }
