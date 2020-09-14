@@ -601,6 +601,90 @@ input#agree[type="checkbox"]:checked + label img {
 #confirmation .formTable td {
     padding: 10px 20px;
 }
+
+
+#area{
+	width: 700px;
+	margin: 40px auto;
+}
+
+#area h2{
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+
+#area h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	border-bottom: 8px solid;
+    border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 20%,#333 20%, #333 100%);
+    border-image-slice: 1;
+	margin-bottom: 80px;
+}
+
+#area .search_text{
+	width: 350px;
+	padding: 15px;
+	box-sizing: border-box;
+	border: 2px solid #666;
+	margin: 0 auto 60px;
+	text-align: center;
+}
+#area .address{
+	text-align: center;
+	margin-bottom: 80px;
+}
+#area .address dl{
+	display: table;
+	margin: 10px auto;
+	width: 400px;
+}
+#area .address dl dt{
+	display: table-cell;
+	vertical-align: middle;
+	width: 15%;
+}
+#area .address dl dd{
+	display: table-cell;
+	width: 85%;
+}
+#area .address input{
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	width: 100%;
+}
+#area .subsequently .type{
+	display: flex;
+}
+#area .subsequently .type li{
+	 width: calc(100%/3);
+}
+#area .subsequently .type li input[type=radio] {
+    visibility: hidden;
+    width: 0;
+    margin-left: -2px;
+}
+#area .subsequently .type li label{
+	border: 1px solid #666;
+	border-radius: 5px;
+	width: 94%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+}
+#area .subsequently .type li input:checked + label[for="on"]{
+	border: 2px solid #ec7103;
+	background: #ebf6fb;
+}
+
+
+
 @media screen and (min-width: 680px) {
     .show_sp {
         display: none !important;
