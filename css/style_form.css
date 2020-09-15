@@ -602,7 +602,7 @@ input#agree[type="checkbox"]:checked + label img {
     padding: 10px 20px;
 }
 
-
+/*area*/
 #area{
 	width: 700px;
 	margin: 40px auto;
@@ -614,7 +614,7 @@ input#agree[type="checkbox"]:checked + label img {
 	font-weight: bold;
 }
 
-#area h3{
+#area h3.first{
 	font-size: 16px;
 	font-weight: bold;
 	padding-bottom: 5px;
@@ -657,16 +657,33 @@ input#agree[type="checkbox"]:checked + label img {
 	border-radius: 5px;
 	width: 100%;
 }
+#area .subsequently .form li{
+	padding: 5px 0;
+}
+#area .subsequently .result{
+	width: 100%;
+	border: 1px solid #666;
+	background: #eee;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
 #area .subsequently .type{
 	display: flex;
+	margin: 10px 0 0;
 }
 #area .subsequently .type li{
 	 width: calc(100%/3);
+	position: relative;
 }
 #area .subsequently .type li input[type=radio] {
+	position: absolute;
     visibility: hidden;
     width: 0;
-    margin-left: -2px;
+	height: 0;
+    margin: 0;
+	padding: 0;
 }
 #area .subsequently .type li label{
 	border: 1px solid #666;
@@ -678,10 +695,136 @@ input#agree[type="checkbox"]:checked + label img {
 	padding: 20px;
 	box-sizing: border-box;
 }
-#area .subsequently .type li input:checked + label[for="on"]{
-	border: 2px solid #ec7103;
-	background: #ebf6fb;
+#area .subsequently .type li label:hover{
+	background: #fff9e5;
 }
+#area .subsequently .type li input[type="radio"]:checked + label{
+	border: 1px solid #ec7103;
+	background: #fff9e5;
+	box-sizing: border-box;
+}
+#area .area_btn{
+	width: 100%;
+	padding: 60px 0;
+	text-align: center;
+}
+#area .area_btn #openModal,
+#area .area_btn input{
+	display: block;
+	width: 200px;
+	height: auto;
+	padding: 15px 0;
+	color: #fff;
+	border-radius: 5px;
+	background: linear-gradient(to right, #fdc700 0%,#ee7d03 100%);
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 14px;
+}
+#area .tel_app{
+	text-align: center;
+	font-size: 24px;
+}
+#area .tel_app .tel_no{
+	font-size: 36px;
+	font-weight: bold;
+	font-family: 'futura';
+	line-height: 1;
+	margin: 15px 0 0;
+}
+#area .tel_app .tel_no::before{
+	content: "";
+	display: inline-block;
+	background: url("../img/icon_tel.png")no-repeat;
+	width: 30px;
+	height: 30px;
+	background-size: contain;
+	margin-right: 10px;
+}
+#area .tel_app .tel_no span{
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/* モーダルCSS */
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.modalWrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	width: 70%;
+	max-width: 700px;
+	padding: 40px;
+	box-sizing: border-box;
+	background: #fff;
+	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.modalWrapper .answer{
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+}
+.modalWrapper .answer span{
+	font-size: 14px;
+	font-weight: normal;
+}
+.modalWrapper .street_address{
+	background: #eee;
+	padding: 20px;
+	text-align: center;
+	margin: 30px auto;
+	box-sizing: border-box;
+	max-width: 90%;
+	width: 350px;
+}
+.modalWrapper .ng{
+	display: block;
+	width: 200px;
+	padding: 15px 0;
+	color: #fff;
+	border-radius: 5px;
+	background: #666;
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 14px;
+}
+.modalWrapper .subtle{
+	display: block;
+	width: 200px;
+	padding: 15px 0;
+	color: #fff;
+	border-radius: 5px;
+	background: #61ba70;
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 14px;
+}
+.closeModal {
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
 
 
 
@@ -763,8 +906,8 @@ input#agree[type="checkbox"]:checked + label img {
     .btn {
         height: 60px;
     }
-    .sex input{width: auto !important;}
-    .address input{width: 50% !important;}
+    .sex input{width: auto;}
+    .address input{width: 50%;}
     #confirmation .btn {
         margin: 0 auto;
         width: 280px;
@@ -811,7 +954,7 @@ input#agree[type="checkbox"]:checked + label img {
     #confirmation #submit{
         margin-bottom:10px;
     }
-    @media (max-width: 680px) {
+	
         /*popup*/
         .nomberBox ul {
             width: 100%;
@@ -865,5 +1008,80 @@ input#agree[type="checkbox"]:checked + label img {
         }
 		.agreeformError {
 			width:100px;
-		}		
-    }
+		}
+img{
+	max-width: 100%;
+	height: auto;
+}		
+#area{
+	width:90%;
+	margin: 40px auto;
+}
+
+#area h2{
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+
+#area h3.first{
+	margin-bottom: 40px;
+}
+
+#area .search_text{
+	width: 90%;
+	padding: 15px 10px;
+	margin: 0 auto 30px;
+}
+#area .address{
+	margin-bottom: 40px;
+}
+#area .address dl{
+	width: 100%;
+}
+#area .address dl dt{
+	width: 15%;
+}
+#area .address dl dd{
+	width: 85%;
+}
+#area .address input{
+	padding: 20px 10px;
+}
+#area .subsequently .type li{
+	font-size: 3vw;
+}
+#area .subsequently .type li img{
+	 width: auto;
+	height: 50px;
+}
+#area .subsequently .type li label{
+	padding: 10px 5px;
+}
+#area .subsequently .type li:first-child label{
+	padding: 18px 5px;
+}
+#area .area_btn{
+	padding: 30px 0;
+}
+
+/* モーダルCSS */
+.modalWrapper {
+	width: 90%;
+	padding: 20px 10px;
+}
+.modalWrapper img{
+	width: 40%;
+}
+.modalWrapper .answer{
+	font-size: 4.5vw;
+	line-height: 1.4;
+}
+.modalWrapper .answer span{
+	font-size: 3.5vw;
+}
+.modalWrapper .street_address{
+	padding: 10px;
+	margin: 10px auto;
+}
+	}
