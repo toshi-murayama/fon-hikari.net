@@ -9,7 +9,7 @@
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="">
 <meta name="keywords" content="">
-<!--<link rel="stylesheet" href="css/style.css">--> 
+<link rel="stylesheet" href="css/style.css"> 
 <link rel="stylesheet" href="css/style_form.css">
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
@@ -29,10 +29,11 @@
 	</script>
 </head>
 <body>
+	<?php include "include/header.html";?>
 	<section id="area">
 		<h2>fon光お申し込み</h2>
 		<h3 class="first">01 エリア検索</h3>
-		<form method="post" action="area_confirmation.php" id="appForm">
+		<form method="post" action="application.php" id="appForm">
 			<div class="search_text">お客様のお住い地域でご利用可能か検索します。</div>
 			<div class="address">住所を検索する<br>
 				<dl>
@@ -93,12 +94,7 @@
             </div>
 			
 		</form>
-		<div class="tel_app">
-			<p>お電話でのお申し込み</p>
-			<div class="tel_no">0120-966-486<br>
-			<span>受付時間 10:00〜21:00（年末年始、お盆を除く）</span></div>
-			
-		</div>
 	</section>
+	<?php include "include/footer.html";?>
 </body>
 </html>
