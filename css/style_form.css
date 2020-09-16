@@ -633,12 +633,26 @@ input#agree[type="checkbox"]:checked + label img {
 	display: table-cell;
 	width: 85%;
 }
-#area .address input{
+#area .address .select {
+	position: relative;
+}
+#area .address select{
+	-webkit-appearance: none;
+    -moz-appearance: none;
 	border: 1px solid #666;
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 5px;
 	width: 100%;
+}
+#area .address i {
+    z-index: 1;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    pointer-events: none;
+	color: #666;
+	font-size: 20px;
 }
 #area .subsequently .form li{
 	padding: 5px 0;
@@ -708,31 +722,18 @@ input#agree[type="checkbox"]:checked + label img {
 /* モーダルCSS */
 .modalArea {
   display: none;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	max-width: 700px;
+	padding: 40px;
+	box-sizing: border-box;
+	background: #fff;
+	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+	margin: 30px auto 0;
 }
 
 .modalBg {
   width: 100%;
   height: 100%;
   background-color: rgba(255,255,255,0.9);
-}
-
-.modalWrapper {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform:translate(-50%,-50%);
-	width: 70%;
-	max-width: 700px;
-	padding: 40px;
-	box-sizing: border-box;
-	background: #fff;
-	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .modalWrapper .answer{
 	font-size: 24px;
@@ -983,7 +984,7 @@ img{
 #area .address dl dd{
 	width: 85%;
 }
-#area .address input{
+#area .address select{
 	padding: 20px 10px;
 }
 #area .subsequently .type li{
@@ -1004,9 +1005,10 @@ img{
 }
 
 /* モーダルCSS */
-.modalWrapper {
-	width: 90%;
+.modalArea {
+	width: 100%;
 	padding: 20px 10px;
+	margin: 20px auto 0;
 }
 .modalWrapper img{
 	width: 40%;

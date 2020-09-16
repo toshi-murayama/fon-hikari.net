@@ -11,25 +11,25 @@
 <meta name="keywords" content="">
 <link rel="stylesheet" href="css/style.css"> 
 <link rel="stylesheet" href="css/style_form.css">
-<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
 <!--//* JS読み込み *//-->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
 <script type="text/javascript" src="js/jquery.layerBoard.js"></script>
 <script>
-	$(function () {
-  $('#openModal').click(function(){
-      $('#modalArea').fadeIn();
-  });
-  $('#closeModal , #modalBg').click(function(){
-    $('#modalArea').fadeOut();
-  });
+	$(function(){
+  $('#modalArea').hide();
+
+	$("#openModal").click(function() {
+		// 1秒かけて表示する
+		$("#modalArea").show(600);
+	});
 });
-	</script>
+</script>
 </head>
 <body>
-	<?php include "include/header.html";?>
+	<?php include "include/header_form.html";?>
 	<section id="area">
 		<h2>fon光お申し込み</h2>
 		<h3 class="first">01 エリア検索</h3>
@@ -38,13 +38,22 @@
 			<div class="address">住所を検索する<br>
 				<dl>
 					<dt><img src="img/img_area.png" alt=""/></dt>
-					<dd><input type="text" placeholder="大阪府大阪市旭区高殿1丁目" name="address"></dd>
+					<dd>
+						<div class="select">
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+							<select name="address">
+							<option value="テスト1">テスト1</option>
+							<option value="テスト2">テスト2</option>
+							<option value="テスト3">テスト3</option>
+						</select>
+							</div>
+					</dd>
 				</dl>
 			</div>
 			<div class="subsequently">
 				<ul class="form">
 					<li>住所</li>
-					<li><input class="result" type="text" placeholder="大阪府大阪市旭区高殿1丁目" name="address"></li>
+					<li><input class="result" type="text" placeholder="大阪府大阪市旭区高殿1丁目" name="address" readonly></li>
 					<li><p>物件の種類をご選択ください。</p>
 						<ul class="type">
 							<li><input id="house01" name="house" type="radio" value="一軒家" class="check">
@@ -58,7 +67,7 @@
 				</ul>
 			</div>
 			<div class="area_btn">
-				<p id="openModal" href="">エリアを検索する</p>
+				<p id="openModal">エリアを検索する</p>
 				<section id="modalArea" class="modalArea">
 					<div id="modalBg" class="modalBg"></div>
 					<div class="modalWrapper">
@@ -95,6 +104,6 @@
 			
 		</form>
 	</section>
-	<?php include "include/footer.html";?>
+	<?php include "include/footer_form.html";?>
 </body>
 </html>
