@@ -12,7 +12,6 @@
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/style.css"> 
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <!----js---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -25,72 +24,44 @@
 </head>
 
 <body>
-<div id="container">
-<div id="header">
-        <div class="header_box">
-            <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
-            <div class="header_c">
-                <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-966-486</p>
-            </div>
-            <div class="header_r"><a href="">マイページ</a></div>
-        </div>
-    </div>
-
-<div id="contents_bg">
-    <div id="contents">
-        <p class="mb20 mt20 pd5">ご依頼主・お届け先住所をご入力ください。
-        <br><span class="example">必須</span>は入力必須項目です。
-        <br> 入力後、一番下の「確認画面へ」を押してください。</p>
-        <form method="post" action="confirmation.php" id="appForm">
-            <!--creditform-->
-            <input type="hidden" name="submit_flg" value="1">
-            <div>
-                <table class="formTable animated fadeIn">
-                    <thead>
-                        <tr>
-                            <th colspan="2">お客様情報</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>お名前<span>必須</span></th>
-                            <td>
-                                姓
-                                <input size="30" type="text" name="姓" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"> 名
-                                <input size="30" type="text" name="名" value="<?php print $second_name; ?>" class="validate[required]" id="firstName">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>フリガナ<span>必須</span></th>
-                            <td>
-                                セイ
-                                <input size="30" type="text" name="姓（カナ）" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"> メイ
-                                <input size="30" type="text" name="名（カナ）" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>性別<span>必須</span></th>
-                            <td class="sex">
-                                <input type="radio" name="性別" value="男性" id="man" class="check">
-                                    <label for="man">男性</label>
-                                    <input type="radio" name="性別" value="女性" class="check" id="women">
-                                        <label for="women">女性</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>郵便番号<span>必須</span></th>
-                            <td class="heightL address">
-                                〒
-                                <input size="20" type="text" name="郵便番号" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="validate[required],[custom[onlyNumberSp]]" id="postalCode"><a href="http://www.post.japanpost.jp/zipcode/" target="_blank">郵便番号検索</a>
+	<?php include "include/header_form.html";?>
+	<section id="application">
+		<h2>fon光お申し込み</h2>
+		<h3 class="">02 お客様情報入力</h3>
+		<div class="search_text">ご契約先の情報をご入力ください。</div>
+		<h4>ご契約者情報</h4>
+		<form method="post" action="confirmation.php" id="appForm">
+			<ul class="form">
+				<li>
+					<dl>
+						<dt>氏名（姓）<br>
+						<input size="30" type="text" name="姓" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
+						<dd>氏名（名）<br>
+						<input size="30" type="text" name="名" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
+					</dl>
+					</li>
+				<li>
+					<dl>
+						<dt>フリガナ（セイ）<br>
+						<input size="30" type="text" name="姓（カナ）" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
+						<dd>フリガナ（メイ）<br>
+						<input size="30" type="text" name="名（カナ）" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
+					</dl>
+				</li>
+				<li>性別</li>
+				<li>
+					<input type="radio" name="性別" value="男性" id="man" class="check">
+					<label for="man">男性</label>
+					<input type="radio" name="性別" value="女性" class="check" id="women">
+					<label for="women">女性</label>
+					</li>
+				<li>郵便番号</li>
+				<li>〒<input size="20" type="text" name="郵便番号" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="validate[required],[custom[onlyNumberSp]]" id="postalCode"><a href="http://www.post.japanpost.jp/zipcode/" target="_blank">郵便番号検索</a>
                                 <br>
                                 <a href="" class="autoInput">郵便番号から住所を自動入力</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>都道府県<span>必須</span></th>
-                            <td>
-                                <select name="pref_name" id="prefectures" class="validate[required]">
+					</li>
+				<li>都道府県</li>
+				<li><select name="pref_name" id="prefectures" class="validate[required]">
                                     <option value="" selected>都道府県を選択</option>
                                     <option value="北海道">北海道</option>
                                     <option value="青森県">青森県</option>
@@ -140,36 +111,24 @@
                                     <option value="鹿児島県">鹿児島県</option>
                                     <option value="沖縄県">沖縄県</option>
                                 </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>住所<span>必須</span></th>
-                            <td>
-                                <input size="60" type="text" name="住所" value="<?php print $address; ?>" class="validate[required]" id="address">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>建物名・部屋番号</th>
-                            <td>
-                                <input size="60" type="text" name="マンション名・部屋番号" value="<?php print $room_number; ?>">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>電話番号<span>必須</span></th>
-                            <td>
-                                <input size="30" type="text" name="電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]"> <span class="small">ハイフンなし</span></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス<span>必須</span></th>
-                            <td>
-                                <input size="30" type="text" name="メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時<span>必須</span></th>
-                            <td>
-                                曜日
-                                <select name="連絡のつきやすい日時（曜日）" class="validate[required]">
+				</li>
+				<li>住所</li>
+				<li>
+					<input size="60" type="text" name="住所" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+                <li>建物名・部屋番号</li>
+				<li>
+					<input size="60" type="text" name="マンション名・部屋番号" value="<?php print $room_number; ?>">
+				</li>
+				<li>電話番号</li>
+				<li><input size="30" type="text" name="電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+					</li>
+				<li>メールアドレス</li>
+				<li>
+					<input size="30" type="text" name="メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+				</li>
+				<li>連絡のつきやすい日時</li>
+				<li><select name="連絡のつきやすい日時（曜日）" class="validate[required]">
                                     <option value="いつでも" <?php 
 									if ($tel_week　=='いつでも' ) { 
 										?> selected<?php
@@ -244,11 +203,8 @@
 									}
 									?>>18-21</option>
                                 </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
+					</li>
+			</ul>
 
 
                 <div class="kiyaku">
@@ -372,11 +328,7 @@
                 </div>
             </div>
         </form>
-    </div>
-	</div>
-</div>
-<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+	</section>
+	<?php include "include/footer_form.html";?>
 </body>
 </html>
