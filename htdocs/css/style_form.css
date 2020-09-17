@@ -105,10 +105,9 @@ header h1 img{
 #area h3{
 	font-size: 16px;
 	font-weight: bold;
-	padding-bottom: 5px;
-	border-bottom: 8px solid;
-    border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 25%,#333 25%, #333 100%);
-    border-image-slice: 1;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 25%,#333 25%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
 	margin-bottom: 80px;
 }
 
@@ -160,7 +159,8 @@ header h1 img{
 	color: #666;
 	font-size: 20px;
 }
-#area .subsequently .form li{
+#area .subsequently .form li,
+#application .form li{
 	padding: 5px 0;
 }
 #area .subsequently .result{
@@ -172,15 +172,18 @@ header h1 img{
 	border-radius: 5px;
 	margin-bottom: 30px;
 }
-#area .subsequently .type{
+#area .subsequently .type,
+#application .type{
 	display: flex;
 	margin: 10px 0 0;
 }
-#area .subsequently .type li{
+#area .subsequently .type li,
+#application .type li{
 	 width: calc(100%/3);
 	position: relative;
 }
-#area .subsequently .type li input[type=radio] {
+#area .subsequently .type li input[type=radio],
+#application .type li input[type=radio]{
 	position: absolute;
     visibility: hidden;
     width: 0;
@@ -188,7 +191,8 @@ header h1 img{
     margin: 0;
 	padding: 0;
 }
-#area .subsequently .type li label{
+#area .subsequently .type li label,
+#application .type li label{
 	border: 1px solid #666;
 	border-radius: 5px;
 	width: 94%;
@@ -198,10 +202,12 @@ header h1 img{
 	padding: 20px;
 	box-sizing: border-box;
 }
-#area .subsequently .type li label:hover{
+#area .subsequently .type li label:hover,
+#application .type li label:hover{
 	background: #fff9e5;
 }
-#area .subsequently .type li input[type="radio"]:checked + label{
+#area .subsequently .type li input[type="radio"]:checked + label,
+#application .type li input[type="radio"]:checked + label{
 	border: 1px solid #ec7103;
 	background: #fff9e5;
 	box-sizing: border-box;
@@ -294,10 +300,9 @@ header h1 img{
 #application h3{
 	font-size: 16px;
 	font-weight: bold;
-	padding-bottom: 5px;
-	border-bottom: 8px solid;
-    border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 50%,#333 50%, #333 100%);
-    border-image-slice: 1;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 50%,#333 50%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
 	margin-bottom: 80px;
 }
 
@@ -309,7 +314,10 @@ header h1 img{
 	box-sizing: border-box;
 	background: #333;
 	width: 100%;
-	margin: 30px 0;
+	margin: 50px 0 0;
+}
+#application .form li.categories{
+	padding-top: 30px;
 }
 #application dl{
 	display: flex;
@@ -328,7 +336,117 @@ header h1 img{
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 5px;
+}
+#application input.min[type=text]{
+	width: 30%;
+}
+#application .app input[type=radio] {
+	margin: 15px 0;
+}
+#application .app input[type=radio]{
+  display: none;
+}
+#application .app input[type=radio] + label{
+  padding-left: 30px;
+  position:relative;
+  margin-right: 20px;
+}
+#application .app input[type=radio] + label::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 50%;
+	background: #fff;
+}
+#application .app input[type=radio]:checked + label::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 9px;
+  height: 9px;
+  background:linear-gradient(to right, #fdc700, #ee7d03);
+  border-radius: 50%;
+}
+#application label.birthday {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  border: 1px solid #666;
+  border-radius: 5px;
+	box-sizing: border-box;
+}
+#application input[type=date]{
+  position: relative;
+	padding: 20px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+#application input[type="date"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+#application input[type="date"]::-webkit-clear-button{
+  -webkit-appearance: none;
+}
+#application .select{
+	position: relative;
+	width: 50%;
+}
+#application select{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	width: 100%;
+}
+#application .select i {
+    z-index: 100;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    pointer-events: none;
+	color: #666;
+	font-size: 20px;
+}
+#application .documents{
+	background: #eee;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 100%;
+	border-radius: 5px;
+	margin: 60px 0;
+	display: flex;
+}
+#application .documents p{
+	margin-right: 20px;
+}
+#application .privacyTitle{
+	text-align: center;
+	cursor: pointer;
 	margin-bottom: 30px;
+}
+#application .privacyTitle::before{
+	content: '';
+	display: inline-block;
+	background: url("../img/img_plus.png")no-repeat;
+    background-size: contain;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+#application .privacy{
+	display: none;
 }
 
 
