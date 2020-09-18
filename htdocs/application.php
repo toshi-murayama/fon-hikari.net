@@ -20,9 +20,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-    $('.privacyTitle').click(function(){
-        $(this).next('.privacy').slideToggle();
-    });
+	$('.privacy').hide();
+	$('.privacyTitle').on('click', function() {
+		$('.privacy').slideToggle(500);
+	});
 });
 </script>
 <script src="js/jquery.validationEngine.js"></script>
@@ -211,16 +212,91 @@ $(function(){
 			<div class="documents">
 				<p>入会書類郵送希望先</p>
 				<div class="app">
-					<input type="radio" name="入会書類郵送希望先" value="設置場所と同じ" id="nashi" checked>
-					<label for="nashi">設置場所と同じ</label>
-					<input type="radio" name="入会書類郵送希望先" value="別住所に送る" class="check" id="ari">
-					<label for="ari">別住所に送る</label>
+					<input type="radio" name="入会書類郵送希望先" value="設置場所と同じ" id="same" checked>
+					<label for="same">設置場所と同じ</label>
+					<input type="radio" name="入会書類郵送希望先" value="別住所に送る" id="aother">
+					<label for="aother">別住所に送る</label>
 				</div>
 			</div>
+			<ul class="form aother_address">
+				<li class="categories">郵便番号</li>
+				<li>
+					<input type="text" name="郵便番号" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+				</li>
+				<li class="categories">都道府県</li>
+				<li>
+					<div class="select">
+						<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						<select name="pref_name" id="prefectures" class="validate[required]">
+                                    <option value="" selected>都道府県を選択</option>
+                                    <option value="北海道">北海道</option>
+                                    <option value="青森県">青森県</option>
+                                    <option value="岩手県">岩手県</option>
+                                    <option value="宮城県">宮城県</option>
+                                    <option value="秋田県">秋田県</option>
+                                    <option value="山形県">山形県</option>
+                                    <option value="福島県">福島県</option>
+                                    <option value="茨城県">茨城県</option>
+                                    <option value="栃木県">栃木県</option>
+                                    <option value="群馬県">群馬県</option>
+                                    <option value="埼玉県">埼玉県</option>
+                                    <option value="千葉県">千葉県</option>
+                                    <option value="東京都">東京都</option>
+                                    <option value="神奈川県">神奈川県</option>
+                                    <option value="新潟県">新潟県</option>
+                                    <option value="富山県">富山県</option>
+                                    <option value="石川県">石川県</option>
+                                    <option value="福井県">福井県</option>
+                                    <option value="山梨県">山梨県</option>
+                                    <option value="長野県">長野県</option>
+                                    <option value="岐阜県">岐阜県</option>
+                                    <option value="静岡県">静岡県</option>
+                                    <option value="愛知県">愛知県</option>
+                                    <option value="三重県">三重県</option>
+                                    <option value="滋賀県">滋賀県</option>
+                                    <option value="京都府">京都府</option>
+                                    <option value="大阪府">大阪府</option>
+                                    <option value="兵庫県">兵庫県</option>
+                                    <option value="奈良県">奈良県</option>
+                                    <option value="和歌山県">和歌山県</option>
+                                    <option value="鳥取県">鳥取県</option>
+                                    <option value="島根県">島根県</option>
+                                    <option value="岡山県">岡山県</option>
+                                    <option value="広島県">広島県</option>
+                                    <option value="山口県">山口県</option>
+                                    <option value="徳島県">徳島県</option>
+                                    <option value="香川県">香川県</option>
+                                    <option value="愛媛県">愛媛県</option>
+                                    <option value="高知県">高知県</option>
+                                    <option value="福岡県">福岡県</option>
+                                    <option value="佐賀県">佐賀県</option>
+                                    <option value="長崎県">長崎県</option>
+                                    <option value="熊本県">熊本県</option>
+                                    <option value="大分県">大分県</option>
+                                    <option value="宮崎県">宮崎県</option>
+                                    <option value="鹿児島県">鹿児島県</option>
+                                    <option value="沖縄県">沖縄県</option>
+                                </select>
+						</div>
+				</li>
+				<li class="categories">市区町村</li>
+				<li>
+					<input type="text" name="市区町村" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+				<li class="categories">町丁名・番地号</li>
+				<li>
+					<input type="text" name="町丁名、番地号" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+                <li class="categories">建物名・部屋番号</li>
+				<li>
+					<input type="text" name="建物名・部屋番号" value="<?php print $room_number; ?>">
+				</li>
+				</ul>
+
 			<div class="privacyTitle">個人情報取得における告知・同意文</div>
                 <div class="privacy">
-                    <p><b>【重要】お申込みをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</b></p>
-                    <div class="kiyaku_text">
+                    <h5>【重要】お申込みをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</h5>
+                    <div class="privacy_text">
                         フォン・ジャパン株式会社 (以下、「当社」という。)は、 通信・ネットワークソリューション事業、 営業事業、IT・Webソリューション事業を行っております。<br> 
                         当社は、当社の事業の用に供するすべての個人情報を適切に取扱うため、 当社全従業者が遵守すべき行動基準として本個人情報保護方針を定め、その遵守の徹底を図ることといたします。<br>
                         <br>    
@@ -237,9 +313,7 @@ $(function(){
                         フォン・ジャパン株式会社<br>
                         代表取締役社長 横田 和典<br>
                         <br>
-                        当社における<br>
-                        個人情報の取扱いについて<br>
-                        <br>
+                        <h6>当社における個人情報の取扱いについて</h6>
                         （個人情報保護法及びJISに基づく公表事項及び本人が容易に知り得る状態に置く事項）<br>
                         <br>
                         1.お取引先様から委託を受ける業務において取り扱う個人情報の利用目的<br>
@@ -249,16 +323,12 @@ $(function(){
                         ・「ブロードバンド・モバイル等通信サービスの販売取次業務」に関しては「市販の住宅地図」を取り扱います。<br>
                         ・「ドメイン、サーバー等の取得代行をはじめとしたウェブ関連サービス及びデザイン関連サービス」に関しては、「エンドクライアントの企業情報」を取り扱います。<br>
                         <br>
-                        当社が保有する開示対象個人情報について<br>
-                        <br>    
-                        個人情報取り扱い事業者の氏名または名称<br>
-                        <br>    
+                        <h6>当社が保有する開示対象個人情報について</h6>
+                        <p>個人情報取り扱い事業者の氏名または名称</p>
                         フォン・ジャパン株式会社<br>
                         <br>
-                        すべての開示対象個人情報の利用目的<br>
-                        <br>
+                        <h6>すべての開示対象個人情報の利用目的</h6>
                         当社が、通信・ネットワークソリューション事業、営業事業、 IT・webソリューション事業を主な事業としていることを踏まえて当社が取扱う個人情報の利用目的を以下のように定めます。<br>
-                        <br>
                         <br>
                         1.お客様の個人情報<br>
                         ・ご契約内容を実施し、適切に管理するため<br>
@@ -289,16 +359,13 @@ $(function(){
                         ・お問い合わせやご連絡内容を正確に把握し、対処するため<br>
                         ※上記利用目的において、「ご契約内容を適切に管理するため」としているものは、「契約に入る前の段階における利用」と「契約終了後における利用」を含みます。<br>
                         <br>
-                        開示対象個人情報の取扱いに関する苦情の申し出先<br>
-                        <br>
+                        <h6>開示対象個人情報の取扱いに関する苦情の申し出先</h6>
                         「個人情報に関する相談窓口」（末尾に記載）<br>
                         <br>
-                        認定個人情報保護団体の名称及び苦情の解決の申し出先<br>
-                        <br>
+                        <h6>認定個人情報保護団体の名称及び苦情の解決の申し出先</h6>
                         現在当社は、認定個人情報保護団体の対象事業者ではございません。<br>
                         <br>
-                        開示等の求めに応じる手続き<br>
-                        <br>
+                        <h6>開示等の求めに応じる手続き</h6>
                         1.開示等の求めの申し出先<br>
                         <br>
                         2.開示等の求めに際して提出すべき書面の様式その他の開示等の求めの方式<br>
