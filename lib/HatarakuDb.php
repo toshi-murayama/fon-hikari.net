@@ -27,8 +27,8 @@ class HatarakuDb
   // 可変
   // 接続先URLに利用する設定
   // https://●●●●●/■■■■■/api/API種別/version/▲▲▲
-  const DOMAIN = "hdgarnet.htdb.jp";
-  const SCHEMA = "d4q2uya";
+  const DOMAIN = "hdscarlet.htdb.jp";
+  const SCHEMA = "s5d7caa";
   const VERSION = "v1";
 
   // APIトークン（リクエストヘッダで利用します）
