@@ -1,0 +1,225 @@
+@charset "UTF-8";
+/*-------------------------------------------------
+ common
+-------------------------------------------------*/
+$orange : #f39500;
+$gray : #f4f5f4;
+$gradient : linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
+
+html {
+    font-size: 14px;
+    line-height: 1.5;
+	color: #333;
+	font-weight: 200;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'M PLUS 1p', sans-serif;
+	color: #333;
+	font-weight: 200;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+    list-style-type: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+a{
+	color: #333;
+    transition: 0.2s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none;
+}
+
+#wrapper{
+  width:100%;
+	overflow: hidden;
+}
+
+/*essect*/
+.effect {
+  transition: ease .5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.effect.fadein {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.effect2 {
+  transition: ease .5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.effect2.fadein {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.effect3 {
+  transition: ease .5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.effect3.fadein {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+
+/*-------------------------------------------------
+ header
+-------------------------------------------------*/
+/* for Scroll Fix Header */
+
+	header{
+		width:100%;
+		text-align: center;
+	}
+
+.fix-header {
+	background-color:#646464;
+	line-height: 66px;
+	top: -66px;/* 上に隠す鷹さ */
+	left: 0;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	color: #fff;
+	padding-top:15px;
+	position: fixed;
+	opacity:0;/* 	最初読み込んだときは透過 */
+	z-index: 1000;/*　他のアイテムに対して最上位のレイヤーになるように */
+/*	opacity: 0; */
+	}
+
+	.fix-header-contents{
+		width:800px;
+		margin: 0 auto;
+	}
+
+.fix-header ul{
+list-style-type: none;
+}
+
+.fix-header li{
+	float:left;
+	margin-right:32px;
+}
+
+.fix-header li a,.fix-header li a:visited{
+	color: #fff;
+	text-decoration: none;
+}
+.fix-header li:last-child{
+	margin-right:0;
+}
+#fix-header-logo{
+	float:left;
+}
+
+#fix-header-logo img{
+width:54px;
+}
+
+#fix-header-menus{
+	float:right;
+	text-align: right;
+}
+#scroll-fix-menu img{
+padding-bottom: 5px;
+   border-bottom:2px solid #fff;
+}
+
+#scroll-fix-menu .current-menu-item img{
+   border-bottom:2px solid #0f142a;
+}
+
+#scroll-fix-menu a img:hover{
+   border-bottom:2px solid #0f142a;
+	transition:border-color 0.6s ease-out;
+}
+
+/* micro clearfx */
+.cf:before, .cf:after {
+		content:"";
+		display:table
+}
+.cf:after { clear:both }
+.cf { zoom:1 } /* For IE 6/7 */
+
+	nav{
+		width:100%;
+		background-color: #646464;
+	}
+	.nav-container{
+		width:800px;
+		margin: 0 auto;
+	}
+	
+	nav ul{
+		padding:0;
+		list-style: none;
+	}
+	
+	nav ul li{
+		float:left;
+		margin:10px 30px 10px 0;
+	}
+	
+	nav ul li a,nav ul li a:visited{
+		color: #fff;
+		text-decoration: none;
+	}
+
+
+
+/*-------------------------------------------------
+ footer
+-------------------------------------------------*/
+footer {
+    
+}
+
+
+
+
+
+@media screen and (max-width: 640px) {
+    .pc{
+        display: none;
+    }
+
+    .sp{
+        display: inherit;
+    }
+
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
