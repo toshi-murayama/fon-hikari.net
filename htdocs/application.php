@@ -68,7 +68,20 @@ $(function(){
 		}
 	});
 });
+	
+$(window).load(function() {
+		//発送先住所
+		$('[name="mailingDestination"]:radio').change( function() {
+				if($('[id=same]').prop('checked')){
+					$('.aother_address').fadeOut();
+				} else if ($('[id=aother]').prop('checked')) {
+					$('.aother_address').fadeIn();
+				} 
+			}).change();
+});
 </script>
+<script src="js/pikaday-responsive-modernizr.js"></script>
+	
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
@@ -76,14 +89,13 @@ $(function(){
 <script src="js/application.js"></script>
 <script src="js/script.js"></script>
 	
-<script src="js/pikaday-responsive-modernizr.js"></script>
 </head>
 
 <body>
 	<?php include "include/header_form.html";?>
 	<section id="application">
 		<h2>fon光お申し込み</h2>
-		<h3 class="">02 お客様情報入力</h3>
+		<h3>02 お客様情報入力</h3>
 		<div class="search_text">ご契約先の情報をご入力ください。</div>
 		<form method="post" action="hatarakuTest.php" id="appForm">
 			<h4>ご契約者情報</h4>
@@ -120,8 +132,13 @@ $(function(){
 				</li>
 				<li class="categories">生年月日</li>
 				<li>
+					<p>
+    <label for="date1-input">Select a date:</label>
+    <input name="date" type="date" id="date1" class="test class"/>
+  </p>
 					<label class="birthday">
-						<input name="birthday" type="text" id="datepicker" >
+						<label class="date-edit"><input name="date" type="date" value="2020-09-28" id="date1"/></label>
+						<!-- <input name="birthday" type="text" id="datepicker" > -->
 					</label>
 				</li>
 				<li class="categories">携帯番号</li>
@@ -361,17 +378,75 @@ $(function(){
                         <br>
                     </div>
                 </div>
-			<p style="text-align:center;">個人情報取得における告知・同意文、<a href="privacy.html" target="_blank">個人情報保護方針</a>に同意します
-                        <input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required]" id="agree">
-                        <label for="agree" class="agree"><img src="img/check.png" alt="">
-                        </label>
-                    </p>
-
-                <div class="btn">
-                    <input type="submit" name="submit" value="確認画面へ" id="submit">
-                </div>
+			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
+                        <label for="agree" class="agree">
+                        </label>同意する</p>
+                <dl class="btn">
+					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
+                    <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
+                </dl>
         </form>
 	</section>
 	<?php include "include/footer_form.html";?>
+	
+<script src="js/moment.min.js"></script>
+<script src="js/pikaday.min.js"></script>
+<script src="js/pikaday-responsive.js"></script>
+
+<script>
+  var $date1 = $("#date1");
+  var instance1 = pikadayResponsive($date1);
+  $date1.on("change", function() {
+    $("#output1").html($(this).val());
+  });
+
+  var $date2 = $("#date2");
+  var instance2 = pikadayResponsive($date2, {
+    outputFormat: "X"
+  });
+  $date2.on("change", function() {
+    $("#output2").html($(this).val());
+  });
+
+  var $date3 = $("#date3");
+  var instance3 = pikadayResponsive($date3, {
+    format: "Do MMM YYYY",
+    outputFormat: "X"
+  });
+
+  var $date4 = $("#date4");
+  var today = new Date();
+  var minDate = new Date();
+  var maxDate = new Date();
+  minDate.setDate(today.getDate() + 3);
+  maxDate.setDate(today.getDate() + 365);
+  var instance4 = pikadayResponsive($date4, {
+    format: "DD/MM/YYYY",
+    outputFormat: "DD/MM/YYYY",
+    pikadayOptions: {
+      minDate: minDate,
+      maxDate: maxDate,
+    },
+  });
+  instance4.setDate(minDate);
+
+  $date3.on("change", function() {
+    $("#output3").html($(this).val());
+  });
+
+  $date4.on("change", function() {
+    $("#output4").html($(this).val());
+  });
+
+  $("#clear").click(function() {
+    instance3.setDate(null);
+  });
+
+  $("#today").click(function() {
+    instance3.setDate(moment());
+  });
+
+</script>
+
 </body>
 </html>

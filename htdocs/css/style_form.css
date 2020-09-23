@@ -89,13 +89,17 @@ header h1 img{
 
 /*area*/
 #area,
-#application{
+#application,
+#confirmation,
+#thanks{
 	width: 700px;
 	margin: 40px auto;
 }
 
 #area h2,
-#application h2{
+#application h2,
+#confirmation h2,
+#thanks h2{
 	font-size: 24px;
 	margin-bottom: 30px;
 	font-weight: bold;
@@ -112,7 +116,9 @@ header h1 img{
 }
 
 #area .search_text,
-#application .search_text{
+#application .search_text,
+#confirmation .search_text,
+#thanks .search_text{
 	width: 350px;
 	padding: 15px;
 	box-sizing: border-box;
@@ -306,7 +312,8 @@ header h1 img{
 	margin-bottom: 80px;
 }
 
-#application h4{
+#application h4,
+#confirmation h4{
 	font-weight: bold;
 	color: #fff;
 	font-size: 19px;
@@ -316,7 +323,8 @@ header h1 img{
 	width: 100%;
 	margin: 50px 0 0;
 }
-#application .form li.categories{
+#application .form li.categories,
+#confirmation .form li.categories{
 	padding-top: 30px;
 }
 #application dl{
@@ -400,6 +408,26 @@ header h1 img{
 	position: relative;
 	width: 50%;
 }
+.pikaday-container {
+	display: block;
+	width: 320px;
+	max-width: 100%;
+}
+
+.output {
+	padding: 5px;
+	background: #33aaff;
+	color: #fff;
+	line-height: 1.5em;
+	min-height: 1.5em;
+	width: 320px;
+	max-width: 100%;
+	margin: 0;
+}
+.output:before {
+	content: "> ";
+}
+
 #application select{
 	-webkit-appearance: none;
     -moz-appearance: none;
@@ -467,12 +495,208 @@ header h1 img{
 	margin-bottom: 10px;
 	font-size: 14px;
 }
-.aother_address_no{
-	display: none;
-}
+
 .aother_address{
-	display: block;
+	display: none;
 	margin: -30px 0 50px;
+}
+
+#application .agree_box{
+	text-align: center;
+	margin: 30px 0 70px 5px;
+}
+#application .btn{
+	width: 420px;
+	display: flex;
+	text-align: center;
+	margin: 0 auto;
+}
+#confirmation .btn{
+	width: 420px;
+	display: flex;
+	text-align: center;
+	margin: 80px auto;
+}
+#application .btn dt,
+#confirmation .btn dt{
+	width: 50%;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+#application .btn dt input,
+#confirmation .btn dt input{
+	width: 100%;
+	background: #666;
+	color: #fff;
+	padding: 15px 0;
+	border-radius: 5px;
+	border: none;
+}
+#application .btn dd,
+#confirmation .btn dd{
+	width: 50%;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+#application .btn dd input,
+#confirmation .btn dd input{
+	width: 100%;
+	background: linear-gradient(to right, #fdc700 0%,#ee7d03 100%);
+	color: #fff;
+	padding: 15px 0;
+	border-radius: 5px;
+	border: none;
+}
+#application input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    vertical-align: -0.8rem;
+    transition:all .15s ease-out 0s;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin: .4rem;
+    outline: none;
+    border-radius: 10%;
+}
+/* Checkbox */
+#application input[type=checkbox]:before,
+#application input[type=checkbox]:after {
+    position: absolute;
+    content: "";
+    background: #f08502;
+    transition: all .2s ease-in-out;
+}
+#application input[type=checkbox]:before {
+    left: 2px;
+    top: 6px;
+    width: 0;
+    height: 2px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+#application input[type=checkbox]:after {
+    right: 9px;
+    bottom: 3px;
+    width: 2px;
+    height: 0;
+    transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transition-delay: .2s;
+}
+#application input[type=checkbox]:checked:before {
+    left: 1px;
+    top: 10px;
+    width: 6px;
+    height: 2px;
+}
+#application input[type=checkbox]:checked:after {
+    right: 5px;
+    bottom: 1px;
+    width: 2px;
+    height: 14px;
+}
+#application input[type=checkbox]:indeterminate:before,
+#application input[type=checkbox]:indeterminate:after {
+    width: 7px;
+    height: 2px;
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+}
+#application input[type=checkbox]:indeterminate:before {
+    left: 1px;
+    top: 7px;
+}
+#application input[type=checkbox]:indeterminate:after {
+    right: 1px;
+    bottom: 7px;
+}
+/* 色は青色のみ */
+#application input[type=checkbox] {
+    border: 2px solid #666;
+	border-radius: 5px;
+}
+#application input[type=checkbox].blue:checked,
+#application input[type=checkbox].blue:indeterminate {
+    background: #fff;
+}
+
+#confirmation h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 75%,#333 75%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+#confirmation .error,
+#thanks .error{
+	color: #EB0003;
+}
+#confirmation dl{
+	display: flex;
+}
+#confirmation dl dt{
+	width: 50%;
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+#confirmation dl dd{
+	width: 50%;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+#confirmation li p{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	background: #eee;
+	border: 1px solid #666;
+	margin-top: 15px;
+	border-radius: 5px;
+}
+
+#thanks h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+#thanks .btn{
+	text-align: center;
+}
+#thanks .btn a{
+	width: 200px;
+	background: #666;
+	color: #fff;
+	padding: 20px;
+	box-sizing: border-box;
+	text-decoration: none;
+	border-radius: 5px;
+}
+#thanks .text{
+	margin: 10px 0 80px;
+	font-size: 12px;
 }
 
 
@@ -527,13 +751,17 @@ img{
 	height: auto;
 }		
 #area,
-#application{
+#application,
+#confirmation,
+#thanks{
 	width:90%;
 	margin: 40px auto;
 }
 
 #area h2,
-#application h2{
+#application h2,
+#confirmation h2,
+#thanks h2{
 	font-size: 24px;
 	margin-bottom: 30px;
 	font-weight: bold;
@@ -544,7 +772,9 @@ img{
 }
 
 #area .search_text,
-#application .search_text{
+#application .search_text,
+#confirmation .search_text,
+#thanks .search_text{
 	width: 90%;
 	padding: 15px 10px;
 	margin: 0 auto 30px;
@@ -603,7 +833,8 @@ img{
 }
 	
 /* application */
-#application h3{
+#application h3,
+#confirmation h3{
 	margin-bottom: 40px;
 }
 
@@ -611,7 +842,8 @@ img{
 	font-size: 19px;
 	margin: 20px 0 0;
 }
-#application .form li.categories{
+#application .form li.categories,
+#confirmation .form li.categories{
 	padding-top: 15px;
 }
 #application dl{
@@ -635,7 +867,7 @@ img{
 	border-radius: 5px;
 }
 #application input.min[type=text]{
-	width: 30%;
+	width: 50%;
 }
 #application .app input[type=radio] {
 	margin: 15px 0;
@@ -643,56 +875,23 @@ img{
 #application .app input[type=radio]{
   display: none;
 }
-#application .app input[type=radio] + label{
-  padding-left: 30px;
-  position:relative;
-  margin-right: 20px;
-}
-#application .app input[type=radio] + label::before{
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #999;
-  border-radius: 50%;
-	background: #fff;
-}
-#application .app input[type=radio]:checked + label::after{
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 9px;
-  height: 9px;
-  background:linear-gradient(to right, #fdc700, #ee7d03);
-  border-radius: 50%;
-}
 #application label.birthday {
-  position: relative;
-  display: inline-block;
-  width: 30%;
-  border: 1px solid #666;
-  border-radius: 5px;
-	box-sizing: border-box;
-}
-#application input[type=date]{
-  position: relative;
-	padding: 20px;
   width: 100%;
-  border: 0;
-  background: transparent;
-  box-sizing: border-box;
 }
-#application input[type="date"]::-webkit-inner-spin-button{
-  -webkit-appearance: none;
+#application .type li{
+	font-size: 3vw;
 }
-#application input[type="date"]::-webkit-clear-button{
-  -webkit-appearance: none;
+#application .type li img{
+	 width: auto;
+	height: 50px;
 }
+#application .type li label{
+	padding: 10px 5px;
+}
+#application .type li:first-child label{
+	padding: 18px 5px;
+}
+
 #application .select{
 	position: relative;
 	width: 50%;
@@ -716,16 +915,11 @@ img{
 	font-size: 20px;
 }
 #application .documents{
-	background: #eee;
-	padding: 20px;
-	box-sizing: border-box;
-	width: 100%;
-	border-radius: 5px;
-	margin: 60px 0;
-	display: flex;
+	margin: 30px 0;
+	display: inherit;
 }
 #application .documents p{
-	margin-right: 20px;
+	margin-right: 0;
 }
 #application .privacyTitle{
 	text-align: center;
@@ -770,6 +964,36 @@ img{
 .aother_address{
 	display: block;
 	margin: -30px 0 50px;
+}
+	
+#application .btn,
+#confirmation .btn{
+	width: 100%;
+}
+#application .btn dt,
+#confirmation .btn dt{
+	padding-right: 10px;
+}
+#application .btn dd,
+#confirmation .btn dd{
+	padding-left: 10px;
+}
+
+#confirmation .error{
+	color: #EB0003;
+}
+#confirmation dl{
+	display: inherit;
+}
+#confirmation dl dt,
+#confirmation dl dd{
+	width: 100%;
+	padding: 0;
+	margin-bottom: 10px;
+}
+#confirmation li p{
+	padding: 20px 10px;
+	margin-top: 10px;
 }
 
 	}
