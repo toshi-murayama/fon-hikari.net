@@ -12,16 +12,16 @@ $(function($){
         });
 	}
 
-	function entryChange(){
-		radio = document.getElementsByName('pay');
-		if(radio[0].checked) {
-			$('.creditBox').css('display','');
-			$('.bankBox').css('display','none');
-		}else if(radio[1].checked) {
-			$('.creditBox').css('display','none');
-			$('.bankBox').css('display','');
-		}
-	}	
+	// function entryChange(){
+	// 	radio = document.getElementsByName('pay');
+	// 	if(radio[0].checked) {
+	// 		$('.creditBox').css('display','');
+	// 		$('.bankBox').css('display','none');
+	// 	}else if(radio[1].checked) {
+	// 		$('.creditBox').css('display','none');
+	// 		$('.bankBox').css('display','');
+	// 	}
+	// }	
 	
 	// numberBoxの番号調整
 	function numberBox(){
@@ -43,7 +43,7 @@ $(function($){
 	}
 
 	jQuery("#appForm").validationEngine();
-	entryChange();
+	// entryChange();
 	var cmn = [];
 	var w = $(window).width();	
 	cmn.ua = window.navigator.userAgent.toLowerCase();
@@ -125,9 +125,9 @@ $(function($){
 		return false;
 	});		
 	
-	$(document).on('click','input[name="pay"]',function(){
-		entryChange();
-	});
+	// $(document).on('click','input[name="pay"]',function(){
+	// 	entryChange();
+	// });
 		
 	$(document).on("click",'input[name="銀行"]',function(){
 		$('#bankBtn').trigger('click');

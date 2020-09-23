@@ -1,3 +1,6 @@
+<?php
+    require_once('../lib/Param/pref.php');
+?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 <head>
@@ -16,13 +19,53 @@
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
-<!----js---->
+<!----js TODO ダウンロードする ----> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
 <script type="text/javascript">
+
 $(function(){
+	//カレンダー
+	$("#datepicker").datepicker({
+		defaultDate: new Date(2000,3,1),
+		changeMonth: true,
+		changeYear: true,
+		yearRange: '-70:+0',
+	});
 	$('.privacy').hide();
 	$('.privacyTitle').on('click', function() {
 		$('.privacy').slideToggle(500);
+	});
+	// 光電話申込
+	$('input[name="telephoneApplication"]').change(function() {
+		if ($('input[name="telephoneApplication"]:checked').val() != '0') {
+			$('.numbering').show();
+			// 固定電話
+			if ($('input[name="numberingMethod"]:checked').val() == '1') {
+				$('.telephoneApplicationFixedLine').show();
+			}
+		} else {
+			$('.numbering').hide();
+			$('.telephoneApplicationFixedLine').hide();
+		}
+	});
+	// 発番方法
+	$('input[name="numberingMethod"]').change(function() {
+		if ($('input[name="numberingMethod"]:checked').val() != '0') {
+			$('.telephoneApplicationFixedLine').show();
+		} else {
+			$('.telephoneApplicationFixedLine').hide();
+		}
+	});
+
+	// 郵送先情報
+	$('input[name="mailingDestination"]').change(function() {
+		if ($('input[name="mailingDestination"]:checked').val() != '0') {
+			$('.aother_address').show();
+		} else {
+			$('.aother_address').hide();
+		}
 	});
 });
 </script>
@@ -34,7 +77,6 @@ $(function(){
 <script src="js/script.js"></script>
 	
 <script src="js/pikaday-responsive-modernizr.js"></script>
-
 </head>
 
 <body>
@@ -43,14 +85,14 @@ $(function(){
 		<h2>fon光お申し込み</h2>
 		<h3 class="">02 お客様情報入力</h3>
 		<div class="search_text">ご契約先の情報をご入力ください。</div>
-		<form method="post" action="confirmation.php" id="appForm">
+		<form method="post" action="hatarakuTest.php" id="appForm">
 			<h4>ご契約者情報</h4>
 			<ul class="form">
 				<li class="categories">申込区分</li>
 				<li class="app">
-					<input type="radio" name="applicationClassification" value="個人" id="individual" checked>
+					<input type="radio" name="applicationClassification" value="0" id="individual" checked>
 					<label for="individual">個人</label>
-					<input type="radio" name="applicationClassification" value="法人" class="check" id="corporation">
+					<input type="radio" name="applicationClassification" value="1" class="check" id="corporation">
 					<label for="corporation">法人</label>
 				</li>
 				<li class="categories">
@@ -71,20 +113,20 @@ $(function(){
 				</li>
 				<li class="categories">性別</li>
 				<li class="app">
-					<input type="radio" name="sex" value="男性" id="man" class="check">
+					<input type="radio" name="sex" value="1" id="man" class="check" checked>
 					<label for="man">男性</label>
-					<input type="radio" name="sex" value="女性" class="check" id="women">
+					<input type="radio" name="sex" value="2" class="check" id="women">
 					<label for="women">女性</label>
 				</li>
 				<li class="categories">生年月日</li>
 				<li>
 					<label class="birthday">
-						<input name="date" type="date" id="date1"/>
+						<input name="birthday" type="text" id="datepicker" >
 					</label>
 				</li>
-				<li class="categories">電話番号</li>
+				<li class="categories">携帯番号</li>
 				<li>
-					<input type="text" name="phoneNumber" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+					<input type="text" name="phoneNumber" value="<?php print $tel; ?>"  minlength='11' maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
 				</li>
 				<li class="categories">メールアドレス</li>
 				<li>
@@ -95,62 +137,18 @@ $(function(){
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
 					</li>
 				<li class="categories">都道府県</li>
 				<li>
 					<div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="installationPref" id="prefectures" class="validate[required]">
-                                    <option value="" selected>都道府県を選択</option>
-                                    <option value="北海道">北海道</option>
-                                    <option value="青森県">青森県</option>
-                                    <option value="岩手県">岩手県</option>
-                                    <option value="宮城県">宮城県</option>
-                                    <option value="秋田県">秋田県</option>
-                                    <option value="山形県">山形県</option>
-                                    <option value="福島県">福島県</option>
-                                    <option value="茨城県">茨城県</option>
-                                    <option value="栃木県">栃木県</option>
-                                    <option value="群馬県">群馬県</option>
-                                    <option value="埼玉県">埼玉県</option>
-                                    <option value="千葉県">千葉県</option>
-                                    <option value="東京都">東京都</option>
-                                    <option value="神奈川県">神奈川県</option>
-                                    <option value="新潟県">新潟県</option>
-                                    <option value="富山県">富山県</option>
-                                    <option value="石川県">石川県</option>
-                                    <option value="福井県">福井県</option>
-                                    <option value="山梨県">山梨県</option>
-                                    <option value="長野県">長野県</option>
-                                    <option value="岐阜県">岐阜県</option>
-                                    <option value="静岡県">静岡県</option>
-                                    <option value="愛知県">愛知県</option>
-                                    <option value="三重県">三重県</option>
-                                    <option value="滋賀県">滋賀県</option>
-                                    <option value="京都府">京都府</option>
-                                    <option value="大阪府">大阪府</option>
-                                    <option value="兵庫県">兵庫県</option>
-                                    <option value="奈良県">奈良県</option>
-                                    <option value="和歌山県">和歌山県</option>
-                                    <option value="鳥取県">鳥取県</option>
-                                    <option value="島根県">島根県</option>
-                                    <option value="岡山県">岡山県</option>
-                                    <option value="広島県">広島県</option>
-                                    <option value="山口県">山口県</option>
-                                    <option value="徳島県">徳島県</option>
-                                    <option value="香川県">香川県</option>
-                                    <option value="愛媛県">愛媛県</option>
-                                    <option value="高知県">高知県</option>
-                                    <option value="福岡県">福岡県</option>
-                                    <option value="佐賀県">佐賀県</option>
-                                    <option value="長崎県">長崎県</option>
-                                    <option value="熊本県">熊本県</option>
-                                    <option value="大分県">大分県</option>
-                                    <option value="宮崎県">宮崎県</option>
-                                    <option value="鹿児島県">鹿児島県</option>
-                                    <option value="沖縄県">沖縄県</option>
-                                </select>
+                            <option value="" selected>都道府県を選択</option>
+                            <?php foreach($prefs as $pref) { ?>
+                                <option value=<?php print $pref?>><?php print $pref?></option>                                       
+                            <?php } ?>
+                        </select>
 						</div>
 				</li>
 				<li class="categories">市区町村</li>
@@ -169,36 +167,28 @@ $(function(){
 				<li>
 					<ul class="type">
 						<li>
-                            <input id="house01" name="homeType" type="radio" value="house" class="check">
+                            <input id="house01" name="homeType" type="radio" value="1" class="check">
 							<label for="house01"><img src="img/img_home01.png" alt="一軒家"/><br>一軒家</label>
                         </li>
                         <li>
-                            <input id="house02" name="homeType" type="radio" value="apartment3rdFloorAndBelow" class="check">
+                            <input id="house02" name="homeType" type="radio" value="2" class="check">
                             <label for="house02"><img src="img/img_home02.png" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label>
                         </li>
                         <li>
-                            <input id="house03" name="homeType" type="radio" value="apartment3rdFloorAndAbove" class="check">
+                            <input id="house03" name="homeType" type="radio" value="3" class="check">
                             <label for="house03"><img src="img/img_home03.png" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label>
                         </li>
 					</ul>
-				</li>
-				<li class="categories">連絡先メールアドレス</li>
-				<li>
-					<input type="text" name="contactMailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
-				</li>
-				<li class="categories">連絡先メールアドレス（確認）</li>
-				<li>
-					<input type="text" name="連絡先メールアドレス（確認）" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
 				</li>
 				<li class="categories">所有形態</li>
 				<li><div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="ownership" id="ownership" class="validate[required]">
                                     <option value="" selected>選択してください</option>
-                                    <option value="賃貸">賃貸</option>
-                                    <option value="分譲">分譲</option>
-                                    <option value="分譲賃貸">分譲賃貸</option>
-                                    <option value="持ち家">持ち家</option>
+                                    <option value="1">賃貸</option>
+                                    <option value="2">分譲</option>
+                                    <option value="3">分譲賃貸</option>
+                                    <option value="4">持ち家</option>
 							</select>
 					</div>
 				</li>
@@ -207,26 +197,37 @@ $(function(){
 			<ul class="form">
 				<li class="categories">光電話申込</li>
 				<li class="app">
-					<input type="radio" name="telephoneApplication" value="なし" id="nashi" checked>
-					<label for="nashi">なし</label>
-					<input type="radio" name="telephoneApplication" value="NURO光でんわ" class="check" id="ari">
-					<label for="ari">NURO光でんわ</label>
+					<input type="radio" name="telephoneApplication" value="0" id="noneNuro" checked>
+					<label for="noneNuro">なし</label>
+					<input type="radio" name="telephoneApplication" value="1" class="check" id="nuro">
+					<label for="nuro">NURO光でんわ</label>
 				</li>
-				<li class="categories">固定電話番号</li>
-				<li>
-					<input type="text" name="fixedLine" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
-				</li>
+				<div class='numbering' style='display:none'>
+					<li class="categories">発番方法</li>
+					<li class="app">
+						<input type="radio" name="numberingMethod" value="0" id="new" checked>
+						<label for="new">新規発番</label>
+						<input type="radio" name="numberingMethod" value="1" class="check" id="portability">
+						<label for="portability">番号ポータビリティ</label>
+					</li>
+                </div>
+                <div class='telephoneApplicationFixedLine' style='display:none'>
+					<li class="categories">固定電話番号</li>
+					<li>
+						<input type="text" name="fixedLine" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+					</li>
+                </div>
 			</ul>
 			<div class="documents">
 				<p>入会書類郵送希望先</p>
 				<div class="app">
-					<input type="radio" name="mailingDestination" value="設置場所と同じ" id="same" checked>
+					<input type="radio" name="mailingDestination" value="0" id="same" checked>
 					<label for="same">設置場所と同じ</label>
-					<input type="radio" name="mailingDestination" value="別住所に送る" id="aother">
+					<input type="radio" name="mailingDestination" value="1" id="aother">
 					<label for="aother">別住所に送る</label>
 				</div>
 			</div>
-			<ul class="form aother_address">
+			<ul class="form aother_address" style='display:none'>
 				<li class="categories">郵便番号</li>
 				<li>
 					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
@@ -236,56 +237,12 @@ $(function(){
 					<div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="mailingPrefName" id="prefectures" class="validate[required]">
-                                    <option value="" selected>都道府県を選択</option>
-                                    <option value="北海道">北海道</option>
-                                    <option value="青森県">青森県</option>
-                                    <option value="岩手県">岩手県</option>
-                                    <option value="宮城県">宮城県</option>
-                                    <option value="秋田県">秋田県</option>
-                                    <option value="山形県">山形県</option>
-                                    <option value="福島県">福島県</option>
-                                    <option value="茨城県">茨城県</option>
-                                    <option value="栃木県">栃木県</option>
-                                    <option value="群馬県">群馬県</option>
-                                    <option value="埼玉県">埼玉県</option>
-                                    <option value="千葉県">千葉県</option>
-                                    <option value="東京都">東京都</option>
-                                    <option value="神奈川県">神奈川県</option>
-                                    <option value="新潟県">新潟県</option>
-                                    <option value="富山県">富山県</option>
-                                    <option value="石川県">石川県</option>
-                                    <option value="福井県">福井県</option>
-                                    <option value="山梨県">山梨県</option>
-                                    <option value="長野県">長野県</option>
-                                    <option value="岐阜県">岐阜県</option>
-                                    <option value="静岡県">静岡県</option>
-                                    <option value="愛知県">愛知県</option>
-                                    <option value="三重県">三重県</option>
-                                    <option value="滋賀県">滋賀県</option>
-                                    <option value="京都府">京都府</option>
-                                    <option value="大阪府">大阪府</option>
-                                    <option value="兵庫県">兵庫県</option>
-                                    <option value="奈良県">奈良県</option>
-                                    <option value="和歌山県">和歌山県</option>
-                                    <option value="鳥取県">鳥取県</option>
-                                    <option value="島根県">島根県</option>
-                                    <option value="岡山県">岡山県</option>
-                                    <option value="広島県">広島県</option>
-                                    <option value="山口県">山口県</option>
-                                    <option value="徳島県">徳島県</option>
-                                    <option value="香川県">香川県</option>
-                                    <option value="愛媛県">愛媛県</option>
-                                    <option value="高知県">高知県</option>
-                                    <option value="福岡県">福岡県</option>
-                                    <option value="佐賀県">佐賀県</option>
-                                    <option value="長崎県">長崎県</option>
-                                    <option value="熊本県">熊本県</option>
-                                    <option value="大分県">大分県</option>
-                                    <option value="宮崎県">宮崎県</option>
-                                    <option value="鹿児島県">鹿児島県</option>
-                                    <option value="沖縄県">沖縄県</option>
-                                </select>
-						</div>
+                            <option value="" selected>都道府県を選択</option>
+                            <?php foreach($prefs as $pref) { ?>
+                                <option value=<?php print $pref?>><?php print $pref?></option>                                       
+                            <?php } ?>
+                        </select>
+					</div>
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
@@ -299,7 +256,7 @@ $(function(){
 				<li>
 					<input type="text" name="mailingBuilding" value="<?php print $room_number; ?>">
 				</li>
-				</ul>
+			</ul>
 
 			<div class="privacyTitle">個人情報取得における告知・同意文</div>
                 <div class="privacy">
