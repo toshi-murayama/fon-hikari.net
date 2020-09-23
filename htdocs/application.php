@@ -132,13 +132,8 @@ $(window).load(function() {
 				</li>
 				<li class="categories">生年月日</li>
 				<li>
-					<p>
-    <label for="date1-input">Select a date:</label>
-    <input name="date" type="date" id="date1" class="test class"/>
-  </p>
 					<label class="birthday">
-						<label class="date-edit"><input name="date" type="date" value="2020-09-28" id="date1"/></label>
-						<!-- <input name="birthday" type="text" id="datepicker" > -->
+						<input name="birthday" type="text" id="datepicker" >
 					</label>
 				</li>
 				<li class="categories">携帯番号</li>
@@ -389,64 +384,5 @@ $(window).load(function() {
 	</section>
 	<?php include "include/footer_form.html";?>
 	
-<script src="js/moment.min.js"></script>
-<script src="js/pikaday.min.js"></script>
-<script src="js/pikaday-responsive.js"></script>
-
-<script>
-  var $date1 = $("#date1");
-  var instance1 = pikadayResponsive($date1);
-  $date1.on("change", function() {
-    $("#output1").html($(this).val());
-  });
-
-  var $date2 = $("#date2");
-  var instance2 = pikadayResponsive($date2, {
-    outputFormat: "X"
-  });
-  $date2.on("change", function() {
-    $("#output2").html($(this).val());
-  });
-
-  var $date3 = $("#date3");
-  var instance3 = pikadayResponsive($date3, {
-    format: "Do MMM YYYY",
-    outputFormat: "X"
-  });
-
-  var $date4 = $("#date4");
-  var today = new Date();
-  var minDate = new Date();
-  var maxDate = new Date();
-  minDate.setDate(today.getDate() + 3);
-  maxDate.setDate(today.getDate() + 365);
-  var instance4 = pikadayResponsive($date4, {
-    format: "DD/MM/YYYY",
-    outputFormat: "DD/MM/YYYY",
-    pikadayOptions: {
-      minDate: minDate,
-      maxDate: maxDate,
-    },
-  });
-  instance4.setDate(minDate);
-
-  $date3.on("change", function() {
-    $("#output3").html($(this).val());
-  });
-
-  $date4.on("change", function() {
-    $("#output4").html($(this).val());
-  });
-
-  $("#clear").click(function() {
-    instance3.setDate(null);
-  });
-
-  $("#today").click(function() {
-    instance3.setDate(moment());
-  });
-
-</script>
-
 </body>
 </html>
