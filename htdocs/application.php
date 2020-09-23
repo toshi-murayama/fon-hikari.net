@@ -18,11 +18,11 @@
 <link rel="stylesheet" href="css/pikaday-package.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
+<link rel="stylesheet" href="css/jquery-ui.css" >
 <!----js TODO ダウンロードする ----> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/datepicker-ja.min.js"></script>
 <script type="text/javascript">
 
 $(function(){
@@ -87,7 +87,6 @@ $(window).load(function() {
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/jquery.autoKana.js"></script>
 <script src="js/application.js"></script>
-<script src="js/script.js"></script>
 	
 </head>
 
@@ -133,7 +132,7 @@ $(window).load(function() {
 				<li class="categories">生年月日</li>
 				<li>
 					<label class="birthday">
-						<input name="birthday" type="text" id="datepicker" >
+						<input name="birthday" type="text" id="datepicker" class="validate[required]">
 					</label>
 				</li>
 				<li class="categories">携帯番号</li>
