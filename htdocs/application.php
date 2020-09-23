@@ -48,32 +48,32 @@ $(function(){
 			<ul class="form">
 				<li class="categories">申込区分</li>
 				<li class="app">
-					<input type="radio" name="申込区分" value="個人" id="individual" checked>
+					<input type="radio" name="applicationClassification" value="個人" id="individual" checked>
 					<label for="individual">個人</label>
-					<input type="radio" name="申込区分" value="法人" class="check" id="corporation">
+					<input type="radio" name="applicationClassification" value="法人" class="check" id="corporation">
 					<label for="corporation">法人</label>
 				</li>
 				<li class="categories">
 					<dl>
 						<dt>氏名（姓）<br>
-						<input size="30" type="text" name="姓" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
+						<input size="30" type="text" name="lastName" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
 						<dd>氏名（名）<br>
-						<input size="30" type="text" name="名" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
+						<input size="30" type="text" name="firstName" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
 					</dl>
 					</li>
 				<li class="categories">
 					<dl>
 						<dt>フリガナ（セイ）<br>
-						<input size="30" type="text" name="姓（カナ）" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
+						<input size="30" type="text" name="lastNameKana" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
 						<dd>フリガナ（メイ）<br>
-						<input size="30" type="text" name="名（カナ）" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
+						<input size="30" type="text" name="firstNameKana" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
 					</dl>
 				</li>
 				<li class="categories">性別</li>
 				<li class="app">
-					<input type="radio" name="性別" value="男性" id="man" class="check">
+					<input type="radio" name="sex" value="男性" id="man" class="check">
 					<label for="man">男性</label>
-					<input type="radio" name="性別" value="女性" class="check" id="women">
+					<input type="radio" name="sex" value="女性" class="check" id="women">
 					<label for="women">女性</label>
 				</li>
 				<li class="categories">生年月日</li>
@@ -84,24 +84,24 @@ $(function(){
 				</li>
 				<li class="categories">電話番号</li>
 				<li>
-					<input type="text" name="電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+					<input type="text" name="phoneNumber" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
 				</li>
 				<li class="categories">メールアドレス</li>
 				<li>
-					<input type="text" name="メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+					<input type="text" name="mailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
 				</li>
 			</ul>
 			<h4>fon光 設置先住所</h4>
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="郵便番号" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
 					</li>
 				<li class="categories">都道府県</li>
 				<li>
 					<div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-						<select name="pref_name" id="prefectures" class="validate[required]">
+						<select name="installationPref" id="prefectures" class="validate[required]">
                                     <option value="" selected>都道府県を選択</option>
                                     <option value="北海道">北海道</option>
                                     <option value="青森県">青森県</option>
@@ -155,30 +155,36 @@ $(function(){
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
-					<input type="text" name="市区町村" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="installationMunicipalities" value="<?php print $address; ?>" class="validate[required]" id="address">
 				</li>
 				<li class="categories">町丁名・番地号</li>
 				<li>
-					<input type="text" name="町丁名、番地号" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="installationTown" value="<?php print $address; ?>" class="validate[required]" id="address">
 				</li>
                 <li class="categories">建物名・部屋番号</li>
 				<li>
-					<input type="text" name="建物名・部屋番号" value="<?php print $room_number; ?>">
+					<input type="text" name="installationBuilding" value="<?php print $room_number; ?>">
 				</li>
 				<li>物件の種類をご選択ください。</li>
 				<li>
 					<ul class="type">
-						<li><input id="house01" name="house" type="radio" value="一軒家" class="check">
-								<label for="house01"><img src="img/img_home01.png" alt="一軒家"/><br>一軒家</label></li>
-							<li><input id="house02" name="house" type="radio" value="マンション（3F以下）" class="check">
-								<label for="house02"><img src="img/img_home02.png" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label></li>
-							<li><input id="house03" name="house" type="radio" value="マンション（4F以上）" class="check">
-								<label for="house03"><img src="img/img_home03.png" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label></li>
+						<li>
+                            <input id="house01" name="homeType" type="radio" value="house" class="check">
+							<label for="house01"><img src="img/img_home01.png" alt="一軒家"/><br>一軒家</label>
+                        </li>
+                        <li>
+                            <input id="house02" name="homeType" type="radio" value="apartment3rdFloorAndBelow" class="check">
+                            <label for="house02"><img src="img/img_home02.png" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label>
+                        </li>
+                        <li>
+                            <input id="house03" name="homeType" type="radio" value="apartment3rdFloorAndAbove" class="check">
+                            <label for="house03"><img src="img/img_home03.png" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label>
+                        </li>
 					</ul>
 				</li>
 				<li class="categories">連絡先メールアドレス</li>
 				<li>
-					<input type="text" name="連絡先メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+					<input type="text" name="contactMailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
 				</li>
 				<li class="categories">連絡先メールアドレス（確認）</li>
 				<li>
@@ -190,6 +196,8 @@ $(function(){
 						<select name="ownership" id="ownership" class="validate[required]">
                                     <option value="" selected>選択してください</option>
                                     <option value="賃貸">賃貸</option>
+                                    <option value="分譲">分譲</option>
+                                    <option value="分譲賃貸">分譲賃貸</option>
                                     <option value="持ち家">持ち家</option>
 							</select>
 					</div>
@@ -199,35 +207,35 @@ $(function(){
 			<ul class="form">
 				<li class="categories">光電話申込</li>
 				<li class="app">
-					<input type="radio" name="光電話申込" value="なし" id="nashi" checked>
+					<input type="radio" name="telephoneApplication" value="なし" id="nashi" checked>
 					<label for="nashi">なし</label>
-					<input type="radio" name="光電話申込" value="NURO光でんわ" class="check" id="ari">
+					<input type="radio" name="telephoneApplication" value="NURO光でんわ" class="check" id="ari">
 					<label for="ari">NURO光でんわ</label>
 				</li>
 				<li class="categories">固定電話番号</li>
 				<li>
-					<input type="text" name="固定電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+					<input type="text" name="fixedLine" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
 				</li>
 			</ul>
 			<div class="documents">
 				<p>入会書類郵送希望先</p>
 				<div class="app">
-					<input type="radio" name="入会書類郵送希望先" value="設置場所と同じ" id="same" checked>
+					<input type="radio" name="mailingDestination" value="設置場所と同じ" id="same" checked>
 					<label for="same">設置場所と同じ</label>
-					<input type="radio" name="入会書類郵送希望先" value="別住所に送る" id="aother">
+					<input type="radio" name="mailingDestination" value="別住所に送る" id="aother">
 					<label for="aother">別住所に送る</label>
 				</div>
 			</div>
 			<ul class="form aother_address">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="郵便番号" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
 				</li>
 				<li class="categories">都道府県</li>
 				<li>
 					<div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-						<select name="pref_name" id="prefectures" class="validate[required]">
+						<select name="mailingPrefName" id="prefectures" class="validate[required]">
                                     <option value="" selected>都道府県を選択</option>
                                     <option value="北海道">北海道</option>
                                     <option value="青森県">青森県</option>
@@ -281,15 +289,15 @@ $(function(){
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
-					<input type="text" name="市区町村" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="mailingMunicipalities" value="<?php print $address; ?>" class="validate[required]" id="address">
 				</li>
 				<li class="categories">町丁名・番地号</li>
 				<li>
-					<input type="text" name="町丁名、番地号" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="mailingTown" value="<?php print $address; ?>" class="validate[required]" id="address">
 				</li>
                 <li class="categories">建物名・部屋番号</li>
 				<li>
-					<input type="text" name="建物名・部屋番号" value="<?php print $room_number; ?>">
+					<input type="text" name="mailingBuilding" value="<?php print $room_number; ?>">
 				</li>
 				</ul>
 
