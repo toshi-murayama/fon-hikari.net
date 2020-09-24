@@ -11,13 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: staging
-      # 保存したシークレットたちを環境変数に設定
-      env:
-        SECRET_KEY: ${{ secrets.STAGING_SECRET_KEY }}
-        EC2_USER: ${{ secrets.EC2_USER }}
-        EC2_HOST: ${{ secrets.STAGING_EC2_HOST }}
-        run:
-          # 秘密鍵にファイル名secret_keyをつけ、パーミッションの変更
+        env:
+          SECRET_KEY: ${{ secrets.STAGING_SECRET_KEY }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_HOST: ${{ secrets.STAGING_EC2_HOST }}
+        run:  
           echo "$SECRET_KEY" > secret_key && chmod 600 secret_key        
-          # ssh接続　＞　デプロイするディレクトリに行く　＞　デプロイ
           ssh -oStrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} -i secret_key "cd /home/ec2-user/fon-hikari/ && git pull origin staging"
