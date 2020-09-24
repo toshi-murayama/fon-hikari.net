@@ -15,7 +15,7 @@
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/pikaday-package.css">
+  <link rel="stylesheet" href="pikaday/dist/pikaday-package.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="css/jquery-ui.css" >
@@ -81,14 +81,13 @@ $(window).load(function() {
 			}).change();
 });
 </script>
-<script src="js/pikaday-responsive-modernizr.js"></script>
-	
+  <script src="pikaday/dist/dependencies/pikaday-responsive-modernizr.js"></script>
+<script src="js/jquery.zip2addr.js"></script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/ajaxzip3.js"></script>
 <script src="js/jquery.autoKana.js"></script>
-<!-- <script src="js/application.js"></script> -->
 	
 </head>
 
@@ -382,7 +381,7 @@ $(window).load(function() {
                         <br>
                     </div>
                 </div>
-			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
+			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] orange" id="agree">
 				<label for="agree" class="agree"></label>
 				同意する
 			</p>
@@ -394,6 +393,5 @@ $(window).load(function() {
         </form>
 	</section>
 	<?php include "include/footer_form.html";?>
-	
 </body>
 </html>
