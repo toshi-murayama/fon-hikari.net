@@ -226,6 +226,7 @@ footer {
                 >ul{
                     display: flex;
                     justify-content: flex-end;
+                    margin-bottom: 10px;
                     li{
                         margin-left: 10px;
                         img{
@@ -242,7 +243,7 @@ footer {
 
 /*-----top-----*/
 #top{
-    background: url(../img/top_bg.jpg) no-repeat 50% 50%;
+    background: url(../img/top_bg.jpg) no-repeat 50% 10%;
     background-size: cover;
     height: 70vh;
     color: #fff;
@@ -313,11 +314,12 @@ footer {
                 span{
                     display: block;
                     img{
-                        width: 50px;
+                        width: 60px;
                     }
                 }
                 dl{
                     margin-left: 10px;
+                    font-weight: 600;
                     dt{}
                     dd{
                         color: #3796ee;
@@ -366,7 +368,7 @@ footer {
     padding: 50px 0;
     article{
         width: 94%;
-        max-width: 1200px;
+        max-width: 1100px;
         height: 100%;
         margin: 0 auto;
         align-items: center;
@@ -401,7 +403,7 @@ footer {
     color: #fff;
     article{
         width: 94%;
-        max-width: 1200px;
+        max-width: 1100px;
         height: 100%;
         margin: 0 auto;
         align-items: center;
@@ -439,6 +441,7 @@ footer {
                         width: 50px;
                     }
                     dl{
+                        width: 150px;
                         margin-left: 10px;
                         dt{}
                         dd{
@@ -462,7 +465,7 @@ footer {
     background: #f6f6f6;
     article{
         width: 94%;
-        max-width: 1200px;
+        max-width: 1100px;
         height: 100%;
         margin: 0 auto;
         align-items: center;
@@ -476,16 +479,17 @@ footer {
             display: flex;
             justify-content: space-between;
             .boxL{
-                width: 45%;
+                width: 60%;
                 vertical-align: middle;
                 align-items: center;
                 img{
                     vertical-align: middle;
                     align-items: center;
+                    width: 100%;
                 }
             }
             .boxR{
-                width: 50%;
+                width: 35%;
                 dl{
                     dt{
                         font-weight: bold;
@@ -607,7 +611,7 @@ footer {
     padding: 50px 0;
     article{
         width: 94%;
-        max-width: 1000px;
+        max-width: 800px;
         height: 100%;
         margin: 0 auto;
         align-items: center;
@@ -622,18 +626,31 @@ footer {
             justify-content: center;
             li{
                 width: 40%;
-                img{
+                margin: 0 5%;
+                line-height: 2em;
+                .imgBox{
                     height: 300px;
-                    width: auto;
+                    display: flex;
+                    align-items: flex-end;
+                    img{
+                        height: 100%;
+                        width: auto;
+                    }
                 }
                 h3{
                     font-size: 28px;
                     font-weight: 900;
                     text-align: center;
+                    margin: 15px 0;
                 }
                 p{}
                 a{
                     color: #3796ee;
+                }
+            }
+            li:nth-child(2){
+                img{
+                    margin-left: -30px;
                 }
             }
         }
