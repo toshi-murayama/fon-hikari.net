@@ -8,49 +8,22 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>fon光</title>
-<meta name="robots" content="noindex" />
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="">
-<meta name="keywords" content="">
+<meta name="description" content="月額3,980円！fon光で快適なインターネット生活を送ろう">
+<meta name="keywords" content="fon,fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
+<?php include "include/ogp.html";?>
+<!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
 
 <body>
-    <!-- 固定ヘッダ表示用のブロック -->
-    <div class="fix-header">
-        <article>
-            <div id="logo">
-                <a href="/"><img src="img/fon_logo_w.svg" alt="fon光"></a>
-            </div>
-            <div class="boxR">
-                <ul>
-                    <li><a href="">top</a></li>
-                    <li><a href="">option</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="" class="mypage">マイページ</a></li>
-                </ul>
-            </div>
-        </article>
-    </div>
-    <!-- ここから常時表示させるヘッダ―部分 -->
-    <header>
-        <article>
-            <div id="logo">
-                <a href="/"><img src="img/fon_logo_w.svg" alt="fon光"></a>
-            </div>
-            <div class="boxR">
-                <ul>
-                    <li><a href="">top</a></li>
-                    <li><a href="">option</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="" class="mypage">マイページ</a></li>
-                </ul>
-            </div>
-        </article>
-    </header>
+    <?php include "include/header.html";?>
 
     <div id="wrap">
         <section id="top">
@@ -62,7 +35,7 @@
                 <p>下り最大 2Gbps</p>
                 <ul>
                     <li>
-                        <a href=""></a>
+                        <a href="area"></a>
                         <span><img src="img/top_app_ico.svg" alt=""></span>
                         <dl>
                             <dt>webでお申し込み</dt>
@@ -70,7 +43,7 @@
                         </dl>
                     </li>
                     <li>
-                        <a href=""></a>
+                        <a href="contact"></a>
                         <span><img src="img/top_contact_ico.svg" alt=""></span>
                         <dl>
                             <dt>メールでお問い合わせ</dt>
@@ -78,7 +51,7 @@
                         </dl>
                     </li>
                     <li>
-                        <a href=""></a>
+                        <a href="tel:0120-966-486"></a>
                         <span><img src="img/top_tel_ico.svg" alt=""></span>
                         <dl>
                             <dt>電話で申し込み</dt>
@@ -212,13 +185,13 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <dt>規約</dt>
                             <dd>
                                 <ul>
-                                    <li><a href="">NURO 光 でんわ規約約款</a></li>
-                                    <li><a href="">NURO 光 でんわ重要事項説明</a></li>
-                                    <li><a href="">ホワイトコール 24 重要事項説明</a></li>
+                                    <li><a href="pdf/nuro_hikari_tel_yakkan.pdf" target="_blank">NURO 光 でんわ規約約款</a></li>
+                                    <li><a href="pdf/nuro_hikari_tel_jiko.pdf" target="_blank">NURO 光 でんわ重要事項説明</a></li>
+                                    <li><a href="pdf/whitecall_doc.pdf" target="_blank">ホワイトコール 24 重要事項説明</a></li>
                                 </ul>
                             </dd>
                         </dl>
-                        <a href="" class="btn">今すぐお申し込み</a>
+                        <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
                 <!--div>
@@ -306,7 +279,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
     関西（大阪、兵庫、京都、滋賀、奈良）<br>
     九州（福岡、佐賀）<br>
     ※一部エリアを除く
-                    <a href="">エリア検索する</a>
+                    <a href="area">エリア検索する</a>
                 </div>
                 <div class="boxR">
                     <img src="img/map.svg" alt="map">
@@ -319,50 +292,23 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <ul>
                     <li>
-                        <img src="img/support_img01.svg" alt="">
+                        <div class="imgBox"><img src="img/support_img01.svg" alt=""></div>
                         <h3>ご不明な点は</h3>
                         <p>まずは、よくある質問事項をご確認ください。</p>
-                        <a href="">詳しくはこちらから</a>
+                        <a href="faq">詳しくはこちらから</a>
                     </li>
                     <li>
-                        <img src="img/support_img02.png" alt="">
+                        <div class="imgBox"><img src="img/support_img02.png" alt=""></div>
                         <h3>お困りの場合は</h3>
                         <p>お困りの問題に対する解決策をご案内します。</p>
-                        <a href="">お電話は0120-966-486まで</a><br>
-                        <a href="">メールでのお問い合わせはこちらから</a>
+                        <a href="tel:0120-966-486">お電話は0120-966-486まで</a><br>
+                        <a href="contact">メールでのお問い合わせはこちらから</a>
                     </li>
                 </ul>
             </article>
         </section>
     </div>
 
-    <footer>
-        <article>
-            <div class="boxL">
-                <img src="img/fon_logo_w.svg" alt="fon光">
-                フォン・ジャパン株式会社<br>
-電気通信事業者番号：第A-18-9032号<br>
-代理店届出番号：C2030088
-            </div>
-            <div class="boxR">
-                <ul>
-                    <li><a href="">会社概要</a></li>
-                    <li><a href="">個人情報保護方針</a></li>
-                    <li><a href="">障害・メンテナンス情報</a></li>
-                    <li><a href="">よくある質問</a></li>
-                    <li><a href="">お申し込み</a></li>
-                    <li><a href="">お問い合わせ</a></li>
-                </ul>
-                <div class="inner">
-                    <ul>
-                        <li><a href=""><img src="img/tw_ico_f.svg" alt="twitter"></a></li>
-                        <li><a href=""><img src="img/line_ico_f.svg" alt="LINE"></a></li>
-                        <li><a href=""><img src="img/fb_ico_f.svg" alt="facebook"></a></li>
-                    </ul>
-                    <small>Copyright @ 2020 Fon japan.</small>
-                </div>
-            </div>
-        </article>
-    </footer>
+    <?php include "include/footer.html";?>
 </body>
 </html>

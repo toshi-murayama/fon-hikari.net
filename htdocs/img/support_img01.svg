@@ -17,12 +17,12 @@
 	.st11{font-size:13px;}
 	.st12{font-size:12.9992px;}
 </style>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="268.5" x2="486" y2="268.5" gradientTransform="matrix(1 0 0 -1 0 500)">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="260.5" x2="486" y2="260.5" gradientTransform="matrix(1 0 0 -1 0 500)">
 	<stop  offset="0" style="stop-color:#FFD300"/>
 	<stop  offset="1" style="stop-color:#EC7103"/>
 </linearGradient>
-<path class="st0" d="M166.92,0L166.92,0C263.62,40,360.31,80,457,120c9.67,52,19.33,104,29,156c-33,61.33-66,122.67-99,184
-	c-81.67,1-163.33,2-245,3C94.67,412.67,47.33,362.33,0,312c7.33-62,14.67-124,22-186C70.31,84,118.62,42,166.92,0z"/>
+<path class="st0" d="M166.92,0C263.62,40,360.31,80,457,120c9.67,52,19.33,104,29,156c-23,50.67-46,101.33-69,152
+	c-84.33,17-168.67,34-253,51C109.33,423.33,54.67,367.67,0,312c7.33-62,14.67-124,22-186C70.31,84,118.62,42,166.92,0z"/>
 <g>
 	<g>
 		<g id="paper_clip_8_">
