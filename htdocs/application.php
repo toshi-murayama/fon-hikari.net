@@ -12,85 +12,112 @@
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/style.css"> 
+<link rel="stylesheet" href="css/pikaday-package.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
 <!----js---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.privacy').hide();
+	$('.privacyTitle').on('click', function() {
+		$('.privacy').slideToggle(500);
+	});
+});
+	
+$(window).load(function() {
+		//発送先住所
+		$('[name="mailingDestination"]:radio').change( function() {
+				if($('[id=same]').prop('checked')){
+					$('.aother_address').fadeOut();
+				} else if ($('[id=aother]').prop('checked')) {
+					$('.aother_address').fadeIn();
+				} 
+			}).change();
+});
+</script>
+<script src="js/pikaday-responsive-modernizr.js"></script>
+	
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/jquery.autoKana.js"></script>
 <script src="js/application.js"></script>
 <script src="js/script.js"></script>
+	
+
 </head>
 
 <body>
-<div id="container">
-<div id="header">
-        <div class="header_box">
-            <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
-            <div class="header_c">
-                <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-966-486</p>
-            </div>
-            <div class="header_r"><a href="">マイページ</a></div>
-        </div>
-    </div>
-
-<div id="contents_bg">
-    <div id="contents">
-        <p class="mb20 mt20 pd5">ご依頼主・お届け先住所をご入力ください。
-        <br><span class="example">必須</span>は入力必須項目です。
-        <br> 入力後、一番下の「確認画面へ」を押してください。</p>
-        <form method="post" action="confirmation.php" id="appForm">
-            <!--creditform-->
-            <input type="hidden" name="submit_flg" value="1">
-            <div>
-                <table class="formTable animated fadeIn">
-                    <thead>
-                        <tr>
-                            <th colspan="2">お客様情報</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>お名前<span>必須</span></th>
-                            <td>
-                                姓
-                                <input size="30" type="text" name="姓" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"> 名
-                                <input size="30" type="text" name="名" value="<?php print $second_name; ?>" class="validate[required]" id="firstName">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>フリガナ<span>必須</span></th>
-                            <td>
-                                セイ
-                                <input size="30" type="text" name="姓（カナ）" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"> メイ
-                                <input size="30" type="text" name="名（カナ）" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>性別<span>必須</span></th>
-                            <td class="sex">
-                                <input type="radio" name="性別" value="男性" id="man" class="check">
-                                    <label for="man">男性</label>
-                                    <input type="radio" name="性別" value="女性" class="check" id="women">
-                                        <label for="women">女性</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>郵便番号<span>必須</span></th>
-                            <td class="heightL address">
-                                〒
-                                <input size="20" type="text" name="郵便番号" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="validate[required],[custom[onlyNumberSp]]" id="postalCode"><a href="http://www.post.japanpost.jp/zipcode/" target="_blank">郵便番号検索</a>
-                                <br>
-                                <a href="" class="autoInput">郵便番号から住所を自動入力</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>都道府県<span>必須</span></th>
-                            <td>
-                                <select name="pref_name" id="prefectures" class="validate[required]">
+	<?php include "include/header_form.html";?>
+	<section id="application">
+		<h2>fon光お申し込み</h2>
+		<h3>02 お客様情報入力</h3>
+		<div class="search_text">ご契約先の情報をご入力ください。</div>
+		<form method="post" action="confirmation.php" id="appForm">
+			<h4>ご契約者情報</h4>
+			<ul class="form">
+				<li class="categories">申込区分</li>
+				<li class="app">
+					<input type="radio" name="applicationClassification" value="個人" id="individual" checked>
+					<label for="individual">個人</label>
+					<input type="radio" name="applicationClassification" value="法人" class="check" id="corporation">
+					<label for="corporation">法人</label>
+				</li>
+				<li class="categories">
+					<dl>
+						<dt>氏名（姓）<br>
+						<input size="30" type="text" name="lastName" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
+						<dd>氏名（名）<br>
+						<input size="30" type="text" name="firstName" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
+					</dl>
+					</li>
+				<li class="categories">
+					<dl>
+						<dt>フリガナ（セイ）<br>
+						<input size="30" type="text" name="lastNameKana" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
+						<dd>フリガナ（メイ）<br>
+						<input size="30" type="text" name="firstNameKana" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
+					</dl>
+				</li>
+				<li class="categories">性別</li>
+				<li class="app">
+					<input type="radio" name="sex" value="男性" id="man" class="check">
+					<label for="man">男性</label>
+					<input type="radio" name="sex" value="女性" class="check" id="women">
+					<label for="women">女性</label>
+				</li>
+				<li class="categories">生年月日</li>
+				<li>
+					<p>
+    <label for="date1-input">Select a date:</label>
+    <input name="date" type="date" id="date1" class="test class"/>
+  </p>
+					<label class="birthday">
+						<label class="date-edit"><input name="date" type="date" value="2020-09-28" id="date1"/></label>
+					</label>
+				</li>
+				<li class="categories">電話番号</li>
+				<li>
+					<input type="text" name="phoneNumber" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+				</li>
+				<li class="categories">メールアドレス</li>
+				<li>
+					<input type="text" name="mailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+				</li>
+			</ul>
+			<h4>fon光 設置先住所</h4>
+			<ul class="form">
+				<li class="categories">郵便番号</li>
+				<li>
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					</li>
+				<li class="categories">都道府県</li>
+				<li>
+					<div class="select">
+						<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						<select name="installationPref" id="prefectures" class="validate[required]">
                                     <option value="" selected>都道府県を選択</option>
                                     <option value="北海道">北海道</option>
                                     <option value="青森県">青森県</option>
@@ -140,120 +167,160 @@
                                     <option value="鹿児島県">鹿児島県</option>
                                     <option value="沖縄県">沖縄県</option>
                                 </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>住所<span>必須</span></th>
-                            <td>
-                                <input size="60" type="text" name="住所" value="<?php print $address; ?>" class="validate[required]" id="address">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>建物名・部屋番号</th>
-                            <td>
-                                <input size="60" type="text" name="マンション名・部屋番号" value="<?php print $room_number; ?>">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>電話番号<span>必須</span></th>
-                            <td>
-                                <input size="30" type="text" name="電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]"> <span class="small">ハイフンなし</span></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス<span>必須</span></th>
-                            <td>
-                                <input size="30" type="text" name="メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時<span>必須</span></th>
-                            <td>
-                                曜日
-                                <select name="連絡のつきやすい日時（曜日）" class="validate[required]">
-                                    <option value="いつでも" <?php 
-									if ($tel_week　=='いつでも' ) { 
-										?> selected<?php
-									}
-									?>>いつでも</option>
-                                    <option value="月" <?php 
-									if ($tel_week　=='月' ) { 
-										?> selected<?php
-									}
-									?>>月</option>
-                                    <option value="火" <?php 
-									if ($tel_week　=='火' ) { 
-										?> selected<?php
-									}
-									?>>火</option>
-                                    <option value="水" <?php
-									if ($tel_week　=='水' ) { 
-										?> selected<?php
-									}
-									?>>水</option>
-                                    <option value="木" <?php
-									if ($tel_week　=='木' ) {
-										?> selected<?php
-									}
-									?>>木</option>
-                                    <option value="金" <?php
-									if ($tel_week　=='金' ) {
-										?> selected<?php
-									}
-									?>>金</option>
-                                    <option value="土" <?php 
-									if ($tel_week　=='土' ) { 
-									?> selected<?php
-									}
-									?>>土</option>
-                                    <option value="日" <?php 
-									if ($tel_week　=='日' ) { 
-										?> selected<?php
-									}
-									?>>日</option>
+						</div>
+				</li>
+				<li class="categories">市区町村</li>
+				<li>
+					<input type="text" name="installationMunicipalities" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+				<li class="categories">町丁名・番地号</li>
+				<li>
+					<input type="text" name="installationTown" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+                <li class="categories">建物名・部屋番号</li>
+				<li>
+					<input type="text" name="installationBuilding" value="<?php print $room_number; ?>">
+				</li>
+				<li>物件の種類をご選択ください。</li>
+				<li>
+					<ul class="type">
+						<li>
+                            <input id="house01" name="homeType" type="radio" value="house" class="check">
+							<label for="house01"><img src="img/img_home01.png" alt="一軒家"/><br>一軒家</label>
+                        </li>
+                        <li>
+                            <input id="house02" name="homeType" type="radio" value="apartment3rdFloorAndBelow" class="check">
+                            <label for="house02"><img src="img/img_home02.png" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label>
+                        </li>
+                        <li>
+                            <input id="house03" name="homeType" type="radio" value="apartment3rdFloorAndAbove" class="check">
+                            <label for="house03"><img src="img/img_home03.png" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label>
+                        </li>
+					</ul>
+				</li>
+				<li class="categories">連絡先メールアドレス</li>
+				<li>
+					<input type="text" name="contactMailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+				</li>
+				<li class="categories">連絡先メールアドレス（確認）</li>
+				<li>
+					<input type="text" name="連絡先メールアドレス（確認）" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+				</li>
+				<li class="categories">所有形態</li>
+				<li><div class="select">
+						<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						<select name="ownership" id="ownership" class="validate[required]">
+                                    <option value="" selected>選択してください</option>
+                                    <option value="賃貸">賃貸</option>
+                                    <option value="分譲">分譲</option>
+                                    <option value="分譲賃貸">分譲賃貸</option>
+                                    <option value="持ち家">持ち家</option>
+							</select>
+					</div>
+				</li>
+			</ul>
+			<h4>オプション</h4>
+			<ul class="form">
+				<li class="categories">光電話申込</li>
+				<li class="app">
+					<input type="radio" name="telephoneApplication" value="なし" id="nashi" checked>
+					<label for="nashi">なし</label>
+					<input type="radio" name="telephoneApplication" value="NURO光でんわ" class="check" id="ari">
+					<label for="ari">NURO光でんわ</label>
+				</li>
+				<li class="categories">固定電話番号</li>
+				<li>
+					<input type="text" name="fixedLine" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+				</li>
+			</ul>
+			<div class="documents">
+				<p>入会書類郵送希望先</p>
+				<div class="app">
+					<input type="radio" name="mailingDestination" value="設置場所と同じ" id="same" checked>
+					<label for="same">設置場所と同じ</label>
+					<input type="radio" name="mailingDestination" value="別住所に送る" id="aother">
+					<label for="aother">別住所に送る</label>
+				</div>
+			</div>
+			<ul class="form aother_address">
+				<li class="categories">郵便番号</li>
+				<li>
+					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+				</li>
+				<li class="categories">都道府県</li>
+				<li>
+					<div class="select">
+						<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						<select name="mailingPrefName" id="prefectures" class="validate[required]">
+                                    <option value="" selected>都道府県を選択</option>
+                                    <option value="北海道">北海道</option>
+                                    <option value="青森県">青森県</option>
+                                    <option value="岩手県">岩手県</option>
+                                    <option value="宮城県">宮城県</option>
+                                    <option value="秋田県">秋田県</option>
+                                    <option value="山形県">山形県</option>
+                                    <option value="福島県">福島県</option>
+                                    <option value="茨城県">茨城県</option>
+                                    <option value="栃木県">栃木県</option>
+                                    <option value="群馬県">群馬県</option>
+                                    <option value="埼玉県">埼玉県</option>
+                                    <option value="千葉県">千葉県</option>
+                                    <option value="東京都">東京都</option>
+                                    <option value="神奈川県">神奈川県</option>
+                                    <option value="新潟県">新潟県</option>
+                                    <option value="富山県">富山県</option>
+                                    <option value="石川県">石川県</option>
+                                    <option value="福井県">福井県</option>
+                                    <option value="山梨県">山梨県</option>
+                                    <option value="長野県">長野県</option>
+                                    <option value="岐阜県">岐阜県</option>
+                                    <option value="静岡県">静岡県</option>
+                                    <option value="愛知県">愛知県</option>
+                                    <option value="三重県">三重県</option>
+                                    <option value="滋賀県">滋賀県</option>
+                                    <option value="京都府">京都府</option>
+                                    <option value="大阪府">大阪府</option>
+                                    <option value="兵庫県">兵庫県</option>
+                                    <option value="奈良県">奈良県</option>
+                                    <option value="和歌山県">和歌山県</option>
+                                    <option value="鳥取県">鳥取県</option>
+                                    <option value="島根県">島根県</option>
+                                    <option value="岡山県">岡山県</option>
+                                    <option value="広島県">広島県</option>
+                                    <option value="山口県">山口県</option>
+                                    <option value="徳島県">徳島県</option>
+                                    <option value="香川県">香川県</option>
+                                    <option value="愛媛県">愛媛県</option>
+                                    <option value="高知県">高知県</option>
+                                    <option value="福岡県">福岡県</option>
+                                    <option value="佐賀県">佐賀県</option>
+                                    <option value="長崎県">長崎県</option>
+                                    <option value="熊本県">熊本県</option>
+                                    <option value="大分県">大分県</option>
+                                    <option value="宮崎県">宮崎県</option>
+                                    <option value="鹿児島県">鹿児島県</option>
+                                    <option value="沖縄県">沖縄県</option>
                                 </select>
-                                時間帯
-                                <select name="連絡のつきやすい日時（時間帯）" class="validate[required]">
-                                    <option value="いつでも" <?php 
-									if ($tel_time=='いつでも' ) { 
-									?> selected<?php
-									}
-									?>>いつでも</option>
-                                    <option value="午前中" <?php 
-									if ($tel_time=='午前中' ) { 
-									?> selected<?php
-									}
-									?>>午前中</option>
-                                    <option value="12-14" <?php 
-									if ($tel_time=='12-14' ) { 
-										?> selected<?php
-									}
-									?>>12-14</option>
-                                    <option value="14-16" <?php 
-									if ($tel_time=='14-16' ) { 
-										?> selected<?php
-									}
-									?>>14-16</option>
-                                    <option value="16-18" <?php 
-									if ($tel_time=='16-18' ) { 
-										?> selected<?php
-									}
-									?>>16-18</option>
-                                    <option value="18-21" <?php 
-									if ($tel_time=='18-21' ) { 
-										?> selected<?php
-									}
-									?>>18-21</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+						</div>
+				</li>
+				<li class="categories">市区町村</li>
+				<li>
+					<input type="text" name="mailingMunicipalities" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+				<li class="categories">町丁名・番地号</li>
+				<li>
+					<input type="text" name="mailingTown" value="<?php print $address; ?>" class="validate[required]" id="address">
+				</li>
+                <li class="categories">建物名・部屋番号</li>
+				<li>
+					<input type="text" name="mailingBuilding" value="<?php print $room_number; ?>">
+				</li>
+				</ul>
 
-
-
-                <div class="kiyaku">
-                    <p><b>【重要】お申込みをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</b></p>
-                    <div class="kiyaku_text">
+			<div class="privacyTitle">個人情報取得における告知・同意文</div>
+                <div class="privacy">
+                    <h5>【重要】お申込みをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</h5>
+                    <div class="privacy_text">
                         フォン・ジャパン株式会社 (以下、「当社」という。)は、 通信・ネットワークソリューション事業、 営業事業、IT・Webソリューション事業を行っております。<br> 
                         当社は、当社の事業の用に供するすべての個人情報を適切に取扱うため、 当社全従業者が遵守すべき行動基準として本個人情報保護方針を定め、その遵守の徹底を図ることといたします。<br>
                         <br>    
@@ -270,9 +337,7 @@
                         フォン・ジャパン株式会社<br>
                         代表取締役社長 横田 和典<br>
                         <br>
-                        当社における<br>
-                        個人情報の取扱いについて<br>
-                        <br>
+                        <h6>当社における個人情報の取扱いについて</h6>
                         （個人情報保護法及びJISに基づく公表事項及び本人が容易に知り得る状態に置く事項）<br>
                         <br>
                         1.お取引先様から委託を受ける業務において取り扱う個人情報の利用目的<br>
@@ -282,16 +347,12 @@
                         ・「ブロードバンド・モバイル等通信サービスの販売取次業務」に関しては「市販の住宅地図」を取り扱います。<br>
                         ・「ドメイン、サーバー等の取得代行をはじめとしたウェブ関連サービス及びデザイン関連サービス」に関しては、「エンドクライアントの企業情報」を取り扱います。<br>
                         <br>
-                        当社が保有する開示対象個人情報について<br>
-                        <br>    
-                        個人情報取り扱い事業者の氏名または名称<br>
-                        <br>    
+                        <h6>当社が保有する開示対象個人情報について</h6>
+                        <p>個人情報取り扱い事業者の氏名または名称</p>
                         フォン・ジャパン株式会社<br>
                         <br>
-                        すべての開示対象個人情報の利用目的<br>
-                        <br>
+                        <h6>すべての開示対象個人情報の利用目的</h6>
                         当社が、通信・ネットワークソリューション事業、営業事業、 IT・webソリューション事業を主な事業としていることを踏まえて当社が取扱う個人情報の利用目的を以下のように定めます。<br>
-                        <br>
                         <br>
                         1.お客様の個人情報<br>
                         ・ご契約内容を実施し、適切に管理するため<br>
@@ -322,16 +383,13 @@
                         ・お問い合わせやご連絡内容を正確に把握し、対処するため<br>
                         ※上記利用目的において、「ご契約内容を適切に管理するため」としているものは、「契約に入る前の段階における利用」と「契約終了後における利用」を含みます。<br>
                         <br>
-                        開示対象個人情報の取扱いに関する苦情の申し出先<br>
-                        <br>
+                        <h6>開示対象個人情報の取扱いに関する苦情の申し出先</h6>
                         「個人情報に関する相談窓口」（末尾に記載）<br>
                         <br>
-                        認定個人情報保護団体の名称及び苦情の解決の申し出先<br>
-                        <br>
+                        <h6>認定個人情報保護団体の名称及び苦情の解決の申し出先</h6>
                         現在当社は、認定個人情報保護団体の対象事業者ではございません。<br>
                         <br>
-                        開示等の求めに応じる手続き<br>
-                        <br>
+                        <h6>開示等の求めに応じる手続き</h6>
                         1.開示等の求めの申し出先<br>
                         <br>
                         2.開示等の求めに際して提出すべき書面の様式その他の開示等の求めの方式<br>
@@ -361,22 +419,76 @@
                         なお、送付頂いた書類は原則としてご返却いたしません。                        
                         <br>
                     </div>
-                    <p style="text-align:center;">個人情報取得における告知・同意文、<a href="privacy.html" target="_blank">個人情報保護方針</a>に同意します
-                        <input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required]" id="agree">
-                        <label for="agree" class="agree"><img src="img/check.png" alt="">
-                        </label>
-                    </p>
                 </div>
-                <div class="btn">
-                    <input type="submit" name="submit" value="確認画面へ" id="submit">
-                </div>
-            </div>
+			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
+                        <label for="agree" class="agree">
+                        </label>同意する</p>
+                <dl class="btn">
+					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
+                    <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
+                </dl>
         </form>
-    </div>
-	</div>
-</div>
-<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+	</section>
+	<?php include "include/footer_form.html";?>
+	
+<script src="js/moment.min.js"></script>
+<script src="js/pikaday.min.js"></script>
+<script src="js/pikaday-responsive.js"></script>
+
+<script>
+  var $date1 = $("#date1");
+  var instance1 = pikadayResponsive($date1);
+  $date1.on("change", function() {
+    $("#output1").html($(this).val());
+  });
+
+  var $date2 = $("#date2");
+  var instance2 = pikadayResponsive($date2, {
+    outputFormat: "X"
+  });
+  $date2.on("change", function() {
+    $("#output2").html($(this).val());
+  });
+
+  var $date3 = $("#date3");
+  var instance3 = pikadayResponsive($date3, {
+    format: "Do MMM YYYY",
+    outputFormat: "X"
+  });
+
+  var $date4 = $("#date4");
+  var today = new Date();
+  var minDate = new Date();
+  var maxDate = new Date();
+  minDate.setDate(today.getDate() + 3);
+  maxDate.setDate(today.getDate() + 365);
+  var instance4 = pikadayResponsive($date4, {
+    format: "DD/MM/YYYY",
+    outputFormat: "DD/MM/YYYY",
+    pikadayOptions: {
+      minDate: minDate,
+      maxDate: maxDate,
+    },
+  });
+  instance4.setDate(minDate);
+
+  $date3.on("change", function() {
+    $("#output3").html($(this).val());
+  });
+
+  $date4.on("change", function() {
+    $("#output4").html($(this).val());
+  });
+
+  $("#clear").click(function() {
+    instance3.setDate(null);
+  });
+
+  $("#today").click(function() {
+    instance3.setDate(moment());
+  });
+
+</script>
+
 </body>
 </html>

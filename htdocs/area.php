@@ -32,7 +32,7 @@
 	<?php include "include/header_form.html";?>
 	<section id="area">
 		<h2>fon光お申し込み</h2>
-		<h3 class="first">01 エリア検索</h3>
+		<h3>01 エリア検索</h3>
 		<form method="post" action="application.php" id="appForm">
 			<div class="search_text">お客様のお住い地域でご利用可能か検索します。</div>
 			<div class="address">住所を検索する<br>

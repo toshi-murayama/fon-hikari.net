@@ -99,34 +99,22 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <!----css---->
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/style.css"> 
 <!----js---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/confirmation.js"></script>
+<!--script src="js/confirmation.js"></script-->
 <script src="js/script.js"></script>
 </head>
 
 <body>
-<div id="container">
-<div id="header">
-        <div class="header_box">
-            <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
-            <div class="header_c">
-                <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-966-486</p>
-            </div>
-            <div class="header_r"><a href="">マイページ</a></div>
-        </div>
-    </div>
-<div id="contents_bg">
-    <div id="contents"><?php
+<?php include "include/header_form.html";?>
+	<section id="confirmation">
+		<h2>fon光お申し込み</h2>
+		<h3>03 ご契約情報確認</h3>
+		<div class="search_text">ご契約先の情報をご確認ください。</div>
+		<?php
 	print $error;
 	?>
-        <div id="formWrap">
-            <div class="formContent">
-                <h2 class="mb20 mt20">お客様情報</h2>
-            </div>
-            <form method="post" action="thanks.php">
+		<form method="post" action="thanks.php">
 				<input type="hidden" value="<?php print $ref; ?>" name="form_name">
 				<input type="hidden" value="<?php print $first_name; ?>" name="姓">
 				<input type="hidden" value="<?php print $first_name_kana; ?>" name="姓（カナ）">	
@@ -142,81 +130,79 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 				<input type="hidden" value="<?php print $tel_time; ?>" name="連絡のつきやすい日時（時間帯）">
 				<input type="hidden" value="<?php print $consent; ?>" name="同意文、利用約款">
 				<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
-                <div id="confirmation">
-                    <table class="formTable">
-                        <tr>
-                            <th>姓</th>
-                            <td><?php print $first_name; ?></td>
-                        </tr>
-                        <tr>
-                            <th>姓（カナ）</th>
-                            <td><?php print $first_name_kana; ?></td>
-                        </tr>
-                        <tr>
-                            <th>名</th>
-                            <td><?php print $second_name; ?></td>
-                        </tr>
-                        <tr>
-                            <th>名（カナ）</th>
-                            <td><?php print $second_name_kana; ?></td>
-                        </tr>
-                        <tr>
-                            <th>性別</th>
-                            <td><?php 
-							print $sex; ?></td>
-                        </tr>
-                        <tr>
-                            <th>郵便番号</th>
-                            <td><?php print $postal_code; ?></td>
-                        </tr>
-                        <tr>
-                            <th>住所</th>
-                            <td><?php print $address; ?></td>
-                        </tr>
-                        <tr>
-                            <th>マンション名・部屋番号</th>
-                            <td><?php print $room_number; ?></td>
-                        </tr>
-                        <tr>
-                            <th>電話番号</th>
-                            <td><?php print $tel; ?></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス</th>
-                            <td><?php print $mail; ?></td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時（曜日）</th>
-                            <td><?php print $tel_week; ?></td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時（時間帯）</th>
-                            <td><?php print $tel_time; ?></td>
-                        </tr>
-                        <tr>
-                            <th>告知・同意文、利用約款</th>
-                            <td><?php print $consent; ?></td>
-                        </tr>
-                    </table>
-                    
-                    <div class="btn cleafix">
-					<?php
-						if(empty($error)) {
-					?>
-                        <input type="submit" name="submit" value="申し込む" id="submit">
-                    <?php
-						}
-					?>
-						<input type="submit" name="submit" value="戻る" id="backBtn" onclick="history.back()">
-                    </div>
-                </div>
+			<h4>ご契約者情報</h4>
+			<ul class="form">
+				<li class="categories">
+					<dl>
+						<dt>氏名（姓）
+                            <p><?php print $first_name; ?></p></dt>
+                        <dd>氏名（名）
+							<p><?php print $first_name_kana; ?></p></dd>
+						</dl>
+				</li>
+				<li class="categories">
+					<dl>
+						<dt>フリガナ（セイ）
+							<p><?php print $second_name; ?></p></dt>
+						<dd>フリガナ（メイ）
+							<p><?php print $second_name_kana; ?></p></dd>
+						</dl>
+				</li>
+				<li class="categories">性別</li>
+				<li><p><?php print $sex; ?></p></li>
+				<li class="categories">生年月日</li>
+				<li><p><?php print $date; ?></p></li>
+				<li class="categories">電話番号</li>
+				<li><p><?php print $phoneNumber; ?></p></li>
+				<li class="categories">メールアドレス</li>
+				<li><p><?php print $mailAddress; ?></p></li>
+				<li class="categories">郵便番号</li>
+				<li><p><?php print $postalCode; ?></p></li>
+				<li class="categories">都道府県</li>
+				<li><p><?php print $installationPref; ?></p></li>
+				<li class="categories">市区町村</li>
+				<li><p><?php print $installationMunicipalities; ?></p></li>
+				<li class="categories">町丁名・番地号</li>
+				<li><p><?php print $installationTown; ?></p></li>
+				<li class="categories">建物名・部屋番号</li>
+				<li><p><?php print $installationBuilding; ?></p></li>
+				<li class="categories">物件の種類</li>
+				<li><p><?php print $homeType; ?></p></li>
+				<li class="categories">連絡先メールアドレス</li>
+				<li><p><?php print $contactMailAddress; ?></p></li>
+				<li class="categories">連絡先メールアドレス（確認）</li>
+				<li><p><?php print $contactMailAddress; ?></p></li>
+			</ul>
+			<h4>オプション</h4>
+			<ul class="form">
+				<li class="categories">所有形態</li>
+				<li><p><?php print $ownership; ?></p></li>
+				<li class="categories">光電話申込</li>
+				<li><p><?php print $telephoneApplication; ?></p></li>
+				<li class="categories">固定電話番号</li>
+				<li><p><?php print $fixedLine; ?></p></li>
+			</ul>
+			<h4>入会書類郵送先</h4>
+			<ul class="form">
+				<li class="categories">入会書類郵送希望先</li>
+				<li><p><?php print $mailingDestination; ?></p></li>
+				<li class="categories">郵便番号</li>
+				<li><p><?php print $mailingPostalCode; ?></p></li>
+				<li class="categories">都道府県</li>
+				<li><p><?php print $mailingPrefName; ?></p></li>
+				<li class="categories">市区町村</li>
+				<li><p><?php print $mailingMunicipalities; ?></p></li>
+				<li class="categories">町丁名・番地号</li>
+				<li><p><?php print $mailingTown; ?></p></li>
+				<li class="categories">建物名・部屋番号</li>
+				<li><p><?php print $mailingBuilding; ?></p></li>
+			</ul>
+			<dl class="btn">
+				<dt><input type="submit" name="submit" value="戻る" id="backBtn" onclick="history.back()"></dt>
+				<dd><input type="submit" name="submit" value="お申し込み" id="submit"></dd>
+			</dl>
             </form>
-        </div>
-	</div>
-    </div>
-</div>
-<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+		</section>
+<?php include "include/footer_form.html";?>
 </body>
 </html>

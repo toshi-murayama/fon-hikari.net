@@ -130,7 +130,7 @@ URL: https://fon.ne.jp/
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="fon光のおトク情報満載！今ならお申し込みで【80,000円キャッシュバック中】月額料金も最安級3,680円で使い放題！セキュリティ・電話・テレビなどのサービスも豊富に取り揃えています。お得に申込むなら今がチャンス！" />
 <meta name="keywords" content="fon光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え," />
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_form.css">
 <link rel="stylesheet" href="css/animations.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -138,32 +138,22 @@ URL: https://fon.ne.jp/
 </head>
 
 <body>
-
-<div id="container">
-  <div id="header">
-        <div class="header_box">
-            <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
-            <div class="header_c">
-                <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-966-486</p>
-            </div>
-            <div class="header_r"><a href="">マイページ</a></div>
-        </div>
-    </div>
-<div id="contents_bg">
-<div class="thanks"><?php
+<?php include "include/header_form.html";?>
+	<section id="thanks">
+		<h2>fon光お申し込み</h2>
+		<h3>04 お申し込み完了</h3>
+		<div class="search_text">お申し込みありがとうございます。</div>
+		<?php
 if (empty($error)) {
 	print $message;
 } else {
 	print $error;
 }
 ?>
-<p><a href="../">最初のぺージに戻る</a></p>
-</div>
-</div>
-	</div>
-<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+		<p class="text">後程弊社担当よりお電話にてご連絡させて頂きます。お電話をもってお申し込み完了となります。<br>
+			0120-966-486よりお電話させて頂きますのでフリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。</p>
+<p class="btn"><a href="/">最初のぺージに戻る</a></p>
+	</section>
+	<?php include "include/footer_form.html";?>
 </body>
 </html>
