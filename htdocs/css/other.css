@@ -1,6 +1,5 @@
 /* Scss Document */
 body {
-  font-family: "source-han-sans-japanese",sans-serif;
   margin: 0px auto;
   padding: 0px;
   font-size: 13px;
@@ -183,3 +182,5 @@ img {
           #other .faq .faq_box dl dd p.a {
             padding: 10px 5px;
             font-size: 5.5vw; } }
+
+/*# sourceMappingURL=other.css.map */
