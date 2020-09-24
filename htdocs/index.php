@@ -12,10 +12,14 @@
 <meta name="description" content="月額3,980円！fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="fon,fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <?php include "include/ogp.html";?>
+<!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
 
 <body>
