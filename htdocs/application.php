@@ -225,7 +225,7 @@ $(window).load(function() {
 						<input type="radio" name="numberingMethod" value="0" id="new" checked>
 						<label for="new">新規発番</label>
 						<input type="radio" name="numberingMethod" value="1" class="check" id="portability">
-						<label for="portability">番号ポータビリティ</label>
+						<label for="portability">現在使用中の電話番号を継続して使用</label>
 					</li>
                 </div>
                 <div class='telephoneApplicationFixedLine' style='display:none'>
@@ -383,12 +383,14 @@ $(window).load(function() {
                     </div>
                 </div>
 			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
-                        <label for="agree" class="agree">
-                        </label>同意する</p>
-                <dl class="btn">
-					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
-                    <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
-                </dl>
+				<label for="agree" class="agree"></label>
+				同意する
+			</p>
+			<dl class="btn">
+				<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
+				<dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
+			</dl>
+			<input type="hidden" name="applicationSubmitFlag" value="1">
         </form>
 	</section>
 	<?php include "include/footer_form.html";?>
