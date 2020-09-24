@@ -734,6 +734,36 @@ footer .copyright{
 	font-size: 12px;
 }
 
+/* select2 for area search */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+	font-size: 1.2em;
+	padding: 0.5em;
+	-webkit-appearance: none;
+}
+.select2-container .select2-selection--single {
+	height: 3.5em;
+	line-height: 1em;
+	padding: 1.3em 2em 1em 1em;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+	padding: 0;
+	line-height: 1;
+	font-size: 1em;;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	position: absolute;
+	bottom: 0;
+	right: 12px;
+	top: 0;
+	width: 4px;
+	height: auto;
+}
+.select2-result-address.dynamic {
+	color: #888;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable .dynamic{
+	color: white;
+}
 
 
 @media screen and (min-width: 680px) {
