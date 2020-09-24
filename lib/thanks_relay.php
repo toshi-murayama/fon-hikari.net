@@ -1,123 +1,101 @@
 <?php
-session_start();
 
-function h($h_string){
-	return htmlspecialchars($h_string,ENT_QUOTES);
-}
+require_once '../lib/mail.php';
+require_once '../lib/HatarakuDb.php';
+require_once '../lib/Param/HatarakuDbInsert.php';
 
-/* 必須チェック
-　第一引数：対象文字列、第2引数：エラー表示名 */
-function check_empty($target,$target_name){
-	global $error;
-	if (empty($target)) {
-		$error .= '<p class="error">' . $target_name . 'を入力してください</p>';	
-	}	
-}
+use Param\HatarakuDbInsert;
 
-function encryption_data($data){
-	
-    $key = "1onepiece_encrypt";
-
-    //暗号化
-    $encrypt_data = openssl_encrypt($data,'aes-256-ecb',$key);
-	return $encrypt_data;
-}
-
-function decryption_data($data){
-
-    $key = "1onepiece_encrypt";
-	
-    //復号化
-    $decrypt_data = openssl_decrypt($data,'aes-256-ecb',$key);
-	return $decrypt_data;	
-}
-
-// 正常にページ推移したか確認
+// TODO 本当はクラス化したいが、、、時間のあるときにリファクタリング.
+// 正常にページ推移したか確認(正しくなかったらtopに戻る)
 $ref = $_SERVER['HTTP_REFERER'];
-if (strpos($ref,'://fon-hikari.net/') === false) {
-	$header = 'http://fon-hikari.net/';
-	header('Location:' . $header);	
+var_dump($ref);
+// die();
+if ((isset($_POST['confirmationSubmitFlag']) && $_POST['confirmationSubmitFlag'] != 1) || strpos($ref,'confirmation') === false) {
+	header( "Location: / " );
 }
+
+session_start();
+var_dump($_SESSION['tk']);
+var_dump($_POST['tk']);
 
 // 2重送信確認
 if ($_SESSION['tk'] != $_POST['tk'] || empty($_SESSION['tk'])) {
 	$error .= '<p class="error">不正な値が送信されました</p>';
 }
 
-$form_name = h($_POST['form_name']);
-$mail = h($_POST['メールアドレス']);
+//働くDBインポート.
+$data = HatarakuDbInsert::createData($_POST);
 
-if(strpos($form_name,'application.php') !== false) {
-	$message = 'お申し込みありがとうございます。<br>
-<br>
-後程弊社担当よりお電話にてご連絡させて頂きます。<br>
-お電話をもってお申し込み完了となります。<br>
-<br>
-0120-966-486よりお電話させて頂きますので<br>
-フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br><br>';
-} else if (strpos($form_name,'contact.php') !== false) {
-	$message = 'お問い合わせありがとうございます。<br>
-<br>
-内容を確認し、ご指定いただいた時間帯にご連絡いたします。<br>
-<br>
-0120-966-486よりお電話させて頂きますので<br>
-フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>';
-} else if (strpos($form_name,'https://sv-nuro-h.site/') !== false) {
-	$message = 'エリア確認ありがとうございます。<br><br>
-内容を確認し、ご連絡いたします。<br>
-<br>
-0120-966-486よりお電話させて頂きますので<br>
-フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>';
+$recordRegistRequestBody[] = HatarakuDbInsert::getApplicationApiParameter($data);
+var_dump($data);
+// API送信実行
+$hatarakuDb = new HatarakuDb();
+$result = $hatarakuDb->sendRequest(
+  HatarakuDb::URL_SINGLE_API,
+  HatarakuDb::API_TYPE_RECORD_REGIST,
+  $recordRegistRequestBody
+);
+var_dump($result);
+// 失敗したらメールで報告
+if ($result !== "200") {
+	sendHatarakuDBErrorMail($result);
 }
 
-if(empty($error)) {
+$mail = h($_POST['mailAddress']);
 
-	// メール文章生成
-	foreach($_POST as $post_key=>$post_val) {
-		$post_key = h($post_key);
-		$post_val = h($post_val);
-		if ($post_key != 'submit' && $post_key !="form_name" && $post_key != 'tk') {
-			$mail_content .= "【 ". $post_key . " 】 " . $post_val . "\n";	
-		}
-	}
+// if(empty($error)) {
+// 	// メール文章生成
+// 	foreach($_POST as $post_key=>$post_val) {
+// 		$post_key = h($post_key);
+// 		$post_val = h($post_val);
+// 		if ($post_key != 'submit' && $post_key !="form_name" && $post_key != 'tk') {
+// 			$mail_content .= "【 ". $post_key . " 】 " . $post_val . "\n";	
+// 		}
+// 	}
 
-	//文字指定
-	mb_language("Japanese");
-	mb_internal_encoding("UTF-8");
+// 	//文字指定
+// 	mb_language("Japanese");
+// 	mb_internal_encoding("UTF-8");
 
-	//メールの内容
-	$to = "support@fon-hikari.net,s_kagaya@1onepiece.jp";
+// 	//メールの内容
+// 	$to = "support@fon-hikari.net,s_kagaya@1onepiece.jp";
 
-	if(strpos($form_name,'application.php') !== false) {
-		$title = "【fon光お申し込み】";
-	} else if (strpos($form_name,'contact.php') !== false){
-		$title = "【fon光お問い合わせ】";		
-	} else if (strpos($form_name,'https://fon-hikari.net/') !== false){
-		$title = "【fon光エリア確認】";		
-	}	
-	if(!empty($_COOKIE['ref'])) {
-		$title .= '【流入元: ' . $_COOKIE['ref'] . '】';
-	}	
-	$content = '「' . $title . '」からメールが届きました
+// 	if(strpos($form_name,'application.php') !== false) {
+// 		$title = "【fon光お申し込み】";
+// 	} else if (strpos($form_name,'contact.php') !== false){
+// 		$title = "【fon光お問い合わせ】";		
+// 	} else if (strpos($form_name,'https://fon-hikari.net/') !== false){
+// 		$title = "【fon光エリア確認】";		
+// 	}	
+// 	if(!empty($_COOKIE['ref'])) {
+// 		$title .= '【流入元: ' . $_COOKIE['ref'] . '】';
+// 	}	
+// 	$content = '「' . $title . '」からメールが届きました
 
-＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-' . $mail_content . '
+// ' . $mail_content . '
 
-＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-送信された日時：' . date( "Y/m/d (D) H:i:s" ) . '
-問い合わせのページURL：' . $form_name . '
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// 送信された日時：' . date( "Y/m/d (D) H:i:s" ) . '
+// 問い合わせのページURL：' . $form_name . '
 
-──────────────────────
-フォン・ジャパン株式会社
-〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F
-URL: https://fon.ne.jp/
-──────────────────────';
-	$from = "From: " . $mail . "\r\n";
+// ──────────────────────
+// フォン・ジャパン株式会社
+// 〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F
+// URL: https://fon.ne.jp/
+// ──────────────────────';
+// 	$from = "From: " . $mail . "\r\n";
 	
-	//メールの送信
-	$send_mail = mb_send_mail($to, $title, $content, $from);
+// 	//メールの送信
+// 	$send_mail = mb_send_mail($to, $title, $content, $from);
 	
-	unset($_SESSION['tk']);
+// 	unset($_SESSION['tk']);
+// }
+
+function h($h_string){
+	return htmlspecialchars($h_string,ENT_QUOTES);
 }
+
 ?>

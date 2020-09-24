@@ -91,35 +91,35 @@
 			</dl>
 
 			<!-- postを設定 -->
-			<input type="hidden" value="<?php print $applicationClassification; ?>" name="applicationClassification">
-			<input type="hidden" value="<?php print $lastName; ?>" name="lastName">	
-			<input type="hidden" value="<?php print $firstName; ?>" name="firstName">				
-			<input type="hidden" value="<?php print $lastNameKana; ?>" name="lastNameKana">
-			<input type="hidden" value="<?php print $firstNameKana; ?>" name="firstNameKana">
-			<input type="hidden" value="<?php print $sex; ?>" name="sex">	
-			<input type="hidden" value="<?php print $birthday; ?>" name="birthday">
-			<input type="hidden" value="<?php print $phoneNumber; ?>" name="phoneNumber">	
-			<input type="hidden" value="<?php print $fixedLine; ?>" name="fixedLine">		
-			<input type="hidden" value="<?php print $mailAddress; ?>" name="mailAddress">	
-			<input type="hidden" value="<?php print $postalCode; ?>" name="postalCode">		
-			<input type="hidden" value="<?php print $installationPref; ?>" name="installationPref">
-			<input type="hidden" value="<?php print $installationMunicipalities; ?>" name="installationMunicipalities">
-			<input type="hidden" value="<?php print $installationTown; ?>" name="installationTown">
-			<input type="hidden" value="<?php print $installationAddress; ?>" name="installationAddress">	
-			<input type="hidden" value="<?php print $installationBuilding; ?>" name="installationBuilding">				
-			<input type="hidden" value="<?php print $ownership; ?>" name="ownership">
-			<input type="hidden" value="<?php print $mailingDestination; ?>" name="mailingDestination">
-			<input type="hidden" value="<?php print $mailingPostalCode; ?>" name="mailingPostalCode">	
-			<input type="hidden" value="<?php print $mailingPrefName; ?>" name="mailingPrefName">
-			<input type="hidden" value="<?php print $mailingMunicipalities; ?>" name="mailingMunicipalities">	
-			<input type="hidden" value="<?php print $mailingTown; ?>" name="mailingTown">		
-			<input type="hidden" value="<?php print $mailingAddress; ?>" name="mailingAddress">	
-			<input type="hidden" value="<?php print $mailingBuilding; ?>" name="mailingBuilding">		
-			<input type="hidden" value="<?php print $telephoneApplication; ?>" name="telephoneApplication">
-			<input type="hidden" value="<?php print $homeType; ?>" name="homeType">
-			<input type="hidden" value="<?php print $numberingMethod; ?>" name="numberingMethod">
-			<input type="hidden" value="<?php h($_SESSION['tk']); ?>" name="tk">
-			
+			<input type="hidden" value="<?php print h($applicationClassification); ?>" name="applicationClassification">
+			<input type="hidden" value="<?php print h($lastName); ?>" name="lastName">	
+			<input type="hidden" value="<?php print h($firstName); ?>" name="firstName">				
+			<input type="hidden" value="<?php print h($lastNameKana); ?>" name="lastNameKana">
+			<input type="hidden" value="<?php print h($firstNameKana); ?>" name="firstNameKana">
+			<input type="hidden" value="<?php print h($sex); ?>" name="sex">	
+			<input type="hidden" value="<?php print h($birthday); ?>" name="birthday">
+			<input type="hidden" value="<?php print h($phoneNumber); ?>" name="phoneNumber">	
+			<input type="hidden" value="<?php print h($fixedLine); ?>" name="fixedLine">		
+			<input type="hidden" value="<?php print h($mailAddress); ?>" name="mailAddress">	
+			<input type="hidden" value="<?php print h($postalCode); ?>" name="postalCode">		
+			<input type="hidden" value="<?php print h($installationPref); ?>" name="installationPref">
+			<input type="hidden" value="<?php print h($installationMunicipalities); ?>" name="installationMunicipalities">
+			<input type="hidden" value="<?php print h($installationTown); ?>" name="installationTown">
+			<input type="hidden" value="<?php print h($installationAddress); ?>" name="installationAddress">	
+			<input type="hidden" value="<?php print h($installationBuilding); ?>" name="installationBuilding">				
+			<input type="hidden" value="<?php print h($ownership); ?>" name="ownership">
+			<input type="hidden" value="<?php print h($mailingDestination); ?>" name="mailingDestination">
+			<input type="hidden" value="<?php print h($mailingPostalCode); ?>" name="mailingPostalCode">	
+			<input type="hidden" value="<?php print h($mailingPrefName); ?>" name="mailingPrefName">
+			<input type="hidden" value="<?php print h($mailingMunicipalities); ?>" name="mailingMunicipalities">	
+			<input type="hidden" value="<?php print h($mailingTown); ?>" name="mailingTown">		
+			<input type="hidden" value="<?php print h($mailingAddress); ?>" name="mailingAddress">	
+			<input type="hidden" value="<?php print h($mailingBuilding); ?>" name="mailingBuilding">		
+			<input type="hidden" value="<?php print h($telephoneApplication); ?>" name="telephoneApplication">
+			<input type="hidden" value="<?php print h($homeType); ?>" name="homeType">
+			<input type="hidden" value="<?php print h($numberingMethod); ?>" name="numberingMethod">
+			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
+			<input type="hidden" name="confirmationSubmitFlag" value="1">
 		</form>
 	</section>
 <?php include "include/footer_form.html";?>

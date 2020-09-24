@@ -3,15 +3,14 @@
 
 // 正常にページ推移したか確認(正しくなかったらtopに戻る)
 $ref = $_SERVER['HTTP_REFERER'];
-if ($_POST['applicationSubmitFlag'] != 1 || strpos($ref,'application') === false) {
-    header( "Location: / " ) ;
+if ((isset($_POST['applicationSubmitFlag']) && $_POST['applicationSubmitFlag'] != 1) || strpos($ref,'application') === false) {
+    header( "Location: / " );
 }
 
 // application→confirmationの処理
 session_start();
 
 // トークンをセッションにセット
-
 $token = sha1(uniqid(mt_rand(), true));
 $_SESSION['tk'] = $token;
 
