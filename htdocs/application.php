@@ -32,6 +32,7 @@ $(function(){
 		changeMonth: true,
 		changeYear: true,
 		yearRange: '-70:+0',
+		setDate: '2000/3/1'
 	});
 	$('.privacy').hide();
 	$('.privacyTitle').on('click', function() {
@@ -85,8 +86,9 @@ $(window).load(function() {
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
+<script src="js/ajaxzip3.js"></script>
 <script src="js/jquery.autoKana.js"></script>
-<script src="js/application.js"></script>
+<!-- <script src="js/application.js"></script> -->
 	
 </head>
 
@@ -96,7 +98,7 @@ $(window).load(function() {
 		<h2>fon光お申し込み</h2>
 		<h3>02 お客様情報入力</h3>
 		<div class="search_text">ご契約先の情報をご入力ください。</div>
-		<form method="post" action="hatarakuTest.php" id="appForm">
+		<form method="post" action="confirmation" id="appForm">
 			<h4>ご契約者情報</h4>
 			<ul class="form">
 				<li class="categories">申込区分</li>
@@ -148,7 +150,7 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities');">
 					</li>
 				<li class="categories">都道府県</li>
 				<li>
@@ -164,11 +166,15 @@ $(window).load(function() {
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
-					<input type="text" name="installationMunicipalities" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="installationMunicipalities" value="<?php print $address; ?>" class="validate[required]">
 				</li>
-				<li class="categories">町丁名・番地号</li>
+				<li class="categories">町名・丁目</li>
 				<li>
-					<input type="text" name="installationTown" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="installationTown" value="<?php print $address; ?>" class="validate[required]" >
+				</li>
+				<li class="categories">番地・号</li>
+				<li>
+					<input type="text" name="installationAddress" value="<?php print $address; ?>" class="validate[required]">
 				</li>
                 <li class="categories">建物名・部屋番号</li>
 				<li>
@@ -225,7 +231,7 @@ $(window).load(function() {
                 <div class='telephoneApplicationFixedLine' style='display:none'>
 					<li class="categories">固定電話番号</li>
 					<li>
-						<input type="text" name="fixedLine" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+						<input type="text" name="fixedLine" value="<?php print $tel; ?>" maxlength='10' class="validate[required],[custom[onlyNumberSp]]">
 					</li>
                 </div>
 			</ul>
@@ -241,13 +247,13 @@ $(window).load(function() {
 			<ul class="form aother_address" style='display:none'>
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','mailingPrefName','mailingMunicipalities');">
 				</li>
 				<li class="categories">都道府県</li>
 				<li>
 					<div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-						<select name="mailingPrefName" id="prefectures" class="validate[required]">
+						<select name="mailingPrefName" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
                             <?php foreach($prefs as $pref) { ?>
                                 <option value=<?php print $pref?>><?php print $pref?></option>                                       
@@ -257,11 +263,15 @@ $(window).load(function() {
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
-					<input type="text" name="mailingMunicipalities" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="mailingMunicipalities" value="<?php print $address; ?>" class="validate[required]">
 				</li>
-				<li class="categories">町丁名・番地号</li>
+				<li class="categories">町名・丁目</li>
 				<li>
-					<input type="text" name="mailingTown" value="<?php print $address; ?>" class="validate[required]" id="address">
+					<input type="text" name="mailingTown" value="<?php print $address; ?>" class="validate[required]">
+				</li>
+				<li class="categories">番地・号</li>
+				<li>
+					<input type="text" name="mailingAddress" value="<?php print $address; ?>" class="validate[required]">
 				</li>
                 <li class="categories">建物名・部屋番号</li>
 				<li>

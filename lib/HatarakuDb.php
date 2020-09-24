@@ -35,10 +35,6 @@ class HatarakuDb
   // 管理者設定　＞　ユーザ設定　＞　ユーザ管理　＞　ユーザ情報設定で発行
   const API_TOKEN = "Ea7PtHXTmrzOfhvtL0zecdogMI9mPJh1MnY9vV62venThYgIA7vlSVw4YjGiKh0d";
 
-  // FONJAPAN01
-  const API_TOKEN2 = 'w1trxiJtCEVwONtgW6gb9pf2aviDZGhOsmKwiyN1qDsd3ql0ZYj985FxwRkJL6R1';
-
-
   /**
    * @var string 働くDB APIからのレスポンスボディ
    */
