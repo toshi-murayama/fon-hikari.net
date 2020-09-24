@@ -12,10 +12,32 @@
 <!----css---->
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/style.css"> 
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <!----js---->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.layerBoard.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.privacy').hide();
+	$('.privacyTitle').on('click', function() {
+		$('.privacy').slideToggle(500);
+	});
+});
+</script>
+<script>
+$(function(){
+$('#layer_board_area').layerBoard({
+delayTime: 100, //表示までの待ち時間
+fadeTime : 300, //表示開始から表示しきるまでの時間
+alpha : 0.8, //背景レイヤーの透明度
+limitMin : 0, //何分経過後に再度表示するか/分（0で再表示なし）
+easing: 'linear', //イージング
+limitCookie : 0 , //cookie保存期間/日（0で開くたび毎回表示される）
+countCookie : 1000 //何回目のアクセスまで適用するか(cookie保存期間でリセット)
+});
+})
+</script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
@@ -25,153 +47,52 @@
 </head>
 
 <body>
-<div id="container">
-<div id="header">
-        <div class="header_box">
-            <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
-            <div class="header_c">
-                <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-				<p class="tel">0120-966-486</p>
-            </div>
-            <div class="header_r"><a href="">マイページ</a></div>
-        </div>
-    </div>
-<div id="contents_bg">
-    <div id="contents">
-        <p class="mb20 mt20 pd5">お問い合わせ内容をご入力ください。<span class="example">必須</span>は入力必須項目です。
-        <br> 入力後、一番下の「確認画面へ」を押してください。</p>
-        <form method="post" action="contact_confirmation.php" id="appForm">
-            <input type="hidden" name="submit_flg" value="1">
-            <div>
-                <table class="formTable animated fadeIn">
-                    <thead>
-                        <tr>
-                            <th colspan="2">お客様情報</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>お名前<span>必須</span></th>
-                            <td>
-                                姓
-                                <input size="30" type="text" name="姓" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"> 名
-                                <input size="30" type="text" name="名" value="<?php print $second_name; ?>" class="validate[required]" id="firstName">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>フリガナ<span>必須</span></th>
-                            <td>
-                                セイ
-                                <input size="30" type="text" name="姓（カナ）" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"> メイ
-                                <input size="30" type="text" name="名（カナ）" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>電話番号<span>必須</span></th>
-                            <td>
-                                <input size="30" type="text" name="電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]"> <span class="small">ハイフンなし</span></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス<span>必須</span></th>
-                            <td>
-                                <input size="30" type="text" name="メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時</th>
-                            <td>
-                                曜日
-                                <select name="連絡のつきやすい日時（曜日）" class="validate[required]">
-                                    <option value="いつでも" <?php 
-									if ($tel_week　=='いつでも' ) { 
-										?> selected<?php
-									}
-									?>>いつでも</option>
-                                    <option value="月" <?php 
-									if ($tel_week　=='月' ) { 
-										?> selected<?php
-									}
-									?>>月</option>
-                                    <option value="火" <?php 
-									if ($tel_week　=='火' ) { 
-										?> selected<?php
-									}
-									?>>火</option>
-                                    <option value="水" <?php
-									if ($tel_week　=='水' ) { 
-										?> selected<?php
-									}
-									?>>水</option>
-                                    <option value="木" <?php
-									if ($tel_week　=='木' ) {
-										?> selected<?php
-									}
-									?>>木</option>
-                                    <option value="金" <?php
-									if ($tel_week　=='金' ) {
-										?> selected<?php
-									}
-									?>>金</option>
-                                    <option value="土" <?php 
-									if ($tel_week　=='土' ) { 
-									?> selected<?php
-									}
-									?>>土</option>
-                                    <option value="日" <?php 
-									if ($tel_week　=='日' ) { 
-										?> selected<?php
-									}
-									?>>日</option>
-                                </select>
-                                時間帯
-                                <select name="連絡のつきやすい日時（時間帯）" class="validate[required]">
-                                    <option value="いつでも" <?php 
-									if ($tel_time=='いつでも' ) { 
-									?> selected<?php
-									}
-									?>>いつでも</option>
-                                    <option value="午前中" <?php 
-									if ($tel_time=='午前中' ) { 
-									?> selected<?php
-									}
-									?>>午前中</option>
-                                    <option value="12-14" <?php 
-									if ($tel_time=='12-14' ) { 
-										?> selected<?php
-									}
-									?>>12-14</option>
-                                    <option value="14-16" <?php 
-									if ($tel_time=='14-16' ) { 
-										?> selected<?php
-									}
-									?>>14-16</option>
-                                    <option value="16-18" <?php 
-									if ($tel_time=='16-18' ) { 
-										?> selected<?php
-									}
-									?>>16-18</option>
-                                    <option value="18-21" <?php 
-									if ($tel_time=='18-21' ) { 
-										?> selected<?php
-									}
-									?>>18-21</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>お問い合わせ内容<span>必須</span></th>
-                            <td>
-                                <textarea name="お問い合わせ内容" value="<?php print $mail; ?>" class="validate[required]" rows="6" cols="60"></textarea>
-                            </td>
-                        </tr>                        
-                    </tbody>
-                </table>
-
-
-
-                <div class="kiyaku">
-                    <p><b>【重要】お問い合わせをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</b></p>
-                    <div class="kiyaku_text">
+<?php include "include/header_form.html";?>
+	<div id="layer_board_area">
+		<div class="layer_board_bg"></div>
+		<div class="layer_board">
+			<p>ポップアップ</p>
+			<a href="#" class="btn_close">閉じる</a>
+		</div>
+	</div>
+	<section id="contact">
+		<h2>お問い合わせ</h2>
+		<h3>01 お問い合わせ内容をご入力ください</h3>
+		<form method="post" action="contact_confirmation.php" id="appForm">
+		<ul class="form">
+			<li class="categories">
+				<dl>
+					<dt>氏名（姓）<br>
+						<input size="30" type="text" name="lastName" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
+					<dd>氏名（名）<br>
+						<input size="30" type="text" name="firstName" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
+				</dl>
+			</li>
+			<li class="categories">
+				<dl>
+					<dt>フリガナ（セイ）<br>
+						<input size="30" type="text" name="lastNameKana" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
+					<dd>フリガナ（メイ）<br>
+						<input size="30" type="text" name="firstNameKana" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
+				</dl>
+			</li>
+			<li class="categories">電話番号</li>
+			<li>
+				<input type="text" name="phoneNumber" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+			</li>
+			<li class="categories">メールアドレス</li>
+			<li>
+				<input type="text" name="mailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+			</li>
+			<li class="categories">お問い合わせ内容</li>
+			<li>
+				<textarea name="inquiry" value="<?php print $mail; ?>" class="validate[required]" rows="6" cols="60"></textarea>
+			</li>
+		</ul>
+                <div class="privacyTitle">個人情報取得における告知・同意文</div>
+                <div class="privacy">
+                    <h4>【重要】お問い合わせをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</h4>
+                        <div class="privacy_text">
                         フォン・ジャパン株式会社 (以下、「当社」という。)は、 通信・ネットワークソリューション事業、 営業事業、IT・Webソリューション事業を行っております。<br> 
                         当社は、当社の事業の用に供するすべての個人情報を適切に取扱うため、 当社全従業者が遵守すべき行動基準として本個人情報保護方針を定め、その遵守の徹底を図ることといたします。<br>
                         <br>    
@@ -188,9 +109,7 @@
                         フォン・ジャパン株式会社<br>
                         代表取締役社長 横田 和典<br>
                         <br>
-                        当社における<br>
-                        個人情報の取扱いについて<br>
-                        <br>
+                        <h5>当社における個人情報の取扱いについて</h5>
                         （個人情報保護法及びJISに基づく公表事項及び本人が容易に知り得る状態に置く事項）<br>
                         <br>
                         1.お取引先様から委託を受ける業務において取り扱う個人情報の利用目的<br>
@@ -200,16 +119,12 @@
                         ・「ブロードバンド・モバイル等通信サービスの販売取次業務」に関しては「市販の住宅地図」を取り扱います。<br>
                         ・「ドメイン、サーバー等の取得代行をはじめとしたウェブ関連サービス及びデザイン関連サービス」に関しては、「エンドクライアントの企業情報」を取り扱います。<br>
                         <br>
-                        当社が保有する開示対象個人情報について<br>
-                        <br>    
-                        個人情報取り扱い事業者の氏名または名称<br>
-                        <br>    
+                        <h5>当社が保有する開示対象個人情報について</h5>
+                        <p>個人情報取り扱い事業者の氏名または名称</p>
                         フォン・ジャパン株式会社<br>
                         <br>
-                        すべての開示対象個人情報の利用目的<br>
-                        <br>
+                        <h5>すべての開示対象個人情報の利用目的</h5>
                         当社が、通信・ネットワークソリューション事業、営業事業、 IT・webソリューション事業を主な事業としていることを踏まえて当社が取扱う個人情報の利用目的を以下のように定めます。<br>
-                        <br>
                         <br>
                         1.お客様の個人情報<br>
                         ・ご契約内容を実施し、適切に管理するため<br>
@@ -240,16 +155,13 @@
                         ・お問い合わせやご連絡内容を正確に把握し、対処するため<br>
                         ※上記利用目的において、「ご契約内容を適切に管理するため」としているものは、「契約に入る前の段階における利用」と「契約終了後における利用」を含みます。<br>
                         <br>
-                        開示対象個人情報の取扱いに関する苦情の申し出先<br>
-                        <br>
+                        <h5>開示対象個人情報の取扱いに関する苦情の申し出先</h5>
                         「個人情報に関する相談窓口」（末尾に記載）<br>
                         <br>
-                        認定個人情報保護団体の名称及び苦情の解決の申し出先<br>
-                        <br>
+                        <h5>認定個人情報保護団体の名称及び苦情の解決の申し出先</h5>
                         現在当社は、認定個人情報保護団体の対象事業者ではございません。<br>
                         <br>
-                        開示等の求めに応じる手続き<br>
-                        <br>
+                        <h5>開示等の求めに応じる手続き</h5>
                         1.開示等の求めの申し出先<br>
                         <br>
                         2.開示等の求めに際して提出すべき書面の様式その他の開示等の求めの方式<br>
@@ -279,22 +191,16 @@
                         なお、送付頂いた書類は原則としてご返却いたしません。                        
                         <br>
                     </div>
-                    <p style="text-align:center;">個人情報取得における告知・同意文、<a href="privacy.html" target="_blank">個人情報保護方針</a>に同意します
-                        <input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required]" id="agree">
-                        <label for="agree" class="agree"><img src="img/check.png" alt="">
-                        </label>
-                    </p>
-                </div>
-                <div class="btn">
-                    <input type="submit" name="submit" value="確認画面へ" id="submit">
-                </div>
-            </div>
-        </form>
-    </div>
-    </div>
-</div>
-<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+					</div>
+                    <p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
+                        <label for="agree" class="agree">
+                        </label>同意する</p>
+                <dl class="btn">
+					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
+                    <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
+                </dl>
+			</form>
+	</section>
+	<?php include "include/footer_form.html";?>
 </body>
 </html>

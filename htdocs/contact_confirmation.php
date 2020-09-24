@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 session_start();
 
 function h($h_string){
@@ -75,7 +75,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 	$error .= '<p class="error">メールアドレスを正しい形で入力してください</p>';
 }
 
-?>
+?>-->
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 <head>
@@ -87,34 +87,19 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/style.css"> 
 <!----js---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/confirmation.js"></script>
 <script src="js/script.js"></script>
 </head>
 
 <body>
-<div id="container">
-<div id="header">
-        <div class="header_box">
-            <h1><a href="./"><img src="img/img_logo.png" alt=""></a></h1>
-            <div class="header_c">
-                <p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-                <p class="tel">0120-966-486</p>
-            </div>
-            <div class="header_r"><a href="">マイページ</a></div>
-        </div>
-    </div>
-<div id="contents_bg">
-    <div id="contents"><?php
+<?php include "include/header_form.html";?>
+	<section id="confirmation">
+		<h2>お問い合わせ</h2>
+		<h3 class="second">02 お客様情報</h3>
+		<?php
 	print $error;
 	?>
-        <div id="formWrap">
-            <div class="formContent">
-                <h2 class="mb20 mt20">お客様情報</h2>
-            </div>
-
             <form method="post" action="thanks.php">
 				<input type="hidden" value="<?php print $ref; ?>" name="form_name">
 				<input type="hidden" value="<?php print $first_name; ?>" name="姓">
@@ -128,68 +113,36 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 				<input type="hidden" value="<?php print $consent; ?>" name="同意文、利用約款">
                 <input type="hidden" value="<?php print $content; ?>" name="お問い合わせ内容">
 				<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
-                <div id="confirmation">
-                    <table class="formTable">
-                        <tr>
-                            <th>姓</th>
-                            <td><?php print $first_name; ?></td>
-                        </tr>
-                        <tr>
-                            <th>姓（カナ）</th>
-                            <td><?php print $first_name_kana; ?></td>
-                        </tr>
-                        <tr>
-                            <th>名</th>
-                            <td><?php print $second_name; ?></td>
-                        </tr>
-                        <tr>
-                            <th>名（カナ）</th>
-                            <td><?php print $second_name_kana; ?></td>
-                        </tr>
-                        <tr>
-                            <th>電話番号</th>
-                            <td><?php print $tel; ?></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス</th>
-                            <td><?php print $mail; ?></td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時（曜日）</th>
-                            <td><?php print $tel_week; ?></td>
-                        </tr>
-                        <tr>
-                            <th>連絡のつきやすい日時（時間帯）</th>
-                            <td><?php print $tel_time; ?></td>
-                        </tr>
-                        <tr>
-                            <th>お問い合わせ内容</th>
-                            <td><?php print $content; ?></td>
-                        </tr>                        
-                        <tr>
-                            <th>告知・同意文、利用約款</th>
-                            <td><?php print $consent; ?></td>
-                        </tr>
-                    </table>
-                    
-                    <div class="btn cleafix">
-					<?php
-						if(empty($error)) {
-					?>
-                        <input type="submit" name="submit" value="問い合わせる" id="submit">
-                    <?php
-						}
-					?>
-						<input type="button" value="戻る" id="backBtn" onclick="history.back()">
-                    </div>
-                </div>
+			<ul class="form">
+				<li class="categories">
+					<dl>
+						<dt>氏名（姓）
+                            <p><?php print $first_name; ?></p></dt>
+                        <dd>氏名（名）
+							<p><?php print $first_name_kana; ?></p></dd>
+						</dl>
+				</li>
+				<li class="categories">
+					<dl>
+						<dt>フリガナ（セイ）
+							<p><?php print $second_name; ?></p></dt>
+						<dd>フリガナ（メイ）
+							<p><?php print $second_name_kana; ?></p></dd>
+						</dl>
+				</li>
+				<li class="categories">電話番号</li>
+				<li><p><?php print $phoneNumber; ?></p></li>
+				<li class="categories">メールアドレス</li>
+				<li><p><?php print $mailAddress; ?></p></li>
+				<li class="categories">お問い合わせ内容</li>
+				<li><p><?php print $inquiry; ?></p></li>
+			</ul>
+			<dl class="btn">
+				<dt><input type="submit" name="submit" value="戻る" id="backBtn" onclick="history.back()"></dt>
+				<dd><input type="submit" name="submit" value="お申し込み" id="submit"></dd>
+			</dl>
             </form>
-        </div>
-	</div>
-    </div>
-</div>
-<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+		</section>
+<?php include "include/footer_form.html";?>
 </body>
 </html>
