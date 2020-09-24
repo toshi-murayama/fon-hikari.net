@@ -1,5 +1,4 @@
 name: Staging Deploy to EC2
-# stagingにpushされた時にjobを実行する
 on:
   push:
     branches: [staging]
@@ -15,6 +14,7 @@ jobs:
           SECRET_KEY: ${{ secrets.STAGING_SECRET_KEY }}
           EC2_USER: ${{ secrets.EC2_USER }}
           EC2_HOST: ${{ secrets.STAGING_EC2_HOST }}
-        run:  
-          echo "$SECRET_KEY" > secret_key && chmod 600 secret_key        
+        run: |
+          echo "$SECRET_KEY" > secret_key 
+          chmod 600 secret_key 
           ssh -oStrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} -i secret_key "cd /home/ec2-user/fon-hikari/ && git pull origin staging"
