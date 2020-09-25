@@ -1,6 +1,0 @@
-# 自動デプロイ時に使用する、今は実装できていない...
-version: 0.0
-os: linux2
-files:
-  - source: /
-    destination: /home/ec2-user/fon-hikari/
