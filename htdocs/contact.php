@@ -171,7 +171,7 @@ $(function(){
                     </div>
 		</div>
 		<p class="agree_box">
-			<input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[minCheckbox[1]]" id="agree">
+			<input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required]" id="agree">
 			<label for="agree" class="agree">
 				同意する
 			</label>
