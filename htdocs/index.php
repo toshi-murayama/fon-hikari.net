@@ -23,6 +23,9 @@
 </head>
 
 <body>
+<p id="cursor"></p>
+<div id="stalker"></div>
+
     <?php include "include/header.html";?>
 
     <div id="wrap">

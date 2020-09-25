@@ -15,6 +15,7 @@ html {
 	font-weight: 200;
 	margin: 0;
 	padding: 0;
+    cursor: none !important;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
 	margin: 0;
 	padding: 0;
     position: relative;
+    cursor: none !important;
 }
 
 * {
@@ -46,7 +48,8 @@ a{
 }
 
 a:hover {
-  opacity: 0.7;
+    opacity: 0.7;
+    cursor: none;
 }
 
 .pc {
@@ -73,7 +76,38 @@ a:hover {
   transform: translateY(0px);
 }
 
+/*カーソル*/
+#cursor{
+	position: fixed;
+	width: 10px;
+	height: 10px;
+    border-radius: 10px;
+	margin: -20px 0 0 -20px;/*半分引いてカーソル先端に画像中心位置が来るように*/
+	z-index: 3;/*一番手前に来るように*/
+	pointer-events: none;/*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
+	transition: transform 0.1s;
+	opacity: 0;/*開いた瞬間非表示*/
+    background: #111;
+}
+ 
+#cursor.active{
+	transform: scale(1.8);
+}
 
+#stalker{
+	position: fixed;
+	width: 40px;
+	height: 40px;
+    border-radius: 50px;
+	z-index: 2;/*一番手前に来るように*/
+	pointer-events: none;/*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
+	background: $gradient;
+	background-size: contain;
+	opacity: 0;/*開いた瞬間非表示*/
+}
+ 
+#stalker.active{
+}
 
 /*-------------------------------------------------
  header
@@ -622,7 +656,6 @@ footer {
                 h3{
                     font-size: 28px;
                     font-weight: 900;
-                    text-align: center;
                     margin: 15px 0;
                 }
                 p{}
