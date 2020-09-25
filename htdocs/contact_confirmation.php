@@ -77,9 +77,13 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <link rel="stylesheet" href="css/style_form.css">
 <!----js---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
-
 <body>
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 <?php include "include/header_form.html";?>
 	<section id="confirmation">
 		<h2>お問い合わせ</h2>

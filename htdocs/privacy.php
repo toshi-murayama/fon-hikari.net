@@ -24,6 +24,9 @@
 <?php include "include/tag_head.html";?>
 </head>
 <body class="gray">
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 <?php include "include/header.html";?>
 <main>
     <section id="privacy">

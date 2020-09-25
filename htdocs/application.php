@@ -90,9 +90,13 @@ $(window).load(function() {
 <!-- <script src="js/jquery.autoKana.js"></script>-->
 <script src="js/application.js"></script>
 <script src="js/script.js"></script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
-
 <body>
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 	<?php include "include/header_form.html";?>
 	<section id="application">
 		<h2>fon光お申し込み</h2>

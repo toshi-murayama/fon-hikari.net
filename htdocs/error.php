@@ -11,8 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css"> 
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
 <body>
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 <?php include "include/header.html";?>
 <main id="error">
     <article>

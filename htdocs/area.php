@@ -32,8 +32,13 @@ countCookie : 1000
 });
 })
 </script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
 <body>
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 	<?php include "include/header_form.html";?>
 	<div id="layer_board_area">
 		<div class="layer_board_bg"></div>
