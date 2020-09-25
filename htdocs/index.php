@@ -237,36 +237,28 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         <dl>
                             <dd><img src="img/flow_ico01.svg" alt=""></dd>
                             <dt>お申し込み</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="img/flow_ico02.svg" alt=""></dd>
                             <dt>工事日確定</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="img/flow_ico03.svg" alt=""></dd>
                             <dt>工事完了</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>当日、工事作業員にて工事を行います。</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="img/flow_ico04.svg" alt=""></dd>
                             <dt>利用開始</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
                         </dl>
                     </li>
                 </ul>
