@@ -15,7 +15,6 @@ html {
 	font-weight: 200;
 	margin: 0;
 	padding: 0;
-    cursor: none !important;
 }
 
 body {
@@ -26,7 +25,7 @@ body {
 	margin: 0;
 	padding: 0;
     position: relative;
-    cursor: none !important;
+    
 }
 
 * {
@@ -82,14 +81,14 @@ a:hover {
 	width: 10px;
 	height: 10px;
     border-radius: 10px;
-	margin: -20px 0 0 -20px;/*半分引いてカーソル先端に画像中心位置が来るように*/
+	margin: -5px 0 0 -5px;/*半分引いてカーソル先端に画像中心位置が来るように*/
 	z-index: 3;/*一番手前に来るように*/
 	pointer-events: none;/*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
 	transition: transform 0.1s;
 	opacity: 0;/*開いた瞬間非表示*/
     background: #111;
 }
- 
+
 #cursor.active{
 	transform: scale(1.8);
 }
