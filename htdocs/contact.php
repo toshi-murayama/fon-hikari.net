@@ -14,9 +14,8 @@
 <link rel="stylesheet" href="css/style_form.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <!----js---->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="js/jquery.layerBoard.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.privacy').hide();
@@ -25,72 +24,51 @@ $(function(){
 	});
 });
 </script>
-<script>
-$(function(){
-$('#layer_board_area').layerBoard({
-delayTime: 100, //表示までの待ち時間
-fadeTime : 300, //表示開始から表示しきるまでの時間
-alpha : 0.8, //背景レイヤーの透明度
-limitMin : 0, //何分経過後に再度表示するか/分（0で再表示なし）
-easing: 'linear', //イージング
-limitCookie : 0 , //cookie保存期間/日（0で開くたび毎回表示される）
-countCookie : 1000 //何回目のアクセスまで適用するか(cookie保存期間でリセット)
-});
-})
-</script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/jquery.autoKana.js"></script>
 <script src="js/contact.js"></script>
-<script src="js/script.js"></script>
 </head>
 
 <body>
 <?php include "include/header_form.html";?>
-	<div id="layer_board_area">
-		<div class="layer_board_bg"></div>
-		<div class="layer_board">
-			<p>ポップアップ</p>
-			<a href="#" class="btn_close">閉じる</a>
-		</div>
-	</div>
 	<section id="contact">
 		<h2>お問い合わせ</h2>
 		<h3>01 お問い合わせ内容をご入力ください</h3>
-		<form method="post" action="contact_confirmation.php" id="appForm">
+		<form method="post" action="contact_confirmation" id="appForm">
 		<ul class="form">
 			<li class="categories">
 				<dl>
 					<dt>氏名（姓）<br>
-						<input size="30" type="text" name="lastName" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
+						<input size="30" type="text" name="姓" value="<?php print $first_name; ?>" class="validate[required]" id="lastName"></dt>
 					<dd>氏名（名）<br>
-						<input size="30" type="text" name="firstName" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
+						<input size="30" type="text" name="名" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
 				</dl>
 			</li>
 			<li class="categories">
 				<dl>
 					<dt>フリガナ（セイ）<br>
-						<input size="30" type="text" name="lastNameKana" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
+						<input size="30" type="text" name="姓（カナ）" value="<?php print $first_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="lastNameKana"></dt>
 					<dd>フリガナ（メイ）<br>
-						<input size="30" type="text" name="firstNameKana" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
+						<input size="30" type="text" name="名（カナ）" value="<?php print $second_name_kana; ?>" class="validate[required],[custom[zenkaku_kana]]" id="firstNameKana"></dd>
 				</dl>
 			</li>
 			<li class="categories">電話番号</li>
 			<li>
-				<input type="text" name="phoneNumber" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
+				<input type="text" name="電話番号" value="<?php print $tel; ?>" maxlength='11' class="validate[required],[custom[onlyNumberSp]]">
 			</li>
 			<li class="categories">メールアドレス</li>
 			<li>
-				<input type="text" name="mailAddress" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
+				<input type="text" name="メールアドレス" value="<?php print $mail; ?>" class="validate[required],[custom[email]]">
 			</li>
 			<li class="categories">お問い合わせ内容</li>
 			<li>
-				<textarea name="inquiry" value="<?php print $mail; ?>" class="validate[required]" rows="6" cols="60"></textarea>
+				<textarea name="お問い合わせ内容" value="<?php print $mail; ?>" class="validate[required]" rows="6" cols="60"></textarea>
 			</li>
 		</ul>
-                <div class="privacyTitle">個人情報取得における告知・同意文</div>
-                <div class="privacy">
+		<div class="privacyTitle">個人情報取得における告知・同意文</div>
+		<div class="privacy">
                     <h4>【重要】お問い合わせをされる前に、下記個人報取得における告知・同意文、ご利用規約をよくお読みください。</h4>
                         <div class="privacy_text">
                         フォン・ジャパン株式会社 (以下、「当社」という。)は、 通信・ネットワークソリューション事業、 営業事業、IT・Webソリューション事業を行っております。<br> 
@@ -191,15 +169,18 @@ countCookie : 1000 //何回目のアクセスまで適用するか(cookie保存�
                         なお、送付頂いた書類は原則としてご返却いたしません。                        
                         <br>
                     </div>
-					</div>
-                    <p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
-                        <label for="agree" class="agree">
-                        </label>同意する</p>
-                <dl class="btn">
-					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
-                    <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
-                </dl>
-			</form>
+		</div>
+		<p class="agree_box">
+			<input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[minCheckbox[1]]" id="agree">
+			<label for="agree" class="agree">
+				同意する
+			</label>
+		</p>
+		<dl class="btn">
+			<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
+			<dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
+		</dl>
+		</form>
 	</section>
 	<?php include "include/footer_form.html";?>
 </body>
