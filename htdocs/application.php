@@ -87,9 +87,9 @@ $(window).load(function() {
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/ajaxzip3.js"></script>
-<!-- <script src="js/jquery.autoKana.js"></script>
+<!-- <script src="js/jquery.autoKana.js"></script>-->
 <script src="js/application.js"></script>
-<script src="js/script.js"></script> -->
+<!--<script src="js/script.js"></script> -->
 </head>
 
 <body>
@@ -151,7 +151,7 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities');">
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities','installationTown');">
 					</li>
 				<li class="categories">都道府県</li>
 				<li>

@@ -396,7 +396,6 @@ header h1 img{
   position: relative;
   display: inline-block;
   width: 30%;
-  border: 1px solid #666;
   border-radius: 5px;
 	box-sizing: border-box;
 }
