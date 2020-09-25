@@ -23,13 +23,21 @@
 </head>
 
 <body>
+<style>
+    body{
+        cursor: none;
+    }
+</style>
+<p id="cursor"></p>
+<div id="stalker"></div>
+
     <?php include "include/header.html";?>
 
     <div id="wrap">
         <section id="top">
             <article>
                 <h1>fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥3,980</span></h2>
+                <h2>月額<span>¥3,980</span><small>(税別)</small></h2>
                 <div></div>
                 <p>超高速インターネット回線</p>
                 <p>下り最大 2Gbps</p>
@@ -156,6 +164,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </li>
                     </ul>
                 </div>
+                <p>※税抜き価格で表記しております。</p>
             </article>
         </section>
 
@@ -269,7 +278,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="area">
+        <section id="provide">
             <article>
                 <h2>サービス提供エリア</h2>
                 <div class="box">
