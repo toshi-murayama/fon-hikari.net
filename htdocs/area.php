@@ -19,11 +19,30 @@
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
 <script type="text/javascript" src="js/jquery.layerBoard.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-
+<script>
+$(function(){
+$('#layer_board_area').layerBoard({
+delayTime: 100,
+fadeTime : 300,
+alpha : 0.8,
+limitMin : 0,
+easing: 'linear',
+limitCookie : 0 ,
+countCookie : 1000
+});
+})
+</script>
 </head>
 <body>
 	<?php include "include/header_form.html";?>
-	<section id="area">
+	<div id="layer_board_area">
+		<div class="layer_board_bg"></div>
+		<div class="layer_board">
+			<p>ポップアップ</p>
+			<a href="#" class="btn_close">閉じる</a>
+		</div>
+	</div>
+	<section id="area_search">
 		<h2>fon光お申し込み</h2>
 		<h3>01 エリア検索</h3>
 		<form method="post" action="application" id="appForm">

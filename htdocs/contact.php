@@ -14,8 +14,10 @@
 <link rel="stylesheet" href="css/style_form.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <!----js---->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
 <script type="text/javascript">
 $(function(){
 	$('.privacy').hide();

@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 session_start();
 
 function h($h_string){
@@ -63,7 +63,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 	$error .= '<p class="error">メールアドレスを正しい形で入力してください</p>';
 }
 
-?>
+?>-->
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 <head>
@@ -111,6 +111,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 				<li class="categories">
 					<dl>
 						<dt>フリガナ（セイ）
+
 							<p><?php print $first_name_kana; ?>&nbsp;</p></dt>
 						<dd>フリガナ（メイ）
 							<p><?php print $second_name_kana; ?>&nbsp;</p></dd>

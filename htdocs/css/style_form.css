@@ -74,21 +74,21 @@ a:active {}
 
 /*--------------form--------------*/
 
-header{
+.header_form{
 	width:100%;
 	background: #333;
 	padding: 15px 0;
 	text-align: center;
 }
 
-header h1 img{
+.header_form h1 img{
 	width: 100px;
 	height: auto;
 }
 
 
-/*area*/
-#area,
+/*エリア検索*/
+#area_search,
 #application,
 #confirmation,
 #thanks,
@@ -97,7 +97,7 @@ header h1 img{
 	margin: 40px auto;
 }
 
-#area h2,
+#area_search h2,
 #application h2,
 #confirmation h2,
 #thanks h2,
@@ -108,16 +108,18 @@ header h1 img{
 	text-align: left;
 }
 
-#area h3{
+#area_search h3{
 	font-size: 16px;
 	font-weight: bold;
 	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
 	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 25%,#333 25%, #333 100%) 8/0 0 8px 0;
 	border-style: solid;
 	margin-bottom: 80px;
 }
 
-#area .search_text,
+
+#area_search .search_text,
 #application .search_text,
 #confirmation .search_text,
 #thanks .search_text,
@@ -129,28 +131,28 @@ header h1 img{
 	margin: 0 auto 60px;
 	text-align: center;
 }
-#area .address{
+#area_search .address{
 	text-align: center;
 	margin-bottom: 80px;
 }
-#area .address dl{
+#area_search .address dl{
 	display: table;
 	margin: 10px auto;
 	width: 400px;
 }
-#area .address dl dt{
+#area_search .address dl dt{
 	display: table-cell;
 	vertical-align: middle;
 	width: 15%;
 }
-#area .address dl dd{
+#area_search .address dl dd{
 	display: table-cell;
 	width: 85%;
 }
-#area .address .select {
+#area_search .address .select {
 	position: relative;
 }
-#area .address select{
+#area_search .address select{
 	-webkit-appearance: none;
     -moz-appearance: none;
 	border: 1px solid #666;
@@ -159,7 +161,7 @@ header h1 img{
 	border-radius: 5px;
 	width: 100%;
 }
-#area .address i {
+#area_search .address i {
     z-index: 1;
     position: absolute;
     right: 20px;
@@ -168,12 +170,12 @@ header h1 img{
 	color: #666;
 	font-size: 20px;
 }
-#area .subsequently .form li,
+#area_search .subsequently .form li,
 #application .form li,
 #contact .form li{
 	padding: 5px 0;
 }
-#area .subsequently .result{
+#area_search .subsequently .result{
 	width: 100%;
 	border: 1px solid #666;
 	background: #eee;
@@ -182,17 +184,17 @@ header h1 img{
 	border-radius: 5px;
 	margin-bottom: 30px;
 }
-#area .subsequently .type,
+#area_search .subsequently .type,
 #application .type{
 	display: flex;
 	margin: 10px 0 0;
 }
-#area .subsequently .type li,
+#area_search .subsequently .type li,
 #application .type li{
 	 width: calc(100%/3);
 	position: relative;
 }
-#area .subsequently .type li input[type=radio],
+#area_search .subsequently .type li input[type=radio],
 #application .type li input[type=radio]{
 	position: absolute;
     visibility: hidden;
@@ -201,7 +203,7 @@ header h1 img{
     margin: 0;
 	padding: 0;
 }
-#area .subsequently .type li label,
+#area_search .subsequently .type li label,
 #application .type li label{
 	border: 1px solid #666;
 	border-radius: 5px;
@@ -212,23 +214,23 @@ header h1 img{
 	padding: 20px;
 	box-sizing: border-box;
 }
-#area .subsequently .type li label:hover,
+#area_search .subsequently .type li label:hover,
 #application .type li label:hover{
 	background: #fff9e5;
 }
-#area .subsequently .type li input[type="radio"]:checked + label,
+#area_search .subsequently .type li input[type="radio"]:checked + label,
 #application .type li input[type="radio"]:checked + label{
 	border: 1px solid #ec7103;
 	background: #fff9e5;
 	box-sizing: border-box;
 }
-#area .area_btn{
+#area_search .area_btn{
 	width: 100%;
 	padding: 60px 0;
 	text-align: center;
 }
-#area .area_btn #openModal,
-#area .area_btn input{
+#area_search .area_btn #openModal,
+#area_search .area_btn input{
 	display: block;
 	width: 200px;
 	height: auto;
@@ -396,7 +398,6 @@ header h1 img{
   position: relative;
   display: inline-block;
   width: 30%;
-  border: 1px solid #666;
   border-radius: 5px;
 	box-sizing: border-box;
 }
@@ -800,19 +801,19 @@ width: 200px;
 margin: 0 auto
 }
 /*footer*/
-footer .tel_app{
+.footer_form .tel_app{
 	text-align: center;
 	font-size: 24px;
 	margin-bottom: 40px;
 }
-footer .tel_app .tel_no{
+.footer_form .tel_app .tel_no{
 	font-size: 36px;
 	font-weight: bold;
 	font-family: 'futura';
 	line-height: 1;
 	margin: 15px 0 0;
 }
-footer .tel_app .tel_no::before{
+.footer_form .tel_app .tel_no::before{
 	content: "";
 	display: inline-block;
 	background: url("../img/icon_tel.png")no-repeat;
@@ -821,11 +822,11 @@ footer .tel_app .tel_no::before{
 	background-size: contain;
 	margin-right: 10px;
 }
-footer .tel_app .tel_no span{
+.footer_form .tel_app .tel_no span{
 	font-size: 12px;
 	font-weight: normal;
 }
-footer .copyright{
+.footer_form .copyright{
 	background: #333;
 	text-align: center;
 	padding: 20px 0;
@@ -879,7 +880,7 @@ img{
 	max-width: 100%;
 	height: auto;
 }		
-#area,
+#area_search,
 #application,
 #confirmation,
 #thanks,
@@ -888,7 +889,7 @@ img{
 	margin: 40px auto;
 }
 
-#area h2,
+#area_search h2,
 #application h2,
 #confirmation h2,
 #thanks h2,
@@ -898,11 +899,11 @@ img{
 	font-weight: bold;
 }
 
-#area h3.first{
+#area_search h3.first{
 	margin-bottom: 40px;
 }
 
-#area .search_text,
+#area_search .search_text,
 #application .search_text,
 #confirmation .search_text,
 #thanks .search_text{
@@ -910,35 +911,35 @@ img{
 	padding: 15px 10px;
 	margin: 0 auto 30px;
 }
-#area .address{
+#area_search .address{
 	margin-bottom: 40px;
 }
-#area .address dl{
+#area_search .address dl{
 	width: 100%;
 }
-#area .address dl dt{
+#area_search .address dl dt{
 	width: 15%;
 }
-#area .address dl dd{
+#area_search .address dl dd{
 	width: 85%;
 }
-#area .address select{
+#area_search .address select{
 	padding: 20px 10px;
 }
-#area .subsequently .type li{
+#area_search .subsequently .type li{
 	font-size: 3vw;
 }
-#area .subsequently .type li img{
+#area_search .subsequently .type li img{
 	 width: auto;
 	height: 50px;
 }
-#area .subsequently .type li label{
+#area_search .subsequently .type li label{
 	padding: 10px 5px;
 }
-#area .subsequently .type li:first-child label{
+#area_search .subsequently .type li:first-child label{
 	padding: 18px 5px;
 }
-#area .area_btn{
+#area_search .area_btn{
 	padding: 30px 0;
 }
 
