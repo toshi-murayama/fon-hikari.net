@@ -12,7 +12,7 @@
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/pikaday-package.css">
+  <link rel="stylesheet" href="pikaday/dist/pikaday-package.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
@@ -37,16 +37,14 @@ $(window).load(function() {
 			}).change();
 });
 </script>
-<script src="js/pikaday-responsive-modernizr.js"></script>
-	
+  <script src="pikaday/dist/dependencies/pikaday-responsive-modernizr.js"></script>
+<script src="js/jquery.zip2addr.js"></script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/jquery.autoKana.js"></script>
 <script src="js/application.js"></script>
 <script src="js/script.js"></script>
-	
-
 </head>
 
 <body>
@@ -90,13 +88,7 @@ $(window).load(function() {
 				</li>
 				<li class="categories">生年月日</li>
 				<li>
-					<p>
-    <label for="date1-input">Select a date:</label>
-    <input name="date" type="date" id="date1" class="test class"/>
-  </p>
-					<label class="birthday">
-						<label class="date-edit"><input name="date" type="date" value="2020-09-28" id="date1"/></label>
-					</label>
+					<input name="date" type="date" value="value="<?php print $date; ?>"" id="date1"/>
 				</li>
 				<li class="categories">電話番号</li>
 				<li>
@@ -111,7 +103,7 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode">
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]"  id="postalCode" onKeyUp="$('#postalCode').zip2addr({pref:'#prefectures',addr:'#address'});" ><br>
 					</li>
 				<li class="categories">都道府県</li>
 				<li>
@@ -420,7 +412,7 @@ $(window).load(function() {
                         <br>
                     </div>
                 </div>
-			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] blue" id="agree">
+			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] orange" id="agree">
                         <label for="agree" class="agree">
                         </label>同意する</p>
                 <dl class="btn">
@@ -431,11 +423,24 @@ $(window).load(function() {
 	</section>
 	<?php include "include/footer_form.html";?>
 	
-<script src="js/moment.min.js"></script>
-<script src="js/pikaday.min.js"></script>
-<script src="js/pikaday-responsive.js"></script>
+<script src="pikaday/dist/dependencies/jquery.min.js"></script>
+<script src="pikaday/dist/dependencies/moment.min.js"></script>
+<script src="pikaday/dist/dependencies/pikaday.min.js"></script>
+<script src="pikaday/src/pikaday-responsive.js"></script>
 
 <script>
+	
+	var picker = new Pikaday({  
+    changeMonth: true, 
+    changeYear: true, 
+    field: document.getElementById('#date6'), 
+    firstDay: 1, 
+    minDate: new Date('1960-01-01'), 
+    maxDate: new Date('2020-12-31'), 
+    yearRange: [1960,2020] 
+
+}); 
+	
   var $date1 = $("#date1");
   var instance1 = pikadayResponsive($date1);
   $date1.on("change", function() {
@@ -458,7 +463,7 @@ $(window).load(function() {
 
   var $date4 = $("#date4");
   var today = new Date();
-  var minDate = new Date();
+  var minDate = new Date('1960-01-01');
   var maxDate = new Date();
   minDate.setDate(today.getDate() + 3);
   maxDate.setDate(today.getDate() + 365);

@@ -91,7 +91,8 @@ header h1 img{
 #area,
 #application,
 #confirmation,
-#thanks{
+#thanks,
+#contact{
 	width: 700px;
 	margin: 40px auto;
 }
@@ -99,7 +100,8 @@ header h1 img{
 #area h2,
 #application h2,
 #confirmation h2,
-#thanks h2{
+#thanks h2,
+#contact h2{
 	font-size: 24px;
 	margin-bottom: 30px;
 	font-weight: bold;
@@ -118,7 +120,8 @@ header h1 img{
 #area .search_text,
 #application .search_text,
 #confirmation .search_text,
-#thanks .search_text{
+#thanks .search_text,
+#contact .search_text{
 	width: 350px;
 	padding: 15px;
 	box-sizing: border-box;
@@ -166,7 +169,8 @@ header h1 img{
 	font-size: 20px;
 }
 #area .subsequently .form li,
-#application .form li{
+#application .form li,
+#contact .form li{
 	padding: 5px 0;
 }
 #area .subsequently .result{
@@ -324,28 +328,34 @@ header h1 img{
 	margin: 50px 0 0;
 }
 #application .form li.categories,
-#confirmation .form li.categories{
+#confirmation .form li.categories,
+#contact .form li.categories{
 	padding-top: 30px;
 }
-#application dl{
+#application dl,
+#contact dl{
 	display: flex;
 }
-#application dl dt{
+#application dl dt,
+#contact dl dt{
 	width: 50%;
 	padding-right: 10px;
 }
-#application dl dd{
+#application dl dd,
+#contact dl dd{
 	width: 50%;
 	padding-left: 10px;
 }
-#application input[type=text]{
+#application input[type=text],
+#contact input[type=text]{
 	width: 100%;
 	border: 1px solid #666;
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 5px;
 }
-#application input.min[type=text]{
+#application input.min[type=text],
+#contact input.min[type=text]{
 	width: 30%;
 }
 #application .app input[type=radio] {
@@ -390,7 +400,7 @@ header h1 img{
   border-radius: 5px;
 	box-sizing: border-box;
 }
-#application input[type=date]{
+/*#application input[type=date]{
   position: relative;
 	padding: 20px;
   width: 100%;
@@ -404,6 +414,7 @@ header h1 img{
 #application input[type="date"]::-webkit-clear-button{
   -webkit-appearance: none;
 }
+*/
 #application .select{
 	position: relative;
 	width: 50%;
@@ -458,12 +469,14 @@ header h1 img{
 #application .documents p{
 	margin-right: 20px;
 }
-#application .privacyTitle{
+#application .privacyTitle,
+#contact .privacyTitle{
 	text-align: center;
 	cursor: pointer;
 	margin-bottom: 30px;
 }
-#application .privacyTitle::before{
+#application .privacyTitle::before,
+#contact .privacyTitle::before{
 	content: '';
 	display: inline-block;
 	background: url("../img/img_plus.png")no-repeat;
@@ -473,19 +486,22 @@ header h1 img{
 	vertical-align: middle;
 	margin-right: 15px;
 }
-#application .privacy{
+#application .privacy,
+#contact .privacy{
 	display: none;
 	border: 1px solid #666;
 	padding: 20px;
 	box-sizing: border-box;
 	font-size: 12px;
 }
-#application .privacy h5{
+#application .privacy h5,
+#contact .privacy h4{
 	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 15px;
 }
-#application .privacy h6{
+#application .privacy h6,
+#contact .privacy h5{
 	font-size: 16px;
 	font-weight: bold;
 	margin: 0 0 10px;
@@ -501,11 +517,13 @@ header h1 img{
 	margin: -30px 0 50px;
 }
 
-#application .agree_box{
+#application .agree_box,
+#contact .agree_box{
 	text-align: center;
 	margin: 30px 0 70px 5px;
 }
-#application .btn{
+#application .btn,
+#contact .btn{
 	width: 420px;
 	display: flex;
 	text-align: center;
@@ -518,13 +536,15 @@ header h1 img{
 	margin: 80px auto;
 }
 #application .btn dt,
-#confirmation .btn dt{
+#confirmation .btn dt,
+#contact .btn dt{
 	width: 50%;
 	padding-right: 20px;
 	box-sizing: border-box;
 }
 #application .btn dt input,
-#confirmation .btn dt input{
+#confirmation .btn dt input,
+#contact .btn dt input{
 	width: 100%;
 	background: #666;
 	color: #fff;
@@ -533,13 +553,15 @@ header h1 img{
 	border: none;
 }
 #application .btn dd,
-#confirmation .btn dd{
+#confirmation .btn dd,
+#contact .btn dd{
 	width: 50%;
 	padding-left: 20px;
 	box-sizing: border-box;
 }
 #application .btn dd input,
-#confirmation .btn dd input{
+#confirmation .btn dd input,
+#contact .btn dd input{
 	width: 100%;
 	background: linear-gradient(to right, #fdc700 0%,#ee7d03 100%);
 	color: #fff;
@@ -547,7 +569,8 @@ header h1 img{
 	border-radius: 5px;
 	border: none;
 }
-#application input[type=checkbox] {
+#application input[type=checkbox],
+#contact input[type=checkbox]{
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -570,13 +593,16 @@ header h1 img{
 }
 /* Checkbox */
 #application input[type=checkbox]:before,
-#application input[type=checkbox]:after {
+#application input[type=checkbox]:after,
+#contact input[type=checkbox]:before,
+#contact input[type=checkbox]:after{
     position: absolute;
     content: "";
     background: #f08502;
     transition: all .2s ease-in-out;
 }
-#application input[type=checkbox]:before {
+#application input[type=checkbox]:before,
+#contact input[type=checkbox]:before{
     left: 2px;
     top: 6px;
     width: 0;
@@ -587,7 +613,8 @@ header h1 img{
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
-#application input[type=checkbox]:after {
+#application input[type=checkbox]:after,
+#contact input[type=checkbox]:after{
     right: 9px;
     bottom: 3px;
     width: 2px;
@@ -599,20 +626,24 @@ header h1 img{
     -o-transform: rotate(40deg);
     transition-delay: .2s;
 }
-#application input[type=checkbox]:checked:before {
+#application input[type=checkbox]:checked:before,
+#contact input[type=checkbox]:checked:before{
     left: 1px;
     top: 10px;
     width: 6px;
     height: 2px;
 }
-#application input[type=checkbox]:checked:after {
+#application input[type=checkbox]:checked:after,
+#contact input[type=checkbox]:checked:after{
     right: 5px;
     bottom: 1px;
     width: 2px;
     height: 14px;
 }
 #application input[type=checkbox]:indeterminate:before,
-#application input[type=checkbox]:indeterminate:after {
+#application input[type=checkbox]:indeterminate:after,
+#contact input[type=checkbox]:indeterminate:before,
+#contact input[type=checkbox]:indeterminate:after{
     width: 7px;
     height: 2px;
     transform: rotate(0);
@@ -621,21 +652,26 @@ header h1 img{
     -ms-transform: rotate(0);
     -o-transform: rotate(0);
 }
-#application input[type=checkbox]:indeterminate:before {
+#application input[type=checkbox]:indeterminate:before,
+#contact input[type=checkbox]:indeterminate:before{
     left: 1px;
     top: 7px;
 }
-#application input[type=checkbox]:indeterminate:after {
+#application input[type=checkbox]:indeterminate:after,
+#contact input[type=checkbox]:indeterminate:after{
     right: 1px;
     bottom: 7px;
 }
 /* 色は青色のみ */
-#application input[type=checkbox] {
+#application input[type=checkbox],
+#contact input[type=checkbox]{
     border: 2px solid #666;
 	border-radius: 5px;
 }
-#application input[type=checkbox].blue:checked,
-#application input[type=checkbox].blue:indeterminate {
+#application input[type=checkbox].orange:checked,
+#application input[type=checkbox].orange:indeterminate,
+#contact input[type=checkbox].orange:checked,
+#contact input[type=checkbox].orange:indeterminate{
     background: #fff;
 }
 
@@ -647,6 +683,15 @@ header h1 img{
 	border-style: solid;
 	margin-bottom: 80px;
 }
+#confirmation h3.second{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 66%,#333 66%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+
 #confirmation .error,
 #thanks .error{
 	color: #EB0003;
@@ -699,7 +744,61 @@ header h1 img{
 	font-size: 12px;
 }
 
+#contact h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 33%,#333 33%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 30px;
+}
+#contact textarea{
+	width: 100%;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
 
+.layer_board_bg,
+.layer_board {
+position: absolute;
+}
+.layer_board_bg {
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: 1000;
+top: 0;
+left: 0;
+display: none;
+cursor: pointer;
+background: #000;
+}
+.layer_board {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: #fff;
+text-align: center;
+z-index: 2000;
+padding: 50px
+}
+.layer_board p {
+margin-bottom: 50px
+}
+.btn_close {
+display: block;
+text-decoration: none;
+background: #000;
+color: #fff;
+text-align: center;
+padding: 20px 40px;
+width: 200px;
+margin: 0 auto
+}
 /*footer*/
 footer .tel_app{
 	text-align: center;
@@ -783,7 +882,8 @@ img{
 #area,
 #application,
 #confirmation,
-#thanks{
+#thanks,
+#contact{
 	width:90%;
 	margin: 40px auto;
 }
@@ -791,7 +891,8 @@ img{
 #area h2,
 #application h2,
 #confirmation h2,
-#thanks h2{
+#thanks h2,
+#contact h2{
 	font-size: 24px;
 	margin-bottom: 30px;
 	font-weight: bold;
@@ -864,7 +965,8 @@ img{
 	
 /* application */
 #application h3,
-#confirmation h3{
+#confirmation h3,
+#contact  h3{
 	margin-bottom: 40px;
 }
 
@@ -873,30 +975,36 @@ img{
 	margin: 20px 0 0;
 }
 #application .form li.categories,
-#confirmation .form li.categories{
+#confirmation .form li.categories,
+#contact .form li.categories{
 	padding-top: 15px;
 }
-#application dl{
+#application dl,
+#contact dl{
 	display: inherit;
 }
-#application dl dt{
+#application dl dt,
+#contact dl dt{
 	width: 100%;
 	padding-right: 0;
 	margin-bottom: 15px;
 }
-#application dl dd{
+#application dl dd,
+#contact dl dd{
 	width: 100%;
 	padding-left: 0;
 	margin-bottom: 15px;
 }
-#application input[type=text]{
+#application input[type=text],
+#contact input[type=text]{
 	width: 100%;
 	border: 1px solid #666;
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 5px;
 }
-#application input.min[type=text]{
+#application input.min[type=text],
+#contact input.min[type=text]{
 	width: 50%;
 }
 #application .app input[type=radio] {
@@ -997,15 +1105,18 @@ img{
 }
 	
 #application .btn,
-#confirmation .btn{
+#confirmation .btn,
+#contact .btn{
 	width: 100%;
 }
 #application .btn dt,
-#confirmation .btn dt{
+#confirmation .btn dt,
+#contact .btn dt{
 	padding-right: 10px;
 }
 #application .btn dd,
-#confirmation .btn dd{
+#confirmation .btn dd,
+#contact .btn dd{
 	padding-left: 10px;
 }
 
