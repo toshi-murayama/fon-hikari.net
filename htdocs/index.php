@@ -23,6 +23,14 @@
 </head>
 
 <body>
+<style>
+    body{
+        cursor: none;
+    }
+</style>
+<p id="cursor"></p>
+<div id="stalker"></div>
+
     <?php include "include/header.html";?>
 
     <div id="wrap">

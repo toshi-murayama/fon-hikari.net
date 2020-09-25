@@ -31,6 +31,121 @@
 	.st25{fill:url(#SVGID_20_);stroke:#FFFFFF;stroke-width:0.7087;}
 	.st26{fill:none;stroke:#FFD300;stroke-width:0.75;stroke-miterlimit:10;}
 	.st27{fill:none;stroke:#FFD300;stroke-miterlimit:10;}
+.line01 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 3s linear infinite;
+}
+.line02 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 3s linear infinite;
+    animation-delay: 0.5s;
+}
+.line03 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0s;
+}
+.line04 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 2s;
+}
+.line05 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 1s;
+}
+.line06 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0s;
+}
+.line07 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0.5s;
+}
+.line08 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0s;
+}
+.line09 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 2s;
+}
+.line10 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0s;
+}
+.line11 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0.5s;
+}
+.line12 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 2s;
+}
+.line13 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 1.5s;
+}
+.line14 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0s;
+}
+.line15 {
+    stroke-width: 2px;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 2s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes draw {
+    0%{
+        stroke-dashoffset: 1000px;
+    }
+    50% {
+        stroke-dashoffset: 0px;
+    }
+    100% {
+        stroke-dashoffset: 1000px;
+    }
+}
 </style>
 <g id="日本地図">
 </g>
@@ -5994,19 +6109,19 @@
 		s-0.21-0.13,0.21,0.71c0.41,0.83,0.41,0.83,0.41,0.83s0,0.21,0.21,0.5s0.17,0.08,0.21,0.29c0.04,0.21-0.08,0.42-0.08,0.42
 		l-0.21,0.33c0,0-0.25-0.04-0.33,0.17c-0.08,0.21-0.12,0.46-0.12,0.46"/>
 </g>
-<path class="st26" d="M49.52,439.68c10.93-41.25-0.66-55.91-4.6-60.03c-22.21-23.17-86.71-8.84-159.12,43.67"/>
-<path class="st26" d="M66.4,421.82c11.78-11.23,15.79-21.61,17.19-29.18c6.98-37.79-36.23-86.33-109.94-116.34"/>
-<path class="st26" d="M171.4,383.96c2.07-2.03,3.66-4.21,4.84-6.51c21.11-41.31-84.47-132.58-102.45-147.92"/>
-<path class="st26" d="M194.84,373.05c-4.58-86.83-9.71-130.29-15.41-130.36c-1.91-0.02-3.89,4.85-5.93,14.62"/>
-<path class="st27" d="M170.35,460.75c25.99-40.73,37.02-62.66,33.1-65.77c-1.05-0.83-3.17-0.32-6.37,1.54"/>
-<path class="st27" d="M214.9,373.83c41.3-71.37,58.75-109.34,52.33-113.93c-2-1.43-6.31,0.38-12.93,5.42"/>
-<path class="st27" d="M219.05,397.13c35.43,23.28,51.63,38.58,48.59,45.88c-1.39,3.34-6.81,5.01-16.27,5.01"/>
-<path class="st27" d="M241.58,382.4c-0.81-2.5-0.88-3.99-0.23-4.46c3-2.15,21.43,17.2,55.29,58.05"/>
-<path class="st27" d="M289.13,387.74c24.74,12.99,38.7,28.23,35.66,37.75c-0.67,2.11-2.65,5.42-9.59,8.13"/>
-<path class="st27" d="M291.98,330.29c38.02-77.91,49.32-123.17,33.9-135.8c-6.42-5.25-17.46-4.85-33.13,1.2"/>
-<path class="st27" d="M313.46,324.53c97.22-17.97,145.79-35.73,145.72-53.3c-0.03-7.19-8.21-14.35-24.54-21.47"/>
-<path class="st27" d="M299.27,366.71c43.77,53,61.28,84.95,52.53,95.87c-2.97,3.71-8.98,4.99-18.02,3.83"/>
-<path class="st27" d="M301.57,347.54c80.7-70.56,116.62-112.87,107.75-126.93c-3.18-5.04-12.13-6.45-26.84-4.22"/>
-<path class="st27" d="M311.98,360.66c115,70.69,170.45,109.91,166.37,117.64c-1.01,1.9-5.61,1.9-13.8,0"/>
-<path class="st27" d="M375.19,84.87c-9.37-7.64-60.05-47.44-132.29-39.5c-63.55,6.98-101.98,46.3-111.59,56.75"/>
+<path class="st26 line01" d="M49.52,439.68c10.93-41.25-0.66-55.91-4.6-60.03c-22.21-23.17-86.71-8.84-159.12,43.67"/>
+<path class="st26 line02" d="M66.4,421.82c11.78-11.23,15.79-21.61,17.19-29.18c6.98-37.79-36.23-86.33-109.94-116.34"/>
+<path class="st26 line03" d="M171.4,383.96c2.07-2.03,3.66-4.21,4.84-6.51c21.11-41.31-84.47-132.58-102.45-147.92"/>
+<path class="st26 line04" d="M194.84,373.05c-4.58-86.83-9.71-130.29-15.41-130.36c-1.91-0.02-3.89,4.85-5.93,14.62"/>
+<path class="st27 line05" d="M170.35,460.75c25.99-40.73,37.02-62.66,33.1-65.77c-1.05-0.83-3.17-0.32-6.37,1.54"/>
+<path class="st27 line06" d="M214.9,373.83c41.3-71.37,58.75-109.34,52.33-113.93c-2-1.43-6.31,0.38-12.93,5.42"/>
+<path class="st27 line07" d="M219.05,397.13c35.43,23.28,51.63,38.58,48.59,45.88c-1.39,3.34-6.81,5.01-16.27,5.01"/>
+<path class="st27 line08" d="M241.58,382.4c-0.81-2.5-0.88-3.99-0.23-4.46c3-2.15,21.43,17.2,55.29,58.05"/>
+<path class="st27 line09" d="M289.13,387.74c24.74,12.99,38.7,28.23,35.66,37.75c-0.67,2.11-2.65,5.42-9.59,8.13"/>
+<path class="st27 line10" d="M291.98,330.29c38.02-77.91,49.32-123.17,33.9-135.8c-6.42-5.25-17.46-4.85-33.13,1.2"/>
+<path class="st27 line11" d="M313.46,324.53c97.22-17.97,145.79-35.73,145.72-53.3c-0.03-7.19-8.21-14.35-24.54-21.47"/>
+<path class="st27 line12" d="M299.27,366.71c43.77,53,61.28,84.95,52.53,95.87c-2.97,3.71-8.98,4.99-18.02,3.83"/>
+<path class="st27 line13" d="M301.57,347.54c80.7-70.56,116.62-112.87,107.75-126.93c-3.18-5.04-12.13-6.45-26.84-4.22"/>
+<path class="st27 line14" d="M311.98,360.66c115,70.69,170.45,109.91,166.37,117.64c-1.01,1.9-5.61,1.9-13.8,0"/>
+<path class="st27 line15" d="M375.19,84.87c-9.37-7.64-60.05-47.44-132.29-39.5c-63.55,6.98-101.98,46.3-111.59,56.75"/>
 </svg>
