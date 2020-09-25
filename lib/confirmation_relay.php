@@ -12,8 +12,9 @@ session_start();
 
 // トークンをセッションにセット
 $token = sha1(uniqid(mt_rand(), true));
+var_dump($token);
 $_SESSION['tk'] = $token;
-
+var_dump($_SESSION['tk']);
 
 $applicationClassification = h($_POST['applicationClassification']);
 $lastName = h($_POST['lastName']);

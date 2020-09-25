@@ -248,7 +248,7 @@ $(window).load(function() {
 			<ul class="form aother_address" style='display:none'>
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','mailingPrefName','mailingMunicipalities');">
+					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','mailingPrefName','mailingMunicipalities', 'mailingTown');">
 				</li>
 				<li class="categories">都道府県</li>
 				<li>

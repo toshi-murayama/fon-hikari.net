@@ -9,7 +9,7 @@ use Param\HatarakuDbInsert;
 // TODO 本当はクラス化したいが、、、時間のあるときにリファクタリング.
 // 正常にページ推移したか確認(正しくなかったらtopに戻る)
 $ref = $_SERVER['HTTP_REFERER'];
-var_dump($ref);
+// var_dump($ref);
 // die();
 if ((isset($_POST['confirmationSubmitFlag']) && $_POST['confirmationSubmitFlag'] != 1) || strpos($ref,'confirmation') === false) {
 	header( "Location: / " );
@@ -18,7 +18,6 @@ if ((isset($_POST['confirmationSubmitFlag']) && $_POST['confirmationSubmitFlag']
 session_start();
 var_dump($_SESSION['tk']);
 var_dump($_POST['tk']);
-
 // 2重送信確認
 if ($_SESSION['tk'] != $_POST['tk'] || empty($_SESSION['tk'])) {
 	$error .= '<p class="error">不正な値が送信されました</p>';
@@ -28,7 +27,7 @@ if ($_SESSION['tk'] != $_POST['tk'] || empty($_SESSION['tk'])) {
 $data = HatarakuDbInsert::createData($_POST);
 
 $recordRegistRequestBody[] = HatarakuDbInsert::getApplicationApiParameter($data);
-var_dump($data);
+// var_dump($data);
 // API送信実行
 $hatarakuDb = new HatarakuDb();
 $result = $hatarakuDb->sendRequest(
@@ -41,9 +40,15 @@ var_dump($result);
 if ($result !== "200") {
 	sendHatarakuDBErrorMail($result);
 }
-
-$mail = h($_POST['mailAddress']);
-
+mb_language("Japanese");
+mb_internal_encoding("UTF-8");
+$to = 'takaiesamba@gmail.com';
+$subject = '《Fon光》お申し込み確認メール';
+$content = $ref;
+$from = "From: support@fon-hikari.net";
+$send = mb_send_mail($to, $subject, $content, $from);
+var_dump($send);
+unset($_SESSION['tk']);
 // if(empty($error)) {
 // 	// メール文章生成
 // 	foreach($_POST as $post_key=>$post_val) {
