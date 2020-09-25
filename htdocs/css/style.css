@@ -270,6 +270,9 @@ footer {
       width: 100%; }
       #top article h2 span {
         font-size: 82px; }
+      #top article h2 small {
+        font-size: 18px;
+        line-height: 0; }
     #top article > div {
       display: block;
       height: 5px;
@@ -444,6 +447,8 @@ footer {
               font-size: 36px;
               font-weight: 900;
               color: #f39500; }
+    #plan article > p {
+      text-align: right; }
 
 /*-----option-----*/
 #option {
@@ -535,11 +540,11 @@ footer {
             margin: 10px 0; }
 
 /*-----area-----*/
-#area {
+#provide {
   padding: 50px 0;
   background: url(../img/map.svg) no-repeat 75% 50%, linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
   background-size: contain; }
-  #area article {
+  #provide article {
     width: 90%;
     max-width: 1000px;
     height: 100%;
@@ -547,19 +552,19 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    #area article h2 {
+    #provide article h2 {
       text-align: center;
       font-size: 36px;
       font-weight: 900;
       margin-bottom: 30px; }
-    #area article .box {
+    #provide article .box {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
-      #area article .box .boxL {
+      #provide article .box .boxL {
         width: 50%;
         font-weight: 600; }
-        #area article .box .boxL a {
+        #provide article .box .boxL a {
           display: block;
           background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
           color: #fff;
@@ -569,7 +574,7 @@ footer {
           border-radius: 5px;
           margin-top: 30px;
           text-decoration: none; }
-      #area article .box .boxR {
+      #provide article .box .boxR {
         display: none; }
 
 /*-----support-----*/

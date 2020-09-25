@@ -286,6 +286,10 @@ footer {
             span{
                 font-size: 82px;
             }
+            small{
+                font-size: 18px;
+                line-height: 0;
+            }
         }
         >div{
             display: block;
@@ -472,6 +476,9 @@ footer {
                 }
             }
         }
+        >p{
+            text-align: right;
+        }
     }
 }
 
@@ -582,7 +589,7 @@ footer {
 
 
 /*-----area-----*/
-#area{
+#provide{
     padding: 50px 0;
     background: url(../img/map.svg) no-repeat 75% 50%,linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
     background-size: contain;
