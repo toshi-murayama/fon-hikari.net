@@ -143,6 +143,10 @@ header {
       header article .boxR ul li:last-child {
         margin-right: 0; }
 
+.gray header {
+  background: #333;
+  padding: 10px 0; }
+
 .fix-header {
   background-color: #333;
   line-height: 66px;

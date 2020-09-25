@@ -1,47 +1,52 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+<html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>fon光</title>
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<link rel="stylesheet" href="css/style.css"> 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>	
-<script type="text/javascript" src="js/script.js"></script>
+<meta name="viewport" id="viewport" content="width=device-width">
+<meta name="description" content="月額3,980円！fon光で快適なインターネット生活を送ろう">
+<meta name="keywords" content="fon,fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
+<?php include "include/ogp.html";?>
+<!--style-->
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/other.css"> 
+<!--js-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
-
-<body>
-<div id="container">
-<div id="header">
-	<div class="header_box">
-		<h1><a href="./"><img src="img/img_logo.png" alt=""/></a></h1>
-		<div class="header_c">
-			<p>お申込み・ご相談<span>10:00〜21:00（年末年始、お盆を除く）</span></p>
-			<p class="tel">0120-966-486</p>
-		</div>
-		<div class="header_r"><a href="">マイページ</a></div>
-		</div>
-	</div>
-	<div id="privacy">
-	<h3>個人情報保護方針について</h3>
-		<div class="privacy_box">
-				<p>フォン・ジャパン株式会社 (以下、「当社」という。)は、コンサルティング事業、ダイレクトセールス事業、セールスプロモーション事業を行っております。</p>
-				<p>当社は、当社の事業の用に供するすべての個人情報を適切に取扱うため、 当社全従業者が遵守すべき行動基準として本個人情報保護方針を定め、その遵守の徹底を図ることといたします。</p>
-				<ul>
-					<li>当社は、個人情報の取扱いに関する法令、国が定める指針その他の規範を遵守し、適切に運用いたします。</li>
-					<li>当社は、事業の内容及び規模を考慮した適切な個人情報の取得、利用及び提供を行います。 それには特定された利用目的の達成に必要な範囲を超えた個人情報の取扱いを行わないこと及びそのための措置を講じることを含みます。</li>
-					<li>当社は、個人情報の取扱いの全部又は一部を委託する場合は、その取扱いを委託された個人情報の安全管理が図られるよう、委託を受けた者に対する必要かつ適切な監督を行います。</li>
-					<li>当社は、本人の同意がある場合又は法令に基づく場合を除き、個人情報を第三者に提供することはありません。</li>
-					<li>当社は、個人情報の漏えい、滅失又はき損の防止及び是正のための措置を講じます。</li>
-					<li>当社は、個人情報の取扱いに関する苦情及び相談への適切かつ迅速な対応に努めます。また、当社が保有する開示対象個人情報の開示等の求め(利用目的の通知、 開示、訂正・追加又は削除、利用又は提供の停止）を受け付けます。</li>
-			</ul>
-		</div>
-	</div>
-	</div>
-	<footer>
-	<p><a href="./#flow">ご利用の流れ</a> | <a href="company.html">運営会社</a> | <a href="privacy.html">個人情報保護方針</a> | <a href="application.php">お申込み</a> | <a href="contact.php">お問い合わせ</a></p>
-</footer>
+<body class="gray">
+<?php include "include/header.html";?>
+<main>
+    <section id="privacy">
+        <article>
+            <h2>個人情報保護方針</h2>
+            <div>
+            <ul>
+                <li>1.サービス提供会社の個人情報に関する管理について フォン・ジャパン株式会社<br>
+                    個人情報保護管理者 横田 和典<br>
+                    〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F TEL:0120-966-486 Mail:support@fon-hikari.net</li>
+                <li>2.取得・利用目的 氏名、住所、電話番号、メールアドレス、生年月日その他必要な情報を、お申込みに対応、連絡のために取得し利用致します。</li>
+                <li>3.第三者への提供<br>
+                    頂いた個人情報は第三者への提供は致しません。 ただし、刑事訴訟法、地方税法、所得税法、商法などに基づく場合、ご本人様の同意なく個人情報の利用・提供を行うことがあります。</li>
+                <li>4.個人情報の委託<br>
+                    レンタルサーバー会社に委託をしています。 尚、業務の委託にあたっては事前に委託会社を選定し、個人情報保護の水準を満たしていることを確認しています。必要に応じて委託先会社とは個人情報保護に関する契約書を交わします。</li>
+                <li>5.任意性 当該個人情報をご提出いただくかはご本人様の任意ですが、この同意文によりご不明な点ご解消されず、当該個人情報をご提出いただけない場合、お問い合わせの対応を行えない状況等、ご本人にとって不具合が発生しますことをご承知ください。</li>
+                <li>6.個人情報の利用目的の通知、開示、訂正、追加又は削除、ならびに、利用停止、消去、第三者への提供の停止について<br>
+                    取得した個人情報については、個人情報保護管理者が管理しています。 当社が保有する開示対象個人情報の利用目的の通知、開示、訂正、追加又は削除、ならびに利用停止、消去、第三者への提供の停止をご請求される場合は、上記1の管理者にお申し出下さい。 尚、そのときは本人確認のため、身分証明書のご提示をして頂きます。</li>
+            </ul>
+            </div>
+        </article>
+    </section>
+</main>
+<?php include "include/footer.html";?>
 </body>
 </html>

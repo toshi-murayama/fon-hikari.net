@@ -24,37 +24,7 @@ table{
 li{
 	list-style:none;
 }
-a:link {
-    color: #333333;
-    text-decoration: none;
-}
-a:visited {
-    color: #333333;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-	opacity: 0.7;
-	filter: alpha(opacity=70);
-	-ms-filter: "alpha(opacity=70)";
-}
-a:active {
-    color: #333;
-    text-decoration: none;
-}
-a.under {
-    text-decoration: underline;
-}
-a.under:hover {
-    text-decoration: none;
-}
 
-img {
-    border: none;
-    vertical-align: bottom;
-	max-width: 100%;
-	height: auto;
-}
 
 #other{
 	width: 100%;
@@ -158,6 +128,30 @@ img {
 			}
 		}
 	}
+}
+
+#privacy{
+    article{
+        margin: 0 auto;
+        width: 90%;
+        max-width: 800px;
+        h2{
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            padding: 150px 0 100px;
+            border-bottom: 1px solid #ccc;
+        }
+        div{
+            padding: 100px 0;
+            ul{
+                li{
+                    font-size: 16px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
 }
 
 
