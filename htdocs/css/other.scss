@@ -24,37 +24,7 @@ table{
 li{
 	list-style:none;
 }
-a:link {
-    color: #333333;
-    text-decoration: none;
-}
-a:visited {
-    color: #333333;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-	opacity: 0.7;
-	filter: alpha(opacity=70);
-	-ms-filter: "alpha(opacity=70)";
-}
-a:active {
-    color: #333;
-    text-decoration: none;
-}
-a.under {
-    text-decoration: underline;
-}
-a.under:hover {
-    text-decoration: none;
-}
 
-img {
-    border: none;
-    vertical-align: bottom;
-	max-width: 100%;
-	height: auto;
-}
 
 #other{
 	width: 100%;
@@ -109,6 +79,34 @@ img {
 				padding: 10px 0;
 			}
 		}
+		h4{
+			margin: 0 0 15px;
+			font-size: 20px;
+		}
+		.faq_menu{
+			margin: 80px 0;
+			display: flex;
+			li{
+				width: 23%;
+				margin: 0 1%;
+				text-align: center;
+				a{
+					display: block;
+					width: 100%;
+					background: #fff;
+					border-radius: 5px;
+					padding: 20px;
+					box-sizing: border-box;
+					-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+					box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+					-webkit-transition: 0.2s;
+					transition: 0.2s;
+				}
+				a:hover{
+					background: #eee;
+				}
+			}
+		}
 		.faq_box{
 			width: 1000px;
 			margin: 80px auto;
@@ -145,6 +143,9 @@ img {
 						box-sizing: border-box;
 						padding: 10px;
 					}
+					span{
+						font-size: 90%;
+					}
 					p.a{
 						vertical-align: top;
 						padding: 10px;
@@ -158,6 +159,30 @@ img {
 			}
 		}
 	}
+}
+
+#privacy{
+    article{
+        margin: 0 auto;
+        width: 90%;
+        max-width: 800px;
+        h2{
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            padding: 150px 0 100px;
+            border-bottom: 1px solid #ccc;
+        }
+        div{
+            padding: 100px 0;
+            ul{
+                li{
+                    font-size: 16px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
 }
 
 
@@ -204,6 +229,20 @@ img{
 				font-size: 5.5vw;
 			}
 		}
+		.faq_menu{
+			margin: 30px 0;
+			display: flex;
+			flex-wrap: wrap;
+			li{
+				width: 46%;
+				margin: 0 2% 6%;
+				a{
+					padding: 20px 5px;
+					font-size: 3.5vw;
+				}
+			}
+		}
+
 		.faq_box{
 			width: 90%;
 			margin: 30px auto;

@@ -16,9 +16,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!--script src="js/confirmation.js"></script-->
 <!-- <script src="js/script.js"></script> -->
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
-
 <body>
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 <?php include "include/header_form.html";?>
 	<section id="confirmation">
 		<h2>fon光お申し込み</h2>

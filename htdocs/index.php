@@ -21,13 +21,8 @@
 <!--tag-->
 <?php include "include/tag_head.html";?>
 </head>
-
 <body>
-<style>
-    body{
-        cursor: none;
-    }
-</style>
+<?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
 
@@ -37,7 +32,7 @@
         <section id="top">
             <article>
                 <h1>fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥3,980</span></h2>
+                <h2>月額<span>¥3,980</span><small>(税別)</small></h2>
                 <div></div>
                 <p>超高速インターネット回線</p>
                 <p>下り最大 2Gbps</p>
@@ -164,6 +159,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </li>
                     </ul>
                 </div>
+                <p>※税抜き価格で表記しております。</p>
             </article>
         </section>
 
@@ -241,43 +237,35 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         <dl>
                             <dd><img src="img/flow_ico01.svg" alt=""></dd>
                             <dt>お申し込み</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="img/flow_ico02.svg" alt=""></dd>
                             <dt>工事日確定</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="img/flow_ico03.svg" alt=""></dd>
                             <dt>工事完了</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>当日、工事作業員にて工事を行います。</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="img/flow_ico04.svg" alt=""></dd>
                             <dt>利用開始</dt>
-                            <dd>お手持ちのスマートフォン、
-電話、パソコンよりお申し込み
-頂けます。</dd>
+                            <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
                         </dl>
                     </li>
                 </ul>
             </article>
         </section>
 
-        <section id="area">
+        <section id="provide">
             <article>
                 <h2>サービス提供エリア</h2>
                 <div class="box">

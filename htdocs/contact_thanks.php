@@ -82,9 +82,13 @@ if(empty($error)) {
 <link rel="stylesheet" href="css/animate.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--tag-->
+<?php include "include/tag_head.html";?>
 </head>
-
 <body>
+<?php include "include/tag_start.html";?>
+<p id="cursor"></p>
+<div id="stalker"></div>
 <?php include "include/header_form.html";?>
 	<section id="thanks">
 		<h2>お問い合わせ</h2>
