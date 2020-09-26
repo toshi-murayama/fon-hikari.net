@@ -65,6 +65,7 @@ class HatarakuDbInsert
                 "112578" => "{$dataAll['hikariTV1stContract']}",        // ひかりTV一契約目申込（無:0/有:1
                 "112581" => "{$dataAll['hikariTV2ndContract']}",        // ひかりTV二契約目申込（無:0/有:1
                 "112548" => "{$dataAll['planCode']}",                   // プランコード
+                "112546" => "{$dataAll['agencyCode']}",                 // 代理店コード
             ]
         ];
     }
@@ -77,6 +78,7 @@ class HatarakuDbInsert
     public static function createData(array $post): array {
         
         $data = $post;
+        // TODO 似たような処理が多い... 時間ができたら、共通化(判定メソッド作る)
         // 顧客区分
         if ($data['applicationClassification'] == '0') {
             $data['applicationClassification'] = '個人';
@@ -118,6 +120,8 @@ class HatarakuDbInsert
         $data['consentToElectronicDelivery'] = 0;
         // プランコード
         $data['planCode'] = 'MB01FZ';
+        // 代理店コード
+        $data['agencyCode'] = 'FA19317';
 
         return $data;
     }

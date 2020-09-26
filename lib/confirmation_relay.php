@@ -14,7 +14,6 @@ session_start();
 $token = sha1(uniqid(mt_rand(), true));
 $_SESSION['tk'] = $token;
 
-
 $applicationClassification = h($_POST['applicationClassification']);
 $lastName = h($_POST['lastName']);
 $lastNameKana = h($_POST['lastNameKana']);

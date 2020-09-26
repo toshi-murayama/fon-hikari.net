@@ -33,7 +33,7 @@ if(empty($error)) {
 	$title = '【fon光お問い合わせ】';
 	$headers  = 'From: ' . mb_encode_mimeheader($_POST['メールアドレス']) . "\r\n";
 	$headers .='Bcc: onepiecedeguchi@gmail.com' . "\r\n";
-	$send_mail = mb_send_mail($to, $title, $content, $headers);
+	$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 
 	//-----------------------------------------------------------
 	// ユーザーへメール
@@ -62,7 +62,7 @@ if(empty($error)) {
 	$content .= 'フォン・ジャパン株式会社'."\r\n";
 	$content .= '〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F'."\r\n";
 	$content .= 'URL: https://fon.ne.jp/'."\r\n";
-	$send_mail = mb_send_mail($to, $title, $content, $headers);
+	$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 
 
 	unset($_SESSION['tk']);
