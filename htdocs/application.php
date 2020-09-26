@@ -19,8 +19,7 @@
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="css/jquery-ui.css" >
-<!----js TODO ダウンロードする ----> 
-<script src="js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/datepicker-ja.min.js"></script>
 <script type="text/javascript">

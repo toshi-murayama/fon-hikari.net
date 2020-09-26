@@ -22,17 +22,25 @@
 	<section id="thanks">
 		<h2>fon光お申し込み</h2>
 		<h3>04 お申し込み完了</h3>
-		<div class="search_text">お申し込みありがとうございます。</div>
-		<?php
-if (empty($error)) {
-	print $message;
-} else {
-	print $error;
-}
-?>
-		<p class="text">後程弊社担当よりお電話にてご連絡させて頂きます。お電話をもってお申し込み完了となります。<br>
-			0120-966-486よりお電話させて頂きますのでフリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。</p>
-<p class="btn"><a href="/">最初のぺージに戻る</a></p>
+		<?php if (empty($error)) { ?>
+
+		<div class="search_text">お問い合わせありがとうございます。</div>
+		内容を確認し、ご連絡いたします。<br>
+		<br>
+		0120-966-486よりお電話させて頂きますので<br>
+		フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>
+
+	<?php } else { ?>
+
+		<p class="error" style="margin: 0 0 4em; text-align:center;">
+
+			<?php print $error; ?>
+
+		</p>
+
+	<?php } ?>
+
+		<p class="btn"><a href="/">最初のぺージに戻る</a></p>
 	</section>
 	<?php include "include/footer_form.html";?>
 </body>
