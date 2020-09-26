@@ -8,14 +8,12 @@ use Param\HatarakuDbInsert;
 // TODO 本当はクラス化したいが、、、時間のあるときにリファクタリング.
 // 正常にページ推移したか確認(正しくなかったらtopに戻る)
 $ref = $_SERVER['HTTP_REFERER'];
-
+date_default_timezone_set('Asia/Tokyo');
 if ((isset($_POST['confirmationSubmitFlag']) && $_POST['confirmationSubmitFlag'] != 1) || strpos($ref,'confirmation') === false) {
 	header( "Location: / " );
 }
 $error ='';
 session_start();
-var_dump($_SESSION['tk']);
-var_dump($_POST['tk']);
 // 2重送信確認
 if ($_SESSION['tk'] != $_POST['tk'] || empty($_SESSION['tk'])) {
 	$error .= '<p class="error">不正な値が送信されました</p>';
@@ -29,11 +27,10 @@ if(empty($error)) {
 	// API送信実行
 	$hatarakuDb = new HatarakuDb();
 	$result = $hatarakuDb->sendRequest(
-	HatarakuDb::URL_SINGLE_API,
-	HatarakuDb::API_TYPE_RECORD_REGIST,
-	$recordRegistRequestBody
+		HatarakuDb::URL_SINGLE_API,
+		HatarakuDb::API_TYPE_RECORD_REGIST,
+		$recordRegistRequestBody
 	);
-	var_dump($result);
 	// 失敗したらメールで報告
 	if ($result !== "200") {
 		sendHatarakuDBErrorMail($result);
@@ -46,14 +43,7 @@ if(empty($error)) {
 		//-----------------------------------------------------------
 		// 管理者へメール
 		//-----------------------------------------------------------
-		$content = '';
-		foreach($_POST as $k => $v) {
-			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
-		}
-		$content .= "\r\n";
-		$content .= '送信された日時：' . date( "Y/m/d (D) H:i:s" )."\r\n";
-		$content .= '申し込みのページHOST：' . $_SERVER['HTTP_HOST']."\r\n";
-		$content .= '申込のページURL：' . $_SERVER['REQUEST_URI']."\r\n";
+		$content = createApplicationAdminMailContent();
 		$to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
 		$title = '【fon光申込】';
 		$headers  = 'From: ' . mb_encode_mimeheader($_POST['メールアドレス']) . "\r\n";
@@ -63,20 +53,164 @@ if(empty($error)) {
 		//-----------------------------------------------------------
 		// ユーザーへメール
 		//-----------------------------------------------------------
-		$to = $_POST['メールアドレス'];
+		$to = $_POST['mailAddress'];
 		$headers  = "From: support@fon-hikari.net\r\n";
 		$headers .='Bcc: onepiecetakaie@gmail.com' . "\r\n";
 		$title = "《Fon光》お申し込み確認メール";
-		$content  = createApplicationMailContent();
-		var_dump($content);
+		$content  = createApplicationUserMailContent();
 		$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');		
 	}
 	unset($_SESSION['tk']);
 }
 
+// TODO keyの変換は別のメソッドにするべき...
+// 管理者用申込内容生成
+function createApplicationAdminMailContent() {
+	$content = '';
+	foreach($_POST as $k => $v) {
+		switch($k) {
+			case 'applicationClassification' :
+				$classification = '';
+				// TODO 似たような処理が多い... 時間ができたら、共通化(判定メソッド作る)
+				if ($v == '0') {
+					$classification = '個人';
+				} else {
+					$classification = '法人';
+				}
+				$content .= '【 申込区分 】 ' . $classification . "\r\n";
+			break;
+			case 'lastName' :
+				$content .= '【 氏名（姓） 】 ' . $v . "\r\n";
+			break;
+			case 'firstName' :
+				$content .= '【 氏名（名） 】 ' . $v . "\r\n";
+			break;
+			case 'lastNameKana' :
+				$content .= '【 フリガナ（セイ） 】 ' . $v . "\r\n";
+			break;
+			case 'sex' :
+				$sex = '';
+				if ($v == '1') {
+					$sex = '男性';
+				} else {
+					$sex = '女性';
+				}
+				$content .= '【 性別 】 ' . $sex . "\r\n";
+			break;
+			case 'birthday' :
+				$content .= '【 生年月日 】 ' . $v . "\r\n";
+			break;
+			case 'phoneNumber' :
+				$content .= '【 携帯番号 】 ' . $v . "\r\n";
+			break;
+			case 'fixedLine' :
+				$content .= '【 固定電話番号 】 ' . $v . "\r\n";
+			break;
+			case 'mailAddress' :
+				$content .= '【 メールアドレス 】 ' . $v . "\r\n";
+			break;
+			case 'postalCode' :
+				$content .= '【 郵便番号 】 ' . $v . "\r\n";
+			break;
+			case 'installationPref' :
+				$content .= '【 都道府県 】 ' . $v . "\r\n";
+			break;
+			case 'installationMunicipalities' :
+				$content .= '【 市区町村 】 ' . $v . "\r\n";
+			break;
+			case 'installationTown' :
+				$content .= '【 町名・丁目 】 ' . $v . "\r\n";
+			break;
+			case 'installationAddress' :
+				$content .= '【 番地・号 】 ' . $v . "\r\n";
+			break;
+			case 'installationBuilding' :
+				$content .= '【 建物名・部屋番号 】 ' . $v . "\r\n";
+			break;
+			case 'ownership' :
+				$ownership = '';
+				if ($v == '1') {
+					$ownership = '賃貸';
+				} else if ($v == '2') {
+					$ownership = '分譲';
+				} else if ($v == '3') {
+					$ownership = '分譲賃貸';
+				} else {
+					$ownership = '持ち家';
+				}
+				$content .= '【 所有携帯 】 ' . $ownership . "\r\n";
+			break;
+			case 'mailingDestination' :
+				$destination = '';
+				if ($v == '0') {
+					$destination = '設置場所と同じ';
+				} else {
+					$destination = '別住所に送る';
+				}
+				$content .= '【 入会書類郵送希望先 】 ' . $destination . "\r\n";
+			break;
+			case 'mailingPostalCode' :
+				$content .= '【 郵送先郵便番号 】 ' . $v . "\r\n";
+			break;
+			case 'mailingPrefName' :
+				$content .= '【 郵送先都道府県 】 ' . $v . "\r\n";
+			break;
+			case 'mailingMunicipalities' :
+				$content .= '【 郵送先市区町村 】 ' . $v . "\r\n";
+			break;
+			case 'mailingTown' :
+				$content .= '【 郵送先町名・丁目 】 ' . $v . "\r\n";
+			break;
+			case 'mailingAddress' :
+				$content .= '【 郵送先番地・号 】 ' . $v . "\r\n";
+			break;
+			case 'mailingBuilding' :
+				$content .= '【 郵送先建物名・部屋番号 】 ' . $v . "\r\n";
+			break;
+			case 'telephoneApplication' :
+				$telephoneApplication = '';
+				if ($v == '0') {
+					$telephoneApplication = 'なし';
+				} else {
+					$telephoneApplication = 'あり';
+				}
+				$content .= '【 ひかり電話申込 】 ' . $telephoneApplication . "\r\n";
+			break;
+			case 'homeType' :
+				$homeType = '';
+				if ($v == '1') {
+					$homeType = '一軒家';
+				} else if ($v == '2') {
+					$homeType = 'マンション（3F以下）';
+				} else {
+					$homeType = 'マンション（4F以下）';
+				}
+				$content .= '【 物件種類 】 ' . $homeType . "\r\n";
+			break;
+			case 'numberingMethod' :
+				$numberingMethod = '';
+				if ($v == '0') {
+					$numberingMethod = '新規';
+				} else {
+					$numberingMethod = '番ポ';
+				}
+				$content .= '【 電話番号種類 】 ' . $numberingMethod . "\r\n";
+			break;
+			default :
+			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
+		}
+		
+	}
+	$content .= "\r\n";
+	$content .= '送信された日時：' . date( "Y/m/d (D) H:i:s" )."\r\n";
+	$content .= '申込のページHOST：' . $_SERVER['HTTP_HOST']."\r\n";
+	$content .= '申込のページURL：' . $_SERVER['REQUEST_URI']."\r\n";
+	return $content;
+}
+
 // TODO ネストが深い. メール内容がわかりにくいため、判定などはメソッド化する.
-// 申込内容生成
-function createApplicationMailContent() {
+// ユーザー申込内容生成
+function createApplicationUserMailContent() {
 	$content = '';
 	$content .= 'この度はFon光のお申込みありがとうございます。'."\r\n";
 	$content .= 'お客様のお申し込みを下記内容で承りました。'."\r\n";
@@ -134,6 +268,8 @@ function createApplicationMailContent() {
 			case '佐賀県' :
 				$content .= '300円'."\r\n";
 				break;
+			default :
+			$content .= '0円'."\r\n";	
 		}
 		// 番号ポータビリティ.
 		if($_POST['numberingMethod'] == '1') {

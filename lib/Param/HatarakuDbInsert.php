@@ -78,6 +78,7 @@ class HatarakuDbInsert
     public static function createData(array $post): array {
         
         $data = $post;
+        // TODO 似たような処理が多い... 時間ができたら、共通化(判定メソッド作る)
         // 顧客区分
         if ($data['applicationClassification'] == '0') {
             $data['applicationClassification'] = '個人';

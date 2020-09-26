@@ -29,11 +29,10 @@
 		<?php if (empty($error)) { ?>
 
 		<div class="search_text">お問い合わせありがとうございます。</div>
-		内容を確認し、ご連絡いたします。<br>
-		<br>
+		<p class="text">後程弊社担当よりお電話にてご連絡させて頂きます。お電話をもってお申し込み完了となります。<br>
 		0120-966-486よりお電話させて頂きますので<br>
 		フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>
-
+		</p>
 	<?php } else { ?>
 
 		<p class="error" style="margin: 0 0 4em; text-align:center;">

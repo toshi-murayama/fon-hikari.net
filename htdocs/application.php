@@ -24,14 +24,14 @@
 <script type="text/javascript">
 
 $(function(){
+
 	//カレンダー
 	$("#datepicker").datepicker({
 		defaultDate: new Date(2000,3,1),
 		changeMonth: true,
 		changeYear: true,
 		yearRange: '-70:+0',
-		setDate: '2000/3/1'
-	});
+	}).datepicker("setDate", "2000/03/01");
 	$('.privacy').hide();
 	$('.privacyTitle').on('click', function() {
 		$('.privacy').slideToggle(500);
@@ -76,16 +76,27 @@ $(window).load(function() {
 				} else if ($('[id=aother]').prop('checked')) {
 					$('.aother_address').fadeIn();
 				} 
-			}).change();
+		}).change();
+
+		var homeType;
+		<?php
+		if(isset($_POST['homeType'])) {
+		?>
+			homeType = <?php echo $_POST['homeType']?> - 1;
+		<?php 
+		}
+		?>
+		// 物件種類
+		$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
+
 });
 </script>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/ajaxzip3.js"></script>
-<!-- <script src="js/jquery.autoKana.js"></script>-->
-<script src="js/application.js"></script>
-<script src="js/script.js"></script>
+<script src="js/jquery.autoKana.js"></script>
+
 <!--tag-->
 <?php include "include/tag_head.html";?>
 </head>
@@ -309,78 +320,6 @@ $(window).load(function() {
         </form>
 	</section>
 	<?php include "include/footer_form.html";?>
-	
-<script src="pikaday/dist/dependencies/jquery.min.js"></script>
-<script src="pikaday/dist/dependencies/moment.min.js"></script>
-<script src="pikaday/dist/dependencies/pikaday.min.js"></script>
-<script src="pikaday/src/pikaday-responsive.js"></script>
-
-<script>
-	
-	var picker = new Pikaday({  
-    changeMonth: true, 
-    changeYear: true, 
-    field: document.getElementById('#date6'), 
-    firstDay: 1, 
-    minDate: new Date('1960-01-01'), 
-    maxDate: new Date('2020-12-31'), 
-    yearRange: [1960,2020] 
-
-}); 
-	
-  var $date1 = $("#date1");
-  var instance1 = pikadayResponsive($date1);
-  $date1.on("change", function() {
-    $("#output1").html($(this).val());
-  });
-
-  var $date2 = $("#date2");
-  var instance2 = pikadayResponsive($date2, {
-    outputFormat: "X"
-  });
-  $date2.on("change", function() {
-    $("#output2").html($(this).val());
-  });
-
-  var $date3 = $("#date3");
-  var instance3 = pikadayResponsive($date3, {
-    format: "Do MMM YYYY",
-    outputFormat: "X"
-  });
-
-  var $date4 = $("#date4");
-  var today = new Date();
-  var minDate = new Date('1960-01-01');
-  var maxDate = new Date();
-  minDate.setDate(today.getDate() + 3);
-  maxDate.setDate(today.getDate() + 365);
-  var instance4 = pikadayResponsive($date4, {
-    format: "DD/MM/YYYY",
-    outputFormat: "DD/MM/YYYY",
-    pikadayOptions: {
-      minDate: minDate,
-      maxDate: maxDate,
-    },
-  });
-  instance4.setDate(minDate);
-
-  $date3.on("change", function() {
-    $("#output3").html($(this).val());
-  });
-
-  $date4.on("change", function() {
-    $("#output4").html($(this).val());
-  });
-
-  $("#clear").click(function() {
-    instance3.setDate(null);
-  });
-
-  $("#today").click(function() {
-    instance3.setDate(moment());
-  });
-
-</script> -->
 
 </body>
 </html>
