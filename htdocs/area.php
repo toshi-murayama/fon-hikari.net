@@ -44,9 +44,20 @@ countCookie : 1000
 	<?php include "include/header_form.html";?>
 	<div id="layer_board_area">
 		<div class="layer_board_bg"></div>
-		<div class="layer_board">
-			<p>ポップアップ</p>
-			<a href="#" class="btn_close">閉じる</a>
+		<div id="popup_area" class="layer_board">
+            <article>
+                <h4><img src="img/img_area.png" alt="">お申し込みの前にご確認ください。</h4>
+                <dl>
+                    <dt>サービス提供エリアは以下となっています。</dt>
+                    <dd>北海道<br>
+    関東（東京、神奈川、埼玉、千葉、茨城、栃木、群馬）<br>
+    東海（愛知、静岡、岐阜、三重）<br>
+    関西（大阪、兵庫、京都、滋賀、奈良）<br>
+    九州（福岡、佐賀）<br>
+    ※一部エリアを除く</dd>
+                </dl>
+                <a href="" class="btn_close">閉じる</a>
+            </article>
 		</div>
 	</div>
 	<section id="area_search">

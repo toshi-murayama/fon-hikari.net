@@ -577,6 +577,27 @@ footer {
       #provide article .box .boxR {
         display: none; }
 
+#popup_area {
+  padding: 5% 0;
+  background-size: contain; }
+  #popup_area article {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto; }
+    #popup_area article h4 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 30px;
+      color: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
+      #popup_area article h4 img {
+        width: 20px; }
+    #popup_area article dl dt {
+      margin-bottom: 15px;
+      font-weight: bold; }
+    #popup_area article dl dd {
+      text-align: left; }
+
 /*-----support-----*/
 #support {
   padding: 50px 0; }
