@@ -21,6 +21,37 @@
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
+<script>
+$(function () {
+    $(window).on('scroll', function() {
+        var scroll_top = $(window).scrollTop();
+        $('.effect').each(function() {
+            var offset_top = $(this).offset().top,
+                top_margin = 570;
+            if (scroll_top > offset_top - top_margin) {
+                $(this).addClass('fadein');
+            } else {
+            }
+        });
+        $('.ani1').each(function() {
+            var offset_top = $(this).offset().top,
+                top_margin = 650;
+            if (scroll_top > offset_top - top_margin) {
+                $(this).addClass('fadein');
+            } else {
+            }
+        });
+        $('.ani2').each(function() {
+            var offset_top = $(this).offset().top,
+                top_margin = 650;
+            if (scroll_top > offset_top - top_margin) {
+                $(this).addClass('fadein');
+            } else {
+            }
+        });
+    });
+});
+</script>
 <!--tag-->
 <?php include "include/tag_head.html";?>
 </head>
@@ -75,7 +106,18 @@
 インターネット網からお客さまのご自宅まで弊社がサービス提供しており、高品質で安心なインターネットライフをお楽しみいただけます。 
 国際標準規格であるGPON※2の採用と、専用に開発されたホームゲートウェイを組み合わせたことで、個人宅向け商用サービスで下り最大2Gbpsを
 実現しています。</p>
-                <img src="img/summary_img.png" alt="">
+                <div class="speed_img">
+                    <div class="fon">
+                        <div class="provider"><img src="img/fon_logo_w.svg" alt="fon光"></div>
+                        <div class="border ani1"><span></span></div>
+                        <div class="speed">2Gbps</div>
+                    </div>
+                    <div class="normal">
+                        <div class="provider">一般的な<br>光回線</div>
+                        <div class="border ani2"><span></span></div>
+                        <div class="speed">1Gbps</div>
+                    </div>
+                </div>
                 <ul>
                     <li>※1 機器使用時の通信速度はお客さまの通信環境と規格により異なります。 (技術規格上の最大値でありお客さま宅内での実使用速度を示すものではありません)となります。</li>
                     <li>※2 GPONとは：PON(Passive Optical Network)とは1芯の光ファイバーを複数ユーザーで共用する伝送技術です。

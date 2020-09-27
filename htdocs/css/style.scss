@@ -60,19 +60,27 @@ a:hover {
 }
 
 #wrapper{
-  width:100%;
+    width:100%;
 	overflow: hidden;
 }
 
 /*essect*/
-.effect {
-  transition: ease .5s;
-  opacity: 0;
-  transform: translateY(20px);
+.ani1 span{
+    transition: linear .2s;
+    width: 0 !important;
+    transition: 0.3;
 }
-.effect.fadein {
-  opacity: 1;
-  transform: translateY(0px);
+.ani1.fadein span{
+    width: calc(100% - 30px) !important;
+}
+/*essect*/
+.ani2 span{
+    transition: linear .4s;
+    width: 0 !important;
+    transition: 0.3;
+}
+.ani2.fadein span{
+    width: calc(100% - 30px) !important;
 }
 
 /*カーソル*/
@@ -374,6 +382,67 @@ footer {
             font-weight: 900;
             width: 100%;
             text-align: center;
+        }
+        .speed_img{
+            background: #333;
+            color: #fff;
+            padding: 50px 0;
+            .fon{
+                display: flex;
+                align-items: center;
+                margin: 0 auto 30px;
+                width: 90%;
+                .provider{
+                    width: 100px;
+                    text-align: center;
+                    font-weight: 600;
+                    line-height: 1em;
+                }
+                .border{
+                    width: calc(100% - 250px);
+                    span{
+                        display: block;
+                        align-items: center;
+                        width: calc(100% - 30px);
+                        margin:  0 auto;
+                        background: $gradient;
+                        height: 10px;
+                    }
+                }
+                .speed{
+                    font-size: 36px;
+                    font-weight: 900;
+                    color: #EC7103;
+                }
+            }
+            .normal{
+                display: flex;
+                align-items: center;
+                margin: 0 auto;
+                width: 90%;
+                .provider{
+                    width: 100px;
+                    text-align: center;
+                    font-weight: 600;
+                    line-height: 1em;
+                }
+                .border{
+                    width: calc(70% - 250px);
+                    span{
+                        display: block;
+                        align-items: center;
+                        width: calc(100% - 30px);
+                        margin:  0 auto;
+                        background: #fff;
+                        height: 5px;
+                        animation: size 6s liner 3s 5 reverse both running;
+                    }
+                }
+                .speed{
+                    font-size: 24px;
+                    font-weight: 900;
+                }
+            }
         }
         p{
             margin: 30px 0;
@@ -1027,6 +1096,68 @@ footer {
                 font-weight: 900;
                 width: 100%;
                 text-align: center;
+            }
+            .speed_img{
+                background: #333;
+                color: #fff;
+                padding: 20px 0;
+                .fon{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 auto 30px;
+                    width: 90%;
+                    .provider{
+                        width: 50px;
+                        text-align: center;
+                        font-weight: 600;
+                        line-height: 1em;
+                    }
+                    .border{
+                        width: calc(100% - 100px);
+                        span{
+                            display: block;
+                            align-items: center;
+                            width: calc(100% - 30px);
+                            margin:  0 auto;
+                            background: $gradient;
+                            height: 10px;
+                        }
+                    }
+                    .speed{
+                        font-size: 24px;
+                        font-weight: 900;
+                        color: #EC7103;
+                    }
+                }
+                .normal{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 auto;
+                    width: 90%;
+                    .provider{
+                        width: 50px;
+                        text-align: center;
+                        font-weight: 600;
+                        line-height: 1em;
+                        font-size: 10px;
+                    }
+                    .border{
+                        width: calc(70% - 100px);
+                        span{
+                            display: block;
+                            align-items: center;
+                            width: calc(100% - 30px);
+                            margin:  0 auto;
+                            background: #fff;
+                            height: 5px;
+                            animation: size 6s liner 3s 5 reverse both running;
+                        }
+                    }
+                    .speed{
+                        font-size: 14px;
+                        font-weight: 900;
+                    }
+                }
             }
             p{
                 margin: 30px 0;
