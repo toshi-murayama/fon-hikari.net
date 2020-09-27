@@ -11,6 +11,7 @@
 <meta name="keywords" content="">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="shortcut icon" href="img/favicon.ico" />	
 <!----css---->
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">

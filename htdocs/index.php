@@ -7,12 +7,13 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>fon光</title>
+<title>fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="月額3,980円！fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="fon,fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="shortcut icon" href="img/favicon.ico" />	
 <?php include "include/ogp.html";?>
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">

@@ -11,6 +11,7 @@
 <meta name="keywords" content="ワイファイ,ルーター,wifi,simフリー,ポケットワイファイ,帯域制限,速度制限,プレミアモバイル,データカード,タブレット">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="shortcut icon" href="img/favicon.ico" />	
 <!----css---->
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">

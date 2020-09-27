@@ -14,6 +14,7 @@
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <?php include "include/ogp.html";?>
+<link rel="shortcut icon" href="img/favicon.ico" />	
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">

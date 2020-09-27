@@ -14,6 +14,7 @@
 <meta name="keywords" content="コミュファ,fon光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="shortcut icon" href="img/favicon.ico" />	
 <!----css---->
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">

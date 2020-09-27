@@ -11,6 +11,7 @@
 <meta name="keywords" content="">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="shortcut icon" href="img/favicon.ico" />	
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css?<?php echo filemtime(realpath(__DIR__.'/css/style.css')) ?>"> 
 <link rel="stylesheet" href="css/style_form.css?<?php echo filemtime(realpath(__DIR__.'/css/style_form.css')) ?>">
