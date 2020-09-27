@@ -30,7 +30,6 @@
 <div id="stalker"></div>
 
     <?php include "include/header.html";?>
-
     <div id="wrap">
         <section id="top">
             <article>
@@ -192,9 +191,9 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <dt>規約</dt>
                             <dd>
                                 <ul>
-                                    <li><a href="pdf/nuro_hikari_tel_yakkan.pdf" target="_blank">NURO 光 でんわ規約約款</a></li>
-                                    <li><a href="pdf/nuro_hikari_tel_jiko.pdf" target="_blank">NURO 光 でんわ重要事項説明</a></li>
-                                    <li><a href="pdf/whitecall_doc.pdf" target="_blank">ホワイトコール 24 重要事項説明</a></li>
+                                    <li><a href="pdf/option/tel_kiyaku.pdf" target="_blank">NURO 光 でんわ規約約款</a></li>
+                                    <li><a href="pdf/option/tel_jyusetsu.pdf" target="_blank">NURO 光 でんわ重要事項説明</a></li>
+                                    <li><a href="pdf/option/tel_wc24.pdf" target="_blank">ホワイトコール 24 重要事項説明</a></li>
                                 </ul>
                             </dd>
                         </dl>
