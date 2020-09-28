@@ -57,7 +57,7 @@ countCookie : 1000
     九州（福岡、佐賀）<br>
     ※一部エリアを除く</dd>
                 </dl>
-                <a href="" class="btn_close">閉じる</a>
+                <a href="#" class="btn_close">閉じる</a>
             </article>
 		</div>
 	</div>
