@@ -87,6 +87,9 @@ function createApplicationAdminMailContent() {
 			case 'lastNameKana' :
 				$content .= '【 フリガナ（セイ） 】 ' . $v . "\r\n";
 			break;
+			case 'firstNameKana' :
+				$content .= '【 フリガナ（メイ） 】 ' . $v . "\r\n";
+			break;
 			case 'sex' :
 				$sex = '';
 				if ($v == '1') {
@@ -278,10 +281,14 @@ function createApplicationUserMailContent() {
 	}
 	// 今はなしに固定 なし or あり
 	$content .= '《リモートサポート》'."\r\n";
-	$content .= 'なし'."\r\n";
-	// リモートサポートリリース時に復活
-	// $content .= '《プラン料金》';
-	// $content .= '500';
+	if($_POST['remortSupport'] == '0') {
+		$content .= 'なし'."\r\n";
+	} else {
+		$content .= 'あり'."\r\n";
+		$content .= '《プラン料金》';
+		$content .= '500';
+	}
+	
 	// 今はなしに固定 なし/TVおすすめプラン/お値打ちプラン/ビデオざんまいプラン/基本放送プラン
 	$content .= '《ひかりTV for NURO申込》'."\r\n";
 	$content .= 'なし'."\r\n";

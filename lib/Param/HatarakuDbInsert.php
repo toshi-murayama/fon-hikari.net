@@ -66,6 +66,8 @@ class HatarakuDbInsert
                 "112581" => "{$dataAll['hikariTV2ndContract']}",        // ひかりTV二契約目申込（無:0/有:1
                 "112548" => "{$dataAll['planCode']}",                   // プランコード
                 "112546" => "{$dataAll['agencyCode']}",                 // 代理店コード
+                "112546" => "{$dataAll['remortSupport']}",              // リモートサポート
+                "112546" => "{$dataAll['hikariTV']}",                   // 光TV
             ]
         ];
     }
