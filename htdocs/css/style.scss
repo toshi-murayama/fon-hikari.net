@@ -73,7 +73,6 @@ a:hover {
 .ani1.fadein span{
     width: calc(100% - 30px) !important;
 }
-/*essect*/
 .ani2 span{
     transition: linear .4s;
     width: 0 !important;
@@ -82,6 +81,50 @@ a:hover {
 .ani2.fadein span{
     width: calc(100% - 30px) !important;
 }
+.bEffect01 {
+    opacity: 0;
+    transform-style:preserve-3d;
+}
+.bEffect01.fadein {
+    opacity: 1;
+    animation: border1 1s cubic-bezier(1, 0, 0, 1) ;
+}
+.bEffect02 {
+    opacity: 0;
+    transform-style:preserve-3d;
+}
+.bEffect02.fadein {
+    opacity: 1;
+    animation: border1 1.5s cubic-bezier(1, 0, 0, 1) ;
+}
+.bEffect03 {
+    opacity: 0;
+    transform-style:preserve-3d;
+}
+.bEffect03.fadein {
+    opacity: 1;
+    animation: border1 2s cubic-bezier(1, 0, 0, 1) ;
+}
+.bEffect04 {
+    opacity: 0;
+    transform-style:preserve-3d;
+}
+.bEffect04.fadein {
+    opacity: 1;
+    animation: border1 2.5s cubic-bezier(1, 0, 0, 1) ;
+}
+@keyframes border1{
+    0% {
+        opacity: 0;
+        transform: rotateY(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+
 
 /*カーソル*/
 #cursor{

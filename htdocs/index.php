@@ -21,37 +21,7 @@
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
-<script>
-$(function () {
-    $(window).on('scroll', function() {
-        var scroll_top = $(window).scrollTop();
-        $('.effect').each(function() {
-            var offset_top = $(this).offset().top,
-                top_margin = 570;
-            if (scroll_top > offset_top - top_margin) {
-                $(this).addClass('fadein');
-            } else {
-            }
-        });
-        $('.ani1').each(function() {
-            var offset_top = $(this).offset().top,
-                top_margin = 650;
-            if (scroll_top > offset_top - top_margin) {
-                $(this).addClass('fadein');
-            } else {
-            }
-        });
-        $('.ani2').each(function() {
-            var offset_top = $(this).offset().top,
-                top_margin = 650;
-            if (scroll_top > offset_top - top_margin) {
-                $(this).addClass('fadein');
-            } else {
-            }
-        });
-    });
-});
-</script>
+<script src="js/index.js"></script>
 <!--tag-->
 <?php include "include/tag_head.html";?>
 </head>
@@ -277,28 +247,28 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <h2>お申し込みの流れ</h2>
                 <ul>
-                    <li>
+                    <li class="bEffect01">
                         <dl>
                             <dd><img src="img/flow_ico01.svg" alt=""></dd>
                             <dt>お申し込み</dt>
                             <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
                         </dl>
                     </li>
-                    <li>
+                    <li class="bEffect02">
                         <dl>
                             <dd><img src="img/flow_ico02.svg" alt=""></dd>
                             <dt>工事日確定</dt>
                             <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
                         </dl>
                     </li>
-                    <li>
+                    <li class="bEffect03">
                         <dl>
                             <dd><img src="img/flow_ico03.svg" alt=""></dd>
                             <dt>工事完了</dt>
                             <dd>当日、工事作業員にて工事を行います。</dd>
                         </dl>
                     </li>
-                    <li>
+                    <li class="bEffect04">
                         <dl>
                             <dd><img src="img/flow_ico04.svg" alt=""></dd>
                             <dt>利用開始</dt>
