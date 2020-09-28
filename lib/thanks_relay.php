@@ -60,8 +60,8 @@ if(empty($error)) {
 		$content  = createApplicationUserMailContent();
 		$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');		
 	}
-	unset($_SESSION['tk']);
 }
+unset($_SESSION['tk']);
 
 // TODO keyの変換は別のメソッドにするべき...
 // 管理者用申込内容生成
