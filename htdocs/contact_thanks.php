@@ -116,6 +116,6 @@ if(empty($error)) {
 
 		<p class="btn"><a href="/">最初のぺージに戻る</a></p>
 	</section>
-	<?php include "include/footer_form.html";?>
+	<?php include "include/footer_contact.html";?>
 </body>
 </html>
