@@ -80,7 +80,7 @@
                 <dl>
                     <dt>契約約款</dt>
                     <dd>
-                        契約約款につきましては<a href="pdf/fon_hikari_kiyaku.pdf" target="_blank">こちら</a>をご確認下さい。
+                        契約約款につきましては<a href="pdf/hikari_kiyaku.pdf" target="_blank">こちら</a>をご確認下さい。
                     </dd>
                 </dl>
             </div>
