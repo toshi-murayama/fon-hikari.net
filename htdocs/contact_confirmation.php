@@ -136,7 +136,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 
 				<?php if (!$error) { ?>
 
-				<dd><input type="submit" name="submit" value="お申し込み" id="submit"></dd>
+				<dd><input type="submit" name="submit" value="お問い合わせ" id="submit"></dd>
 
 				<?php } ?>
 
