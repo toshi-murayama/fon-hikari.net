@@ -46,8 +46,7 @@ if(empty($error)) {
 		$content = createApplicationAdminMailContent();
 		$to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
 		$title = '【fon光申込】';
-		$headers  = 'From: ' . mb_encode_mimeheader($_POST['メールアドレス']) . "\r\n";
-		$headers .='Bcc: onepiecetakaie@gmail.com' . "\r\n";
+		$headers ='Bcc: onepiecetakaie@gmail.com' . "\r\n";
 		$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 		
 		//-----------------------------------------------------------
