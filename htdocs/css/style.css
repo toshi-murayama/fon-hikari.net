@@ -171,7 +171,6 @@ a:hover {
 /*-------------------------------------------------
  header
 -------------------------------------------------*/
-/* for Scroll Fix Header */
 header {
   width: 100%;
   text-align: center;
@@ -567,7 +566,10 @@ footer {
           text-align: center;
           -webkit-box-pack: center;
               -ms-flex-pack: center;
-                  justify-content: center; }
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center; }
           #plan article .box ul li img {
             width: 50px; }
           #plan article .box ul li dl {
