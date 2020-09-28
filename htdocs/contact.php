@@ -107,6 +107,6 @@ $(function(){
 		</dl>
 		</form>
 	</section>
-	<?php include "include/footer_form.html";?>
+	<?php include "include/footer_contact.html";?>
 </body>
 </html>
