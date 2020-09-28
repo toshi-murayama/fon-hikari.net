@@ -1,0 +1,1144 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+html {
+    overflow-y: scroll;
+}
+body {
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', "MS PGothic", sans-serif;
+    color: #111;
+    text-align: left;
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-style: inherit;
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+h1,h2,h3,h4,h5,div,p,span,ul,li,dl,dt,dd {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    color: #111;
+    display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+a:link {}
+a:visited {}
+a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "alpha(opacity=70)";
+}
+a:active {}
+
+/* [hack] clear fix
+--------------------------------------*/
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+    min-height: 1%;
+    /* for IE 7*/
+}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+
+/* End hide from IE-mac */
+
+
+/*--------------form--------------*/
+
+.header_form{
+	width:100%;
+	background: #333;
+	padding: 15px 0;
+	text-align: center;
+}
+
+.header_form h1 img{
+	width: 100px;
+	height: auto;
+}
+
+
+/*エリア検索*/
+#area_search,
+#application,
+#confirmation,
+#thanks,
+#contact{
+	width: 700px;
+	margin: 40px auto;
+}
+
+#area_search h2,
+#application h2,
+#confirmation h2,
+#thanks h2,
+#contact h2{
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	text-align: left;
+}
+
+#area_search h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 25%,#333 25%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+
+
+#area_search .search_text,
+#application .search_text,
+#confirmation .search_text,
+#thanks .search_text,
+#contact .search_text{
+	width: 350px;
+	padding: 15px;
+	box-sizing: border-box;
+	border: 2px solid #666;
+	margin: 0 auto 60px;
+	text-align: center;
+}
+#area_search .address{
+	text-align: center;
+	margin-bottom: 80px;
+}
+#area_search .address dl{
+	display: table;
+	margin: 10px auto;
+	width: 400px;
+}
+#area_search .address dl dt{
+	display: table-cell;
+	vertical-align: middle;
+	width: 15%;
+}
+#area_search .address dl dd{
+	display: table-cell;
+	width: 85%;
+}
+#area_search .address .select {
+	position: relative;
+}
+#area_search .address select{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	width: 100%;
+}
+#area_search .address i {
+    z-index: 1;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    pointer-events: none;
+	color: #666;
+	font-size: 20px;
+}
+#area_search .subsequently .form li,
+#application .form li,
+#contact .form li{
+	padding: 5px 0;
+}
+#area_search .subsequently .result{
+	width: 100%;
+	border: 1px solid #666;
+	background: #eee;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+#area_search .subsequently .type,
+#application .type{
+	display: flex;
+	margin: 10px 0 0;
+}
+#area_search .subsequently .type li,
+#application .type li{
+	 width: calc(100%/3);
+	position: relative;
+}
+#area_search .subsequently .type li input[type=radio],
+#application .type li input[type=radio]{
+	position: absolute;
+    visibility: hidden;
+    width: 0;
+	height: 0;
+    margin: 0;
+	padding: 0;
+}
+#area_search .subsequently .type li label,
+#application .type li label{
+	border: 1px solid #666;
+	border-radius: 5px;
+	width: 94%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+}
+#area_search .subsequently .type li label:hover,
+#application .type li label:hover{
+	background: #fff9e5;
+}
+#area_search .subsequently .type li input[type="radio"]:checked + label,
+#application .type li input[type="radio"]:checked + label{
+	border: 1px solid #ec7103;
+	background: #fff9e5;
+	box-sizing: border-box;
+}
+#area_search .area_btn{
+	width: 100%;
+	padding: 60px 0;
+	text-align: center;
+}
+#area_search .area_btn #openModal,
+#area_search .area_btn input{
+	display: block;
+	width: 200px;
+	height: auto;
+	padding: 15px 0;
+	color: #fff;
+	border-radius: 5px;
+	background: linear-gradient(to right, #fdc700 0%,#ee7d03 100%);
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.modalArea {
+  display: none;
+	max-width: 700px;
+	padding: 40px;
+	box-sizing: border-box;
+	background: #fff;
+	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+	margin: 30px auto 0;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.9);
+}
+.modalWrapper .answer{
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+}
+.modalWrapper .answer span{
+	font-size: 14px;
+	font-weight: normal;
+}
+.modalWrapper .street_address{
+	background: #eee;
+	padding: 20px;
+	text-align: center;
+	margin: 30px auto;
+	box-sizing: border-box;
+	max-width: 90%;
+	width: 350px;
+}
+.modalWrapper .ng{
+	display: block;
+	width: 200px;
+	padding: 15px 0;
+	color: #fff;
+	border-radius: 5px;
+	background: #666;
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 14px;
+}
+.modalWrapper .subtle{
+	display: block;
+	width: 200px;
+	padding: 15px 0;
+	color: #fff;
+	border-radius: 5px;
+	background: #61ba70;
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 14px;
+}
+.closeModal {
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* application */
+#application h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 50%,#333 50%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+
+#application h4,
+#confirmation h4{
+	font-weight: bold;
+	color: #fff;
+	font-size: 19px;
+	padding: 20px;
+	box-sizing: border-box;
+	background: #333;
+	width: 100%;
+	margin: 50px 0 0;
+}
+#application .form li.categories,
+#confirmation .form li.categories,
+#contact .form li.categories{
+	padding-top: 30px;
+}
+#application dl,
+#contact dl{
+	display: flex;
+}
+#application dl dt,
+#contact dl dt{
+	width: 50%;
+	padding-right: 10px;
+}
+#application dl dd,
+#contact dl dd{
+	width: 50%;
+	padding-left: 10px;
+}
+#application input[type=text],
+#contact input[type=text]{
+	width: 100%;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+#application input.min[type=text],
+#contact input.min[type=text]{
+	width: 30%;
+}
+#application .app input[type=radio] {
+	margin: 15px 0;
+}
+#application .app input[type=radio]{
+  display: none;
+}
+#application .app input[type=radio] + label{
+  padding-left: 30px;
+  position:relative;
+  margin-right: 20px;
+}
+#application .app input[type=radio] + label::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 50%;
+	background: #fff;
+}
+#application .app input[type=radio]:checked + label::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 9px;
+  height: 9px;
+  background:linear-gradient(to right, #fdc700, #ee7d03);
+  border-radius: 50%;
+}
+#application label.birthday {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  border-radius: 5px;
+	box-sizing: border-box;
+}
+/*#application input[type=date]{
+  position: relative;
+	padding: 20px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+#application input[type="date"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+#application input[type="date"]::-webkit-clear-button{
+  -webkit-appearance: none;
+}
+*/
+#application .select{
+	position: relative;
+	width: 50%;
+}
+.pikaday-container {
+	display: block;
+	width: 320px;
+	max-width: 100%;
+}
+
+.output {
+	padding: 5px;
+	background: #33aaff;
+	color: #fff;
+	line-height: 1.5em;
+	min-height: 1.5em;
+	width: 320px;
+	max-width: 100%;
+	margin: 0;
+}
+.output:before {
+	content: "> ";
+}
+
+#application select{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	width: 100%;
+}
+#application .select i {
+    z-index: 100;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    pointer-events: none;
+	color: #666;
+	font-size: 20px;
+}
+#application .documents{
+	background: #eee;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 100%;
+	border-radius: 5px;
+	margin: 60px 0;
+	display: flex;
+}
+#application .documents p{
+	margin-right: 20px;
+}
+#application .privacyTitle,
+#contact .privacyTitle{
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+#application .privacyTitle::before,
+#contact .privacyTitle::before{
+	content: '';
+	display: inline-block;
+	background: url("../img/img_plus.png")no-repeat;
+    background-size: contain;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+#application .privacy,
+#contact .privacy{
+	display: none;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+#application .privacy h5,
+#contact .privacy h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+#application .privacy h6,
+#contact .privacy h5{
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+#application .privacy p{
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.aother_address{
+	display: none;
+	margin: -30px 0 50px;
+}
+
+#application .agree_box,
+#contact .agree_box{
+	text-align: center;
+	margin: 30px 0 70px 5px;
+}
+#application .btn,
+#contact .btn{
+	width: 420px;
+	display: flex;
+	text-align: center;
+	margin: 0 auto;
+}
+#confirmation .btn{
+	width: 420px;
+	display: flex;
+	text-align: center;
+	margin: 80px auto;
+}
+#application .btn dt,
+#confirmation .btn dt,
+#contact .btn dt{
+	width: 50%;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+#application .btn dt input,
+#confirmation .btn dt input,
+#contact .btn dt input{
+	width: 100%;
+	background: #666;
+	color: #fff;
+	padding: 15px 0;
+	border-radius: 5px;
+	border: none;
+}
+#application .btn dd,
+#confirmation .btn dd,
+#contact .btn dd{
+	width: 50%;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+#application .btn dd input,
+#confirmation .btn dd input,
+#contact .btn dd input{
+	width: 100%;
+	background: linear-gradient(to right, #fdc700 0%,#ee7d03 100%);
+	color: #fff;
+	padding: 15px 0;
+	border-radius: 5px;
+	border: none;
+}
+#application input[type=checkbox],
+#contact input[type=checkbox]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    vertical-align: -0.8rem;
+    transition:all .15s ease-out 0s;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin: .4rem;
+    outline: none;
+    border-radius: 10%;
+}
+/* Checkbox */
+#application input[type=checkbox]:before,
+#application input[type=checkbox]:after,
+#contact input[type=checkbox]:before,
+#contact input[type=checkbox]:after{
+    position: absolute;
+    content: "";
+    background: #f08502;
+    transition: all .2s ease-in-out;
+}
+#application input[type=checkbox]:before,
+#contact input[type=checkbox]:before{
+    left: 2px;
+    top: 6px;
+    width: 0;
+    height: 2px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+#application input[type=checkbox]:after,
+#contact input[type=checkbox]:after{
+    right: 9px;
+    bottom: 3px;
+    width: 2px;
+    height: 0;
+    transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transition-delay: .2s;
+}
+#application input[type=checkbox]:checked:before,
+#contact input[type=checkbox]:checked:before{
+    left: 1px;
+    top: 10px;
+    width: 6px;
+    height: 2px;
+}
+#application input[type=checkbox]:checked:after,
+#contact input[type=checkbox]:checked:after{
+    right: 5px;
+    bottom: 1px;
+    width: 2px;
+    height: 14px;
+}
+#application input[type=checkbox]:indeterminate:before,
+#application input[type=checkbox]:indeterminate:after,
+#contact input[type=checkbox]:indeterminate:before,
+#contact input[type=checkbox]:indeterminate:after{
+    width: 7px;
+    height: 2px;
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+}
+#application input[type=checkbox]:indeterminate:before,
+#contact input[type=checkbox]:indeterminate:before{
+    left: 1px;
+    top: 7px;
+}
+#application input[type=checkbox]:indeterminate:after,
+#contact input[type=checkbox]:indeterminate:after{
+    right: 1px;
+    bottom: 7px;
+}
+/* 色は青色のみ */
+#application input[type=checkbox],
+#contact input[type=checkbox]{
+    border: 2px solid #666;
+	border-radius: 5px;
+}
+#application input[type=checkbox].orange:checked,
+#application input[type=checkbox].orange:indeterminate,
+#contact input[type=checkbox].orange:checked,
+#contact input[type=checkbox].orange:indeterminate{
+    background: #fff;
+}
+
+#confirmation h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 75%,#333 75%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+#confirmation h3.second{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 66%,#333 66%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+
+#confirmation .error,
+#thanks .error{
+	color: #EB0003;
+}
+#confirmation dl{
+	display: flex;
+}
+#confirmation dl dt{
+	width: 50%;
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+#confirmation dl dd{
+	width: 50%;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+#confirmation li p{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	background: #eee;
+	border: 1px solid #666;
+	margin-top: 15px;
+	border-radius: 5px;
+}
+
+#thanks h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 80px;
+}
+#thanks .btn{
+	text-align: center;
+}
+#thanks .btn a{
+	width: 200px;
+	background: #666;
+	color: #fff;
+	padding: 20px;
+	box-sizing: border-box;
+	text-decoration: none;
+	border-radius: 5px;
+}
+#thanks .text{
+	margin: 10px 0 80px;
+	font-size: 12px;
+}
+
+#contact h3{
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-image: linear-gradient(to right, #fdc700 0%,#ee7d03 33%,#333 33%, #333 100%) 8/0 0 8px 0;
+	border-style: solid;
+	margin-bottom: 30px;
+}
+#contact textarea{
+	width: 100%;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+
+.layer_board_bg,
+.layer_board {
+position: absolute;
+}
+.layer_board_bg {
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: 1000;
+top: 0;
+left: 0;
+display: none;
+cursor: pointer;
+background: #000;
+}
+.layer_board {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: #fff;
+text-align: center;
+z-index: 2000;
+padding: 50px;
+width: 90%;
+max-width: 450px;
+}
+.layer_board p {
+margin-bottom: 50px
+}
+.btn_close {
+display: block;
+text-decoration: none;
+background: #333;
+color: #fff;
+text-align: center;
+padding: 20px;
+width: 100px;
+border-radius: 5px;
+margin: 30px auto 0;
+}
+/*footer*/
+.footer_form .tel_app{
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+.footer_form .tel_app .tel_no{
+	font-size: 36px;
+	font-weight: bold;
+	font-family: 'futura';
+	line-height: 1;
+	margin: 15px 0 0;
+}
+.footer_form .tel_app .tel_no::before{
+	content: "";
+	display: inline-block;
+	background: url("../img/icon_tel.png")no-repeat;
+	width: 30px;
+	height: 30px;
+	background-size: contain;
+	margin-right: 10px;
+}
+.footer_form .tel_app .tel_no span{
+	font-size: 12px;
+	font-weight: normal;
+}
+.footer_form .copyright{
+	background: #333;
+	text-align: center;
+	padding: 20px 0;
+	color: #fff;
+	font-size: 12px;
+}
+
+/* select2 for area search */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+	font-size: 1.2em;
+	padding: 0.5em;
+	-webkit-appearance: none;
+}
+.select2-container .select2-selection--single {
+	height: 3.5em;
+	line-height: 1em;
+	padding: 1.3em 2em 1em 1em;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+	padding: 0;
+	line-height: 1;
+	font-size: 1em;;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	position: absolute;
+	bottom: 0;
+	right: 12px;
+	top: 0;
+	width: 4px;
+	height: auto;
+}
+.select2-result-address.dynamic {
+	color: #888;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable .dynamic{
+	color: white;
+}
+
+
+@media screen and (min-width: 680px) {
+    .show_sp {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 680px) {
+    .show_pc {
+        display: none !important;
+    }
+
+img{
+	max-width: 100%;
+	height: auto;
+}		
+#area_search,
+#application,
+#confirmation,
+#thanks,
+#contact{
+	width:90%;
+	margin: 40px auto;
+}
+
+#area_search h2,
+#application h2,
+#confirmation h2,
+#thanks h2,
+#contact h2{
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+
+#area_search h3.first{
+	margin-bottom: 40px;
+}
+
+#area_search .search_text,
+#application .search_text,
+#confirmation .search_text,
+#thanks .search_text{
+	width: 90%;
+	padding: 15px 10px;
+	margin: 0 auto 30px;
+}
+#area_search .address{
+	margin-bottom: 40px;
+}
+#area_search .address dl{
+	width: 100%;
+}
+#area_search .address dl dt{
+	width: 15%;
+}
+#area_search .address dl dd{
+	width: 85%;
+}
+#area_search .address select{
+	padding: 20px 10px;
+}
+#area_search .subsequently .type li{
+	font-size: 3vw;
+}
+#area_search .subsequently .type li img{
+	 width: auto;
+	height: 50px;
+}
+#area_search .subsequently .type li label{
+	padding: 10px 5px;
+}
+#area_search .subsequently .type li:first-child label{
+	padding: 18px 5px;
+}
+#area_search .area_btn{
+	padding: 30px 0;
+}
+
+/* モーダルCSS */
+.modalArea {
+	width: 100%;
+	padding: 20px 10px;
+	margin: 20px auto 0;
+}
+.modalWrapper img{
+	width: 40%;
+}
+.modalWrapper .answer{
+	font-size: 4.5vw;
+	line-height: 1.4;
+}
+.modalWrapper .answer span{
+	font-size: 3.5vw;
+}
+.modalWrapper .street_address{
+	padding: 10px;
+	margin: 10px auto;
+}
+	
+/* application */
+#application h3,
+#confirmation h3,
+#contact  h3{
+	margin-bottom: 40px;
+}
+
+#application h4{
+	font-size: 19px;
+	margin: 20px 0 0;
+}
+#application .form li.categories,
+#confirmation .form li.categories,
+#contact .form li.categories{
+	padding-top: 15px;
+}
+#application dl,
+#contact dl{
+	display: inherit;
+}
+#application dl dt,
+#contact dl dt{
+	width: 100%;
+	padding-right: 0;
+	margin-bottom: 15px;
+}
+#application dl dd,
+#contact dl dd{
+	width: 100%;
+	padding-left: 0;
+	margin-bottom: 15px;
+}
+#application input[type=text],
+#contact input[type=text]{
+	width: 100%;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+#application input.min[type=text],
+#contact input.min[type=text]{
+	width: 50%;
+}
+#application .app input[type=radio] {
+	margin: 15px 0;
+}
+#application .app input[type=radio]{
+  display: none;
+}
+#application label.birthday {
+  width: 100%;
+}
+#application .type li{
+	font-size: 3vw;
+}
+#application .type li img{
+	 width: auto;
+	height: 50px;
+}
+#application .type li label{
+	padding: 10px 5px;
+}
+#application .type li:first-child label{
+	padding: 18px 5px;
+}
+
+#application .select{
+	position: relative;
+	width: 50%;
+}
+#application select{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	width: 100%;
+}
+#application .select i {
+    z-index: 100;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    pointer-events: none;
+	color: #666;
+	font-size: 20px;
+}
+#application .documents{
+	margin: 30px 0;
+	display: inherit;
+}
+#application .documents p{
+	margin-right: 0;
+}
+#application .privacyTitle{
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+#application .privacyTitle::before{
+	content: '';
+	display: inline-block;
+	background: url("../img/img_plus.png")no-repeat;
+    background-size: contain;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+#application .privacy{
+	display: none;
+	border: 1px solid #666;
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+#application .privacy h5{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+#application .privacy h6{
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 10px;
+}
+#application .privacy p{
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+.aother_address_no{
+	display: none;
+}
+.aother_address{
+	display: block;
+	margin: -30px 0 50px;
+}
+	
+#application .btn,
+#confirmation .btn,
+#contact .btn{
+	width: 100%;
+}
+#application .btn dt,
+#confirmation .btn dt,
+#contact .btn dt{
+	padding-right: 10px;
+}
+#application .btn dd,
+#confirmation .btn dd,
+#contact .btn dd{
+	padding-left: 10px;
+}
+
+#confirmation .error{
+	color: #EB0003;
+}
+#confirmation dl{
+	display: inherit;
+}
+#confirmation dl dt,
+#confirmation dl dd{
+	width: 100%;
+	padding: 0;
+	margin-bottom: 10px;
+}
+#confirmation li p{
+	padding: 20px 10px;
+	margin-top: 10px;
+}
+
+	}
