@@ -61,7 +61,7 @@ if(empty($error)) {
 	$content .= '■□━━━━━━━━━━━━━━━━━━━━━━━□■'."\r\n";
 	$content .= 'フォン・ジャパン株式会社'."\r\n";
 	$content .= '〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F'."\r\n";
-	$content .= 'URL: https://fon.ne.jp/'."\r\n";
+	$content .= 'URL: https://fon-hikari.net/'."\r\n";
 	$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 
 

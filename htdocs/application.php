@@ -99,6 +99,7 @@ $(window).load(function() {
 <script src="js/jquery.jpostal.min.js"></script>
 <script src="js/ajaxzip3.js"></script>
 <script src="js/jquery.autoKana.js"></script>
+<script src="js/application.js"></script>
 
 <!--tag-->
 <?php include "include/tag_head.html";?>
