@@ -143,6 +143,6 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 			</dl>
 		</form>
 	</section>
-<?php include "include/footer_form.html";?>
+<?php include "include/footer_contact.html";?>
 </body>
 </html>
