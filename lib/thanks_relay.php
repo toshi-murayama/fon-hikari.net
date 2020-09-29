@@ -198,6 +198,15 @@ function createApplicationAdminMailContent() {
 				}
 				$content .= '【 電話番号種類 】 ' . $numberingMethod . "\r\n";
 			break;
+			case 'remortSupport' :
+				$remortSupport = '';
+				if ($v == '0') {
+					$remortSupport = 'なし';
+				} else {
+					$remortSupport = 'MO21FZ';
+				}
+				$content .= '【 リモートサポート 】 ' . $remortSupport . "\r\n";
+			break;
 			default :
 			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
 		}
@@ -292,31 +301,10 @@ function createApplicationUserMailContent() {
 	
 	// 今はなしに固定 なし/TVおすすめプラン/お値打ちプラン/ビデオざんまいプラン/基本放送プラン
 	$content .= '《ひかりTV for NURO申込》'."\r\n";
-	switch($_POST['hikariTV']) {
-		case '0' :
-			$content .= 'なし'."\r\n";
-			break;
-		case '1' :
-			$content .= 'あり'."\r\n";
-			$content .= '《プラン料金》'."\r\n";
-			$content .= '500'."\r\n";
-			break;
-		case '2' :
-			$content .= 'あり'."\r\n";
-			$content .= '《プラン料金》'."\r\n";
-			$content .= '500'."\r\n";
-			break;
-		case '3' :
-			$content .= 'あり'."\r\n";
-			$content .= '《プラン料金》'."\r\n";
-			$content .= '500'."\r\n";
-			break;
-		case '4' :
-			$content .= 'あり'."\r\n";
-			$content .= '《プラン料金》'."\r\n";
-			$content .= '500'."\r\n";
-			break;
-	}
+	$content .= 'なし'."\r\n";
+	// $content .= '《プラン料金》';
+	// $content .= '';
+
 	$content .= '※工事内容により追加工事費が発生する場合がございます。'."\r\n";
 	$content .= '※付加サービスはプランにより価格が異なります。'."\r\n";
 	$content .= '※表示の金額は全て税抜き価格です。'."\r\n";
