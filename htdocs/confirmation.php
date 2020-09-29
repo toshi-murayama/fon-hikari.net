@@ -68,10 +68,10 @@
 				<li class="categories">番地・号</li><li><p><?php print $installationAddress; ?></p></li>
 				<li class="categories">建物名・部屋番号</li><li><p><?php print $installationBuilding; ?></p></li>
 				<li class="categories">物件の種類</li><li><p><?php print $homeTypeString; ?></p></li>
+				<li class="categories">所有形態</li><li><p><?php print $ownershipString; ?></p></li>
 			</ul>
 			<h4>オプション</h4>
 			<ul class="form">
-				<li class="categories">所有形態</li><li><p><?php print $ownershipString; ?></p></li>
 				<li class="categories">光電話申込</li><li><p><?php print $telephoneApplicationString; ?></p></li>
 				<div <?php if ($telephoneApplication == "0") { ?> style="display:none"<?php } ?> >
 					<li class="categories">発番方法</li><li><p><?php print $numberingMethodString; ?></p></li>
@@ -79,6 +79,7 @@
 				<div <?php if ($numberingMethod == "0") { ?> style="display:none" <?php } ?> >
 					<li class="categories">固定電話番号</li><li><p><?php print $fixedLine; ?></p></li>
 				</div>
+				<li class="categories">リモートサポート</li><li><p><?php print $remortSupportString; ?></p></li>
 			</ul>
 			<h4>入会書類郵送先</h4>
 			<ul class="form">
@@ -93,7 +94,7 @@
 				</div>
 			</ul>
 			<dl class="btn">
-				<dt><input type="submit" name="submit" value="戻る" id="backBtn" onclick="history.back()"></dt>
+				<dt><input type="button" name="backBtn" value="戻る" id="backBtn" onclick="history.back()"></dt>
 				<dd><input type="submit" name="submit" value="お申し込み" id="submit"></dd>
 			</dl>
 
@@ -125,6 +126,7 @@
 			<input type="hidden" value="<?php print h($telephoneApplication); ?>" name="telephoneApplication">
 			<input type="hidden" value="<?php print h($homeType); ?>" name="homeType">
 			<input type="hidden" value="<?php print h($numberingMethod); ?>" name="numberingMethod">
+			<input type="hidden" value="<?php print h($remortSupport); ?>" name="remortSupport">
 			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">
 		</form>

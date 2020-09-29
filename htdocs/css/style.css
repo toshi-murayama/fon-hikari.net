@@ -539,7 +539,8 @@ footer {
               justify-content: space-between;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
+              align-items: center;
+      margin-bottom: 30px; }
       #plan article .box h2 {
         font-size: 30px;
         width: 30%;
@@ -579,8 +580,10 @@ footer {
               font-size: 36px;
               font-weight: 900;
               color: #f39500; }
+              #plan article .box ul li dl dd sup {
+                font-size: 40%; }
     #plan article > p {
-      text-align: right; }
+      font-size: 12px; }
 
 /*-----option-----*/
 #option {
@@ -599,6 +602,25 @@ footer {
       font-size: 36px;
       font-weight: 900;
       margin-bottom: 30px; }
+    #option article > ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      margin-bottom: 30px; }
+      #option article > ul li {
+        font-size: 30px; }
+        #option article > ul li input {
+          display: none; }
+        #option article > ul li input:checked + label:after {
+          display: block;
+          content: '';
+          height: 3px;
+          width: 100%;
+          background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
+        #option article > ul li img {
+          width: 36px; }
     #option article .box {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -625,8 +647,6 @@ footer {
           font-size: 18px; }
         #option article .box .boxR dl dd {
           margin-bottom: 15px; }
-          #option article .box .boxR dl dd ul li {
-            list-style: inside; }
         #option article .box .boxR .btn {
           background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
           color: #fff;
@@ -1255,6 +1275,25 @@ footer {
         font-size: 36px;
         font-weight: 900;
         margin-bottom: 30px; }
+      #option article > ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        margin-bottom: 30px; }
+        #option article > ul li {
+          font-size: 16px; }
+          #option article > ul li input {
+            display: none; }
+          #option article > ul li input:checked + label:after {
+            display: block;
+            content: '';
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
+          #option article > ul li img {
+            width: 24px; }
       #option article .box {
         display: block;
         -webkit-box-pack: justify;

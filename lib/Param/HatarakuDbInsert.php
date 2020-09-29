@@ -66,6 +66,9 @@ class HatarakuDbInsert
                 "112581" => "{$dataAll['hikariTV2ndContract']}",        // ひかりTV二契約目申込（無:0/有:1
                 "112548" => "{$dataAll['planCode']}",                   // プランコード
                 "112546" => "{$dataAll['agencyCode']}",                 // 代理店コード
+                "112619" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ) 
+                "112547" => "{$dataAll['routeCode']}",                  // 経路コード
+                // "" => "{$dataAll['hikariTV']}",                   // 光TV
             ]
         ];
     }
@@ -108,6 +111,13 @@ class HatarakuDbInsert
         // 日中連絡先番号 
         $data['daytimeContact'] = $data['phoneNumber'];
 
+        // リモートサポート
+        if ($data['remortSupport'] == '0') {
+            $data['remortSupport'] = '';
+        } else {
+            $data['remortSupport'] = 'MO21FZ';
+        }
+
         /* --------------------- 以下、固定の値 --------------------------- */
         // 申込受付日、経路
         $data['applicationRoute'] = 'WEB';
@@ -121,6 +131,8 @@ class HatarakuDbInsert
         $data['planCode'] = 'MB01FZ';
         // 代理店コード
         $data['agencyCode'] = 'FA19317';
+        // 経路コード
+        $data['routeCode'] = 'EA001A02';
 
         return $data;
     }

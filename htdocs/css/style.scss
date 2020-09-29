@@ -544,6 +544,7 @@ footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 30px;
             h2{
                 font-size: 30px;
                 width: 30%;
@@ -582,13 +583,16 @@ footer {
                             font-size: 36px;
                             font-weight: 900;
                             color: $orange;
+                            sup{
+                                font-size: 40%;
+                            }
                         }
                     }
                 }
             }
         }
         >p{
-            text-align: right;
+            font-size: 12px;
         }
     }
 }
@@ -611,6 +615,27 @@ footer {
             font-size: 36px;
             font-weight: 900;
             margin-bottom: 30px;
+        }
+        >ul{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            li{
+                font-size: 30px;
+                input{
+                    display: none;
+                }
+                input:checked + label:after{
+                    display: block;
+                    content: '';
+                    height: 3px;
+                    width: 100%;
+                    background: $gradient;
+                }
+                img{
+                    width: 36px;
+                }
+            }
         }
         .box{
             display: flex;
@@ -636,7 +661,7 @@ footer {
                         margin-bottom: 15px;
                         ul{
                             li{
-                                list-style:inside;
+                                
                             }
                         }
                     }
@@ -1338,6 +1363,27 @@ footer {
                 font-size: 36px;
                 font-weight: 900;
                 margin-bottom: 30px;
+            }
+            >ul{
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 30px;
+                li{
+                    font-size: 16px;
+                    input{
+                        display: none;
+                    }
+                    input:checked + label:after{
+                        display: block;
+                        content: '';
+                        height: 3px;
+                        width: 100%;
+                        background: $gradient;
+                    }
+                    img{
+                        width: 24px;
+                    }
+                }
             }
             .box{
                 display: block;

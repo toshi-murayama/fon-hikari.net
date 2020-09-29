@@ -87,6 +87,9 @@ function createApplicationAdminMailContent() {
 			case 'lastNameKana' :
 				$content .= '【 フリガナ（セイ） 】 ' . $v . "\r\n";
 			break;
+			case 'firstNameKana' :
+				$content .= '【 フリガナ（メイ） 】 ' . $v . "\r\n";
+			break;
 			case 'sex' :
 				$sex = '';
 				if ($v == '1') {
@@ -195,6 +198,15 @@ function createApplicationAdminMailContent() {
 				}
 				$content .= '【 電話番号種類 】 ' . $numberingMethod . "\r\n";
 			break;
+			case 'remortSupport' :
+				$remortSupport = '';
+				if ($v == '0') {
+					$remortSupport = 'なし';
+				} else {
+					$remortSupport = 'MO21FZ';
+				}
+				$content .= '【 リモートサポート 】 ' . $remortSupport . "\r\n";
+			break;
 			default :
 			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
 		}
@@ -278,10 +290,15 @@ function createApplicationUserMailContent() {
 	}
 	// 今はなしに固定 なし or あり
 	$content .= '《リモートサポート》'."\r\n";
-	$content .= 'なし'."\r\n";
-	// リモートサポートリリース時に復活
-	// $content .= '《プラン料金》';
-	// $content .= '500';
+	if($_POST['remortSupport'] == '0') {
+		$content .= 'なし'."\r\n";
+	} else {
+		$content .= 'あり'."\r\n";
+		$content .= '《プラン料金》'."\r\n";
+		$content .= '500'."\r\n";
+	}
+
+	
 	// 今はなしに固定 なし/TVおすすめプラン/お値打ちプラン/ビデオざんまいプラン/基本放送プラン
 	$content .= '《ひかりTV for NURO申込》'."\r\n";
 	$content .= 'なし'."\r\n";
