@@ -94,7 +94,7 @@
 				</div>
 			</ul>
 			<dl class="btn">
-				<dt><input type="submit" name="submit" value="戻る" id="backBtn" onclick="history.back()"></dt>
+				<dt><input type="button" name="backBtn" value="戻る" id="backBtn" onclick="history.back()"></dt>
 				<dd><input type="submit" name="submit" value="お申し込み" id="submit"></dd>
 			</dl>
 
