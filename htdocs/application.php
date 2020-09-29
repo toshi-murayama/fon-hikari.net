@@ -252,11 +252,13 @@ $(window).load(function() {
 				<li class="categories">リモートサポート</li>
 				<li class="app">
 					<input type="radio" name="remortSupport" value="0" id="noneremortSupport" checked>
-					<label for="noneNuro">なし</label>
+					<label for="noneremortSupport">なし</label>
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
-					<label for="nuro">あり</label>
+					<label for="remortSupport">あり</label>
 				</li>
-				<!--li class="categories">ひかりTV for NURO申込</li>
+
+				<!-- 一旦コメントアウト -->
+				<!-- <li class="categories">ひかりTV for NURO申込</li>
 				<div class="select">
 					<select name="hikariTV" id="hikariTV" class="validate[required]">
 							<option value="0" selected>なし</option>
@@ -265,8 +267,9 @@ $(window).load(function() {
 							<option value="3">ビデオざんまいプラン</option>
 							<option value="4">基本放送プラン</option>
 					</select>
-				</div-->
+				</div> -->
 			</ul>
+			
 			<div class="documents">
 				<p>入会書類郵送希望先</p>
 				<div class="app">

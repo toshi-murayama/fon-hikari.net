@@ -41,6 +41,7 @@ $mailingBuilding = h($_POST['mailingBuilding']);
 $telephoneApplication = h($_POST['telephoneApplication']);
 $homeType = h($_POST['homeType']);
 $numberingMethod = h($_POST['numberingMethod']);
+$remortSupport = h($_POST['remortSupport']);
 
 // 性別表示
 if($sex == '1') {
@@ -88,6 +89,13 @@ if($mailingDestination == '0') {
     $mailingDestinationString = '設置場所と同じ';
 } else {
     $mailingDestinationString = '別住所に送る';
+}
+
+// リモートサポート
+if($remortSupport == '0') {
+    $remortSupportString = 'なし';
+} else {
+    $remortSupportString = 'あり';
 }
 
 // TODO validation リリース後に実装をする. 今は一時的なもの... 
