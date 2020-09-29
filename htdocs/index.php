@@ -176,15 +176,37 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <p>※税抜き価格で表記しております。</p>
             </article>
         </section>
-
+<script>
+$(function(){
+	$('#remote_support').hide();
+	$("#button1").click(function() {
+		$("#hikari_tel").fadeIn();
+		$("#remote_support").fadeOut();
+	});
+	$("#button2").click(function() {
+		$("#hikari_tel").fadeOut();
+		$("#remote_support").fadeIn();
+	});
+});
+</script>
         <section id="option">
             <article>
                 <h2>オプション</h2>
-                <!--ul>
-                    <li>NURO光でんわ</li>
-                    <li>リモートサポート</li>
-                </ul-->
-                <div class="box">
+                <ul>
+                    <li>
+                        <input type="radio" name="option_btn" id="button1" checked>
+                        <label for="button1">
+                            <img src="img/hikaritel_ico.svg" alt="NURO光でんわ">NURO光でんわ
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="option_btn" id="button2">
+                        <label for="button2">
+                            <img src="img/support_ico.svg" alt="リモートサポート">リモートサポート
+                        </label>
+                    </li>
+                </ul>
+                <div id="hikari_tel" class="box">
                     <div class="boxL">
                         <img src="img/hikaritel_img.jpg" alt="">
                     </div>
@@ -196,8 +218,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </dl>
                         <dl>
                             <dt>月額基本料金</dt>
-                            <dd>【関東・北海道エリア】500円<br>
-【関西・東海・九州エリア】300円</dd>
+                            <dd>【関東・北海道エリア】500円(税別)<br>
+【関西・東海・九州エリア】300円(税別)</dd>
                         </dl>
                         <dl>
                             <dt>規約</dt>
@@ -212,34 +234,30 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
-                <!--div>
-                    <div>
-                        <img src="" alt="">
+                <div id="remote_support" class="box">
+                    <div class="boxL">
+                        <img src="img/remotesupport_img.jpg" alt="リモートサポート">
                     </div>
-                    <div>
+                    <div class="boxR">
                         <dl>
                             <dt>リモートサポート</dt>
-                            <dd>「NURO 光 でんわ」は「NURO 光」でご利用いただけるソニーネットワークコミ
-ュニケーションズ提供の月額基本料・通話料がおトクなIP電話サービスです。</dd>
+                            <dd>お客さまに対して、上記サービス用の電話番号を通知することにより日本語にて実施される、電話サポートサービスおよび遠隔サポートサービス。</dd>
                         </dl>
                         <dl>
                             <dt>月額基本料金</dt>
-                            <dd>【関東・北海道エリア】500円<br>
-【関西・東海・九州エリア】300円</dd>
+                            <dd>500円(税別)</dd>
                         </dl>
                         <dl>
                             <dt>規約</dt>
                             <dd>
                                 <ul>
-                                    <li><a href="">NURO 光 でんわ規約約款</a></li>
-                                    <li><a href="">NURO 光 でんわ重要事項説明</a></li>
-                                    <li><a href="">ホワイトコール 24 重要事項説明</a></li>
+                                    <li><a href="pdf/option/remote_jyusetu.pdf">リモートサポート重要事項説明</a></li>
                                 </ul>
                             </dd>
                         </dl>
-                        <a href="">今すぐお申し込み</a>
+                        <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
-                </div-->
+                </div>
             </article>
         </section>
 
