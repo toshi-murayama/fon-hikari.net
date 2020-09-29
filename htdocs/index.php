@@ -147,7 +147,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/koji_ico.svg" alt="">
                             <dl>
                                 <dt>工事費</dt>
-                                <dd>無料</dd>
+                                <dd>無料<sup>※1</sup></dd>
                             </dl>
                         </li>
                         <li>
@@ -173,7 +173,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </li>
                     </ul>
                 </div>
-                <p>※税抜き価格で表記しております。</p>
+                <p>※ 税抜き価格で表記しております。</p>
+                <p>※1 工事費40,000 円（ 1,333 円 X 30 か月の分割払い）を、工事費割引1,333 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
             </article>
         </section>
 <script>
