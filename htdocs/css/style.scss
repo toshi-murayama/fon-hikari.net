@@ -612,6 +612,27 @@ footer {
             font-weight: 900;
             margin-bottom: 30px;
         }
+        >ul{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            li{
+                font-size: 30px;
+                input{
+                    display: none;
+                }
+                input:checked + label:after{
+                    display: block;
+                    content: '';
+                    height: 3px;
+                    width: 100%;
+                    background: $gradient;
+                }
+                img{
+                    width: 36px;
+                }
+            }
+        }
         .box{
             display: flex;
             justify-content: space-between;
@@ -636,7 +657,7 @@ footer {
                         margin-bottom: 15px;
                         ul{
                             li{
-                                list-style:inside;
+                                
                             }
                         }
                     }
