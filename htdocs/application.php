@@ -256,7 +256,13 @@ $(window).load(function() {
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
 					<label for="remortSupport">あり</label>
 				</li>
+<<<<<<< .merge_file_6cIZG8
 				<!--li class="categories">ひかりTV for NURO申込</li>
+=======
+
+				<!-- 一旦コメントアウト -->
+				<!-- <li class="categories">ひかりTV for NURO申込</li>
+>>>>>>> .merge_file_Xsbe8o
 				<div class="select">
 					<select name="hikariTV" id="hikariTV" class="validate[required]">
 							<option value="0" selected>なし</option>
@@ -265,7 +271,11 @@ $(window).load(function() {
 							<option value="3">ビデオざんまいプラン</option>
 							<option value="4">基本放送プラン</option>
 					</select>
+<<<<<<< .merge_file_6cIZG8
 				</div-->
+=======
+				</div> -->
+>>>>>>> .merge_file_Xsbe8o
 			</ul>
 			
 			<div class="documents">
