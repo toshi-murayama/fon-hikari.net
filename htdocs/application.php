@@ -256,6 +256,7 @@ $(window).load(function() {
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
 					<label for="remortSupport">あり</label>
 				</li>
+
 				<!-- 一旦コメントアウト -->
 				<!-- <li class="categories">ひかりTV for NURO申込</li>
 				<div class="select">
