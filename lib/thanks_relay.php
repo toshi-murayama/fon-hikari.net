@@ -285,16 +285,38 @@ function createApplicationUserMailContent() {
 		$content .= 'なし'."\r\n";
 	} else {
 		$content .= 'あり'."\r\n";
-		$content .= '《プラン料金》';
-		$content .= '500';
+		$content .= '《プラン料金》'."\r\n";
+		$content .= '500'."\r\n";
 	}
+
 	
 	// 今はなしに固定 なし/TVおすすめプラン/お値打ちプラン/ビデオざんまいプラン/基本放送プラン
 	$content .= '《ひかりTV for NURO申込》'."\r\n";
-	$content .= 'なし'."\r\n";
-	// $content .= '《プラン料金》';
-	// $content .= '';
-
+	switch($_POST['hikariTV']) {
+		case '0' :
+			$content .= 'なし'."\r\n";
+			break;
+		case '1' :
+			$content .= 'あり'."\r\n";
+			$content .= '《プラン料金》'."\r\n";
+			$content .= '500'."\r\n";
+			break;
+		case '2' :
+			$content .= 'あり'."\r\n";
+			$content .= '《プラン料金》'."\r\n";
+			$content .= '500'."\r\n";
+			break;
+		case '3' :
+			$content .= 'あり'."\r\n";
+			$content .= '《プラン料金》'."\r\n";
+			$content .= '500'."\r\n";
+			break;
+		case '4' :
+			$content .= 'あり'."\r\n";
+			$content .= '《プラン料金》'."\r\n";
+			$content .= '500'."\r\n";
+			break;
+	}
 	$content .= '※工事内容により追加工事費が発生する場合がございます。'."\r\n";
 	$content .= '※付加サービスはプランにより価格が異なります。'."\r\n";
 	$content .= '※表示の金額は全て税抜き価格です。'."\r\n";
