@@ -67,7 +67,8 @@ class HatarakuDbInsert
                 "112548" => "{$dataAll['planCode']}",                   // プランコード
                 "112546" => "{$dataAll['agencyCode']}",                 // 代理店コード
                 "112619" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ) 
-                // "112546" => "{$dataAll['hikariTV']}",                   // 光TV
+                "112547" => "{$dataAll['routeCode']}",                  // 経路コード
+                // "" => "{$dataAll['hikariTV']}",                   // 光TV
             ]
         ];
     }
@@ -130,6 +131,8 @@ class HatarakuDbInsert
         $data['planCode'] = 'MB01FZ';
         // 代理店コード
         $data['agencyCode'] = 'FA19317';
+        // 経路コード
+        $data['routeCode'] = 'EA001A02';
 
         return $data;
     }
