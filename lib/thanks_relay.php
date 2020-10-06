@@ -46,7 +46,7 @@ if(empty($error)) {
 		$content = createApplicationAdminMailContent();
 		$to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
 		$title = '【fon光申込】';
-		$headers ='Bcc: onepiecetakaie@gmail.com' . "\r\n";
+		$headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
 		$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 		
 		//-----------------------------------------------------------
@@ -54,7 +54,7 @@ if(empty($error)) {
 		//-----------------------------------------------------------
 		$to = $_POST['mailAddress'];
 		$headers  = "From: support@fon-hikari.net\r\n";
-		$headers .='Bcc: onepiecetakaie@gmail.com' . "\r\n";
+		$headers .='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
 		$title = "《Fon光》お申し込み確認メール";
 		$content  = createApplicationUserMailContent();
 		$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');		
