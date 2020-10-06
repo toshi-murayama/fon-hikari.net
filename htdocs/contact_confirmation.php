@@ -69,7 +69,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
-<title>fons光 お問い合せ</title>
+<title>Fon光 お問い合せ</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="theme-color" content="#EC7103">

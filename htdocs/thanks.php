@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>fon光 お申し込みサイト</title>
+<title>Fon光 お申し込みサイト</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="fon光のおトク情報満載！今ならお申し込みで【80,000円キャッシュバック中】月額料金も最安級3,680円で使い放題！セキュリティ・電話・テレビなどのサービスも豊富に取り揃えています。お得に申込むなら今がチャンス！" />
-<meta name="keywords" content="fon光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え," />
+<meta name="description" content="Fon光のおトク情報満載！今ならお申し込みで【80,000円キャッシュバック中】月額料金も最安級3,680円で使い放題！セキュリティ・電話・テレビなどのサービスも豊富に取り揃えています。お得に申込むなら今がチャンス！" />
+<meta name="keywords" content="Fon光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え," />
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="shortcut icon" href="img/favicon.ico" />
@@ -27,7 +27,7 @@
 <div id="stalker"></div>
 <?php include "include/header_form.html";?>
 	<section id="thanks">
-		<h2>fon光お申し込み</h2>
+		<h2>Fon光お申し込み</h2>
 		<h3>04 お申し込み完了</h3>
 		<?php if (empty($error)) { ?>
 
