@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>fon光 超高速光回線インターネット</title>
+<title>Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="月額3,980円！fon光で快適なインターネット生活を送ろう">
-<meta name="keywords" content="fon,fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
+<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
+<meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="shortcut icon" href="img/favicon.ico" />	
@@ -34,7 +34,7 @@
     <div id="wrap">
         <section id="top">
             <article>
-                <h1>fon光で快適な<br>インターネット生活を送ろう</h1>
+                <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
                 <h2>月額<span>¥3,980</span><small>(税別)</small></h2>
                 <div></div>
                 <p>超高速インターネット回線</p>
@@ -78,7 +78,7 @@
 実現しています。</p>
                 <div class="speed_img">
                     <div class="fon">
-                        <div class="provider"><img src="img/fon_logo_w.svg" alt="fon光"></div>
+                        <div class="provider"><img src="img/fon_logo_w.svg" alt="Fon光"></div>
                         <div class="border ani1"><span></span></div>
                         <div class="speed">2Gbps</div>
                     </div>
@@ -137,7 +137,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <div class="box">
                     <h2>料金</h2>
-                    <p>fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額3,980円（税抜）でご利用頂ける光ファイバーインターネットサービスです。
+                    <p>Fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額3,980円（税抜）でご利用頂ける光ファイバーインターネットサービスです。
     音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
                 </div>
                 <div class="box">

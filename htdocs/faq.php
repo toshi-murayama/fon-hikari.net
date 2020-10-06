@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>fon光</title>
+<title>Fon光</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="月額3,980円！fon光で快適なインターネット生活を送ろう">
-<meta name="keywords" content="fon,fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
+<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
+<meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="shortcut icon" href="img/favicon.ico" />	
@@ -94,7 +94,7 @@
                 <h3 id="q2"><span>サービス・仕様について</span></h3>
 				<h4>回線速度について</h4>
                 <dl>
-                    <dt><p class="q">Q</p><p>FON 光の通信速度を教えてください。</p></dt>
+                    <dt><p class="q">Q</p><p>Fon 光の通信速度を教えてください。</p></dt>
                     <dd>
                         <p class="a">A</p>
                         <p>下り最大2Gbps、上り最大1Gbpsになります。<br>
@@ -126,7 +126,7 @@
                     <dt><p class="q">Q</p><p>他のインターネット回線との違いは何でしょうか？</p></dt>
                     <dd>
                         <p class="a">A</p>
-                        <p>FON光は、他社とは異なる通信規格GPONの採用と、対応するたホームゲートウェイ（ONU）によって、下り最大2Gbpsという高速通信が可能となっております。<br>
+                        <p>Fon光は、他社とは異なる通信規格GPONの採用と、対応するたホームゲートウェイ（ONU）によって、下り最大2Gbpsという高速通信が可能となっております。<br>
 							また、無線LAN機能がONU内に内蔵されており、余分な料金をかけずにご自宅のWi-Fi環境を整えることができます。</p>
                     </dd>
                 </dl>
@@ -143,7 +143,7 @@
                     <dd>
                         <p class="a">A</p>
                         <p>ご使用いただけますが、動作保証はしておりません。<br>
-							FON光のONUには無線LANルーター機能が搭載されておりますので、Wi-Fiをご利用の場合はそちらをお使い頂くことを推奨します。</p>
+							Fon光のONUには無線LANルーター機能が搭載されておりますので、Wi-Fiをご利用の場合はそちらをお使い頂くことを推奨します。</p>
                     </dd>
                 </dl>
                 <dl>
@@ -180,13 +180,13 @@
                     <dt><p class="q">Q</p><p>ブリッジモードには対応していますか？</p></dt>
                     <dd>
                         <p class="a">A</p>
-                        <p>FON光のONUはブリッジモードに対応していません。</p>
+                        <p>Fon光のONUはブリッジモードに対応していません。</p>
                     </dd>
                 </dl>
                 <h3 id="q3"><span>開通工事について</span></h3>
 				<h4>工事内容について</h4>
                 <dl>
-                    <dt><p class="q">Q</p><p>FON 光の工事内容を教えてください。</p></dt>
+                    <dt><p class="q">Q</p><p>Fon 光の工事内容を教えてください。</p></dt>
                     <dd>
                         <p class="a">A</p>
                         <p>開通工事は「宅内」「屋外」で2回行われます。<br>
@@ -220,7 +220,7 @@
 						その際事前に撤去する必要はありますか？</p></dt>
                     <dd>
                         <p class="a">A</p>
-                        <p>FON光はNTT等の回線を利用せず、新しく電柱から回線を引き込みするので、工事が発生します。<br>
+                        <p>Fon光はNTT等の回線を利用せず、新しく電柱から回線を引き込みするので、工事が発生します。<br>
 							状況にもよりますが、原則他の回線を撤去されていなくても工事は行っております。</p>
                     </dd>
                 </dl>
@@ -251,7 +251,7 @@
                     <dt><p class="q">Q</p><p>インターネットを利用できない期間を作りたくないのですが、現在使っている回線の解約はいつすれば良いですか？</p></dt>
                     <dd>
                         <p class="a">A</p>
-                        <p>FON光が開通してからご解約いただけば、インターネットがご利用できない期間が発生せずに、スムーズにお乗り換えいただけます。</p>
+                        <p>Fon光が開通してからご解約いただけば、インターネットがご利用できない期間が発生せずに、スムーズにお乗り換えいただけます。</p>
                     </dd>
                 </dl>
                 <dl>
@@ -263,7 +263,7 @@
                     </dd>
                 </dl>
                 <dl>
-                    <dt><p class="q">Q</p><p>集合住宅でFON 光は利用できますか？</p></dt>
+                    <dt><p class="q">Q</p><p>集合住宅でFon 光は利用できますか？</p></dt>
                     <dd>
                         <p class="a">A</p>
                         <p>物件管理者様へ工事の了承については、建物に入居されているお客さまからオーナーさまへご相談をお願いしています。</p>
@@ -271,7 +271,7 @@
                 </dl>
 				<h3 id="q4"><span>その他</span></h3>
                 <dl>
-                    <dt><p class="q">Q</p><p>FON 光が使える地域を知りたい。</p></dt>
+                    <dt><p class="q">Q</p><p>Fon 光が使える地域を知りたい。</p></dt>
                     <dd>
                         <p class="a">A</p>
                         <p>以下のご地域で提供をしています。（一部地域を除く）<br>

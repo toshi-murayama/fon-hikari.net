@@ -28,7 +28,7 @@
 <div id="stalker"></div>
 <?php include "include/header_form.html";?>
 	<section id="confirmation">
-		<h2>fon光お申し込み</h2>
+		<h2>Fon光お申し込み</h2>
 		<h3>03 ご契約情報確認</h3>
 		<div class="search_text">ご契約先の情報をご確認ください。</div>
 		<?php
