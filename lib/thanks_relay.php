@@ -355,7 +355,7 @@ function createApplicationUserMailContent() {
 }
 
 /**
- * FIXME 働くDBのインポートエラーメッセージ送信 縛りなしのコピペ 動作確認してない. いらないかも..
+ * 働くDBのインポートエラーメッセージ送信
  *
  * @param string $result
  * @return void
@@ -375,19 +375,14 @@ function sendHatarakuDBErrorMail(string $result){
 
     $error_subject =  "Fon光管理者通知メール【重要】申込の働くDBインポート登録に失敗しました。";
     //  ← を追加.
-    $to = mb_convert_encoding("support@fon-hikari.net, onepiecetakaie@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
+    $to = mb_convert_encoding("support@fon-hikari.net, onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
-    $from = mb_encode_mimeheader('Fon光運営事務局 ','ISO-2022-JP') . '<info@shibarinashi-wifi.jp>';
     $org = mb_convert_encoding("フォン・ジャパン株式会社", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
 
     $head = '';
     $head .= "Content-Type: text/plain \r\n";
-    $head .= "Return-Path: $rp \r\n";
-    $head .= "From: $from \r\n";
-    $head .= "Sender: $from \r\n";
     $head .= "Organization: $org \r\n";
-    $head .= "X-Sender: $from \r\n";
     $head .= "X-Priority: 3 \r\n";
 
     //管理者宛にメール送信
