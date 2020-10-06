@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+
+$onlySearch = false; // 検索のみフラグ
+if (isset($_GET['search'])) {
+	// 検索のみフラグを立てる
+	// 検索のみの場合は、申し込み画面へ遷移させない
+	$onlySearch = true;
+}
+
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
@@ -33,7 +42,7 @@ easing: 'linear',
 limitCookie : 0 ,
 countCookie : 1000
 });
-})
+});
 </script>
 <!--tag-->
 <?php include "include/tag_head.html";?>
@@ -62,7 +71,18 @@ countCookie : 1000
 		</div>
 	</div>
 	<section id="area_search">
+
+		<?php if ($onlySearch) { ?>
+
+		<h2>fon光エリア検索</h2>
+
+		<?php } else { ?>
+
 		<h2>fon光お申し込み</h2>
+
+		<?php } ?>
+
+
 		<h3>01 エリア検索</h3>
 		<form method="post" action="application" id="appForm">
 			<div class="search_text">お客様のお住い地域でご利用可能か検索します。</div>
@@ -103,7 +123,13 @@ countCookie : 1000
 							<span>今すぐお申し込み頂けます</span></div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
+
+						<?php if (!$onlySearch) { ?>
+
 						<input type="submit" value="お申し込みする" id="submit">
+
+						<?php } ?>
+
 					</div>
 				</section>
 				<section id="modalArea02" class="modalArea" style="display: none;">
@@ -112,7 +138,13 @@ countCookie : 1000
 						<div class="answer">fon光提供エリア外となっています</div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
+
+						<?php if (!$onlySearch) { ?>
+
 						<a class="ng" href="/">トップへ戻る</a>
+
+						<?php } ?>
+
 					</div>
 				</section>
 				<section id="modalArea03" class="modalArea" style="display: none;">
