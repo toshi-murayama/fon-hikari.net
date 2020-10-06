@@ -1,10 +1,11 @@
 <?php
 
-$onlySearch = false; // 検索のみフラグ
-if (isset($_GET['search'])) {
-	// 検索のみフラグを立てる
-	// 検索のみの場合は、申し込み画面へ遷移させない
-	$onlySearch = true;
+$shibarinashiFlag = false; // 縛りなしフラグ
+if (isset($_GET['shibarinashi'])) {
+	// 縛りなしのfon光セット割LP画面から当画面に遷移した場合、
+	// 縛りなしフラグを立てる。
+	// 縛りなしフラグが立っている場合は、申し込み画面へ遷移させない。
+	$shibarinashiFlag = true;
 }
 
 ?><!DOCTYPE html>
@@ -72,7 +73,7 @@ countCookie : 1000
 	</div>
 	<section id="area_search">
 
-		<?php if ($onlySearch) { ?>
+		<?php if ($shibarinashiFlag) { ?>
 
 		<h2>fon光エリア検索</h2>
 
@@ -124,7 +125,11 @@ countCookie : 1000
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
 
-						<?php if (!$onlySearch) { ?>
+						<?php if ($shibarinashiFlag) { ?>
+
+						<input type="button" value="お申し込みする" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');">
+
+						<?php } else { ?>
 
 						<input type="submit" value="お申し込みする" id="submit">
 
@@ -139,7 +144,7 @@ countCookie : 1000
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
 
-						<?php if (!$onlySearch) { ?>
+						<?php if (!$shibarinashiFlag) { ?>
 
 						<a class="ng" href="/">トップへ戻る</a>
 
@@ -161,6 +166,16 @@ countCookie : 1000
 			
 		</form>
 	</section>
+
+
+	<?php if ($shibarinashiFlag) { ?>
+
+	<div class="btn_close" style="margin: 6rem auto 5rem;" onclick="window.close()">
+		閉じる
+	</div>
+
+	<?php } ?>
+
 	<?php include "include/footer_form.html";?>
 
 <script>
