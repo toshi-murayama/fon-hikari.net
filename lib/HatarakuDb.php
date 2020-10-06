@@ -27,13 +27,13 @@ class HatarakuDb
   // 可変
   // 接続先URLに利用する設定
   // https://●●●●●/■■■■■/api/API種別/version/▲▲▲
-  const DOMAIN = "hdscarlet.htdb.jp";
-  const SCHEMA = "s5d7caa";
+  const DOMAIN = "hdgarnet.htdb.jp";
+  const SCHEMA = "d4q2uya";
   const VERSION = "v1";
 
   // APIトークン（リクエストヘッダで利用します）
   // 管理者設定　＞　ユーザ設定　＞　ユーザ管理　＞　ユーザ情報設定で発行
-  const API_TOKEN = "Ea7PtHXTmrzOfhvtL0zecdogMI9mPJh1MnY9vV62venThYgIA7vlSVw4YjGiKh0d";
+  const API_TOKEN = "UJLaegBncRYghHvsIK5KUPU5exhk8oB56ropXLtDdnyrO46PTo8kaBBQi3nJWduL";
 
   /**
    * @var string 働くDB APIからのレスポンスボディ
