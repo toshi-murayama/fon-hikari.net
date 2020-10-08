@@ -402,6 +402,9 @@ footer {
                 box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
                 transform: translateY(5px);
             }
+			li.lp{
+				width: 40%;
+			}
         }
     }
 }
@@ -1148,6 +1151,10 @@ footer {
                     box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
                     transform: translateY(5px);
                 }
+				li.lp{
+					width: 100%;
+					box-sizing: border-box;
+				}
             }
         }
     }
