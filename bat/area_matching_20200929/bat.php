@@ -87,20 +87,22 @@ foreach ($PREFECTURES as $pref) {
 // CSVの1行1行とメモリ上の住所をマッチングする
 //---------------------------------------------------------------
 
-$f = fopen('./架電要クリーニングリスト.csv', 'r');
+$f = fopen('./リストクリーニング依頼1008.csv', 'r');
 
 // ヘッダー部分を雑に読み飛ばす
 fgetcsv($f);
 
 $outeputFP = fopen("./converted.csv", "w");
-   fputcsv($outeputFP, toSjis(["電話番号","名前","ふりがな","郵便番号","都道府県","市区町村","該当地域", "NURO光対象局舎","要注意エリア","備考","開局時期","10G"]));
-// fputcsv($outeputFP,        ["電話番号","名前","ふりがな","郵便番号","都道府県","市区町村","該当地域", "NURO光対象局舎","要注意エリア","備考","開局時期","10G"]);
+fputcsv($outeputFP, toSjis(
+    array_merge(["自動採番","契約者","契約者カナ","携帯番号","郵便番号","発送先都道府県","発送先住所"], ["該当地域", "NURO光対象局舎","要注意エリア","備考","開局時期","10G"])
+  )
+);
 
 $matches = [];
 $loop = 0;
 while($line = fgetcsv($f)){
-  $pref = $line[4];
-  $address = mb_convert_kana($line[4] . $line[5], 'N');//数値を全角に寄せる
+  $pref = $line[5];
+  $address = mb_convert_kana($line[5] . $line[6], 'N');//数値を全角に寄せる
   $address  = preg_replace("/( |　)/", "", $address);//スペース削除
 
   $mostMatched = ["","","","","",""];
@@ -154,8 +156,9 @@ while($line = fgetcsv($f)){
   echo $loop . "  " . date('H:i:s') .  "  " . memory_get_usage() ."\n";
 
 
-     fputcsv($outeputFP, toSjis([$line[0], $line[1], $line[2], $line[3], $line[4], $line[5], $mostMatched[0], $mostMatched[1], $mostMatched[2], $mostMatched[3], $mostMatched[4],$mostMatched[5]]));
-  // fputcsv($outeputFP,        [$line[0], $line[1], $line[2], $line[3], $line[4], $line[5], $mostMatched[0], $mostMatched[1], $mostMatched[2], $mostMatched[3], $mostMatched[4],$mostMatched[5]]);
+  fputcsv($outeputFP, toSjis(
+    array_merge($line, $mostMatched)
+  ));
 
 }
 fclose($f);
