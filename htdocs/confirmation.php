@@ -1,5 +1,8 @@
 <?php 
 	require_once('../lib/confirmation_relay.php');
+
+	// アフィリエイトIDをセッションで受け渡し
+	$_SESSION['affi_order_number'] = $affi_order_number;
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
@@ -127,6 +130,7 @@
 			<input type="hidden" value="<?php print h($homeType); ?>" name="homeType">
 			<input type="hidden" value="<?php print h($numberingMethod); ?>" name="numberingMethod">
 			<input type="hidden" value="<?php print h($remortSupport); ?>" name="remortSupport">
+			<input type="hidden" value="<?php print h($affi_order_number); ?>" name="affi_order_number">
 			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">
 		</form>

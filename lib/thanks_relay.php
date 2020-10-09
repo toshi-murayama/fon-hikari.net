@@ -45,6 +45,7 @@ if(empty($error)) {
 		//-----------------------------------------------------------
 		$content = createApplicationAdminMailContent();
 		$to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
+		//$to = 'scramask@gmail.com';
 		$title = '【fon光申込】';
 		$headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
 		$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
@@ -206,6 +207,9 @@ function createApplicationAdminMailContent() {
 					$remortSupport = 'MO21FZ';
 				}
 				$content .= '【 リモートサポート 】 ' . $remortSupport . "\r\n";
+			break;
+			case 'affi_order_number' :
+				$content .= '【 アフィリエイトID 】 ' . $v . "\r\n";
 			break;
 			default :
 			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
