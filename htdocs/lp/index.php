@@ -13,15 +13,15 @@
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="shortcut icon" href="/img/favicon.ico" />	
+<link rel="shortcut icon" href="../img/favicon.ico" />	
 <?php include "../include/ogp.html";?>
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/common.js"></script>
-<script src="/js/index.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/index.js"></script>
 <!--tag-->
 <?php include "../include/tag_head.html";?>
 </head>
@@ -39,22 +39,11 @@
                 <div></div>
                 <p>超高速インターネット回線</p>
                 <p>下り最大 2Gbps</p>
-                <ul>
-                    <li class="lp">
-                        <a href="/area"></a>
-                        <span><img src="/img/top_app_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>webでお申し込み</dt>
-                            <dd>>> 今すぐこちらから</dd>
-                        </dl>
-                    </li>
-                    <li class="lp">
-                        <a href="/contact"></a>
-                        <span><img src="/img/top_contact_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>メールでお問い合わせ</dt>
-                            <dd>>> ご不明点をサポートします</dd>
-                        </dl>
+                <ul class="lp">
+                    <li>
+                        <a class="btn-flat" href="/area">
+							<span><img src="../img/top_app_ico.svg" alt="">
+								webでお申し込み</span></a>
                     </li>
                 </ul>
             </article>
@@ -69,7 +58,7 @@
 実現しています。</p>
                 <div class="speed_img">
                     <div class="fon">
-                        <div class="provider"><img src="/img/fon_logo_w.svg" alt="Fon光"></div>
+                        <div class="provider"><img src="../img/fon_logo_w.svg" alt="Fon光"></div>
                         <div class="border ani1"><span></span></div>
                         <div class="speed">2Gbps</div>
                     </div>
@@ -93,7 +82,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <li>
                         <dl>
                             <dd>
-                                <img src="/img/movie_ico.svg" alt="">
+                                <img src="../img/movie_ico.svg" alt="">
                             </dd>
                             <dt>高速回線</dt>
                             <dd>下り最大2Gbpsの超高速回線
@@ -103,7 +92,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <li>
                         <dl>
                             <dd>
-                                <img src="/img/money_ico.svg" alt="">
+                                <img src="../img/money_ico.svg" alt="">
                             </dd>
                             <dt>おとくな料金</dt>
                             <dd>業界最安値級の料金プラン
@@ -113,7 +102,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <li>
                         <dl>
                             <dd>
-                                <img src="/img/tel_ico.svg" alt="">
+                                <img src="../img/tel_ico.svg" alt="">
                             </dd>
                             <dt>魅力的なオプション</dt>
                             <dd>NURO光でんわやリモートサポートなど
@@ -135,28 +124,28 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <h3>月額基本料金<em>¥3,980</em></h3>
                     <ul>
                         <li>
-                            <img src="/img/koji_ico.svg" alt="">
+                            <img src="../img/koji_ico.svg" alt="">
                             <dl>
                                 <dt>工事費</dt>
                                 <dd>無料<sup>※1</sup></dd>
                             </dl>
                         </li>
                         <li>
-                            <img src="/img/doc_ico.svg" alt="">
+                            <img src="../img/doc_ico.svg" alt="">
                             <dl>
                                 <dt>契約事務手数料</dt>
                                 <dd>¥3,000</dd>
                             </dl>
                         </li>
                         <li>
-                            <img src="/img/calender_ico.svg" alt="">
+                            <img src="../img/calender_ico.svg" alt="">
                             <dl>
                                 <dt>契約期間</dt>
                                 <dd>2年更新</dd>
                             </dl>
                         </li>
                         <li>
-                            <img src="/img/x_ico.svg" alt="">
+                            <img src="../img/x_ico.svg" alt="">
                             <dl>
                                 <dt>契約解除料</dt>
                                 <dd>¥19,800</dd>
@@ -188,19 +177,19 @@ $(function(){
                     <li>
                         <input type="radio" name="option_btn" id="button1" checked>
                         <label for="button1">
-                            <img src="/img/hikaritel_ico.svg" alt="NURO光でんわ">NURO光でんわ
+                            <img src="../img/hikaritel_ico.svg" alt="NURO光でんわ">NURO光でんわ
                         </label>
                     </li>
                     <li>
                         <input type="radio" name="option_btn" id="button2">
                         <label for="button2">
-                            <img src="/img/support_ico.svg" alt="リモートサポート">リモートサポート
+                            <img src="../img/support_ico.svg" alt="リモートサポート">リモートサポート
                         </label>
                     </li>
                 </ul>
                 <div id="hikari_tel" class="box">
                     <div class="boxL">
-                        <img src="/img/hikaritel_img.jpg" alt="">
+                        <img src="../img/hikaritel_img.jpg" alt="">
                     </div>
                     <div class="boxR">
                         <dl>
@@ -228,7 +217,7 @@ $(function(){
                 </div>
                 <div id="remote_support" class="box">
                     <div class="boxL">
-                        <img src="/img/remotesupport_img.jpg" alt="リモートサポート">
+                        <img src="../img/remotesupport_img.jpg" alt="リモートサポート">
                     </div>
                     <div class="boxR">
                         <dl>
@@ -259,28 +248,28 @@ $(function(){
                 <ul>
                     <li class="bEffect01">
                         <dl>
-                            <dd><img src="/img/flow_ico01.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico01.svg" alt=""></dd>
                             <dt>お申し込み</dt>
                             <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
                         </dl>
                     </li>
                     <li class="bEffect02">
                         <dl>
-                            <dd><img src="/img/flow_ico02.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico02.svg" alt=""></dd>
                             <dt>工事日確定</dt>
                             <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
                         </dl>
                     </li>
                     <li class="bEffect03">
                         <dl>
-                            <dd><img src="/img/flow_ico03.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico03.svg" alt=""></dd>
                             <dt>工事完了</dt>
                             <dd>当日、工事作業員にて工事を行います。</dd>
                         </dl>
                     </li>
                     <li class="bEffect04">
                         <dl>
-                            <dd><img src="/img/flow_ico04.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico04.svg" alt=""></dd>
                             <dt>利用開始</dt>
                             <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
                         </dl>
@@ -302,7 +291,7 @@ $(function(){
                     <a href="/area">エリア検索する</a>
                 </div>
                 <div class="boxR">
-                    <img src="/img/map.svg" alt="map">
+                    <img src="../img/map.svg" alt="map">
                 </div>
                 </div>
             </article>
@@ -312,13 +301,13 @@ $(function(){
             <article>
                 <ul>
                     <li>
-                        <div class="imgBox"><img src="/img/support_img01.svg" alt=""></div>
+                        <div class="imgBox"><img src="../img/support_img01.svg" alt=""></div>
                         <h3>ご不明な点は</h3>
                         <p>まずは、よくある質問事項をご確認ください。</p>
                         <a href="/faq">詳しくはこちらから</a>
                     </li>
                     <li>
-                        <div class="imgBox"><img src="/img/support_img02.png" alt=""></div>
+                        <div class="imgBox"><img src="../img/support_img02.png" alt=""></div>
                         <h3>お困りの場合は</h3>
                         <p>お困りの問題に対する解決策をご案内します。</p>
                         <a href="/contact">メールでのお問い合わせはこちらから</a>
