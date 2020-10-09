@@ -126,7 +126,8 @@ countCookie : 1000
 
 						<?php if ($shibarinashiFlag) { ?>
 
-						<input type="button" value="お申し込みする" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');">
+						<input type="button" value="セット割を申し込む" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');">
+						Fon光単体のお申し込みは<a href="/" style="margin-top: 1rem;">こちら</a>
 
 						<?php } else { ?>
 
