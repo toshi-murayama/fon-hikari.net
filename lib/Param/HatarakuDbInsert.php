@@ -68,6 +68,7 @@ class HatarakuDbInsert
                 "116895" => "{$dataAll['agencyCode']}",                 // 代理店コード
                 "116997" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ) 
                 "116896" => "{$dataAll['routeCode']}",                  // 経路コード
+                "117058" => "{$dataAll['affi_order_number']}",          // アフィリエイトID
                 // "" => "{$dataAll['hikariTV']}",                   // 光TV
             ]
         ];

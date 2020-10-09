@@ -98,6 +98,9 @@ if($remortSupport == '0') {
     $remortSupportString = 'あり';
 }
 
+// アフィリエイトID
+$affi_order_number = md5(uniqid(rand(), true)) . date('YmdHis');
+
 // TODO validation リリース後に実装をする. 今は一時的なもの... 
 if (!preg_match("/^[ァ-ヶー]+$/u", $lastNameKana)) {
 	$error = '<p class="error">フリガナ（セイ）が半角カタカナではありません</p>';
