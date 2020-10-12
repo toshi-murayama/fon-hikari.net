@@ -176,7 +176,13 @@ countCookie : 1000
 
 	<?php } ?>
 
-	<?php include "include/footer_form.html";?>
+	<?php 
+	if(isset($_COOKIE['affiliate'])) {
+		include "include/footer_affiliate.html";
+	} else {
+		include "include/footer_form.html";
+	}
+	?>
 
 <script>
 function AddressSearchSelectbox() {

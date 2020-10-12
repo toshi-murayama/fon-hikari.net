@@ -27,10 +27,11 @@
 </head>
 <body>
 <?php include "../include/tag_start.html";?>
+<?php setcookie('affiliate', true, time() + 60 * 60 * 24 * 31, '/')?>
 <p id="cursor"></p>
 <div id="stalker"></div>
 
-    <?php include "../include/header.html";?>
+    <?php include "../include/header_affiliate.html";?>
     <div id="wrap">
         <section id="top">
             <article>
@@ -41,7 +42,7 @@
                 <p>下り最大 2Gbps</p>
                 <ul class="lp">
                     <li>
-                        <a class="btn-flat" href="/area">
+                        <a class="btn-flat" href="../area">
 							<span><img src="../img/top_app_ico.svg" alt="">
 								webでお申し込み</span></a>
                     </li>

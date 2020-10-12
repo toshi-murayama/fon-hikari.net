@@ -143,6 +143,12 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 			</dl>
 		</form>
 	</section>
-<?php include "include/footer_contact.html";?>
+	<?php 
+	if(isset($_COOKIE['affiliate'])) {
+		include "include/footer_affiliate.html";
+	} else {
+		include "include/footer_contact.html";
+	}
+	?>
 </body>
 </html>

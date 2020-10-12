@@ -27,6 +27,7 @@
 </head>
 <body>
 <?php include "include/tag_start.html";?>
+<?php setcookie('affiliate', '', time() - 1, '/')?>
 <p id="cursor"></p>
 <div id="stalker"></div>
 

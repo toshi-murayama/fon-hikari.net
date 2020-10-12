@@ -45,10 +45,19 @@
 		</p>
 
 	<?php } ?>
-
-		<p class="btn"><a href="/">最初のぺージに戻る</a></p>
+		<?php if(isset($_COOKIE['affiliate'])) { ?>
+			<p class="btn"><a href="/ta">最初のぺージに戻る</a></p>
+		<?php } else {?>
+			<p class="btn"><a href="/">最初のぺージに戻る</a></p>
+		<?php } ?>
 	</section>
-	<?php include "include/footer_form.html";?>
+	<?php 
+	if(isset($_COOKIE['affiliate'])) {
+		include "include/footer_affiliate.html";
+	} else {
+		include "include/footer_form.html";
+	}
+	?>
 
 <!-- TODO GTMでのCV発火が出来次第削除予定 -->
 <!-- ロンバード(フェルマ) CV計測タグ 20201008 -->
