@@ -47,7 +47,13 @@
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-<?php include "include/header.html";?>
+<?php 
+	if(isset($_COOKIE['affiliate'])) {
+		include "include/header_affiliate.html";
+	} else {
+		include "include/header.html";
+	}
+?>
 <main>
     <section id="other">
         <article class="faq">

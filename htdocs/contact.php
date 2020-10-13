@@ -107,6 +107,12 @@ $(function(){
 		</dl>
 		</form>
 	</section>
-	<?php include "include/footer_contact.html";?>
+	<?php 
+	if(isset($_COOKIE['affiliate'])) {
+		include "include/footer_affiliate.html";
+	} else {
+		include "include/footer_contact.html";
+	}
+	?>
 </body>
 </html>

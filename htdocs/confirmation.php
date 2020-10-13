@@ -135,6 +135,12 @@
 			<input type="hidden" name="confirmationSubmitFlag" value="1">
 		</form>
 	</section>
-<?php include "include/footer_form.html";?>
+	<?php 
+	if(isset($_COOKIE['affiliate'])) {
+		include "include/footer_affiliate.html";
+	} else {
+		include "include/footer_form.html";
+	}
+	?>
 </body>
 </html>
