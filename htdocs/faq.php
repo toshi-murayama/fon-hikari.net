@@ -53,7 +53,7 @@
 	} else {
 		include "include/header.html";
 	}
-	?>
+?>
 <main>
     <section id="other">
         <article class="faq">
