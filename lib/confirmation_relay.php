@@ -14,6 +14,9 @@ session_start();
 $token = sha1(uniqid(mt_rand(), true));
 $_SESSION['tk'] = $token;
 
+// アフィリエイトIDをセッションで受け渡し
+$_SESSION['affi_order_number'] = $affi_order_number;
+
 $applicationClassification = h($_POST['applicationClassification']);
 $lastName = h($_POST['lastName']);
 $lastNameKana = h($_POST['lastNameKana']);
@@ -42,6 +45,7 @@ $telephoneApplication = h($_POST['telephoneApplication']);
 $homeType = h($_POST['homeType']);
 $numberingMethod = h($_POST['numberingMethod']);
 $remortSupport = h($_POST['remortSupport']);
+$collectivelyElectricity = h($_POST['collectivelyElectricity']);
 
 // 性別表示
 if($sex == '1') {
@@ -97,6 +101,14 @@ if($remortSupport == '0') {
 } else {
     $remortSupportString = 'あり';
 }
+
+// まとめてでんき
+if($collectivelyElectricity == '0') {
+    $collectivelyElectricityString = 'なし';
+} else {
+    $collectivelyElectricityString = 'あり';
+}
+
 
 // アフィリエイトID
 $affi_order_number = md5(uniqid(rand(), true)) . date('YmdHis');
