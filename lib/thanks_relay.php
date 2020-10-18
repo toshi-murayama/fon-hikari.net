@@ -211,6 +211,15 @@ function createApplicationAdminMailContent() {
 			case 'affi_order_number' :
 				$content .= '【 アフィリエイトID 】 ' . $v . "\r\n";
 			break;
+			case 'collectivelyElectricity' :
+				$collectivelyElectricity = '';
+				if ($v == '0') {
+					$collectivelyElectricity = 'なし';
+				} else {
+					$collectivelyElectricity = 'MO56FZ';
+				}
+				$content .= '【 まとめてでんき 】 ' . $collectivelyElectricity . "\r\n";
+			break;
 			default :
 			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
 		}
@@ -292,7 +301,7 @@ function createApplicationUserMailContent() {
 			$content .= $_POST['fixedLine']."\r\n";		
 		}
 	}
-	// 今はなしに固定 なし or あり
+	// リモートサポート
 	$content .= '《リモートサポート》'."\r\n";
 	if($_POST['remortSupport'] == '0') {
 		$content .= 'なし'."\r\n";
@@ -302,12 +311,19 @@ function createApplicationUserMailContent() {
 		$content .= '500'."\r\n";
 	}
 
-	
 	// 今はなしに固定 なし/TVおすすめプラン/お値打ちプラン/ビデオざんまいプラン/基本放送プラン
 	$content .= '《ひかりTV for NURO申込》'."\r\n";
 	$content .= 'なし'."\r\n";
 	// $content .= '《プラン料金》';
 	// $content .= '';
+
+	// まとめてでんき
+	$content .= '《まとめてでんき》'."\r\n";
+	if($_POST['collectivelyElectricity'] == '0') {
+		$content .= 'なし'."\r\n";
+	} else {
+		$content .= 'あり'."\r\n";
+	}
 
 	$content .= '※工事内容により追加工事費が発生する場合がございます。'."\r\n";
 	$content .= '※付加サービスはプランにより価格が異なります。'."\r\n";
