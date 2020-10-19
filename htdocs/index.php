@@ -13,7 +13,7 @@
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="shortcut icon" href="img/favicon.ico" />	
+<link rel="shortcut icon" href="img/favicon.ico" />
 <?php include "include/ogp.html";?>
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -74,7 +74,7 @@
             <article>
                 <h2>下り最大2Gbpsの超高速光回線</h2>
                 <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用したインターネットサービスです。
-インターネット網からお客さまのご自宅まで弊社がサービス提供しており、高品質で安心なインターネットライフをお楽しみいただけます。 
+インターネット網からお客さまのご自宅まで弊社がサービス提供しており、高品質で安心なインターネットライフをお楽しみいただけます。
 国際標準規格であるGPON※2の採用と、専用に開発されたホームゲートウェイを組み合わせたことで、個人宅向け商用サービスで下り最大2Gbpsを
 実現しています。</p>
                 <div class="speed_img">
@@ -260,6 +260,41 @@ $(function(){
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
+            </article>
+            <article>
+                <div class="flex">
+                    <h3><img src="img/denki_ico.svg" alt="まとめてでんき">まとめてでんき</h3>
+                    <h3>　　　　　　　　　</h3>
+                </div>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="img/denki_img.png" alt="まとめてでんき">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>まとめてでんき</dt>
+                            <dd>
+                                使用量に関わらず、電気とFon光回線をお安く！<br>
+                                電気とインターネットは生活に必要なライフライン。<br>
+                                賢く選んで使いましょう！
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>特典１</dt>
+                            <dd>Fon光の回線使用料が500円引き</dd>
+                        </dl>
+                        <dl>
+                            <dt>特典２</dt>
+                            <dd>電気代が今よりもお安く</dd>
+                        </dl>
+                        <a href="http://hikarisvc.jp/denki/index.html" class="btn" target="_blank">詳細はこちら</a>
+                    </div>
+                </div>
+                <ul class="annotation">
+                    <li>※まとめてでんきのお申込みはこちらのサイトからのお申込みが対象になります。<br>
+                        新規申込の方は、申込の際にオプションを選択してください。すでにFon光を使われている方は、お問い合わせフォームよりお知らせください。
+                    </li>
+                </ul>
             </article>
         </section>
 
