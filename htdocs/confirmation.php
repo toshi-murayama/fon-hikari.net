@@ -1,8 +1,5 @@
 <?php 
 	require_once('../lib/confirmation_relay.php');
-
-	// アフィリエイトIDをセッションで受け渡し
-	$_SESSION['affi_order_number'] = $affi_order_number;
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
@@ -83,6 +80,7 @@
 					<li class="categories">固定電話番号</li><li><p><?php print $fixedLine; ?></p></li>
 				</div>
 				<li class="categories">リモートサポート</li><li><p><?php print $remortSupportString; ?></p></li>
+				<li class="categories">まとめてでんき</li><li><p><?php print $collectivelyElectricityString; ?></p></li>
 			</ul>
 			<h4>入会書類郵送先</h4>
 			<ul class="form">
@@ -130,6 +128,7 @@
 			<input type="hidden" value="<?php print h($homeType); ?>" name="homeType">
 			<input type="hidden" value="<?php print h($numberingMethod); ?>" name="numberingMethod">
 			<input type="hidden" value="<?php print h($remortSupport); ?>" name="remortSupport">
+			<input type="hidden" value="<?php print h($collectivelyElectricity); ?>" name="collectivelyElectricity">
 			<input type="hidden" value="<?php print h($affi_order_number); ?>" name="affi_order_number">
 			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">

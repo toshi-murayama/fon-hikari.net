@@ -251,10 +251,17 @@ $(window).load(function() {
                 </div>
 				<li class="categories">リモートサポート</li>
 				<li class="app">
-					<input type="radio" name="remortSupport" value="0" id="noneremortSupport" checked>
-					<label for="noneremortSupport">なし</label>
+					<input type="radio" name="remortSupport" value="0" id="noneRemortSupport" checked>
+					<label for="noneRemortSupport">なし</label>
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
 					<label for="remortSupport">あり</label>
+				</li>
+				<li class="categories">まとめてでんき</li>
+				<li class="app">
+					<input type="radio" name="collectivelyElectricity" value="0" id="noneCollectivelyElectricityortSupport" checked>
+					<label for="noneCollectivelyElectricityortSupport">なし</label>
+					<input type="radio" name="collectivelyElectricity" value="1" class="check" id="collectivelyElectricity">
+					<label for="collectivelyElectricity">あり</label>
 				</li>
 				<!--li class="categories">ひかりTV for NURO申込</li>
 				<div class="select">

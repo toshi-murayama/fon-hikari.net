@@ -69,6 +69,7 @@ class HatarakuDbInsert
                 "116997" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ) 
                 "116896" => "{$dataAll['routeCode']}",                  // 経路コード
                 "117058" => "{$dataAll['affi_order_number']}",          // アフィリエイトID
+                "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ) 
                 // "" => "{$dataAll['hikariTV']}",                   // 光TV
             ]
         ];
@@ -117,6 +118,13 @@ class HatarakuDbInsert
             $data['remortSupport'] = '';
         } else {
             $data['remortSupport'] = 'MO21FZ';
+        }
+
+        // まとめてでんき
+        if ($data['collectivelyElectricity'] == '0') {
+            $data['collectivelyElectricity'] = '';
+        } else {
+            $data['collectivelyElectricity'] = 'MO56FZ';
         }
 
         /* --------------------- 以下、固定の値 --------------------------- */
