@@ -142,5 +142,17 @@ a8sales({
 </script>
 <!-- end A8 CVタグ 20201008 -->
 
+<!-- アクセストレード CVタグ 20201016 -->
+<script>
+  var __atw = __atw || [];
+  __atw.push({ "merchant" : "fonhikari", "param" : {
+    "result_id" : "100",
+    "verify" : "<?php print($_SESSION['affi_order_number']); ?>",
+  }});
+(function(a){var b=a.createElement("script");b.src="https://h.accesstrade.net/js/nct/cv.min.js";b.async=!0;
+a=a.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})(document);
+</script>
+<!-- end アクセストレード CVタグ 20201016 -->
+
 </body>
 </html>

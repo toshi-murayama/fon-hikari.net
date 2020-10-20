@@ -263,16 +263,14 @@ $(window).load(function() {
 					<input type="radio" name="collectivelyElectricity" value="1" class="check" id="collectivelyElectricity">
 					<label for="collectivelyElectricity">あり</label>
 				</li>
-				<!--li class="categories">ひかりTV for NURO申込</li>
-				<div class="select">
-					<select name="hikariTV" id="hikariTV" class="validate[required]">
-							<option value="0" selected>なし</option>
-							<option value="1">TVおすすめプラン</option>
-							<option value="2">お値打ちプラン</option>
-							<option value="3">ビデオざんまいプラン</option>
-							<option value="4">基本放送プラン</option>
-					</select>
-				</div-->
+				<li class="categories">ひかりTV for NURO申込</li>
+				<li class="app">
+					<input type="radio" name="hikariTV" value="0" id="noneHikariTV" checked>
+					<label for="noneHikariTV">なし</label>
+					<input type="radio" name="hikariTV" value="1" class="check" id="hikariTV">
+					<label for="hikariTV">あり</label>
+				</li>
+				<li>※ プランやチューナーに関しては、申込確認のお電話の際にヒアリングいたします。</li>
 			</ul>
 			
 			<div class="documents">
