@@ -174,13 +174,21 @@ a:hover {
 #title {
   color: #fff;
   text-align: center;
-  padding: 200px 0;
-  background-size: cover; }
-  #title article {
+  padding: 150px 0; }
+  #title article h1 {
     font-size: 24px; }
 
 #title.option_img {
-  background: url(../img/top_bg.jpg) no-repeat 50% 50%; }
+  background: url(../img/top_bg_option.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+#title.faq_img {
+  background: url(../img/top_bg_faq.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+#title.company_img {
+  background: url(../img/top_bg_company.jpg) no-repeat 50% 50%;
+  background-size: cover; }
 
 /*-------------------------------------------------
  header
@@ -1379,6 +1387,32 @@ footer {
                 font-weight: 900;
                 color: #f39500; }
 
+  /*-----optionArea-----*/
+  #optionArea {
+    padding: 50px 0;
+    background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
+    color: #fff;
+    text-align: center; }
+    #optionArea article {
+      width: 90%;
+      max-width: 1100px;
+      height: 100%;
+      margin: 0 auto; }
+      #optionArea article h2 {
+        font-size: 28px; }
+      #optionArea article p {
+        margin: 15px 0; }
+      #optionArea article a {
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        padding: 10px 15px;
+        display: inline-block; }
+      #optionArea article a:hover {
+        background: #fff;
+        color: #f39500; }
+
   /*-----option-----*/
   #option {
     padding: 30px 0;
@@ -1400,11 +1434,16 @@ footer {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
-        margin-bottom: 30px; }
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        margin-bottom: 30px;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
         #option article > ul li {
-          font-size: 16px; }
+          font-size: 14px;
+          width: 50%;
+          margin-bottom: 15px; }
           #option article > ul li input {
             display: none; }
           #option article > ul li input:checked + label:after {
@@ -1457,7 +1496,8 @@ footer {
             margin: 0 auto; }
       #option article .annotation li {
         font-size: 12px;
-        margin-top: 20px; }
+        margin-top: 20px;
+        width: 100%; }
 
   /*-----flow-----*/
   #flow {

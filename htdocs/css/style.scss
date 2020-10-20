@@ -166,14 +166,24 @@ a:hover {
 #title{
     color: #fff;
     text-align: center;
-    padding: 200px 0;
-    background-size: cover;
+    padding: 150px 0;
     article{
-        font-size: 24px;
+        h1{
+            font-size: 24px;
+        }
     }
 }
 #title.option_img{
-    background: url(../img/top_bg.jpg) no-repeat 50% 50%;
+    background: url(../img/top_bg_option.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+#title.faq_img{
+    background: url(../img/top_bg_faq.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+#title.company_img{
+    background: url(../img/top_bg_company.jpg) no-repeat 50% 50%;
+    background-size: cover;
 }
 
 
@@ -1492,6 +1502,38 @@ footer {
 
 
 
+    /*-----optionArea-----*/
+    #optionArea{
+        padding: 50px 0;
+        background: $gradient;
+        color: #fff;
+        text-align: center;
+        article{
+            width: 90%;
+            max-width: 1100px;
+            height: 100%;
+            margin: 0 auto;
+            h2{
+                font-size: 28px;
+            }
+            p{
+                margin: 15px 0;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                border: 1px solid #fff;
+                padding: 10px 15px;
+                display: inline-block;
+            }
+            a:hover{
+                background: #fff;
+                color: $orange;
+            }
+        }
+    }
+
 
     /*-----option-----*/
     #option{
@@ -1511,10 +1553,13 @@ footer {
             }
             >ul{
                 display: flex;
-                justify-content: space-around;
+                justify-content: flex-start;
                 margin-bottom: 30px;
+                flex-wrap: wrap;
                 li{
-                    font-size: 16px;
+                    font-size: 14px;
+                    width: 50%;
+                    margin-bottom: 15px;
                     input{
                         display: none;
                     }
@@ -1584,6 +1629,7 @@ footer {
                 li{
                     font-size: 12px;
                     margin-top: 20px;
+                    width: 100%;
                 }
             }
         }

@@ -35,7 +35,7 @@
     <div id="wrap">
         <section id="title" class="option_img">
             <article>
-                オプション
+                <h1>OPTION</h1>
             </article>
         </section>
         <section id="option">
@@ -115,7 +115,7 @@
                 </div>
                 <div id="hikari_tv" class="box">
                     <div class="boxL">
-                        <img src="img/remotesupport_img.jpg" alt="リモートサポート">
+                        <img src="img/hikaritv_img.jpg" alt="ひかりTV">
                     </div>
                     <div class="boxR">
                         <dl>
@@ -166,8 +166,9 @@
                         <dl>
                             <dt>特典２</dt>
                             <dd>電気代が今よりもお安く</dd>
+                            <dd><a href="area" target="_blank">※詳細はこちらから</a></dd>
                         </dl>
-                        <a href="http://hikarisvc.jp/denki/index.html" class="btn" target="_blank">詳細はこちら</a>
+                        <a href="http://hikarisvc.jp/denki/index.html" class="btn" target="_blank">今すぐお申し込み</a>
                     </div>
                 </div>
                 <ul class="annotation">
