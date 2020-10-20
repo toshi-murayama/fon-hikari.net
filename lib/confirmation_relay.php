@@ -46,6 +46,7 @@ $homeType = h($_POST['homeType']);
 $numberingMethod = h($_POST['numberingMethod']);
 $remortSupport = h($_POST['remortSupport']);
 $collectivelyElectricity = h($_POST['collectivelyElectricity']);
+$hikariTV = h($_POST['hikariTV']);
 
 // 性別表示
 if($sex == '1') {
@@ -109,6 +110,12 @@ if($collectivelyElectricity == '0') {
     $collectivelyElectricityString = 'あり';
 }
 
+// ひかりTV
+if($hikariTV == '0') {
+    $hikariTVString = 'なし';
+} else {
+    $hikariTVString = 'あり';
+}
 
 // アフィリエイトID
 $affi_order_number = md5(uniqid(rand(), true)) . date('YmdHis');

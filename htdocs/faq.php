@@ -55,9 +55,13 @@
 	}
 ?>
 <main>
+    <section id="title" class="faq_img">
+        <article>
+            <h1>FAQ</h1>
+        </article>
+    </section>
     <section id="other">
         <article class="faq">
-            <h2>FAQ</h2>
             <div class="faq_box">
 				<ul class="faq_menu">
 					<li><a href="#q1">料金・特典について</a></li>

@@ -38,9 +38,13 @@
 	}
 ?>
 <main>
+    <section id="title" class="company_img">
+        <article>
+            <h1>COMPANY</h1>
+        </article>
+    </section>
     <section id="other">
         <article class="company">
-            <h2>会社概要／特定商取引法に基づく表記</h2>
             <div class="company_box">
                 <dl>
                     <dt>会社名</dt>

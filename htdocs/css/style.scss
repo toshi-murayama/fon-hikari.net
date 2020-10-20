@@ -159,6 +159,36 @@ a:hover {
 #stalker.active{
 }
 
+
+/*-------------------------------------------------
+ under_top_title
+-------------------------------------------------*/
+#title{
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+    article{
+        h1{
+            font-size: 24px;
+        }
+    }
+}
+#title.option_img{
+    background: url(../img/top_bg_option.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+#title.faq_img{
+    background: url(../img/top_bg_faq.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+#title.company_img{
+    background: url(../img/top_bg_company.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+
+
+
+
 /*-------------------------------------------------
  header
 -------------------------------------------------*/
@@ -667,6 +697,38 @@ footer {
 
 
 
+/*-----optionArea-----*/
+#optionArea{
+    padding: 50px 0;
+    background: $gradient;
+    color: #fff;
+    text-align: center;
+    article{
+        width: 90%;
+        max-width: 1100px;
+        height: 100%;
+        margin: 0 auto;
+        h2{
+            font-size: 28px;
+        }
+        p{
+            margin: 15px 0;
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        a:hover{
+            background: #fff;
+            color: $orange;
+        }
+    }
+}
+
 
 /*-----option-----*/
 #option{
@@ -689,7 +751,7 @@ footer {
             justify-content: space-around;
             margin-bottom: 30px;
             li{
-                font-size: 30px;
+                font-size: 24px;
                 input{
                     display: none;
                 }
@@ -701,7 +763,7 @@ footer {
                     background: $gradient;
                 }
                 img{
-                    width: 36px;
+                    width: 24px;
                 }
             }
         }
@@ -709,7 +771,7 @@ footer {
             display: flex;
             justify-content: space-around;
             h3{
-                font-size: 30px;
+                font-size: 24px;
                 font-weight: lighter;
                 margin: 40px 0 20px;
                 display: inline-block;
@@ -1440,6 +1502,38 @@ footer {
 
 
 
+    /*-----optionArea-----*/
+    #optionArea{
+        padding: 30px 0;
+        background: $gradient;
+        color: #fff;
+        text-align: center;
+        article{
+            width: 90%;
+            max-width: 1100px;
+            height: 100%;
+            margin: 0 auto;
+            h2{
+                font-size: 28px;
+            }
+            p{
+                margin: 15px 0;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                border: 1px solid #fff;
+                padding: 10px 15px;
+                display: inline-block;
+            }
+            a:hover{
+                background: #fff;
+                color: $orange;
+            }
+        }
+    }
+
 
     /*-----option-----*/
     #option{
@@ -1459,10 +1553,13 @@ footer {
             }
             >ul{
                 display: flex;
-                justify-content: space-around;
+                justify-content: flex-start;
                 margin-bottom: 30px;
+                flex-wrap: wrap;
                 li{
-                    font-size: 16px;
+                    font-size: 14px;
+                    width: 50%;
+                    margin-bottom: 15px;
                     input{
                         display: none;
                     }
@@ -1532,6 +1629,7 @@ footer {
                 li{
                     font-size: 12px;
                     margin-top: 20px;
+                    width: 100%;
                 }
             }
         }
