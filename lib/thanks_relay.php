@@ -220,6 +220,15 @@ function createApplicationAdminMailContent() {
 				}
 				$content .= '【 まとめてでんき 】 ' . $collectivelyElectricity . "\r\n";
 			break;
+			case 'hikariTV' :
+				$hikariTV = '';
+				if ($v == '0') {
+					$hikariTV = 'なし';
+				} else {
+					$hikariTV = 'あり';
+				}
+				$content .= '【 ひかりTV for NURO申込 】 ' . $hikariTV . "\r\n";
+			break;
 			default :
 			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
 		}
@@ -311,11 +320,13 @@ function createApplicationUserMailContent() {
 		$content .= '500'."\r\n";
 	}
 
-	// 今はなしに固定 なし/TVおすすめプラン/お値打ちプラン/ビデオざんまいプラン/基本放送プラン
+	// ひかりTV
 	$content .= '《ひかりTV for NURO申込》'."\r\n";
-	$content .= 'なし'."\r\n";
-	// $content .= '《プラン料金》';
-	// $content .= '';
+	if($_POST['hikariTV'] == '0') {
+		$content .= 'なし'."\r\n";
+	} else {
+		$content .= 'あり'."\r\n";
+	}
 
 	// まとめてでんき
 	$content .= '《まとめてでんき》'."\r\n";

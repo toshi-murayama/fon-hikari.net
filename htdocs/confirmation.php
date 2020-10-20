@@ -81,6 +81,7 @@
 				</div>
 				<li class="categories">リモートサポート</li><li><p><?php print $remortSupportString; ?></p></li>
 				<li class="categories">まとめてでんき</li><li><p><?php print $collectivelyElectricityString; ?></p></li>
+				<li class="categories">ひかりTV for NURO申込</li><li><p><?php print $hikariTVString; ?></p></li>
 			</ul>
 			<h4>入会書類郵送先</h4>
 			<ul class="form">
@@ -129,6 +130,7 @@
 			<input type="hidden" value="<?php print h($numberingMethod); ?>" name="numberingMethod">
 			<input type="hidden" value="<?php print h($remortSupport); ?>" name="remortSupport">
 			<input type="hidden" value="<?php print h($collectivelyElectricity); ?>" name="collectivelyElectricity">
+			<input type="hidden" value="<?php print h($hikariTV); ?>" name="hikariTV">
 			<input type="hidden" value="<?php print h($affi_order_number); ?>" name="affi_order_number">
 			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">
