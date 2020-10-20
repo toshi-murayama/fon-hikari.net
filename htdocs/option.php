@@ -166,9 +166,9 @@
                         <dl>
                             <dt>特典２</dt>
                             <dd>電気代が今よりもお安く</dd>
-                            <dd><a href="area" target="_blank">※詳細はこちらから</a></dd>
+                            <dd><a href="http://hikarisvc.jp/denki/" target="_blank">※詳細はこちらから</a></dd>
                         </dl>
-                        <a href="http://hikarisvc.jp/denki/index.html" class="btn" target="_blank">今すぐお申し込み</a>
+                        <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
                 <ul class="annotation">
