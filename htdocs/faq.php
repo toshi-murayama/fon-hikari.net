@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Fon光</title>
+<title>Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
@@ -20,10 +20,10 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/other.css"> 
 <!--js-->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/jquery.cookie.js"></script>
-<script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
 	$(function(){
   $('a[href^="#"]').click(function(){
     //スクロールのスピード

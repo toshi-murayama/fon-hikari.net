@@ -8,19 +8,27 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
-<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
-<title>Fon光 お申し込みサイト</title>
-<meta name="description" content="Fon光のおトク情報満載！今ならお申し込みで【80,000円キャッシュバック中】月額料金も最安級3,680円で使い放題！セキュリティ・電話・テレビなどのサービスも豊富に取り揃えています。お得に申込むなら今がチャンス！">
-<meta name="keywords" content="コミュファ,Fon光,光,キャンペーン,インターネット,高速インターネット,光回線,プロバイダ,工事,キャッシュバック,乗り換え">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Fon光 超高速光回線インターネット</title>
+<meta name="viewport" id="viewport" content="width=device-width">
+<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
+<meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="shortcut icon" href="img/favicon.ico" />	
-<!----css---->
+<link rel="shortcut icon" href="img/favicon.ico" />
+<?php include "include/ogp.html";?>
+<!--style-->
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/animate.css"> 
 <link rel="stylesheet" href="css/style_form.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css"> 
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="css/jquery-ui.css" >
+<!--js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/datepicker-ja.min.js"></script>
