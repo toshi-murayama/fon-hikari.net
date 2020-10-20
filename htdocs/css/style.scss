@@ -159,6 +159,26 @@ a:hover {
 #stalker.active{
 }
 
+
+/*-------------------------------------------------
+ under_top_title
+-------------------------------------------------*/
+#title{
+    color: #fff;
+    text-align: center;
+    padding: 200px 0;
+    background-size: cover;
+    article{
+        font-size: 24px;
+    }
+}
+#title.option_img{
+    background: url(../img/top_bg.jpg) no-repeat 50% 50%;
+}
+
+
+
+
 /*-------------------------------------------------
  header
 -------------------------------------------------*/
@@ -689,7 +709,7 @@ footer {
             justify-content: space-around;
             margin-bottom: 30px;
             li{
-                font-size: 30px;
+                font-size: 24px;
                 input{
                     display: none;
                 }
@@ -701,7 +721,7 @@ footer {
                     background: $gradient;
                 }
                 img{
-                    width: 36px;
+                    width: 24px;
                 }
             }
         }
@@ -709,7 +729,7 @@ footer {
             display: flex;
             justify-content: space-around;
             h3{
-                font-size: 30px;
+                font-size: 24px;
                 font-weight: lighter;
                 margin: 40px 0 20px;
                 display: inline-block;

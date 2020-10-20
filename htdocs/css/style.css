@@ -169,6 +169,20 @@ a:hover {
   /*開いた瞬間非表示*/ }
 
 /*-------------------------------------------------
+ under_top_title
+-------------------------------------------------*/
+#title {
+  color: #fff;
+  text-align: center;
+  padding: 200px 0;
+  background-size: cover; }
+  #title article {
+    font-size: 24px; }
+
+#title.option_img {
+  background: url(../img/top_bg.jpg) no-repeat 50% 50%; }
+
+/*-------------------------------------------------
  header
 -------------------------------------------------*/
 header {
@@ -670,7 +684,7 @@ footer {
           justify-content: space-around;
       margin-bottom: 30px; }
       #option article > ul li {
-        font-size: 30px; }
+        font-size: 24px; }
         #option article > ul li input {
           display: none; }
         #option article > ul li input:checked + label:after {
@@ -680,7 +694,7 @@ footer {
           width: 100%;
           background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
         #option article > ul li img {
-          width: 36px; }
+          width: 24px; }
     #option article .flex {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -688,7 +702,7 @@ footer {
       -ms-flex-pack: distribute;
           justify-content: space-around; }
       #option article .flex h3 {
-        font-size: 30px;
+        font-size: 24px;
         font-weight: lighter;
         margin: 40px 0 20px;
         display: inline-block; }
