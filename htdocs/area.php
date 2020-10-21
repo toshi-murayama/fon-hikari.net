@@ -18,7 +18,7 @@ if (isset($_GET['shibarinashi'])) {
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Fon光 超高速光回線インターネット</title>
+<title>お申し込み | Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
