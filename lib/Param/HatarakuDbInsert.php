@@ -70,7 +70,7 @@ class HatarakuDbInsert
                 "116896" => "{$dataAll['routeCode']}",                  // 経路コード
                 "117058" => "{$dataAll['affi_order_number']}",          // アフィリエイトID
                 "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ) 
-                // "" => "{$dataAll['hikariTV']}",                   // 光TV
+                "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
             ]
         ];
     }
