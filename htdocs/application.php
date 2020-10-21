@@ -108,7 +108,13 @@ $(window).load(function() {
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-	<?php include "include/header_form.html";?>
+	<?php 
+		if(isset($_COOKIE['affiliate'])) {
+			include "include/header_affiliate_form.html";
+		} else {
+			include "include/header_form.html";
+		}
+	?>
 	<section id="application">
 		<h2>Fon光お申し込み</h2>
 		<h3>02 お客様情報入力</h3>

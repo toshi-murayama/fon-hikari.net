@@ -26,7 +26,13 @@
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-<?php include "include/header_form.html";?>
+	<?php 
+		if(isset($_COOKIE['affiliate'])) {
+			include "include/header_affiliate_form.html";
+		} else {
+			include "include/header_form.html";
+		}
+	?>
 	<section id="confirmation">
 		<h2>Fon光お申し込み</h2>
 		<h3>03 ご契約情報確認</h3>
