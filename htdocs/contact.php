@@ -48,7 +48,13 @@ $(function(){
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-<?php include "include/header_form.html";?>
+	<?php 
+		if(isset($_COOKIE['affiliate'])) {
+			include "include/header_affiliate_form.html";
+		} else {
+			include "include/header_form.html";
+		}
+	?>
 	<section id="contact">
 		<h2>お問い合わせ</h2>
 		<h3>01 お問い合わせ内容をご入力ください</h3>
