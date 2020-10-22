@@ -31,7 +31,13 @@
 <?php setcookie('affiliate', '', time() - 1, '/')?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-    <?php include "include/header.html";?>
+    <?php 
+        if(isset($_COOKIE['affiliate'])) {
+            include "include/header_affiliate.html";
+        } else {
+            include "include/header.html";
+        }
+    ?>
     <div id="wrap">
         <section id="title" class="option_img">
             <article>
