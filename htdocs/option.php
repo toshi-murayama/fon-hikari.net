@@ -65,6 +65,12 @@
                             <img src="img/hikaritv_ico.svg" alt="リモートサポート">ひかりTV for NURO
                         </label>
                     </li>
+                    <li>
+                        <input type="radio" name="option_btn" id="button4">
+                        <label for="button4">
+                            <img src="img/security_ico.svg" alt="カスペルスキーセキュリティ">カスペルスキーセキュリティ
+                        </label>
+                    </li>
                 </ul>
                 <div id="hikari_tel" class="box">
                     <div class="boxL">
@@ -142,6 +148,24 @@
                         <dl>
                             <dt>さらに「2ねん割」適用で3〜24ヶ月目まで月額基本料金が1,000円割引！</dt>
                             <dd><a href="https://www.nuro.jp/hikari/fvno/tv/" target="_blank">※詳細はこちらから</a></dd>
+                        </dl>
+                        <a href="area" class="btn">今すぐお申し込み</a>
+                    </div>
+                </div>
+                <div id="security" class="box">
+                    <div class="boxL">
+                        <img src="img/security_img.jpg" alt="カスペルスキーセキュリティ">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>カスペルスキーセキュリティ</dt>
+                            <dd>ウイルス感染してパソコンが使えなくなった経験はありませんか？<br>
+                            パソコンやスマホなどのウイルス対策に必須なセキュリティソフトです。<br>
+                            最大5台までインストール可能でWindows、Mac、Androidどの機器でも快適安全にインターネットをご利用いただけます。</dd>
+                        </dl>
+                        <dl>
+                            <dt>月額基本料金</dt>
+                            <dd>500円(税別)</dd>
                         </dl>
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
