@@ -273,11 +273,7 @@ function createApplicationUserMailContent() {
 		// 都道府県判定.
 		$pref = '';
 		// 設置場所の都道府県を設定
-		if($_POST['mailingDestination'] == '0') {
-			$pref = $_POST['installationPref'];
-		} else {
-			$pref = $_POST['mailingPrefName'];
-		}
+		$pref = $_POST['installationPref'];
 		switch ($pref) {
 			case '北海道' :
 			case '東京都' :
@@ -342,11 +338,7 @@ function createApplicationUserMailContent() {
 	$content .= "\r\n";
 	$content .= $_POST['lastName'] . ' ' . $_POST['firstName'] . '様'."\r\n";
 	$content .= '《設置先ご住所》'."\r\n";
-	if($_POST['mailingDestination'] == '0') {
-		$content .= $_POST['installationPref'] .$_POST['installationMunicipalities'] .$_POST['installationTown'] .$_POST['installationAddress'].$_POST['installationBuilding']."\r\n";
-	} else {
-		$content .= $_POST['mailingPrefName'] .$_POST['mailingMunicipalities'] .$_POST['mailingTown'] .$_POST['mailingAddress'].$_POST['mailingBuilding']."\r\n";
-	}
+	$content .= $_POST['installationPref'] .$_POST['installationMunicipalities'] .$_POST['installationTown'] .$_POST['installationAddress'].$_POST['installationBuilding']."\r\n";
 	$content .= '《ご連絡携帯電話番号》'."\r\n";
 	$content .= $_POST['phoneNumber']."\r\n";
 	$content .= "\r\n";
