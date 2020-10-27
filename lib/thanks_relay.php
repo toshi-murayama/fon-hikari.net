@@ -208,7 +208,7 @@ function createApplicationAdminMailContent() {
 				}
 				$content .= '【 リモートサポート 】 ' . $remortSupport . "\r\n";
 			break;
-			case 'affi_order_number' :
+			case 'affiOrderNumber' :
 				$content .= '【 アフィリエイトID 】 ' . $v . "\r\n";
 			break;
 			case 'collectivelyElectricity' :
