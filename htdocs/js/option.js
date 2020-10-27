@@ -1,29 +1,31 @@
 $(function(){
-	$('#remote_support').hide();
 	$('#hikari_tv').hide();
-	$('#security').hide();
+	$('#denki').hide();
 	$("#button1").click(function() {
 		$("#hikari_tel").fadeIn();
-		$("#remote_support").fadeOut();
 		$("#hikari_tv").fadeOut();
-		$("#security").fadeOut();
+		$("#denki").fadeOut();
 	});
 	$("#button2").click(function() {
 		$("#hikari_tel").fadeOut();
-		$("#remote_support").fadeIn();
-		$("#hikari_tv").fadeOut();
-		$("#security").fadeOut();
+		$("#hikari_tv").fadeIn();
+		$("#denki").fadeOut();
 	});
 	$("#button3").click(function() {
 		$("#hikari_tel").fadeOut();
-		$("#remote_support").fadeOut();
-		$("#hikari_tv").fadeIn();
+		$("#hikari_tv").fadeOut();
+		$("#denki").fadeIn();
+	});
+});
+
+$(function(){
+	$('#security').hide();
+	$("#button4").click(function() {
+		$("#remote_support").fadeIn();
 		$("#security").fadeOut();
 	});
-	$("#button4").click(function() {
-		$("#hikari_tel").fadeOut();
+	$("#button5").click(function() {
 		$("#remote_support").fadeOut();
-		$("#hikari_tv").fadeOut();
 		$("#security").fadeIn();
 	});
 });

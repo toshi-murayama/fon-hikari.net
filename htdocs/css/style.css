@@ -697,6 +697,8 @@ footer {
 #option {
   padding: 50px 0;
   background: #f6f6f6; }
+  #option article:nth-child(2) {
+    margin-top: 100px; }
   #option article {
     width: 90%;
     max-width: 1100px;
@@ -724,7 +726,7 @@ footer {
         #option article > ul li input:checked + label:after {
           display: block;
           content: '';
-          height: 3px;
+          height: 2px;
           width: 100%;
           background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
         #option article > ul li img {
@@ -768,6 +770,8 @@ footer {
           font-size: 18px; }
         #option article .box .boxR dl dd {
           margin-bottom: 15px; }
+          #option article .box .boxR dl dd ul li {
+            margin-bottom: 1em; }
         #option article .box .boxR .btn {
           background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
           color: #fff;
