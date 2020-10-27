@@ -680,18 +680,39 @@ footer {
     margin: 0 auto; }
     #optionArea article h2 {
       font-size: 28px; }
+    #optionArea article ul {
+      margin: 100px 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      #optionArea article ul li {
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 100px;
+        width: 200px;
+        display: inline-block;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        margin: 0 -60px;
+        opacity: 0.6; }
+      #optionArea article ul li:hover {
+        opacity: 1; }
     #optionArea article p {
       margin: 15px 0; }
     #optionArea article a {
-      color: #fff;
+      color: #f39500;
       text-decoration: none;
       border-radius: 5px;
       border: 1px solid #fff;
       padding: 10px 15px;
-      display: inline-block; }
+      display: inline-block;
+      background: #fff; }
     #optionArea article a:hover {
-      background: #fff;
-      color: #f39500; }
+      background: none;
+      color: #fff; }
 
 /*-----option-----*/
 #option {
@@ -1396,7 +1417,8 @@ footer {
     padding: 30px 0;
     background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
     color: #fff;
-    text-align: center; }
+    text-align: center;
+    overflow-x: hidden; }
     #optionArea article {
       width: 90%;
       max-width: 1100px;
@@ -1406,16 +1428,10 @@ footer {
         font-size: 28px; }
       #optionArea article p {
         margin: 15px 0; }
-      #optionArea article a {
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        border: 1px solid #fff;
-        padding: 10px 15px;
-        display: inline-block; }
-      #optionArea article a:hover {
-        background: #fff;
-        color: #f39500; }
+      #optionArea article ul {
+        margin: 60px 0; }
+        #optionArea article ul li {
+          font-size: 10px; }
 
   /*-----option-----*/
   #option {

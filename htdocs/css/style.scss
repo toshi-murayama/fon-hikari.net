@@ -711,20 +711,39 @@ footer {
         h2{
             font-size: 28px;
         }
+        ul{
+            margin: 100px 0;
+            display: flex;
+            justify-content: center;
+            li{
+                padding: 10px;
+                border: 1px solid #fff;
+                border-radius: 100px;
+                width: 200px;
+                display: inline-block;
+                transform: rotate(-45deg);
+                margin: 0 -60px;
+                opacity: 0.6;
+            }
+            li:hover{
+                opacity: 1;
+            }
+        }
         p{
             margin: 15px 0;
         }
         a{
-            color: #fff;
+            color: $orange;
             text-decoration: none;
             border-radius: 5px;
             border: 1px solid #fff;
             padding: 10px 15px;
             display: inline-block;
+            background: #fff;
         }
         a:hover{
-            background: #fff;
-            color: $orange;
+            background: none;
+            color: #fff;
         }
     }
 }
@@ -1511,6 +1530,7 @@ footer {
         background: $gradient;
         color: #fff;
         text-align: center;
+        overflow-x: hidden;
         article{
             width: 90%;
             max-width: 1100px;
@@ -1522,17 +1542,11 @@ footer {
             p{
                 margin: 15px 0;
             }
-            a{
-                color: #fff;
-                text-decoration: none;
-                border-radius: 5px;
-                border: 1px solid #fff;
-                padding: 10px 15px;
-                display: inline-block;
-            }
-            a:hover{
-                background: #fff;
-                color: $orange;
+            ul{
+                margin: 60px 0;
+                li{
+                    font-size: 10px;
+                }
             }
         }
     }
