@@ -14,9 +14,6 @@ session_start();
 $token = sha1(uniqid(mt_rand(), true));
 $_SESSION['tk'] = $token;
 
-// アフィリエイトIDをセッションで受け渡し
-$_SESSION['affi_order_number'] = $affi_order_number;
-
 $applicationClassification = h($_POST['applicationClassification']);
 $lastName = h($_POST['lastName']);
 $lastNameKana = h($_POST['lastNameKana']);
@@ -118,7 +115,10 @@ if($hikariTV == '0') {
 }
 
 // アフィリエイトID
-$affi_order_number = md5(uniqid(rand(), true)) . date('YmdHis');
+$affiOrderNumber = md5(uniqid(rand(), true)) . date('YmdHis');
+
+// アフィリエイトIDをセッションで受け渡し
+$_SESSION['affiOrderNumber'] = $affiOrderNumber;
 
 // TODO validation リリース後に実装をする. 今は一時的なもの... 
 if (!preg_match("/^[ァ-ヶー]+$/u", $lastNameKana)) {

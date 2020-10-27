@@ -144,7 +144,7 @@
 			<input type="hidden" value="<?php print h($remortSupport); ?>" name="remortSupport">
 			<input type="hidden" value="<?php print h($collectivelyElectricity); ?>" name="collectivelyElectricity">
 			<input type="hidden" value="<?php print h($hikariTV); ?>" name="hikariTV">
-			<input type="hidden" value="<?php print h($affi_order_number); ?>" name="affi_order_number">
+			<input type="hidden" value="<?php print h($affiOrderNumber); ?>" name="affiOrderNumber">
 			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">
 		</form>

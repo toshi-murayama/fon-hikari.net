@@ -68,7 +68,7 @@ class HatarakuDbInsert
                 "116895" => "{$dataAll['agencyCode']}",                 // 代理店コード
                 "116997" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ) 
                 "116896" => "{$dataAll['routeCode']}",                  // 経路コード
-                "117058" => "{$dataAll['affi_order_number']}",          // アフィリエイトID
+                "117058" => "{$dataAll['affiOrderNumber']}",            // アフィリエイトID
                 "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ) 
                 "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
             ]

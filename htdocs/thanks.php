@@ -74,19 +74,19 @@
 
 <!-- TODO GTMでのCV発火が出来次第削除予定 -->
 <!-- ロンバード(フェルマ) CV計測タグ 20201008 -->
-<script type='text/javascript' src='https://js.felmat.net/fmcv.js?adid=V50235&uqid=<?php print($_SESSION['affi_order_number']); ?>'></script>
+<script type='text/javascript' src='https://js.felmat.net/fmcv.js?adid=V50235&uqid=<?php print($_SESSION['affiOrderNumber']); ?>'></script>
 <!-- end ロンバード(フェルマ) CV計測タグ 20201008 -->
 
 <!-- もしも CV計測タグ 20201008 -->
-<script src="https://r.moshimo.com/af/r/result.js?p_id=3037&pc_id=7006&m_v=<?php print($_SESSION['affi_order_number']); ?>" id="msmaf"></script>
-<noscript><img src="https://r.moshimo.com/af/r/result?p_id=3037&pc_id=7006&m_v=<?php print($_SESSION['affi_order_number']); ?>" width="1" height="1" alt=""></noscript>
+<script src="https://r.moshimo.com/af/r/result.js?p_id=3037&pc_id=7006&m_v=<?php print($_SESSION['affiOrderNumber']); ?>" id="msmaf"></script>
+<noscript><img src="https://r.moshimo.com/af/r/result?p_id=3037&pc_id=7006&m_v=<?php print($_SESSION['affiOrderNumber']); ?>" width="1" height="1" alt=""></noscript>
 <!-- end もしも CV計測タグ 20201008 -->
 
 <!-- フリーダイブ 成果識別タグ 20201008 -->
 <script>
 var _CIDN = "cid";
 var _PMTV = "5f7558aaacb8c";
-var _ARGSV = "<?php print($_SESSION['affi_order_number']); ?>";
+var _ARGSV = "<?php print($_SESSION['affiOrderNumber']); ?>";
 var _TRKU = "https://s8affi.net/asp/track.php?p=" + _PMTV + "&t=5f7558aa&args=" + _ARGSV;
 var _cks = document.cookie.split("; ");
 var _cidv = "";
@@ -128,7 +128,7 @@ _rt.reward = -1;
 _rt.cname = '';
 _rt.ctel = '';
 _rt.cemail = '';
-_rt.cinfo = '<?php print($_SESSION['affi_order_number']); ?>';
+_rt.cinfo = '<?php print($_SESSION['affiOrderNumber']); ?>';
 rt_tracktag();
 });
 }(function(){}));
@@ -141,7 +141,7 @@ rt_tracktag();
 <script>
 a8sales({
 "pid": "s00000019626002",
-"order_number": "<?php print($_SESSION['affi_order_number']); ?>",
+"order_number": "<?php print($_SESSION['affiOrderNumber']); ?>",
 "currency": "JPY",
 "items": [
 {
@@ -160,7 +160,7 @@ a8sales({
   var __atw = __atw || [];
   __atw.push({ "merchant" : "fonhikari", "param" : {
     "result_id" : "100",
-    "verify" : "<?php print($_SESSION['affi_order_number']); ?>",
+    "verify" : "<?php print($_SESSION['affiOrderNumber']); ?>",
   }});
 (function(a){var b=a.createElement("script");b.src="https://h.accesstrade.net/js/nct/cv.min.js";b.async=!0;
 a=a.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})(document);
