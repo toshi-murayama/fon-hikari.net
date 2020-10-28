@@ -163,6 +163,13 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <h2>オプション</h2>
                 <p>Fon光には様々なオプションがあります。みなさんの生活をサポートするために用意しました。</p>
+                <ul>
+                    <li>NURO光でんわ</li>
+                    <li>ひかりTV for NURO</li>
+                    <li>まとめてでんき</li>
+                    <li>リモートサポート</li>
+                    <li>カスペルスキーセキュリティ</li>
+                </ul>
                 <a href="/option">詳しくはこちらから</a>
             </article>
         </section>
