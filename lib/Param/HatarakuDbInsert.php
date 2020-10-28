@@ -71,6 +71,7 @@ class HatarakuDbInsert
                 "117058" => "{$dataAll['affiOrderNumber']}",            // アフィリエイトID
                 "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ) 
                 "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
+                "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
             ]
         ];
     }
@@ -125,6 +126,13 @@ class HatarakuDbInsert
             $data['collectivelyElectricity'] = '';
         } else {
             $data['collectivelyElectricity'] = 'MO56FZ';
+        }
+
+        // カスペルスキーセキュリティー
+        if ($data['kasperskySecurity'] == '0') {
+            $data['kasperskySecurity'] = '';
+        } else {
+            $data['kasperskySecurity'] = 'MO20FZ';
         }
 
         /* --------------------- 以下、固定の値 --------------------------- */
