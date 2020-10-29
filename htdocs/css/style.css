@@ -314,9 +314,15 @@ footer {
             flex-wrap: wrap;
         display: -webkit-box;
         display: -ms-flexbox;
-        display: flex; }
+        display: flex;
+        text-align: right;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        margin-right: 5%; }
         footer article .boxR > ul li {
-          width: 50%; }
+          width: 40%;
+          max-width: 200px; }
           footer article .boxR > ul li a {
             color: #fff; }
       footer article .boxR .inner > ul {
