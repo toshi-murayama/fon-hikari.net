@@ -229,6 +229,15 @@ function createApplicationAdminMailContent() {
 				}
 				$content .= '【 ひかりTV for NURO申込 】 ' . $hikariTV . "\r\n";
 			break;
+			case 'kasperskySecurity' :
+				$kasperskySecurity = '';
+				if ($v == '0') {
+					$kasperskySecurity = 'なし';
+				} else {
+					$kasperskySecurity = 'あり';
+				}
+				$content .= '【 カスペルスキーセキュリティー 】 ' . $kasperskySecurity . "\r\n";
+			break;
 			default :
 			$content .= '【 '. $k . ' 】 ' . $v . "\r\n";
 		}
@@ -327,6 +336,13 @@ function createApplicationUserMailContent() {
 	// まとめてでんき
 	$content .= '《まとめてでんき》'."\r\n";
 	if($_POST['collectivelyElectricity'] == '0') {
+		$content .= 'なし'."\r\n";
+	} else {
+		$content .= 'あり'."\r\n";
+	}
+	// カスペルスキーセキュリティー
+	$content .= '《カスペルスキーセキュリティー》'."\r\n";
+	if($_POST['kasperskySecurity'] == '0') {
 		$content .= 'なし'."\r\n";
 	} else {
 		$content .= 'あり'."\r\n";

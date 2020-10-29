@@ -45,24 +45,24 @@
         </section>
         <section id="option">
             <article>
-                <h2>オプション</h2>
+                <h2>セットでお得になるオプション</h2>
                 <ul>
                     <li>
-                        <input type="radio" name="option_btn" id="button1" checked>
+                        <input type="radio" name="option_set" id="button1" checked>
                         <label for="button1">
                             <img src="img/hikaritel_ico.svg" alt="NURO光でんわ">NURO光でんわ
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="option_btn" id="button2">
+                        <input type="radio" name="option_set" id="button2">
                         <label for="button2">
-                            <img src="img/support_ico.svg" alt="リモートサポート">リモートサポート
+                            <img src="img/hikaritv_ico.svg" alt="リひかりTV for NURO">ひかりTV for NURO
                         </label>
                     </li>
                     <li>
-                        <input type="radio" name="option_btn" id="button3">
+                        <input type="radio" name="option_set" id="button3">
                         <label for="button3">
-                            <img src="img/hikaritv_ico.svg" alt="リモートサポート">ひかりTV for NURO
+                            <img src="img/denki_ico.svg" alt="まとめてでんき">まとめてでんき
                         </label>
                     </li>
                 </ul>
@@ -88,30 +88,6 @@
                                     <li><a href="pdf/option/tel_kiyaku.pdf" target="_blank">NURO 光 でんわ規約約款</a></li>
                                     <li><a href="pdf/option/tel_jyusetsu.pdf" target="_blank">NURO 光 でんわ重要事項説明</a></li>
                                     <li><a href="pdf/option/tel_wc24.pdf" target="_blank">ホワイトコール 24 重要事項説明</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                        <a href="area" class="btn">今すぐお申し込み</a>
-                    </div>
-                </div>
-                <div id="remote_support" class="box">
-                    <div class="boxL">
-                        <img src="img/remotesupport_img.jpg" alt="リモートサポート">
-                    </div>
-                    <div class="boxR">
-                        <dl>
-                            <dt>リモートサポート</dt>
-                            <dd>お客さまに対して、上記サービス用の電話番号を通知することにより日本語にて実施される、電話サポートサービスおよび遠隔サポートサービス。</dd>
-                        </dl>
-                        <dl>
-                            <dt>月額基本料金</dt>
-                            <dd>500円(税別)</dd>
-                        </dl>
-                        <dl>
-                            <dt>規約</dt>
-                            <dd>
-                                <ul>
-                                    <li><a href="pdf/option/remote_jyusetu.pdf">リモートサポート重要事項説明</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -146,12 +122,7 @@
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
-            </article>
-            <article>
-                <div class="flex">
-                    <h3><img src="img/denki_ico.svg" alt="まとめてでんき">まとめてでんき</h3>
-                </div>
-                <div class="box">
+                <div id="denki" class="box">
                     <div class="boxL">
                         <img src="img/denki_img.png" alt="まとめてでんき">
                     </div>
@@ -172,15 +143,86 @@
                             <dt>特典２</dt>
                             <dd>電気代が今よりもお安く</dd>
                             <dd><a href="http://hikarisvc.jp/denki/" target="_blank">※詳細はこちらから</a></dd>
+                            <dd><ul class="annotation">※まとめてでんきのお申込みはこちらのサイトからのお申込みが対象になります。<br>
+                            新規申込の方は、申込の際にオプションを選択してください。すでにFon光を使われている方は、お問い合わせフォームよりお知らせください。</dd>
                         </dl>
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
-                <ul class="annotation">
-                    <li>※まとめてでんきのお申込みはこちらのサイトからのお申込みが対象になります。<br>
-                        新規申込の方は、申込の際にオプションを選択してください。すでにFon光を使われている方は、お問い合わせフォームよりお知らせください。
+            </article>
+
+            <article>
+                <h2>PC環境をサポートするオプション</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="option_pc" id="button4" checked>
+                        <label for="button4">
+                            <img src="img/support_ico.svg" alt="リモートサポート">リモートサポート
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="option_pc" id="button5">
+                        <label for="button5">
+                            <img src="img/security_ico.svg" alt="カスペルスキーセキュリティ">カスペルスキーセキュリティ
+                        </label>
                     </li>
                 </ul>
+                <div id="remote_support" class="box">
+                    <div class="boxL">
+                        <img src="img/remotesupport_img.jpg" alt="リモートサポート">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>リモートサポート</dt>
+                            <dd>お客さまに対して、上記サービス用の電話番号を通知することにより日本語にて実施される、電話サポートサービスおよび遠隔サポートサービス。</dd>
+                        </dl>
+                        <dl>
+                            <dt>月額基本料金</dt>
+                            <dd>500円(税別)</dd>
+                        </dl>
+                        <dl>
+                            <dt>規約</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="pdf/option/remote_jyusetu.pdf">リモートサポート重要事項説明</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <a href="area" class="btn">今すぐお申し込み</a>
+                    </div>
+                </div>
+                <div id="security" class="box">
+                    <div class="boxL">
+                        <img src="img/security_img.jpg" alt="カスペルスキーセキュリティ">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>カスペルスキーセキュリティ</dt>
+                            <dd>ウイルス感染してパソコンが使えなくなった経験はありませんか？<br>
+                            パソコンやスマホなどのウイルス対策に必須なセキュリティソフトです。<br>
+                            最大5台までインストール可能でWindows、Mac、Androidどの機器でも快適安全にインターネットをご利用いただけます。</dd>
+                        </dl>
+                        <dl>
+                            <dt>月額基本料金</dt>
+                            <dd>500円(税別)</dd>
+                        </dl>
+                        <dl>
+                            <dt>規約</dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="pdf/option/kaspe_kiyaku.pdf" target="_blank">カスペルスキー セキュリティ 利用規約</a></li>
+                                    <li><a href="pdf/option/kaspe_kyodaku_win.pdf" target="_blank">KASPERSKY LAB 製品に関する使用許諾契約書
+（カスペルスキー インターネット セキュリティ）</a></li>
+                                    <li><a href="pdf/option/kaspe_kyodaku_mac.pdf" target="_blank">KASPERSKY LAB 製品に関する使用許諾契約書
+（カスペルスキー インターネット セキュリティ for Mac）</a></li>
+                                    <li><a href="pdf/option/kaspe_kyodaku_and.pdf" target="_blank">KASPERSKY LAB 製品に関する使用許諾契約書
+（カスペルスキー インターネット セキュリティ for Android）</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <a href="area" class="btn">今すぐお申し込み</a>
+                    </div>
+                </div>
             </article>
         </section>
 

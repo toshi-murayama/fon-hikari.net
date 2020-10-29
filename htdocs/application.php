@@ -285,6 +285,13 @@ $(window).load(function() {
 					<label for="hikariTV">あり</label>
 				</li>
 				<li>※ プランやチューナーに関しては、申込確認のお電話の際にヒアリングいたします。</li>
+				<li class="categories">カスペルスキーセキュリティー</li>
+				<li class="app">
+					<input type="radio" name="kasperskySecurity" value="0" id="noneKasperskySecurity" checked>
+					<label for="noneKasperskySecurity">なし</label>
+					<input type="radio" name="kasperskySecurity" value="1" class="check" id="kasperskySecurity">
+					<label for="kasperskySecurity">あり</label>
+				</li>
 			</ul>
 			
 			<div class="documents">

@@ -44,6 +44,7 @@ $numberingMethod = h($_POST['numberingMethod']);
 $remortSupport = h($_POST['remortSupport']);
 $collectivelyElectricity = h($_POST['collectivelyElectricity']);
 $hikariTV = h($_POST['hikariTV']);
+$kasperskySecurity = h($_POST['kasperskySecurity']);
 
 // 性別表示
 if($sex == '1') {
@@ -112,6 +113,13 @@ if($hikariTV == '0') {
     $hikariTVString = 'なし';
 } else {
     $hikariTVString = 'あり';
+}
+
+// カスペルスキーセキュリティ
+if($kasperskySecurity == '0') {
+    $kasperskySecurityString = 'なし';
+} else {
+    $kasperskySecurityString = 'あり';
 }
 
 // アフィリエイトID
