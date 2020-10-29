@@ -313,8 +313,12 @@ footer {
             >ul{
                 flex-wrap: wrap;
                 display: flex;
+                text-align: right;
+                justify-content: flex-end;
+                margin-right: 5%;
                 li{
-                    width: 50%;
+                    width: 40%;
+                    max-width: 200px;
                     a{
                         color: #fff;
                     }

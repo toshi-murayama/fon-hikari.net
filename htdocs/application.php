@@ -214,15 +214,15 @@ $(window).load(function() {
 					<ul class="type">
 						<li>
                             <input id="house01" name="homeType" type="radio" value="1" class="check">
-							<label for="house01"><img src="img/img_home01.png" alt="一軒家"/><br>一軒家</label>
+							<label for="house01"><img src="img/img_home01.svg" alt="一軒家"/><br>一軒家</label>
                         </li>
                         <li>
                             <input id="house02" name="homeType" type="radio" value="2" class="check">
-                            <label for="house02"><img src="img/img_home02.png" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label>
+                            <label for="house02"><img src="img/img_home02.svg" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label>
                         </li>
                         <li>
                             <input id="house03" name="homeType" type="radio" value="3" class="check">
-                            <label for="house03"><img src="img/img_home03.png" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label>
+                            <label for="house03"><img src="img/img_home03.svg" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label>
                         </li>
 					</ul>
 				</li>
