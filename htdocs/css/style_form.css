@@ -494,6 +494,8 @@ a:active {}
 	padding: 20px;
 	box-sizing: border-box;
 	font-size: 12px;
+    height: 200px;
+    overflow-y: scroll;
 }
 #application .privacy h5,
 #contact .privacy h4{
@@ -788,6 +790,10 @@ z-index: 2000;
 padding: 50px;
 width: 90%;
 max-width: 450px;
+}
+.layer_board img {
+width: 40px;
+    vertical-align: middle;
 }
 .layer_board p {
 margin-bottom: 50px
@@ -1084,6 +1090,8 @@ img{
 	padding: 20px;
 	box-sizing: border-box;
 	font-size: 12px;
+    height: 200px;
+    overflow-y: scroll;
 }
 #application .privacy h5{
 	font-size: 18px;

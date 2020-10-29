@@ -68,7 +68,7 @@ countCookie : 1000
 		<div class="layer_board_bg"></div>
 		<div id="popup_area" class="layer_board">
             <article>
-                <h4><img src="img/img_area.png" alt="">お申し込みの前にご確認ください。</h4>
+                <h4><img src="img/img_area.svg" alt="">お申し込みの前にご確認ください。</h4>
                 <dl>
                     <dt>サービス提供エリアは以下となっています。</dt>
                     <dd>北海道<br>
@@ -100,7 +100,7 @@ countCookie : 1000
 			<div class="search_text">お客様のお住い地域でご利用可能か検索します。</div>
 			<div class="address">住所を検索する<br>
 				<dl>
-					<dt><img src="img/img_area.png" alt=""/></dt>
+					<dt><img src="img/img_area.svg" alt=""/></dt>
 					<dd>
 						<div class="select">
 							<select id="address-search"></select>
@@ -116,11 +116,11 @@ countCookie : 1000
 					<li><p>物件の種類をご選択ください。</p>
 						<ul class="type">
 							<li><input id="house01" name="homeType" type="radio" value="1" class="check">
-								<label for="house01"><img src="img/img_home01.png" alt="一軒家"/><br>一軒家</label></li>
+								<label for="house01"><img src="img/img_home01.svg" alt="一軒家"/><br>一軒家</label></li>
 							<li><input id="house02" name="homeType" type="radio" value="2" class="check">
-								<label for="house02"><img src="img/img_home02.png" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label></li>
+								<label for="house02"><img src="img/img_home02.svg" alt="マンション（3F以下）"/><br>マンション<br class="show_sp">（3F以下）</label></li>
 							<li><input id="house03" name="homeType" type="radio" value="3" class="check">
-								<label for="house03"><img src="img/img_home03.png" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label></li>
+								<label for="house03"><img src="img/img_home03.svg" alt="マンション（4F以上）"/><br>マンション<br class="show_sp">（4F以上）</label></li>
 						</ul>
 					</li>
 				</ul>
