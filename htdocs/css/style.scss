@@ -860,6 +860,7 @@ footer {
 /*-----flow-----*/
 #flow{
     padding: 50px 0;
+    text-align: center;
     article{
         width: 90%;
         max-width: 1200px;
@@ -890,6 +891,24 @@ footer {
                     dd{}
                 }
             }
+        }
+        a{
+            background: $gradient;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            width: 150px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            margin-top: 50px;
+            text-decoration: none;
+        }
+        a:hover{
+            background: #fff;
+            color: #000;
+            border: 1px solid #000;
         }
     }
 }
@@ -1697,6 +1716,9 @@ footer {
                         }
                     }
                 }
+            }
+            a{
+                margin-top: 30px;
             }
         }
     }

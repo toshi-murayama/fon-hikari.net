@@ -227,6 +227,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </dl>
                     </li>
                 </ul>
+                <a class="flow_btn" href="area">お申し込みはこちら</a>
             </article>
         </section>
 
