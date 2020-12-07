@@ -101,16 +101,6 @@ a:hover {
   -webkit-animation: border1 2s cubic-bezier(1, 0, 0, 1);
           animation: border1 2s cubic-bezier(1, 0, 0, 1); }
 
-.bEffect04 {
-  opacity: 0;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
-
-.bEffect04.fadein {
-  opacity: 1;
-  -webkit-animation: border1 2.5s cubic-bezier(1, 0, 0, 1);
-          animation: border1 2.5s cubic-bezier(1, 0, 0, 1); }
-
 @-webkit-keyframes border1 {
   0% {
     opacity: 0;
@@ -130,6 +120,69 @@ a:hover {
     opacity: 1;
     -webkit-transform: rotateY(0);
             transform: rotateY(0); } }
+.animation01 {
+  opacity: 0; }
+
+.animation01.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s ease 0s 1 forwards;
+  animation: fadeIn 0.3s ease 0s 1 forwards; }
+
+.animation02 {
+  opacity: 0; }
+
+.animation02.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s ease 0.1s 1 forwards;
+  animation: fadeIn 0.3s ease 0.1s 1 forwards; }
+
+.animation03 {
+  opacity: 0; }
+
+.animation03.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s ease 0.2s 1 forwards;
+  animation: fadeIn 0.3s ease 0.2s 1 forwards; }
+
+.animation04 {
+  opacity: 0; }
+
+.animation04.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s ease 0.3s 1 forwards;
+  animation: fadeIn 0.3s ease 0.3s 1 forwards; }
+
+.animation05 {
+  opacity: 0; }
+
+.animation05.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s ease 0.4s 1 forwards;
+  animation: fadeIn 0.3s ease 0.4s 1 forwards; }
+
+.animation06 {
+  opacity: 0; }
+
+.animation06.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.3s ease 0.5s 1 forwards;
+  animation: fadeIn 0.3s ease 0.5s 1 forwards; }
+
+.animation07 {
+  opacity: 0; }
+
+.animation07.fadein {
+  opacity: 1;
+  -webkit-animation: fadeIn 0.5s ease 0.6s 1 forwards;
+  animation: fadeIn 0.5s ease 0.6s 1 forwards; }
+
+@-webkit-keyframes fadeIn {
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1; } }
 /*カーソル*/
 #cursor {
   position: fixed;
@@ -520,7 +573,7 @@ footer {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        margin: 0 auto 30px;
+        margin: 0 auto;
         width: 90%; }
         #summary article .speed_img .fon .provider {
           width: 100px;
@@ -572,6 +625,31 @@ footer {
         #summary article .speed_img .normal .speed {
           font-size: 24px;
           font-weight: 900; }
+    #summary article h3 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px; }
+      #summary article h3 span {
+        color: #f39500; }
+    #summary article .flex {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      #summary article .flex li {
+        margin-right: 50px;
+        text-align: center;
+        opacity: 0; }
+        #summary article .flex li img {
+          width: 100px;
+          height: auto; }
+      #summary article .flex li:last-child {
+        margin-right: 0; }
     #summary article p {
       margin: 30px 0; }
     #summary article ul {
@@ -597,13 +675,18 @@ footer {
               justify-content: space-between; }
       #recommend article ul li {
         width: 30%; }
-        #recommend article ul li dl {
-          text-align: center; }
-          #recommend article ul li dl dt {
-            font-size: 30px;
-            margin: 10px 0 15px; }
-          #recommend article ul li dl dd img {
-            width: 150px; }
+        #recommend article ul li a {
+          text-decoration: none;
+          display: block; }
+          #recommend article ul li a dl {
+            text-align: center; }
+            #recommend article ul li a dl dt {
+              font-size: 30px;
+              margin: 10px 0 15px; }
+            #recommend article ul li a dl dd img {
+              width: 150px; }
+        #recommend article ul li a:hover {
+          opacity: 0.7; }
 
 /*-----plan-----*/
 #plan {
@@ -835,7 +918,7 @@ footer {
           -ms-flex-pack: justify;
               justify-content: space-between; }
       #flow article ul li {
-        width: 20%;
+        width: 17%;
         background: #fff;
         -webkit-box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
                 box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
@@ -846,6 +929,18 @@ footer {
             font-weight: 900;
             font-size: 24px;
             margin: 10px 0; }
+      #flow article ul .triangle {
+        margin-top: 150px;
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent; }
+      #flow article ul .triangle:nth-of-type(1) {
+        border-left: 30px solid #FDC900; }
+      #flow article ul .triangle:nth-of-type(2) {
+        border-left: 30px solid #F7A902; }
+      #flow article ul .triangle:nth-of-type(3) {
+        border-left: 30px solid #EE7B03; }
     #flow article a {
       background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
       color: #fff;
@@ -1283,7 +1378,7 @@ footer {
           -webkit-box-align: center;
               -ms-flex-align: center;
                   align-items: center;
-          margin: 0 auto 30px;
+          margin: 0 auto;
           width: 90%; }
           #summary article .speed_img .fon .provider {
             width: 50px;
@@ -1336,6 +1431,18 @@ footer {
           #summary article .speed_img .normal .speed {
             font-size: 14px;
             font-weight: 900; }
+      #summary article h3 {
+        font-size: 18px;
+        margin-top: 30px; }
+      #summary article .flex li {
+        margin-right: 10px;
+        margin-bottom: 20px; }
+        #summary article .flex li img {
+          width: 70px; }
+        #summary article .flex li dt {
+          font-size: 10px; }
+      #summary article .flex li:last-child {
+        margin-right: 0; }
       #summary article p {
         margin: 30px 0; }
       #summary article ul {
@@ -1353,26 +1460,21 @@ footer {
           -ms-flex-align: center;
               align-items: center; }
       #recommend article ul {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        display: block;
         -ms-flex-pack: distribute;
-            justify-content: space-around;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; }
+            justify-content: space-around; }
         #recommend article ul li {
-          width: 45%;
+          width: 100%;
           margin-bottom: 20px; }
-          #recommend article ul li dl {
+          #recommend article ul li a dl {
             text-align: center; }
-            #recommend article ul li dl dt {
+            #recommend article ul li a dl dt {
               font-size: 18px;
               margin: 10px 0;
               font-weight: 600; }
-            #recommend article ul li dl dd img {
+            #recommend article ul li a dl dd img {
               width: 120px; }
         #recommend article ul li:last-child {
-          width: 70%;
           margin-bottom: 0; }
 
   /*-----plan-----*/
@@ -1557,7 +1659,7 @@ footer {
         text-align: center;
         font-size: 36px;
         font-weight: 900;
-        margin-bottom: 30px; }
+        margin-bottom: 20px; }
       #flow article ul {
         display: block;
         -webkit-box-pack: justify;
@@ -1568,16 +1670,38 @@ footer {
           background: #fff;
           -webkit-box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
                   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
-          padding: 5%;
-          margin-bottom: 15px; }
+          padding: 10px 15px;
+          margin: 10px auto;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center; }
+          #flow article ul li img {
+            max-width: 150px;
+            max-height: 150px; }
           #flow article ul li dl {
-            text-align: center; }
+            text-align: center;
+            text-align: left; }
             #flow article ul li dl dt {
               font-weight: 900;
               font-size: 18px;
               margin: 10px 0; }
             #flow article ul li dl dd img {
               width: 50%; }
+        #flow article ul .triangle_sp {
+          margin: 0 auto;
+          width: 0;
+          height: 0;
+          border-left: 30px solid transparent;
+          border-right: 30px solid transparent; }
+        #flow article ul .triangle_sp:nth-of-type(1) {
+          border-top: 30px solid #FDC900; }
+        #flow article ul .triangle_sp:nth-of-type(2) {
+          border-top: 30px solid #F7A902; }
+        #flow article ul .triangle_sp:nth-of-type(3) {
+          border-top: 30px solid #EE7B03; }
       #flow article a {
         margin-top: 30px; }
 
