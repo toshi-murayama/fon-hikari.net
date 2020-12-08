@@ -30,7 +30,7 @@
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-    <?php 
+    <?php
         if(isset($_COOKIE['affiliate'])) {
             include "include/header_affiliate.html";
         } else {
@@ -184,6 +184,7 @@
                             <dt>規約</dt>
                             <dd>
                                 <ul>
+                                    <li><a href="pdf/option/remote_kiyaku.pdf">リモートサポート利用規約</a></li>
                                     <li><a href="pdf/option/remote_jyusetu.pdf">リモートサポート重要事項説明</a></li>
                                 </ul>
                             </dd>
