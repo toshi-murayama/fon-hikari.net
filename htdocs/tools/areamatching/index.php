@@ -166,7 +166,7 @@ class AreaMatching {
 
       fputcsv(
         $outputFP,
-        array_merge($header, ["該当地域", "NURO光対象局舎","要注意エリア","備考","開局時期","10G"])
+        array_merge($header, ["該当地域", "NURO光対象局舎","要注意エリア","備考","開局時期","コメント"])
       );
 
       // LF --> CRLF に変換
@@ -209,17 +209,17 @@ class AreaMatching {
             if (count($row)===5) {
               // 関西
               $mostMatched[1] = $row[0];
-              $mostMatched[2] = $row[2];
-              $mostMatched[3] = $row[3];
-              $mostMatched[4] = $row[4];
-              $mostMatched[5] = $row[1];
+              $mostMatched[2] = $row[1];
+              $mostMatched[3] = $row[2];
+              $mostMatched[4] = $row[3];
+              $mostMatched[5] = $row[4];
             } else {
               //関東
               $mostMatched[1] = $row[0];
               $mostMatched[2] = $row[1];
               $mostMatched[3] = $row[2];
               $mostMatched[4] = $row[3];
-              $mostMatched[5] = '';
+              $mostMatched[5] = $row[4];
             }
 
             $mostMatchedLength = $matchedLength;
