@@ -128,7 +128,7 @@ class AreaMatching {
     $PREFECTURES_ADRESSES = [];
     foreach ($PREFECTURES as $pref) {
       $prefCode = SearchSupportedAreasFunctions::toAlphabet($pref);
-      $filename = '../../../lib/SearchSupportedAreas/'.$prefCode.'.php';
+      $filename = realpath(__DIR__.'/SearchSupportedAreas/'.$prefCode.'.php');
 
       if (file_exists($filename)) {
         $in = include $filename;
