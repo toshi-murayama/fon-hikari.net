@@ -143,6 +143,12 @@
                             <dt>特典２</dt>
                             <dd>電気代が今よりもお安く</dd>
                             <dd><a href="http://hikarisvc.jp/denki/" target="_blank">※詳細はこちらから</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>規約</dt>
+                            <dd>
+                                <a href="pdf/option/denki_jusetsu.pdf" target="_blank">まとめてでんき重要事項説明</a>
+                            </dd>
                             <dd><ul class="annotation">※まとめてでんきのお申込みはこちらのサイトからのお申込みが対象になります。<br>
                             新規申込の方は、申込の際にオプションを選択してください。すでにFon光を使われている方は、お問い合わせフォームよりお知らせください。</dd>
                         </dl>
