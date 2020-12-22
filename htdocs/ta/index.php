@@ -63,12 +63,67 @@
                         <div class="border ani1"><span></span></div>
                         <div class="speed">2Gbps</div>
                     </div>
-                    <div class="normal">
-                        <div class="provider">一般的な<br>光回線</div>
-                        <div class="border ani2"><span></span></div>
-                        <div class="speed">1Gbps</div>
-                    </div>
                 </div>
+                <h3>時代が求めるインターネットで<br class="sp">ストレスフリー！<br>
+                高速無線LAN(Wi-Fi)標準装備 <span>無料！！</span></h3>
+                <ul class="flex">
+                    <li class="animation01">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico01.png" alt="スマートフォン">
+                            </dd>
+                            <dt>スマートフォン</dt>
+                        </dl>
+                    </li>
+                    <li class="animation02">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico02.png" alt="ゲーム機器">
+                            </dd>
+                            <dt>ゲーム機器</dt>
+                        </dl>
+                    </li>
+                    <li class="animation03">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico03.png" alt="パソコン">
+                            </dd>
+                            <dt>パソコン</dt>
+                        </dl>
+                    </li>
+                    <li class="animation04">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico04.png" alt="スマートホーム">
+                            </dd>
+                            <dt>スマートホーム</dt>
+                        </dl>
+                    </li>
+                    <li class="animation05">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico05.png" alt="テレビ">
+                            </dd>
+                            <dt>テレビ</dt>
+                        </dl>
+                    </li>
+                    <li class="animation06">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico06.png" alt="コンポ">
+                            </dd>
+                            <dt>コンポ</dt>
+                        </dl>
+                    </li>
+                    <li class="animation07">
+                        <dl>
+                            <dd>
+                                <img src="../img/summary_ico07.png" alt="タブレット">
+                            </dd>
+                            <dt>タブレット</dt>
+                        </dl>
+                    </li>
+                </ul>
                 <ul>
                     <li>※1 機器使用時の通信速度はお客さまの通信環境と規格により異なります。 (技術規格上の最大値でありお客さま宅内での実使用速度を示すものではありません)となります。</li>
                     <li>※2 GPONとは：PON(Passive Optical Network)とは1芯の光ファイバーを複数ユーザーで共用する伝送技術です。
@@ -80,35 +135,41 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
         <section id="recommend">
             <article>
                 <ul>
-                    <li>
-                        <dl>
-                            <dd>
-                                <img src="../img/movie_ico.svg" alt="">
-                            </dd>
-                            <dt>高速回線</dt>
-                            <dd>下り最大2Gbpsの超高速回線
-ゲームや複数人で動画も見てもサクサク！</dd>
-                        </dl>
+                    <li class="bEffect01">
+                        <a href="#summary">
+                            <dl>
+                                <dd>
+                                    <img src="../img/movie_ico.svg" alt="">
+                                </dd>
+                                <dt>高速回線</dt>
+                                <dd>下り最大2Gbpsの超高速回線
+                                    ゲームや複数人で動画も見てもサクサク！</dd>
+                            </dl>
+                        </a>
                     </li>
-                    <li>
-                        <dl>
-                            <dd>
-                                <img src="../img/money_ico.svg" alt="">
-                            </dd>
-                            <dt>おとくな料金</dt>
-                            <dd>業界最安値級の料金プラン
-月々のお支払いがお得になります。</dd>
-                        </dl>
+                    <li class="bEffect02">
+                        <a href="#plan">
+                            <dl>
+                                <dd>
+                                    <img src="../img/money_ico.svg" alt="">
+                                </dd>
+                                <dt>おとくな料金</dt>
+                                <dd>業界最安値級の料金プラン
+                                    月々のお支払いがお得になります。</dd>
+                            </dl>
+                        </a>
                     </li>
-                    <li>
-                        <dl>
-                            <dd>
-                                <img src="../img/tel_ico.svg" alt="">
-                            </dd>
-                            <dt>魅力的なオプション</dt>
-                            <dd>NURO光でんわやリモートサポートなど
-お客様にお楽しみいただけるオプションを用意しています。</dd>
-                        </dl>
+                    <li class="bEffect03">
+                        <a href="/option">
+                            <dl>
+                                <dd>
+                                    <img src="../img/tel_ico.svg" alt="">
+                                </dd>
+                                <dt>魅力的なオプション</dt>
+                                <dd>NURO光でんわやリモートサポートなど
+                                    お客様にお楽しみいただけるオプションを用意しています。</dd>
+                            </dl>
+                        </a>
                     </li>
                 </ul>
             </article>
@@ -175,34 +236,74 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
         </section>
 
         <section id="flow">
-            <article>
+            <article class="pc">
                 <h2>お申し込みの流れ</h2>
                 <ul>
-                    <li class="bEffect01">
+                    <li>
                         <dl>
                             <dd><img src="../img/flow_ico01.svg" alt=""></dd>
-                            <dt>お申し込み</dt>
+                            <dt>1.お申し込み</dt>
                             <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
                         </dl>
                     </li>
-                    <li class="bEffect02">
+                    <div class="triangle"></div>
+                    <li>
                         <dl>
                             <dd><img src="../img/flow_ico02.svg" alt=""></dd>
-                            <dt>工事日確定</dt>
+                            <dt>2.工事日確定</dt>
                             <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
                         </dl>
                     </li>
-                    <li class="bEffect03">
+                    <div class="triangle"></div>
+                    <li>
                         <dl>
                             <dd><img src="../img/flow_ico03.svg" alt=""></dd>
-                            <dt>工事完了</dt>
+                            <dt>3.工事完了</dt>
                             <dd>当日、工事作業員にて工事を行います。</dd>
                         </dl>
                     </li>
-                    <li class="bEffect04">
+                    <div class="triangle"></div>
+                    <li>
                         <dl>
                             <dd><img src="../img/flow_ico04.svg" alt=""></dd>
-                            <dt>利用開始</dt>
+                            <dt>4.利用開始</dt>
+                            <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <a class="flow_btn" href="area">お申し込みはこちら</a>
+            </article>
+            <article class="sp">
+                <h2>お申し込みの流れ</h2>
+                <ul>
+                    <li>
+                        <img src="../img/flow_ico01.svg" alt="">
+                        <dl>
+                            <dt>1.お申し込み</dt>
+                            <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
+                        </dl>
+                    </li>
+                    <div class="triangle_sp"></div>
+                    <li>
+                        <img src="../img/flow_ico02.svg" alt="">
+                        <dl>
+                            <dt>2.工事日確定</dt>
+                            <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
+                        </dl>
+                    </li>
+                    <div class="triangle_sp"></div>
+                    <li>
+                        <img src="../img/flow_ico03.svg" alt="">
+                        <dl>
+                            <dt>3.工事完了</dt>
+                            <dd>当日、工事作業員にて工事を行います。</dd>
+                        </dl>
+                    </li>
+                    <div class="triangle_sp"></div>
+                    <li>
+                        <img src="../img/flow_ico04.svg" alt="">
+                        <dl>
+                            <dt>4.利用開始</dt>
                             <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
                         </dl>
                     </li>
