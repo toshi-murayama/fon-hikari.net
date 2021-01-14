@@ -349,7 +349,7 @@ $(function() {
             </article>
             <article>
                 <a href="tel:0120-966-486">電話で相談<span>▶</span></a>
-                <a href="../application.php">お申し込み<span>▶</span></a>
+                <a href="/area">お申し込み<span>▶</span></a>
             </article>
         </section>
 

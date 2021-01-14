@@ -1127,7 +1127,7 @@ footer {
 
   /*-----top-----*/
   #top {
-    background: url(../img/fon_hikari_lp.jpg) no-repeat 90% 50%;
+    background: url(../img/fon_hikari_lp.jpg) no-repeat 75% 50%;
     background-size: cover;
     height: 100%;
     color: #fff;
@@ -1141,7 +1141,7 @@ footer {
       text-align: center;
       padding-top: 10vh; }
       #top article h1 {
-        font-size: 13vw;
+        font-size: 15vw;
         width: 100%;
         font-weight: 900; }
       #top article .price {
@@ -1152,7 +1152,8 @@ footer {
         font-size: 24px; }
       #top article .summary {
         font-size: 24px;
-        font-weight: 100; }
+        font-weight: 100;
+        margin-bottom: 15px; }
         #top article .summary span {
           font-weight: 600; }
           #top article .summary span em {
@@ -1257,15 +1258,15 @@ footer {
         -ms-flex-pack: distribute;
             justify-content: space-around; }
         #recommend article ul li {
-          width: 100%;
-          margin-bottom: 20px; }
-          #recommend article ul li a dl {
+          width: 80%;
+          margin: 0 auto 20px; }
+          #recommend article ul li dl {
             text-align: center; }
-            #recommend article ul li a dl dt {
+            #recommend article ul li dl dt {
               font-size: 18px;
               margin: 10px 0;
               font-weight: 600; }
-            #recommend article ul li a dl dd img {
+            #recommend article ul li dl dd img {
               width: 120px; }
         #recommend article ul li:last-child {
           margin-bottom: 0; }
@@ -1523,6 +1524,10 @@ footer {
       background: #fff;
       color: #333;
       padding: 30px; }
+      #provide #fromBox h2 {
+        font-size: 18px; }
+      #provide #fromBox p {
+        font-size: 14px; }
       #provide #fromBox form {
         display: block;
         -webkit-box-pack: justify;
@@ -1558,7 +1563,8 @@ footer {
                     outline: none;
                     padding: 5px; }
         #provide #fromBox form .boxR {
-          width: 100%; }
+          width: 100%;
+          text-align: center; }
           #provide #fromBox form .boxR img {
             width: 100px; }
           #provide #fromBox form .boxR button {
