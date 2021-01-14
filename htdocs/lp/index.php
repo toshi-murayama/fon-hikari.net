@@ -84,8 +84,8 @@
                                 <li>
                                     <dl>
                                         <dt>建物</dt>
-                                        <dd>戸建<input type="radio" name="building" value="" id="" checked></dd>
-                                        <dd>集合<input type="radio" name="building" value="" id=""></dd>
+                                        <dd><input type="radio" name="building" value="" id="" checked><label for="">戸建</label></dd>
+                                        <dd><input type="radio" name="building" value="" id=""><label for="">集合</label></dd>
                                     </dl>
                                 </li>
                                 <li>
@@ -111,23 +111,23 @@
                 <ul>
                     <li>
                         <dl>
-                            <dd><img src="../img/reccomend_img01.svg" alt=""></dd>
+                            <dd><img src="../img/reccomend_img03.svg" alt=""></dd>
                             <dt>嬉しい低価格！</dt>
                             <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dd><img src="../img/reccomend_img01.svg" alt=""></dd>
+                            <dt>超高速回線！</dt>
+                            <dd>下り最大2Gbpsの超高速回線<br>オンラインゲームも複数人同時利用もサクサク使い放題！</dd>
                         </dl>
                     </li>
                     <li>
                         <dl>
                             <dd><img src="../img/reccomend_img02.svg" alt=""></dd>
-                            <dt>嬉しい低価格！</dt>
-                            <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/reccomend_img03.svg" alt=""></dd>
-                            <dt>嬉しい低価格！</dt>
-                            <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
+                            <dt>多彩なオプション</dt>
+                            <dd>電話やリモートサポートなど<br>お得に安心して長く使える！</dd>
                         </dl>
                     </li>
                 </ul>
@@ -167,8 +167,8 @@
                             <li>
                                 <dl>
                                     <dt>回線</dt>
-                                    <dd>Fon光
-                                        <input type="radio" name="" value="" id="" checked>
+                                    <dd>
+                                        <input type="radio" name="" value="" id="" checked><label for="">Fon光</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -177,17 +177,17 @@
                             <li>
                                 <dl>
                                     <dt>オプション</dt>
-                                    <dd>ひかり電話
-                                        <input type="checkbox" name="" value="" id="">
+                                    <dd>
+                                        <input type="checkbox" name="" value="" id=""><label for="">ひかり電話</label>
                                     </dd>
-                                    <dd>リモートサポート
-                                        <input type="checkbox" name="" value="" id="">
+                                    <dd>
+                                        <input type="checkbox" name="" value="" id=""><label for="">リモートサポート</label>
                                     </dd>
-                                    <dd>ひかりTV for NURO
-                                        <input type="checkbox" name="" value="" id="">
+                                    <dd>
+                                        <input type="checkbox" name="" value="" id=""><label for="">ひかりTV for NURO</label>
                                     </dd>
-                                    <dd>まとめでんき
-                                        <input type="checkbox" name="" value="" id="">
+                                    <dd>
+                                        <input type="checkbox" name="" value="" id=""><label for="">まとめでんき</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -244,11 +244,11 @@
                             <li>
                                 <dl>
                                     <dt>建物</dt>
-                                    <dd>戸建
-                                        <input type="radio" name="building" value="" id="" checked>
+                                    <dd>
+                                        <input type="radio" name="building" value="" id="" checked><label for="">戸建</label>
                                     </dd>
-                                    <dd>集合
-                                        <input type="radio" name="building" value="" id="">
+                                    <dd>
+                                        <input type="radio" name="building" value="" id=""><label for="">集合</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -419,11 +419,11 @@
                             <li>
                                 <dl>
                                     <dt>建物</dt>
-                                    <dd>戸建
-                                        <input type="radio" name="building" value="" id="" checked>
+                                    <dd>
+                                        <input type="radio" name="building" value="" id="" checked><label for="">戸建</label>
                                     </dd>
-                                    <dd>集合
-                                        <input type="radio" name="building" value="" id="">
+                                    <dd>
+                                        <input type="radio" name="building" value="" id=""><label for="">集合</label>
                                     </dd>
                                 </dl>
                             </li>

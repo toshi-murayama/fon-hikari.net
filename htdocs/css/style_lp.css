@@ -191,7 +191,7 @@ a:hover {
   border-radius: 10px;
   margin: -5px 0 0 -5px;
   /*半分引いてカーソル先端に画像中心位置が来るように*/
-  z-index: 3;
+  z-index: 9999;
   /*一番手前に来るように*/
   pointer-events: none;
   /*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
@@ -212,7 +212,7 @@ a:hover {
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  z-index: 2;
+  z-index: 9998;
   /*一番手前に来るように*/
   pointer-events: none;
   /*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
@@ -265,8 +265,24 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    header article #logo img {
-      width: 100px; }
+    header article #logo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end; }
+      header article #logo a {
+        color: #fff;
+        text-decoration: none; }
+      header article #logo .mark img {
+        width: 100px; }
+      header article #logo ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        header article #logo ul li {
+          margin: 0 10px; }
     header article .boxR ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -276,8 +292,7 @@ header {
         header article .boxR ul li a {
           color: #fff;
           font-weight: 400;
-          text-decoration: none; }
-        header article .boxR ul li .mypage {
+          text-decoration: none;
           border: 1px solid #fff;
           border-radius: 5px;
           padding: 10px 15px; }
@@ -311,8 +326,24 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    .fix-header article #logo img {
-      width: 70px; }
+    .fix-header article #logo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end; }
+      .fix-header article #logo a {
+        color: #fff;
+        text-decoration: none; }
+      .fix-header article #logo .mark img {
+        width: 100px; }
+      .fix-header article #logo ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .fix-header article #logo ul li {
+          margin: 0 10px; }
     .fix-header article .boxR ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -322,8 +353,7 @@ header {
         .fix-header article .boxR ul li a {
           color: #fff;
           font-weight: 400;
-          text-decoration: none; }
-        .fix-header article .boxR ul li .mypage {
+          text-decoration: none;
           border: 1px solid #fff;
           border-radius: 5px;
           padding: 10px 15px; }
@@ -506,7 +536,7 @@ footer {
 
 /*-----recommend-----*/
 #recommend {
-  padding: 250px 0 50px;
+  padding: 300px 0 50px;
   background: #f6f6f6; }
   #recommend article {
     width: 90%;
@@ -544,19 +574,17 @@ footer {
           -ms-flex-pack: justify;
               justify-content: space-between; }
       #recommend article ul li {
-        width: 30%; }
-        #recommend article ul li a {
-          text-decoration: none;
-          display: block; }
-          #recommend article ul li a dl {
-            text-align: center; }
-            #recommend article ul li a dl dt {
-              font-size: 30px;
-              margin: 10px 0 15px; }
-            #recommend article ul li a dl dd img {
-              width: 150px; }
-        #recommend article ul li a:hover {
-          opacity: 0.7; }
+        width: 30%;
+        text-decoration: none;
+        display: block; }
+        #recommend article ul li dl {
+          text-align: center;
+          color: #666; }
+          #recommend article ul li dl dt {
+            font-size: 30px;
+            margin: 10px 0 15px; }
+          #recommend article ul li dl dd img {
+            width: 150px; }
 
 /*-----plan-----*/
 #plan {

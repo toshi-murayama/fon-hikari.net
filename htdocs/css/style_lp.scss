@@ -186,7 +186,7 @@ a:hover {
 	height: 10px;
     border-radius: 10px;
 	margin: -5px 0 0 -5px;/*半分引いてカーソル先端に画像中心位置が来るように*/
-	z-index: 3;/*一番手前に来るように*/
+	z-index: 9999;/*一番手前に来るように*/
 	pointer-events: none;/*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
 	transition: transform 0.1s;
 	opacity: 0;/*開いた瞬間非表示*/
@@ -202,7 +202,7 @@ a:hover {
 	width: 40px;
 	height: 40px;
     border-radius: 50px;
-	z-index: 2;/*一番手前に来るように*/
+	z-index: 9998;/*一番手前に来るように*/
 	pointer-events: none;/*【重要】マウス直下に常に画像があるので、全てをクリックできなくなる。noneにして対応*/
 	background: $gradient;
 	background-size: contain;
@@ -259,8 +259,22 @@ header{
         margin: 0 auto;
         align-items: center;
         #logo{
-            img{
-                width: 100px;
+            display: flex;
+            align-items: flex-end;
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+            .mark{
+                img{
+                    width: 100px;
+                }
+            }
+            ul{
+                display: flex;
+                li{
+                    margin: 0 10px;
+                }
             }
         }
         .boxR{
@@ -272,8 +286,6 @@ header{
                         color: #fff;
                         font-weight: 400;
                         text-decoration: none;
-                    }
-                    .mypage{
                         border: 1px solid #fff;
                         border-radius: 5px;
                         padding: 10px 15px;
@@ -309,8 +321,22 @@ header{
         margin: 0 auto;
         align-items: center;
         #logo{
-            img{
-                width: 70px;
+            display: flex;
+            align-items: flex-end;
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+            .mark{
+                img{
+                    width: 100px;
+                }
+            }
+            ul{
+                display: flex;
+                li{
+                    margin: 0 10px;
+                }
             }
         }
         .boxR{
@@ -322,8 +348,6 @@ header{
                         color: #fff;
                         font-weight: 400;
                         text-decoration: none;
-                    }
-                    .mypage{
                         border: 1px solid #fff;
                         border-radius: 5px;
                         padding: 10px 15px;
@@ -522,7 +546,7 @@ footer {
 
 /*-----recommend-----*/
 #recommend{
-    padding: 250px 0 50px;
+    padding: 300px 0 50px;
     background: #f6f6f6;
     article{
         width: 90%;
@@ -551,24 +575,20 @@ footer {
             justify-content: space-between;
             li{
                 width: 30%;
-                a{
-                    text-decoration: none;
-                    display: block;
-                    dl{
-                        text-align: center;
-                        dt{
-                            font-size: 30px;
-                            margin: 10px 0 15px;
-                        }
-                        dd{
-                            img{
-                                width: 150px;
-                            }
+                text-decoration: none;
+                display: block;
+                dl{
+                    text-align: center;
+                    color: #666;
+                    dt{
+                        font-size: 30px;
+                        margin: 10px 0 15px;
+                    }
+                    dd{
+                        img{
+                            width: 150px;
                         }
                     }
-                }
-                a:hover{
-                    opacity: 0.7;
                 }
             }
         }
