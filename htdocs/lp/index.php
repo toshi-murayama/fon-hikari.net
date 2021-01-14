@@ -35,15 +35,15 @@
     <div id="wrap">
         <section id="top">
             <article>
-                <div>実質工事費<span>0</span>円</div>
-                <div>サクサク使える</div>
+                <div class="price">実質工事費<span>0</span>円</div>
+                <div class="subtitle">サクサク使える</div>
                 <h1>超高速回線</h1>
-                <div>下り最大2Gbps</div>
+                <div class="summary">下り<span>最大<em>2</em>Gbps</span></div>
                 <div id="fromBox">
                     <h2>まずは無料でエリア確認</h2>
                     <p>専門スタッフがお電話にて、お電話にて提供可能かご確認、ご案内致します。</p>
                     <form action="">
-                        <div>
+                        <div class="boxL">
                             <ul>
                                 <li>
                                     <dl>
@@ -96,8 +96,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <img src="" alt="webからなら24時間受付中！">
+                        <div class="boxR">
+                            <img src="../img/form_pick.png" alt="webからなら24時間受付中！">
                             <button>エリアを確認</button>
                         </div>
                     </form>
@@ -109,23 +109,23 @@
             <article>
                 <h2>Fon光の魅力</h2>
                 <ul>
-                    <li class="bEffect01">
+                    <li>
                         <dl>
-                            <dd><img src="" alt=""></dd>
+                            <dd><img src="../img/reccomend_img01.svg" alt=""></dd>
                             <dt>嬉しい低価格！</dt>
                             <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
                         </dl>
                     </li>
-                    <li class="bEffect02">
+                    <li>
                         <dl>
-                            <dd><img src="" alt=""></dd>
+                            <dd><img src="../img/reccomend_img02.svg" alt=""></dd>
                             <dt>嬉しい低価格！</dt>
                             <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
                         </dl>
                     </li>
-                    <li class="bEffect03">
+                    <li>
                         <dl>
-                            <dd><img src="" alt=""></dd>
+                            <dd><img src="../img/reccomend_img03.svg" alt=""></dd>
                             <dt>嬉しい低価格！</dt>
                             <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
                         </dl>
@@ -139,7 +139,14 @@
                 <h2>料金プラン</h2>
                 <h3>業界最安値！ずーっとお得！</h3>
                 <div class="box">
-                    
+                    <dl>
+                        <dd><img src="../img/building.svg" alt=""></dd>
+                        <dt>マンションにお住まいの方</dt>
+                    </dl>
+                    <dl>
+                        <dd><img src="../img/house.svg" alt=""></dd>
+                        <dt>戸建てにお住まいの方</dt>
+                    </dl>
                 </div>
                 <div class="price">月額<span>4,980</span>円</div>
                 <ul>
@@ -254,8 +261,6 @@
                                 </dl>
                             </li>
                         </ul>
-                    </div>
-                    <div>
                         <button>お見積りをする</button>
                     </div>
                 </form>
@@ -336,14 +341,14 @@
                 </ul>
             </article>
             <article>
-                <a href="tel:0120-966-486">電話で相談</a>
-                <a href="../application.php">お申し込み</a>
+                <a href="tel:0120-966-486">電話で相談<span>▶</span></a>
+                <a href="../application.php">お申し込み<span>▶</span></a>
             </article>
         </section>
 
         <section id="provide">
             <article>
-                <h2>サービス提供エリア</h2>
+                <h2>AREA MAP</h2>
                 <div class="box">
                     <div class="boxL">北海道<br>
     関東（東京、神奈川、埼玉、千葉、茨城、栃木、群馬）<br>
@@ -351,13 +356,93 @@
     関西（大阪、兵庫、京都、滋賀、奈良）<br>
     九州（福岡、佐賀）<br>
     ※一部エリアを除く
-                    <a href="/area">エリア検索する</a>
                 </div>
                 <div class="boxR">
                     <img src="../img/map.svg" alt="map">
                 </div>
                 </div>
             </article>
+            <div id="fromBox">
+                <h2>まずは無料でエリア確認</h2>
+                <p>専門スタッフがお電話にて、お電話にて提供可能かご確認、ご案内致します。</p>
+                <form action="">
+                    <div class="boxL">
+                        <ul>
+                            <li>
+                                <dl>
+                                    <dt>お名前</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>フリガナ</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>郵便番号</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>電話番号</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>都道府県</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>以降の住所</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>建物</dt>
+                                    <dd>戸建
+                                        <input type="radio" name="building" value="" id="" checked>
+                                    </dd>
+                                    <dd>集合
+                                        <input type="radio" name="building" value="" id="">
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>建物名</dt>
+                                    <dd>
+                                        <input type="text" name="" value="">
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxR">
+                        <img src="../img/form_pick.png" alt="webからなら24時間受付中！">
+                        <button>エリアを確認</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </div>
 
