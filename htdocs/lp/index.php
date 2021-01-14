@@ -18,10 +18,17 @@
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style_lp.css">
+<link rel="stylesheet" href="../css/jquery.fatNav.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/index.js"></script>
+<script type="text/javascript" src="../js/jquery.fatNav.min.js"></script>
+<script>
+$(function() {
+    $.fatNav();
+});
+</script>
 <!--tag-->
 <?php include "../include/tag_head.html";?>
 </head>
