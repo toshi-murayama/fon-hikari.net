@@ -225,7 +225,8 @@ if(empty($error)) {
         $content = createApplicationUserMailContent($estimatedAmount); //合計金額は引数に
         $to = 'scramask@gmail.com,k.tomisaki@fon.ne.jp';
         $title = '【Fon光LPからの登録がありました】';
-        $send_mail = mb_send_mail($to, $title, $content, '-f support@fon-hikari.net');
+        $headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
+        $send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
     }
 }
 
