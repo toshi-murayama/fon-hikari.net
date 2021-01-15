@@ -821,7 +821,6 @@ footer {
     background: url(../img/map.svg) no-repeat 75% 50%; }
     #provide article h2 {
       font-weight: 900;
-      margin-bottom: 30px;
       position: relative;
       z-index: 2;
       color: #eee;
@@ -835,6 +834,13 @@ footer {
         left: 0;
         top: 0;
         font-size: 36px; }
+    #provide article p {
+      width: 200px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      margin-left: 150px;
+      font-size: 22px;
+      border-bottom: 2px solid #3796ee; }
     #provide article .box {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1574,6 +1580,11 @@ footer {
         font-size: 42px; }
         #provide article h2:after {
           font-size: 18px; }
+      #provide article p {
+        margin: 0 auto 30px;
+        padding-left: initial;
+        text-align: center;
+        font-size: 20px; }
       #provide article .box {
         display: -webkit-box;
         display: -ms-flexbox;

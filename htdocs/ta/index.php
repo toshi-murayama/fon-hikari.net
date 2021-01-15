@@ -49,7 +49,7 @@ $(function() {
                 <div class="summary">下り<span>最大<em>2</em>Gbps</span></div>
                 <div id="fromBox">
                     <h2>まずは無料でエリア確認</h2>
-                    <p>専門スタッフがお電話にて、お電話にて提供可能かご確認、ご案内致します。</p>
+                    <p>専門スタッフがお電話にて、提供可能かご確認、ご案内致します。</p>
                     <form action="" id="lp_form1">
                         <div class="boxL">
                             <ul>
@@ -357,6 +357,7 @@ $(function() {
         <section id="provide">
             <article>
                 <h2>AREA MAP</h2>
+                <p>エリア順次拡大中！</p>
                 <div class="box">
                     <div class="boxL">北海道<br>
     関東（東京、神奈川、埼玉、千葉、茨城、栃木、群馬）<br>
@@ -372,7 +373,7 @@ $(function() {
             </article>
             <div id="fromBox">
                 <h2>まずは無料でエリア確認</h2>
-                <p>専門スタッフがお電話にて、お電話にて提供可能かご確認、ご案内致します。</p>
+                <p>専門スタッフがお電話にて、提供可能かご確認、ご案内致します。</p>
                 <form action="" id="lp_form3">
                     <div class="boxL">
                         <ul>
