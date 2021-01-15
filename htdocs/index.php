@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
+<meta name="description" content="月額4,378円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -36,7 +36,8 @@
         <section id="top">
             <article>
                 <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥3,980</span><small>(税別)</small></h2>
+                <h2>月額<span>¥4,378</span></h2>
+                <p>※ 記載の金額は全て税込金額です。</p>
                 <div></div>
                 <p>超高速インターネット回線</p>
                 <p>下り最大 2Gbps</p>
@@ -199,11 +200,11 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <div class="box">
                     <h2>料金</h2>
-                    <p>Fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額3,980円（税抜）でご利用頂ける光ファイバーインターネットサービスです。
+                    <p>Fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額4,378円でご利用頂ける光ファイバーインターネットサービスです。
     音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
                 </div>
                 <div class="box">
-                    <h3>月額基本料金<em>¥3,980</em></h3>
+                    <h3>月額基本料金<em>¥4,378</em></h3>
                     <ul>
                         <li>
                             <img src="img/koji_ico.svg" alt="">
@@ -216,7 +217,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/doc_ico.svg" alt="">
                             <dl>
                                 <dt>契約事務手数料</dt>
-                                <dd>¥3,000</dd>
+                                <dd>¥3,300</dd>
                             </dl>
                         </li>
                         <li>
@@ -230,13 +231,15 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/x_ico.svg" alt="">
                             <dl>
                                 <dt>契約解除料</dt>
-                                <dd>¥19,800</dd>
+                                <dd>¥21,780</dd>
                             </dl>
                         </li>
                     </ul>
                 </div>
-                <p>※ 税抜き価格で表記しております。</p>
-                <p>※1 工事費40,000 円（ 1,333 円 X 30 か月の分割払い）を、工事費割引1,333 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
+                <p>※ 記載の金額は全て税込金額です。</p>
+                <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
+                <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
+                <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
             </article>
         </section>
 

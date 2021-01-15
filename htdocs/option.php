@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>オプション | Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
+<meta name="description" content="月額4,378円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -78,8 +78,8 @@
                         </dl>
                         <dl>
                             <dt>月額基本料金</dt>
-                            <dd>【関東・北海道エリア】500円(税別)<br>
-【関西・東海・九州エリア】300円(税別)</dd>
+                            <dd>【関東・北海道エリア】550円<br>
+【関西・東海・九州エリア】330円</dd>
                         </dl>
                         <dl>
                             <dt>規約</dt>
@@ -107,17 +107,21 @@
                         </dl>
                         <dl>
                             <dt>お値うちプラン</dt>
-                            <dd>月額3,500円(税別)</dd>
+                            <dd>月額3,850円</dd>
                             <dt>テレビおすすめプラン</dt>
-                            <dd>月額2,500円(税別)</dd>
+                            <dd>月額2,750円</dd>
                             <dt>ビデオざんまいプラン</dt>
-                            <dd>月額2,500円(税別)</dd>
+                            <dd>月額2,750円</dd>
                             <dt>基本放送プラン</dt>
-                            <dd>月額1,000円(税別)</dd>
+                            <dd>月額1,100円</dd>
                         </dl>
                         <dl>
-                            <dt>さらに「2ねん割」適用で3〜24ヶ月目まで月額基本料金が1,000円割引！</dt>
+                            <dt>さらに「2ねん割」適用で3〜24ヶ月目まで月額基本料金が1,100円割引！</dt>
                             <dd><a href="https://www.nuro.jp/hikari/fvno/tv/" target="_blank">※詳細はこちらから</a></dd>
+                        </dl>
+                        <dl>
+                            <dt>規約</dt>
+                            <dd><a href="pdf/option/hikaritv_jyusetsu.pdf" target="_blank">ひかりTV 重要事項説明</a></dd>
                         </dl>
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
@@ -137,7 +141,7 @@
                         </dl>
                         <dl>
                             <dt>特典１</dt>
-                            <dd>Fon光の回線使用料が500円引き</dd>
+                            <dd>Fon光の回線使用料が550円引き</dd>
                         </dl>
                         <dl>
                             <dt>特典２</dt>
@@ -184,14 +188,14 @@
                         </dl>
                         <dl>
                             <dt>月額基本料金</dt>
-                            <dd>500円(税別)</dd>
+                            <dd>550円</dd>
                         </dl>
                         <dl>
                             <dt>規約</dt>
                             <dd>
                                 <ul>
-                                    <li><a href="pdf/option/remote_kiyaku.pdf">リモートサポート利用規約</a></li>
-                                    <li><a href="pdf/option/remote_jyusetu.pdf">リモートサポート重要事項説明</a></li>
+                                    <li><a href="pdf/option/remote_kiyaku.pdf" target="_blank">リモートサポート利用規約</a></li>
+                                    <li><a href="pdf/option/remote_jyusetu.pdf" target="_blank">リモートサポート重要事項説明</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -211,7 +215,7 @@
                         </dl>
                         <dl>
                             <dt>月額基本料金</dt>
-                            <dd>500円(税別)</dd>
+                            <dd>550円</dd>
                         </dl>
                         <dl>
                             <dt>規約</dt>
