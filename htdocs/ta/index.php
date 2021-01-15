@@ -23,6 +23,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/index.js"></script>
+<script src="../js/lp_index.js"></script>
 <script type="text/javascript" src="../js/jquery.fatNav.min.js"></script>
 <script>
 $(function() {
@@ -49,63 +50,63 @@ $(function() {
                 <div id="fromBox">
                     <h2>まずは無料でエリア確認</h2>
                     <p>専門スタッフがお電話にて、お電話にて提供可能かご確認、ご案内致します。</p>
-                    <form action="">
+                    <form action="" id="lp_form1">
                         <div class="boxL">
                             <ul>
                                 <li>
                                     <dl>
                                         <dt>お名前</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="name" value=""></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>フリガナ</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="nameKana" value=""></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>郵便番号</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="postalCode" value=""></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>電話番号</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="phoneNumber" value=""></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>都道府県</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="installationPref" value=""></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>以降の住所</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="address" value=""></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>建物</dt>
-                                        <dd><input type="radio" name="building" value="" id="" checked><label for="">戸建</label></dd>
-                                        <dd><input type="radio" name="building" value="" id=""><label for="">集合</label></dd>
+                                        <dd><input type="radio" name="buildingType" value="戸建" id="buildingType_a" checked><label for="buildingType_a">戸建</label></dd>
+                                        <dd><input type="radio" name="buildingType" value="集合" id="buildingType_b"><label for="buildingType_b">集合</label></dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>建物名</dt>
-                                        <dd><input type="text" name="" value=""></dd>
+                                        <dd><input type="text" name="buildingName" value=""></dd>
                                     </dl>
                                 </li>
                             </ul>
                         </div>
                         <div class="boxR">
                             <img src="../img/form_pick.png" alt="webからなら24時間受付中！">
-                            <button>エリアを確認</button>
+                            <button type="button" id="send_mixdata1">エリアを確認</button>
                         </div>
                     </form>
                 </div>
@@ -168,14 +169,14 @@ $(function() {
             <article>
                 <h2>簡単見積もり</h2>
                 <p>専門スタッフよりお電話にてお答えします</p>
-                <form action="">
+                <form action="" id="lp_form2">
                     <div>
                         <ul>
                             <li>
                                 <dl>
                                     <dt>回線</dt>
                                     <dd>
-                                        <input type="radio" name="" value="" id="" checked><label for="">Fon光</label>
+                                        <input type="radio" name="fonHikariLine" value="Fon光回線" id="" checked><label for="">Fon光</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -185,16 +186,16 @@ $(function() {
                                 <dl>
                                     <dt>オプション</dt>
                                     <dd>
-                                        <input type="checkbox" name="" value="" id=""><label for="">ひかり電話</label>
+                                        <input type="checkbox" name="hikariPhone" value="あり" id="hikariPhone"><label for="hikariPhone">ひかり電話</label>
                                     </dd>
                                     <dd>
-                                        <input type="checkbox" name="" value="" id=""><label for="">リモートサポート</label>
+                                        <input type="checkbox" name="remortSupport" value="あり" id="remortSupport"><label for="remortSupport">リモートサポート</label>
                                     </dd>
                                     <dd>
-                                        <input type="checkbox" name="" value="" id=""><label for="">ひかりTV for NURO</label>
+                                        <input type="checkbox" name="hikariTVforNURO" value="あり" id="hikariTVforNURO"><label for="hikariTVforNURO">ひかりTV for NURO</label>
                                     </dd>
                                     <dd>
-                                        <input type="checkbox" name="" value="" id=""><label for="">まとめでんき</label>
+                                        <input type="checkbox" name="collectivelyElectricity" value="あり" id="collectivelyElectricity"><label for="collectivelyElectricity">まとめでんき</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -204,7 +205,7 @@ $(function() {
                                 <dl>
                                     <dt>お名前</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="name" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -212,7 +213,7 @@ $(function() {
                                 <dl>
                                     <dt>フリガナ</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="nameKana" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -220,7 +221,7 @@ $(function() {
                                 <dl>
                                     <dt>郵便番号</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="postalCode" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -228,7 +229,7 @@ $(function() {
                                 <dl>
                                     <dt>電話番号</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="phoneNumber" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -236,7 +237,7 @@ $(function() {
                                 <dl>
                                     <dt>都道府県</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="installationPref" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -244,7 +245,7 @@ $(function() {
                                 <dl>
                                     <dt>以降の住所</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="address" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -252,10 +253,10 @@ $(function() {
                                 <dl>
                                     <dt>建物</dt>
                                     <dd>
-                                        <input type="radio" name="building" value="" id="" checked><label for="">戸建</label>
+                                        <input type="radio" name="buildingType" value="戸建" id="buildingType_c" checked><label for="buildingType_c">戸建</label>
                                     </dd>
                                     <dd>
-                                        <input type="radio" name="building" value="" id=""><label for="">集合</label>
+                                        <input type="radio" name="buildingType" value="集合" id="buildingType_d"><label for="buildingType_d">集合</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -263,12 +264,12 @@ $(function() {
                                 <dl>
                                     <dt>建物名</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="buildingName" value="">
                                     </dd>
                                 </dl>
                             </li>
                         </ul>
-                        <button>お見積りをする</button>
+                        <button type="button" id="send_mixdata2">お見積りをする</button>
                     </div>
                 </form>
             </article>
@@ -372,14 +373,14 @@ $(function() {
             <div id="fromBox">
                 <h2>まずは無料でエリア確認</h2>
                 <p>専門スタッフがお電話にて、お電話にて提供可能かご確認、ご案内致します。</p>
-                <form action="">
+                <form action="" id="lp_form3">
                     <div class="boxL">
                         <ul>
                             <li>
                                 <dl>
                                     <dt>お名前</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="name" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -387,7 +388,7 @@ $(function() {
                                 <dl>
                                     <dt>フリガナ</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="nameKana" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -395,7 +396,7 @@ $(function() {
                                 <dl>
                                     <dt>郵便番号</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="postalCode" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -403,7 +404,7 @@ $(function() {
                                 <dl>
                                     <dt>電話番号</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="phoneNumber" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -411,7 +412,7 @@ $(function() {
                                 <dl>
                                     <dt>都道府県</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="installationPref" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -419,7 +420,7 @@ $(function() {
                                 <dl>
                                     <dt>以降の住所</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="address" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -427,10 +428,10 @@ $(function() {
                                 <dl>
                                     <dt>建物</dt>
                                     <dd>
-                                        <input type="radio" name="building" value="" id="" checked><label for="">戸建</label>
+                                        <input type="radio" name="buildingType" value="戸建" id="buildingType_e" checked><label for="buildingType_e">戸建</label>
                                     </dd>
                                     <dd>
-                                        <input type="radio" name="building" value="" id=""><label for="">集合</label>
+                                        <input type="radio" name="buildingType" value="集合" id="buildingType_f"><label for="buildingType_f">集合</label>
                                     </dd>
                                 </dl>
                             </li>
@@ -438,7 +439,7 @@ $(function() {
                                 <dl>
                                     <dt>建物名</dt>
                                     <dd>
-                                        <input type="text" name="" value="">
+                                        <input type="text" name="buildingName" value="">
                                     </dd>
                                 </dl>
                             </li>
@@ -446,12 +447,27 @@ $(function() {
                     </div>
                     <div class="boxR">
                         <img src="../img/form_pick.png" alt="webからなら24時間受付中！">
-                        <button>エリアを確認</button>
+                        <button type="button" id="send_mixdata3">エリアを確認</button>
                     </div>
                 </form>
             </div>
         </section>
     </div>
+
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="modalContents">
+                <div id="mixdata_response">
+                    <!-- 結果を出力する -->
+                </div>
+            </div>
+            <div id="closeModal" class="closeModal">
+                ×
+            </div>
+        </div>
+    </section>
 
     <?php include "../include/footer_lp.html";?>
 </body>
