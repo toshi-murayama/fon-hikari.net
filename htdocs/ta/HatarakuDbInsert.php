@@ -74,6 +74,7 @@ class HatarakuDbInsert
         // 登録日
         $data['applicationDate'] = date("Y年m月d日");
         // 登録時間
+        date_default_timezone_set('Asia/Tokyo');
         $data['applicationTime'] = date("H:i:s");
         return $data;
     }
