@@ -156,7 +156,7 @@ $(function() {
                         <dt>戸建てにお住まいの方</dt>
                     </dl>
                 </div>
-                <div class="price">月額<span>4,980</span>円</div>
+                <div class="price">月額<span>4,378</span>円</div>
                 <ul>
                     <li>※税込み価格になります</li>
                     <li>※工事費は0円になります</li>
