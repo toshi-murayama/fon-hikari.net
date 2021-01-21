@@ -56,50 +56,68 @@ $(function() {
                                 <li>
                                     <dl>
                                         <dt>お名前</dt>
-                                        <dd><input type="text" name="name" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="name" value="" placeholder="山田太郎">
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>フリガナ</dt>
-                                        <dd><input type="text" name="nameKana" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="nameKana" value="" placeholder="ヤマダタロウ">
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>郵便番号</dt>
-                                        <dd><input type="text" name="postalCode" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)">
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>電話番号</dt>
-                                        <dd><input type="text" name="phoneNumber" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)">
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>都道府県</dt>
-                                        <dd><input type="text" name="installationPref" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="installationPref" value="" placeholder="東京都">
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>以降の住所</dt>
-                                        <dd><input type="text" name="address" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="address" value="" placeholder="豊島区池袋1-1-1">
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>建物</dt>
-                                        <dd><input type="radio" name="buildingType" value="戸建" id="buildingType_a" checked><label for="buildingType_a">戸建</label></dd>
-                                        <dd><input type="radio" name="buildingType" value="集合" id="buildingType_b"><label for="buildingType_b">集合</label></dd>
+                                        <dd>
+                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_e" checked><label for="buildingType_e">戸建</label>
+                                        </dd>
+                                        <dd>
+                                            <input type="radio" name="buildingType" value="集合" id="buildingType_f"><label for="buildingType_f">集合</label>
+                                        </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
                                         <dt>建物名</dt>
-                                        <dd><input type="text" name="buildingName" value=""></dd>
+                                        <dd>
+                                            <input type="text" name="buildingName" value="" placeholder="Fonビル1F">
+                                        </dd>
                                     </dl>
                                 </li>
                             </ul>
@@ -205,7 +223,7 @@ $(function() {
                                 <dl>
                                     <dt>お名前</dt>
                                     <dd>
-                                        <input type="text" name="name" value="">
+                                        <input type="text" name="name" value="" placeholder="山田太郎">
                                     </dd>
                                 </dl>
                             </li>
@@ -213,7 +231,7 @@ $(function() {
                                 <dl>
                                     <dt>フリガナ</dt>
                                     <dd>
-                                        <input type="text" name="nameKana" value="">
+                                        <input type="text" name="nameKana" value="" placeholder="ヤマダタロウ">
                                     </dd>
                                 </dl>
                             </li>
@@ -221,7 +239,7 @@ $(function() {
                                 <dl>
                                     <dt>郵便番号</dt>
                                     <dd>
-                                        <input type="text" name="postalCode" value="">
+                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)">
                                     </dd>
                                 </dl>
                             </li>
@@ -229,7 +247,7 @@ $(function() {
                                 <dl>
                                     <dt>電話番号</dt>
                                     <dd>
-                                        <input type="text" name="phoneNumber" value="">
+                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)">
                                     </dd>
                                 </dl>
                             </li>
@@ -237,7 +255,7 @@ $(function() {
                                 <dl>
                                     <dt>都道府県</dt>
                                     <dd>
-                                        <input type="text" name="installationPref" value="">
+                                        <input type="text" name="installationPref" value="" placeholder="東京都">
                                     </dd>
                                 </dl>
                             </li>
@@ -245,7 +263,7 @@ $(function() {
                                 <dl>
                                     <dt>以降の住所</dt>
                                     <dd>
-                                        <input type="text" name="address" value="">
+                                        <input type="text" name="address" value="" placeholder="豊島区池袋1-1-1">
                                     </dd>
                                 </dl>
                             </li>
@@ -264,7 +282,7 @@ $(function() {
                                 <dl>
                                     <dt>建物名</dt>
                                     <dd>
-                                        <input type="text" name="buildingName" value="">
+                                        <input type="text" name="buildingName" value="" placeholder="Fonビル1F">
                                     </dd>
                                 </dl>
                             </li>
@@ -381,7 +399,7 @@ $(function() {
                                 <dl>
                                     <dt>お名前</dt>
                                     <dd>
-                                        <input type="text" name="name" value="">
+                                        <input type="text" name="name" value="" placeholder="山田太郎">
                                     </dd>
                                 </dl>
                             </li>
@@ -389,7 +407,7 @@ $(function() {
                                 <dl>
                                     <dt>フリガナ</dt>
                                     <dd>
-                                        <input type="text" name="nameKana" value="">
+                                        <input type="text" name="nameKana" value="" placeholder="ヤマダタロウ">
                                     </dd>
                                 </dl>
                             </li>
@@ -397,7 +415,7 @@ $(function() {
                                 <dl>
                                     <dt>郵便番号</dt>
                                     <dd>
-                                        <input type="text" name="postalCode" value="">
+                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)">
                                     </dd>
                                 </dl>
                             </li>
@@ -405,7 +423,7 @@ $(function() {
                                 <dl>
                                     <dt>電話番号</dt>
                                     <dd>
-                                        <input type="text" name="phoneNumber" value="">
+                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)">
                                     </dd>
                                 </dl>
                             </li>
@@ -413,7 +431,7 @@ $(function() {
                                 <dl>
                                     <dt>都道府県</dt>
                                     <dd>
-                                        <input type="text" name="installationPref" value="">
+                                        <input type="text" name="installationPref" value="" placeholder="東京都">
                                     </dd>
                                 </dl>
                             </li>
@@ -421,7 +439,7 @@ $(function() {
                                 <dl>
                                     <dt>以降の住所</dt>
                                     <dd>
-                                        <input type="text" name="address" value="">
+                                        <input type="text" name="address" value="" placeholder="豊島区池袋1-1-1">
                                     </dd>
                                 </dl>
                             </li>
@@ -440,7 +458,7 @@ $(function() {
                                 <dl>
                                     <dt>建物名</dt>
                                     <dd>
-                                        <input type="text" name="buildingName" value="">
+                                        <input type="text" name="buildingName" value="" placeholder="Fonビル1F">
                                     </dd>
                                 </dl>
                             </li>
