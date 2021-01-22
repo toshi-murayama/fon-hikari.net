@@ -107,7 +107,7 @@
                 },
                 "onlyNumberSp": {
                     "regex": /^[0-9\ ]+$/,
-                    "alertText": "* 半角数字で入力してください"
+                    "alertText": "* ハイフン抜き半角数字で入力してください。"
                 },
                 "onlyLetterSp": {
                     "regex": /^[a-zA-Z\ \']+$/,

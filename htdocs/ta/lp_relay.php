@@ -224,8 +224,10 @@ if(empty($error)) {
         //-----------------------------------------------------------
         $content = createApplicationUserMailContent($estimatedAmount); //合計金額は引数に
         $to = 'support@fon-hikari.net,scramask@gmail.com,s_kagaya@1onepiece.jp';
+        //$to = 'scramask@gmail.com';
         $title = '【LP登録メール】';
         $headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
+        //$headers ='Bcc: scramask@gmail.com' . "\r\n";
         $send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
     }
 }
@@ -281,6 +283,7 @@ function sendHatarakuDBErrorMail(string $result){
         $error_subject =  "Fon光管理者通知メール【重要】申込の働くDBインポート登録に失敗しました。";
         //  ← を追加.
         $to = mb_convert_encoding("support@fon-hikari.net,scramask@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
+        //$to = mb_convert_encoding("scramask@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $org = mb_convert_encoding("フォン・ジャパン株式会社", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
