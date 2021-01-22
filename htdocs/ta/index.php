@@ -199,7 +199,7 @@ $(function() {
                                 </dl>
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="option">
                             <li>
                                 <dl>
                                     <dt>オプション</dt>

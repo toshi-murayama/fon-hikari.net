@@ -1581,17 +1581,18 @@ footer {
                     width: 100%;
                     margin-bottom: 10px;
                     dl {
-                        display: flex;
+                        display: block;
                         width: 100%;
                         dt {
-                            width: 30%;
+                            width: 100%;
                             max-width: 100px;
+                            text-align: left;
                         }
                         dd {
-                            width: 70%;
+                            width: 100%;
                             text-align: left;
                             input[type='text'] {
-                                width: 90%;
+                                width: calc(100% - 10px);
                                 -webkit-appearance: none;
                                 -moz-appearance: none;
                                 appearance: none;
@@ -1608,6 +1609,12 @@ footer {
                 }
                 li:nth-child(7){
                     dl{
+                        flex-wrap: wrap;
+                        display: flex;
+                        dt{
+                            width: 100%;
+                            max-width: 100%;
+                        }
                         dd{
                             width: 20%;
                         }
@@ -1625,6 +1632,46 @@ footer {
                     dl{
                         dd{
                             width: 20%;
+                        }
+                    }
+                }
+            }
+            .option{
+                width: 100%;
+                li{
+                    dl{
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        justify-content: space-between;
+                        align-items: center;
+                        dt{
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                        dd{
+                            width: 25%;
+                            input{
+                                visibility: hidden;
+                                display: block;
+                                height: 0px;
+                            }
+                            label{
+                                border: 2px solid #999;
+                                color: #999;
+                                display: block;
+                                padding: 5px;
+                                text-align: center;
+                                font-size: 10px;
+                                font-weight: 600;
+                                transition: 0.2s;
+                                height: 30px;
+                            }
+                            input:checked + label{
+                                border: 2px solid #fff;
+                                color: #fff;
+                                box-shadow: 0 0px 5px 1px  rgba(255,255,255,0.2);
+                            }
                         }
                     }
                 }
