@@ -19,12 +19,17 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style_lp.css">
 <link rel="stylesheet" href="../css/jquery.fatNav.css">
+<link rel="stylesheet" href="../css/validationEngine.jquery.css"> 
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/lp_index.js"></script>
 <script type="text/javascript" src="../js/jquery.fatNav.min.js"></script>
+<script src="../js/jquery.validationEngine.js"></script>
+<script src="../js/jquery.validationEngine-ja.js"></script>
+<script src="../js/jquery.jpostal.min.js"></script>
+<script src="../js/ajaxzip3.js"></script>
 <script>
 $(function() {
     $.fatNav();
@@ -57,7 +62,7 @@ $(function() {
                                     <dl>
                                         <dt>お名前</dt>
                                         <dd>
-                                            <input type="text" name="name" value="" placeholder="山田太郎">
+                                            <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -65,7 +70,7 @@ $(function() {
                                     <dl>
                                         <dt>フリガナ</dt>
                                         <dd>
-                                            <input type="text" name="nameKana" value="" placeholder="ヤマダタロウ">
+                                            <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -73,7 +78,7 @@ $(function() {
                                     <dl>
                                         <dt>郵便番号</dt>
                                         <dd>
-                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)">
+                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -81,7 +86,7 @@ $(function() {
                                     <dl>
                                         <dt>電話番号</dt>
                                         <dd>
-                                            <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)">
+                                            <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -89,7 +94,7 @@ $(function() {
                                     <dl>
                                         <dt>都道府県</dt>
                                         <dd>
-                                            <input type="text" name="installationPref" value="" placeholder="東京都">
+                                            <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -97,7 +102,7 @@ $(function() {
                                     <dl>
                                         <dt>以降の住所</dt>
                                         <dd>
-                                            <input type="text" name="address" value="" placeholder="豊島区池袋1-1-1">
+                                            <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -105,10 +110,10 @@ $(function() {
                                     <dl>
                                         <dt>建物</dt>
                                         <dd>
-                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_e" checked><label for="buildingType_e">戸建</label>
+                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_a" checked><label for="buildingType_a">戸建</label>
                                         </dd>
                                         <dd>
-                                            <input type="radio" name="buildingType" value="集合" id="buildingType_f"><label for="buildingType_f">集合</label>
+                                            <input type="radio" name="buildingType" value="集合" id="buildingType_b"><label for="buildingType_b">集合</label>
                                         </dd>
                                     </dl>
                                 </li>
@@ -223,7 +228,7 @@ $(function() {
                                 <dl>
                                     <dt>お名前</dt>
                                     <dd>
-                                        <input type="text" name="name" value="" placeholder="山田太郎">
+                                        <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
                                     </dd>
                                 </dl>
                             </li>
@@ -231,7 +236,7 @@ $(function() {
                                 <dl>
                                     <dt>フリガナ</dt>
                                     <dd>
-                                        <input type="text" name="nameKana" value="" placeholder="ヤマダタロウ">
+                                        <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
                                     </dd>
                                 </dl>
                             </li>
@@ -239,7 +244,7 @@ $(function() {
                                 <dl>
                                     <dt>郵便番号</dt>
                                     <dd>
-                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)">
+                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                     </dd>
                                 </dl>
                             </li>
@@ -247,7 +252,7 @@ $(function() {
                                 <dl>
                                     <dt>電話番号</dt>
                                     <dd>
-                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)">
+                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                     </dd>
                                 </dl>
                             </li>
@@ -255,7 +260,7 @@ $(function() {
                                 <dl>
                                     <dt>都道府県</dt>
                                     <dd>
-                                        <input type="text" name="installationPref" value="" placeholder="東京都">
+                                        <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
                                     </dd>
                                 </dl>
                             </li>
@@ -263,7 +268,7 @@ $(function() {
                                 <dl>
                                     <dt>以降の住所</dt>
                                     <dd>
-                                        <input type="text" name="address" value="" placeholder="豊島区池袋1-1-1">
+                                        <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
                                     </dd>
                                 </dl>
                             </li>
@@ -399,7 +404,7 @@ $(function() {
                                 <dl>
                                     <dt>お名前</dt>
                                     <dd>
-                                        <input type="text" name="name" value="" placeholder="山田太郎">
+                                        <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
                                     </dd>
                                 </dl>
                             </li>
@@ -407,7 +412,7 @@ $(function() {
                                 <dl>
                                     <dt>フリガナ</dt>
                                     <dd>
-                                        <input type="text" name="nameKana" value="" placeholder="ヤマダタロウ">
+                                        <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
                                     </dd>
                                 </dl>
                             </li>
@@ -415,7 +420,7 @@ $(function() {
                                 <dl>
                                     <dt>郵便番号</dt>
                                     <dd>
-                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)">
+                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                     </dd>
                                 </dl>
                             </li>
@@ -423,7 +428,7 @@ $(function() {
                                 <dl>
                                     <dt>電話番号</dt>
                                     <dd>
-                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)">
+                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                     </dd>
                                 </dl>
                             </li>
@@ -431,7 +436,7 @@ $(function() {
                                 <dl>
                                     <dt>都道府県</dt>
                                     <dd>
-                                        <input type="text" name="installationPref" value="" placeholder="東京都">
+                                        <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
                                     </dd>
                                 </dl>
                             </li>
@@ -439,7 +444,7 @@ $(function() {
                                 <dl>
                                     <dt>以降の住所</dt>
                                     <dd>
-                                        <input type="text" name="address" value="" placeholder="豊島区池袋1-1-1">
+                                        <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
                                     </dd>
                                 </dl>
                             </li>
