@@ -1,7 +1,9 @@
 // ページ読込完了後にボタンにclickイベントを登録する
 window.addEventListener("load", function(){
     // バリデーション(jquery.validationEngine.js)セット
-    $('#lp_form1, #lp_form2, #lp_form3').validationEngine('attach', {scroll: false});
+    $('#lp_form1, #lp_form2, #lp_form3').validationEngine('attach', {
+        promptPosition:"topLeft",
+        scroll: false});
 
     // フォーム1の送信ボタンが押された時の処理
     document.getElementById("send_mixdata1").addEventListener("click", function(){
