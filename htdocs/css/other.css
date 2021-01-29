@@ -144,9 +144,14 @@ li {
     border-bottom: 1px solid #ccc; }
   #privacy article div {
     padding: 100px 0; }
+    #privacy article div p {
+      font-size: 16px;
+      margin-bottom: 50px; }
     #privacy article div ul li {
       font-size: 16px;
       margin-bottom: 30px; }
+      #privacy article div ul li h3 {
+        font-weight: bold; }
 
 @media screen and (max-width: 750px) {
   img {
@@ -205,6 +210,17 @@ li {
             padding: 10px 5px; }
           #other .faq .faq_box dl dd p.a {
             padding: 10px 5px;
-            font-size: 5.5vw; } }
+            font-size: 5.5vw; }
+
+  #privacy article h2 {
+    padding: 100px 0 50px; }
+  #privacy article div {
+    padding: 50px 0; }
+    #privacy article div p {
+      font-size: 14px;
+      margin-bottom: 40px; }
+    #privacy article div ul li {
+      font-size: 14px;
+      margin-bottom: 20px; } }
 
 /*# sourceMappingURL=other.css.map */
