@@ -305,8 +305,7 @@ header{
  footer
 -------------------------------------------------*/
 footer {
-    background: #333;
-    color: #fff;
+    color: #333;
     padding: 30px 0;
     article{
         display: flex;
@@ -314,45 +313,6 @@ footer {
         width: 90%;
         max-width: 1200px;
         margin: 0 auto;
-        .boxL{
-            display: flex;
-            img{
-                width: 100px;
-                display: block;
-                margin-right: 10px;
-            }
-        }
-        .boxR{
-            display: flex;
-            justify-content: flex-end;
-            >ul{
-                flex-wrap: wrap;
-                display: flex;
-                text-align: right;
-                justify-content: flex-end;
-                margin-right: 5%;
-                li{
-                    width: 40%;
-                    max-width: 200px;
-                    a{
-                        color: #fff;
-                    }
-                }
-            }
-            .inner{
-                >ul{
-                    display: flex;
-                    justify-content: flex-end;
-                    margin-bottom: 10px;
-                    li{
-                        margin-left: 10px;
-                        img{
-                            width: 30px;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -573,7 +533,7 @@ footer {
     padding: 100px 0;
 }
 
-#summary{
+#summary,#footerForm{
     article{
         #fromBox{
             border: 4px solid #fbd349;
@@ -664,6 +624,31 @@ footer {
                     bottom: -135px;
                 }
             }
+        }
+    }
+    #flow{
+        border: 4px solid #fbd349;
+        background: #fff;
+        padding: 0 100px 50px;
+        max-width: 980px;
+        width: calc(90% - 200px);
+        margin: 100px auto 0;
+        position: relative;
+        height: 30vw;
+        h2{
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 30px;
+        }
+        img{
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 1200px;
+            width: 100%;
         }
     }
 }
@@ -846,7 +831,6 @@ footer {
 /*-----estimate-----*/
 #estimate{
     article{
-        #fromBox{
             border: 4px solid #fbd349;
             background: #fff;
             padding: 0 100px 50px;
@@ -935,7 +919,6 @@ footer {
                     bottom: -135px;
                 }
             }
-        }
     }
 }
 
