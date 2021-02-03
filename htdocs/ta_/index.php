@@ -9,63 +9,42 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="月額4,378円！Fon光で快適なインターネット生活を送ろう">
+<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="shortcut icon" href="img/favicon.ico" />
-<?php include "include/ogp.html";?>
+<link rel="shortcut icon" href="../img/favicon.ico" />
+<?php include "../include/ogp.html";?>
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/common.js"></script>
-<script src="js/index.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/index.js"></script>
 <!--tag-->
-<?php include "include/tag_head.html";?>
+<?php include "../include/tag_head.html";?>
 </head>
 <body>
-<?php include "include/tag_start.html";?>
-<?php setcookie('affiliate', '', time() - 1, '/')?>
+<?php include "../include/tag_start.html";?>
+<?php setcookie('affiliate', true, time() + 60 * 60 * 24 * 31, '/')?>
 <p id="cursor"></p>
 <div id="stalker"></div>
 
-    <?php include "include/header.html";?>
+    <?php include "../include/header_affiliate.html";?>
     <div id="wrap">
         <section id="top">
             <article>
                 <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥4,378</span></h2>
-                <p>※ 記載の金額は全て税込金額です。</p>
+                <h2>月額<span>¥3,980</span><small>(税別)</small></h2>
                 <div></div>
                 <p>超高速インターネット回線</p>
                 <p>下り最大 2Gbps</p>
-                <ul>
+                <ul class="lp">
                     <li>
-                        <a href="area"></a>
-                        <span><img src="img/top_app_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>webでお申し込み</dt>
-                            <dd>>> 今すぐこちらから</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="contact"></a>
-                        <span><img src="img/top_contact_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>メールでお問い合わせ</dt>
-                            <dd>>> ご不明点をサポートします</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="tel:0120-966-486"></a>
-                        <span><img src="img/top_tel_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>電話で申し込み</dt>
-                            <dd>>> 0120-966-486</dd>
-                        </dl>
-                        <em>13:00-17:00(土日祝除く)</em>
+                        <a class="btn-flat" href="../area">
+							<span><img src="../img/top_app_ico.svg" alt="">
+								webでお申し込み</span></a>
                     </li>
                 </ul>
             </article>
@@ -80,7 +59,7 @@
 実現しています。</p>
                 <div class="speed_img">
                     <div class="fon">
-                        <div class="provider"><img src="img/fon_logo_w.svg" alt="Fon光"></div>
+                        <div class="provider"><img src="../img/fon_logo_w.svg" alt="Fon光"></div>
                         <div class="border ani1"><span></span></div>
                         <div class="speed">2Gbps</div>
                     </div>
@@ -91,7 +70,7 @@
                     <li class="animation01">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico01.png" alt="スマートフォン">
+                                <img src="../img/summary_ico01.png" alt="スマートフォン">
                             </dd>
                             <dt>スマートフォン</dt>
                         </dl>
@@ -99,7 +78,7 @@
                     <li class="animation02">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico02.png" alt="ゲーム機器">
+                                <img src="../img/summary_ico02.png" alt="ゲーム機器">
                             </dd>
                             <dt>ゲーム機器</dt>
                         </dl>
@@ -107,7 +86,7 @@
                     <li class="animation03">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico03.png" alt="パソコン">
+                                <img src="../img/summary_ico03.png" alt="パソコン">
                             </dd>
                             <dt>パソコン</dt>
                         </dl>
@@ -115,7 +94,7 @@
                     <li class="animation04">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico04.png" alt="スマートホーム">
+                                <img src="../img/summary_ico04.png" alt="スマートホーム">
                             </dd>
                             <dt>スマートホーム</dt>
                         </dl>
@@ -123,7 +102,7 @@
                     <li class="animation05">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico05.png" alt="テレビ">
+                                <img src="../img/summary_ico05.png" alt="テレビ">
                             </dd>
                             <dt>テレビ</dt>
                         </dl>
@@ -131,7 +110,7 @@
                     <li class="animation06">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico06.png" alt="コンポ">
+                                <img src="../img/summary_ico06.png" alt="コンポ">
                             </dd>
                             <dt>コンポ</dt>
                         </dl>
@@ -139,7 +118,7 @@
                     <li class="animation07">
                         <dl>
                             <dd>
-                                <img src="img/summary_ico07.png" alt="タブレット">
+                                <img src="../img/summary_ico07.png" alt="タブレット">
                             </dd>
                             <dt>タブレット</dt>
                         </dl>
@@ -160,7 +139,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         <a href="#summary">
                             <dl>
                                 <dd>
-                                    <img src="img/movie_ico.svg" alt="">
+                                    <img src="../img/movie_ico.svg" alt="">
                                 </dd>
                                 <dt>高速回線</dt>
                                 <dd>下り最大2Gbpsの超高速回線
@@ -172,7 +151,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         <a href="#plan">
                             <dl>
                                 <dd>
-                                    <img src="img/money_ico.svg" alt="">
+                                    <img src="../img/money_ico.svg" alt="">
                                 </dd>
                                 <dt>おとくな料金</dt>
                                 <dd>業界最安値級の料金プラン
@@ -181,10 +160,10 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </a>
                     </li>
                     <li class="bEffect03">
-                        <a href="option">
+                        <a href="/option">
                             <dl>
                                 <dd>
-                                    <img src="img/tel_ico.svg" alt="">
+                                    <img src="../img/tel_ico.svg" alt="">
                                 </dd>
                                 <dt>魅力的なオプション</dt>
                                 <dd>NURO光でんわやリモートサポートなど
@@ -200,46 +179,44 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <div class="box">
                     <h2>料金</h2>
-                    <p>Fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額4,378円でご利用頂ける光ファイバーインターネットサービスです。
+                    <p>Fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額3,980円（税抜）でご利用頂ける光ファイバーインターネットサービスです。
     音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
                 </div>
                 <div class="box">
-                    <h3>月額基本料金<em>¥4,378</em></h3>
+                    <h3>月額基本料金<em>¥3,980</em></h3>
                     <ul>
                         <li>
-                            <img src="img/koji_ico.svg" alt="">
+                            <img src="../img/koji_ico.svg" alt="">
                             <dl>
                                 <dt>工事費</dt>
                                 <dd>無料<sup>※1</sup></dd>
                             </dl>
                         </li>
                         <li>
-                            <img src="img/doc_ico.svg" alt="">
+                            <img src="../img/doc_ico.svg" alt="">
                             <dl>
                                 <dt>契約事務手数料</dt>
-                                <dd>¥3,300</dd>
+                                <dd>¥3,000</dd>
                             </dl>
                         </li>
                         <li>
-                            <img src="img/calender_ico.svg" alt="">
+                            <img src="../img/calender_ico.svg" alt="">
                             <dl>
                                 <dt>契約期間</dt>
                                 <dd>2年更新</dd>
                             </dl>
                         </li>
                         <li>
-                            <img src="img/x_ico.svg" alt="">
+                            <img src="../img/x_ico.svg" alt="">
                             <dl>
                                 <dt>契約解除料</dt>
-                                <dd>¥21,780</dd>
+                                <dd>¥19,800</dd>
                             </dl>
                         </li>
                     </ul>
                 </div>
-                <p>※ 記載の金額は全て税込金額です。</p>
-                <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
-                <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
-                <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
+                <p>※ 税抜き価格で表記しております。</p>
+                <p>※1 工事費40,000 円（ 1,333 円 X 30 か月の分割払い）を、工事費割引1,333 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
             </article>
         </section>
 
@@ -254,7 +231,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <li>リモートサポート</li>
                     <li>カスペルスキーセキュリティ</li>
                 </ul>
-                <a href="option">詳しくはこちらから</a>
+                <a href="/option">詳しくはこちらから</a>
             </article>
         </section>
 
@@ -264,7 +241,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <ul>
                     <li>
                         <dl>
-                            <dd><img src="img/flow_ico01.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico01.svg" alt=""></dd>
                             <dt>1.お申し込み</dt>
                             <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
                         </dl>
@@ -272,7 +249,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <div class="triangle"></div>
                     <li>
                         <dl>
-                            <dd><img src="img/flow_ico02.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico02.svg" alt=""></dd>
                             <dt>2.工事日確定</dt>
                             <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
                         </dl>
@@ -280,7 +257,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <div class="triangle"></div>
                     <li>
                         <dl>
-                            <dd><img src="img/flow_ico03.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico03.svg" alt=""></dd>
                             <dt>3.工事完了</dt>
                             <dd>当日、工事作業員にて工事を行います。</dd>
                         </dl>
@@ -288,7 +265,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     <div class="triangle"></div>
                     <li>
                         <dl>
-                            <dd><img src="img/flow_ico04.svg" alt=""></dd>
+                            <dd><img src="../img/flow_ico04.svg" alt=""></dd>
                             <dt>4.利用開始</dt>
                             <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
                         </dl>
@@ -300,7 +277,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <h2>お申し込みの流れ</h2>
                 <ul>
                     <li>
-                        <img src="img/flow_ico01.svg" alt="">
+                        <img src="../img/flow_ico01.svg" alt="">
                         <dl>
                             <dt>1.お申し込み</dt>
                             <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
@@ -308,7 +285,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </li>
                     <div class="triangle_sp"></div>
                     <li>
-                        <img src="img/flow_ico02.svg" alt="">
+                        <img src="../img/flow_ico02.svg" alt="">
                         <dl>
                             <dt>2.工事日確定</dt>
                             <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
@@ -316,7 +293,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </li>
                     <div class="triangle_sp"></div>
                     <li>
-                        <img src="img/flow_ico03.svg" alt="">
+                        <img src="../img/flow_ico03.svg" alt="">
                         <dl>
                             <dt>3.工事完了</dt>
                             <dd>当日、工事作業員にて工事を行います。</dd>
@@ -324,7 +301,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </li>
                     <div class="triangle_sp"></div>
                     <li>
-                        <img src="img/flow_ico04.svg" alt="">
+                        <img src="../img/flow_ico04.svg" alt="">
                         <dl>
                             <dt>4.利用開始</dt>
                             <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
@@ -345,10 +322,10 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
     関西（大阪、兵庫、京都、滋賀、奈良）<br>
     九州（福岡、佐賀）<br>
     ※一部エリアを除く
-                    <a href="area">エリア検索する</a>
+                    <a href="/area">エリア検索する</a>
                 </div>
                 <div class="boxR">
-                    <img src="img/map.svg" alt="map">
+                    <img src="../img/map.svg" alt="map">
                 </div>
                 </div>
             </article>
@@ -358,23 +335,22 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <ul>
                     <li>
-                        <div class="imgBox"><img src="img/support_img01.svg" alt=""></div>
+                        <div class="imgBox"><img src="../img/support_img01.svg" alt=""></div>
                         <h3>ご不明な点は</h3>
                         <p>まずは、よくある質問事項をご確認ください。</p>
-                        <a href="faq">詳しくはこちらから</a>
+                        <a href="/faq">詳しくはこちらから</a>
                     </li>
                     <li>
-                        <div class="imgBox"><img src="img/support_img02.png" alt=""></div>
+                        <div class="imgBox"><img src="../img/support_img02.png" alt=""></div>
                         <h3>お困りの場合は</h3>
                         <p>お困りの問題に対する解決策をご案内します。</p>
-                        <a href="tel:0120-966-486">お電話は0120-966-486まで</a><br>
-                        <a href="contact">メールでのお問い合わせはこちらから</a>
+                        <a href="/contact">メールでのお問い合わせはこちらから</a>
                     </li>
                 </ul>
             </article>
         </section>
     </div>
 
-    <?php include "include/footer.html";?>
+    <?php include "../include/footer.html";?>
 </body>
 </html>

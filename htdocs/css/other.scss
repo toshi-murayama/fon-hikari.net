@@ -178,10 +178,17 @@ li{
         }
         div{
             padding: 100px 0;
+			p{
+				font-size: 16px;
+				margin-bottom: 50px;
+			}
             ul{
                 li{
                     font-size: 16px;
                     margin-bottom: 30px;
+					h3{
+						font-weight: bold;
+					}
                 }
             }
         }
@@ -276,6 +283,27 @@ img{
 	}
 }
 	
+	
+#privacy{
+    article{
+        h2{
+            padding: 100px 0 50px;
+        }
+        div{
+            padding: 50px 0;
+			p{
+				font-size: 14px;
+				margin-bottom: 40px;
+			}
+            ul{
+                li{
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
 
 
 }

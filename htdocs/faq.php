@@ -9,16 +9,16 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>FAQ | Fon光 超高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
-<meta name="description" content="月額3,980円！Fon光で快適なインターネット生活を送ろう">
+<meta name="description" content="月額4,378円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
 <meta name="theme-color" content="#EC7103">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="shortcut icon" href="img/favicon.ico" />	
+<link rel="shortcut icon" href="img/favicon.ico" />
 <?php include "include/ogp.html";?>
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/other.css"> 
+<link rel="stylesheet" href="css/other.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
@@ -47,7 +47,7 @@
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-<?php 
+<?php
 	if(isset($_COOKIE['affiliate'])) {
 		include "include/header_affiliate.html";
 	} else {
@@ -75,7 +75,7 @@
                     <dt><p class="q">Q</p><p>1年以内で解約した場合にかかる料金はいくらですか？</p></dt>
                     <dd>
                         <p class="a">A</p>
-                        <p>更新月以外の解約の場合は契約解除料19,800円と、お支払いいただいていない基本工事費の残債額を一括で請求いたします。</p>
+                        <p>更新月以外の解約の場合は契約解除料21,780円と、お支払いいただいていない基本工事費の残債額を一括で請求いたします。</p>
                     </dd>
                 </dl>
                 <dl>
@@ -297,7 +297,7 @@
                     <dd>
                         <p class="a">A</p>
                         <p>2年ごとの定期契約で自動更新になっております。<br>
-							更新月以外での解約には19,800円の契約解除料がかかります。</p>
+							更新月以外での解約には21,780円の契約解除料がかかります。</p>
                     </dd>
 				</dl>
                 <dl>
