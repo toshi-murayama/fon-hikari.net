@@ -41,26 +41,70 @@ $(function() {
 <body>
 <?php include "../include/tag_start.html";?>
 <?php setcookie('affiliate', true, time() + 60 * 60 * 24 * 31, '/')?>
-<p id="cursor"></p>
-<div id="stalker"></div>
 
     <?php include "../include/header_lp.html";?>
     <div id="wrap">
         <section id="top">
             <article>
-                <div class="price">実質工事費<span>0</span>円</div>
-                <div class="subtitle">サクサク使える</div>
-                <h1>超高速回線</h1>
-                <div class="summary">下り<span>最大<em>2</em>Gbps</span></div>
+                <h1><img src="img/top.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円"></h1>
+            </article>
+        </section>
+
+        <section id="recommend">
+            <article>
+                <div class="content">
+                    <h2><img src="../img/fon_logo.svg" alt="fon光">とは？</h2>
+                    <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用した超高速の光ファイバーサービスです。<br>
+                    個人宅向け商用FYYHサービスとしては超高速の、下り最大2Gbpsの超高速回線を実現しました。<br>
+                    動画や音楽コンテンツファイルのダウンロード、ストリーミングサービス、ブラウジングもストレスなく快適に。<br>
+                    あなたのインターネットライフをより一層楽しい世界へと導きます。</p>
+                </div>
+            </article>
+            <article>
+                <h3>おすすめその1</h3>
+                <div class="content">
+                    <h4><img src="../img/fon_logo.svg" alt="fon光">は速度に自信あり!</h4>
+                    <p>下り最大2Gbpsの通信速度を実現</p>
+                    <img src="img/recommend_img01.png" alt="">
+                    <p><em>Fon光ならダウンロードの速さも圧倒的!</em></p>
+                </div>
+                <div class="box">
+                    <dl>
+                        <dd><img src="img/recommend_img02.svg" alt="img"></dd>
+                        <dt>複数の端末で共有可能！<br>家中サクサク使える！</dt>
+                    </dl>
+                    <dl>
+                        <dd><img src="img/recommend_img03.svg" alt="img"></dd>
+                        <dt>大容量アップロードも高速に！<br>オンラインゲームも楽しめる！</dt>
+                    </dl>
+                </div>
+            </article>
+            <article>
+                <h3>おすすめその2</h3>
+                <div class="content">
+                    <h4><img src="../img/fon_logo.svg" alt="fon光">は価格に自信あり!</h4>
+                    <h5>完全定額！</h5>
+                    <div class="price">月額<em>4,378</em>円</div>
+                    <div class="sub">工事費も実質無料<sup>※</sup></div>
+                    <p>プロバイダとの契約が不要なので回線使用料も込みで月額4,378円！</p>
+                    <div class="note">
+                        ※工事費44,000円(1,446円✗30ヶ月の分割払い)を、工事費割引1,466円✗30ヶ月が適用されます。<br>明細上で相殺いたしますので、工事費は実質無料となります。
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="summary" class="dot">
+            <article>
                 <div id="fromBox">
                     <h2>まずは無料でエリア確認</h2>
-                    <p>専門スタッフがお電話にて、提供可能かご確認、ご案内致します。</p>
+                    <p>専門スタッフよりお電話にてお答えします。詳しくは<a href="../privacy.php" target="_blank">こちら</a></p>
                     <form action="" id="lp_form1">
-                        <div class="boxL">
+                        <div class="formContent">
                             <ul>
                                 <li>
                                     <dl>
-                                        <dt>お名前</dt>
+                                        <dt>お名前<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
                                         </dd>
@@ -68,7 +112,7 @@ $(function() {
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>フリガナ</dt>
+                                        <dt>フリガナ<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
                                         </dd>
@@ -76,15 +120,7 @@ $(function() {
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>郵便番号</dt>
-                                        <dd>
-                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>電話番号</dt>
+                                        <dt>電話番号<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                         </dd>
@@ -92,7 +128,15 @@ $(function() {
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>都道府県</dt>
+                                        <dt>郵便番号<span>必須</span></dt>
+                                        <dd>
+                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>都道府県<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
                                         </dd>
@@ -100,7 +144,7 @@ $(function() {
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>以降の住所</dt>
+                                        <dt>以降の住所<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
                                         </dd>
@@ -108,11 +152,9 @@ $(function() {
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>建物</dt>
+                                        <dt>建物<span>必須</span></dt>
                                         <dd>
                                             <input type="radio" name="buildingType" value="戸建" id="buildingType_a" checked><label for="buildingType_a">戸建</label>
-                                        </dd>
-                                        <dd>
                                             <input type="radio" name="buildingType" value="集合" id="buildingType_b"><label for="buildingType_b">集合</label>
                                         </dd>
                                     </dl>
@@ -126,69 +168,66 @@ $(function() {
                                     </dl>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="boxR">
-                            <img src="../img/form_pick.png" alt="webからなら24時間受付中！">
-                            <button type="button" id="send_mixdata1">エリアを確認</button>
+                            <button type="button" id="send_mixdata1">エリア<br>確認</button>
                         </div>
                     </form>
                 </div>
             </article>
+            <article id="flow">
+                
+            </article>
         </section>
-
-        <section id="recommend">
+        
+        <section id="question">
             <article>
-                <h2>Fon光の魅力</h2>
-                <ul>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/reccomend_img03.svg" alt=""></dd>
-                            <dt>嬉しい低価格！</dt>
-                            <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/reccomend_img01.svg" alt=""></dd>
-                            <dt>超高速回線！</dt>
-                            <dd>下り最大2Gbpsの超高速回線<br>オンラインゲームも複数人同時利用もサクサク使い放題！</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/reccomend_img02.svg" alt=""></dd>
-                            <dt>多彩なオプション</dt>
-                            <dd>電話やリモートサポートなど<br>お得に安心して長く使える！</dd>
-                        </dl>
-                    </li>
-                </ul>
+                <div class="content">
+                    <h3>こんなことありませんか？</h3>
+                    <img src="img/q_img.png" alt="工事が終わるまでwifiがないのが困る">
+                </div>
+            </article>
+        </section>
+        
+        <section id="campaign">
+            <article>
+                <div class="boxL">
+                    <img src="img/spec_img01.png" alt="">
+                </div>
+                <div class="boxR">
+                    <h2><img src="../img/fon_logo_w.svg" alt="fon光">よりキャンペーン実施中</h2>
+                    <h3>WiFiレンタルプレゼント</h3>
+                    <p>工事日が確定次第のご配送となります。<br>※ご返却料はお客様ご負担となります。</p>
+                    <div class="text">オペレーターを増やして対応中！<br>繋がりやすくなっております。</div>
+                    <a href="tel:0120-966-486">お電話はこちらから</a>
+                </div>
             </article>
         </section>
 
         <section id="plan">
             <article>
                 <h2>料金プラン</h2>
-                <h3>業界最安値！ずーっとお得！</h3>
-                <div class="box">
-                    <dl>
-                        <dd><img src="../img/building.svg" alt=""></dd>
-                        <dt>マンションにお住まいの方</dt>
-                    </dl>
-                    <dl>
-                        <dd><img src="../img/house.svg" alt=""></dd>
-                        <dt>戸建てにお住まいの方</dt>
-                    </dl>
+                <div class="content">
+                    <h3>業界最安値級！ずーっとお得！</h3>
+                    <div class="box">
+                        <dl>
+                            <dd><img src="img/mansion.svg" alt=""></dd>
+                            <dt>マンションにお住まいの方</dt>
+                        </dl>
+                        <dl>
+                            <dd><img src="img/house.svg" alt=""></dd>
+                            <dt>戸建てにお住まいの方</dt>
+                        </dl>
+                    </div>
+                    <div class="price">月額<span>4,378</span>円</div>
+                    <ul>
+                        <li>※税込み価格になります</li>
+                        <li>※工事費は0円になります</li>
+                        <li>※初期費用として事務手数料3,300円が別途発生致します</li>
+                    </ul>
                 </div>
-                <div class="price">月額<span>4,378</span>円</div>
-                <ul>
-                    <li>※税込み価格になります</li>
-                    <li>※工事費は0円になります</li>
-                    <li>※初期費用として事務手数料3,300円が別途発生致します</li>
-                </ul>
             </article>
         </section>
 
-        <section id="estimate">
+        <section id="estimate" class="dot">
             <article>
                 <h2>簡単見積もり</h2>
                 <p>専門スタッフよりお電話にてお答えします</p>
@@ -297,184 +336,36 @@ $(function() {
                 </form>
             </article>
         </section>
-
-        <section id="flow">
-            <article class="pc">
-                <h2>お申し込みの流れ</h2>
-                <ul>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/flow_ico01.svg" alt=""></dd>
-                            <dt>1.お申し込み</dt>
-                            <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
-                        </dl>
-                    </li>
-                    <div class="triangle"></div>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/flow_ico02.svg" alt=""></dd>
-                            <dt>2.工事日確定</dt>
-                            <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
-                        </dl>
-                    </li>
-                    <div class="triangle"></div>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/flow_ico03.svg" alt=""></dd>
-                            <dt>3.工事完了</dt>
-                            <dd>当日、工事作業員にて工事を行います。</dd>
-                        </dl>
-                    </li>
-                    <div class="triangle"></div>
-                    <li>
-                        <dl>
-                            <dd><img src="../img/flow_ico04.svg" alt=""></dd>
-                            <dt>4.利用開始</dt>
-                            <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
-                        </dl>
-                    </li>
-                </ul>
-            </article>
-            <article class="sp">
-                <h2>お申し込みの流れ</h2>
-                <ul>
-                    <li>
-                        <img src="../img/flow_ico01.svg" alt="">
-                        <dl>
-                            <dt>1.お申し込み</dt>
-                            <dd>お手持ちのスマートフォン、電話、パソコンよりお申し込み頂けます。</dd>
-                        </dl>
-                    </li>
-                    <div class="triangle_sp"></div>
-                    <li>
-                        <img src="../img/flow_ico02.svg" alt="">
-                        <dl>
-                            <dt>2.工事日確定</dt>
-                            <dd>お客様のご都合の良い日で工事日を確定させます。</dd>
-                        </dl>
-                    </li>
-                    <div class="triangle_sp"></div>
-                    <li>
-                        <img src="../img/flow_ico03.svg" alt="">
-                        <dl>
-                            <dt>3.工事完了</dt>
-                            <dd>当日、工事作業員にて工事を行います。</dd>
-                        </dl>
-                    </li>
-                    <div class="triangle_sp"></div>
-                    <li>
-                        <img src="../img/flow_ico04.svg" alt="">
-                        <dl>
-                            <dt>4.利用開始</dt>
-                            <dd>モデムの設定のちルーター等について高速回線を体験しましょう。</dd>
-                        </dl>
-                    </li>
-                </ul>
-            </article>
+        
+        <section id="point">
             <article>
-                <a href="tel:0120-966-486">電話で相談<span>▶</span></a>
-                <a href="/area">お申し込み<span>▶</span></a>
+                <h2>Fon光の魅力</h2>
+                <div class="content">
+                    <div class="box">
+                        <dl>
+                            <dd><img src="img/point_img01.svg" alt=""></dd>
+                            <dt>嬉しい低価格！</dt>
+                            <dd>業界最安値級の料金プランで<br>月々のお支払いがお得！</dd>
+                        </dl>
+                        <dl>
+                            <dd><img src="img/point_img02.svg" alt=""></dd>
+                            <dt>超高速回線！</dt>
+                            <dd>下り最大2Gbpsの超高速回線<br>オンラインゲームも複数人<br>同時利用もサクサク使い放題！</dd>
+                        </dl>
+                        <dl>
+                            <dd><img src="img/point_img03.svg" alt=""></dd>
+                            <dt>多彩なオプション</dt>
+                            <dd>電話やリモートサポートなど<br>お得に安心して長く使える！</dd>
+                        </dl>
+                    </div>
+                </div>
             </article>
         </section>
 
         <section id="provide">
             <article>
-                <h2>AREA MAP</h2>
-                <p>エリア順次拡大中！</p>
-                <div class="box">
-                    <div class="boxL">北海道<br>
-    関東（東京、神奈川、埼玉、千葉、茨城、栃木、群馬）<br>
-    東海（愛知、静岡、岐阜、三重）<br>
-    関西（大阪、兵庫、京都、滋賀、奈良）<br>
-    九州（福岡、佐賀）<br>
-    ※一部エリアを除く
-                </div>
-                <div class="boxR">
-                    <img src="../img/map.svg" alt="map">
-                </div>
-                </div>
+                <img src="img/map.png" alt="">
             </article>
-            <div id="fromBox">
-                <h2>まずは無料でエリア確認</h2>
-                <p>専門スタッフがお電話にて、提供可能かご確認、ご案内致します。</p>
-                <form action="" id="lp_form3">
-                    <div class="boxL">
-                        <ul>
-                            <li>
-                                <dl>
-                                    <dt>お名前</dt>
-                                    <dd>
-                                        <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>フリガナ</dt>
-                                    <dd>
-                                        <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>郵便番号</dt>
-                                    <dd>
-                                        <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>電話番号</dt>
-                                    <dd>
-                                        <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>都道府県</dt>
-                                    <dd>
-                                        <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>以降の住所</dt>
-                                    <dd>
-                                        <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>建物</dt>
-                                    <dd>
-                                        <input type="radio" name="buildingType" value="戸建" id="buildingType_e" checked><label for="buildingType_e">戸建</label>
-                                    </dd>
-                                    <dd>
-                                        <input type="radio" name="buildingType" value="集合" id="buildingType_f"><label for="buildingType_f">集合</label>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt>建物名</dt>
-                                    <dd>
-                                        <input type="text" name="buildingName" value="" placeholder="Fonビル1F">
-                                    </dd>
-                                </dl>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="boxR">
-                        <img src="../img/form_pick.png" alt="webからなら24時間受付中！">
-                        <button type="button" id="send_mixdata3">エリアを確認</button>
-                    </div>
-                </form>
-            </div>
         </section>
     </div>
 
