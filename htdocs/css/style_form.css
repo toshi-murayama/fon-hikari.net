@@ -152,7 +152,8 @@ a:active {}
 #area_search .address .select {
 	position: relative;
 }
-#area_search .address select{
+#area_search .address select, 
+#area_search .subsequently select {
 	-webkit-appearance: none;
     -moz-appearance: none;
 	border: 1px solid #666;
@@ -172,13 +173,15 @@ a:active {}
 }
 #area_search .subsequently .form li,
 #application .form li,
-#contact .form li{
+#contact .form li,
+#area_search .address input[type='tel']{
 	padding: 5px 0;
 }
-#area_search .subsequently .result{
+#area_search .subsequently .result, 
+#area_search .address input[type='tel']{
 	width: 100%;
 	border: 1px solid #666;
-	background: #eee;
+	background: #fff;
 	padding: 20px;
 	box-sizing: border-box;
 	border-radius: 5px;
