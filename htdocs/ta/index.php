@@ -168,7 +168,7 @@ $(function() {
                                     </dl>
                                 </li>
                             </ul>
-                            <button type="button" id="send_mixdata1">エリア<br>確認</button>
+                            <button type="button" id="send_mixdata1">エリア確認</button>
                         </div>
                     </form>
                 </div>
@@ -220,9 +220,9 @@ $(function() {
                     </div>
                     <div class="price">月額<span>4,378</span>円</div>
                     <ul>
-                        <li>※税込み価格になります</li>
-                        <li>※工事費は0円になります</li>
-                        <li>※初期費用として事務手数料3,300円が別途発生致します</li>
+                        <li>※税込み価格になります。</li>
+                        <li>※工事費は実質0円となります。詳しくはおすすめその2の注釈をご確認ください。</li>
+                        <li>※初期費用として事務手数料3,300円が別途発生致します。</li>
                     </ul>
                 </div>
             </article>
@@ -231,7 +231,7 @@ $(function() {
         <section id="estimate" class="dot">
             <article>
                 <h2>簡単見積もり</h2>
-                <p>専門スタッフよりお電話にてお答えします</p>
+                <p>すぐに見積もり額を表示します。専門スタッフが詳しい料金などをお電話にてお伝えいたします。詳しくは<a target="_blank" href="/privacy.php">こちら</a>。</p>
                 <div id="formBox2">
                     <form action="" id="lp_form2">
                         <div class="formContent">
@@ -252,6 +252,7 @@ $(function() {
                                         <dd>
                                             <input type="checkbox" name="hikariPhone" value="あり" id="hikariPhone"><label for="hikariPhone">ひかり電話</label>
                                             <input type="checkbox" name="remortSupport" value="あり" id="remortSupport"><label for="remortSupport">リモートサポート</label>
+                                            <br>
                                             <input type="checkbox" name="hikariTVforNURO" value="あり" id="hikariTVforNURO"><label for="hikariTVforNURO">ひかりTV for NURO</label>
                                             <input type="checkbox" name="collectivelyElectricity" value="あり" id="collectivelyElectricity"><label for="collectivelyElectricity">まとめでんき</label>
                                         </dd>
@@ -437,7 +438,7 @@ $(function() {
                                     </dl>
                                 </li>
                             </ul>
-                            <button type="button" id="send_mixdata3">エリア<br>確認</button>
+                            <button type="button" id="send_mixdata3">エリア確認</button>
                         </div>
                     </form>
                 </div>
