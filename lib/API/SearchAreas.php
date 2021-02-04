@@ -1,4 +1,7 @@
 <?php
+
+require_once(__DIR__ . '/../Common.php');
+
 /**
  * SNCの住所検索APIを操作するClass
  *  @link [https://drive.google.com/drive/u/0/folders/15JWWYlRLVecQLGRYOUiUbQFE2IVuCJb6][APIの仕様書]
@@ -7,13 +10,12 @@
 class SearchAreas
 {
     /**
-     * NOTE APIを特定するための識別子.
+     * NOTE: APIを特定するための識別子.
      * APIキー
      */
     private const API_KEY = 'api_key';
     /**
      * 郵便番号キー
-     *
      */
     private const ZIP_KEY = 'zip';
     /**
@@ -22,14 +24,15 @@ class SearchAreas
     private const CATEGORY_KEY = 'category';
     /**
      * 提供エリア判定に必要なカテゴリ（提供プラン）
-     * NOTE 提供プランは、2021/01/22時点で今後増えることがないとのこと. 増えた場合は、パラメータを","で追加する. カテゴリ一覧はAPIの仕様書を確認.
+     * NOTE: 提供プランは、2021/01/22時点で今後増えることがないとのこと. 増えた場合は、パラメータを","で追加する. カテゴリ一覧はAPIの仕様書を確認.
      */
     private const CATEGORY = 'g2home';
     /**
      * 証明書と秘密鍵を配置しているディレクトリ. Prod、Stgで同じディレクトリに配置.
      */
     private const ROOT_DIRECTORY = '/home/ec2-user/api-ssh/snc/';
-    // TODO url、key等はENVファイルとか使って、管理したい... 切り替えのメソッド自体いらない + 変数定義もENVファイルにできるので、可読性が上がる. 時間があるときにやる.
+
+    // TODO: url、key等はENVファイルとか使って、管理したい... 切り替えのメソッド自体いらない + 変数定義もENVファイルにできるので、可読性が上がる. 時間があるときにやる.
     /**
      * 町丁目リスト取得url
      *
@@ -42,6 +45,12 @@ class SearchAreas
      * @var string
      */
     private $serviceAddressUrl = 'https://api.nuro.jp/area/service/address/json';
+    /**
+     * 都道府県リスト取得url
+     *
+     * @var string
+     */
+    private $getPrefListUrl = 'https://api.nuro.jp/area/address/prefecture/json';
     /**
      * CA証明書 
      *
@@ -78,19 +87,18 @@ class SearchAreas
         $response = $this->execute($this->switchingProdOrStgApiUrl($this->getAddressListUrl), $this->createParamByGetAddressList($zip));
         $result = json_decode($response, true);
 
-        // 取得失敗、または、リストが存在しないか判定.
+        // 取得ステータス、リストの存在を判定.
         if (!$this->isSuccess($result['result_code']) || !array_key_exists('addresses', $result)) {
             return null;
         }
         $towns = $this->townExtraction($result['addresses']);
         // ここまで来ると言うことは、addresses配列の０番目があるということなので、チェックしない。
-        // NOTE 都道府県市町村までは同じなので、結合して、返す.
+        // NOTE: 都道府県市町村までは同じなので、結合して、返す.
         $address = $result['addresses'][0]['pref'] . $result['addresses'][0]['city'];
        
         return [
             'address' => $address,
             'towns' => $towns
-            
         ];
     }
     /**
@@ -106,11 +114,42 @@ class SearchAreas
         $response = $this->execute($this->switchingProdOrStgApiUrl($this->serviceAddressUrl), $this->createParamByAreaServiceJudge($zip));
         $result = json_decode($response, true);
         
-        // 取得失敗、または、リストが存在しないか判定.
+        // 取得ステータス、リストの存在を判定.
         if (!$this->isSuccess($result['result_code']) || !array_key_exists('addresses', $result)) {
             return false;
         }
         return $this->serviceJudge($result['addresses'], $town, $homeType);
+    }
+    /**
+     * 都道府県リスト取得
+     *
+     * @return array|null
+     */
+    public function getPrefList()
+    {
+        $response = $this->execute($this->switchingProdOrStgApiUrl($this->getPrefListUrl),'');
+        $result = json_decode($response, true);
+        // 取得ステータス判定.
+        if (!$this->isSuccess($result['result_code'])) {
+            return null;
+        }
+        return $this->prefExtraction($result['addresses']);
+    }
+    /**
+     * APIの値から、都道府県だけ抽出
+     *
+     * @param array $addresses 住所リスト.
+     * @return array
+     */
+    private function prefExtraction(array $addresses): array
+    {
+        $prefs = [];
+        foreach($addresses as $arrayKey => $arrayVal) {
+            foreach($arrayVal as $addressKey => $addressVal) {
+                    $prefs[] = $addressVal;
+            }
+        }
+        return $prefs;
     }
     /**
      * 住所から、町名を抽出.
@@ -120,11 +159,11 @@ class SearchAreas
      */
     private function townExtraction(array $addresses): array
     {
-        $towns = array();
+        $towns = [];
         foreach($addresses as $arrayKey => $arrayVal) {
             foreach($arrayVal as $addressKey => $addressVal) {
                 if ($addressKey === 'town') {
-                    array_push($towns, $addressVal);
+                    $towns[] = $addressVal;
                 }
             }
         }
@@ -132,7 +171,7 @@ class SearchAreas
     }
     /**
      * サービス提供判定
-     * TODO 今は提供中か未提供かのみ判定. 今後は予告などのステータスを追加していく予定.
+     * TODO: 今は提供中か未提供かのみ判定. 今後は予告などのステータスを追加していく予定.
      *      カテゴリがg2homeのみなので、提供判定結果に問わずfalseにする.
      *      APIを使用すれば判定ロジックは作れるが、複雑になる + 今後提供カテゴリが増える予定がないので、この実装にしている.
      *
@@ -160,7 +199,7 @@ class SearchAreas
         foreach($addresses as $arrayKey => $arrayVal) {
             foreach($arrayVal as $addressKey => $addressVal) {
                 if ($addressKey === 'town' && $addressVal === $town) {
-                    // HACK json_decodeで余計な配列が入ってしまう. 他にいい方法があれば修正したい.
+                    // HACK: json_decodeで余計な配列が入ってしまう. 他にいい方法があれば修正したい.
                     return $arrayVal['services'][0]['details'][0]['state'];
                 }
             }

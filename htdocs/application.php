@@ -1,5 +1,5 @@
 <?php
-    require_once('../lib/Param/pref.php');
+	require_once('../lib/Param/Pref.php');
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
@@ -187,7 +187,7 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="installationPref" id="prefectures" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-                            <?php foreach($prefs as $pref) { ?>
+                            <?php foreach(Pref::PREFS as $pref) { ?>
                                 <option value=<?php print $pref?>><?php print $pref?></option>                                       
                             <?php } ?>
                         </select>
@@ -314,7 +314,7 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="mailingPrefName" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-                            <?php foreach($prefs as $pref) { ?>
+                            <?php foreach(Pref::PREFS as $pref) { ?>
                                 <option value=<?php print $pref?>><?php print $pref?></option>                                       
                             <?php } ?>
                         </select>

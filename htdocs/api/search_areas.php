@@ -2,7 +2,7 @@
 /**
  * 住所リスト検索API
  */
-require_once '../../lib/Common.php';
+
 require_once '../../lib/API/SearchAreas.php';
 
 // 適度にキャッシュさせる

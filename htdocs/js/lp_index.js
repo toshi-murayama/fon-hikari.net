@@ -1,3 +1,5 @@
+// TODO: 全体的にリファクタリングが必要だけど、今はしない
+
 // ページ読込完了後にボタンにclickイベントを登録する
 window.addEventListener("load", function(){
     // バリデーション(jquery.validationEngine.js)セット
@@ -20,7 +22,7 @@ window.addEventListener("load", function(){
         var XHR = new XMLHttpRequest();
 
         // openメソッドにPOSTを指定して送信先のURLを指定します
-        XHR.open("POST", "lp_relay.php", true);
+        XHR.open("POST", "../api/lp_search_and_easy_estimate", true);
 
         // sendメソッドにデータを渡して送信を実行する
         XHR.send(mixedDatas);
@@ -48,7 +50,7 @@ window.addEventListener("load", function(){
         var mixedDatas = new FormData(formDatas);
         var XHR = new XMLHttpRequest();
 
-        XHR.open("POST", "lp_relay.php", true);
+        XHR.open("POST", "../api/lp_search_and_easy_estimate", true);
         XHR.send(mixedDatas);
         XHR.onreadystatechange = function(){
             if(XHR.readyState == 4 && XHR.status == 200){
@@ -69,7 +71,7 @@ window.addEventListener("load", function(){
         var mixedDatas = new FormData(formDatas);
         var XHR = new XMLHttpRequest();
 
-        XHR.open("POST", "lp_relay.php", true);
+        XHR.open("POST", "../api/lp_search_and_easy_estimate", true);
         XHR.send(mixedDatas);
         XHR.onreadystatechange = function(){
             if(XHR.readyState == 4 && XHR.status == 200){
@@ -85,5 +87,6 @@ window.addEventListener("load", function(){
 $(function() {
     $('#closeModal , #modalBg').click(function() {
         $('#modalArea').fadeOut();
+
     });
 });
