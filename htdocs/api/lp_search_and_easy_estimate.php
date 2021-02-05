@@ -2,36 +2,30 @@
 /**
  * lp_logic.php的なファイルを作成して、処理をまとめるべき.
  * $modal_text = はHTMLにModalを作成したほうがわかりやすいと思うが、一旦はこのまま.
- * validationがない
  */ 
 require_once '../../lib/HatarakuDb.php';
 require_once '../../lib/Param/HatarakuDbInsert.php';
 require_once '../../lib/Param/Pref.php';
 require_once '../../lib/Cost.php';
+require_once '../../lib/Common.php';
 require_once '../../lib/API/SearchAreas.php';
 
 $data = $_POST;
-$installationPref = $data['installationPref'];
 
-// 都道府県の例外処理 
-/**
- * TODO:よくない書き方だと思うので、後に仕組みを修正した方がいい
- *      入力側でテキストではなく、セレクトにするなどの処理をするべき
- *      テキストで入力しているなら、各都道府県と一致するか判定しないと、判定が足りない.
- */
-if($installationPref == "東京" && strpos($installationPref,'都') === false){
-    $installationPref += "都";
-} else if($installationPref == "大阪" && strpos($installationPref,'府') === false){
-    $installationPref += "府";
-} else if($installationPref == "京都" && strpos($installationPref,'府') === false){
-    $installationPref += "府";
-} else if(strpos($installationPref,'県') === false){
-    $installationPref += "県";
+if(!validation($data)) {
+    echo '
+    <p class="modalBox">
+    入力情報に不備がありました。<br>
+    <br>
+    お手数おかけしますが、再度ご入力ください。<br>
+    </p>';
+    return;
 }
 
 // Fon光提供エリア判定
 $searchAreas = new SearchAreas();
-$provitedFlag = in_array($installationPref, $searchAreas->getPrefList());
+$pref = $data['installationPref'];
+$provitedFlag = in_array($pref, $searchAreas->getPrefList());
 
 $modal_text = '';
 $areaType = '';
@@ -61,12 +55,13 @@ if (!$provitedFlag && !$easyEstimateFlag) {
 } else if(!$provitedFlag && $easyEstimateFlag) {
     // かんたん見積り（提供外エリア）
     $areaType = $areaTypes['notProvited'];
+    $data = resetOptions($data);
     $modal_text = showSearchAreaModalByNotProvide('簡単見積りのご依頼ありがとうございます。');
 } else if($provitedFlag && $easyEstimateFlag) {
     // かんたん見積り（提供中エリア）
     $areaType = $areaTypes['provited'];
     // 価格、モーダルに出力する文字列を設定
-    $results = getEstimatesAndModalList($optionFlags, $installationPref);
+    $results = getEstimatesAndModalList($optionFlags, $pref);
     $estimatedAmount += $results['estimates'];
     // モーダルに出力するリストを生成
     foreach($results['items'] as $value) { 
@@ -82,11 +77,9 @@ echo $modal_text;
 //-----------------------------------------------------------
 use Param\HatarakuDbInsert;
 
-$data['areaType'] = $areaType;
-$data['estimatedAmount'] = $estimatedAmount;
-$importData = HatarakuDbInsert::createDataByLp($data);
+$importData = HatarakuDbInsert::createDataByLp($data, $areaType, $estimatedAmount);
 
-$recordRegistRequestBody[] = HatarakuDbInsert::getLpApiParameter(HatarakuDbInsert::createDataByLp($importData));
+$recordRegistRequestBody[] = HatarakuDbInsert::getLpApiParameter($importData);
 // API送信実行
 $hatarakuDb = new HatarakuDb();
 $result = $hatarakuDb->sendRequest(
@@ -113,13 +106,15 @@ if ($easyEstimateFlag) {
 } else {
     $title .= 'エリア判定';
 }
-
 $content = createApplicationUserMailContent($estimatedAmount, $provitedFlag, $easyEstimateFlag, $data);
-// $to = 'support@fon-hikari.net,scramask@gmail.com,s_kagaya@1onepiece.jp';
-$to = 'onepiecetakaie@gmail.com';
-// $headers ='Bcc: onepiecedeguchi@gmail.com' . "\r\n";
 $headers = '';
-// $headers .='Bcc: onepiecetakaie@gmail.com' . "\r\n";
+if(isProd()) {
+    $to = 'support@fon-hikari.net,scramask@gmail.com,s_kagaya@1onepiece.jp';
+    $headers = 'Bcc:onepiecedeguchi@gmail.com' . "\r\n";
+} else {
+    // NOTE: STGで試験する場合は、自分のmailを設定する.
+    $to = 'onepiecetakaie@gmail.com, onepiecetomisaki@gmail.com';
+}
 $headers ='From: support@fon-hikari.net' . "\r\n";
 mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 
@@ -186,7 +181,7 @@ function sendHatarakuDBErrorMail(string $result){
     mb_internal_encoding("UTF-8");
 
     $error_subject =  "Fon光管理者通知メール【重要】Fon光LPリストの働くDBインポート登録に失敗しました。";
-    $to = mb_convert_encoding("onepiecetakaie@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
+    $to = mb_convert_encoding("support@fon-hikari.net,scramask@gmail.com,onepiecetakaie@gmail.com, onepiecedeguchi@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $org = mb_convert_encoding("フォン・ジャパン株式会社", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
@@ -273,6 +268,33 @@ function showEasyEstimateModalByProvide(string $modalItem, int $estimatedAmount)
     ';
 }
 /**
+ * フォームのvalidation
+ * とりあえず、入力されているかだけ...
+ *
+ * @param array $data
+ * @return bool
+ */
+function validation(array $data): bool
+{
+    if (is_null($data)) return false;
+    // お名前
+    if (is_null($data['name'])) return false;
+    // フリガナ
+    if (is_null($data['nameKana'])) return false;
+    // 電話番号
+    if (is_null($data['phoneNumber'])) return false;
+    // 郵便番号
+    if (is_null($data['postalCode'])) return false;
+    // 都道府県
+    if (is_null($data['installationPref'])) return false;
+    // 以降の住所
+    if (is_null($data['address'])) return false;
+    // 建物
+    if (is_null($data['buildingType'])) return false;
+
+    return true;
+}
+/**
  * オプション設定.
  *
  * @param array $optionFlags
@@ -317,5 +339,22 @@ function getEstimatesAndModalList(array $optionFlags, string $pref): array
         'estimates' => $estimates,
         'items' => $items,
     ];
+}
+/**
+ * オプション項目をリセット.
+ * Objectを作ったらやり方を変える
+ *
+ * @param array $data
+ * @return void
+ */
+function resetOptions(array $data): array
+{
+    $data['fonHikariLine'] = null;
+    $data['hikariPhone'] = null;
+    $data['remortSupport'] = null;
+    $data['hikariTVforNURO'] = null;
+    $data['collectivelyElectricity'] = null;
+    $data['estimatedAmount'] = 0;
+    return $data;
 }
 ?>

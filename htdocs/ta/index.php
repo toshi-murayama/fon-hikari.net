@@ -1,3 +1,6 @@
+<?php
+	require_once('../../lib/Param/Pref.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,7 +126,7 @@ $(function() {
                                     <dl>
                                         <dt>電話番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
+                                            <input type="tel" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -131,7 +134,7 @@ $(function() {
                                     <dl>
                                         <dt>郵便番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -139,7 +142,16 @@ $(function() {
                                     <dl>
                                         <dt>都道府県<span>必須</span></dt>
                                         <dd>
-                                            <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
+                                            <select name="installationPref" id="prefectures" class="validate[required]">
+                                                <option value="" selected>都道府県を選択</option>
+                                            
+                                            <?php foreach(Pref::PREFS as $pref) { ?>
+                                                
+                                                <option value=<?php print $pref?>><?php print $pref?></option>
+
+                                            <?php } ?>
+
+                                            </select>
                                         </dd>
                                     </dl>
                                 </li>
@@ -279,17 +291,17 @@ $(function() {
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>郵便番号</dt>
+                                        <dt>電話番号</dt>
                                         <dd>
-                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                         </dd>
                                     </dl>
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>電話番号</dt>
+                                        <dt>郵便番号</dt>
                                         <dd>
-                                            <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -297,7 +309,16 @@ $(function() {
                                     <dl>
                                         <dt>都道府県</dt>
                                         <dd>
-                                            <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
+                                            <select name="installationPref" id="prefectures" class="validate[required]">
+                                                <option value="" selected>都道府県を選択</option>
+                                            
+                                            <?php foreach(Pref::PREFS as $pref) { ?>
+                                                
+                                                <option value=<?php print $pref?>><?php print $pref?></option>
+
+                                            <?php } ?>
+
+                                            </select>
                                         </dd>
                                     </dl>
                                 </li>
@@ -393,7 +414,7 @@ $(function() {
                                     <dl>
                                         <dt>電話番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="text" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
+                                            <input type="tel" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                         </dd>
                                     </dl>
                                 </li>
@@ -401,7 +422,7 @@ $(function() {
                                     <dl>
                                         <dt>郵便番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="text" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -409,7 +430,16 @@ $(function() {
                                     <dl>
                                         <dt>都道府県<span>必須</span></dt>
                                         <dd>
-                                            <input type="text" name="installationPref" value="" placeholder="◯◯県" class="validate[required]">
+                                            <select name="installationPref" id="prefectures" class="validate[required]">
+                                                <option value="" selected>都道府県を選択</option>
+                                            
+                                            <?php foreach(Pref::PREFS as $pref) { ?>
+                                                
+                                                <option value=<?php print $pref?>><?php print $pref?></option>
+
+                                            <?php } ?>
+
+                                            </select>
                                         </dd>
                                     </dl>
                                 </li>

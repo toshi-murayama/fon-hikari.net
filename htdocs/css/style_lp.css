@@ -448,10 +448,20 @@ footer {
             margin-left: 10px; }
         #summary article #fromBox .formContent ul li dl dd, #footerForm article #fromBox .formContent ul li dl dd {
           width: 70%; }
-          #summary article #fromBox .formContent ul li dl dd input[type='text'], #footerForm article #fromBox .formContent ul li dl dd input[type='text'] {
+          #summary article #fromBox .formContent ul li dl dd input[type='text'],
+          #footerForm article #fromBox .formContent ul li dl dd input[type='text'],
+          #summary article #fromBox .formContent ul li dl dd input[type='tel'],
+          #footerForm article #fromBox .formContent ul li dl dd input[type='tel'],
+          #summary article #fromBox .formContent ul li dl dd select,
+          #footerForm article #fromBox .formContent ul li dl dd select {
             width: 100%;
             padding: 5px; }
-          #summary article #fromBox .formContent ul li dl dd input[type='text'], #footerForm article #fromBox .formContent ul li dl dd input[type='text'] {
+          #summary article #fromBox .formContent ul li dl dd input[type='text'],
+          #footerForm article #fromBox .formContent ul li dl dd input[type='text'],
+          #summary article #fromBox .formContent ul li dl dd input[type='tel'],
+          #footerForm article #fromBox .formContent ul li dl dd input[type='tel'],
+          #summary article #fromBox .formContent ul li dl dd select,
+          #footerForm article #fromBox .formContent ul li dl dd select {
             width: 100%;
             padding: 5px; }
     #summary article #fromBox .formContent button, #footerForm article #fromBox .formContent button {
@@ -705,10 +715,14 @@ footer {
             margin-left: 10px; }
         #estimate article .formContent ul li dl dd {
           width: 70%; }
-          #estimate article .formContent ul li dl dd input[type='text'] {
+          #estimate article .formContent ul li dl dd input[type='text'],
+          #estimate article .formContent ul li dl dd input[type='tel'],
+          #estimate article .formContent ul li dl dd select {
             width: 100%;
             padding: 5px; }
-          #estimate article .formContent ul li dl dd input[type='text'] {
+          #estimate article .formContent ul li dl dd input[type='text'],
+          #estimate article .formContent ul li dl dd input[type='tel'],
+          #estimate article .formContent ul li dl dd select {
             width: 100%;
             padding: 5px; }
     #estimate article .formContent button {
@@ -1290,10 +1304,20 @@ footer {
               margin-left: 10px; }
           #summary article #fromBox .formContent ul li dl dd, #footerForm article #fromBox .formContent ul li dl dd {
             width: 95%; }
-            #summary article #fromBox .formContent ul li dl dd input[type='text'], #footerForm article #fromBox .formContent ul li dl dd input[type='text'] {
+            #summary article #fromBox .formContent ul li dl dd input[type='text'], 
+            #footerForm article #fromBox .formContent ul li dl dd input[type='text'],
+            #summary article #fromBox .formContent ul li dl dd input[type='tel'],
+            #footerForm article #fromBox .formContent ul li dl dd input[type='tel'],
+            #summary article #fromBox .formContent ul li dl dd select,
+            #footerForm article #fromBox .formContent ul li dl dd select {
               width: 100%;
               padding: 5px; }
-            #summary article #fromBox .formContent ul li dl dd input[type='text'], #footerForm article #fromBox .formContent ul li dl dd input[type='text'] {
+            #summary article #fromBox .formContent ul li dl dd input[type='text'], 
+            #footerForm article #fromBox .formContent ul li dl dd input[type='text'],
+            #summary article #fromBox .formContent ul li dl dd input[type='tel'],
+            #footerForm article #fromBox .formContent ul li dl dd input[type='tel'],
+            #summary article #fromBox .formContent ul li dl dd select,
+            #footerForm article #fromBox .formContent ul li dl dd select {
               width: 100%;
               padding: 5px; }
       #summary article #fromBox .formContent button, #footerForm article #fromBox .formContent button {
@@ -1548,10 +1572,14 @@ footer {
               margin-left: 10px; }
           #estimate article .formContent ul li dl dd {
             width: 95%; }
-            #estimate article .formContent ul li dl dd input[type='text'] {
+            #estimate article .formContent ul li dl dd input[type='text'],
+            #estimate article .formContent ul li dl dd input[type='tel'],
+            #estimate article .formContent ul li dl dd select {
               width: 100%;
               padding: 5px; }
-            #estimate article .formContent ul li dl dd input[type='text'] {
+            #estimate article .formContent ul li dl dd input[type='text'],
+            #estimate article .formContent ul li dl dd input[type='tel'],
+            #estimate article .formContent ul li dl dd select {
               width: 100%;
               padding: 5px; }
       #estimate article .formContent button {
