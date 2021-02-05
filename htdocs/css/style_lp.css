@@ -390,7 +390,8 @@ footer {
         padding: 30px;
         max-width: 500px;
         margin: 15px auto 0;
-        border-radius: 5px; }
+        border-radius: 5px;
+        font-size: 12px; }
 
 /*-----summary-----*/
 .dot {
@@ -654,7 +655,10 @@ footer {
       background: #fff;
       color: #333;
       text-align: left;
-      padding: 30px; }
+      padding: 30px;
+      border-radius: 5px; }
+      #plan article .content ul li {
+        font-size: 12px; }
 
 /*-----estimate-----*/
 #estimate article {
@@ -1111,6 +1115,9 @@ footer {
         width: 30px;
         position: relative;
         z-index: 1; }
+      #recommend article:nth-child(1) p {
+        font-size: 12px;
+        font-weight: 400; }
     #recommend article:nth-child(2) {
       max-width: 780px;
       border: #fbd349 4px solid;
@@ -1477,14 +1484,15 @@ footer {
             -ms-flex-align: end;
                 align-items: flex-end; }
         #plan article .content .box dl {
-          width: 45%; }
+          width: 49%; }
           #plan article .content .box dl dt {
-            font-size: 10px;
+            font-size: 8px;
             background: #fff;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 8px;
             font-weight: 600;
-            padding: 5px; }
+            padding: 5px 0;
+            white-space: nowrap; }
           #plan article .content .box dl dd img {
             height: 100px; }
       #plan article .content .price {

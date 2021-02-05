@@ -448,6 +448,7 @@ footer {
                 max-width: 500px;
                 margin: 15px auto 0;
                 border-radius: 5px;
+                font-size: 12px;
             }
         }
     }
@@ -753,13 +754,15 @@ footer {
                 color: #333;
                 text-align: left;
                 padding: 30px;
+                border-radius: 5px;
                 li{
-                    
+                    font-size: 12px;
                 }
             }
         }
     }
 }
+
 
 
 
@@ -1306,6 +1309,10 @@ footer {
                 position: relative;
                 z-index: 1;
             }
+            p{
+                font-size: 12px;
+                font-weight: 400;
+            }
         }
         article:nth-child(2){
             max-width: 780px;
@@ -1736,14 +1743,15 @@ footer {
                     justify-content: space-between;
                     align-items: flex-end;
                     dl{
-                        width: 45%;
+                        width: 49%;
                         dt{
-                            font-size: 10px;
+                            font-size: 8px;
                             background: #fff;
                             border-radius: 5px;
-                            margin-top: 10px;
+                            margin-top: 8px;
                             font-weight: 600;
-                            padding: 5px;
+                            padding: 5px 0;
+                            white-space: nowrap;
                         }
                         dd{
                             img{
