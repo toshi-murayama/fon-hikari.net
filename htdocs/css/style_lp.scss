@@ -131,6 +131,9 @@ header{
     background: #333;
     padding: 10px 0;
 }
+.hamburger{
+    visibility: hidden;
+}
 
 .fix-header {
 	background-color:#333;
@@ -1132,6 +1135,23 @@ footer {
                 }
             }
         }
+    }
+
+    .hamburger{
+        visibility: visible;
+        position: fixed !important;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        .hamburger__icon, .hamburger__icon:before, .hamburger__icon:after{
+            background-color: #fff;
+        }
+    }
+
+    .nav{
+        display: block;
+        position: fixed;
+        z-index: 9999;
     }
 
     .fix-header {
