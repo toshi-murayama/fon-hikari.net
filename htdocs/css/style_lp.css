@@ -115,6 +115,9 @@ header {
   background: #333;
   padding: 10px 0; }
 
+.hamburger {
+  visibility: hidden; }
+
 .fix-header {
   background-color: #333;
   line-height: 66px;
@@ -955,6 +958,20 @@ footer {
             padding: 5px 15px; }
         header article .boxR ul li:last-child {
           margin-right: 0; }
+
+  .hamburger {
+    visibility: visible;
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    z-index: 9999; }
+    .hamburger .hamburger__icon, .hamburger .hamburger__icon:before, .hamburger .hamburger__icon:after {
+      background-color: #fff; }
+
+  .nav {
+    display: block;
+    position: fixed;
+    z-index: 9999; }
 
   .fix-header {
     background-color: #333;
