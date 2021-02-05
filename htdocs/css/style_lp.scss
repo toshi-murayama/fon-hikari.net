@@ -245,10 +245,13 @@ footer {
 
 
 
+
 /*-----top-----*/
 #top{
     background: #fbd349;
     color: #fff;
+    position: relative;
+    width: 100%;
     article{
         width: 90%;
         max-width: 1486px;
@@ -256,6 +259,95 @@ footer {
         margin: 0 auto;
         text-align: center;
         padding-top: 10vh;
+        position: relative;
+        a{
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            background: #50ab4c;
+            padding: 15px;
+            border-radius: 5px;
+            width: 200px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            font-size: 18px;
+        }
+    }
+    .scroll{
+        position: absolute;
+        color: #fff;
+        bottom: 90px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 9;
+    }
+    .scroll:after{
+        position: absolute;
+        right: 0;
+        left: 0;
+        animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+        background: #fff;
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 2px;
+        height: 80px;
+        z-index: 9;
+    }
+    @keyframes elasticus{
+        0% {
+            -webkit-transform-origin: 0% 0%;
+            -moz-transform-origin: 0% 0%;
+            -o-transform-origin: 0% 0%;
+            -ms-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+            -webkit-transform: scale(1, 0);
+            -moz-transform: scale(1, 0);
+            -o-transform: scale(1, 0);
+            -ms-transform: scale(1, 0);
+            transform: scale(1, 0);
+        }
+        50% {
+            -webkit-transform-origin: 0% 0%;
+            -moz-transform-origin: 0% 0%;
+            -o-transform-origin: 0% 0%;
+            -ms-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+            -webkit-transform: scale(1, 1);
+            -moz-transform: scale(1, 1);
+            -o-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
+        }
+        50.1% {
+            -webkit-transform-origin: 0% 100%;
+            -moz-transform-origin: 0% 100%;
+            -o-transform-origin: 0% 100%;
+            -ms-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+            -webkit-transform: scale(1, 1);
+            -moz-transform: scale(1, 1);
+            -o-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
+        }
+        100% {
+            -webkit-transform-origin: 0% 100%;
+            -moz-transform-origin: 0% 100%;
+            -o-transform-origin: 0% 100%;
+            -ms-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+            -webkit-transform: scale(1, 0);
+            -moz-transform: scale(1, 0);
+            -o-transform: scale(1, 0);
+            -ms-transform: scale(1, 0);
+            transform: scale(1, 0);
+        }
     }
 }
 
@@ -274,7 +366,7 @@ footer {
             text-align: center;
             font-size: 30px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin: 15px 0;
             img{
                 height: 40px;
                 vertical-align: baseline;
@@ -1257,6 +1349,13 @@ footer {
             margin: 0 auto;
             text-align: center;
             padding-top: 7vh;
+            padding-bottom: 50px;
+            .scroll{
+                bottom: 55px;
+            }
+            .scroll:after{
+                height: 40px;
+            }
         }
     }
 
