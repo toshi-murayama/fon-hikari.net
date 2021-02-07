@@ -219,15 +219,95 @@ footer {
 /*-----top-----*/
 #top {
   background: #fbd349;
-  color: #fff; }
+  color: #fff;
+  position: relative;
+  width: 100%; }
   #top article {
     width: 90%;
     max-width: 1486px;
     height: 100%;
     margin: 0 auto;
     text-align: center;
-    padding-top: 10vh; }
-
+    padding-top: 10vh;
+    position: relative; }
+    #top article a {
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      background: #50ab4c;
+      padding: 15px;
+      border-radius: 5px;
+      width: 200px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      font-size: 18px; }
+  #top .scroll {
+    position: absolute;
+    color: #fff;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9; }
+  #top .scroll:after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    -webkit-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+            animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+    background: #fff;
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 2px;
+    height: 80px;
+    z-index: 9; }
+@-webkit-keyframes elasticus {
+  0% {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); }
+  50% {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50.1% {
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); } }
+@keyframes elasticus {
+  0% {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); }
+  50% {
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  50.1% {
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0); } }
 /*-----recommend-----*/
 #recommend {
   padding: 50px 0; }
@@ -243,7 +323,7 @@ footer {
       text-align: center;
       font-size: 30px;
       font-weight: 600;
-      margin-bottom: 15px; }
+      margin: 15px 0; }
       #recommend article h2 img {
         height: 40px;
         vertical-align: baseline; }
@@ -390,7 +470,8 @@ footer {
         padding: 30px;
         max-width: 500px;
         margin: 15px auto 0;
-        border-radius: 5px; }
+        border-radius: 5px;
+        font-size: 12px; }
 
 /*-----summary-----*/
 .dot {
@@ -664,7 +745,10 @@ footer {
       background: #fff;
       color: #333;
       text-align: left;
-      padding: 30px; }
+      padding: 30px;
+      border-radius: 5px; }
+      #plan article .content ul li {
+        font-size: 12px; }
 
 /*-----estimate-----*/
 #estimate article {
@@ -1073,7 +1157,12 @@ footer {
       height: 100%;
       margin: 0 auto;
       text-align: center;
-      padding-top: 7vh; }
+      padding-top: 7vh;
+      padding-bottom: 50px; }
+      #top article .scroll {
+        bottom: 55px; }
+      #top article .scroll:after {
+        height: 40px; }
 
   /*-----recommend-----*/
   #recommend {
@@ -1125,6 +1214,9 @@ footer {
         width: 30px;
         position: relative;
         z-index: 1; }
+      #recommend article:nth-child(1) p {
+        font-size: 12px;
+        font-weight: 400; }
     #recommend article:nth-child(2) {
       max-width: 780px;
       border: #fbd349 4px solid;
@@ -1501,14 +1593,15 @@ footer {
             -ms-flex-align: end;
                 align-items: flex-end; }
         #plan article .content .box dl {
-          width: 45%; }
+          width: 49%; }
           #plan article .content .box dl dt {
-            font-size: 10px;
+            font-size: 8px;
             background: #fff;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 8px;
             font-weight: 600;
-            padding: 5px; }
+            padding: 5px 0;
+            white-space: nowrap; }
           #plan article .content .box dl dd img {
             height: 100px; }
       #plan article .content .price {

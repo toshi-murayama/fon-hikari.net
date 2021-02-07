@@ -51,6 +51,8 @@ $(function() {
             <article>
                 <h1><img src="img/top.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円" class="pc">
                 <img src="img/top_sp.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円" class="sp"></h1>
+                <div class="scroll"></div>
+                <a href="/area.php">今すぐエリア確認</a>
             </article>
         </section>
 
