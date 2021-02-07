@@ -11,7 +11,7 @@ header('Cache-Control: private, max-age=' . $expires);
 header('Content-Type: application/json; charset=utf-8');
 
 $searchArea = new SearchAreas();
-$zipAddress = (int)$_POST['zipAddress'];
+$zipAddress = $_POST['zipAddress'];
 $homeType = (int)$_POST['homeType'];
 $town = $_POST['town'];
 $result = $searchArea->areaServiceJudge($zipAddress, $town, $homeType);

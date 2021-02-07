@@ -79,10 +79,10 @@ class SearchAreas
     /**
      * 都道府県 + 市区郡町村と町丁目リスト取得. 成功以外または検索結果なしはnullを返す.
      *
-     * @param int $zip 郵便番号
+     * @param string $zip 郵便番号
      * @return array|null
      */
-    public function getAddressList(int $zip) 
+    public function getAddressList(string $zip) 
     {
         $response = $this->execute($this->switchingProdOrStgApiUrl($this->getAddressListUrl), $this->createParamByGetAddressList($zip));
         $result = json_decode($response, true);
@@ -104,12 +104,12 @@ class SearchAreas
     /**
      * サービスエリア提供判定
      *
-     * @param int $zip 郵便番号
+     * @param string $zip 郵便番号
      * @param string $town 町丁目
      * @param int $homeType 1 = 一軒家, 2 = マンション（3F以下）, 3 = マンション（4F以上）.
      * @return bool
      */
-    public function areaServiceJudge(int $zip, string $town, int $homeType): bool
+    public function areaServiceJudge(string $zip, string $town, int $homeType): bool
     {
         $response = $this->execute($this->switchingProdOrStgApiUrl($this->serviceAddressUrl), $this->createParamByAreaServiceJudge($zip));
         $result = json_decode($response, true);
@@ -160,12 +160,9 @@ class SearchAreas
     private function townExtraction(array $addresses): array
     {
         $towns = [];
-        foreach($addresses as $arrayKey => $arrayVal) {
-            foreach($arrayVal as $addressKey => $addressVal) {
-                if ($addressKey === 'town') {
-                    $towns[] = $addressVal;
-                }
-            }
+        foreach($addresses as $address) {
+            if (!isset($address['town'])) continue;
+            $towns[] = $address['town'];
         }
         return $towns;
     }
@@ -196,13 +193,10 @@ class SearchAreas
      */
     private function getServiceState(array $addresses, string $town)
     {
-        foreach($addresses as $arrayKey => $arrayVal) {
-            foreach($arrayVal as $addressKey => $addressVal) {
-                if ($addressKey === 'town' && $addressVal === $town) {
-                    // HACK: json_decodeで余計な配列が入ってしまう. 他にいい方法があれば修正したい.
-                    return $arrayVal['services'][0]['details'][0]['state'];
-                }
-            }
+        foreach($addresses as $address) {
+            if (!isset($address['town']) && $address['town'] !== $town) continue;
+            // HACK: json_decodeで余計な配列が入ってしまう. 他にいい方法があれば修正したい.
+            return $address['services'][0]['details'][0]['state'];
         }
         // 基本的には通らない想定. 念の為.
         return null;
@@ -210,12 +204,17 @@ class SearchAreas
     /**
      * 住所取得APIパラメータ生成. APIキー + 郵便番号.
      *
-     * @param int $zip 郵便番号
+     * @param string $zip 郵便番号
      * @return string
      */
-    private function createParamByGetAddressList(int $zip): string
+    private function createParamByGetAddressList(string $zip): string
     {
-        return self::API_KEY . '=' .  $this->createApiKeyParam() . '&' . self::ZIP_KEY . '=' . strval($zip);
+
+
+        return http_build_query([
+            self::API_KEY => $this->createApiKeyParam(),
+            self::ZIP_KEY => $zip
+        ]);
     }
     /**
      * サービス提供判定APIパラメータ生成. APIキー + 郵便番号 + カテゴリ識別子.
@@ -223,9 +222,13 @@ class SearchAreas
      * @param integer $zip 郵便番号
      * @return string
      */
-    private function createParamByAreaServiceJudge(int $zip): string
+    private function createParamByAreaServiceJudge(string $zip): string
     {
-        return self::API_KEY . '=' .  $this->createApiKeyParam() . '&' . self::ZIP_KEY . '=' . strval($zip). '&' . self::CATEGORY_KEY. '=' . self::CATEGORY;
+        return http_build_query([
+            self::API_KEY => $this->createApiKeyParam(),
+            self::ZIP_KEY => $zip,
+            self::CATEGORY_KEY => self::CATEGORY
+        ]);
     }
     /**
      * APIキーのパラメータを生成. fon-prod_ or fon-stg_ + マイクロ秒で、生成.

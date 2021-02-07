@@ -103,7 +103,7 @@ $(function(){
 				<dl>
 					<dt><img src="img/img_area.svg" alt=""/></dt>
 					<dd>
-						<input id="address-search" type="tel" oninput="value = value.replace(/[^0-9]+/i,'');" minlength="7" maxlength="7">
+						<input id="address-search" name="zipAddress" type="tel" oninput="value = value.replace(/[^0-9]+/i,'');" minlength="7" maxlength="7">
 						<p class='alert' id='address-search-error-message' style='display:none;'>郵便番号を入力してください。</p>
 					</dd>
 				</dl>
@@ -113,7 +113,7 @@ $(function(){
 					<li>住所</li>
 					<li>
 						<div class="select">
-							<select id="address-search-result" class="result">
+							<select id="address-search-result" name="town" class="result">
 								<option value='0'>選択してください</option>
 							</select>
 						</div>
@@ -263,6 +263,7 @@ $(function(){
 		if (showAddressErrorMessage(zipAddress.length !== 7, '郵便番号は7桁でご入力ください')) {
 			return;
 		}
+		console.log(zipAddress);
 		$.ajax({
 			cache: true,
 			delay: 100,
@@ -303,6 +304,7 @@ $(function(){
 			},
 		})
 		.done(function(data) {
+			console.log(data);
 			let address = $('#address-search-result option:selected').html();
 			$('.street_address').html(address);
 			if(data) {

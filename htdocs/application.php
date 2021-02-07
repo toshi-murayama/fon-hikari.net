@@ -89,17 +89,39 @@ $(window).load(function() {
 				} 
 		}).change();
 
+		// 郵便番号
+		var postalCode;
+		<?php
+		if(isset($_POST['zipAddress'])) {
+		?>
+		postalCode ="<?php echo $_POST['zipAddress']?>";
+		<?php 
+		}
+		?>
+		$('#postalCode').val(postalCode).keyup();
+
+		// 町・丁目
+		var town;
+		<?php
+		if(isset($_POST['town'])) {
+		?>
+		town = "<?php echo $_POST['town']?>";
+		<?php 
+		}
+		?>
+		$('#installationTown').val(town);
+
+		// 物件種類
 		var homeType;
 		<?php
 		if(isset($_POST['homeType'])) {
 		?>
-			homeType = <?php echo $_POST['homeType']?> - 1;
+		homeType = <?php echo $_POST['homeType']?> - 1;
 		<?php 
 		}
 		?>
-		// 物件種類
-		$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 
+		$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 });
 </script>
 <script src="js/jquery.validationEngine.js"></script>
@@ -179,8 +201,8 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities','installationTown');">
-				</li>
+					<input type="text" name="postalCode" value="<?php print $postal_code; ?>"  minlength='7' maxlength='7' class="min validate[required]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities');">
+			 	</li>
 				<li class="categories">都道府県</li>
 				<li>
 					<div class="select">
@@ -199,7 +221,7 @@ $(window).load(function() {
 				</li>
 				<li class="categories">町名・丁目</li>
 				<li>
-					<input type="text" name="installationTown" value="<?php print $address; ?>" class="validate[required]" >
+					<input type="text" name="installationTown" id="installationTown" value="<?php print $address; ?>" class="validate[required]" >
 				</li>
 				<li class="categories">番地・号</li>
 				<li>

@@ -12,7 +12,6 @@ header('Cache-Control: private, max-age=' . $expires);
 header('Content-Type: application/json; charset=utf-8');
 
 $searchArea = new SearchAreas();
-$zipAddress = (int)$_POST['zipAddress'];
-$result = $searchArea->getAddressList($zipAddress);
+$result = $searchArea->getAddressList($_POST['zipAddress']);
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE);
