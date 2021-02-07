@@ -209,9 +209,13 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="installationPref" id="prefectures" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-                            <?php foreach(Pref::PREFS as $pref) { ?>
-                                <option value=<?php print $pref?>><?php print $pref?></option>                                       
-                            <?php } ?>
+							
+							<?php foreach(Pref::PREFS as $pref) { ?>
+							
+							<option value=<?php print $pref?>><?php print $pref?></option>                                       
+							
+							<?php } ?>
+							
                         </select>
 						</div>
 				</li>
@@ -336,10 +340,14 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="mailingPrefName" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-                            <?php foreach(Pref::PREFS as $pref) { ?>
-                                <option value=<?php print $pref?>><?php print $pref?></option>                                       
-                            <?php } ?>
-                        </select>
+							
+							<?php foreach(Pref::PREFS as $pref) { ?>
+							
+							<option value=<?php print $pref?>><?php print $pref?></option>                                       
+							
+							<?php } ?>
+						
+						</select>
 					</div>
 				</li>
 				<li class="categories">市区町村</li>
