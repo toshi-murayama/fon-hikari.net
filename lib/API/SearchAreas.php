@@ -144,10 +144,8 @@ class SearchAreas
     private function prefExtraction(array $addresses): array
     {
         $prefs = [];
-        foreach($addresses as $arrayKey => $arrayVal) {
-            foreach($arrayVal as $addressKey => $addressVal) {
-                    $prefs[] = $addressVal;
-            }
+        foreach($addresses as $address) {
+            $prefs[] = $address['pref'];
         }
         return $prefs;
     }
