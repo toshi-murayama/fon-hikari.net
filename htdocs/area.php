@@ -103,7 +103,7 @@ $(function(){
 				<dl>
 					<dt><img src="img/img_area.svg" alt=""/></dt>
 					<dd>
-						<input id="address-search" name="zipAddress" type="tel" oninput="value = value.replace(/[^0-9]+/i,'');" minlength="7" maxlength="7">
+						<input id="address-search" name="zipAddress" type="tel" oninput="value = value.replace(/[^0-9]+/i,'');" minlength="7" maxlength="7" placeholder="1710014(ハイフンなし)">
 						<p class='alert' id='address-search-error-message' style='display:none;'>郵便番号を入力してください。</p>
 					</dd>
 				</dl>
