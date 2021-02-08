@@ -1,5 +1,6 @@
 <?php
 	require_once('../lib/Param/Pref.php');
+	require_once('../lib/Common.php');
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
@@ -90,26 +91,7 @@ $(window).load(function() {
 		}).change();
 
 		// 郵便番号
-		var postalCode;
-		<?php
-		if(isset($_POST['zipAddress'])) {
-		?>
-		postalCode ="<?php echo $_POST['zipAddress']?>";
-		<?php 
-		}
-		?>
-		$('#postalCode').val(postalCode).keyup();
-
-		// 町・丁目
-		var town;
-		<?php
-		if(isset($_POST['town'])) {
-		?>
-		town = "<?php echo $_POST['town']?>";
-		<?php 
-		}
-		?>
-		$('#installationTown').val(town);
+		$('#postalCode').keyup();
 
 		// 物件種類
 		var homeType;
@@ -201,7 +183,7 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>"  minlength='7' maxlength='7' class="min validate[required]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities');">
+					<input type="text" name="postalCode" value="<?php print h($_POST['zipAddress']); ?>"  minlength='7' maxlength='7' class="min validate[required]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities', '', '', false);">
 			 	</li>
 				<li class="categories">都道府県</li>
 				<li>
@@ -221,15 +203,15 @@ $(window).load(function() {
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
-					<input type="text" name="installationMunicipalities" value="<?php print $address; ?>" class="validate[required]">
+					<input type="text" name="installationMunicipalities"  class="validate[required]">
 				</li>
 				<li class="categories">町名・丁目</li>
 				<li>
-					<input type="text" name="installationTown" id="installationTown" value="<?php print $address; ?>" class="validate[required]" >
+					<input type="text" name="installationTown" id="installationTown" class="validate[required]" >
 				</li>
 				<li class="categories">番地・号</li>
 				<li>
-					<input type="text" name="installationAddress" value="<?php print $address; ?>" class="validate[required]">
+					<input type="text" name="installationAddress"  class="validate[required]">
 				</li>
                 <li class="categories">建物名・部屋番号</li>
 				<li>

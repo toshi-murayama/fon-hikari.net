@@ -169,6 +169,7 @@ class SearchAreas
      * TODO: 今は提供中か未提供かのみ判定. 今後は予告などのステータスを追加していく予定.
      *      カテゴリがg2homeのみなので、提供判定結果に問わずfalseにする.
      *      APIを使用すれば判定ロジックは作れるが、複雑になる + 今後提供カテゴリが増える予定がないので、この実装にしている.
+     * 　　　同丁目でも提供できる、できないはAPIだけでは判定できないので、providing以外はfalseにする.
      *
      * @param array $addresses 住所リスト
      * @param string $town 町丁目
@@ -180,10 +181,12 @@ class SearchAreas
         // マンション(4F以上) は常にNG. 
         if ($homeType === 3) return false;
         $state = $this->getServiceState($addresses, $town);
-        return $state === 'providing' && $state != null;
+        return $state === 'providing';
     }
     /**
      * サービス提供状態を取得.
+     * NOTE : state_sumaryにはxxx_patialyというステータスがあるが、同丁目でも提供できる、できないのステータスがあり、そのときだけ[datails][X][state]が複数ある.
+     * 　　　　state_sumaryがprovidingのときは、配列にはならない。
      *
      * @param array $addresses 住所リスト
      * @param string $town 町丁目
@@ -192,9 +195,14 @@ class SearchAreas
     private function getServiceState(array $addresses, string $town)
     {
         foreach($addresses as $address) {
-            if (!isset($address['town']) && $address['town'] !== $town) continue;
+            
+            if (!isset($address['town']) || $address['town'] !== $town) continue;
             // HACK: json_decodeで余計な配列が入ってしまう. 他にいい方法があれば修正したい.
-            return $address['services'][0]['details'][0]['state'];
+            $stateSummary = $address['services'][0]['state_summary'];
+            // providingの場合は、datailsのstateを取得.
+            if ($stateSummary === 'providing') return $address['services'][0]['details'][0]['state'];
+            // providing以外のステータスはstate_summaryを返す.
+            return $stateSummary;
         }
         // 基本的には通らない想定. 念の為.
         return null;
@@ -207,8 +215,6 @@ class SearchAreas
      */
     private function createParamByGetAddressList(string $zip): string
     {
-
-
         return http_build_query([
             self::API_KEY => $this->createApiKeyParam(),
             self::ZIP_KEY => $zip

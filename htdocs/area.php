@@ -174,10 +174,11 @@ $(function(){
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_subtle.png" alt=""/></p>
 						<div class="answer">fon光提供未確定エリアとなっています<br>
-						<span>詳細はお電話にてお問い合わせください。</span></div>
+						<span>詳細についてはお問い合わせください。</span></div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
-						<a class="subtle" href="tel:+81-120-966-486">電話で問い合わせる</a>
+						<input type="submit" value="お問い合わせする" id="submit">
+						<br>
 					</div>
 				</section>
 				<section id="modalArea04" class="modalArea" style="display: none;">
@@ -190,7 +191,6 @@ $(function(){
 						<div id="closeModal" class="closeModal">×</div>
 						<input type="submit" value="お問い合わせする" id="submit">
 						<br>
-						<a class="subtle" href="tel:+81-120-966-486">電話で問い合わせる</a>
 					</div>
 				</section>
 			</div>
@@ -216,6 +216,13 @@ $(function(){
 	?>
 <script>
 	$(function(){
+		$('#appForm').keypress(function(e) {
+			// FromのEnterキーを無効.
+			if (e.which === 13) {
+        		return false;
+    		}			
+		});
+
 		$('#address-search').change(function() {
 			$('.modalArea').hide();
 			$('#address-search-error-message').hide();
@@ -263,7 +270,6 @@ $(function(){
 		if (showAddressErrorMessage(zipAddress.length !== 7, '郵便番号は7桁でご入力ください')) {
 			return;
 		}
-		console.log(zipAddress);
 		$.ajax({
 			cache: true,
 			delay: 100,
@@ -304,7 +310,6 @@ $(function(){
 			},
 		})
 		.done(function(data) {
-			console.log(data);
 			let address = $('#address-search-result option:selected').html();
 			$('.street_address').html(address);
 			if(data) {
@@ -313,8 +318,9 @@ $(function(){
 				// 提供中
 				$('#modalArea').show(600);
 			} else {
-				// 未提供
-				$('#modalArea02').show(600);
+				$('#appForm').attr('action', 'contact');
+				// 提供以外は問い合わせするように促す.
+				$('#modalArea03').show(600);
 
 			}
 		})
