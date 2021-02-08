@@ -99,7 +99,7 @@ $(function(){
 		<h3>01 エリア検索</h3>
 		<form method="post" action="application" id="appForm">
 			<div class="search_text">お客様のお住い地域でご利用可能か検索します。</div>
-			<div class="address">住所を検索する<br>
+			<div class="address">1. 郵便番号を検索してください<br>
 				<dl>
 					<dt><img src="img/img_area.svg" alt=""/></dt>
 					<dd>
@@ -110,16 +110,16 @@ $(function(){
 			</div>
 			<div class="subsequently">
 				<ul class="form">
-					<li>住所</li>
+					<li>2. 住所をご選択ください。</li>
 					<li>
 						<div class="select">
 							<select id="address-search-result" name="town" class="result">
-								<option value='0'>選択してください</option>
+								<option value='0'>ご選択ください</option>
 							</select>
 						</div>
 					</li>
 					<p id="address-search-result-error-message" class="alert" style="display: none;">住所を１つ選択してください。</p>
-					<li><p>物件の種類をご選択ください。</p>
+					<li><p>3. 物件の種類をご選択ください。</p>
 						<ul class="type">
 							<li><input id="house01" name="homeType" type="radio" value="1" class="check">
 								<label for="house01"><img src="img/img_home01.svg" alt="一軒家"/><br>一軒家</label></li>
@@ -297,6 +297,13 @@ $(function(){
 	}
 	// エリア判定.
 	function areaJudge(zipAddress,town, homeType) {
+		let address = $('#address-search-result option:selected').html();
+		$('.street_address').html(address);
+		if(homeType == '3') {
+			// マンション(4F以上) は常にNG
+			$('#modalArea02').show(600);
+			return;
+		}
 		$.ajax({
 			cache: true,
 			delay: 100,
@@ -306,12 +313,10 @@ $(function(){
 			data: {
 				zipAddress: zipAddress,
 				town: town,
-				homeType: homeType
 			},
 		})
 		.done(function(data) {
-			let address = $('#address-search-result option:selected').html();
-			$('.street_address').html(address);
+			
 			if(data) {
 				// 念の為.
 				$('#appForm').attr('action', 'application');

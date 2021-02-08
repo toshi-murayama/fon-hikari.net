@@ -106,10 +106,9 @@ class SearchAreas
      *
      * @param string $zip 郵便番号
      * @param string $town 町丁目
-     * @param int $homeType 1 = 一軒家, 2 = マンション（3F以下）, 3 = マンション（4F以上）.
      * @return bool
      */
-    public function areaServiceJudge(string $zip, string $town, int $homeType): bool
+    public function areaServiceJudge(string $zip, string $town): bool
     {
         $response = $this->execute($this->switchingProdOrStgApiUrl($this->serviceAddressUrl), $this->createParamByAreaServiceJudge($zip));
         $result = json_decode($response, true);
@@ -118,7 +117,7 @@ class SearchAreas
         if (!$this->isSuccess($result['result_code']) || !array_key_exists('addresses', $result)) {
             return false;
         }
-        return $this->serviceJudge($result['addresses'], $town, $homeType);
+        return $this->serviceJudge($result['addresses'], $town);
     }
     /**
      * 都道府県リスト取得
@@ -173,13 +172,10 @@ class SearchAreas
      *
      * @param array $addresses 住所リスト
      * @param string $town 町丁目
-     * @param int $homeType 1 = 一軒家, 2 = マンション（3F以下）, 3 = マンション（4F以上）.
      * @return bool 
      */
-    private function serviceJudge(array $addresses, string $town, int $homeType): bool
+    private function serviceJudge(array $addresses, string $town): bool
     {
-        // マンション(4F以上) は常にNG. 
-        if ($homeType === 3) return false;
         $state = $this->getServiceState($addresses, $town);
         return $state === 'providing';
     }
