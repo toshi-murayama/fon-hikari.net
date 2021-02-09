@@ -83,6 +83,18 @@ $(function(){
             </article>
 		</div>
 	</div>
+	<!-- 郵便番号がない、または提供エリア外のときに出力 -->
+	<div id="layer_board_area_01">
+		<div class="layer_board_bg"></div>
+		<div id="popup_area" class="layer_board">
+				<div class="modalWrapper">
+					<p><img class='search_ng' src="img/img_pc_ng.png" alt=""/></p>
+					<div id="area_search_error">郵便番号が正しくないか、エリア外の郵便番号を入力されました。<br></div>
+					<span> 入力内容をご確認のうえ、検索してください。</span>
+				</div>
+				<a href="#" class="btn_close">閉じる</a>
+		</div>
+	</div>
 	<section id="area_search">
 
 		<?php if ($shibarinashiFlag) { ?>
@@ -287,7 +299,8 @@ $(function(){
 		.done(function(data){
 			// 検索結果は一旦削除.
 			$('.search-result').remove();
-			if (showAddressErrorMessage(data === null, 'エリア外の郵便番号を入力されました。')) {
+			if (data === null) {
+				showAreaSearchErrorModal('郵便番号が正しくないか、エリア外の郵便番号を入力されました。');
 				return;
 			}
 			$.each(data.towns, function(index, value){
@@ -296,7 +309,7 @@ $(function(){
 			$('#address-search-result').focus();
 		})
 		.fail(function(){
-			showAddressErrorMessage(true, 'データ取得に失敗しました。再度郵便番号を入力してください。');
+			showAreaSearchErrorModal('データ取得に失敗しました。');
 		});
 	}
 	// エリア判定.
@@ -338,6 +351,19 @@ $(function(){
 			$('#appForm').attr('action', 'contact');
 			$('#modalArea04').show(600);
 		});
+	}
+	// 郵便番号検索でエラーになったら出力するModal.
+	function showAreaSearchErrorModal(errorMessage) {
+	$('#area_search_error').html(errorMessage)
+	$('#layer_board_area_01').layerBoard({
+		delayTime: 50,
+		fadeTime : 100,
+		alpha : 0.8,
+		limitMin : 0,
+		easing: 'linear',
+		limitCookie : 0 ,
+		countCookie : 1000
+	});
 	}
 	// エラーメッセージを表示. エラー = true、エラーではない = falseを返す.
 	function showAddressErrorMessage(judge, errorMessage) {

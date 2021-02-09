@@ -804,6 +804,10 @@ padding: 50px;
 width: 90%;
 max-width: 450px;
 }
+.layer_board .search_ng {
+	width: 100px;
+		vertical-align: middle;
+}
 .layer_board img {
 width: 40px;
     vertical-align: middle;
