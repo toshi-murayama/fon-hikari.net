@@ -1,5 +1,6 @@
 <?php
-    require_once('../lib/Param/pref.php');
+	require_once('../lib/Param/Pref.php');
+	require_once('../lib/Common.php');
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
@@ -89,17 +90,20 @@ $(window).load(function() {
 				} 
 		}).change();
 
+		// 郵便番号
+		$('#postalCode').keyup();
+
+		// 物件種類
 		var homeType;
 		<?php
 		if(isset($_POST['homeType'])) {
 		?>
-			homeType = <?php echo $_POST['homeType']?> - 1;
+		homeType = <?php echo $_POST['homeType']?> - 1;
 		<?php 
 		}
 		?>
-		// 物件種類
-		$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 
+		$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 });
 </script>
 <script src="js/jquery.validationEngine.js"></script>
@@ -179,31 +183,35 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print $postal_code; ?>" type="number"  minlength='7' maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities','installationTown');">
-				</li>
+					<input type="text" name="postalCode" value="<?php print h($_POST['zipAddress']); ?>"  minlength='7' maxlength='7' class="min validate[required]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities', '', '', false);">
+			 	</li>
 				<li class="categories">都道府県</li>
 				<li>
 					<div class="select">
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="installationPref" id="prefectures" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-                            <?php foreach($prefs as $pref) { ?>
-                                <option value=<?php print $pref?>><?php print $pref?></option>                                       
-                            <?php } ?>
+							
+							<?php foreach(Pref::PREFS as $pref) { ?>
+							
+							<option value=<?php print $pref?>><?php print $pref?></option>                                       
+							
+							<?php } ?>
+							
                         </select>
 						</div>
 				</li>
 				<li class="categories">市区町村</li>
 				<li>
-					<input type="text" name="installationMunicipalities" value="<?php print $address; ?>" class="validate[required]">
+					<input type="text" name="installationMunicipalities"  class="validate[required]">
 				</li>
 				<li class="categories">町名・丁目</li>
 				<li>
-					<input type="text" name="installationTown" value="<?php print $address; ?>" class="validate[required]" >
+					<input type="text" name="installationTown" id="installationTown" class="validate[required]" >
 				</li>
 				<li class="categories">番地・号</li>
 				<li>
-					<input type="text" name="installationAddress" value="<?php print $address; ?>" class="validate[required]">
+					<input type="text" name="installationAddress"  class="validate[required]">
 				</li>
                 <li class="categories">建物名・部屋番号</li>
 				<li>
@@ -314,10 +322,14 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="mailingPrefName" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-                            <?php foreach($prefs as $pref) { ?>
-                                <option value=<?php print $pref?>><?php print $pref?></option>                                       
-                            <?php } ?>
-                        </select>
+							
+							<?php foreach(Pref::PREFS as $pref) { ?>
+							
+							<option value=<?php print $pref?>><?php print $pref?></option>                                       
+							
+							<?php } ?>
+						
+						</select>
 					</div>
 				</li>
 				<li class="categories">市区町村</li>

@@ -5,7 +5,16 @@ namespace Param;
  * 働くDBのインサート用のパラメータ
  */
 class HatarakuDbInsert
-{    
+{
+    // Applicationで使用する、データ変換用の配列.
+    private const APPLICATIOIN_CLASSIFICATION = ['0' => '個人', '1' => '法人'];
+    private const MAILING_DESTONATION = ['0' => '設置場所に同じ', '1' => '別住所'];
+    private const HOME_TYPES = ['1' => '一戸建', '2' => 'マンション3F以下', '3' => 'マンション4F以上'];
+    private const REMORT_SUPPORT = ['0' => '', '1' => 'MO21FZ'];
+    private const COOLECTOVELY_ELECTRICITY = ['0' => '', '1' => 'MO56FZ'];
+    private const KASPERSKY_SECURITY = ['0' => '', '1' => 'MO20FZ'];
+
+
     /**
      * NOTE 本番、開発を切り替え想定...
      * 本番用の申込パラメータを取得.
@@ -15,8 +24,18 @@ class HatarakuDbInsert
      */
     public static function getApplicationApiParameter(array $dataAll): string 
     {
-        return json_encode(self::getApiParameter($dataAll)); 
-    }  
+        return json_encode(self::getApiParameter($dataAll));
+    }
+    /**
+     * LP画面のエリア確認、簡単見積もり用パラメータを取得.
+     *
+     * @param array $dataAll
+     * @return string
+     */
+    public static function getLpApiParameter(array $dataAll): string
+    {
+        return json_encode(self::getApiParameterByLp($dataAll)); 
+    }
     /**
      * Fon光のパラメータ
      *
@@ -76,68 +95,66 @@ class HatarakuDbInsert
         ];
     }
     /**
+     * Fon光LPのパラメータ
+     *
+     * @param array $dataAll
+     * @return array
+     */ 
+    private static function getApiParameterByLp(array $dataAll): array
+    {
+        return [
+            "dbSchemaId"=>"101266", // Fon光LPリスト（青の働くDB）
+            "getSubordinate"=>"0",
+            "keyMode"=>"0", // キー項目登録モード ※自動採番を優先する:0 入力したキーの値を優先する:1
+            "values"=>[
+                "117683" => "{$dataAll['applicationDate']}",            // 登録日
+                "117684" => "{$dataAll['applicationTime']}",            // 登録時間
+                "117649" => "{$dataAll['listType']}",                   // リスト種別
+                "117667" => "{$dataAll['areaType']}",                   // 提供エリア種別
+                "117650" => "{$dataAll['name']}",                       // 顧客名
+                "117651" => "{$dataAll['nameKana']}",                   // 顧客名フリガナ
+                "117669" => "{$dataAll['phoneNumber']}",                // 携帯番号
+                "117652" => "{$dataAll['postalCode']}",                 // 郵便番号
+                "117653" => "{$dataAll['installationPref']}",           // 都道府県
+                "117654" => "{$dataAll['address']}",                    // 住所
+                "117655" => "{$dataAll['buildingType']}",               // 建物種別
+                "117656" => "{$dataAll['buildingName']}",               // 建物名
+                "117659" => "{$dataAll['fonHikariLine']}",              // Fon光回線
+                "117660" => "{$dataAll['hikariPhone']}",                // ひかり電話
+                "117661" => "{$dataAll['remortSupport']}",              // リモートサポート
+                "117662" => "{$dataAll['hikariTVforNURO']}",            // ひかりTV for NURO
+                "117663" => "{$dataAll['collectivelyElectricity']}",    // まとめてでんき
+                "117664" => "{$dataAll['estimatedAmount']}",            // 見積金額
+            ]
+        ];
+    }
+    /**
      * importするデータを生成.
      *
-     * @param array $post
+     * @param array $data
      * @return array
      */
-    public static function createData(array $post): array {
-        
-        $data = $post;
+    public static function createData(array $data): array
+    {
         // 顧客区分
-        if ($data['applicationClassification'] == '0') {
-            $data['applicationClassification'] = '個人';
-        } else {
-            $data['applicationClassification'] = '法人';
-        }
+        $data['applicationClassification'] = self::APPLICATIOIN_CLASSIFICATION[$data['applicationClassification']];
         // 入会書類郵送希望先
-        if ($data['mailingDestination'] == '0') {
-            $data['mailingDestination'] = '設置場所に同じ';
-
-        } else {
-            $data['mailingDestination'] = '別住所';
-        }
         //物件の種類
-        if ($data['homeType'] == '1') {
-            $data['homeType'] = '一戸建';
-            // 建物区分
-            $data['buildingDividion'] = 1;
-        } else if ($data['homeType'] == '2') {
-            $data['homeType'] = 'マンション3F以下';
-            // 建物区分
-            $data['buildingDividion'] = 2;
-        } else {
-            $data['homeType'] = 'マンション4F以上';
-            // 建物区分
-            $data['buildingDividion'] = 2;
-        }
+        $data['buildingDividion'] = $data['homeType'];
+        $data['homeType'] = self::HOME_TYPES[$data['homeType']];
         // 日中連絡先番号 
         $data['daytimeContact'] = $data['phoneNumber'];
-
         // リモートサポート
-        if ($data['remortSupport'] == '0') {
-            $data['remortSupport'] = '';
-        } else {
-            $data['remortSupport'] = 'MO21FZ';
-        }
-
+        $data['remortSupport'] = self::REMORT_SUPPORT[$data['remortSupport']];
         // まとめてでんき
-        if ($data['collectivelyElectricity'] == '0') {
-            $data['collectivelyElectricity'] = '';
-        } else {
-            $data['collectivelyElectricity'] = 'MO56FZ';
-        }
-
-        // カスペルスキーセキュリティー
-        if ($data['kasperskySecurity'] == '0') {
-            $data['kasperskySecurity'] = '';
-        } else {
-            $data['kasperskySecurity'] = 'MO20FZ';
-        }
+        $data['collectivelyElectricity'] = self::COOLECTOVELY_ELECTRICITY[$data['collectivelyElectricity']];
+        // カスペルスキーセキュリティー 
+        $data['kasperskySecurity'] = self::KASPERSKY_SECURITY[$data['kasperskySecurity']];
 
         /* --------------------- 以下、固定の値 --------------------------- */
         // 申込受付日、経路
         $data['applicationRoute'] = 'WEB';
+        date_default_timezone_set('Asia/Tokyo');
         $data['applicationDate'] = date("Y年m月d日");
         // ひかりTV契約申込
         $data['hikariTV1stContract'] = 0;
@@ -151,6 +168,35 @@ class HatarakuDbInsert
         // 経路コード
         $data['routeCode'] = 'EA001A02';
 
+        return $data;
+    }
+    
+    /**
+     * importするデータを生成（LP用）.
+     *
+     * @param array $data
+     * @param string $areaType
+     * @param int $estimatedAmount
+     * @return array
+     */
+    public static function createDataByLp(array $data, string $areaType, int $estimatedAmount): array
+    {        
+        $data['areaType'] = $areaType;
+        $data['estimatedAmount'] = $estimatedAmount;
+        // Fon光回線
+        if ($data['fonHikariLine'] == 'Fon光回線') {
+            $data['fonHikariLine'] = 'あり';
+            $data['listType'] = '見積';
+        } else {
+            $data['listType'] = 'エリア検索';
+        }
+
+        /* --------------------- 以下、固定の値 --------------------------- */
+        date_default_timezone_set('Asia/Tokyo');
+        // 登録日
+        $data['applicationDate'] = date("Y年m月d日");
+        // 登録時間
+        $data['applicationTime'] = date("H:i:s");
         return $data;
     }
 }

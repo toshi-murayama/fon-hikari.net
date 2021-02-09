@@ -39,15 +39,15 @@ if (isset($_GET['shibarinashi'])) {
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script>
 $(function(){
-$('#layer_board_area').layerBoard({
-delayTime: 100,
-fadeTime : 300,
-alpha : 0.8,
-limitMin : 0,
-easing: 'linear',
-limitCookie : 0 ,
-countCookie : 1000
-});
+	$('#layer_board_area').layerBoard({
+		delayTime: 100,
+		fadeTime : 300,
+		alpha : 0.8,
+		limitMin : 0,
+		easing: 'linear',
+		limitCookie : 0 ,
+		countCookie : 1000
+	});
 });
 </script>
 <!--tag-->
@@ -64,6 +64,7 @@ countCookie : 1000
 			include "include/header_form.html";
 		}
 	?>
+	
 	<div id="layer_board_area">
 		<div class="layer_board_bg"></div>
 		<div id="popup_area" class="layer_board">
@@ -98,22 +99,27 @@ countCookie : 1000
 		<h3>01 エリア検索</h3>
 		<form method="post" action="application" id="appForm">
 			<div class="search_text">お客様のお住い地域でご利用可能か検索します。</div>
-			<div class="address">住所を検索する<br>
+			<div class="address">1. 郵便番号を検索してください<br>
 				<dl>
 					<dt><img src="img/img_area.svg" alt=""/></dt>
 					<dd>
-						<div class="select">
-							<select id="address-search"></select>
-							<p id="address-search-error-message" class="alert" style="display: none;">住所を入力してください。</p>
-						</div>
+						<input id="address-search" name="zipAddress" type="tel" oninput="value = value.replace(/[^0-9]+/i,'');" minlength="7" maxlength="7" placeholder="1710014(ハイフンなし)">
+						<p class='alert' id='address-search-error-message' style='display:none;color:#ff0000;'>郵便番号を入力してください。</p>
 					</dd>
 				</dl>
 			</div>
 			<div class="subsequently">
 				<ul class="form">
-					<li>住所</li>
-					<li><input class="result" type="text" placeholder="大阪府大阪市旭区高殿1丁目" readonly></li>
-					<li><p>物件の種類をご選択ください。</p>
+					<li>2. 住所をご選択ください。</li>
+					<li>
+						<div class="select">
+							<select id="address-search-result" name="town" class="result">
+								<option value='0'>ご選択ください</option>
+							</select>
+						</div>
+					</li>
+					<p id="address-search-result-error-message" class="alert" style="display: none;">住所を１つ選択してください。</p>
+					<li><p>3. 物件の種類をご選択ください。</p>
 						<ul class="type">
 							<li><input id="house01" name="homeType" type="radio" value="1" class="check">
 								<label for="house01"><img src="img/img_home01.svg" alt="一軒家"/><br>一軒家</label></li>
@@ -128,6 +134,7 @@ countCookie : 1000
 			</div>
 			<div class="area_btn">
 				<p id="openModal">エリアを検索する</p>
+				<!-- 提供エリアのモーダル -->
 				<section id="modalArea" class="modalArea">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ok.png" alt=""/></p>
@@ -149,6 +156,7 @@ countCookie : 1000
 
 					</div>
 				</section>
+				<!-- 提供エリア外のモーダル -->
 				<section id="modalArea02" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ng.png" alt=""/></p>
@@ -164,14 +172,29 @@ countCookie : 1000
 
 					</div>
 				</section>
+				<!-- 未確定エリアのモーダル -->
 				<section id="modalArea03" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_subtle.png" alt=""/></p>
 						<div class="answer">fon光提供未確定エリアとなっています<br>
-						<span>詳細はお電話にてお問い合わせください。</span></div>
+						<span>詳細についてはお問い合わせください。</span></div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
-						<a class="subtle" href="tel:+81-120-966-486">電話で問い合わせる</a>
+						<input type="submit" value="お問い合わせする" id="submit">
+						<br>
+					</div>
+				</section>
+				<!-- データ取得失敗時のモーダル -->
+				<section id="modalArea04" class="modalArea" style="display: none;">
+					<div class="modalWrapper">
+						<p><img src="img/img_pc_ng.png" alt=""/></p>
+						<div class="answer">データ取得に失敗しました。<br>
+						<span>再度、ご入力お願いします。</span>
+						<span>解決しない場合は、お手数おかけしますが、お問い合わせください</span>
+					</div>
+						<div id="closeModal" class="closeModal">×</div>
+						<input type="submit" value="お問い合わせする" id="submit">
+						<br>
 					</div>
 				</section>
 			</div>
@@ -195,167 +218,137 @@ countCookie : 1000
 		include "include/footer_form.html";
 	}
 	?>
-
 <script>
-function AddressSearchSelectbox() {
-	this.selectedHandler = function() {};
-	this.selected = null;
-};
-AddressSearchSelectbox.prototype.init = function() {
-
-	var that = this;
-
-	var addressSearch = $('#address-search').select2({
-		// closeOnSelect: false,
-		// tags: true,
-		minimumInputLength: 3,
-		placeholder: '例：大阪府大阪市旭区高殿１丁目',
-		width: '100%',
-		language: {
-			// https://github.com/select2/select2/blob/develop/src/js/select2/i18n/ja.js
-			errorLoading: function () {
-				return '結果が読み込まれませんでした';
-			},
-			inputTooShort: function (args) {
-				var remainingChars = args.minimum - args.input.length;
-				var message = '住所を入力してください';
-				return message;
-			},
-			noResults: function () {
-				return '利用可能エリアが見つかりません';
-			},
-			loadingMore: function () {
-				return '読み込み中…';
-			},
-			searching: function () {
-				return '検索しています…';
-			}
-		},
-		templateResult: function (result) {
-			if (result.loading) {
-				return result.text;
-			}
-			var $container = $("<div class='select2-result-address'></div>");
-			$container.text(result.text);
-			if (!('support' in result)) $container.addClass('dynamic');
-			return $container;
-		},
-		ajax: {
-			cache: true,
-			delay: 200,
-			url: './api/search_supported_areas',
-			dataType: 'json',
-			data: function (params) {
-				var n = $('.select2-search__field').val();
-				var query = {
-					q: n,
-					page: params.page || 1
-				}
-				return query;
-			},
-		}
-	});
-	addressSearch
-		.on('select2:open', function(e) {
-			$('.select2-search__field').val(addressSearch.val());
-			$('.select2-search__field').trigger('input');
-		})
-		.on('select2:select',function(e){
-			$('.select2-search__field').val(e.params.data.text).focus();
-			// 末端の住所を選択したとき、２回inputをtriggerしないとajaxが走らないので、
-			// 2回triggerする。
-			$('.select2-search__field').trigger('input').trigger('input');
-			that.selected = e.params.data;
-			that.selectedHandler(e.params.data);
+	$(function(){
+		$('#appForm').keypress(function(e) {
+			// FromのEnterキーを無効.
+			if (e.which === 13) {
+        		return false;
+    		}			
 		});
-	$(document).on('keyup', '.select2-search__field', function(e){
-		var keycode = (e.keyCode ? e.keyCode : e.which);
-		if (keycode == 13) { // Enter key
-			$('.select2-search__field').trigger('input').trigger('input');
-			if ($('.select2-search__field').val() == '') {
-				addressSearch.val('').trigger('change');
-				that.selected = null;
-				that.selectedHandler(null);
-			}
-		}
-	});
 
-	$('.select2-container').on('click', function() {
-		// iOSデバイスで、select2クリック時にキーボードを表示する
-		// https://github.com/select2/select2/issues/5706
-		$('.select2-search__field').focus();
-	});
-
-	return this;
-};
-AddressSearchSelectbox.prototype.setSelectHandler = function(func) {
-	this.selectedHandler = func;
-	return this;
-};
-
-
-$(function(){
-	var typeOfHouse = "";
-	var selectbox =
-		new AddressSearchSelectbox()
-		.setSelectHandler(function(data){
+		$('#address-search').change(function() {
 			$('.modalArea').hide();
 			$('#address-search-error-message').hide();
-			var str = '';
-			if (data) str = data.text;
-			$('.result').val(str);
-			$('.street_address').text(str);
-		})
-		.init();
+			getAddressList($(this).val());
+		});
 
-	$('[name=homeType]').change(function(){
-		$('.modalArea').hide();
-		$('#home-type-error-message').hide();
+		$('#address-search-result').change(function() {
+			$('.modalArea').hide();
+			$('#address-search-result-error-message').hide();
+		});
+
+		$('[name=homeType]').change(function() {
+			$('.modalArea').hide();
+			$('#home-type-error-message').hide();
+		});
+
+		$('#openModal').click(function() {
+			$('.modalArea').hide();
+			
+			var hasError = false;
+			var address = $('#address-search').val();
+			var town = $('#address-search-result option:selected').val();
+			var homeType = $('[name=homeType]:checked').val();
+			if (address.length !== 7) {
+				hasError = true;
+				$('#address-search-error-message').show();
+			} else {
+				if (town === '0') {
+				hasError = true;
+				$('#address-search-result-error-message').show();
+				}
+			}
+			if (!homeType) {
+				hasError = true;
+				$('#home-type-error-message').show();
+			}
+			if (hasError) {
+				return;
+			}
+			areaJudge(address, town, homeType)
+		});
 	});
-
-	$('#openModal').click(function() {
-
-		var OK = 0;
-		var NG = 1;
-		var type = NG;
-
-		$('.modalArea').hide();
-
-		var hasError = false;
-		var homeType = $('[name=homeType]:checked').val();
-		if (!selectbox.selected) {
-			hasError = true;
-			$('#address-search-error-message').show();
-		}
-		if (!homeType) {
-			hasError = true;
-			$('#home-type-error-message').show();
-		}
-		if (hasError) {
+	// 住所リスト取得.
+	function getAddressList(zipAddress) {
+		if (showAddressErrorMessage(zipAddress.length !== 7, '郵便番号は7桁でご入力ください')) {
 			return;
 		}
-
-		if (homeType == '1' || homeType == '2') {
-			if (selectbox.selected.support) {
-				if (selectbox.selected.note == '') {
-					type = OK;
-				} else {
-					type = NG;
-				}
-			} else {
-				type = NG;
+		$.ajax({
+			cache: true,
+			delay: 100,
+			url: './api/search_areas',
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				zipAddress: zipAddress
+			},
+		})
+		.done(function(data){
+			// 検索結果は一旦削除.
+			$('.search-result').remove();
+			if (showAddressErrorMessage(data === null, 'エリア外の郵便番号を入力されました。')) {
+				return;
 			}
+			$.each(data.towns, function(index, value){
+				$('#address-search-result').append($('<option>').text(data.address + value).addClass('search-result').val(value));
+			});
+			$('#address-search-result').focus();
+		})
+		.fail(function(){
+			showAddressErrorMessage(true, 'データ取得に失敗しました。再度郵便番号を入力してください。');
+		});
+	}
+	// エリア判定.
+	function areaJudge(zipAddress,town, homeType) {
+		let address = $('#address-search-result option:selected').html();
+		$('.street_address').html(address);
+		if(homeType == '3') {
+			// マンション(4F以上) は常に問い合わせするように促す.
+			$('#modalArea03').show(600);
+			return;
+		}
+		$.ajax({
+			cache: true,
+			delay: 100,
+			url: './api/area_judge',
+			type: 'POST',
+			dataType: 'json',
+			data: {
+				zipAddress: zipAddress,
+				town: town,
+			},
+		})
+		.done(function(data) {
+			
+			if(data) {
+				// 念の為.
+				$('#appForm').attr('action', 'application');
+				// 提供中
+				$('#modalArea').show(600);
+			} else {
+				$('#appForm').attr('action', 'contact');
+				// 提供以外は問い合わせするように促す.
+				$('#modalArea03').show(600);
+
+			}
+		})
+		.fail(function() {
+			$('#appForm').attr('action', 'contact');
+			$('#modalArea04').show(600);
+		});
+	}
+	// エラーメッセージを表示. エラー = true、エラーではない = falseを返す.
+	function showAddressErrorMessage(judge, errorMessage) {
+		if (judge) {
+			$('#address-search-error-message').html(errorMessage)
+			$('#address-search-error-message').show();
+			return true;
 		} else {
-			// マンション(4F以上) は常にNG
-			type = NG;
+			$('#address-search-error-message').hide();
+			return false;
 		}
-		if(type === OK){
-			$('#modalArea').show(600);
-		} else if(type === NG){
-			$('#modalArea02').show(600);
-		}
-	});
-});
+	}
 </script>
 </body>
 </html>
