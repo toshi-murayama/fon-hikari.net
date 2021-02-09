@@ -104,7 +104,7 @@ $(function(){
 					<dt><img src="img/img_area.svg" alt=""/></dt>
 					<dd>
 						<input id="address-search" name="zipAddress" type="tel" oninput="value = value.replace(/[^0-9]+/i,'');" minlength="7" maxlength="7" placeholder="1710014(ハイフンなし)">
-						<p class='alert' id='address-search-error-message' style='display:none;'>郵便番号を入力してください。</p>
+						<p class='alert' id='address-search-error-message' style='display:none;color:#ff0000;'>郵便番号を入力してください。</p>
 					</dd>
 				</dl>
 			</div>
@@ -134,6 +134,7 @@ $(function(){
 			</div>
 			<div class="area_btn">
 				<p id="openModal">エリアを検索する</p>
+				<!-- 提供エリアのモーダル -->
 				<section id="modalArea" class="modalArea">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ok.png" alt=""/></p>
@@ -155,6 +156,7 @@ $(function(){
 
 					</div>
 				</section>
+				<!-- 提供エリア外のモーダル -->
 				<section id="modalArea02" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ng.png" alt=""/></p>
@@ -170,6 +172,7 @@ $(function(){
 
 					</div>
 				</section>
+				<!-- 未確定エリアのモーダル -->
 				<section id="modalArea03" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_subtle.png" alt=""/></p>
@@ -181,6 +184,7 @@ $(function(){
 						<br>
 					</div>
 				</section>
+				<!-- データ取得失敗時のモーダル -->
 				<section id="modalArea04" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ng.png" alt=""/></p>
@@ -281,11 +285,11 @@ $(function(){
 			},
 		})
 		.done(function(data){
+			// 検索結果は一旦削除.
+			$('.search-result').remove();
 			if (showAddressErrorMessage(data === null, 'エリア外の郵便番号を入力されました。')) {
 				return;
 			}
-			// 検索結果は一旦削除.
-			$('.search-result').remove();
 			$.each(data.towns, function(index, value){
 				$('#address-search-result').append($('<option>').text(data.address + value).addClass('search-result').val(value));
 			});
@@ -300,8 +304,8 @@ $(function(){
 		let address = $('#address-search-result option:selected').html();
 		$('.street_address').html(address);
 		if(homeType == '3') {
-			// マンション(4F以上) は常にNG
-			$('#modalArea02').show(600);
+			// マンション(4F以上) は常に問い合わせするように促す.
+			$('#modalArea03').show(600);
 			return;
 		}
 		$.ajax({
