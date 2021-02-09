@@ -304,6 +304,7 @@ $(function(){
 		let address = $('#address-search-result option:selected').html();
 		$('.street_address').html(address);
 		if(homeType == '3') {
+			$('#appForm').attr('action', 'contact');
 			// マンション(4F以上) は常に問い合わせするように促す.
 			$('#modalArea03').show(600);
 			return;
