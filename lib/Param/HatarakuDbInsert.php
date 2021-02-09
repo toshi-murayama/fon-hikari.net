@@ -139,6 +139,7 @@ class HatarakuDbInsert
         // 顧客区分
         $data['applicationClassification'] = self::APPLICATIOIN_CLASSIFICATION[$data['applicationClassification']];
         // 入会書類郵送希望先
+        $data['mailingDestination'] = self::MAILING_DESTONATION[[$data['mailingDestination']]];
         //物件の種類
         $data['buildingDividion'] = $data['homeType'];
         $data['homeType'] = self::HOME_TYPES[$data['homeType']];
