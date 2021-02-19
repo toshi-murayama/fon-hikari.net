@@ -1183,6 +1183,35 @@ footer {
       #top article .scroll:after {
         height: 40px; }
 
+  /*-----top_b-----*/
+  #top_b {
+    background: url(../ta/img/top_b_bg.jpg) 50% 100%;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    width: 100%; }
+    #top_b article {
+      width: 90%;
+      max-width: 1486px;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 10vh;
+      padding-bottom: 50px; }
+      #top_b article h1 {
+        max-width: 600px;
+        margin: 0 auto 50px; }
+      #top_b article a {
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        padding: 15px;
+        border: 2px solid #fff;
+        width: 200px;
+        margin: 0 auto;
+        font-size: 18px; }
+
   /*-----recommend-----*/
   #recommend {
     padding: 30px 0; }
