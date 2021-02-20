@@ -1,7 +1,7 @@
 <?php
 /**
  * 申込時に行う処理を集約.
- * TODO:
+ * TODO: リファクタリング対象.
  * */
 
 require_once '../lib/HatarakuDb.php';
