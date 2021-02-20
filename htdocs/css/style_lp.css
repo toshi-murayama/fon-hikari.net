@@ -102,10 +102,11 @@ header {
       header article .boxR ul li {
         margin: 0 10px; }
         header article .boxR ul li a {
-          color: #fff;
+          color: #ff81ae;
           font-weight: 400;
           text-decoration: none;
           border: 1px solid #fff;
+          background: #fff;
           border-radius: 5px;
           padding: 10px 15px; }
       header article .boxR ul li:last-child {
@@ -337,6 +338,21 @@ footer {
       margin: 0 auto;
       font-size: 18px; }
 
+/*-----top_spring-----*/
+#top_spring {
+  background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  width: 100%; }
+  #top_spring article {
+    width: 90%;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10vh; }
+
 /*-----recommend-----*/
 #recommend {
   padding: 50px 0; }
@@ -480,7 +496,7 @@ footer {
           height: 30px;
           vertical-align: baseline; }
       #recommend article:nth-child(3) .content h5 {
-        font-size: 24px; }
+        font-size: 18px; }
       #recommend article:nth-child(3) .content .price {
         font-size: 30px;
         font-weight: 600;
@@ -489,6 +505,9 @@ footer {
           font-size: 72px;
           font-weight: 900;
           color: #f28f00; }
+        #recommend article:nth-child(3) .content .price sup {
+          font-size: 12px;
+          font-weight: normal; }
       #recommend article:nth-child(3) .content .sub {
         font-size: 30px; }
         #recommend article:nth-child(3) .content .sub sup {
@@ -754,14 +773,30 @@ footer {
           margin-top: 10px; }
         #plan article .content .box dl dd img {
           height: 100px; }
+    #plan article .content h4 {
+      font-size: 18px;
+      margin: 30px 0 10px;
+      font-weight: 600; }
     #plan article .content .price {
-      font-size: 30px;
+      font-size: 18px;
       font-weight: 600;
       line-height: 2em;
-      margin-top: 30px; }
+      color: #666;
+      margin-bottom: 10px; }
+      #plan article .content .price s {
+        color: #df0074;
+        font-size: 30px; }
+      #plan article .content .price em {
+        margin: 10px;
+        font-weight: 900;
+        font-size: 30px; }
       #plan article .content .price span {
         font-size: 72px;
+        color: #df0074;
         font-weight: 900; }
+      #plan article .content .price sup {
+        font-weight: normal;
+        font-size: 12px; }
     #plan article .content ul {
       background: #fff;
       color: #333;
@@ -1210,6 +1245,21 @@ footer {
         width: 200px;
         margin: 0 auto;
         font-size: 18px; }
+
+  /*-----top_spring-----*/
+  #top_spring {
+    background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    width: 100%; }
+    #top_spring article {
+      width: 100%;
+      max-width: 1400px;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 8vh; }
 
   /*-----recommend-----*/
   #recommend {
