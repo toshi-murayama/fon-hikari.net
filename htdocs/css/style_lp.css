@@ -1037,10 +1037,9 @@ footer {
     .modalWrapper .modalItem p {
       font-size: 50px;
       margin: auto 0; }
-    .modalWrapper .modalItem h3 {
+    .modalWrapper .modalItem div {
       color: black;
-      height: 80px;
-      font-size: 60px;
+      font-size: 40px;
       font-weight: 500;
       margin: auto 0;
       background: -webkit-gradient(linear, left top, left bottom, color-stop(99%, transparent), color-stop(70%, #3796ee));
