@@ -2,15 +2,15 @@
 
 /**
  * コストに関するクラス.
- * 税込価格を定義している. 
+ * 税込価格を定義している.
  */
 class Cost
 {
     // 消費税率
     private const TAX = 10;
     // NOTE: 値段はすべて税抜. リファクタリングで税抜を使用している箇所が、あったらprivateをはずすかも.
-    // FON光回線
-    private const FON_HIKARI_LINE_COST = 3980;
+    // FON光回線 TODO: 以下、CP終了時に3980に修正
+    private const FON_HIKARI_LINE_COST = 1990;
     // ひかり電話（東日本）
     private const HIKARI_PHONE_EAST_COST = 500;
     // ひかり電話（西日本）
@@ -21,11 +21,13 @@ class Cost
     private const HIKARI_TV_COST = 2500;
     // まとめてでんき(割引価格)
     private const COLLECTIVELY_ELETRICITY_DISCOUNT_COST = -500;
+    // 事務手数料
+    private const ADMIN_FEE = 3000;
     /**
      * 消費税額取得.
      *
      * @param int $cost
-     * @return int 
+     * @return int
      */
     private function getTax(int $cost): int
     {
@@ -87,6 +89,14 @@ class Cost
     {
         return self::COLLECTIVELY_ELETRICITY_DISCOUNT_COST;
     }
-
+    /**
+     * 事務手数料取得.
+     *
+     * @return int
+    */
+    public function getAdminFee(): int
+    {
+        return self::ADMIN_FEE + $this->getTax(self::ADMIN_FEE);
+    }
 
 }

@@ -1,5 +1,5 @@
 <?php
-	require_once('../lib/thanks_relay.php');
+	require_once('../lib/ApplicationService.php');
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -32,7 +32,7 @@
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-	<?php 
+	<?php
 		if(isset($_COOKIE['affiliate'])) {
 			include "include/header_affiliate_form.html";
 		} else {
@@ -64,7 +64,7 @@
 			<p class="btn"><a href="/">最初のぺージに戻る</a></p>
 		<?php } ?>
 	</section>
-	<?php 
+	<?php
 	if(isset($_COOKIE['affiliate'])) {
 		include "include/footer_affiliate.html";
 	} else {

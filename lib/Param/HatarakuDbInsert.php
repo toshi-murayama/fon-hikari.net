@@ -22,7 +22,7 @@ class HatarakuDbInsert
      * @param array $dataAll
      * @return string
      */
-    public static function getApplicationApiParameter(array $dataAll): string 
+    public static function getApplicationApiParameter(array $dataAll): string
     {
         return json_encode(self::getApiParameter($dataAll));
     }
@@ -34,29 +34,30 @@ class HatarakuDbInsert
      */
     public static function getLpApiParameter(array $dataAll): string
     {
-        return json_encode(self::getApiParameterByLp($dataAll)); 
+        return json_encode(self::getApiParameterByLp($dataAll));
     }
     /**
      * Fon光のパラメータ
      *
      * @param array $dataAll
      * @return array
-     */ 
+     */
     private static function getApiParameter(array $dataAll): array
     {
+        date_default_timezone_set('Asia/Tokyo');
         return [
             "dbSchemaId"=>"101234", // Fon光（青の働くDB）
             "getSubordinate"=>"0",
             "keyMode"=>"0", // キー項目登録モード ※自動採番を優先する:0 入力したキーの値を優先する:1
             "values"=>[
                 "116902" => "{$dataAll['applicationClassification']}",  // 顧客区分
-                "116899" => "{$dataAll['applicationRoute']}",           // 申込経路
-                "116894" => "{$dataAll['applicationDate']}",            // 申込受付日
+                "116899" => 'WEB',                                      // 申込経路(固定値)
+                "116894" => date("Y年m月d日"),                           // 申込受付日
                 "116903" => "{$dataAll['lastName']}",                   // 契約者　姓
                 "116904" => "{$dataAll['firstName']}",                  // 契約者　名
                 "116905" => "{$dataAll['lastNameKana']}",               // フリガナ　セイ
                 "116906" => "{$dataAll['firstNameKana']}",              // フリガナ　メイ
-                "116907" => "{$dataAll['sex']}",                        // 性別(1:男/2:女) 
+                "116907" => "{$dataAll['sex']}",                        // 性別(1:男/2:女)
                 "116908" => "{$dataAll['birthday']}",                   // 生年月日
                 "116909" => "{$dataAll['phoneNumber']}",                // 携帯番号
                 "116962" => "{$dataAll['fixedLine']}",                  // 継続する電話番号
@@ -78,19 +79,22 @@ class HatarakuDbInsert
                 "116960" => "{$dataAll['telephoneApplication']}",       // 光電話申込（0:無/1:有）
                 "116927" => "{$dataAll['homeType']}",                   // 物件の種類
                 "116961" => "{$dataAll['numberingMethod']}",            // 電話番号種類(0:新規/1:番ポ)
-                "116910" => "{$dataAll['daytimeContact']}",             // 日中連絡先番号 
+                "116910" => "{$dataAll['daytimeContact']}",             // 日中連絡先番号
                 "116912" => "{$dataAll['consentToElectronicDelivery']}",// 契約書面電子交付への同意
                 "116918" => "{$dataAll['buildingDividion']}",           // 建物区分（1:戸建/２:集合）
-                "116980" => "{$dataAll['hikariTV1stContract']}",        // ひかりTV一契約目申込（無:0/有:1
-                "116983" => "{$dataAll['hikariTV2ndContract']}",        // ひかりTV二契約目申込（無:0/有:1
-                "116897" => "{$dataAll['planCode']}",                   // プランコード
-                "116895" => "{$dataAll['agencyCode']}",                 // 代理店コード
-                "116997" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ) 
-                "116896" => "{$dataAll['routeCode']}",                  // 経路コード
+                "116980" => 0,                                          // ひかりTV一契約目申込（無:0/有:1)0に固定
+                "116983" => 0,                                          // ひかりTV二契約目申込（無:0/有:1)0に固定
+                "116897" => 'MB01FZ',                                   // プランコード (固定値)
+                "116895" => 'FA19317',                                  // 代理店コード (固定値)
+                "116896" => 'EA001A02',                                 // 経路コード (固定値)
+                "116997" => "{$dataAll['remortSupport']}",              // リモートサポート（MO21FZ)
                 "117058" => "{$dataAll['affiOrderNumber']}",            // アフィリエイトID
-                "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ) 
+                "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ)
                 "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
                 "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
+                // TODO: 以下、CP終了時に削除
+                "117748" => '春のCP半年半額',                             // CP
+                "117749" => 10000,                                      // Amazonギフト券
             ]
         ];
     }
@@ -99,7 +103,7 @@ class HatarakuDbInsert
      *
      * @param array $dataAll
      * @return array
-     */ 
+     */
     private static function getApiParameterByLp(array $dataAll): array
     {
         return [
@@ -141,37 +145,19 @@ class HatarakuDbInsert
         // 入会書類郵送希望先
         $data['mailingDestination'] = self::MAILING_DESTONATION[[$data['mailingDestination']]];
         //物件の種類
-        $data['buildingDividion'] = $data['homeType'];
         $data['homeType'] = self::HOME_TYPES[$data['homeType']];
-        // 日中連絡先番号 
+        // 日中連絡先番号
         $data['daytimeContact'] = $data['phoneNumber'];
         // リモートサポート
         $data['remortSupport'] = self::REMORT_SUPPORT[$data['remortSupport']];
         // まとめてでんき
         $data['collectivelyElectricity'] = self::COOLECTOVELY_ELECTRICITY[$data['collectivelyElectricity']];
-        // カスペルスキーセキュリティー 
+        // カスペルスキーセキュリティー
         $data['kasperskySecurity'] = self::KASPERSKY_SECURITY[$data['kasperskySecurity']];
-
-        /* --------------------- 以下、固定の値 --------------------------- */
-        // 申込受付日、経路
-        $data['applicationRoute'] = 'WEB';
-        date_default_timezone_set('Asia/Tokyo');
-        $data['applicationDate'] = date("Y年m月d日");
-        // ひかりTV契約申込
-        $data['hikariTV1stContract'] = 0;
-        $data['hikariTV2ndContract'] = 0;
-        // 契約書面電子交付への同意
-        $data['consentToElectronicDelivery'] = 0;
-        // プランコード
-        $data['planCode'] = 'MB01FZ';
-        // 代理店コード
-        $data['agencyCode'] = 'FA19317';
-        // 経路コード
-        $data['routeCode'] = 'EA001A02';
 
         return $data;
     }
-    
+
     /**
      * importするデータを生成（LP用）.
      *
@@ -181,7 +167,7 @@ class HatarakuDbInsert
      * @return array
      */
     public static function createDataByLp(array $data, string $areaType, int $estimatedAmount): array
-    {        
+    {
         $data['areaType'] = $areaType;
         $data['estimatedAmount'] = $estimatedAmount;
         // Fon光回線
