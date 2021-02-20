@@ -1,5 +1,6 @@
 <?php
-	require_once('../lib/ApplicationService.php');
+	require_once('../lib/Application.php');
+	$error = Service::exec();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -53,7 +54,7 @@
 
 		<p class="error" style="margin: 0 0 4em; text-align:center;">
 
-			<?php print $error; ?>
+		<p class="error"><?php print $error; ?></p>
 
 		</p>
 

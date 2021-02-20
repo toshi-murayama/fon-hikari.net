@@ -45,7 +45,7 @@ class Mail
 		} else {
 			$to = self::getStgToAddress();
 		}
-        // TODO: レスポンスを受け取って何かしらの処理をするべきだが、もともとしてなかったので、今はやらない.
+        // NOTE: 管理者メールは、エラーになっても処理しないので、何も返さない（今までも返していなかった）
         mb_send_mail(
             $to,
             self::APPLICATION_ADMIN_TITLE,
@@ -75,8 +75,7 @@ class Mail
         } else {
             $to = self::getStgToAddress();
         }
-        // TODO: レスポンスを受け取って何かしらの処理をするべきだが、もともとしてなかったので、今はやらない.
-        mb_send_mail(
+        return mb_send_mail(
             $to,
             self::APPLICATION_USER_TITLE,
             self::createApplicationUserContent($data),
