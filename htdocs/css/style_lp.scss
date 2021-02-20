@@ -1477,6 +1477,26 @@ footer {
 
 
 
+
+    /*-----top_spring-----*/
+    #top_spring{
+        background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+        background-size: cover;
+        color: #fff;
+        position: relative;
+        width: 100%;
+        article{
+            width: 100%;
+            max-width: 1400px;
+            height: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 8vh;
+        }
+    }
+
+
+
     /*-----recommend-----*/
     #recommend{
         padding: 30px 0;
