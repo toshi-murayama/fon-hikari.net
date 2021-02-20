@@ -35,16 +35,16 @@ class Mail
     static public function sendApplication2Admin(array $data)
     {
         //文字指定
-		mb_language("Japanese");
-		mb_internal_encoding("UTF-8");
+        mb_language("Japanese");
+        mb_internal_encoding("UTF-8");
 
         $headers ='';
         if(isProd()) {
-			$to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
-			$headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
-		} else {
-			$to = self::getStgToAddress();
-		}
+            $to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
+            $headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
+        } else {
+            $to = self::getStgToAddress();
+        }
         return mb_send_mail(
             $to,
             self::APPLICATION_ADMIN_TITLE,
@@ -95,6 +95,7 @@ class Mail
     /**
      * 申込本文（管理者）
      * TODO: 定義してあったメソッドを持ってきただけなので、リファクタリングが必要
+     *       メソッドが長すぎるので、swithをなんとかしたいが、、
      *
      * @param array $data ポストデータ
      * @return string
