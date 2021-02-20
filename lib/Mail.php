@@ -45,8 +45,7 @@ class Mail
 		} else {
 			$to = self::getStgToAddress();
 		}
-        // NOTE: 管理者メールは、エラーになっても処理しないので、何も返さない（今までも返していなかった）
-        mb_send_mail(
+        return mb_send_mail(
             $to,
             self::APPLICATION_ADMIN_TITLE,
             self::createApplicationAdminContent($data),
@@ -216,9 +215,9 @@ class Mail
         $content .= '【 Amazonギフト券 】 10,000' . self::LINE;
 
         $content .= self::LINE;
-        $content .= '送信された日時：' . date( "Y/m/d (D) H:i:s" ).self::LINE;
-        $content .= '申込のページHOST：' . $_SERVER['HTTP_HOST'].self::LINE;
-        $content .= '申込のページURL：' . $_SERVER['REQUEST_URI'].self::LINE;
+        $content .= '送信された日時：' . date( "Y/m/d (D) H:i:s" ) . self::LINE;
+        $content .= '申込のページHOST：' . $_SERVER['HTTP_HOST'] . self::LINE;
+        $content .= '申込のページURL：' . $_SERVER['REQUEST_URI'] . self::LINE;
         return $content;
     }
     /**
@@ -233,120 +232,120 @@ class Mail
         $cost = new Cost();
 
         $content = '';
-        $content .= 'この度はFon光のお申込みありがとうございます。'.self::LINE;
-        $content .= 'お客様のお申し込みを下記内容で承りました。'.self::LINE;
-        $content .= '情報に問題がなければこのままお手続きを進めさせていただきます。'.self::LINE;
-        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━'.self::LINE;
-        $content .= '◆ お申し込み内容'.self::LINE;
-        $content .= '───────────────────────────'.self::LINE;
-        $content .= '《お申込み日時》'.self::LINE;
-        $content .= date( "Y/m/d (D) H:i:s" ).self::LINE;
-        $content .= '【Fon光】'.self::LINE;
-        $content .= '《契約期間》'.self::LINE;
-        $content .= '24か月（自動更新）'.self::LINE;
-        $content .= '《Fon光月額利用料》'.self::LINE;
+        $content .= 'この度はFon光のお申込みありがとうございます。' . self::LINE;
+        $content .= 'お客様のお申し込みを下記内容で承りました。' . self::LINE;
+        $content .= '情報に問題がなければこのままお手続きを進めさせていただきます。' . self::LINE;
+        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━' . self::LINE;
+        $content .= '◆ お申し込み内容' . self::LINE;
+        $content .= '───────────────────────────' . self::LINE;
+        $content .= '《お申込み日時》' . self::LINE;
+        $content .= date( "Y/m/d (D) H:i:s" ) . self::LINE;
+        $content .= '【Fon光】' . self::LINE;
+        $content .= '《契約期間》' . self::LINE;
+        $content .= '24か月（自動更新）' . self::LINE;
+        $content .= '《Fon光月額利用料》' . self::LINE;
         // TODO: 以下、CP終了時に削除
-        $content .= '開通から6カ月間：' . number_format($cost->getHikariLineCost()) . '円（税込）/月額'.self::LINE;
-        $content .= '7か月目以降：4,378円（税込）/月額'.self::LINE;
+        $content .= '開通から6カ月間：' . $cost->getFee4MailContent($cost->getHikariLineCost()) . '/月額' . self::LINE;
+        $content .= '7か月目以降：4,378円（税込）/月額' . self::LINE;
         // TODO: 以下、コメントアウト復活
-        // $content .= number_format($cost->getHikariLineCost()) . '円'.self::LINE;
-        $content .= '《工事費：分割》'.self::LINE;
-        $content .= '44,000 円（1,467 円 X 30 か月の分割払い）'.self::LINE;
-        $content .= '※ 工事費割引1,467 円 X 30 か月割引が適用されますので、実質無料となります。'.self::LINE;
-        $content .= '《契約事務手数料》'.self::LINE;
-        $content .= number_format($cost->getAdminFee()) . '円'.self::LINE;
-        $content .= '【付加サービス】'.self::LINE;
-        $content .= '《NURO光でんわ申込》'.self::LINE;
+        // $content .= $cost->getFee4MailContent($cost->getHikariLineCost()) . '円（税込）' . self::LINE;
+        $content .= '《工事費：分割》' . self::LINE;
+        $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
+        $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
+        $content .= '《契約事務手数料》' . self::LINE;
+        $content .= $cost->getFee4MailContent($cost->getAdminFee()) . self::LINE;
+        $content .= '【付加サービス】' . self::LINE;
+        $content .= '《NURO光でんわ申込》' . self::LINE;
         if($data['telephoneApplication'] == '0') {
-            $content .= 'なし'.self::LINE;
+            $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'あり'.self::LINE;
-            $content .= '《NURO光でんわ基本料金》'.self::LINE;
+            $content .= 'あり' . self::LINE;
+            $content .= '《NURO光でんわ基本料金》' . self::LINE;
             if(in_array($data['installationPref'], Pref::PROVIDE_BY_EAST_JAPAN)) {
-                $estimates += number_format($cost->getHikariPhoneEastCost()) . '円'.self::LINE;
+                $estimates += $cost->getFee4MailContent($cost->getHikariPhoneEastCost()) . self::LINE;
             } else {
-                $estimates += number_format($cost->getHikariPhoneWestCost()) . '円'.self::LINE;
+                $estimates += $cost->getFee4MailContent($cost->getHikariPhoneWestCost()) . self::LINE;
             }
             // 番号ポータビリティ.
             if($data['numberingMethod'] == '1') {
-                $content .= '《固定電話番号》'.self::LINE;
-                $content .= $data['fixedLine'].self::LINE;
+                $content .= '《固定電話番号》' . self::LINE;
+                $content .= $data['fixedLine'] . self::LINE;
             }
         }
         // リモートサポート
-        $content .= '《リモートサポート》'.self::LINE;
+        $content .= '《リモートサポート》' . self::LINE;
         if($data['remortSupport'] == '0') {
-            $content .= 'なし'.self::LINE;
+            $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'あり'.self::LINE;
-            $content .= '《プラン料金》'.self::LINE;
-            $content .= number_format($cost->getRemoteSuportCost()) . '円'.self::LINE;
+            $content .= 'あり' . self::LINE;
+            $content .= '《リモートサポート料金》' . self::LINE;
+            $content .= $cost->getFee4MailContent($cost->getRemoteSuportCost()) . '円（税込）' . self::LINE;
         }
 
         // ひかりTV
-        $content .= '《ひかりTV for NURO申込》'.self::LINE;
+        $content .= '《ひかりTV for NURO申込》' . self::LINE;
         if($data['hikariTV'] == '0') {
-            $content .= 'なし'.self::LINE;
+            $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'お電話にて確認します。'.self::LINE;
+            $content .= 'お電話にて確認します。' . self::LINE;
         }
 
         // まとめてでんき
-        $content .= '《まとめてでんき》'.self::LINE;
+        $content .= '《まとめてでんき》' . self::LINE;
         if($data['collectivelyElectricity'] == '0') {
-            $content .= 'なし'.self::LINE;
+            $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'お電話にて確認します。'.self::LINE;
+            $content .= 'お電話にて確認します。' . self::LINE;
         }
         // カスペルスキーセキュリティー
-        $content .= '《カスペルスキーセキュリティー》'.self::LINE;
+        $content .= '《カスペルスキーセキュリティー》' . self::LINE;
         if($data['kasperskySecurity'] == '0') {
-            $content .= 'なし'.self::LINE;
+            $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'お電話にて確認します。'.self::LINE;
+            $content .= 'お電話にて確認します。' . self::LINE;
         }
 
-        $content .= '※工事内容により追加工事費が発生する場合がございます。'.self::LINE;
-        $content .= '※付加サービスはプランにより価格が異なります。'.self::LINE;
+        $content .= '※工事内容により追加工事費が発生する場合がございます。' . self::LINE;
+        $content .= '※付加サービスはプランにより価格が異なります。' . self::LINE;
         $content .= self::LINE;
-        $content .= $data['lastName'] . ' ' . $data['firstName'] . '様'.self::LINE;
-        $content .= '《設置先ご住所》'.self::LINE;
-        $content .= $data['installationPref'] .$data['installationMunicipalities'] .$data['installationTown'] .$data['installationAddress'].$data['installationBuilding'].self::LINE;
-        $content .= '《ご連絡携帯電話番号》'.self::LINE;
-        $content .= $data['phoneNumber'].self::LINE;
+        $content .= $data['lastName'] . ' ' . $data['firstName'] . '様' . self::LINE;
+        $content .= '《設置先ご住所》' . self::LINE;
+        $content .= $data['installationPref'] .$data['installationMunicipalities'] .$data['installationTown'] .$data['installationAddress'].$data['installationBuilding'] . self::LINE;
+        $content .= '《ご連絡携帯電話番号》' . self::LINE;
+        $content .= $data['phoneNumber'] . self::LINE;
         $content .= self::LINE;
-        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━'.self::LINE;
-        $content .= '◆ご利用開始までの流れ'.self::LINE;
-        $content .= '───────────────────────────'.self::LINE;
-        $content .= 'STEP1：お申込み'.self::LINE;
-        $content .= '本メールにて受付を致しました。'.self::LINE;
-        $content .= 'お電話にて申込確認を入れさせて頂いた後に'.self::LINE;
-        $content .= '1週間以内にお申込みに関する書面をご登録住所へ発送致します。'.self::LINE;
-        $content .= 'STEP2：宅内工事日決定'.self::LINE;
-        $content .= '・申込確認のお電話にて宅内工事希望日を選択した場合'.self::LINE;
-        $content .= '　約3日～4日後に宅内工事日決定のご連絡を、申し込み時にご登録いただいた携帯電話番号宛にSMSを送信いたします。また、希望日で工事の実施ができない場合は、光回線調整窓口より、お申し込み時にご登録いただいた電話番号へ「宅内工事」の調整のご連絡をいたします。'.self::LINE;
-        $content .= '・申込確認のお電話にて宅内工事希望日を選択しなかった場合'.self::LINE;
-        $content .= '　およそ10日後に光回線調整窓口から日程調整の電話をいたします。'.self::LINE;
-        $content .= 'STEP3：宅内工事'.self::LINE;
-        $content .= 'お客さまの立ち合いが必要です。'.self::LINE;
-        $content .= '立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。 '.self::LINE;
-        $content .= 'STEP4：屋外工事日決定'.self::LINE;
-        $content .= '屋外工事日は建物への提供方法が確定し、工事日調整の準備が整い次第、ご連絡をしています。'.self::LINE;
-        $content .= 'STEP5：屋外工事・ご利用開始'.self::LINE;
-        $content .= '宅内工事完了後、屋外工事日を決定していただきます。 立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。'.self::LINE;
-        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━'.self::LINE;
-        $content .= '▼お問い合わせ'.self::LINE;
-        $content .= '────────────────────────────'.self::LINE;
-        $content .= 'ご不明点につきましては、よくある質問をご覧ください。'.self::LINE;
-        $content .= '・よくある質問：https://fon-hikari.net/faq'.self::LINE;
-        $content .= 'それでもご不明点がございましたら、お問い合わせフォームよりお問い合わせください。'.self::LINE;
-        $content .= '・お問い合わせフォーム：https://fon-hikari.net/contact'.self::LINE;
-        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━'.self::LINE;
-        $content .= '▼会社概要'.self::LINE;
-        $content .= '────────────────────────────'.self::LINE;
-        $content .= 'フォン・ジャパン株式会社'.self::LINE;
-        $content .= '〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F'.self::LINE;
-        $content .= 'このメールに心当たりの無い場合は、お手数ですがサポート窓口までお問い合わせください。'.self::LINE;
+        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━' . self::LINE;
+        $content .= '◆ご利用開始までの流れ' . self::LINE;
+        $content .= '───────────────────────────' . self::LINE;
+        $content .= 'STEP1：お申込み' . self::LINE;
+        $content .= '本メールにて受付を致しました。' . self::LINE;
+        $content .= 'お電話にて申込確認を入れさせて頂いた後に' . self::LINE;
+        $content .= '1週間以内にお申込みに関する書面をご登録住所へ発送致します。' . self::LINE;
+        $content .= 'STEP2：宅内工事日決定' . self::LINE;
+        $content .= '・申込確認のお電話にて宅内工事希望日を選択した場合' . self::LINE;
+        $content .= '　約3日～4日後に宅内工事日決定のご連絡を、申し込み時にご登録いただいた携帯電話番号宛にSMSを送信いたします。また、希望日で工事の実施ができない場合は、光回線調整窓口より、お申し込み時にご登録いただいた電話番号へ「宅内工事」の調整のご連絡をいたします。' . self::LINE;
+        $content .= '・申込確認のお電話にて宅内工事希望日を選択しなかった場合' . self::LINE;
+        $content .= '　およそ10日後に光回線調整窓口から日程調整の電話をいたします。' . self::LINE;
+        $content .= 'STEP3：宅内工事' . self::LINE;
+        $content .= 'お客さまの立ち合いが必要です。' . self::LINE;
+        $content .= '立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。 ' . self::LINE;
+        $content .= 'STEP4：屋外工事日決定' . self::LINE;
+        $content .= '屋外工事日は建物への提供方法が確定し、工事日調整の準備が整い次第、ご連絡をしています。' . self::LINE;
+        $content .= 'STEP5：屋外工事・ご利用開始' . self::LINE;
+        $content .= '宅内工事完了後、屋外工事日を決定していただきます。 立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。' . self::LINE;
+        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━' . self::LINE;
+        $content .= '▼お問い合わせ' . self::LINE;
+        $content .= '────────────────────────────' . self::LINE;
+        $content .= 'ご不明点につきましては、よくある質問をご覧ください。' . self::LINE;
+        $content .= '・よくある質問：https://fon-hikari.net/faq' . self::LINE;
+        $content .= 'それでもご不明点がございましたら、お問い合わせフォームよりお問い合わせください。' . self::LINE;
+        $content .= '・お問い合わせフォーム：https://fon-hikari.net/contact' . self::LINE;
+        $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━' . self::LINE;
+        $content .= '▼会社概要' . self::LINE;
+        $content .= '────────────────────────────' . self::LINE;
+        $content .= 'フォン・ジャパン株式会社' . self::LINE;
+        $content .= '〒171-0014 東京都豊島区池袋2-14-4 池袋TAビル8F' . self::LINE;
+        $content .= 'このメールに心当たりの無い場合は、お手数ですがサポート窓口までお問い合わせください。' . self::LINE;
         return $content;
     }
     /**
@@ -370,7 +369,7 @@ class Mail
         mb_internal_encoding("UTF-8");
 
         $error_subject =  "Fon光管理者通知メール【重要】申込の働くDBインポート登録に失敗しました。";
-        //  ← を追加.
+        
         $to = mb_convert_encoding("support@fon-hikari.net, onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');

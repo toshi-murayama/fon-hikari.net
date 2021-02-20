@@ -98,5 +98,14 @@ class Cost
     {
         return self::ADMIN_FEE + $this->getTax(self::ADMIN_FEE);
     }
-
+    /**
+     * メール本文に表示する金額を取得.
+     * 
+     * @param $fee 料金
+     * @return string
+     */
+    public function getFee4MailContent(int $fee): string
+    {
+        return number_format($fee) . '円（税込）';
+    }
 }

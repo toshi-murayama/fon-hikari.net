@@ -46,6 +46,7 @@ class Service
 			return 'お申し込みに失敗しました。お手数ですがサポート窓口までお問い合わせください。';
 		} else {
 			// 管理者へメール
+			// TODO: 管理者メールは、エラーになっても処理しない. ログ出力するべき.
 			Mail::sendApplication2Admin($_POST);
 			// ユーザーへメール
 			if (!Mail::sendApplication2User($_POST)) {
