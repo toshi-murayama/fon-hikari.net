@@ -87,6 +87,5 @@ window.addEventListener("load", function(){
 $(function() {
     $('#closeModal , #modalBg').click(function() {
         $('#modalArea').fadeOut();
-
     });
 });

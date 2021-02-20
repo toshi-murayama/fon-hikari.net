@@ -2,7 +2,7 @@
 /**
  * lp_logic.php的なファイルを作成して、処理をまとめるべき.
  * $modal_text = はHTMLにModalを作成したほうがわかりやすいと思うが、一旦はこのまま.
- */ 
+ */
 require_once '../../lib/HatarakuDb.php';
 require_once '../../lib/Param/HatarakuDbInsert.php';
 require_once '../../lib/Param/Pref.php';
@@ -64,7 +64,7 @@ if (!$provitedFlag && !$easyEstimateFlag) {
     $results = getEstimatesAndModalList($optionFlags, $pref);
     $estimatedAmount += $results['estimates'];
     // モーダルに出力するリストを生成
-    foreach($results['items'] as $value) { 
+    foreach($results['items'] as $value) {
         $modalItem .= "<li> ". $value . "</li>";
     }
     $modal_text = showEasyEstimateModalByProvide($modalItem, $estimatedAmount);
@@ -89,7 +89,7 @@ $result = $hatarakuDb->sendRequest(
 );
 // $result = "200";
 if ($result !== "200") {
-    // 管理者宛にメールを送信するだけで、ユーザーに対してはアクションしない. 
+    // 管理者宛にメールを送信するだけで、ユーザーに対してはアクションしない.
     sendHatarakuDBErrorMail($result);
     return;
 }
@@ -155,7 +155,7 @@ function createApplicationUserMailContent(int $estimatedAmount, bool $provitedFl
         $content .= '【 ひかりTV for NURO 】 ' . $data['hikariTVforNURO'] . "\r\n";
         $content .= '【 まとめでんき 】 '. "\t" . $data['collectivelyElectricity'] . "\r\n";
         $content .= '【 合計金額 】 '. "\t\t" . number_format($estimatedAmount) . '円' . "\r\n";
-        $content .= "\r\n"; 
+        $content .= "\r\n";
     }
     $content .= '送信日時：' . date( "Y/m/d (D) H:i:s" )."\r\n";
 
@@ -174,7 +174,7 @@ function sendHatarakuDBErrorMail(string $result){
     お申込み内容を確認の上管理者にご確認ください。
     error_code :=> {$result}
     SUB_HEAD;
-    
+
     $error_mail = $body_head."\n\n";
 
     mb_language("Japanese");
@@ -198,7 +198,7 @@ function sendHatarakuDBErrorMail(string $result){
  * 未提供エリアModal表示.
  * class化するときは使用しない（HTMLにModalを書いたほうがいい）
  * 以下の、Modalメソッドも同様.
- * 
+ *
  * @return string
  */
 function showSearchAreaModalByNotProvide(string $message): string
@@ -218,7 +218,7 @@ function showSearchAreaModalByNotProvide(string $message): string
 }
 /**
  * 提供エリアModal表示.
- * 
+ *
  * @return string
  */
 function showSearchAreaModalByProvide(): string
@@ -245,14 +245,21 @@ function showSearchAreaModalByProvide(): string
  */
 function showEasyEstimateModalByProvide(string $modalItem, int $estimatedAmount): string
 {
+    // TODO: 以下、キャンペーン終了時に修正が必要.
     return '
+    <div style="text-align:center;font-size: 23px;font-weight: 400;">3月10日（水） 15:59までにお申し込みの方限定！</div>
+    <div style="text-align:center;font-size: 25px;padding-bottom: 10px;font-weight: 400;">超お得なWキャンペーン中！</div>
     <div class="modalItem">
         <ul>
             '.$modalItem.'
         </ul>
         <p>=</p>
-        <h3>¥'.$estimatedAmount.'</h3>
+        <div>'.number_format($estimatedAmount).'円<span style="font-size:14px;font-weight:100;">（税込）</span></div>
+
     </div>
+    <div style="text-align:center;font-size: 12px;font-weight: 400;">※Fon光回線：月額4,378円（税込）。開通～6カ月目まで月額2,189円を
+    キャッシュバックした金額です。</div>
+    <div style="text-align:center;font-size: 20px;padding-top: 20px;padding-bottom: 20px;font-weight: 400;">+Amazonギフト券10,000円をプレゼント中 </div>
     <div class="estimatedModalBox">
         <p>
             ※ひかりTVはおすすめプラン。<br>
@@ -302,12 +309,12 @@ function validation(array $data): bool
  * @return array
  */
 function getEstimatesAndModalList(array $optionFlags, string $pref): array
-{   
+{
     $estimates = 0;
     $items = [];
     $cost = new Cost();
-    
-    // FON光回線. 
+
+    // FON光回線.
     $estimates += $cost->getHikariLineCost();
     $items[] = "Fon光回線";
     // ひかり電話
