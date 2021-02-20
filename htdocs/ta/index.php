@@ -50,8 +50,8 @@ $(function() {
     <div id="wrap">
         <section id="top_spring">
             <article>
-                <h1><img src="img/spring_cp_top.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円" class="pc">
-                <img src="img/spring_cp_top_sp.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円" class="sp"></h1>
+                <h1><img src="img/spring_cp_top.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                <img src="img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
             </article>
         </section>
 

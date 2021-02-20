@@ -102,10 +102,11 @@ header {
       header article .boxR ul li {
         margin: 0 10px; }
         header article .boxR ul li a {
-          color: #fff;
+          color: #ff81ae;
           font-weight: 400;
           text-decoration: none;
           border: 1px solid #fff;
+          background: #fff;
           border-radius: 5px;
           padding: 10px 15px; }
       header article .boxR ul li:last-child {
