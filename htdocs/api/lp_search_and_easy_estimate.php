@@ -209,7 +209,6 @@ function showSearchAreaModalByNotProvide(string $message): string
     <p class="modalBox">
         お客様のお住まいの地域はFon光の未提供エリアとなります。<br>
         <br>
-        <p><img src="../img/img_pc_ok.png" alt=""/></p>
         Fon光の提供が開始しましたら<br>
         担当コンシェルジュよりご連絡させて頂きます。
     </p>
@@ -230,7 +229,6 @@ function showSearchAreaModalByProvide(): string
     <p class="modalBox">
         お客様のお住まいの地域はFon光の提供エリアとなります。<br>
         <br>
-        <p><img src="../img/img_pc_ng.png" alt=""/></p>
         一部の地域は未提供エリアもございますので、<br>
         担当コンシェルジュよりご連絡させて頂きます。
     </p>
