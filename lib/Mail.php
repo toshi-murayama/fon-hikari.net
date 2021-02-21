@@ -280,7 +280,7 @@ class Mail
         } else {
             $content .= 'あり' . self::LINE;
             $content .= '《リモートサポート料金》' . self::LINE;
-            $content .= $cost->getFee4MailContent($cost->getRemoteSuportCost()) . '円（税込）' . self::LINE;
+            $content .= $cost->getFee4MailContent($cost->getRemoteSuportCost()) . self::LINE;
         }
 
         // ひかりTV

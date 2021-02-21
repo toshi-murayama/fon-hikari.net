@@ -85,7 +85,7 @@ window.addEventListener("load", function(){
 
 // モーダルウィンドウを閉じる時の挙動
 $(function() {
-    $('#closeModal , #modalBg').click(function() {
+    $('#closeModal , #modalBg, #modalArea').click(function() {
         $('#modalArea').fadeOut();
     });
 });
