@@ -230,7 +230,7 @@ function showSearchAreaModalByProvide(): string
     <div class="modalBox">
         お客様のお住まいの地域はFon光の提供エリアとなります。<br>
         <br>
-        <p><img src="../img/img_pc_ng.png" alt=""/></p>
+        <p><img src="../img/img_pc_ok.png" alt=""/></p>
         一部の地域は未提供エリアもございますので、<br>
         担当コンシェルジュよりご連絡させて頂きます。
     </div>
