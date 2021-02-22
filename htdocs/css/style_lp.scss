@@ -715,21 +715,24 @@ footer {
         width: calc(90% - 200px);
         margin: 100px auto 0;
         position: relative;
-        height: 30vw;
+        height: 35vw;
+        max-height: 400px;
         h2{
             font-size: 30px;
             font-weight: 600;
             text-align: center;
             margin-top: 30px;
+            position: relative;
+            z-index: 2;
         }
         img{
             position: absolute;
-            top: 70px;
+            top: 30px;
             left: 0;
             right: 0;
-            margin: auto;
-            max-width: 1200px;
-            width: 100%;
+            display: block;
+            width: 1200px;
+            z-index: 1;
         }
     }
 }
