@@ -206,12 +206,13 @@ function showSearchAreaModalByNotProvide(string $message): string
     return '
     <h3>'. $message . '</h3>
     <br>
-    <p class="modalBox">
+    <div class="modalBox">
         お客様のお住まいの地域はFon光の未提供エリアとなります。<br>
         <br>
+        <p><img src="../img/img_pc_ng.png" alt=""/></p>
         Fon光の提供が開始しましたら<br>
         担当コンシェルジュよりご連絡させて頂きます。
-    </p>
+    </div>
     <br>
     <p class="modalTel">Fon光サポートセンター：<br class="sp">0120-966-486<span>(13:00-17:00土日祝除)</span></p>
     ';
@@ -226,12 +227,13 @@ function showSearchAreaModalByProvide(): string
     return '
     <h3>エリア検索のご依頼ありがとうございます。</h3>
     <br>
-    <p class="modalBox">
+    <div class="modalBox">
         お客様のお住まいの地域はFon光の提供エリアとなります。<br>
         <br>
+        <p><img src="../img/img_pc_ok.png" alt=""/></p>
         一部の地域は未提供エリアもございますので、<br>
         担当コンシェルジュよりご連絡させて頂きます。
-    </p>
+    </div>
     <br>
     <p class="modalTel">Fon光サポートセンター：<br class="sp">0120-966-486<span>(13:00-17:00土日祝除)</span></p>
     ';

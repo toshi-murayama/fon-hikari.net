@@ -357,6 +357,7 @@ $(function() {
                     </form>
                 </div>
             </article>
+            <div class="appBtn"><a href="../area.php">お申込みはこちら</a></div>
         </section>
         
         <section id="point">
