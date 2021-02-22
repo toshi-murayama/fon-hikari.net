@@ -234,7 +234,7 @@ $(function() {
                         </dl>
                     </div>
                     <h4>キャンペーン価格！</h4>
-                    <div class="price">月額<s>4,378</s>円<em>→</em>月額<span>2,189</span>円<sup>※1</sup></div>
+                    <div class="price">月額<s>4,378</s>円<em>→</em><br class="sp">月額<span>2,189</span>円<sup>※1</sup></div>
                     <ul>
                         <li>※1.月額4,378円（税込）。開通～6カ月目まで月額2,189円をキャッシュバック。</li>
                         <li>※税込み価格になります。</li>
