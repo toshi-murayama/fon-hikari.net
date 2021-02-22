@@ -1091,6 +1091,9 @@ footer {
   right: 1rem;
   cursor: pointer; }
 
+.modalBox {
+  text-align: center; }
+
 @media screen and (max-width: 640px) {
   .pc {
     display: none; }
