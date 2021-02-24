@@ -194,7 +194,7 @@ $(function() {
             </article>
         </section>
         
-        <section id="question">
+        <!--section id="question">
             <article>
                 <div class="content">
                     <h3>こんなことありませんか？</h3>
@@ -216,7 +216,7 @@ $(function() {
                     <a href="tel:0120-966-486">お電話はこちらから</a>
                 </div>
             </article>
-        </section>
+        </section-->
 
         <section id="plan">
             <article>
