@@ -35,12 +35,8 @@
     <div id="wrap">
         <section id="top">
             <article>
-                <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥4,378</span></h2>
-                <p>※ 記載の金額は全て税込金額です。</p>
-                <div></div>
-                <p>超高速インターネット回線</p>
-                <p>下り最大 2Gbps</p>
+                <h1><img src="ta/img/spring_cp_top.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
                 <ul>
                     <li>
                         <a href="area"></a>
@@ -263,7 +259,11 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
 
         <section id="spring_cp">
             <article>
-                <a href="/ta"><img src="ta/img/spring_cp_top.png" alt=""></a>
+                <h2>
+                    <img src="ta/img/bnr.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                    <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp">
+                </h2>
+                <a href="ta/">詳しくはこちら</a>
             </article>
         </section>
 
