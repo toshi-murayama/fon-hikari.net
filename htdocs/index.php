@@ -257,16 +257,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="spring_cp">
-            <article>
-                <h2>
-                    <img src="ta/img/bnr.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                    <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp">
-                </h2>
-                <a href="ta/">詳しくはこちら</a>
-            </article>
-        </section>
-
         <section id="flow">
             <article class="pc">
                 <h2>お申し込みの流れ</h2>
@@ -341,6 +331,16 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </li>
                 </ul>
                 <a class="flow_btn" href="area">お申し込みはこちら</a>
+            </article>
+        </section>
+
+        <section id="spring_cp">
+            <article>
+                <h2>
+                    <img src="ta/img/bnr.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                    <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp">
+                </h2>
+                <a href="ta/">詳しくはこちら</a>
             </article>
         </section>
 
