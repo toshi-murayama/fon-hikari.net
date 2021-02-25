@@ -723,10 +723,15 @@ footer {
             -ms-flex-align: center;
                 align-items: center;
         font-size: 24px; }
+        #plan article .box h3 s {
+          display: block; }
         #plan article .box h3 em {
           display: block;
           font-size: 72px;
-          font-weight: 900; }
+          font-weight: 900;
+          color: #f39500; }
+          #plan article .box h3 em sup {
+            font-size: 14px; }
       #plan article .box ul {
         width: 70%; }
         #plan article .box ul li {
@@ -892,6 +897,20 @@ footer {
     #option article .annotation li {
       font-size: 16px;
       margin-top: 20px; }
+
+/*-----spring_cp-----*/
+#spring_cp {
+  text-align: center;
+  background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+  background-size: cover; }
+  #spring_cp article {
+    width: 90%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 /*-----flow-----*/
 #flow {

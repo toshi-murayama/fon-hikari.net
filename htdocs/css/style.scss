@@ -745,10 +745,17 @@ footer {
             h3{
                 align-items: center;
                 font-size: 24px;
+                s{
+                    display: block;
+                }
                 em{
                     display: block;
                     font-size: 72px;
                     font-weight: 900;
+                    color: $orange;
+                    sup{
+                        font-size: 14px;
+                    }
                 }
             }
             ul{
@@ -837,6 +844,7 @@ footer {
         }
     }
 }
+
 
 
 /*-----option-----*/
@@ -937,6 +945,23 @@ footer {
                 margin-top: 20px;
             }
         }
+    }
+}
+
+
+
+
+/*-----spring_cp-----*/
+#spring_cp{
+    text-align: center;
+    background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+    background-size: cover;
+    article{
+        width: 90%;
+        max-width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        align-items: center;
     }
 }
 
