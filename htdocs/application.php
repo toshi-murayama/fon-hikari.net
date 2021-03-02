@@ -66,6 +66,14 @@ $(function(){
 			$('.telephoneApplicationFixedLine').hide();
 		}
 	});
+	// 光TV
+	$('input[name="hikariTV"]').change(function() {
+		if ($('input[name="hikariTV"]:checked').val() != '0') {
+			$('.hikariTVplan').show();
+		} else {
+			$('.hikariTVplan').hide();
+		}
+	});
 	// 発番方法
 	$('input[name="numberingMethod"]').change(function() {
 		if ($('input[name="numberingMethod"]:checked').val() != '0') {
@@ -297,7 +305,38 @@ $(window).load(function() {
 					<input type="radio" name="hikariTV" value="1" class="check" id="hikariTV">
 					<label for="hikariTV">あり</label>
 				</li>
-				<li>※ プランやチューナーに関しては、申込確認のお電話の際にヒアリングいたします。</li>
+				<li class='hikariTVplan' style='display:none'>
+                    <ul>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="0" id="normalPlan" checked>
+                            <label for="normalPlan">基本料金プラン 月額1,100円<span>(税込み)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="1" class="check" id="oneutiPlan">
+                            <label for="oneutiPlan">お値うちプラン 月額3,850円<span>(税込み)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="2" class="check" id="tvPlan">
+                            <label for="tvPlan">テレビおすすめプラン 月額2,750円<span>(税込み)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="3" class="check" id="videoPlan">
+                            <label for="videoPlan">ビデオざんまいプラン 月額2,750円<span>(税込み)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="4" class="check" id="oneutiPlan2">
+                            <label for="oneutiPlan2">お値うちプラン(2ねん割) 月額2,750円<span>(税込み)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="5" class="check" id="tvPlan2">
+                            <label for="tvPlan2">テレビおすすめプラン(2ねん割) 月額1,650円<span>(税込み)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="6" class="check" id="videoPlan2">
+                            <label for="videoPlan2">ビデオざんまいプラン(2ねん割) 月額1,650円<span>(税込み)</span></label>
+                        </li>
+                    </ul>
+                </li>
 				<li class="categories">カスペルスキーセキュリティー</li>
 				<li class="app">
 					<input type="radio" name="kasperskySecurity" value="0" id="noneKasperskySecurity" checked>

@@ -497,6 +497,12 @@ a:active {}
 #application .desired select{
 	width: 100px;
 }
+#application .hikariTVplan{
+	text-indent: 2em;
+}
+#application .hikariTVplan span{
+	font-size: 10px;
+}
 #application .documents{
 	background: #eee;
 	padding: 20px;
