@@ -44,6 +44,11 @@ $(function(){
 		changeYear: true,
 		yearRange: '-70:+0',
 	}).datepicker("setDate", "2000/03/01");
+	//カレンダー
+	$("#deliveryDate,#deliveryDate2").datepicker({
+		minDate: '6d'
+	});
+    // 約款動作
 	$('.privacy').hide();
 	$('.privacyTitle').on('click', function() {
 		$('.privacy').slideToggle(500);
@@ -301,7 +306,53 @@ $(window).load(function() {
 					<label for="kasperskySecurity">あり</label>
 				</li>
 			</ul>
-			
+
+            <h4>希望工事日</h4>
+			<ul class="form">
+			    <li class="categories"></li>
+				<li class="app">
+					<input type="radio" name="construction" value="" id="free" checked>
+					<label for="free">いつでも可能</label>
+				</li>
+				<li class="desired app">
+					<input type="radio" name="construction" value="" id="week">
+					<label for="week">曜日希望
+                        <div class="select">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            <select name="" id="" class="dateTime">
+                                <option value="" selected>午前</option>
+                                <option value="">午後</option>
+                            </select>
+                        </div>曜日であればいつでも可能
+                    </label>
+				</li>
+				<li class="app">
+					<input type="radio" name="construction" value="" id="day">
+					<label for="day">日程指定</label>
+				</li>
+				<li class="desired app">第一希望
+                    <input type="text" class="" id="deliveryDate" name="start_calendar" autocomplete="off">
+                    <div class="select">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <select name="" id="" class="dateTime">
+                            <option value="" selected>午前</option>
+                            <option value="">午後</option>
+                        </select>
+                    </div>
+                </li>
+				<li class="desired app">第二希望
+                    <input type="text" class="" id="deliveryDate2" name="start_calendar" autocomplete="off">
+                    <div class="select">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <select name="" id="" class="dateTime">
+                            <option value="" selected>午前</option>
+                            <option value="">午後</option>
+                        </select>
+                    </div>
+				</li>
+				<li class="categories">※希望に添えない場合もございます。決定ではございませんので、あらかじめご了承ください</li>
+			</ul>
+
 			<div class="documents">
 				<p>入会書類郵送希望先</p>
 				<div class="app">

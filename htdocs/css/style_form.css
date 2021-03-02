@@ -471,6 +471,32 @@ a:active {}
 	color: #666;
 	font-size: 20px;
 }
+#application .desired{
+	display: flex;
+    align-items: center;
+}
+#application .desired label{
+	display: flex;
+    align-items: center;
+}
+#application .desired label:before{
+	bottom: 0;
+    margin: auto;
+}
+#application .desired label:after{
+	bottom: 4px;
+    margin: auto;
+}
+#application .desired .select{
+	width: 115px;
+}
+#application .desired input,#application .desired select{
+	width: auto;
+    margin-left: 10px;
+}
+#application .desired select{
+	width: 100px;
+}
 #application .documents{
 	background: #eee;
 	padding: 20px;
