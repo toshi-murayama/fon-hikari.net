@@ -559,6 +559,35 @@ a:active {}
 	margin-bottom: 10px;
 	font-size: 14px;
 }
+#application .pdfTitle{
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+}
+#application .pdfBtn{
+	display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#application .pdfBtn a{
+	display: block;
+    text-align: center;
+    padding: 15px 0;
+    width: 200px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1em;
+    margin: 0 20px;
+}
+#application .pdfBtn a:nth-child(1){
+    background: #FFD300;
+}
+#application .pdfBtn a:nth-child(2){
+    background: #EC7103;
+}
 
 .aother_address{
 	display: none;

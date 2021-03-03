@@ -459,10 +459,15 @@ $(window).load(function() {
                         個人情報取得における告知・同意文、利用約款に同意します。<br>
                     </div>
                 </div>
-			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] orange" id="agree">
-
-                        <label for="agree" class="agree">
-                        </label>同意する</p>
+            <div class="pdfTitle">重要事項説明書/契約約款</div>
+            <div class="pdfBtn">
+                <a href="pdf/hikari_jyusetsu.pdf" target="_blank">重要事項説明書<br>ダウンロード</a>
+                <a href="pdf/hikari_kiyaku.pdf" target="_blank">契約約款<br>ダウンロード</a>
+            </div>
+			<p class="agree_box">
+                「個人情報取得における告知・同意文」「重要事項説明書」「契約約款」の内容に同意します。<br>
+                <input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] orange" id="agree">
+                <label for="agree" class="agree"></label>同意する</p>
                 <dl class="btn">
 					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
                     <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
