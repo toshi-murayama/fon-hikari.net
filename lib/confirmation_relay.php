@@ -45,6 +45,7 @@ $remortSupport = h($_POST['remortSupport']);
 $collectivelyElectricity = h($_POST['collectivelyElectricity']);
 $hikariTV = h($_POST['hikariTV']);
 $kasperskySecurity = h($_POST['kasperskySecurity']);
+$construction = h($_POST['construction']);
 
 // 性別表示
 if($sex == '1') {
@@ -113,6 +114,37 @@ if($hikariTV == '0') {
     $hikariTVString = 'なし';
 } else {
     $hikariTVString = 'あり';
+
+    // ひかりTVプラン
+    $hikariTvPlan = h($_POST['hikariTvPlan']);
+    // ひかりTV一契約目申込（無:0/有:1）
+    $hikariTvPlanApplication = 1;
+    // ひかりTV一契約目チューナーレンタル（無:0/有:1）
+    $hikariTvPlanTuner = 1;
+    
+    if($hikariTvPlan == '0') {
+        $hikariTvPlanString = "基本料金プラン 月額1,100円(税込)";
+        // ひかりTV一契約目プラン
+        $hikariTvPlan = "01";
+    } else if ($hikariTvPlan == '1') {
+        $hikariTvPlanString = "お値うちプラン 月額3,850円(税込)";
+        $hikariTvPlan = "02";
+    } else if ($hikariTvPlan == '2') {
+        $hikariTvPlanString = "テレビおすすめプラン 月額2,750円(税込)";
+        $hikariTvPlan = "03";
+    } else if ($hikariTvPlan == '3') {
+        $hikariTvPlanString = "ビデオざんまいプラン 月額2,750円(税込)";
+        $hikariTvPlan = "04";
+    } else if ($hikariTvPlan == '4') {
+        $hikariTvPlanString = "お値うちプラン(2ねん割) 月額2,750円(税込)";
+        $hikariTvPlan = "05";
+    } else if ($hikariTvPlan == '5') {
+        $hikariTvPlanString = "テレビおすすめプラン(2ねん割) 月額1,650円(税込)";
+        $hikariTvPlan = "06";
+    } else if ($hikariTvPlan == '6') {
+        $hikariTvPlanString = "ビデオざんまいプラン(2ねん割) 月額1,650円(税込)";
+        $hikariTvPlan = "07";
+    }
 }
 
 // カスペルスキーセキュリティ
@@ -120,6 +152,17 @@ if($kasperskySecurity == '0') {
     $kasperskySecurityString = 'なし';
 } else {
     $kasperskySecurityString = 'あり';
+}
+
+// 希望工事日(インポート項目名：業務備考）
+if($construction == '0') {
+    $construction = 'いつでも可能';
+} else if ($construction == '1') {
+    $construction = h($_POST['constructionWeek']);
+} else if ($construction == '2') {
+    $construction = 
+    "第一希望： " . h($_POST['constructionPreferred1']) . "(" . h($_POST['constructionDay1']) . ")" . "\n" . 
+    "第二希望： " . h($_POST['constructionPreferred2']) . "(" . h($_POST['constructionDay2']) . ")";
 }
 
 // アフィリエイトID

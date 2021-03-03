@@ -350,42 +350,47 @@ $(window).load(function() {
 			<ul class="form">
 			    <li class="categories"></li>
 				<li class="app">
-					<input type="radio" name="construction" value="" id="free" checked>
+					<input type="radio" name="construction" value="0" id="free" checked>
 					<label for="free">いつでも可能</label>
 				</li>
 				<li class="desired app">
-					<input type="radio" name="construction" value="" id="week">
+					<input type="radio" name="construction" value="1" id="week">
 					<label for="week">曜日希望
                         <div class="select">
                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                            <select name="" id="" class="dateTime">
-                                <option value="" selected>午前</option>
-                                <option value="">午後</option>
+                            <select name="constructionWeek" id="" class="dateTime">
+                                <option value="月曜日" selected>月</option>
+                                <option value="火曜日">火</option>
+                                <option value="水曜日">水</option>
+                                <option value="木曜日">木</option>
+                                <option value="金曜日">金</option>
+                                <option value="土曜日">土</option>
+                                <option value="日曜日">日</option>
                             </select>
                         </div>曜日であればいつでも可能
                     </label>
 				</li>
 				<li class="app">
-					<input type="radio" name="construction" value="" id="day">
+					<input type="radio" name="construction" value="2" id="day">
 					<label for="day">日程指定</label>
 				</li>
 				<li class="desired app">第一希望
-                    <input type="text" class="" id="deliveryDate" name="start_calendar" autocomplete="off">
+                    <input type="text" class="" id="deliveryDate" name="constructionPreferred1" autocomplete="off">
                     <div class="select">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        <select name="" id="" class="dateTime">
-                            <option value="" selected>午前</option>
-                            <option value="">午後</option>
+                        <select name="constructionDay1" id="" class="dateTime">
+                            <option value="午前" selected>午前</option>
+                            <option value="午後">午後</option>
                         </select>
                     </div>
                 </li>
 				<li class="desired app">第二希望
-                    <input type="text" class="" id="deliveryDate2" name="start_calendar" autocomplete="off">
+                    <input type="text" class="" id="deliveryDate2" name="constructionPreferred2" autocomplete="off">
                     <div class="select">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        <select name="" id="" class="dateTime">
-                            <option value="" selected>午前</option>
-                            <option value="">午後</option>
+                        <select name="constructionDay2" id="" class="dateTime">
+                            <option value="午前" selected>午前</option>
+                            <option value="午後">午後</option>
                         </select>
                     </div>
 				</li>

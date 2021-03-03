@@ -95,7 +95,11 @@
 				<li class="categories">リモートサポート</li><li><p><?php print $remortSupportString; ?></p></li>
 				<li class="categories">まとめてでんき</li><li><p><?php print $collectivelyElectricityString; ?></p></li>
 				<li class="categories">ひかりTV for NURO申込</li><li><p><?php print $hikariTVString; ?></p></li>
+				<div <?php if ($hikariTV == "0") { ?> style="display:none"<?php } ?> >
+					<li class="categories">ひかりTV プラン</li><li><p><?php print $hikariTvPlanString; ?></p></li>
+				</div>
 				<li class="categories">カスペルスキーセキュリティー</li><li><p><?php print $kasperskySecurityString; ?></p></li>
+				<li class="categories">希望工事日</li><li><p><?php print nl2br($construction); ?></p></li>
 			</ul>
 			<h4>入会書類郵送先</h4>
 			<ul class="form">
@@ -146,6 +150,11 @@
 			<input type="hidden" value="<?php print h($collectivelyElectricity); ?>" name="collectivelyElectricity">
 			<input type="hidden" value="<?php print h($hikariTV); ?>" name="hikariTV">
 			<input type="hidden" value="<?php print h($kasperskySecurity); ?>" name="kasperskySecurity">
+			<input type="hidden" value="<?php print h($construction); ?>" name="construction">
+			<input type="hidden" value="<?php print h($hikariTvPlan); ?>" name="hikariTvPlan">
+            <input type="hidden" value="<?php print h($hikariTvPlanString); ?>" name="hikariTvPlanString">
+			<input type="hidden" value="<?php print h($hikariTvPlanApplication); ?>" name="hikariTvPlanApplication">
+			<input type="hidden" value="<?php print h($hikariTvPlanTuner); ?>" name="hikariTvPlanTuner">
 			<input type="hidden" value="<?php print h($affiOrderNumber); ?>" name="affiOrderNumber">
 			<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">

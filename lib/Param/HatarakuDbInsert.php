@@ -82,8 +82,10 @@ class HatarakuDbInsert
                 "116910" => "{$dataAll['daytimeContact']}",             // 日中連絡先番号
                 "116912" => "{$dataAll['consentToElectronicDelivery']}",// 契約書面電子交付への同意
                 "116918" => "{$dataAll['buildingDividion']}",           // 建物区分（1:戸建/２:集合）
-                "116980" => 0,                                          // ひかりTV一契約目申込（無:0/有:1)0に固定
+                "116980" => "{$dataAll['hikariTvPlanApplication']}",    // ひかりTV一契約目申込（無:0/有:1)
                 "116983" => 0,                                          // ひかりTV二契約目申込（無:0/有:1)0に固定
+                "116981" => "{$dataAll['hikariTvPlan']}",               // ひかりTV一契約目プラン
+                "116982" => "{$dataAll['hikariTvPlanTuner']}",          // ひかりTV一契約目チューナーレンタル（無:0/有:1）
                 "116897" => 'MB01FZ',                                   // プランコード (固定値)
                 "116895" => 'FA19317',                                  // 代理店コード (固定値)
                 "116896" => 'EA001A02',                                 // 経路コード (固定値)
@@ -92,6 +94,7 @@ class HatarakuDbInsert
                 "117001" => "{$dataAll['collectivelyElectricity']}",    // まとめて でんき(MO56FZ)
                 "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
                 "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
+                "116955" => "{$dataAll['construction']}",               // 業務備考
                 // TODO: 以下、CP終了時に削除
                 "117748" => '春のCP半年半額',                             // CP
                 "117749" => 10000,                                      // Amazonギフト券

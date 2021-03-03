@@ -204,8 +204,23 @@ class Mail
                 case 'hikariTV' :
                     $content .= '【 ひかりTV for NURO申込 】 ' . self::ON_OR_OFF[$v] . self::LINE;
                 break;
+                case 'hikariTvPlan' :
+                    $content .= '【 ひかりTVプラン 対応番号 】 ' . $v . self::LINE;
+                break;
+                case 'hikariTvPlanString' :
+                    $content .= '【 ひかりTVプラン 】 ' . $v . self::LINE;
+                break;
+                case 'hikariTvPlanApplication' :
+                    $content .= '【 ひかりTV一契約目申込 】 ' . $v . self::LINE;
+                break;
+                case 'hikariTvPlanTuner' :
+                    $content .= '【 ひかりTV一契約目チューナーレンタル 】 ' . $v . self::LINE;
+                break;
                 case 'kasperskySecurity' :
                     $content .= '【 カスペルスキーセキュリティー 】 ' . self::ON_OR_OFF[$v] . self::LINE;
+                break;
+                case 'construction' :
+                    $content .= '【 業務備考 】 ' . $v . self::LINE;
                 break;
                 default :
                 $content .= '【 '. $k . ' 】 ' . $v . self::LINE;
@@ -288,7 +303,9 @@ class Mail
         if($data['hikariTV'] == '0') {
             $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'お電話にて確認します。' . self::LINE;
+            $content .= 'あり' . self::LINE;
+            $content .= '《ひかりTVプラン 料金》' . self::LINE;
+            $content .= $data['hikariTvPlanString'] . self::LINE;
         }
 
         // まとめてでんき
@@ -296,15 +313,18 @@ class Mail
         if($data['collectivelyElectricity'] == '0') {
             $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'お電話にて確認します。' . self::LINE;
+            $content .= 'あり' . self::LINE;
         }
         // カスペルスキーセキュリティー
         $content .= '《カスペルスキーセキュリティー》' . self::LINE;
         if($data['kasperskySecurity'] == '0') {
             $content .= 'なし' . self::LINE;
         } else {
-            $content .= 'お電話にて確認します。' . self::LINE;
+            $content .= 'あり' . self::LINE;
         }
+        // 工事希望日
+        $content .= '《希望工事日》' . self::LINE;
+        $content .= $data['construction'] . self::LINE;
 
         $content .= '※工事内容により追加工事費が発生する場合がございます。' . self::LINE;
         $content .= '※付加サービスはプランにより価格が異なります。' . self::LINE;
@@ -320,20 +340,23 @@ class Mail
         $content .= '───────────────────────────' . self::LINE;
         $content .= 'STEP1：お申込み' . self::LINE;
         $content .= '本メールにて受付を致しました。' . self::LINE;
-        $content .= 'お電話にて申込確認を入れさせて頂いた後に' . self::LINE;
-        $content .= '1週間以内にお申込みに関する書面をご登録住所へ発送致します。' . self::LINE;
+        $content .= '内容不備や確認事項がある場合は、必要に応じて弊社よりご連絡がございます。お電話・メールのご確認をお願い致します。' . self::LINE;
+        $content .= '問題のない状態でございましたら1週間以内にお申込みに関する書面をご登録住所へ発送致します。' . self::LINE;
+        $content .= ' ' . self::LINE;
         $content .= 'STEP2：宅内工事日決定' . self::LINE;
-        $content .= '・申込確認のお電話にて宅内工事希望日を選択した場合' . self::LINE;
-        $content .= '　約3日～4日後に宅内工事日決定のご連絡を、申し込み時にご登録いただいた携帯電話番号宛にSMSを送信いたします。また、希望日で工事の実施ができない場合は、光回線調整窓口より、お申し込み時にご登録いただいた電話番号へ「宅内工事」の調整のご連絡をいたします。' . self::LINE;
-        $content .= '・申込確認のお電話にて宅内工事希望日を選択しなかった場合' . self::LINE;
-        $content .= '　およそ10日後に光回線調整窓口から日程調整の電話をいたします。' . self::LINE;
+        $content .= '約3日～4日後に宅内工事日決定のご連絡を、申し込み時にご登録いただいた携帯電話番号宛にSMSを送信いたします。' . self::LINE;
+        $content .= 'また、ご調整が取れない場合は光回線調整窓口より、1週間前後でお申し込み時にご登録いただいた電話番号へ「宅内工事」の調整のご連絡をいたします。' . self::LINE;
+        $content .= ' ' . self::LINE;
         $content .= 'STEP3：宅内工事' . self::LINE;
         $content .= 'お客さまの立ち合いが必要です。' . self::LINE;
         $content .= '立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。 ' . self::LINE;
+        $content .= ' ' . self::LINE;
         $content .= 'STEP4：屋外工事日決定' . self::LINE;
         $content .= '屋外工事日は建物への提供方法が確定し、工事日調整の準備が整い次第、ご連絡をしています。' . self::LINE;
+        $content .= ' ' . self::LINE;
         $content .= 'STEP5：屋外工事・ご利用開始' . self::LINE;
-        $content .= '宅内工事完了後、屋外工事日を決定していただきます。 立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。' . self::LINE;
+        $content .= '宅内工事完了後、屋外工事日を決定していただきます。' . self::LINE;
+        $content .= '立ち会いは必ず契約者本人である必要はありませんが （ご家族、ご友人も可）、本人以外の場合は契約者本人と電話がつながる状態であることが必要です。' . self::LINE;
         $content .= '━━━━━━━━━━━━━━━━━━━━━━━━━━━' . self::LINE;
         $content .= '▼お問い合わせ' . self::LINE;
         $content .= '────────────────────────────' . self::LINE;
