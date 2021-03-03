@@ -293,6 +293,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         </dl>
                     </li>
                 </ul>
+                <p>※NURO光の回線を現在ご利用頂いているお客様につきましてはお申込みができない可能性がございます。<br>カスタマーセンターにて確認させて頂きますので、こちらよりお問い合わせ下さいませ。</p>
                 <a class="flow_btn" href="area">お申し込みはこちら</a>
             </article>
             <article class="sp">

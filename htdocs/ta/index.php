@@ -192,6 +192,7 @@ $(function() {
                 <h2>お申し込みの流れ</h2>
                 <img src="img/flow_img.png" alt="">
             </article>
+            <div class="flowNote">※NURO光の回線を現在ご利用頂いているお客様につきましてはお申込みができない可能性がございます。<br>カスタマーセンターにて確認させて頂きますので、こちらよりお問い合わせ下さいませ。</div>
         </section>
         
         <!--section id="question">
