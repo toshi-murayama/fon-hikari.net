@@ -635,6 +635,14 @@ footer {
     display: block;
     width: 1200px;
     z-index: 1; }
+#summary .flowNote, #footerForm .flowNote {
+  max-width: 880px;
+  width: calc(90% - 100px);
+  margin: 50px auto 0;
+  font-size: 12px;
+  border: 4px solid #fbd349;
+  background: #fff;
+  padding: 30px 50px; }
 
 /*-----question-----*/
 #question {
@@ -1591,6 +1599,14 @@ footer {
       margin: auto;
       max-width: 1200px;
       width: 100%; }
+  #summary .flowNote, #footerForm .flowNote {
+    max-width: 880px;
+    width: calc(90% - 40px);
+    margin: 30px auto 0;
+    font-size: 12px;
+    border: 4px solid #fbd349;
+    background: #fff;
+    padding: 30px 20px; }
 
   /*-----question-----*/
   #question {
