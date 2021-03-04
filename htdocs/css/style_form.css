@@ -500,7 +500,7 @@ a:active {}
 #application .hikariTVplan{
 	text-indent: 2em;
 }
-#application .hikariTVplan span{
+#application label span{
 	font-size: 10px;
 }
 #application .documents{

@@ -267,7 +267,7 @@ $(window).load(function() {
 					<input type="radio" name="telephoneApplication" value="0" id="noneNuro" checked>
 					<label for="noneNuro">なし</label>
 					<input type="radio" name="telephoneApplication" value="1" class="check" id="nuro">
-					<label for="nuro">NURO光でんわ</label>
+					<label for="nuro">NURO光でんわ 東日本エリア月額550円<span>(税込)</span>/西日本エリア月額330円<span>(税込)</span></label>
 				</li>
 				<div class='numbering' style='display:none'>
 					<li class="categories">発番方法</li>
@@ -289,14 +289,14 @@ $(window).load(function() {
 					<input type="radio" name="remortSupport" value="0" id="noneRemortSupport" checked>
 					<label for="noneRemortSupport">なし</label>
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
-					<label for="remortSupport">あり</label>
+					<label for="remortSupport">あり 月額550円<span>(税込)</span></label>
 				</li>
 				<li class="categories">まとめてでんき</li>
 				<li class="app">
 					<input type="radio" name="collectivelyElectricity" value="0" id="noneCollectivelyElectricityortSupport" checked>
 					<label for="noneCollectivelyElectricityortSupport">なし</label>
 					<input type="radio" name="collectivelyElectricity" value="1" class="check" id="collectivelyElectricity">
-					<label for="collectivelyElectricity">あり</label>
+					<label for="collectivelyElectricity">あり 総額より500円引き</label>
 				</li>
 				<li class="categories">ひかりTV for NURO申込</li>
 				<li class="app">
@@ -309,31 +309,31 @@ $(window).load(function() {
                     <ul>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="0" id="normalPlan" checked>
-                            <label for="normalPlan">基本料金プラン 月額1,100円<span>(税込み)</span></label>
+                            <label for="normalPlan">基本料金プラン 月額1,100円<span>(税込)</span></label>
                         </li>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="1" class="check" id="oneutiPlan">
-                            <label for="oneutiPlan">お値うちプラン 月額3,850円<span>(税込み)</span></label>
+                            <label for="oneutiPlan">お値うちプラン 月額3,850円<span>(税込)</span></label>
                         </li>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="2" class="check" id="tvPlan">
-                            <label for="tvPlan">テレビおすすめプラン 月額2,750円<span>(税込み)</span></label>
+                            <label for="tvPlan">テレビおすすめプラン 月額2,750円<span>(税込)</span></label>
                         </li>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="3" class="check" id="videoPlan">
-                            <label for="videoPlan">ビデオざんまいプラン 月額2,750円<span>(税込み)</span></label>
+                            <label for="videoPlan">ビデオざんまいプラン 月額2,750円<span>(税込)</span></label>
                         </li>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="4" class="check" id="oneutiPlan2">
-                            <label for="oneutiPlan2">お値うちプラン(2ねん割) 月額2,750円<span>(税込み)</span></label>
+                            <label for="oneutiPlan2">お値うちプラン(2ねん割) 月額2,750円<span>(税込)</span></label>
                         </li>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="5" class="check" id="tvPlan2">
-                            <label for="tvPlan2">テレビおすすめプラン(2ねん割) 月額1,650円<span>(税込み)</span></label>
+                            <label for="tvPlan2">テレビおすすめプラン(2ねん割) 月額1,650円<span>(税込)</span></label>
                         </li>
                         <li class="app">
                             <input type="radio" name="hikariTvPlan" value="6" class="check" id="videoPlan2">
-                            <label for="videoPlan2">ビデオざんまいプラン(2ねん割) 月額1,650円<span>(税込み)</span></label>
+                            <label for="videoPlan2">ビデオざんまいプラン(2ねん割) 月額1,650円<span>(税込)</span></label>
                         </li>
                     </ul>
                 </li>
@@ -342,7 +342,7 @@ $(window).load(function() {
 					<input type="radio" name="kasperskySecurity" value="0" id="noneKasperskySecurity" checked>
 					<label for="noneKasperskySecurity">なし</label>
 					<input type="radio" name="kasperskySecurity" value="1" class="check" id="kasperskySecurity">
-					<label for="kasperskySecurity">あり</label>
+					<label for="kasperskySecurity">あり 月額550円<span>(税込)</span></label>
 				</li>
 			</ul>
 
