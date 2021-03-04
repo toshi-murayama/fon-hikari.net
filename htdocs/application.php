@@ -44,6 +44,34 @@ $(function(){
 		changeYear: true,
 		yearRange: '-70:+0',
 	}).datepicker("setDate", "2000/03/01");
+	//カレンダー
+	$("#deliveryDate,#deliveryDate2").datepicker({
+		minDate: '6d'
+	});
+    //光TV選択
+    $('select[name="constructionWeek"],input[name="constructionPreferred1"],input[name="constructionPreferred2"],select[name="constructionDay1"],select[name="constructionDay2"]').prop('disabled', true);
+    $('input[name="construction"]').change(function() {
+		if ($('input[name="construction"]:checked').val() == '0') {
+            $('select[name="constructionWeek"]').prop('disabled', true);
+            $('input[name="constructionPreferred1"]').prop('disabled', true);
+            $('input[name="constructionPreferred2"]').prop('disabled', true);
+            $('select[name="constructionDay1"]').prop('disabled', true);
+            $('select[name="constructionDay2"]').prop('disabled', true);
+		} else if ($('input[name="construction"]:checked').val() == '1') {
+			$('select[name="constructionWeek"]').prop('disabled', false);
+            $('input[name="constructionPreferred1"]').prop('disabled', true);
+            $('input[name="constructionPreferred2"]').prop('disabled', true);
+            $('select[name="constructionDay1"]').prop('disabled', true);
+            $('select[name="constructionDay2"]').prop('disabled', true);
+		} else if ($('input[name="construction"]:checked').val() == '2') {
+			$('select[name="constructionWeek"]').prop('disabled', true);
+            $('input[name="constructionPreferred1"]').prop('disabled', false);
+            $('input[name="constructionPreferred2"]').prop('disabled', false);
+            $('select[name="constructionDay1"]').prop('disabled', false);
+            $('select[name="constructionDay2"]').prop('disabled', false);
+		}
+	});
+    // 約款動作
 	$('.privacy').hide();
 	$('.privacyTitle').on('click', function() {
 		$('.privacy').slideToggle(500);
@@ -59,6 +87,14 @@ $(function(){
 		} else {
 			$('.numbering').hide();
 			$('.telephoneApplicationFixedLine').hide();
+		}
+	});
+	// 光TV
+	$('input[name="hikariTV"]').change(function() {
+		if ($('input[name="hikariTV"]:checked').val() != '0') {
+			$('.hikariTVplan').show();
+		} else {
+			$('.hikariTVplan').hide();
 		}
 	});
 	// 発番方法
@@ -254,7 +290,7 @@ $(window).load(function() {
 					<input type="radio" name="telephoneApplication" value="0" id="noneNuro" checked>
 					<label for="noneNuro">なし</label>
 					<input type="radio" name="telephoneApplication" value="1" class="check" id="nuro">
-					<label for="nuro">NURO光でんわ</label>
+					<label for="nuro">NURO光でんわ 東日本エリア月額550円<span>(税込)</span>/西日本エリア月額330円<span>(税込)</span></label>
 				</li>
 				<div class='numbering' style='display:none'>
 					<li class="categories">発番方法</li>
@@ -276,14 +312,14 @@ $(window).load(function() {
 					<input type="radio" name="remortSupport" value="0" id="noneRemortSupport" checked>
 					<label for="noneRemortSupport">なし</label>
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
-					<label for="remortSupport">あり</label>
+					<label for="remortSupport">あり 月額550円<span>(税込)</span></label>
 				</li>
 				<li class="categories">まとめてでんき</li>
 				<li class="app">
 					<input type="radio" name="collectivelyElectricity" value="0" id="noneCollectivelyElectricityortSupport" checked>
 					<label for="noneCollectivelyElectricityortSupport">なし</label>
 					<input type="radio" name="collectivelyElectricity" value="1" class="check" id="collectivelyElectricity">
-					<label for="collectivelyElectricity">あり</label>
+					<label for="collectivelyElectricity">あり 総額より500円引き</label>
 				</li>
 				<li class="categories">ひかりTV for NURO申込</li>
 				<li class="app">
@@ -292,16 +328,98 @@ $(window).load(function() {
 					<input type="radio" name="hikariTV" value="1" class="check" id="hikariTV">
 					<label for="hikariTV">あり</label>
 				</li>
-				<li>※ プランやチューナーに関しては、申込確認のお電話の際にヒアリングいたします。</li>
+				<li class='hikariTVplan' style='display:none'>
+                    <ul>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="0" id="normalPlan" checked>
+                            <label for="normalPlan">基本料金プラン 月額1,100円<span>(税込)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="1" class="check" id="oneutiPlan">
+                            <label for="oneutiPlan">お値うちプラン 月額3,850円<span>(税込)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="2" class="check" id="tvPlan">
+                            <label for="tvPlan">テレビおすすめプラン 月額2,750円<span>(税込)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="3" class="check" id="videoPlan">
+                            <label for="videoPlan">ビデオざんまいプラン 月額2,750円<span>(税込)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="4" class="check" id="oneutiPlan2">
+                            <label for="oneutiPlan2">お値うちプラン(2ねん割) 月額2,750円<span>(税込)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="5" class="check" id="tvPlan2">
+                            <label for="tvPlan2">テレビおすすめプラン(2ねん割) 月額1,650円<span>(税込)</span></label>
+                        </li>
+                        <li class="app">
+                            <input type="radio" name="hikariTvPlan" value="6" class="check" id="videoPlan2">
+                            <label for="videoPlan2">ビデオざんまいプラン(2ねん割) 月額1,650円<span>(税込)</span></label>
+                        </li>
+                    </ul>
+                </li>
 				<li class="categories">カスペルスキーセキュリティー</li>
 				<li class="app">
 					<input type="radio" name="kasperskySecurity" value="0" id="noneKasperskySecurity" checked>
 					<label for="noneKasperskySecurity">なし</label>
 					<input type="radio" name="kasperskySecurity" value="1" class="check" id="kasperskySecurity">
-					<label for="kasperskySecurity">あり</label>
+					<label for="kasperskySecurity">あり 月額550円<span>(税込)</span></label>
 				</li>
 			</ul>
-			
+
+            <h4>希望工事日</h4>
+			<ul class="form">
+			    <li class="categories"></li>
+				<li class="app">
+					<input type="radio" name="construction" value="0" id="free" checked>
+					<label for="free">いつでも可能</label>
+				</li>
+				<li class="desired app">
+					<input type="radio" name="construction" value="1" id="week">
+					<label for="week">曜日希望
+                        <div class="select">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            <select name="constructionWeek" id="" class="dateTime">
+                                <option value="月曜日" selected>月</option>
+                                <option value="火曜日">火</option>
+                                <option value="水曜日">水</option>
+                                <option value="木曜日">木</option>
+                                <option value="金曜日">金</option>
+                                <option value="土曜日">土</option>
+                                <option value="日曜日">日</option>
+                            </select>
+                        </div>曜日であればいつでも可能
+                    </label>
+				</li>
+				<li class="app">
+					<input type="radio" name="construction" value="2" id="day">
+					<label for="day">日程指定</label>
+				</li>
+				<li class="desired app">第一希望
+                    <input type="text" class="" id="deliveryDate" name="constructionPreferred1" autocomplete="off">
+                    <div class="select">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <select name="constructionDay1" id="" class="dateTime">
+                            <option value="午前" selected>午前</option>
+                            <option value="午後">午後</option>
+                        </select>
+                    </div>
+                </li>
+				<li class="desired app">第二希望
+                    <input type="text" class="" id="deliveryDate2" name="constructionPreferred2" autocomplete="off">
+                    <div class="select">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <select name="constructionDay2" id="" class="dateTime">
+                            <option value="午前" selected>午前</option>
+                            <option value="午後">午後</option>
+                        </select>
+                    </div>
+				</li>
+				<li class="categories">※希望に添えない場合もございます。決定ではございませんので、あらかじめご了承ください</li>
+			</ul>
+
 			<div class="documents">
 				<p>入会書類郵送希望先</p>
 				<div class="app">
@@ -369,10 +487,15 @@ $(window).load(function() {
                         個人情報取得における告知・同意文、利用約款に同意します。<br>
                     </div>
                 </div>
-			<p class="agree_box"><input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] orange" id="agree">
-
-                        <label for="agree" class="agree">
-                        </label>同意する</p>
+            <div class="pdfTitle">重要事項説明書/契約約款</div>
+            <div class="pdfBtn">
+                <a href="pdf/hikari_jyusetsu.pdf" target="_blank">重要事項説明書<br>ダウンロード</a>
+                <a href="pdf/hikari_kiyaku.pdf" target="_blank">契約約款<br>ダウンロード</a>
+            </div>
+			<p class="agree_box">
+                「個人情報取得における告知・同意文」「重要事項説明書」「契約約款」の内容に同意します。<br>
+                <input type="checkbox" name="同意文、利用約款" value="同意する" class="validate[required] orange" id="agree">
+                <label for="agree" class="agree"></label>同意する</p>
                 <dl class="btn">
 					<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
                     <dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
