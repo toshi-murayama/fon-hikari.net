@@ -48,6 +48,29 @@ $(function(){
 	$("#deliveryDate,#deliveryDate2").datepicker({
 		minDate: '6d'
 	});
+    //光TV選択
+    $('select[name="constructionWeek"],input[name="constructionPreferred1"],input[name="constructionPreferred2"],select[name="constructionDay1"],select[name="constructionDay2"]').prop('disabled', true);
+    $('input[name="construction"]').change(function() {
+		if ($('input[name="construction"]:checked').val() == '0') {
+            $('select[name="constructionWeek"]').prop('disabled', true);
+            $('input[name="constructionPreferred1"]').prop('disabled', true);
+            $('input[name="constructionPreferred2"]').prop('disabled', true);
+            $('select[name="constructionDay1"]').prop('disabled', true);
+            $('select[name="constructionDay2"]').prop('disabled', true);
+		} else if ($('input[name="construction"]:checked').val() == '1') {
+			$('select[name="constructionWeek"]').prop('disabled', false);
+            $('input[name="constructionPreferred1"]').prop('disabled', true);
+            $('input[name="constructionPreferred2"]').prop('disabled', true);
+            $('select[name="constructionDay1"]').prop('disabled', true);
+            $('select[name="constructionDay2"]').prop('disabled', true);
+		} else if ($('input[name="construction"]:checked').val() == '2') {
+			$('select[name="constructionWeek"]').prop('disabled', true);
+            $('input[name="constructionPreferred1"]').prop('disabled', false);
+            $('input[name="constructionPreferred2"]').prop('disabled', false);
+            $('select[name="constructionDay1"]').prop('disabled', false);
+            $('select[name="constructionDay2"]').prop('disabled', false);
+		}
+	});
     // 約款動作
 	$('.privacy').hide();
 	$('.privacyTitle').on('click', function() {
