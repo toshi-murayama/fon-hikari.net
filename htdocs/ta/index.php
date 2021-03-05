@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style_lp.css">
 <link rel="stylesheet" href="../css/jquery.fatNav.css">
-<link rel="stylesheet" href="../css/validationEngine.jquery.css"> 
+<link rel="stylesheet" href="../css/validationEngine.jquery.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/common.js"></script>
@@ -136,7 +136,7 @@ $(function() {
                                     <dl>
                                         <dt>郵便番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]"  minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -146,9 +146,9 @@ $(function() {
                                         <dd>
                                             <select name="installationPref" id="prefectures" class="validate[required]">
                                                 <option value="" selected>都道府県を選択</option>
-                                            
+
                                             <?php foreach(Pref::PREFS as $pref) { ?>
-                                                
+
                                                 <option value=<?php print $pref?>><?php print $pref?></option>
 
                                             <?php } ?>
@@ -194,7 +194,7 @@ $(function() {
             </article>
             <div class="flowNote">※NURO光の回線を現在ご利用頂いているお客様につきましてはお申込みができない可能性がございます。<br>カスタマーセンターにて確認させて頂きますので、こちらよりお問い合わせ下さいませ。</div>
         </section>
-        
+
         <!--section id="question">
             <article>
                 <div class="content">
@@ -203,7 +203,7 @@ $(function() {
                 </div>
             </article>
         </section>
-        
+
         <section id="campaign">
             <article>
                 <div class="boxL">
@@ -306,7 +306,7 @@ $(function() {
                                     <dl>
                                         <dt>郵便番号</dt>
                                         <dd>
-                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]" minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -316,9 +316,9 @@ $(function() {
                                         <dd>
                                             <select name="installationPref" id="prefectures" class="validate[required]">
                                                 <option value="" selected>都道府県を選択</option>
-                                            
+
                                             <?php foreach(Pref::PREFS as $pref) { ?>
-                                                
+
                                                 <option value=<?php print $pref?>><?php print $pref?></option>
 
                                             <?php } ?>
@@ -360,7 +360,7 @@ $(function() {
             </article>
             <div class="appBtn"><a href="../area.php">お申込みはこちら</a></div>
         </section>
-        
+
         <section id="point">
             <article>
                 <h2>Fon光の魅力</h2>
@@ -428,7 +428,7 @@ $(function() {
                                     <dl>
                                         <dt>郵便番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]"  minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -438,9 +438,9 @@ $(function() {
                                         <dd>
                                             <select name="installationPref" id="prefectures" class="validate[required]">
                                                 <option value="" selected>都道府県を選択</option>
-                                            
+
                                             <?php foreach(Pref::PREFS as $pref) { ?>
-                                                
+
                                                 <option value=<?php print $pref?>><?php print $pref?></option>
 
                                             <?php } ?>

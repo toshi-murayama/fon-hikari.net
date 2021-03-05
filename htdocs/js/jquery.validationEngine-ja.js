@@ -17,7 +17,7 @@
                     "alertTextCheckboxMultiple": "* 選択してください",
                     "alertTextCheckboxe": "個人情報取得における告知・同意文、個人情報保護方針に同意して下さい"
                 },
-                "requiredInFunction": { 
+                "requiredInFunction": {
                     "func": function(field, rules, i, options){
                         return (field.val() == "test") ? true : false;
                     },
@@ -56,7 +56,7 @@
                     "regex": "none",
                     "alertText": "* ",
                     "alertText2": " より最近の日付にしてください"
-                },	
+                },
                 "maxCheckbox": {
                     "regex": "none",
                     "alertText": "* チェックしすぎです"
@@ -117,6 +117,12 @@
                     "regex": /^[0-9a-zA-Z]+$/,
                     "alertText": "* 半角英数で入力してください"
                 },
+                "zip": {
+                    "regex": /^[0-9\ ]{7}$/,
+                    "range":[7,7],
+                    "digits":true,
+                    "alertText": "* 郵便番号が正しくありません。"
+                },
                 // --- CUSTOM RULES -- Those are specific to the demos, they can be removed or changed to your likings
                 "ajaxUserCall": {
                     "url": "ajaxValidateFieldUser",
@@ -151,11 +157,10 @@
                     "alertText": "* 『HELLO』と入力してください"
                 }
             };
-            
+
         }
     };
     $.validationEngineLanguage.newLang();
 })(jQuery);
 
 
-    

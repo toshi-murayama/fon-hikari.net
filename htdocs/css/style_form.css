@@ -162,7 +162,7 @@ a:active {}
 #area_search .address .select {
 	position: relative;
 }
-#area_search .address select, 
+#area_search .address select,
 #area_search .subsequently select {
 	-webkit-appearance: none;
     -moz-appearance: none;
@@ -187,7 +187,7 @@ a:active {}
 #area_search .address input[type='tel']{
 	padding: 5px 0;
 }
-#area_search .subsequently .result, 
+#area_search .subsequently .result,
 #area_search .address input[type='tel']{
 	width: 100%;
 	border: 1px solid #666;
@@ -362,6 +362,7 @@ a:active {}
 	padding-left: 10px;
 }
 #application input[type=text],
+#application input[type=tel],
 #contact input[type=text]{
 	width: 100%;
 	border: 1px solid #666;
@@ -370,6 +371,7 @@ a:active {}
 	border-radius: 5px;
 }
 #application input.min[type=text],
+#application input.min[type=tel],
 #contact input.min[type=text]{
 	width: 30%;
 }
@@ -966,7 +968,7 @@ margin: 30px auto 0;
 img{
 	max-width: 100%;
 	height: auto;
-}		
+}
 #area_search,
 #application,
 #confirmation,
@@ -1050,7 +1052,7 @@ img{
 	padding: 10px;
 	margin: 10px auto;
 }
-	
+
 /* application */
 #application h3,
 #confirmation h3,
@@ -1084,6 +1086,7 @@ img{
 	margin-bottom: 15px;
 }
 #application input[type=text],
+#application input[type=tel],
 #contact input[type=text]{
 	width: 100%;
 	border: 1px solid #666;
@@ -1092,6 +1095,7 @@ img{
 	border-radius: 5px;
 }
 #application input.min[type=text],
+#application input.min[type=tel],
 #contact input.min[type=text]{
 	width: 50%;
 }
@@ -1193,7 +1197,7 @@ img{
 	display: block;
 	margin: -30px 0 50px;
 }
-	
+
 #application .btn,
 #confirmation .btn,
 #contact .btn{

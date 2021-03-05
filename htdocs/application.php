@@ -24,9 +24,9 @@
 <?php include "include/ogp.html";?>
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/animate.css"> 
+<link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">
-<link rel="stylesheet" href="css/validationEngine.jquery.css"> 
+<link rel="stylesheet" href="css/validationEngine.jquery.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="css/jquery-ui.css" >
 <!--js-->
@@ -115,7 +115,7 @@ $(function(){
 		}
 	});
 });
-	
+
 $(window).load(function() {
 		//発送先住所
 		$('[name="mailingDestination"]:radio').change( function() {
@@ -123,7 +123,7 @@ $(window).load(function() {
 					$('.aother_address').fadeOut();
 				} else if ($('[id=aother]').prop('checked')) {
 					$('.aother_address').fadeIn();
-				} 
+				}
 		}).change();
 
 		// 郵便番号
@@ -135,7 +135,7 @@ $(window).load(function() {
 		if(isset($_POST['homeType'])) {
 		?>
 		homeType = <?php echo $_POST['homeType']?> - 1;
-		<?php 
+		<?php
 		}
 		?>
 
@@ -156,7 +156,7 @@ $(window).load(function() {
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-	<?php 
+	<?php
 		if(isset($_COOKIE['affiliate'])) {
 			include "include/header_affiliate_form.html";
 		} else {
@@ -219,7 +219,7 @@ $(window).load(function() {
 			<ul class="form">
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="postalCode" value="<?php print h($_POST['zipAddress']); ?>"  minlength='7' maxlength='7' class="min validate[required]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities', '', '', false);">
+					<input type="tel" name="postalCode" value="<?php print h($_POST['zipAddress']); ?>"  minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" class="min validate[required],[custom[zip]]" id="postalCode" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','installationMunicipalities', '', '', false);">
 			 	</li>
 				<li class="categories">都道府県</li>
 				<li>
@@ -227,13 +227,13 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="installationPref" id="prefectures" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-							
+
 							<?php foreach(Pref::PREFS as $pref) { ?>
-							
-							<option value=<?php print $pref?>><?php print $pref?></option>                                       
-							
+
+							<option value=<?php print $pref?>><?php print $pref?></option>
+
 							<?php } ?>
-							
+
                         </select>
 						</div>
 				</li>
@@ -432,7 +432,7 @@ $(window).load(function() {
 			<ul class="form aother_address" style='display:none'>
 				<li class="categories">郵便番号</li>
 				<li>
-					<input type="text" name="mailingPostalCode" value="<?php print $postal_code; ?>" type="number" maxlength='7' class="min validate[required],[custom[onlyNumberSp]]" onkeyup="AjaxZip3.zip2addr(this,'','mailingPrefName','mailingMunicipalities', 'mailingTown');">
+					<input type="tel" name="mailingPostalCode" value="<?php print $postal_code; ?>"  minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" class="min validate[required],[custom[zip]]" onkeyup="AjaxZip3.zip2addr(this,'','mailingPrefName','mailingMunicipalities', 'mailingTown');">
 				</li>
 				<li class="categories">都道府県</li>
 				<li>
@@ -440,13 +440,13 @@ $(window).load(function() {
 						<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						<select name="mailingPrefName" class="validate[required]">
                             <option value="" selected>都道府県を選択</option>
-							
+
 							<?php foreach(Pref::PREFS as $pref) { ?>
-							
-							<option value=<?php print $pref?>><?php print $pref?></option>                                       
-							
+
+							<option value=<?php print $pref?>><?php print $pref?></option>
+
 							<?php } ?>
-						
+
 						</select>
 					</div>
 				</li>
@@ -502,7 +502,7 @@ $(window).load(function() {
                 </dl>
         </form>
 	</section>
-	<?php 
+	<?php
 	if(isset($_COOKIE['affiliate'])) {
 		include "include/footer_affiliate.html";
 	} else {
