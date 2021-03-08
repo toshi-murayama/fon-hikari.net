@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     $_SESSION['dunutsCp'] = true;
@@ -207,7 +206,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <div class="box">
                     <h3>月額基本料金(半年間)<s>¥4,378</s>
                     ↓
-                    <em>¥0<sup>※2</sup></em></h3>
+                    <em>¥0<sup></sup></em></h3>
                     <ul>
                         <li>
                             <img src="img/koji_ico.svg" alt="">
