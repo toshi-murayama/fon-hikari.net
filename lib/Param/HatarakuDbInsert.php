@@ -45,6 +45,15 @@ class HatarakuDbInsert
     private static function getApiParameter(array $dataAll): array
     {
         date_default_timezone_set('Asia/Tokyo');
+
+        // TODO: 2021/03/10に削除.
+        session_start();
+        $cp = 'CP春の半年半額';
+        $gift = 10000;
+        if($_SESSION['dunutsCp']) {
+            $cp = 'ドーナツCP';
+            $gift = 0;
+        }
         return [
             "dbSchemaId"=>"101234", // Fon光（青の働くDB）
             "getSubordinate"=>"0",
@@ -96,8 +105,8 @@ class HatarakuDbInsert
                 "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
                 "116955" => "{$dataAll['construction']}",               // 業務備考
                 // TODO: 以下、CP終了時に削除
-                "117748" => '春のCP半年半額',                             // CP
-                "117749" => 10000,                                      // Amazonギフト券
+                "117748" => $cp,                                        // CP
+                "117749" => $gift,                                      // Amazonギフト券
             ]
         ];
     }
