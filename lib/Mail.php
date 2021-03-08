@@ -227,8 +227,13 @@ class Mail
             }
         }
         // TODO:  以下、CP終了時に削除
-        $content .= '【 CP 】 春のCP半年半額' . self::LINE;
-        $content .= '【 Amazonギフト券 】 10,000' . self::LINE;
+        session_start();
+        if($_SESSION['dunutsCp']) {
+            $content .= '【 CP 】 ドーナツCP' . self::LINE;
+        } else {
+            $content .= '【 CP 】 春のCP半年半額' . self::LINE;
+            $content .= '【 Amazonギフト券 】 10,000' . self::LINE;
+        }
 
         $content .= self::LINE;
         $content .= '送信された日時：' . date( "Y/m/d (D) H:i:s" ) . self::LINE;
@@ -262,14 +267,26 @@ class Mail
         $content .= '《Fon光月額利用料》' . self::LINE;
         // NOTE: 急遽CPの割引ができないという旨の連絡がきたので、*2 で対応している。 CPが終わったら、*2を削除し、/lib/Costの金額を元に戻す.
         $content .= '月額：' . $cost->getFee4MailContent($cost->getHikariLineCost() * 2) . self::LINE;
-        // TODO: 以下、CP終了時に削除 CP中に金額が変わることはないので、ハードコード.
-        $content .= '※開通から6カ月間2,189円をキャッシュバック' . self::LINE;
+        session_start();
+        if($_SESSION['dunutsCp']) {
+            $content .= '《工事費：分割》' . self::LINE;
+            $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
+            $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
+            $content .= '※ 半年間で解約される場合も請求されません。' . self::LINE;
+            $content .= '《契約事務手数料》' . self::LINE;
+            $content .= '0円' . self::LINE;
+            unset($_SESSION['dunutsCp']);
+        } else {
+            // TODO: 以下、CP終了時に削除 CP中に金額が変わることはないので、ハードコード.
+            $content .= '※開通から6カ月間2,189円をキャッシュバック' . self::LINE;
 
-        $content .= '《工事費：分割》' . self::LINE;
-        $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
-        $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
-        $content .= '《契約事務手数料》' . self::LINE;
-        $content .= $cost->getFee4MailContent($cost->getAdminFee()) . self::LINE;
+            $content .= '《工事費：分割》' . self::LINE;
+            $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
+            $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
+            $content .= '《契約事務手数料》' . self::LINE;
+            $content .= $cost->getFee4MailContent($cost->getAdminFee()) . self::LINE;
+        }
+
         $content .= '【付加サービス】' . self::LINE;
         $content .= '《NURO光でんわ申込》' . self::LINE;
         if($data['telephoneApplication'] == '0') {
@@ -393,7 +410,7 @@ class Mail
         mb_internal_encoding("UTF-8");
 
         $error_subject =  "Fon光管理者通知メール【重要】申込の働くDBインポート登録に失敗しました。";
-        
+
         $to = mb_convert_encoding("support@fon-hikari.net, onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    unset($_SESSION['dunutsCp']);
+    $_SESSION['dunutsCp'] = true;
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,10 +37,10 @@
 
     <?php include "include/header.html";?>
     <div id="wrap">
-        <section id="top">
+        <section id="top_donuts">
             <article>
-                <h1><img src="ta/img/spring_cp_top.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
+                <h1><img src="img/dounts.jpeg" alt="3月10日（水） 20:59までにお申し込みの方限定！ドーナツコラボキャンペーン 半年無料" class="pc">
+                <img src="img/dounts.jpeg" alt="3月10日（水） 20:59までにお申し込みの方限定！ドーナツコラボキャンペーン 半年無料" class="sp"></h1>
                 <ul>
                     <li>
                         <a href="area"></a>
@@ -204,9 +204,9 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
     音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
                 </div>
                 <div class="box">
-                    <h3>月額基本料金<s>¥4,378</s>
+                    <h3>月額基本料金(半年間)<s>¥4,378</s>
                     ↓
-                    <em>¥2,189<sup>※2</sup></em></h3>
+                    <em>¥0<sup></sup></em></h3>
                     <ul>
                         <li>
                             <img src="img/koji_ico.svg" alt="">
@@ -219,7 +219,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/doc_ico.svg" alt="">
                             <dl>
                                 <dt>契約事務手数料</dt>
-                                <dd>¥3,300</dd>
+                                <dd>¥0</dd>
                             </dl>
                         </li>
                         <li>
@@ -232,15 +232,14 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                         <li>
                             <img src="img/x_ico.svg" alt="">
                             <dl>
-                                <dt>契約解除料</dt>
-                                <dd>¥21,780</dd>
+                                <dt>契約解除料(半年以内)</dt>
+                                <dd>¥0</dd>
                             </dl>
                         </li>
                     </ul>
                 </div>
                 <p>※ 記載の金額は全て税込金額です。</p>
                 <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
-                <p>※2 月額4,378円（税込）から開通～6カ月目まで月額2,189円をキャッシュバックした金額です。</p>
                 <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
                 <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
             </article>
@@ -339,11 +338,11 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="spring_cp">
+        <section id="donuts_cp">
             <article>
                 <h2>
-                    <img src="ta/img/bnr.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                    <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp">
+                    <img src="img/dounts.jpeg" alt="3月10日（水） 20:59までにお申し込みの方限定！ドーナツコラボキャンペーン 半年無料" class="pc">
+                    <img src="img/dounts.jpeg" alt="3月10日（水） 20:59までにお申し込みの方限定！ドーナツコラボキャンペーン 半年無料" class="sp">
                 </h2>
                 <a href="ta/">詳しくはこちら</a>
             </article>
