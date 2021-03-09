@@ -8,8 +8,7 @@ class Cost
 {
     // 消費税率
     private const TAX = 10;
-    // NOTE: 値段はすべて税抜. リファクタリングで税抜を使用している箇所が、あったらprivateをはずすかも.
-    // FON光回線 TODO: 以下、CP終了時に3980に修正
+    // NOTE: 値段はすべて税抜
     private const FON_HIKARI_LINE_COST = 3980;
     // ひかり電話（東日本）
     private const HIKARI_PHONE_EAST_COST = 500;

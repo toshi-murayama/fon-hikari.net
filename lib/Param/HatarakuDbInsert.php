@@ -47,11 +47,9 @@ class HatarakuDbInsert
         date_default_timezone_set('Asia/Tokyo');
 
         // TODO: 2021/03/10に削除.
-        session_start();
         $cp = '';
-        if($_SESSION['dunutsCp']) {
+        if($dataAll['isCp']) {
             $cp = 'ドーナツCP';
-            $gift = 0;
         }
         return [
             "dbSchemaId"=>"101234", // Fon光（青の働くDB）
@@ -105,7 +103,7 @@ class HatarakuDbInsert
                 "116955" => "{$dataAll['construction']}",               // 業務備考
                 // TODO: 以下、CP終了時に削除
                 "117748" => $cp,                                        // CP
-                "117749" => 0,                                      // Amazonギフト券 NOTE: CP終了に伴い、0に固定
+                "117749" => 0,                                          // Amazonギフト券 NOTE: CP終了に伴い、0に固定
             ]
         ];
     }
