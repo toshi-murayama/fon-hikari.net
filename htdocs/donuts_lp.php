@@ -220,7 +220,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/koji_ico.svg" alt="">
                             <dl>
                                 <dt>工事費</dt>
-                                <dd>無料<sup>※1</sup></dd>
+                                <dd>無料<sup></sup></dd>
                             </dl>
                         </li>
                         <li>
@@ -247,7 +247,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </ul>
                 </div>
                 <p>※ 記載の金額は全て税込金額です。</p>
-                <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
                 <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
                 <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
             </article>
