@@ -265,6 +265,7 @@ class Mail
         $content .= '月額：' . $cost->getFee4MailContent($cost->getHikariLineCost()) . self::LINE;
         session_start();
         if($_SESSION['dunutsCp']) {
+            $content .= '※開通から6カ月間は月額0円' . self::LINE;
             $content .= '《工事費：分割》' . self::LINE;
             $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
             $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
