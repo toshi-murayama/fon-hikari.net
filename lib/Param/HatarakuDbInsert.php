@@ -48,8 +48,7 @@ class HatarakuDbInsert
 
         // TODO: 2021/03/10に削除.
         session_start();
-        $cp = 'CP春の半年半額';
-        $gift = 10000;
+        $cp = '';
         if($_SESSION['dunutsCp']) {
             $cp = 'ドーナツCP';
             $gift = 0;
@@ -106,7 +105,7 @@ class HatarakuDbInsert
                 "116955" => "{$dataAll['construction']}",               // 業務備考
                 // TODO: 以下、CP終了時に削除
                 "117748" => $cp,                                        // CP
-                "117749" => $gift,                                      // Amazonギフト券
+                "117749" => 0,                                      // Amazonギフト券 NOTE: CP終了に伴い、0に固定
             ]
         ];
     }

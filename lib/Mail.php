@@ -230,9 +230,6 @@ class Mail
         session_start();
         if($_SESSION['dunutsCp']) {
             $content .= '【 CP 】 ドーナツCP' . self::LINE;
-        } else {
-            $content .= '【 CP 】 春のCP半年半額' . self::LINE;
-            $content .= '【 Amazonギフト券 】 10,000' . self::LINE;
         }
 
         $content .= self::LINE;
@@ -265,8 +262,7 @@ class Mail
         $content .= '《契約期間》' . self::LINE;
         $content .= '24か月（自動更新）' . self::LINE;
         $content .= '《Fon光月額利用料》' . self::LINE;
-        // NOTE: 急遽CPの割引ができないという旨の連絡がきたので、*2 で対応している。 CPが終わったら、*2を削除し、/lib/Costの金額を元に戻す.
-        $content .= '月額：' . $cost->getFee4MailContent($cost->getHikariLineCost() * 2) . self::LINE;
+        $content .= '月額：' . $cost->getFee4MailContent($cost->getHikariLineCost()) . self::LINE;
         session_start();
         if($_SESSION['dunutsCp']) {
             $content .= '《工事費：分割》' . self::LINE;
@@ -277,9 +273,6 @@ class Mail
             $content .= '0円' . self::LINE;
             unset($_SESSION['dunutsCp']);
         } else {
-            // TODO: 以下、CP終了時に削除 CP中に金額が変わることはないので、ハードコード.
-            $content .= '※開通から6カ月間2,189円をキャッシュバック' . self::LINE;
-
             $content .= '《工事費：分割》' . self::LINE;
             $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
             $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
