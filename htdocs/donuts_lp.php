@@ -1,14 +1,6 @@
 <?php
-	date_default_timezone_set('Asia/Tokyo');
-	$now = new DateTime();
-	$endDateTime = new DateTime('2021/03/10 22:00:00');
-    if ($now >= $endDateTime) {
-        header('Location: /');
-        exit;
-    }
     session_start();
     $_SESSION['dunutsCp'] = true;
-
 ?>
 <!DOCTYPE html>
 <html>

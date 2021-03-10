@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*-------------------------------------------------
  common
 -------------------------------------------------*/
@@ -354,13 +353,12 @@ footer {
 
 /*-----top-----*/
 #top {
-  background: url(../img/top_bg.jpg) no-repeat 50% 10%;
+  background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
   background-size: cover;
-  height: 70vh;
   color: #fff; }
   #top article {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
     height: 100%;
     margin: 0 auto;
     position: relative;
@@ -370,7 +368,7 @@ footer {
     #top article h1 {
       font-size: 36px;
       width: 100%;
-      padding-top: 20vh;
+      padding-top: 10vh;
       font-weight: 600; }
     #top article h2 {
       font-size: 48px;
@@ -397,7 +395,7 @@ footer {
           -ms-flex-pack: justify;
               justify-content: space-between;
       color: #666;
-      bottom: -30px;
+      bottom: -150px;
       font-size: 16px;
       font-weight: 600; }
       #top article ul li {
@@ -506,6 +504,8 @@ footer {
           -webkit-transform: rotate(45deg) translateX(0) translateY(50%);
           transform: rotate(45deg) translateX(0) translateY(50%); }
 
+
+/*-----削除予定-----*/
 #top_donuts {
   background: #000;
   background-size: cover;
@@ -661,7 +661,7 @@ footer {
 /*-----summary-----*/
 #summary {
   background: #f6f6f6;
-  padding: 100px 0 50px; }
+  padding: 200px 0 50px; }
   #summary article {
     width: 90%;
     max-width: 1200px;
@@ -1011,13 +1011,13 @@ footer {
       font-size: 16px;
       margin-top: 20px; }
 
-/*-----削除予定-----*/
-#dounts_cp {
+/*-----spring_cp-----*/
+#spring_cp {
   text-align: center;
-  background: #000;
+  background: url(../ta/img/spring_cp_bg.png) 100% 0%;
   background-size: cover;
   padding: 50px 0 15px; }
-  #dounts_cp article {
+  #spring_cp article {
     width: 90%;
     max-width: 1200px;
     height: 100%;
@@ -1025,7 +1025,7 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    #dounts_cp article a {
+    #spring_cp article a {
       border: 2px solid #fff;
       color: #ff81ae;
       padding: 15px 30px;
@@ -1036,7 +1036,41 @@ footer {
       background: #fff;
       -webkit-box-shadow: 5px 0 0 0 #e0e0e0;
               box-shadow: 5px 0 0 0 #e0e0e0; }
-    #dounts_cp article a:hover {
+    #spring_cp article a:hover {
+      border: 2px solid #fff;
+      color: #fff;
+      background: none;
+      padding: 15px 30px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 1; }
+/*-----削除予定-----*/
+#donuts_cp {
+  text-align: center;
+  background:#000;
+  background-size: cover;
+  padding: 50px 0 15px; }
+  #donuts_cp article {
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    #donuts_cp article a {
+      border: 2px solid #fff;
+      color: #ff81ae;
+      padding: 15px 30px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px;
+      background: #fff;
+      -webkit-box-shadow: 5px 0 0 0 #e0e0e0;
+              box-shadow: 5px 0 0 0 #e0e0e0; }
+    #donuts_cp article a:hover {
       border: 2px solid #fff;
       color: #fff;
       background: none;
@@ -1409,7 +1443,7 @@ footer {
 
   /*-----top-----*/
   #top {
-    background: url(../img/top_bg.jpg) no-repeat 50% 10%;
+    background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
     background-size: cover;
     height: auto;
     color: #fff;
@@ -1426,7 +1460,7 @@ footer {
       #top article h1 {
         font-size: 18px;
         width: 100%;
-        padding-top: 20vh;
+        padding-top: 5vh;
         font-weight: 600; }
       #top article h2 {
         font-size: 24px;
@@ -1448,10 +1482,10 @@ footer {
             -ms-flex-pack: justify;
                 justify-content: space-between;
         color: #666;
-        bottom: -30px;
+        bottom: 0px;
         font-size: 14px;
         font-weight: 600;
-        margin-top: 30px; }
+        margin-top: 0px; }
         #top article ul li {
           background: #fff;
           border-radius: 5px;
@@ -1507,14 +1541,14 @@ footer {
           margin: 0 auto;
           width: 90%; }
 
-  /*-----dounutstop-----*/
-  #donuts_top {
+
+#top_donuts {
     background: #000;
     background-size: cover;
     height: auto;
     color: #fff;
     padding-bottom: 30px; }
-    #donuts_top article {
+    #top_donuts article {
       width: 90%;
       max-width: 1200px;
       height: 100%;
@@ -1523,24 +1557,24 @@ footer {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-      #donuts_top article h1 {
+      #top_donuts article h1 {
         font-size: 18px;
         width: 100%;
         padding-top: 5vh;
         font-weight: 600; }
-      #donuts_top article h2 {
+      #top_donuts article h2 {
         font-size: 24px;
         font-weight: 900;
         width: 100%; }
-        #donuts_top article h2 span {
+        #top_donuts article h2 span {
           font-size: 54px; }
-      #donuts_top article > div {
+      #top_donuts article > div {
         display: block;
         height: 5px;
         width: 50px;
         margin: 15px 0 15px;
         background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
-      #donuts_top article ul {
+      #top_donuts article ul {
         width: 100%;
         position: static;
         display: block;
@@ -1552,7 +1586,7 @@ footer {
         font-size: 14px;
         font-weight: 600;
         margin-top: 0px; }
-        #donuts_top article ul li {
+        #top_donuts article ul li {
           background: #fff;
           border-radius: 5px;
           padding: 5%;
@@ -1573,7 +1607,7 @@ footer {
           -webkit-box-align: center;
               -ms-flex-align: center;
                   align-items: center; }
-          #donuts_top article ul li a {
+          #top_donuts article ul li a {
             display: block;
             position: absolute;
             width: 100%;
@@ -1581,29 +1615,29 @@ footer {
             top: 0;
             left: 0;
             z-index: 9; }
-          #donuts_top article ul li em {
+          #top_donuts article ul li em {
             position: absolute;
             bottom: 5px;
             right: 5px;
             font-size: 12px;
             z-index: 2; }
-          #donuts_top article ul li span {
+          #top_donuts article ul li span {
             display: block; }
-            #donuts_top article ul li span img {
+            #top_donuts article ul li span img {
               width: 30px; }
-          #donuts_top article ul li dl {
+          #top_donuts article ul li dl {
             margin-left: 10px;
             font-weight: 600; }
-            #donuts_top article ul li dl dd {
+            #top_donuts article ul li dl dd {
               color: #3796ee; }
-        #donuts_top article ul li:hover {
+        #top_donuts article ul li:hover {
           -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
                   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
           -webkit-transform: translateY(5px);
                   transform: translateY(5px); }
-      #donuts_top article ul.lp {
+      #top_donuts article ul.lp {
         bottom: 80px; }
-        #donuts_top article ul.lp li {
+        #top_donuts article ul.lp li {
           margin: 0 auto;
           width: 90%; }
 

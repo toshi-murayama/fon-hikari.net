@@ -247,7 +247,10 @@ function showSearchAreaModalByProvide(): string
  */
 function showEasyEstimateModalByProvide(string $modalItem, int $estimatedAmount): string
 {
+    // TODO: 以下、キャンペーン終了時に修正が必要.
     return '
+    <div style="text-align:center;font-size: 23px;font-weight: 400;">3月10日（水） 15:59までにお申し込みの方限定！</div>
+    <div style="text-align:center;font-size: 25px;padding-bottom: 10px;font-weight: 400;">超お得なWキャンペーン中！</div>
     <div class="modalItem">
         <ul>
             '.$modalItem.'
@@ -256,6 +259,9 @@ function showEasyEstimateModalByProvide(string $modalItem, int $estimatedAmount)
         <div>'.number_format($estimatedAmount).'円<span style="font-size:14px;font-weight:100;">（税込）</span></div>
 
     </div>
+    <div style="text-align:center;font-size: 12px;font-weight: 400;">※Fon光回線：月額4,378円（税込）。開通～6カ月目まで月額2,189円を
+    キャッシュバックした金額です。</div>
+    <div style="text-align:center;font-size: 20px;padding-top: 20px;padding-bottom: 20px;font-weight: 400;">+Amazonギフト券10,000円をプレゼント中 </div>
     <div class="estimatedModalBox">
         <p>
             ※ひかりTVはおすすめプラン。<br>
