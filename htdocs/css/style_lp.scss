@@ -112,10 +112,11 @@ header{
                 li{
                     margin: 0 10px;
                     a{
-                        color: #fff;
+                        color: #ff81ae;
                         font-weight: 400;
                         text-decoration: none;
                         border: 1px solid #fff;
+                        background: #fff;
                         border-radius: 5px;
                         padding: 10px 15px;
                     }
@@ -388,6 +389,24 @@ footer {
 
 
 
+/*-----top_spring-----*/
+#top_spring{
+    background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    article{
+        width: 90%;
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 10vh;
+    }
+}
+
+
 
 
 /*-----recommend-----*/
@@ -552,7 +571,7 @@ footer {
                 }
             }
             h5{
-                font-size: 24px;
+                font-size: 18px;
             }
             .price{
                 font-size: 30px;
@@ -885,14 +904,34 @@ footer {
                     }
                 }
             }
+            h4{
+                font-size: 18px;
+                margin: 30px 0 10px;
+                font-weight: 600;
+            }
             .price{
-                font-size: 30px;
+                font-size: 18px;
                 font-weight: 600;
                 line-height: 2em;
-                margin-top: 30px;
+                color: #666;
+                margin-bottom: 10px;
+                s{
+                    color: #df0074;
+                    font-size: 30px;
+                }
+                em{
+                    margin: 10px;
+                    font-weight: 900;
+                    font-size: 30px;
+                }
                 span{
                     font-size: 72px;
+                    color: #df0074;
                     font-weight: 900;
+                }
+                sup{
+                    font-weight: normal;
+                    font-size: 12px;
                 }
             }
             ul{
@@ -1493,6 +1532,25 @@ footer {
         }
     }
 
+
+
+
+    /*-----top_spring-----*/
+    #top_spring{
+        background: url(../ta/img/spring_cp_bg.png) 50% 0%;
+        background-size: cover;
+        color: #fff;
+        position: relative;
+        width: 100%;
+        article{
+            width: 100%;
+            max-width: 1400px;
+            height: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 8vh;
+        }
+    }
 
 
 
