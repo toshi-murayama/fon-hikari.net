@@ -50,8 +50,8 @@ $(function() {
     <div id="wrap">
         <section id="top_spring">
             <article>
-                <h1><img src="img/spring_cp_top.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                <img src="img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
+                <h1><img src="img/spring_cp_top.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                <img src="img/spring_cp_top_sp.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
             </article>
         </section>
 
@@ -88,7 +88,7 @@ $(function() {
                 <h3>おすすめその2</h3>
                 <div class="content">
                     <h4><img src="../img/fon_logo.svg" alt="fon光">は価格に自信あり!</h4>
-                    <h5>3月10日(水)15:59までにお申し込みで<br>6ヶ月間半額キャンペーン中！</h5>
+                    <h5>3月10日(水)21:59までにお申し込みで<br>6ヶ月間半額キャンペーン中！</h5>
                     <div class="price">月額<em>2,189</em>円<sup>※１</sup></div>
                     <div class="sub">工事費も実質無料<sup>※2</sup></div>
                     <p>プロバイダとの契約が不要なので回線使用料も込みで月額4,378円！</p>

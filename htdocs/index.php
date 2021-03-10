@@ -39,8 +39,8 @@
     <div id="wrap">
         <section id="top">
             <article>
-                <h1><img src="ta/img/spring_cp_top.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
+                <h1><img src="ta/img/spring_cp_top.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
                 <ul>
                     <li>
                         <a href="area"></a>
@@ -342,8 +342,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
         <section id="spring_cp">
             <article>
                 <h2>
-                    <img src="ta/img/bnr.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                    <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 15:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp">
+                    <img src="ta/img/bnr.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
+                    <img src="ta/img/spring_cp_top_sp.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp">
                 </h2>
                 <a href="ta/">詳しくはこちら</a>
             </article>
