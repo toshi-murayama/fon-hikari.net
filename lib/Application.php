@@ -28,6 +28,8 @@ class Service
 			return '不正な値が送信されました。';
 
 		}
+		// POSTに入れるべきではないが、、、既存のソースに手を加えたくないので、、
+		$_POST['isCp'] = isCP();
 		//働くDBインポート.
 		$data = HatarakuDbInsert::createData($_POST);
 
@@ -58,5 +60,14 @@ class Service
 		unset($_SESSION['tk']);
 		return '';
 	}
+}
+
+// donutsCPが終わったら削除
+function isCP() {
+	session_start();
+	date_default_timezone_set('Asia/Tokyo');
+	$now = new DateTime();
+	$endDateTime = new DateTime('2021/03/10 22:15:00');
+	return $_SESSION['dunutsCp'] && ($now <= $endDateTime);
 }
 ?>
