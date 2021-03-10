@@ -48,10 +48,12 @@ $(function() {
 
     <?php include "../include/header_lp.html";?>
     <div id="wrap">
-        <section id="top_spring">
+        <section id="top">
             <article>
-                <h1><img src="img/spring_cp_top.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="pc">
-                <img src="img/spring_cp_top_sp.png" alt="3月10日（水） 21:59までにお申し込みの方限定！春のWキャンペーン月額半額 2,189円Amazonギフト券10,000円プレゼント" class="sp"></h1>
+                <h1><img src="img/top.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円" class="pc">
+                <img src="img/top_sp.png" alt="今がチャンス！おうちのインターネットをFon光にしよう！超高速回線最大2Gbps この速さで月額4,378円" class="sp"></h1>
+                <div class="scroll"></div>
+                <a href="/area.php">今すぐエリア確認</a>
             </article>
         </section>
 
@@ -88,13 +90,12 @@ $(function() {
                 <h3>おすすめその2</h3>
                 <div class="content">
                     <h4><img src="../img/fon_logo.svg" alt="fon光">は価格に自信あり!</h4>
-                    <h5>3月10日(水)21:59までにお申し込みで<br>6ヶ月間半額キャンペーン中！</h5>
-                    <div class="price">月額<em>2,189</em>円<sup>※１</sup></div>
-                    <div class="sub">工事費も実質無料<sup>※2</sup></div>
+                    <h5>完全定額！</h5>
+                    <div class="price">月額<em>4,378</em>円</div>
+                    <div class="sub">工事費も実質無料<sup>※</sup></div>
                     <p>プロバイダとの契約が不要なので回線使用料も込みで月額4,378円！</p>
                     <div class="note">
-                        ※1.月額4,378円（税込）。開通～6カ月目まで月額2,189円をキャッシュバック。<br>
-                        ※2 工事費44,000円(1,446円×30ヶ月の分割払い)を、工事費割引1,466円×30ヶ月が適用されます。<br>明細上で相殺いたしますので、工事費は実質無料となります。
+                        ※工事費44,000円(1,446円×30ヶ月の分割払い)を、工事費割引1,466円×30ヶ月が適用されます。<br>明細上で相殺いたしますので、工事費は実質無料となります。
                     </div>
                 </div>
             </article>
@@ -234,10 +235,8 @@ $(function() {
                             <dt>戸建てにお住まいの方</dt>
                         </dl>
                     </div>
-                    <h4>キャンペーン価格！</h4>
-                    <div class="price">月額<s>4,378</s>円<em>→</em><br class="sp">月額<span>2,189</span>円<sup>※1</sup></div>
+                    <div class="price">月額<span>4,378</span>円</div>
                     <ul>
-                        <li>※1.月額4,378円（税込）。開通～6カ月目まで月額2,189円をキャッシュバック。</li>
                         <li>※税込み価格になります。</li>
                         <li>※工事費は実質0円となります。詳しくはおすすめその2の注釈をご確認ください。</li>
                         <li>※初期費用として事務手数料3,300円が別途発生致します。</li>

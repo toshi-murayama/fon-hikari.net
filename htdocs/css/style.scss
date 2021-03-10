@@ -364,12 +364,13 @@ footer {
 
 /*-----top-----*/
 #top{
-    background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
+    background: url(../img/top_bg.jpg) no-repeat 50% 10%;
     background-size: cover;
+    height: 70vh;
     color: #fff;
     article{
         width: 90%;
-        max-width: 1400px;
+        max-width: 1200px;
         height: 100%;
         margin: 0 auto;
         position: relative;
@@ -377,7 +378,7 @@ footer {
         h1{
             font-size: 36px;
             width: 100%;
-            padding-top: 10vh;
+            padding-top: 20vh;
             font-weight: 600;
         }
         h2{
@@ -405,7 +406,7 @@ footer {
             display: flex;
             justify-content: space-between;
             color: #666;
-            bottom: -150px;
+            bottom: -30px;
             font-size: 16px;
             font-weight: 600;
             li{
@@ -692,7 +693,7 @@ footer {
 /*-----summary-----*/
 #summary{
     background: #f6f6f6;
-    padding: 200px 0 50px;
+    padding: 100px 0 50px;
     article{
         width: 90%;
         max-width: 1200px;
@@ -1076,42 +1077,6 @@ footer {
 
 
 
-
-/*-----spring_cp-----*/
-#spring_cp{
-    text-align: center;
-    background: url(../ta/img/spring_cp_bg.png) 100% 0%;
-    background-size: cover;
-    padding: 50px 0 15px;
-    article{
-        width: 90%;
-        max-width: 1200px;
-        height: 100%;
-        margin: 0 auto;
-        align-items: center;
-        a{
-            border: 2px solid #fff;
-            color: #ff81ae;
-            padding: 15px 30px;
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            background: #fff;
-            box-shadow: 5px 0 0 0 #e0e0e0;
-        }
-        a:hover{
-            border: 2px solid #fff;
-            color: #fff;
-            background: none;
-            padding: 15px 30px;
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            opacity: 1;
-        }
-    }
-}
 
 
 /*-----削除予定-----*/
@@ -1565,7 +1530,7 @@ footer {
 
     /*-----top-----*/
     #top{
-        background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
+        background: url(../img/top_bg.jpg) no-repeat 50% 10%;
         background-size: cover;
         height: auto;
         color: #fff;
@@ -1580,7 +1545,7 @@ footer {
             h1{
                 font-size: 18px;
                 width: 100%;
-                padding-top: 5vh;
+                padding-top: 20vh;
                 font-weight: 600;
             }
             h2{
@@ -1604,10 +1569,10 @@ footer {
                 display: block;
                 justify-content: space-between;
                 color: #666;
-                bottom: 0px;
+                bottom: -30px;
                 font-size: 14px;
                 font-weight: 600;
-                margin-top: 0px;
+                margin-top: 30px;
                 li{
                     background: #fff;
                     border-radius: 5px;
