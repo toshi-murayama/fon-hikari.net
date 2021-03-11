@@ -203,7 +203,7 @@ $(window).load(function() {
 				<li class="categories">生年月日</li>
 				<li>
 					<label class="birthday">
-						<input name="birthday" type="text" id="datepicker" class="validate[required]">
+						<input name="birthday" type="text" id="datepicker" class="validate[required], ,[custom[date]]" readonly="readonly">
 					</label>
 				</li>
 				<li class="categories">携帯番号</li>

@@ -44,13 +44,13 @@ class HatarakuDbInsert
      */
     private static function getApiParameter(array $dataAll): array
     {
-        date_default_timezone_set('Asia/Tokyo');
-
-        // TODO: 2021/03/10に削除.
-        $cp = '';
+        $cp = '春のCP半年半額';
+        $gift = 10000;
         if($dataAll['isCp']) {
             $cp = 'ドーナツCP';
+            $gift = 0;
         }
+        date_default_timezone_set('Asia/Tokyo');
         return [
             "dbSchemaId"=>"101234", // Fon光（青の働くDB）
             "getSubordinate"=>"0",
@@ -101,9 +101,8 @@ class HatarakuDbInsert
                 "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
                 "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
                 "116955" => "{$dataAll['construction']}",               // 業務備考
-                // TODO: 以下、CP終了時に削除
                 "117748" => $cp,                                        // CP
-                "117749" => 0,                                          // Amazonギフト券 NOTE: CP終了に伴い、0に固定
+                "117749" => $gift,                                          // Amazonギフト券 NOTE: CP終了に伴い、0に固定
             ]
         ];
     }

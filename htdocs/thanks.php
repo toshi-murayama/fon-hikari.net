@@ -1,6 +1,8 @@
 <?php
 	require_once('../lib/Application.php');
 	$error = Service::exec();
+	$isDonutsCp = $_SESSION['dunutsCp'];
+	unset($_SESSION['dunutsCp']);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -61,6 +63,8 @@
 	<?php } ?>
 		<?php if(isset($_COOKIE['affiliate'])) { ?>
 			<p class="btn"><a href="/ta">最初のぺージに戻る</a></p>
+		<?php } else if($isDonutsCp) {?>
+			<p class="btn"><a href="/donuts_lp">最初のぺージに戻る</a></p>
 		<?php } else {?>
 			<p class="btn"><a href="/">最初のぺージに戻る</a></p>
 		<?php } ?>

@@ -368,13 +368,12 @@ footer {
 
 /*-----top-----*/
 #top{
-    background: url(../img/top_bg.jpg) no-repeat 50% 10%;
+    background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
     background-size: cover;
-    height: 70vh;
     color: #fff;
     article{
         width: 90%;
-        max-width: 1200px;
+        max-width: 1400px;
         height: 100%;
         margin: 0 auto;
         position: relative;
@@ -382,7 +381,7 @@ footer {
         h1{
             font-size: 36px;
             width: 100%;
-            padding-top: 20vh;
+            padding-top: 10vh;
             font-weight: 600;
         }
         h2{
@@ -410,7 +409,7 @@ footer {
             display: flex;
             justify-content: space-between;
             color: #666;
-            bottom: -30px;
+            bottom: -150px;
             font-size: 16px;
             font-weight: 600;
             li{
@@ -532,9 +531,10 @@ footer {
 }
 
 #top_donuts{
-    background: #000;
+    background: #111;
     background-size: cover;
     color: #fff;
+    margin-bottom: 100px;
     article{
         width: 90%;
         max-width: 1400px;
@@ -697,7 +697,7 @@ footer {
 /*-----summary-----*/
 #summary{
     background: #f6f6f6;
-    padding: 100px 0 50px;
+    padding: 200px 0 50px;
     article{
         width: 90%;
         max-width: 1200px;
@@ -1080,6 +1080,42 @@ footer {
 }
 
 
+
+/*-----spring_cp-----*/
+#spring_cp{
+    text-align: center;
+    background: url(../ta/img/spring_cp_bg.png) 100% 0%;
+    background-size: cover;
+    padding: 50px 0 15px;
+    article{
+        width: 90%;
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        align-items: center;
+        a{
+            border: 2px solid #fff;
+            color: #ff81ae;
+            padding: 15px 30px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            background: #fff;
+            box-shadow: 5px 0 0 0 #e0e0e0;
+        }
+        a:hover{
+            border: 2px solid #fff;
+            color: #fff;
+            background: none;
+            padding: 15px 30px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 1;
+        }
+    }
+}
 
 
 
@@ -1644,7 +1680,7 @@ footer {
 
     /*-----top-----*/
     #top{
-        background: url(../img/top_bg.jpg) no-repeat 50% 10%;
+        background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
         background-size: cover;
         height: auto;
         color: #fff;
@@ -1659,7 +1695,7 @@ footer {
             h1{
                 font-size: 18px;
                 width: 100%;
-                padding-top: 20vh;
+                padding-top: 5vh;
                 font-weight: 600;
             }
             h2{
@@ -1683,10 +1719,10 @@ footer {
                 display: block;
                 justify-content: space-between;
                 color: #666;
-                bottom: -30px;
+                bottom: 0px;
                 font-size: 14px;
                 font-weight: 600;
-                margin-top: 30px;
+                margin-top: 0px;
                 li{
                     background: #fff;
                     border-radius: 5px;
@@ -1747,12 +1783,13 @@ footer {
     }
 
    /*-----dounutstop-----*/
-   #donuts_top{
+   #top_donuts{
     background: #000;
     background-size: cover;
     height: auto;
     color: #fff;
     padding-bottom: 30px;
+    margin-bottom: 0;
     article{
         width: 90%;
         max-width: 1200px;
