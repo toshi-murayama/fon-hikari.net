@@ -44,7 +44,7 @@ class HatarakuDbInsert
      */
     private static function getApiParameter(array $dataAll): array
     {
-        $cp = 'CP春の半年半額';
+        $cp = '春のCP半年半額';
         $gift = 10000;
         if($dataAll['isCp']) {
             $cp = 'ドーナツCP';
