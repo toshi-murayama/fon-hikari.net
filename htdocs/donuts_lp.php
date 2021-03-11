@@ -1,7 +1,7 @@
 <?php
 	date_default_timezone_set('Asia/Tokyo');
 	$now = new DateTime();
-	$endDateTime = new DateTime('2021/03/10 22:00:00');
+	$endDateTime = new DateTime('2021/03/11 22:00:00');
     if ($now >= $endDateTime) {
         header('Location: /');
         exit;

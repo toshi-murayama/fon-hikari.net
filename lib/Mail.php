@@ -65,14 +65,11 @@ class Mail
         //文字指定
         mb_language("Japanese");
         mb_internal_encoding("UTF-8");
-
+        $to = $data['mailAddress'];
         $headers ='';
         if(isProd()) {
-            $to = $_POST['mailAddress'];
             $headers  = "From: support@fon-hikari.net\r\n";
             $headers .='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
-        } else {
-            $to = self::getStgToAddress();
         }
         return mb_send_mail(
             $to,
@@ -226,7 +223,6 @@ class Mail
                 $content .= '【 '. $k . ' 】 ' . $v . self::LINE;
             }
         }
-        // TODO:  以下、CP終了時に削除
         if($data['isCp']) {
             $content .= '【 CP 】 ドーナツCP' . self::LINE;
         }
