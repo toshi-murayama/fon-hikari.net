@@ -248,7 +248,7 @@ function showSearchAreaModalByProvide(): string
 function showEasyEstimateModalByProvide(string $modalItem, int $estimatedAmount): string
 {
     return '
-    <div style="text-align:center;font-size: 23px;font-weight: 400;">3月10日（水） 21:59までにお申し込みの方限定！</div>
+    <div style="text-align:center;font-size: 23px;font-weight: 400;">3月31日（水） 20:59までにお申し込みの方限定！</div>
     <div style="text-align:center;font-size: 25px;padding-bottom: 10px;font-weight: 400;">超お得なWキャンペーン中！</div>
     <div class="modalItem">
         <ul>
