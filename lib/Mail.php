@@ -266,7 +266,6 @@ class Mail
             $content .= '※ 半年間で解約される場合も請求されません。' . self::LINE;
             $content .= '《契約事務手数料》' . self::LINE;
             $content .= '0円' . self::LINE;
-            unset($_SESSION['dunutsCp']);
         } else {
             $content .= '《工事費：分割》' . self::LINE;
             $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
