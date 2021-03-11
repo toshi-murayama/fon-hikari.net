@@ -528,9 +528,10 @@ footer {
 }
 
 #top_donuts{
-    background: #000;
+    background: #111;
     background-size: cover;
     color: #fff;
+    margin-bottom: 100px;
     article{
         width: 90%;
         max-width: 1400px;
@@ -1633,12 +1634,13 @@ footer {
     }
 
    /*-----dounutstop-----*/
-   #donuts_top{
+   #top_donuts{
     background: #000;
     background-size: cover;
     height: auto;
     color: #fff;
     padding-bottom: 30px;
+    margin-bottom: 0;
     article{
         width: 90%;
         max-width: 1200px;
