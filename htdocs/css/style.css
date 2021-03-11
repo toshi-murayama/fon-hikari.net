@@ -204,6 +204,10 @@ a:hover {
   background: url(../img/top_bg_company.jpg) no-repeat 50% 50%;
   background-size: cover; }
 
+#title.ouchiwari_img {
+  background: url(../img/top_bg_ouchiwari.jpg) no-repeat 50% 83%;
+  background-size: cover; }
+
 /*-------------------------------------------------
  header
 -------------------------------------------------*/
@@ -1010,6 +1014,93 @@ footer {
     #option article .annotation li {
       font-size: 16px;
       margin-top: 20px; }
+
+/*-----ouchiwari-----*/
+#ouchiwari {
+  padding: 50px 0;
+  background: #f6f6f6; }
+  #ouchiwari article {
+    width: 90%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    #ouchiwari article h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 30px; }
+      #ouchiwari article h2 span {
+        display: block; }
+        #ouchiwari article h2 span em {
+          font-weight: 900;
+          font-size: 1.5em; }
+    #ouchiwari article h3 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      margin: 30px 0 10px;
+      background: #333;
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      padding: 15px; }
+    #ouchiwari article h4 {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 30px 0;
+      border-top: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      background: #fff;
+      padding: 10px; }
+    #ouchiwari article h5 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 30px 0; }
+    #ouchiwari article a {
+      color: darkblue; }
+    #ouchiwari article ul li {
+      text-indent: -1em;
+      padding-left: 1em; }
+    #ouchiwari article table {
+      margin: 30px 0; }
+      #ouchiwari article table tr th {
+        padding: 15px;
+        background: #eee;
+        border: #ccc solid 1px;
+        text-align: center; }
+      #ouchiwari article table tr td {
+        padding: 15px;
+        background: #fff;
+        border: #ccc solid 1px;
+        text-align: center; }
+        #ouchiwari article table tr td span {
+          font-weight: 600;
+          font-size: 1.2em; }
+        #ouchiwari article table tr td em {
+          font-weight: 900;
+          font-size: 1.4em; }
+    #ouchiwari article .box {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      #ouchiwari article .box dl {
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 15px;
+        background: #fff; }
+        #ouchiwari article .box dl dt {
+          font-weight: 600; }
+      #ouchiwari article .box div {
+        font-weight: 900;
+        font-size: 28px; }
 
 /*-----削除予定-----*/
 #dounts_cp {
@@ -1900,6 +1991,94 @@ footer {
         font-size: 12px;
         margin-top: 20px;
         width: 100%; }
+
+  /*-----ouchiwari-----*/
+  #ouchiwari {
+    padding: 50px 0;
+    background: #f6f6f6; }
+    #ouchiwari article {
+      width: 90%;
+      max-width: 1000px;
+      height: 100%;
+      margin: 0 auto;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      #ouchiwari article h2 {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 30px; }
+        #ouchiwari article h2 span {
+          display: block; }
+          #ouchiwari article h2 span em {
+            font-weight: 900;
+            font-size: 1.5em; }
+      #ouchiwari article h3 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 900;
+        margin: 30px 0 10px;
+        background: #333;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+        padding: 15px; }
+      #ouchiwari article h4 {
+        font-size: 18px;
+        font-weight: 900;
+        margin: 30px 0;
+        border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
+        background: #fff;
+        padding: 10px; }
+      #ouchiwari article h5 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 30px 0; }
+      #ouchiwari article a {
+        color: darkblue; }
+      #ouchiwari article ul li {
+        text-indent: -1em;
+        padding-left: 1em; }
+      #ouchiwari article table {
+        margin: 30px 0; }
+        #ouchiwari article table tr th {
+          padding: 15px;
+          background: #eee;
+          border: #ccc solid 1px;
+          text-align: center; }
+        #ouchiwari article table tr td {
+          padding: 15px;
+          background: #fff;
+          border: #ccc solid 1px;
+          text-align: center; }
+          #ouchiwari article table tr td span {
+            font-weight: 600;
+            font-size: 1.2em; }
+          #ouchiwari article table tr td em {
+            font-weight: 900;
+            font-size: 1.4em; }
+      #ouchiwari article .box {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        #ouchiwari article .box dl {
+          border: 1px solid #ccc;
+          text-align: center;
+          padding: 10px;
+          background: #fff; }
+          #ouchiwari article .box dl dt {
+            font-weight: 600;
+            font-size: 10px; }
+        #ouchiwari article .box div {
+          font-weight: 900;
+          font-size: 24px; }
 
   /*-----flow-----*/
   #flow {
