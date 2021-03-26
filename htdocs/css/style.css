@@ -358,12 +358,13 @@ footer {
 
 /*-----top-----*/
 #top {
-  background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
+  background: url(../img/top_bg.jpg) no-repeat 50% 10%;
   background-size: cover;
+  height: 70vh;
   color: #fff; }
   #top article {
     width: 90%;
-    max-width: 1400px;
+    max-width: 1200px;
     height: 100%;
     margin: 0 auto;
     position: relative;
@@ -373,7 +374,7 @@ footer {
     #top article h1 {
       font-size: 36px;
       width: 100%;
-      padding-top: 10vh;
+      padding-top: 20vh;
       font-weight: 600; }
     #top article h2 {
       font-size: 48px;
@@ -400,7 +401,7 @@ footer {
           -ms-flex-pack: justify;
               justify-content: space-between;
       color: #666;
-      bottom: -150px;
+      bottom: -30px;
       font-size: 16px;
       font-weight: 600; }
       #top article ul li {
@@ -665,7 +666,7 @@ footer {
 /*-----summary-----*/
 #summary {
   background: #f6f6f6;
-  padding: 200px 0 50px; }
+  padding: 100px 0 50px; }
   #summary article {
     width: 90%;
     max-width: 1200px;
@@ -1014,41 +1015,6 @@ footer {
     #option article .annotation li {
       font-size: 16px;
       margin-top: 20px; }
-
-/*-----spring_cp-----*/
-#spring_cp {
-  text-align: center;
-  background: url(../ta/img/spring_cp_bg.png) 100% 0%;
-  background-size: cover;
-  padding: 50px 0 15px; }
-  #spring_cp article {
-    width: 90%;
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    #spring_cp article a {
-      border: 2px solid #fff;
-      color: #ff81ae;
-      padding: 15px 30px;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 15px;
-      background: #fff;
-      -webkit-box-shadow: 5px 0 0 0 #e0e0e0;
-              box-shadow: 5px 0 0 0 #e0e0e0; }
-    #spring_cp article a:hover {
-      border: 2px solid #fff;
-      color: #fff;
-      background: none;
-      padding: 15px 30px;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 600;
-      opacity: 1; }
 
 /*-----ouchiwari-----*/
 #ouchiwari {
@@ -1535,7 +1501,7 @@ footer {
 
   /*-----top-----*/
   #top {
-    background: url(../ta/img/spring_cp_bg.png) no-repeat 50% 10%;
+    background: url(../img/top_bg.jpg) no-repeat 50% 10%;
     background-size: cover;
     height: auto;
     color: #fff;
@@ -1552,7 +1518,7 @@ footer {
       #top article h1 {
         font-size: 18px;
         width: 100%;
-        padding-top: 5vh;
+        padding-top: 20vh;
         font-weight: 600; }
       #top article h2 {
         font-size: 24px;
@@ -1574,10 +1540,10 @@ footer {
             -ms-flex-pack: justify;
                 justify-content: space-between;
         color: #666;
-        bottom: 0px;
+        bottom: -30px;
         font-size: 14px;
         font-weight: 600;
-        margin-top: 0px; }
+        margin-top: 30px; }
         #top article ul li {
           background: #fff;
           border-radius: 5px;
