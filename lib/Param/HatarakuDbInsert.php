@@ -44,11 +44,9 @@ class HatarakuDbInsert
      */
     private static function getApiParameter(array $dataAll): array
     {
-        $cp = '春のCP半年半額';
-        $gift = 10000;
+        $cp = '';
         if($dataAll['isCp']) {
             $cp = 'ドーナツCP';
-            $gift = 0;
         }
         date_default_timezone_set('Asia/Tokyo');
         return [
@@ -102,7 +100,7 @@ class HatarakuDbInsert
                 "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
                 "116955" => "{$dataAll['construction']}",               // 業務備考
                 "117748" => $cp,                                        // CP
-                "117749" => $gift,                                          // Amazonギフト券 NOTE: CP終了に伴い、0に固定
+                "117749" => 0,                                          // Amazonギフト券 NOTE: CP終了に伴い、0に固定
             ]
         ];
     }

@@ -9,8 +9,8 @@ class Cost
     // 消費税率
     private const TAX = 10;
     // NOTE: 値段はすべて税抜. リファクタリングで税抜を使用している箇所が、あったらprivateをはずすかも.
-    // FON光回線 TODO: 以下、CP終了時に3980に修正
-    private const FON_HIKARI_LINE_COST = 1990;
+    // FON光回線
+    private const FON_HIKARI_LINE_COST = 3980;
     // ひかり電話（東日本）
     private const HIKARI_PHONE_EAST_COST = 500;
     // ひかり電話（西日本）
@@ -23,6 +23,20 @@ class Cost
     private const COLLECTIVELY_ELETRICITY_DISCOUNT_COST = -500;
     // 事務手数料
     private const ADMIN_FEE = 3000;
+    // ひかりTV(基本料金)
+    private const HIKARI_TV = 1000;
+    // ひかりTV(お値打ちプラン)
+    private const HIKARI_TV_VALUE_OF_MONEY = 3500;
+    // ひかりTV(テレビおすすめプラン)
+    private const HIKARI_TV_RECOMMEND = 2500;
+    // ひかりTV(ビデオざんまいプラン)
+    private const HIAKRI_TV_VIDEO_ZAMMAI = 2500;
+    // ひかりTV(お値打ちプラン2ねん割)
+    private const HIKARI_TV_VALUE_OF_MONEY_2YEAR = 2500;
+    // ひかりTV(テレビおすすめプラン2ねん割)
+    private const HIKARI_TV_RECOMMEND_2YEAR = 1500;
+    // ひかりTV(ビデオざんまいプラン2ねん割)
+    private const HIAKRI_TV_VIDEO_ZAMMAI_2YEAR = 1500;
     /**
      * 消費税額取得.
      *
