@@ -1,6 +1,8 @@
 <?php
 	require_once('../lib/Param/Pref.php');
 	require_once('../lib/Common.php');
+	require_once('../lib/Cost.php');
+	$cost = new Cost();
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
@@ -35,111 +37,17 @@
 <script src="js/datepicker-ja.min.js"></script>
 <script type="text/javascript">
 
-$(function(){
-
-	//カレンダー
-	$("#datepicker").datepicker({
-		defaultDate: new Date(2000,3,1),
-		changeMonth: true,
-		changeYear: true,
-		yearRange: '-70:+0',
-	}).datepicker("setDate", "2000/03/01");
-	//カレンダー
-	$("#deliveryDate,#deliveryDate2").datepicker({
-		minDate: '6d'
-	});
-    //光TV選択
-    $('select[name="constructionWeek"],input[name="constructionPreferred1"],input[name="constructionPreferred2"],select[name="constructionDay1"],select[name="constructionDay2"]').prop('disabled', true);
-    $('input[name="construction"]').change(function() {
-		if ($('input[name="construction"]:checked').val() == '0') {
-            $('select[name="constructionWeek"]').prop('disabled', true);
-            $('input[name="constructionPreferred1"]').prop('disabled', true);
-            $('input[name="constructionPreferred2"]').prop('disabled', true);
-            $('select[name="constructionDay1"]').prop('disabled', true);
-            $('select[name="constructionDay2"]').prop('disabled', true);
-		} else if ($('input[name="construction"]:checked').val() == '1') {
-			$('select[name="constructionWeek"]').prop('disabled', false);
-            $('input[name="constructionPreferred1"]').prop('disabled', true);
-            $('input[name="constructionPreferred2"]').prop('disabled', true);
-            $('select[name="constructionDay1"]').prop('disabled', true);
-            $('select[name="constructionDay2"]').prop('disabled', true);
-		} else if ($('input[name="construction"]:checked').val() == '2') {
-			$('select[name="constructionWeek"]').prop('disabled', true);
-            $('input[name="constructionPreferred1"]').prop('disabled', false);
-            $('input[name="constructionPreferred2"]').prop('disabled', false);
-            $('select[name="constructionDay1"]').prop('disabled', false);
-            $('select[name="constructionDay2"]').prop('disabled', false);
-		}
-	});
-    // 約款動作
-	$('.privacy').hide();
-	$('.privacyTitle').on('click', function() {
-		$('.privacy').slideToggle(500);
-	});
-	// 光電話申込
-	$('input[name="telephoneApplication"]').change(function() {
-		if ($('input[name="telephoneApplication"]:checked').val() != '0') {
-			$('.numbering').show();
-			// 固定電話
-			if ($('input[name="numberingMethod"]:checked').val() == '1') {
-				$('.telephoneApplicationFixedLine').show();
-			}
-		} else {
-			$('.numbering').hide();
-			$('.telephoneApplicationFixedLine').hide();
-		}
-	});
-	// 光TV
-	$('input[name="hikariTV"]').change(function() {
-		if ($('input[name="hikariTV"]:checked').val() != '0') {
-			$('.hikariTVplan').show();
-		} else {
-			$('.hikariTVplan').hide();
-		}
-	});
-	// 発番方法
-	$('input[name="numberingMethod"]').change(function() {
-		if ($('input[name="numberingMethod"]:checked').val() != '0') {
-			$('.telephoneApplicationFixedLine').show();
-		} else {
-			$('.telephoneApplicationFixedLine').hide();
-		}
-	});
-
-	// 郵送先情報
-	$('input[name="mailingDestination"]').change(function() {
-		if ($('input[name="mailingDestination"]:checked').val() != '0') {
-			$('.aother_address').show();
-		} else {
-			$('.aother_address').hide();
-		}
-	});
-});
-
 $(window).load(function() {
-		//発送先住所
-		$('[name="mailingDestination"]:radio').change( function() {
-				if($('[id=same]').prop('checked')){
-					$('.aother_address').fadeOut();
-				} else if ($('[id=aother]').prop('checked')) {
-					$('.aother_address').fadeIn();
-				}
-		}).change();
+	// 物件種類
+	var homeType = 0;
 
-		// 郵便番号
-		$('#postalCode').keyup();
+	<?php if(isset($_POST['homeType'])) { ?>
 
-		// 物件種類
-		var homeType;
-		<?php
-		if(isset($_POST['homeType'])) {
-		?>
-		homeType = <?php echo $_POST['homeType']?> - 1;
-		<?php
-		}
-		?>
+	homeType = <?php echo $_POST['homeType']?> - 1;
 
-		$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
+	<?php } ?>
+
+	$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 });
 </script>
 <script src="js/jquery.validationEngine.js"></script>
@@ -290,7 +198,7 @@ $(window).load(function() {
 					<input type="radio" name="telephoneApplication" value="0" id="noneNuro" checked>
 					<label for="noneNuro">なし</label>
 					<input type="radio" name="telephoneApplication" value="1" class="check" id="nuro">
-					<label for="nuro">NURO光でんわ 東日本エリア月額550円<span>(税込)</span>/西日本エリア月額330円<span>(税込)</span></label>
+					<label for="nuro">NURO光でんわ 東日本エリア月額<?php echo number_format($cost->getHikariPhoneEastCost());?>円<span>(税込)</span>/西日本エリア月額<?php echo number_format($cost->getHikariPhoneWestCost());?>円<span>(税込)</span></label>
 				</li>
 				<div class='numbering' style='display:none'>
 					<li class="categories">発番方法</li>
@@ -312,14 +220,14 @@ $(window).load(function() {
 					<input type="radio" name="remortSupport" value="0" id="noneRemortSupport" checked>
 					<label for="noneRemortSupport">なし</label>
 					<input type="radio" name="remortSupport" value="1" class="check" id="remortSupport">
-					<label for="remortSupport">あり 月額550円<span>(税込)</span></label>
+					<label for="remortSupport">あり 月額<?php echo number_format($cost->getRemoteSuportCost());?>円<span>(税込)</span></label>
 				</li>
 				<li class="categories">まとめてでんき</li>
 				<li class="app">
 					<input type="radio" name="collectivelyElectricity" value="0" id="noneCollectivelyElectricityortSupport" checked>
 					<label for="noneCollectivelyElectricityortSupport">なし</label>
 					<input type="radio" name="collectivelyElectricity" value="1" class="check" id="collectivelyElectricity">
-					<label for="collectivelyElectricity">あり 総額より500円引き</label>
+					<label for="collectivelyElectricity">あり 総額より<?php echo number_format($cost->getCollectiveryEletricityDiscountCost());?>円引き</label>
 				</li>
 				<li class="categories">ひかりTV for NURO申込</li>
 				<li class="app">
@@ -331,32 +239,32 @@ $(window).load(function() {
 				<li class='hikariTVplan' style='display:none'>
                     <ul>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="0" id="normalPlan" checked>
-                            <label for="normalPlan">基本料金プラン 月額1,100円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="01" id="normalPlan" checked>
+                            <label for="normalPlan">基本料金プラン 月額<?php echo number_format($cost->getHikariTVBasicCost());?>円<span>(税込)</span></label>
                         </li>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="1" class="check" id="oneutiPlan">
-                            <label for="oneutiPlan">お値うちプラン 月額3,850円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="02" class="check" id="oneutiPlan">
+                            <label for="oneutiPlan">お値うちプラン 月額<?php echo number_format($cost->getHikariTVValueOfMoneyCost());?>円<span>(税込)</span></label>
                         </li>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="2" class="check" id="tvPlan">
-                            <label for="tvPlan">テレビおすすめプラン 月額2,750円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="03" class="check" id="tvPlan">
+                            <label for="tvPlan">テレビおすすめプラン 月額<?php echo number_format($cost->getHikariTVRecommendCost());?>円<span>(税込)</span></label>
                         </li>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="3" class="check" id="videoPlan">
-                            <label for="videoPlan">ビデオざんまいプラン 月額2,750円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="04" class="check" id="videoPlan">
+                            <label for="videoPlan">ビデオざんまいプラン 月額<?php echo number_format($cost->getHikariTVVideoZammaiCost());?>円<span>(税込)</span></label>
                         </li>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="4" class="check" id="oneutiPlan2">
-                            <label for="oneutiPlan2">お値うちプラン(2ねん割) 月額2,750円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="05" class="check" id="oneutiPlan2">
+                            <label for="oneutiPlan2">お値うちプラン(2ねん割) 月額<?php echo number_format($cost->getHikariTVValueOfMoney2YearCost());?>円<span>(税込)</span></label>
                         </li>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="5" class="check" id="tvPlan2">
-                            <label for="tvPlan2">テレビおすすめプラン(2ねん割) 月額1,650円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="06" class="check" id="tvPlan2">
+                            <label for="tvPlan2">テレビおすすめプラン(2ねん割) 月額<?php echo number_format($cost->getHikariTVRecommend2YearCost());?>円<span>(税込)</span></label>
                         </li>
                         <li class="app">
-                            <input type="radio" name="hikariTvPlan" value="6" class="check" id="videoPlan2">
-                            <label for="videoPlan2">ビデオざんまいプラン(2ねん割) 月額1,650円<span>(税込)</span></label>
+                            <input type="radio" name="hikariTvPlan" value="07" class="check" id="videoPlan2">
+                            <label for="videoPlan2">ビデオざんまいプラン(2ねん割) 月額<?php echo number_format($cost->getHikariTVVideoZammai2YearCost());?>円<span>(税込)</span></label>
                         </li>
                     </ul>
                 </li>
@@ -365,7 +273,7 @@ $(window).load(function() {
 					<input type="radio" name="kasperskySecurity" value="0" id="noneKasperskySecurity" checked>
 					<label for="noneKasperskySecurity">なし</label>
 					<input type="radio" name="kasperskySecurity" value="1" class="check" id="kasperskySecurity">
-					<label for="kasperskySecurity">あり 月額550円<span>(税込)</span></label>
+					<label for="kasperskySecurity">あり 月額<?php echo number_format($cost->getKasperskySecurityCost());?>円<span>(税込)</span></label>
 				</li>
 			</ul>
 
