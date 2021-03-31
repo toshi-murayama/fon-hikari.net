@@ -329,7 +329,7 @@ function getEstimatesAndModalList(array $optionFlags, string $pref): array
     }
     // ひかりTV for NURO
     if($optionFlags['hikariTVforNUROFlag']) {
-        $estimates += $cost->getHikariTVCost();
+        $estimates += $cost->getHikariTVRecommendCost();
         $items[] = "ひかりTV for NURO";
     }
     // まとめでんき

@@ -1,4 +1,7 @@
 <?php
+	require_once(__DIR__ . '/Cost.php');
+    require_once(__DIR__ . '/Common.php');
+
 // TODO 本当はクラス化したいが、、、時間のあるときにリファクタリング.
 
 // 正常にページ推移したか確認(正しくなかったらtopに戻る)
@@ -14,6 +17,7 @@ session_start();
 $token = sha1(uniqid(mt_rand(), true));
 $_SESSION['tk'] = $token;
 
+// TODO: structにする
 $applicationClassification = h($_POST['applicationClassification']);
 $lastName = h($_POST['lastName']);
 $lastNameKana = h($_POST['lastNameKana']);
@@ -71,7 +75,7 @@ if ($ownership == '1') {
 } else if ($ownership == '3'){
     $ownershipString = '分譲賃貸';
 } else {
-    $ownershipString = '持ち家'; 
+    $ownershipString = '持ち家';
 }
 
 // 光電話申込表示
@@ -114,37 +118,13 @@ if($hikariTV == '0') {
     $hikariTVString = 'なし';
 } else {
     $hikariTVString = 'あり';
-
     // ひかりTVプラン
     $hikariTvPlan = h($_POST['hikariTvPlan']);
     // ひかりTV一契約目申込（無:0/有:1）
     $hikariTvPlanApplication = 1;
     // ひかりTV一契約目チューナーレンタル（無:0/有:1）
     $hikariTvPlanTuner = 1;
-    
-    if($hikariTvPlan == '0') {
-        $hikariTvPlanString = "基本料金プラン 月額1,100円(税込)";
-        // ひかりTV一契約目プラン
-        $hikariTvPlan = "01";
-    } else if ($hikariTvPlan == '1') {
-        $hikariTvPlanString = "お値うちプラン 月額3,850円(税込)";
-        $hikariTvPlan = "02";
-    } else if ($hikariTvPlan == '2') {
-        $hikariTvPlanString = "テレビおすすめプラン 月額2,750円(税込)";
-        $hikariTvPlan = "03";
-    } else if ($hikariTvPlan == '3') {
-        $hikariTvPlanString = "ビデオざんまいプラン 月額2,750円(税込)";
-        $hikariTvPlan = "04";
-    } else if ($hikariTvPlan == '4') {
-        $hikariTvPlanString = "お値うちプラン(2ねん割) 月額2,750円(税込)";
-        $hikariTvPlan = "05";
-    } else if ($hikariTvPlan == '5') {
-        $hikariTvPlanString = "テレビおすすめプラン(2ねん割) 月額1,650円(税込)";
-        $hikariTvPlan = "06";
-    } else if ($hikariTvPlan == '6') {
-        $hikariTvPlanString = "ビデオざんまいプラン(2ねん割) 月額1,650円(税込)";
-        $hikariTvPlan = "07";
-    }
+    $hikariTvPlanString = getHikariTVString($hikariTvPlan);
 }
 
 // カスペルスキーセキュリティ
@@ -160,8 +140,8 @@ if($construction == '0') {
 } else if ($construction == '1') {
     $construction = h($_POST['constructionWeek']);
 } else if ($construction == '2') {
-    $construction = 
-    "第一希望： " . h($_POST['constructionPreferred1']) . "(" . h($_POST['constructionDay1']) . ")" . "\n" . 
+    $construction =
+    "第一希望： " . h($_POST['constructionPreferred1']) . "(" . h($_POST['constructionDay1']) . ")" . "\n" .
     "第二希望： " . h($_POST['constructionPreferred2']) . "(" . h($_POST['constructionDay2']) . ")";
 }
 
@@ -171,10 +151,10 @@ $affiOrderNumber = md5(uniqid(rand(), true)) . date('YmdHis');
 // アフィリエイトIDをセッションで受け渡し
 $_SESSION['affiOrderNumber'] = $affiOrderNumber;
 
-// TODO validation リリース後に実装をする. 今は一時的なもの... 
+// TODO: validation リリース後に実装をする. 今は一時的なもの...
 if (!preg_match("/^[ァ-ヶー]+$/u", $lastNameKana)) {
 	$error = '<p class="error">フリガナ（セイ）が半角カタカナではありません</p>';
-} 
+}
 
 if (!preg_match("/^[ァ-ヶー]+$/u", $firstNameKana)) {
 	$error .= '<p class="error">フリガナ（名）が半角カタカナではありません</p>';
@@ -189,11 +169,11 @@ if(!preg_match("/^[0-9]+$/",$phoneNumber)) {
 	$error .= '<p class="error">携帯番号を半角数字で入力してください</p>';
 }
 
-if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mailAddress)) {	
+if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mailAddress)) {
 	$error .= '<p class="error">メールアドレスを正しい形で入力してください</p>';
 }
 
-// TODO メソッドする + 今は常に表示している項目しかチェックしていない. (画面のみ)
+// TODO: メソッドする + 今は常に表示している項目しかチェックしていない. (画面のみ)
 check_empty($lastName,'氏名（姓）');
 check_empty($lastNameKana,'フリガナ（セイ）');
 check_empty($firstName,'氏名（名）');
@@ -208,19 +188,42 @@ check_empty($installationMunicipalities,'市区町村');
 check_empty($installationTown,'町名・丁目');
 check_empty($installationAddress,'番地・号');
 
-
-// TODO 共通化する.
-function h($h_string){
-	return htmlspecialchars($h_string,ENT_QUOTES);
-}
-
 /* 必須チェック
 　第一引数：対象文字列、第2引数：エラー表示名 */
 function check_empty($target,$target_name){
 	global $error;
 	if (empty($target)) {
-		$error .= '<p class="error">' . $target_name . 'を入力してください</p>';	
-	}	
+		$error .= '<p class="error">' . $target_name . 'を入力してください</p>';
+	}
+}
+
+function getHikariTVString($hikariTvPlan) {
+    $cost = new Cost();
+    $hikariTvPlanString = '';
+    switch($hikariTvPlan) {
+        case $hikariTvPlan == '01':
+            $hikariTvPlanString = '基本料金プラン 月額' . number_format($cost->getHikariTVBasicCost()) . '円(税込)';
+            break;
+        case $hikariTvPlan == '02':
+            $hikariTvPlanString = 'お値うちプラン 月額' . number_format($cost->getHikariTVValueOfMoneyCost()) . '円(税込)';
+            break;
+        case $hikariTvPlan == '03':
+            $hikariTvPlanString = 'テレビおすすめプラン 月額' . number_format($cost->getHikariTVRecommendCost()) . '円(税込)';
+            break;
+        case $hikariTvPlan == '04':
+            $hikariTvPlanString = 'ビデオざんまいプラン 月額' . number_format($cost->getHikariTVVideoZammaiCost()) . '円(税込)';
+            break;
+        case $hikariTvPlan == '05':
+            $hikariTvPlanString = 'お値うちプラン(2ねん割) 月額' . number_format($cost->getHikariTVValueOfMoney2YearCost()) . '円(税込)';
+            break;
+        case $hikariTvPlan == '06':
+            $hikariTvPlanString = 'テレビおすすめプラン(2ねん割) 月額' . number_format($cost->getHikariTVRecommend2YearCost()) . '円(税込)';
+            break;
+        case $hikariTvPlan == '07':
+            $hikariTvPlanString = 'ビデオざんまいプラン(2ねん割) 月額' . number_format($cost->getHikariTVVideoZammai2YearCost()) . '円(税込)';
+            break;
+    }
+    return $hikariTvPlanString;
 }
 
 ?>
