@@ -335,7 +335,7 @@ class Mail
         $content .= self::LINE;
         $content .= $data['lastName'] . ' ' . $data['firstName'] . '様' . self::LINE;
         $content .= '《設置先ご住所》' . self::LINE;
-        $content .= $data['installationPref'] .$data['installationMunicipalities'] .$data['installationTown'] .$data['installationAddress'].$data['installationBuilding'] . self::LINE;
+        $content .= $data['installationPref'] .$data['installationMunicipalities'] .$data['installationTown'] .'-' . $data['installationAddress'].$data['installationBuilding'] . self::LINE;
         $content .= '《ご連絡携帯電話番号》' . self::LINE;
         $content .= $data['phoneNumber'] . self::LINE;
         $content .= self::LINE;
