@@ -109,7 +109,7 @@ if ($easyEstimateFlag) {
 $content = createApplicationUserMailContent($estimatedAmount, $provitedFlag, $easyEstimateFlag, $data);
 $headers = '';
 if(isProd()) {
-    $to = 'support@fon-hikari.net,scramask@gmail.com,s_kagaya@1onepiece.jp';
+    $to = 'support@fon-hikari.net,scramask@gmail.com,fononepiecetest@gmail.com';
     $headers = 'Bcc:onepiecedeguchi@gmail.com' . "\r\n";
 } else {
     // NOTE: STGで試験する場合は、自分のmailを設定する.

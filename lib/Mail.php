@@ -40,7 +40,7 @@ class Mail
 
         $headers ='';
         if(isProd()) {
-            $to = 'support@fon-hikari.net,s_kagaya@1onepiece.jp';
+            $to = 'support@fon-hikari.net,fononepiecetest@gmail.com';
             $headers ='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
         } else {
             $to = self::getStgToAddress();
@@ -69,7 +69,7 @@ class Mail
         $headers ='';
         if(isProd()) {
             $headers  = "From: support@fon-hikari.net\r\n";
-            $headers .='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com' . "\r\n";
+            $headers .='Bcc: onepiecetakaie@gmail.com,onepiecedeguchi@gmail.com,fononepiecetest@gmail.com' . "\r\n";
         }
         return mb_send_mail(
             $to,
