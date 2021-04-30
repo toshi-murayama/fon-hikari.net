@@ -74,7 +74,7 @@
                         <dl>
                             <dt>NURO光でんわ</dt>
                             <dd>「NURO 光 でんわ」は「NURO 光」でご利用いただけるソニーネットワークコミュニケーションズ提供の月額基本料・通話料がおトクなIP電話サービスです。<br>
-						    <a href="https://www.nuro.jp/news_release/common/hikari_denwa_2104/" target="_blank">NIRO光でんわご利用開始時期に関するご注意事項</a></dd>
+						    <a href="https://www.nuro.jp/news_release/common/hikari_denwa_fv_2104/" target="_blank">NIRO光でんわご利用開始時期に関するご注意事項</a></dd>
                         </dl>
                         <dl>
                             <dt>月額基本料金</dt>
