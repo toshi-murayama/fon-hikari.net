@@ -33,7 +33,8 @@ $fp = fopen('./【西日本】住所リスト_210421.csv', 'r');
 
 
 $arealist = [];
-while($line = fgetcsv($fp)){
+while($line = fgets($fp)){
+    $line = explode(',', $line);
     $address = trim($line[1]); // 住所， ex: 大阪府大阪市旭区高殿１丁目
 
     // 住所から都道府県（例： 大阪府 ）を切り出し
@@ -48,10 +49,10 @@ while($line = fgetcsv($fp)){
     }
 
     $arealist[$prefecture][$address] = [
-        trim($line[2]), // NURO光対象局舎. ex: ★
-        trim($line[5]), // 要注意エリア
-        trim($line[6]), // 備考
-        trim($line[7]), // 開局時期. ex: 2018年2機
+        trim($line[2]), // NURO光対象局舎 (例: ★）
+        trim($line[5]), // 要注意エリア (例：要注意エリア3）
+        trim($line[6]), // 備考 (例： 同住所の一部のエリアはサービスエリア外)
+        trim($line[7]), // 開局時期 (例：2018年2機)
         trim($line[8]), // コメント
     ];
 }

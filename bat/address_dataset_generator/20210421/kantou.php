@@ -32,7 +32,8 @@ $fp = fopen('./【東日本】住所リスト_210421.csv', 'r');
 
 
 $arealist = [];
-while($line = fgetcsv($fp)){
+while($line = fgets($fp)){
+    $line = explode(',', $line);
 
     // 住所． ex: 北海道札幌市中央区旭ケ丘１丁目
     // 都道府県＋ 住所1(市区町村) ＋ 住所2 + 住所3(○丁目)
@@ -49,10 +50,10 @@ while($line = fgetcsv($fp)){
     }
 
     $arealist[$prefecture][$address] = [
-        trim($line[4]), // NURO光対象局舎． ex: ★
-        trim($line[7]), // 要注意エリア
-        trim($line[8]), // 備考
-        trim($line[9]), // 開局時期． ex: 2020年1期
+        trim($line[4]), // NURO光対象局舎 (例: ★）
+        trim($line[7]), // 要注意エリア (例：要注意エリア3）
+        trim($line[8]), // 備考 (例： 同住所の一部のエリアはサービスエリア外)
+        trim($line[9]), // 開局時期 （例: 2020年1期）
         trim($line[10]), // コメント
     ];
 }
