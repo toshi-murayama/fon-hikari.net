@@ -22,12 +22,12 @@ kantou.php
 
 generate.php が，残り二つを呼び出す．
 だがそれだけ．generate.phpを使わず直接呼び出しても同じだろう．
-引数には最低限しゅつりょく先パス名が必要．
+引数には最低限，出力先パス名が必要．
 
-たとえば，こんな型式だろう．
-generate.php -output:bat/address_dataset_generator/20210421/test 
+おそらく，こんな型式になる．（パスの指定方法はOSによって変わる可能性大）
+php generate.php -output:bat/address_dataset_generator/20210421/test 
 
 或いは
-generate.php -output:lib/SearchSupportedAreas
+php generate.php -output:lib/SearchSupportedAreas
 
-そのディレクトリは事前に作成され，中味を空にしておくこと．
+指定す出力先ディレクトリは事前に作成され，中味を空にしておくこと．
