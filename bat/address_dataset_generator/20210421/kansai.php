@@ -1,5 +1,9 @@
 <?php
 
+// 注：ブロック,住所,"NURO光 対象局舎","ひかりTV...
+// のような不要なヘッダ部分は，CSVファイルから前もって手動で除去しておくこと．
+
+
 $options = getopt('', ['output:']);
 if (!isset($options['output'])) {
   echo 'output引数を設定してください。例：php '.basename(__FILE__).' --output ./test/';
@@ -8,20 +12,9 @@ if (!isset($options['output'])) {
 }
 $dir = $options['output'];
 
-require_once '../../lib/SearchSupportedAreasFunctions.php';
+require_once '../../../lib/SearchSupportedAreasFunctions.php';
 
 $fp = fopen('./【西日本】住所リスト_210421.csv', 'r');
-
-// ヘッダー部分は不要なので，力業で読み飛ばす
-fgetcsv($fp); // 1行目
-fgetcsv($fp); // 2行目
-fgetcsv($fp); // 3行目
-fgetcsv($fp); // 4行目
-fgetcsv($fp); // 5行目
-fgetcsv($fp); // 6行目
-fgetcsv($fp); // 7行目
-fgetcsv($fp); // 8行目
-
 
 // $arealist に全サービスエリアの一覧を作って，最後にPHP配列とし一気に出力する．
 // 例：
@@ -46,6 +39,7 @@ while($line = fgetcsv($fp)){
     // 住所から都道府県（例： 大阪府 ）を切り出し
     $prefecture = SearchSupportedAreasFunctions::extractPref($address);
     if (!$prefecture){
+        echo 'ERROR : ' . var_export(  $line , true);
         throw new Exception($address . ' 住所が不正です');
     }
 
