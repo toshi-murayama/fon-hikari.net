@@ -2,7 +2,7 @@
 
 // 注：ブロック,住所,"NURO光 対象局舎","ひかりTV...
 // のような不要なヘッダ部分は，CSVファイルから前もって手動で除去しておくこと．
-
+// 使用例  php kansai.php --output ./temp
 
 $options = getopt('', ['output:']);
 if (!isset($options['output'])) {
