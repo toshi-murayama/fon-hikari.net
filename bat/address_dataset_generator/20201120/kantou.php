@@ -12,8 +12,8 @@ $dir = $options['output'];
 
 require_once '../../../lib/SearchSupportedAreasFunctions.php';
 
-// $f = fopen("./【提出用・NURO東】住所リスト.csv", "r");
-$f = fopen("./【NURO東】住所対応局舎リスト20201120.csv", "r");
+$f = fopen("./【提出用・NURO東】住所リスト.csv", "r");
+// $f = fopen("./【NURO東】住所対応局舎リスト20201120.csv", "r");
 
 
 $addresses = [];

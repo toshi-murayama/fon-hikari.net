@@ -12,8 +12,8 @@ $dir = $options['output'];
 
 require_once '../../../lib/SearchSupportedAreasFunctions.php';
 
-// $f = fopen("./【提出用・NURO西】住所リスト.csv", "r");
-$f = fopen("./【NURO西】住所対応局舎リスト20201120.csv", "r");
+$f = fopen("./【提出用・NURO西】住所リスト.csv", "r");
+// $f = fopen("./【NURO西】住所対応局舎リスト20201120.csv", "r");
 
 
 
@@ -24,7 +24,10 @@ while($line = fgets($f)){
   $address = trim($line[1]);
 
   $pref = SearchSupportedAreasFunctions::extractPref($address);
-  if (!$pref) throw new Exception($address . ' 住所が不正です');
+  if (!$pref){
+      echo 'ERROR : ' . var_export(  $line , true);
+      throw new Exception($address . ' 住所が不正です');
+  }
 
   if (!isset($addresses[$pref])) $addresses[$pref] = [];
   $addresses[$pref][trim($address)] = [
@@ -37,7 +40,9 @@ while($line = fgets($f)){
 }
 foreach($addresses as $pref => $lines) {
   $prefCode = SearchSupportedAreasFunctions::toAlphabet($pref);
-  if (!$prefCode) throw new Exception("Error Processing Request", 1);
+  if (!$prefCode){
+      throw new Exception("Error Processing Request", 1);
+  }
   file_put_contents($dir.'/'.$prefCode.'.php', '<?php'."\n".'return '. var_export($lines,true) . ";\n");
 }
 fclose($f);
