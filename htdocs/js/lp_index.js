@@ -3,7 +3,7 @@
 // ページ読込完了後にボタンにclickイベントを登録する
 window.addEventListener("load", function(){
     // バリデーション(jquery.validationEngine.js)セット
-    $('#lp_form1, #lp_form2, #lp_form3').validationEngine('attach', {
+    $('#lp_form1, #lp_form2').validationEngine('attach', {
         promptPosition:"topLeft",
         scroll: false});
 
@@ -56,27 +56,6 @@ window.addEventListener("load", function(){
             if(XHR.readyState == 4 && XHR.status == 200){
                 document.getElementById("mixdata_response").innerHTML = XHR.responseText;
                 document.getElementById('lp_form2').reset();
-            }
-        $('#modalArea').fadeIn();
-        };
-    } ,false);
-
-    // フォーム3の送信ボタンが押された時の処理(1と同様の処理)
-    document.getElementById("send_mixdata3").addEventListener("click", function(){
-        if (!$('#lp_form3').validationEngine('validate') ){
-            return;
-        }
-
-        var formDatas = document.getElementById("lp_form3");
-        var mixedDatas = new FormData(formDatas);
-        var XHR = new XMLHttpRequest();
-
-        XHR.open("POST", "../api/lp_search_and_easy_estimate", true);
-        XHR.send(mixedDatas);
-        XHR.onreadystatechange = function(){
-            if(XHR.readyState == 4 && XHR.status == 200){
-                document.getElementById("mixdata_response").innerHTML = XHR.responseText;
-                document.getElementById('lp_form3').reset();
             }
         $('#modalArea').fadeIn();
         };
