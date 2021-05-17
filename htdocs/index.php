@@ -428,26 +428,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="ca">
-            <article>
-                <h2>お引越し期間中のインターネットもWiFiレンタルをお得にご提供！</h2>
-                <div class="content">
-                    <div class="boxL">
-                        <img src="" alt="">
-                    </div>
-                    <div class="boxL">
-                        現在の開通期間目安<br>
-                        戸建の場合：1〜2ヶ月
-                        集合住宅の場合：1〜3ヶ月
-                    </div>
-                </div>
-                <div class="btnArea">
-                    <a href="area.php">お申し込みはこちら</a>
-                    <a href="contact.php">お問い合わせはこちら</a>
-                </div>
-            </article>
-        </section>
-
         <section id="area_search">
             <article>
                 <div id="fromBox">
