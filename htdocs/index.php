@@ -62,15 +62,6 @@
                             <dd>>> ご不明点をサポートします</dd>
                         </dl>
                     </li>
-                    <li>
-                        <a href="tel:0120-966-486"></a>
-                        <span><img src="img/top_tel_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>電話で申し込み</dt>
-                            <dd>>> 0120-966-486</dd>
-                        </dl>
-                        <em>13:00-17:00(土日祝除く)</em>
-                    </li>
                 </ul>
             </article>
         </section>
@@ -78,10 +69,10 @@
         <section id="summary">
             <article>
                 <h2>下り最大2Gbpsの超高速光回線</h2>
-                <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用したインターネットサービスです。
-インターネット網からお客さまのご自宅まで弊社がサービス提供しており、高品質で安心なインターネットライフをお楽しみいただけます。
-国際標準規格であるGPON※2の採用と、専用に開発されたホームゲートウェイを組み合わせたことで、個人宅向け商用サービスで下り最大2Gbpsを
-実現しています。</p>
+                <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用した超高速の光ファイバーサービスです。<br>
+                個人宅向け商用FYYHサービスとしては超高速の、下り最大2Gbpsの高速回線を実現しました。<br>
+                動画や音楽コンテンツファイルのダウンロード、ストリーミングサービス、ブラウジングもストレスなく快適に。<br>
+                あなたのインターネットライフをより一層楽しい世界へと導きます。</p>
                 <div class="speed_img">
                     <div class="fon">
                         <div class="provider"><img src="img/fon_logo_w.svg" alt="Fon光"></div>
@@ -159,44 +150,41 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
 
         <section id="recommend">
             <article>
-                <ul>
-                    <li class="bEffect01">
-                        <a href="#summary">
-                            <dl>
-                                <dd>
-                                    <img src="img/movie_ico.svg" alt="">
-                                </dd>
-                                <dt>高速回線</dt>
-                                <dd>下り最大2Gbpsの超高速回線
-                                    ゲームや複数人で動画も見てもサクサク！</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="bEffect02">
-                        <a href="#plan">
-                            <dl>
-                                <dd>
-                                    <img src="img/money_ico.svg" alt="">
-                                </dd>
-                                <dt>おとくな料金</dt>
-                                <dd>業界最安値級の料金プラン
-                                    月々のお支払いがお得になります。</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="bEffect03">
-                        <a href="option">
-                            <dl>
-                                <dd>
-                                    <img src="img/tel_ico.svg" alt="">
-                                </dd>
-                                <dt>魅力的なオプション</dt>
-                                <dd>NURO光でんわやリモートサポートなど
-                                    お客様にお楽しみいただけるオプションを用意しています。</dd>
-                            </dl>
-                        </a>
-                    </li>
-                </ul>
+                <h2>インターネットを使うなら<img src="img/fon_logo.svg" alt="Fon光">がおすすめ!</h2>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
+                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
+                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
+                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
             </article>
         </section>
 
@@ -362,21 +350,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="optionArea">
-            <article>
-                <h2>オプション</h2>
-                <p>Fon光には様々なオプションがあります。みなさんの生活をサポートするために用意しました。</p>
-                <ul>
-                    <li>NURO光でんわ</li>
-                    <li>ひかりTV for NURO</li>
-                    <li>まとめてでんき</li>
-                    <li>リモートサポート</li>
-                    <li>カスペルスキーセキュリティ</li>
-                </ul>
-                <a href="option">詳しくはこちらから</a>
-            </article>
-        </section>
-
         <section id="flow">
             <article class="pc">
                 <h2>お申し込みの流れ</h2>
@@ -454,7 +427,27 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <a class="flow_btn" href="area">お申し込みはこちら</a>
             </article>
         </section>
-        
+
+        <section id="ca">
+            <article>
+                <h2>お引越し期間中のインターネットもWiFiレンタルをお得にご提供！</h2>
+                <div class="content">
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxL">
+                        現在の開通期間目安<br>
+                        戸建の場合：1〜2ヶ月
+                        集合住宅の場合：1〜3ヶ月
+                    </div>
+                </div>
+                <div class="btnArea">
+                    <a href="area.php">お申し込みはこちら</a>
+                    <a href="contact.php">お問い合わせはこちら</a>
+                </div>
+            </article>
+        </section>
+
         <section id="area_search">
             <article>
                 <div id="fromBox">
