@@ -1,6 +1,7 @@
 <?php
     session_start();
     unset($_SESSION['dunutsCp']);
+    require_once('../lib/Param/Pref.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,10 +23,19 @@
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/style_lp.css">
+<link rel="stylesheet" href="css/validationEngine.jquery.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
+
+<script src="js/lp_index.js"></script>
+<script src="js/jquery.validationEngine.js"></script>
+<script src="js/jquery.validationEngine-ja.js"></script>
+<script src="js/jquery.jpostal.min.js"></script>
+<script src="js/ajaxzip3.js"></script>
 <!--tag-->
 <?php include "include/tag_head.html";?>
 </head>
@@ -192,8 +202,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             <article>
                 <h2>簡単見積もり</h2>
                 <p>すぐに見積もり額を表示します。専門スタッフが詳しい料金などをお電話にてお伝えいたします。詳しくは<a target="_blank" href="/privacy.php">こちら</a>。</p>
-                <div id="formBox2">
-                    <form action="" id="lp_form2">
+                <div id="formBox1">
+                    <form action="" id="lp_form1">
                         <div class="formContent">
                             <ul>
                                 <li>
@@ -295,7 +305,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                     </dl>
                                 </li>
                             </ul>
-                            <button type="button" id="send_mixdata2">お見積りをする</button>
+                            <button type="button" id="send_mixdata1">お見積りをする</button>
                         </div>
                     </form>
                 </div>
@@ -433,7 +443,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <div id="fromBox">
                     <h2>まずは無料でエリア確認</h2>
                     <p>専門スタッフよりお電話にてお答えします。詳しくは<a href="../privacy.php" target="_blank">こちら</a></p>
-                    <form action="" id="lp_form3">
+                    <form action="" id="lp_form2">
                         <div class="formContent">
                             <ul>
                                 <li>
@@ -511,7 +521,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                     </dl>
                                 </li>
                             </ul>
-                            <button type="button" id="send_mixdata3">エリア確認</button>
+                            <button type="button" id="send_mixdata2">エリア確認</button>
                         </div>
                     </form>
                 </div>
@@ -557,6 +567,21 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
     </div>
+
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="modalContents">
+                <div id="mixdata_response">
+                    <!-- 結果を出力する -->
+                </div>
+            </div>
+            <div id="closeModal" class="closeModal" style="font-size: 40px;">
+                ×
+            </div>
+        </div>
+    </section>
 
     <?php include "include/footer.html";?>
 </body>
