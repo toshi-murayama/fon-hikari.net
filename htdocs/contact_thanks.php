@@ -31,7 +31,7 @@ if(empty($error)) {
 	$content .= '問い合わせのページURL：' . $_SERVER['REQUEST_URI']."\r\n";
 	$to = 'support@fon-hikari.net,fononepiecetest@gmail.com';
 	$title = '【Fon光お問い合わせ】';
-	$headers ='Bcc: onepiecedeguchi@gmail.com' . "\r\n";
+	$headers ='Bcc: fononepiecetest@gmail.com' . "\r\n";
 	$send_mail = mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
 
 	//-----------------------------------------------------------
@@ -39,7 +39,7 @@ if(empty($error)) {
 	//-----------------------------------------------------------
 	$to = $_POST['メールアドレス'];
 	$headers  = "From: support@fon-hikari.net\r\n";
-	$headers .='Bcc: onepiecedeguchi@gmail.com,fononepiecetest@gmail.com' . "\r\n";
+	$headers .='Bcc: fononepiecetest@gmail.com' . "\r\n";
 	$title = "《Fon光》お問い合わせ確認メール";
 	$content  = '';
 	$content .= $_POST['姓'] . ' ' . $_POST['名'] . '様'."\r\n";
