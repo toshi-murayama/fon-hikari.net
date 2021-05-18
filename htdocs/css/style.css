@@ -865,8 +865,10 @@ footer {
             -ms-flex-align: center;
                 align-items: center;
         font-size: 24px; }
-        #plan article .box h3 s {
-          display: block; }
+        #plan article .box h3 span {
+          text-align: right;
+          display: block;
+          color: #f39500; }
         #plan article .box h3 em {
           display: block;
           font-size: 72px;
@@ -897,8 +899,12 @@ footer {
             #plan article .box ul li dl dd {
               font-size: 36px;
               font-weight: 900;
-              color: #f39500; }
+              color: #f39500;
+              line-height: 0.6em;
+              margin: 10px 0; }
               #plan article .box ul li dl dd sup {
+                font-size: 40%; }
+              #plan article .box ul li dl dd small {
                 font-size: 40%; }
     #plan article > p {
       font-size: 12px; }

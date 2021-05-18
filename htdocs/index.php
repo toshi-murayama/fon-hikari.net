@@ -297,7 +297,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
     音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
                 </div>
                 <div class="box">
-                    <h3>月額基本料金<em>¥4,378</em></h3>
+                    <h3>月額基本料金<em>3,980円</em><span>(税込4,378円)</span></h3>
                     <ul>
                         <li>
                             <img src="img/koji_ico.svg" alt="">
@@ -310,7 +310,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/doc_ico.svg" alt="">
                             <dl>
                                 <dt>契約事務手数料</dt>
-                                <dd>¥3,300</dd>
+                                <dd>¥3,000
+                                <small>(¥3,300税込)</small></dd>
                             </dl>
                         </li>
                         <li>
@@ -324,7 +325,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/x_ico.svg" alt="">
                             <dl>
                                 <dt>契約解除料</dt>
-                                <dd>¥21,780</dd>
+                                <dd>¥19,800
+                                <small>(¥21,780税込)</small></dd>
                             </dl>
                         </li>
                     </ul>
