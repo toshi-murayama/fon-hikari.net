@@ -1,5 +1,14 @@
 
 $(function () {
+    $('#firstview').slick({
+        autoplay:true,
+        autoplaySpeed:3000,
+        dots:false,
+        fade:true,
+    });
+});
+
+$(function () {
     $(window).on('scroll', function() {
         var scroll_top = $(window).scrollTop();
         $('.bEffect01').each(function() {

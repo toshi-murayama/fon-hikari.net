@@ -26,8 +26,11 @@
 
 <link rel="stylesheet" href="css/style_lp.css">
 <link rel="stylesheet" href="css/validationEngine.jquery.css">
+<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="css/slick-theme.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/slick.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
 
@@ -42,19 +45,33 @@
 <body>
 <?php include "include/tag_start.html";?>
 <?php setcookie('affiliate', '', time() - 1, '/')?>
-<p id="cursor"></p>
-<div id="stalker"></div>
 
     <?php include "include/header.html";?>
     <div id="wrap">
         <section id="top">
             <article>
-                <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥4,378</span></h2>
-                <p>※ 記載の金額は全て税込金額です。</p>
-                <div></div>
-                <p>超高速インターネット回線</p>
-                <p>下り最大 2Gbps</p>
+                <div id="firstview">
+                    <div class="fv1">
+                        <div class="content">
+                            <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
+                            <h2>月額<span>¥4,378</span></h2>
+                            <p>※ 記載の金額は全て税込金額です。</p>
+                            <div></div>
+                            <p>超高速インターネット回線</p>
+                            <p>下り最大 2Gbps</p>
+                        </div>
+                    </div>
+                    <div class="fv2">
+                        <div class="content">
+                            <h1>22Fon光で快適な<br>インターネット生活を送ろう</h1>
+                            <h2>月額<span>¥4,378</span></h2>
+                            <p>※ 記載の金額は全て税込金額です。</p>
+                            <div></div>
+                            <p>超高速インターネット回線</p>
+                            <p>下り最大 2Gbps</p>
+                        </div>
+                    </div>
+                </div>
                 <ul>
                     <li>
                         <a href="area"></a>
@@ -155,46 +172,6 @@
                     <li>※2 GPONとは：PON(Passive Optical Network)とは1芯の光ファイバーを複数ユーザーで共用する伝送技術です。
 GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シリーズで規定された伝送技術で、通信速度は最大2.5Gbpsまで対応しています。</li>
                 </ul>
-            </article>
-        </section>
-
-        <section id="recommend">
-            <article>
-                <h2>インターネットを使うなら<img src="img/fon_logo.svg" alt="Fon光">がおすすめ!</h2>
-                <div class="box">
-                    <div class="boxL">
-                        <img src="" alt="">
-                    </div>
-                    <div class="boxR">
-                        <dl>
-                            <dt>下り2Gbpsの高速回線</dt>
-                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
-                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
-                        </dl>
-                    </div>
-                </div>
-                    <div class="boxL">
-                        <img src="" alt="">
-                    </div>
-                    <div class="boxR">
-                        <dl>
-                            <dt>下り2Gbpsの高速回線</dt>
-                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
-                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
-                        </dl>
-                    </div>
-                </div>
-                    <div class="boxL">
-                        <img src="" alt="">
-                    </div>
-                    <div class="boxR">
-                        <dl>
-                            <dt>下り2Gbpsの高速回線</dt>
-                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
-                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
-                        </dl>
-                    </div>
-                </div>
             </article>
         </section>
 
@@ -310,7 +287,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </form>
                 </div>
             </article>
-            <div class="appBtn"><a href="../area.php">お申込みはこちら</a></div>
         </section>
 
         <section id="plan">
@@ -357,6 +333,48 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
                 <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
                 <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
+            </article>
+        </section>
+
+        <section id="recommend">
+            <article>
+                <h2>インターネットを使うなら<img src="img/fon_logo.svg" alt="Fon光">がおすすめ!</h2>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
+                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
+                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
+                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
             </article>
         </section>
 
@@ -435,6 +453,26 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </li>
                 </ul>
                 <a class="flow_btn" href="area">お申し込みはこちら</a>
+            </article>
+        </section>
+
+        <section id="mobileWifi">
+            <article>
+                <h2>お引越し期間中のインターネットもWiFiレンタルをお得にご提供！</h2>
+                <div class="content">
+                    <div class="boxL">
+                        <img src="" alt="">
+                    </div>
+                    <div class="boxL">
+                        現在の開通期間目安<br>
+                        戸建の場合：1〜2ヶ月
+                        集合住宅の場合：1〜3ヶ月
+                    </div>
+                </div>
+                <div class="btnArea">
+                    <a href="area.php">お申し込みはこちら</a>
+                    <a href="contact.php">お問い合わせはこちら</a>
+                </div>
             </article>
         </section>
 
