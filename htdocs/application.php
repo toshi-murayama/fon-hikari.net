@@ -381,7 +381,7 @@ $(window).load(function() {
 			  <li class="categories">
 				<dl>
 				  <dt>クーポンコード<br>
-					<input size="30" type="text" name="couponCode" class="" id="couponCode"></dt>
+					<input size="30" type="text" name="couponCode" class="validate[custom[couponCode]]" id="couponCode"></dt>
 				</dl>
 			  </li>
 			</UL>
