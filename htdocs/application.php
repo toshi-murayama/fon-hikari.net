@@ -92,7 +92,7 @@ $(window).load(function() {
 						<dd>氏名（名）<br>
 						<input size="30" type="text" name="firstName" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
 					</dl>
-					</li>
+				</li>
 				<li class="categories">
 					<dl>
 						<dt>フリガナ（セイ）<br>
@@ -376,6 +376,16 @@ $(window).load(function() {
 					<input type="text" name="mailingBuilding" value="<?php print $room_number; ?>">
 				</li>
 			</ul>
+
+			<ul class="form">
+			  <li class="categories">
+				<dl>
+				  <dt>クーポンコード<br>
+					<input size="30" type="text" name="couponCode" class="" id="couponCode"></dt>
+				</dl>
+			  </li>
+			</UL>
+
 
 			<div class="privacyTitle">個人情報取得における告知・同意文</div>
                 <div class="privacy">
