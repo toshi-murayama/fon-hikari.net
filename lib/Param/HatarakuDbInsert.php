@@ -44,10 +44,6 @@ class HatarakuDbInsert
      */
     private static function getApiParameter(array $dataAll): array
     {
-        $cp = '';
-        if($dataAll['isCp']) {
-            $cp = 'ドーナツCP';
-        }
         date_default_timezone_set('Asia/Tokyo');
         return [
             "dbSchemaId"=>"101234", // Fon光（青の働くDB）

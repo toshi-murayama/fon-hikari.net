@@ -1,8 +1,6 @@
 <?php
 	require_once('../lib/Application.php');
 	$error = Service::exec();
-	$isDonutsCp = $_SESSION['dunutsCp'];
-	unset($_SESSION['dunutsCp']);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
