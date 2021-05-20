@@ -8,217 +8,91 @@ $gray : #f4f5f4;
 $gradient : linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
 
 
-#summary,#footerForm{
-    article{
-        #fromBox{
-            border: 4px solid #fbd349;
-            background: #fff;
-            padding: 0 100px 50px;
-            max-width: 780px;
-            width: calc(90% - 200px);
-            margin: 0 auto;
-            position: relative;
-            h2{
-                background: #fbd349;
-                color: #fff;
-                text-align: center;
-                position: absolute;
-                margin: auto;
-                left: 0;
-                right: 0;
-                top: -30px;
-                width: 50%;
-                font-size: 30px;
-            }
-            p{
-                text-align: center;
-                padding: 30px 0;
-            }
-            .formContent{
-                width: 500px;
-                margin: 0 auto;
-                position: relative;
-                ul{
-                    li{
-                        margin-bottom: 20px;
-                        dl{
-                            display: flex;
-                            justify-content: space-between;
-                            dt{
-                                width: 30%;
-                                font-size: 18px;
-                                span{
-                                    background: #f28f00;
-                                    color: #fff;
-                                    font-size: 10px;
-                                    vertical-align: middle;
-                                    padding: 5px;
-                                    border-radius: 5px;
-                                    margin-left: 10px;
-                                }
-                            }
-                            dd{
-                                width: 70%;
-                                input[type='text']{
-                                    width: 100%;
-                                    padding: 5px;
-                                }
-                                input[type='tel']{
-                                    width: 100%;
-                                    padding: 5px;
-                                }
-                                select{
-                                    padding: 5px;
-                                }
-                            }
-                        }
-                    }
-                }
-                button{
-                    background: #f28f00;
-                    border: none;
-                    cursor: pointer;
-                    outline: none;
-                    padding: 15px 0;
-                    appearance: none;
-                    margin: 0 auto;
-                    width: 150px;
-                    display: block;
-                    font-size: 24px;
-                    line-height: 1em;
-                    border-radius: 10px;
-                    color: #fff;
-                    box-shadow: 0px 10px 0px 0px #fbd349;
-                    transition: 0.2s;
-                }
-                button:hover{
-                    box-shadow: 0px 0px 0px 0px #fbd349;
-                    transform: translateY(10px);
-                }
-            }
-        }
-    }
-}
-
-
-
 
 /*-----estimate-----*/
-#estimate{
+#estimate,#footerForm{
     article{
-            border: 4px solid #fbd349;
-            background: #fff;
-            padding: 0 100px 50px;
-            max-width: 780px;
-            width: calc(90% - 200px);
+        background: #fff;
+        padding: 50px 0 50px;
+        max-width: 980px;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        h2{
+            text-align: left;
+            width: 600px;
+            font-size: 36px;
+            margin: 0 auto;
+            border-bottom: 3px solid #ccc;
+        }
+        p{
+            padding: 30px 0;
+            width: 600px;
+            margin: 0 auto;
+        }
+        .formContent{
+            width: 600px;
             margin: 0 auto;
             position: relative;
-            h2{
-                background: #fbd349;
-                color: #fff;
-                text-align: center;
-                position: absolute;
-                margin: auto;
-                left: 0;
-                right: 0;
-                top: -30px;
-                width: 50%;
-                font-size: 30px;
-            }
-            p{
-                text-align: center;
-                padding: 30px 0;
-            }
-            .formContent{
-                width: 500px;
-                margin: 0 auto;
-                position: relative;
-                ul{
-                    li{
-                        margin-bottom: 20px;
-                        dl{
-                            display: flex;
-                            justify-content: space-between;
-                            dt{
-                                width: 30%;
-                                font-size: 18px;
-                                span{
-                                    background: #f28f00;
-                                    color: #fff;
-                                    font-size: 10px;
-                                    vertical-align: middle;
-                                    padding: 5px;
-                                    border-radius: 5px;
-                                    margin-left: 10px;
-                                }
+            ul{
+                li{
+                    margin-bottom: 20px;
+                    dl{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        dt{
+                            width: 30%;
+                            font-size: 18px;
+                            background: #f6f6f6;
+                            text-align: center;
+                            padding: 15px 0;
+                            span{
+                                background: #f28f00;
+                                color: #fff;
+                                font-size: 10px;
+                                vertical-align: middle;
+                                padding: 5px;
+                                border-radius: 5px;
+                                margin-left: 10px;
                             }
-                            dd{
-                                width: 70%;
-                                input[type='text']{
-                                    width: 100%;
-                                    padding: 5px;
-                                }
-                                input[type='tel']{
-                                    width: 100%;
-                                    padding: 5px;
-                                }
-                                select{
-                                    padding: 5px;
-                                }
+                        }
+                        dd{
+                            width: 65%;
+                            input[type='text']{
+                                width: 100%;
+                                padding: 15px 10px;
+                            }
+                            input[type='tel']{
+                                width: 100%;
+                                padding: 15px 10px;
+                            }
+                            select{
+                                padding: 15px 10px;
                             }
                         }
                     }
                 }
-                button{
-                    background: #f28f00;
-                    border: none;
-                    cursor: pointer;
-                    outline: none;
-                    padding: 15px 0;
-                    appearance: none;
-                    margin: 0 auto;
-                    width: 190px;
-                    display: block;
-                    font-size: 24px;
-                    line-height: 1em;
-                    border-radius: 10px;
-                    color: #fff;
-                    box-shadow: 0px 10px 0px 0px #fbd349;
-                    transition: 0.2s;
-                    letter-spacing: -0.1em;
-                }
-                button:hover{
-                    box-shadow: 0px 0px 0px 0px #fbd349;
-                    transform: translateY(10px);
-                }
             }
-    }
-    .appBtn{
-        margin-top: 30px;
-        a{
-            background: #50ab4c;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            padding: 15px 0;
-            appearance: none;
-            margin: 0 auto;
-            width: 220px;
-            display: block;
-            font-size: 24px;
-            line-height: 1em;
-            border-radius: 10px;
-            color: #fff;
-            box-shadow: 0px 10px 0px 0px #90c48d;
-            transition: 0.2s;
-            text-align: center;
-            text-decoration: none;
-            letter-spacing: -0.1em;
-        }
-        a:hover{
-            box-shadow: 0px 0px 0px 0px #fbd349;
-            transform: translateY(10px);
-            opacity: 1;
+            button{
+                background: $gradient;
+                color: #fff;
+                font-weight: bold;
+                display: block;
+                text-align: center;
+                width: 150px;
+                padding: 10px 15px;
+                border-radius: 5px;
+                border: 1px solid #fff;
+                margin: 50px auto 0;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+            button:hover{
+                background: #fff;
+                color: #000;
+                border: 1px solid #000;
+            }
         }
     }
 }

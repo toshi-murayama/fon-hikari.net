@@ -343,37 +343,36 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <h2>インターネットを使うなら<img src="img/fon_logo.svg" alt="Fon光">がおすすめ!</h2>
                 <div class="box">
                     <div class="boxL">
-                        <img src="" alt="">
+                        <img src="img/recommend_img01.svg" alt="">
                     </div>
                     <div class="boxR">
                         <dl>
                             <dt>下り2Gbpsの高速回線</dt>
-                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
-                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。</dd>
                         </dl>
                     </div>
                 </div>
                 <div class="box">
                     <div class="boxL">
-                        <img src="" alt="">
+                        <img src="img/recommend_img02.svg" alt="">
                     </div>
                     <div class="boxR">
                         <dl>
-                            <dt>下り2Gbpsの高速回線</dt>
-                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
-                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                            <dt>ずーっと定額安心価格</dt>
+                            <dd>一定期間限定割引の、のちのち高くなるわかりにくい料金ではなく、最初から3,980円(4,378円税込)の定額安心価格。プロバイダ料金もかかりません。
+                            </dd>
                         </dl>
                     </div>
                 </div>
                 <div class="box">
                     <div class="boxL">
-                        <img src="" alt="">
+                        <img src="img/recommend_img03.svg" alt="">
                     </div>
                     <div class="boxR">
                         <dl>
-                            <dt>下り2Gbpsの高速回線</dt>
-                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。
-                            <a href="">キャンペーン実施中！詳しくはこちら</a></dd>
+                            <dt>セットでお得に使える</dt>
+                            <dd>ソフトバンクのスマホ割引や、フォン・ジャパンで運営するポケットWiFiとのセット割引で、おうちの通信をまとめてお得に使えます。多彩なオプションもご用意しております。<br>
+                            <a href="option">お得な特典付きオプションについてこちら</a></dd>
                         </dl>
                     </div>
                 </div>
@@ -463,7 +462,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <h2>お引越し期間中のインターネットもWiFiレンタルをお得にご提供！</h2>
                 <div class="content">
                     <div class="boxL">
-                        <img src="" alt="">
+                        <img src="img/denki_ico.svg" alt="">
                     </div>
                     <div class="boxL">
                         現在の開通期間目安<br>
