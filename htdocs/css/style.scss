@@ -414,7 +414,7 @@ footer {
                 }
             }
             .fv2{
-                background: url(../img/top_bg_company.jpg) no-repeat 50% 10%;
+                background: url(../img/top_bg_ouchiwari.jpg) no-repeat 50% 100%;
                 background-size: cover;
                 .content{
                     width: 90%;
@@ -446,6 +446,28 @@ footer {
                         width: 50px;
                         margin: 15px 0 15px;
                         background: $gradient;
+                    }
+                    p{
+                        a{
+                            display: inline-block;
+                            background: #fff;
+                            color: #333;
+                            border-radius: 50px;
+                            padding: 15px 30px;
+                            text-decoration: none;
+                            font-size: 14px;
+                            margin-top: 30px;
+                            em{
+                                font-weight: 900;
+                                font-size: 18px;
+                                letter-spacing: 0.1em;
+                            }
+                        }
+                        a:hover{
+                            background: #333;
+                            color: #fff;
+                            opacity: 1;
+                        }
                     }
                 }
             }

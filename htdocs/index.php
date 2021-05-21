@@ -63,12 +63,10 @@
                     </div>
                     <div class="fv2">
                         <div class="content">
-                            <h1>22Fon光で快適な<br>インターネット生活を送ろう</h1>
-                            <h2>月額<span>¥4,378</span></h2>
-                            <p>※ 記載の金額は全て税込金額です。</p>
-                            <div></div>
-                            <p>超高速インターネット回線</p>
-                            <p>下り最大 2Gbps</p>
+                            <h1>光電話とセットで家族みんなのスマホが永年</h1>
+                            <h2>毎月最大<span>¥1,100</span>おトクに!</h2>
+                            <p>※ 適用条件がございます。</p>
+                            <p><a href="ouchiwari.php"><em>おうち割</em>はこちら</a></p>
                         </div>
                     </div>
                 </div>
