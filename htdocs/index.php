@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Fon光 超高速光回線インターネット</title>
+<title>Fon光 高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="月額4,378円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
@@ -57,7 +57,7 @@
                             <h2>月額<span>¥4,378</span></h2>
                             <p>※ 記載の金額は全て税込金額です。</p>
                             <div></div>
-                            <p>超高速インターネット回線</p>
+                            <p>高速インターネット回線</p>
                             <p>下り最大 2Gbps</p>
                         </div>
                     </div>
@@ -93,9 +93,9 @@
 
         <section id="summary">
             <article>
-                <h2>下り最大2Gbpsの超高速光回線</h2>
-                <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用した超高速の光ファイバーサービスです。<br>
-                個人宅向け商用FYYHサービスとしては超高速の、下り最大2Gbpsの高速回線を実現しました。<br>
+                <h2>下り最大2Gbpsの高速光回線</h2>
+                <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用した高速の光ファイバーサービスです。<br>
+                個人宅向け商用FYYHサービスとしては高速の、下り最大2Gbpsの高速回線を実現しました。<br>
                 動画や音楽コンテンツファイルのダウンロード、ストリーミングサービス、ブラウジングもストレスなく快適に。<br>
                 あなたのインターネットライフをより一層楽しい世界へと導きます。</p>
                 <div class="speed_img">
