@@ -1,7 +1,3 @@
-<?php
-    session_start();
-    unset($_SESSION['dunutsCp']);
-?>
 <!DOCTYPE html>
 <html>
 <head>

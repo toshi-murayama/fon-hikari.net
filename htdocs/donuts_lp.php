@@ -6,9 +6,6 @@
         header('Location: /');
         exit;
     }
-    session_start();
-    $_SESSION['dunutsCp'] = true;
-
 ?>
 <!DOCTYPE html>
 <html>
