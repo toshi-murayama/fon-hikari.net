@@ -1325,11 +1325,15 @@ footer {
     #mobileWifi article h2 {
       color: #fff;
       font-size: 28px;
-      text-align: center; }
+      text-align: center;
+      line-height: 1.2em; }
     #mobileWifi article .content {
       text-align: center; }
-      #mobileWifi article .content .boxL img {
-        width: 100px; }
+      #mobileWifi article .content .boxL {
+        margin: 15px 0; }
+        #mobileWifi article .content .boxL img {
+          width: 90%;
+          max-width: 300px; }
     #mobileWifi article .btnArea {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1647,7 +1651,7 @@ footer {
     background-size: cover;
     height: auto;
     color: #fff;
-    padding-bottom: 30px; }
+    padding-bottom: 0; }
     #top article {
       position: relative; }
       #top article #firstview .fv1, #top article #firstview .fv2 {

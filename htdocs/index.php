@@ -207,7 +207,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <ul>
                                 <li>
                                     <dl>
-                                        <dt>お名前</dt>
+                                        <dt>お名前<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
                                         </dd>
@@ -215,7 +215,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>フリガナ</dt>
+                                        <dt>フリガナ<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
                                         </dd>
@@ -223,7 +223,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>電話番号</dt>
+                                        <dt>電話番号<span>必須</span></dt>
                                         <dd>
                                             <input type="tel" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
                                         </dd>
@@ -231,7 +231,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>郵便番号</dt>
+                                        <dt>郵便番号<span>必須</span></dt>
                                         <dd>
                                             <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]" minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
@@ -239,7 +239,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>都道府県</dt>
+                                        <dt>都道府県<span>必須</span></dt>
                                         <dd>
                                             <select name="installationPref" id="prefectures" class="validate[required]">
                                                 <option value="" selected>都道府県を選択</option>
@@ -256,7 +256,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>以降の住所</dt>
+                                        <dt>以降の住所<span>必須</span></dt>
                                         <dd>
                                             <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
                                         </dd>
@@ -460,7 +460,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <h2>お引越し期間中のインターネットもWiFiレンタルをお得にご提供！</h2>
                 <div class="content">
                     <div class="boxL">
-                        <img src="img/denki_ico.svg" alt="">
+                        <img src="img/mobilewifi.svg" alt="">
                     </div>
                     <div class="boxL">
                         現在の開通期間目安<br>

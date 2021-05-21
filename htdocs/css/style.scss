@@ -1444,12 +1444,15 @@ footer {
             color: #fff;
             font-size: 28px;
             text-align: center;
+            line-height: 1.2em;
         }
         .content{
             text-align: center;
             .boxL{
+                margin: 15px 0;
                 img{
-                    width: 100px;
+                    width: 90%;
+                    max-width: 300px;
                 }
             }
         }
@@ -1814,7 +1817,7 @@ footer {
         background-size: cover;
         height: auto;
         color: #fff;
-        padding-bottom: 30px;
+        padding-bottom: 0;
         article{
             position: relative;
             #firstview{
