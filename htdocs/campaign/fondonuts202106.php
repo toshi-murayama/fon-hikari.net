@@ -92,8 +92,8 @@
                         ※先着制となりますので、数に限りが御座います。予めご了承下さい。
                     </dd>
                 </dl>
-                <h3>下記のクーポンコードを申込サイトに入力</h3>
-                <p>fondonuts202106</p>
+                <h3>下記のクーポンコードを申込サイトに入力<br class="sp"><span style="font-size:12px">※クリックでコピーできます</span></h3>
+                <p id="couponCode">fondonuts202106</p>
             </article>
         </section>
         <section id="application">
@@ -168,15 +168,39 @@
     </div>
 
     <?php include "include/footer.html";?>
+    <!-- インストールはあとから... -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         $(function() {
             $('#confirm').click(function() {
+                // 注意事項確認.
                 if($("#confirm").prop('checked')) {
                     $('#contactButton').prop('disabled', false);
                 } else {
                     $('#contactButton').prop('disabled', true);
                 }
-        	});
+            });
+            $('#couponCode').click(function() {
+                // クーポンコードコピー.
+                let text = $('#couponCode').text();
+                let $textarea = $('<textarea></textarea>');
+                $textarea.text(text);
+                $(this).append($textarea);
+                $textarea.select();
+                document.execCommand('copy');
+                $textarea.remove();
+
+                // アラート表示.
+                window.swal({
+                    icon: "success",
+                    title: "コピーしました!",
+                    text:  text,
+                    allowOutsideClick: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true
+                });
+            });
         });
     </script>
 </body>
