@@ -150,21 +150,34 @@
                         ※送付頂いた書面のご返送は行っておりません
                     </dd>
                 </dl>
-                <div class="confirm_btn">
-                    <input type="checkbox" id="confirm" name="agree" class="agreement">
-                    <label for="confirm" class="agree">注意事項を確認しました</label>
-                </div>
-                <div class="application_btn">
-                    <ul class="form_btn application">
-                        <li>
-                            <input type="submit" value="お申し込み" class="contact_btn02" disabled>
-                        </li>
-                    </ul>
-                </div>
+                <form method="post" action="../area">
+                    <div class="confirm_btn">
+                        <input type="checkbox" id="confirm" name="agree" class="agreement">
+                        <label for="confirm" class="agree">注意事項を確認しました</label>
+                    </div>
+                    <div class="application_btn">
+                        <ul class="form_btn application">
+                            <li>
+                                <input id="contactButton" type="submit" value="お申し込み" class="contact_btn02" disabled>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
             </article>
         </section>
     </div>
 
     <?php include "include/footer.html";?>
+    <script>
+        $(function() {
+            $('#confirm').click(function() {
+                if($("#confirm").prop('checked')) {
+                    $('#contactButton').prop('disabled', false);
+                } else {
+                    $('#contactButton').prop('disabled', true);
+                }
+        	});
+        });
+    </script>
 </body>
 </html>
