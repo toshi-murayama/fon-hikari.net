@@ -5,6 +5,7 @@ $(function () {
         autoplaySpeed:3000,
         dots:false,
         fade:true,
+        arrows:false,
     });
 });
 

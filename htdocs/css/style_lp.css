@@ -186,6 +186,82 @@
 
   img {
     max-width: 100%;
-    height: auto; } }
+    height: auto; }
+
+  /*-----estimate-----*/
+  #estimate article, #footerForm article {
+    background: #fff;
+    padding: 50px 0 50px;
+    max-width: 980px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative; }
+    #estimate article h2, #footerForm article h2 {
+      text-align: left;
+      width: 100%;
+      font-size: 24px;
+      margin: 0 auto;
+      border-bottom: 3px solid #ccc; }
+    #estimate article p, #footerForm article p {
+      padding: 30px 0;
+      width: 100%;
+      margin: 0 auto; }
+    #estimate article .formContent, #footerForm article .formContent {
+      width: 100%;
+      margin: 0 auto;
+      position: relative; }
+      #estimate article .formContent ul li, #footerForm article .formContent ul li {
+        margin-bottom: 20px; }
+        #estimate article .formContent ul li dl, #footerForm article .formContent ul li dl {
+          display: block;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center; }
+          #estimate article .formContent ul li dl dt, #footerForm article .formContent ul li dl dt {
+            width: 70%;
+            font-size: 14px;
+            background: #f6f6f6;
+            text-align: left;
+            padding: 10px;
+            margin-bottom: 10px; }
+            #estimate article .formContent ul li dl dt span, #footerForm article .formContent ul li dl dt span {
+              background: #f28f00;
+              color: #fff;
+              font-size: 10px;
+              vertical-align: middle;
+              padding: 5px;
+              border-radius: 5px;
+              margin-left: 10px; }
+          #estimate article .formContent ul li dl dd, #footerForm article .formContent ul li dl dd {
+            width: calc(100% - 30px); }
+            #estimate article .formContent ul li dl dd input[type='text'], #footerForm article .formContent ul li dl dd input[type='text'] {
+              width: 100%;
+              padding: 15px 10px; }
+            #estimate article .formContent ul li dl dd input[type='tel'], #footerForm article .formContent ul li dl dd input[type='tel'] {
+              width: 100%;
+              padding: 15px 10px; }
+            #estimate article .formContent ul li dl dd select, #footerForm article .formContent ul li dl dd select {
+              padding: 15px 10px; }
+      #estimate article .formContent button, #footerForm article .formContent button {
+        background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
+        color: #fff;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        width: 150px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        margin: 50px auto 0;
+        text-decoration: none;
+        -webkit-transition: 0.3s;
+        transition: 0.3s; }
+      #estimate article .formContent button:hover, #footerForm article .formContent button:hover {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000; } }
 
 /*# sourceMappingURL=style_lp.css.map */
