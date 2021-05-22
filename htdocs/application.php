@@ -380,7 +380,7 @@ $(window).load(function() {
 			<ul class="form">
 			  <li class="categories">
 				<dl>
-				  <dt>クーポンコード<br>
+				  <dt class="coupon">クーポンコード<br>
 					<input size="30" type="text" name="couponCode" class="validate[custom[couponCode]]" id="couponCode"></dt>
 				</dl>
 			  </li>
