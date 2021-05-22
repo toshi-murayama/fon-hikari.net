@@ -734,7 +734,7 @@ footer article .boxR .inner > ul li img {
 
   /*-----top-----*/
   #top img {
-    margin-top: 45px;
+    padding-top: 45px;
   }
 
   /*-----present-----*/

@@ -35,7 +35,8 @@
     <div id="wrap">
         <section id="top">
             <article>
-                <img src="img/fondonuts202106/main.png" alt="">
+                <img src="img/fondonuts202106/main.jpg" alt="" class="pc">
+                <img src="img/fondonuts202106/main_sp.jpg" alt="" class="sp">
             </article>
         </section>
         <section id="present">
