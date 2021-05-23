@@ -50,6 +50,13 @@ $(window).load(function() {
 	$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 });
 </script>
+<style>
+input {
+	/* iPhoneでズームさせない */
+	font-size: 16px;
+	transform: scale(0.8);
+}
+</style>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
