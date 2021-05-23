@@ -497,7 +497,7 @@ footer {
           margin: 15px 0 15px;
           background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
     #top article #firstview .fv2 {
-      background: url(../img/top_bg_ouchiwari.jpg) no-repeat 50% 100%;
+      background: url(../img/top_bg2.jpg) no-repeat 50% 100%;
       background-size: cover; }
       #top article #firstview .fv2 .content {
         width: 90%;
@@ -1806,7 +1806,7 @@ footer {
             margin: 15px 0 15px;
             background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
       #top article #firstview .fv2 {
-        background: url(../img/top_bg_ouchiwari.jpg) no-repeat 25% 100%;
+        background: url(../img/top_bg2.jpg) no-repeat 70% 10%;
         background-size: cover; }
         #top article #firstview .fv2 .content {
           width: 90%;
@@ -1815,19 +1815,18 @@ footer {
           margin: 0 auto;
           -webkit-box-align: center;
               -ms-flex-align: center;
-                  align-items: center;
-          text-align: center; }
+                  align-items: center; }
           #top article #firstview .fv2 .content h1 {
-            font-size: 14px;
+            font-size: 24px;
             width: 100%;
             padding-top: 20vh;
             font-weight: 600; }
           #top article #firstview .fv2 .content h2 {
-            font-size: 18px;
+            font-size: 30px;
             font-weight: 900;
             width: 100%; }
             #top article #firstview .fv2 .content h2 span {
-              font-size: 42px; }
+              font-size: 60px; }
             #top article #firstview .fv2 .content h2 small {
               font-size: 18px;
               line-height: 0; }
@@ -1837,23 +1836,6 @@ footer {
             width: 50px;
             margin: 15px 0 15px;
             background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%); }
-          #top article #firstview .fv2 .content p a {
-            display: inline-block;
-            background: #fff;
-            color: #333;
-            border-radius: 50px;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 14px;
-            margin: 30px auto; }
-            #top article #firstview .fv2 .content p a em {
-              font-weight: 900;
-              font-size: 18px;
-              letter-spacing: 0.1em; }
-          #top article #firstview .fv2 .content p a:hover {
-            background: #333;
-            color: #fff;
-            opacity: 1; }
       #top article ul {
         width: 90%;
         position: absolute;

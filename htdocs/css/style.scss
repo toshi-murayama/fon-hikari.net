@@ -520,7 +520,7 @@ footer {
                 }
             }
             .fv2{
-                background: url(../img/top_bg_ouchiwari.jpg) no-repeat 50% 100%;
+                background: url(../img/top_bg2.jpg) no-repeat 50% 100%;
                 background-size: cover;
                 .content{
                     width: 90%;
@@ -1994,7 +1994,7 @@ footer {
                     }
                 }
                 .fv2{
-                    background: url(../img/top_bg_ouchiwari.jpg) no-repeat 25% 100%;
+                    background: url(../img/top_bg2.jpg) no-repeat 70% 10%;
                     background-size: cover;
                     .content{
                         width: 90%;
@@ -2002,19 +2002,18 @@ footer {
                         height: 100%;
                         margin: 0 auto;
                         align-items: center;
-                        text-align: center;
                         h1{
-                            font-size: 14px;
+                            font-size: 24px;
                             width: 100%;
                             padding-top: 20vh;
                             font-weight: 600;
                         }
                         h2{
-                            font-size: 18px;
+                            font-size: 30px;
                             font-weight: 900;
                             width: 100%;
                             span{
-                                font-size: 42px;
+                                font-size: 60px;
                             }
                             small{
                                 font-size: 18px;
@@ -2027,28 +2026,6 @@ footer {
                             width: 50px;
                             margin: 15px 0 15px;
                             background: $gradient;
-                        }
-                        p{
-                            a{
-                                display: inline-block;
-                                background: #fff;
-                                color: #333;
-                                border-radius: 50px;
-                                padding: 15px 30px;
-                                text-decoration: none;
-                                font-size: 14px;
-                                margin: 30px auto;
-                                em{
-                                    font-weight: 900;
-                                    font-size: 18px;
-                                    letter-spacing: 0.1em;
-                                }
-                            }
-                            a:hover{
-                                background: #333;
-                                color: #fff;
-                                opacity: 1;
-                            }
                         }
                     }
                 }
