@@ -234,6 +234,7 @@ header{
             }
         }
         .boxR{
+            margin-right: 20px;
             ul{
                 display: flex;
                 li{
@@ -248,11 +249,110 @@ header{
                         border-radius: 5px;
                         padding: 10px 15px;
                     }
+                    .app{
+                        background: $gradient;
+                        border-radius: 5px;
+                        padding: 10px 15px;
+                    }
                 }
                 li:last-child{
                     margin-right: 0;
                 }
             }
+        }
+        #menu-btn-check {
+            display: none;
+        }
+        .menu-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            height: 60px;
+            width: 60px;
+            justify-content: center;
+            align-items: center;
+            z-index: 90;
+        }
+        .menu-btn span,
+        .menu-btn span:before,
+        .menu-btn span:after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 25px;
+            border-radius: 3px;
+            background-color: #fff;
+            position: absolute;
+        }
+        .menu-btn span:before {
+            bottom: 8px;
+        }
+        .menu-btn span:after {
+            top: 8px;
+        }
+        #menu-btn-check:checked ~ .menu-btn span {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        #menu-btn-check:checked ~ .menu-btn span::before {
+            bottom: 0;
+            transform: rotate(45deg);
+        }
+        #menu-btn-check:checked ~ .menu-btn span::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+        .hamburger-menu{
+            display: block;
+        }
+        .menu-content {
+            width: 50%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 100%;
+            z-index: 80;
+            background-color: $orange;
+            transition: all 0.5s;
+            padding-top: 100px;
+            ul{
+                display: block;
+                
+                li{
+                    margin-bottom: 15px;
+                    a{
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .btnApp{
+                background: #fff;
+                color: #fff;
+                border-radius: 50px;
+                padding: 10px 30px;
+                width: 150px;
+                margin: 0 auto 15px;
+                display: block;
+                text-decoration: none;
+            }
+            .btnBox{
+                display: flex;
+                justify-content: center;
+                .btn{
+                    margin-left: 15px;
+                    text-decoration: none;
+                    display: block;
+                    img{
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+        #menu-btn-check:checked ~ .menu-content {
+            left: 50%;
         }
     }
 }
@@ -284,6 +384,7 @@ header{
             }
         }
         .boxR{
+            margin-right: 20px;
             ul{
                 display: flex;
                 li{
@@ -295,6 +396,11 @@ header{
                     }
                     .mypage{
                         border: 1px solid #fff;
+                        border-radius: 5px;
+                        padding: 10px 15px;
+                    }
+                    .app{
+                        background: $gradient;
                         border-radius: 5px;
                         padding: 10px 15px;
                     }
@@ -1680,7 +1786,7 @@ footer {
             }
             .boxR{
                 ul{
-                    display: flex;
+                    display:none;
                     li{
                         margin: 0 10px;
                         a{
@@ -1696,6 +1802,32 @@ footer {
                     }
                     li:last-child{
                         margin-right: 0;
+                    }
+                }
+                .menu-btn{
+                    top:0;
+                }
+                .menu-content {
+                    width: 50%;
+                    height: 100%;
+                    position: fixed;
+                    top: 0;
+                    left: 100%;
+                    z-index: 80;
+                    background-color: $orange;
+                    transition: all 0.5s;
+                    padding-top: 100px;
+                    ul{
+                        display: block;
+
+                        li{
+                            margin-bottom: 15px;
+                            a{
+                                text-decoration: none;
+                                font-weight: 600;
+                                font-size: 18px;
+                            }
+                        }
                     }
                 }
             }
@@ -1726,7 +1858,7 @@ footer {
             }
             .boxR{
                 ul{
-                    display: flex;
+                    display: none;
                     li{
                         margin: 0 10px;
                         a{

@@ -173,120 +173,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="estimate" class="dot">
-            <article>
-                <h2>簡単見積もり</h2>
-                <p>すぐに見積もり額を表示します。専門スタッフが詳しい料金などをお電話にてお伝えいたします。詳しくは<a target="_blank" href="/privacy.php">こちら</a>。</p>
-                <div id="formBox1">
-                    <form action="" id="lp_form1">
-                        <div class="formContent">
-                            <ul>
-                                <li>
-                                    <dl>
-                                        <dt>回線</dt>
-                                        <dd>
-                                            <input type="radio" name="fonHikariLine" value="Fon光回線" id="" checked><label for="">Fon光</label>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                            <ul class="option">
-                                <li>
-                                    <dl>
-                                        <dt>オプション</dt>
-                                        <dd>
-                                            <input type="checkbox" name="hikariPhone" value="あり" id="hikariPhone"><label for="hikariPhone">ひかり電話</label>
-                                            <input type="checkbox" name="remortSupport" value="あり" id="remortSupport"><label for="remortSupport">リモートサポート</label>
-                                            <br>
-                                            <input type="checkbox" name="hikariTVforNURO" value="あり" id="hikariTVforNURO"><label for="hikariTVforNURO">ひかりTV for NURO</label>
-                                            <input type="checkbox" name="collectivelyElectricity" value="あり" id="collectivelyElectricity"><label for="collectivelyElectricity">まとめでんき</label>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <dl>
-                                        <dt>お名前<span>必須</span></dt>
-                                        <dd>
-                                            <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>フリガナ<span>必須</span></dt>
-                                        <dd>
-                                            <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>電話番号<span>必須</span></dt>
-                                        <dd>
-                                            <input type="tel" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>郵便番号<span>必須</span></dt>
-                                        <dd>
-                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]" minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>都道府県<span>必須</span></dt>
-                                        <dd>
-                                            <select name="installationPref" id="prefectures" class="validate[required]">
-                                                <option value="" selected>都道府県を選択</option>
-
-                                            <?php foreach(Pref::PREFS as $pref) { ?>
-
-                                                <option value=<?php print $pref?>><?php print $pref?></option>
-
-                                            <?php } ?>
-
-                                            </select>
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>以降の住所<span>必須</span></dt>
-                                        <dd>
-                                            <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>建物</dt>
-                                        <dd>
-                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_c" checked><label for="buildingType_c">戸建</label>
-                                            <input type="radio" name="buildingType" value="集合" id="buildingType_d"><label for="buildingType_d">集合</label>
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl>
-                                        <dt>建物名</dt>
-                                        <dd>
-                                            <input type="text" name="buildingName" value="" placeholder="Fonビル1F">
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                            <button type="button" id="send_mixdata1">お見積りをする</button>
-                        </div>
-                    </form>
-                </div>
-            </article>
-        </section>
-
         <section id="plan">
             <article>
                 <div class="box">
@@ -475,13 +361,37 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="footerForm" class="dot">
+        <section id="estimate" class="dot">
             <article>
-                <div id="fromBox">
-                    <h2>まずは無料でエリア確認</h2>
-                    <p>専門スタッフよりお電話にてお答えします。詳しくは<a href="../privacy.php" target="_blank">こちら</a></p>
-                    <form action="" id="lp_form2">
+                <h2>簡単見積もり</h2>
+                <p>すぐに見積もり額を表示します。専門スタッフが詳しい料金などをお電話にてお伝えいたします。詳しくは<a target="_blank" href="/privacy.php">こちら</a>。</p>
+                <div id="formBox1">
+                    <form action="" id="lp_form1">
                         <div class="formContent">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>回線</dt>
+                                        <dd>
+                                            <input type="radio" name="fonHikariLine" value="Fon光回線" id="" checked><label for="">Fon光</label>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                            <ul class="option">
+                                <li>
+                                    <dl>
+                                        <dt>オプション</dt>
+                                        <dd>
+                                            <input type="checkbox" name="hikariPhone" value="あり" id="hikariPhone"><label for="hikariPhone">ひかり電話</label>
+                                            <input type="checkbox" name="remortSupport" value="あり" id="remortSupport"><label for="remortSupport">リモートサポート</label>
+                                            <br>
+                                            <input type="checkbox" name="hikariTVforNURO" value="あり" id="hikariTVforNURO"><label for="hikariTVforNURO">ひかりTV for NURO</label>
+                                            <input type="checkbox" name="collectivelyElectricity" value="あり" id="collectivelyElectricity"><label for="collectivelyElectricity">まとめでんき</label>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
                             <ul>
                                 <li>
                                     <dl>
@@ -511,7 +421,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                     <dl>
                                         <dt>郵便番号<span>必須</span></dt>
                                         <dd>
-                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]"  minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]" minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
                                         </dd>
                                     </dl>
                                 </li>
@@ -542,10 +452,10 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                 </li>
                                 <li>
                                     <dl>
-                                        <dt>建物<span>必須</span></dt>
+                                        <dt>建物</dt>
                                         <dd>
-                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_a" checked><label for="buildingType_a">戸建</label>
-                                            <input type="radio" name="buildingType" value="集合" id="buildingType_b"><label for="buildingType_b">集合</label>
+                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_c" checked><label for="buildingType_c">戸建</label>
+                                            <input type="radio" name="buildingType" value="集合" id="buildingType_d"><label for="buildingType_d">集合</label>
                                         </dd>
                                     </dl>
                                 </li>
@@ -558,7 +468,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                                     </dl>
                                 </li>
                             </ul>
-                            <button type="button" id="send_mixdata2">エリア確認</button>
+                            <button type="button" id="send_mixdata1">お見積りをする</button>
                         </div>
                     </form>
                 </div>
