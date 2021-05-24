@@ -361,6 +361,11 @@ a:active {}
 	width: 50%;
 	padding-left: 10px;
 }
+#application dl .coupon{
+    width: 80%;
+    padding-right: 0;
+    margin: 0 auto 80px;
+}
 #application input[type=text],
 #application input[type=tel],
 #contact input[type=text]{
@@ -1084,6 +1089,11 @@ img{
 	width: 100%;
 	padding-left: 0;
 	margin-bottom: 15px;
+}
+#application dl .coupon {
+    width: 100%;
+    padding-right: 0;
+    margin: 0 auto 50px;
 }
 #application input[type=text],
 #application input[type=tel],

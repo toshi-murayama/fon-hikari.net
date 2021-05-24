@@ -155,7 +155,11 @@
 				},
                 "validate2fields": {
                     "alertText": "* 『HELLO』と入力してください"
-                }
+                },
+				"couponCode" :{
+                	"regex": /^fondonuts202106$/,
+                    "alertText": "* クーポンコードが正しくありません",
+				},
             };
 
         }

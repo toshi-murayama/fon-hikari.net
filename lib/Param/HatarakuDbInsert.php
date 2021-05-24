@@ -44,10 +44,6 @@ class HatarakuDbInsert
      */
     private static function getApiParameter(array $dataAll): array
     {
-        $cp = '';
-        if($dataAll['isCp']) {
-            $cp = 'ドーナツCP';
-        }
         date_default_timezone_set('Asia/Tokyo');
         return [
             "dbSchemaId"=>"101234", // Fon光（青の働くDB）
@@ -99,7 +95,7 @@ class HatarakuDbInsert
                 "116980" => "{$dataAll['hikariTV']}",                   // ひかりTV一契約目申込（無:0/有:1）
                 "116996" => "{$dataAll['kasperskySecurity']}",          // カスペルスキーセキュリティ(MO20FZ)
                 "116955" => "{$dataAll['construction']}",               // 業務備考
-                "117748" => $cp,                                        // CP
+                "117748" => $dataAll['couponCode'],                     // CP
                 "117749" => 0,                                          // Amazonギフト券 NOTE: CP終了に伴い、0に固定
             ]
         ];

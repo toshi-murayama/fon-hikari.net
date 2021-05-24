@@ -50,6 +50,7 @@ $collectivelyElectricity = h($_POST['collectivelyElectricity']);
 $hikariTV = h($_POST['hikariTV']);
 $kasperskySecurity = h($_POST['kasperskySecurity']);
 $construction = h($_POST['construction']);
+$couponCode = h($_POST['couponCode']);
 
 // 性別表示
 if($sex == '1') {

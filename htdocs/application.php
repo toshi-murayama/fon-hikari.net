@@ -50,6 +50,13 @@ $(window).load(function() {
 	$('input[name="homeType"]:eq('+ homeType +')').attr('checked', 'checked');
 });
 </script>
+<style>
+input {
+	/* iPhoneでズームさせない */
+	font-size: 16px;
+	transform: scale(0.8);
+}
+</style>
 <script src="js/jquery.validationEngine.js"></script>
 <script src="js/jquery.validationEngine-ja.js"></script>
 <script src="js/jquery.jpostal.min.js"></script>
@@ -92,7 +99,7 @@ $(window).load(function() {
 						<dd>氏名（名）<br>
 						<input size="30" type="text" name="firstName" value="<?php print $second_name; ?>" class="validate[required]" id="firstName"></dd>
 					</dl>
-					</li>
+				</li>
 				<li class="categories">
 					<dl>
 						<dt>フリガナ（セイ）<br>
@@ -200,7 +207,7 @@ $(window).load(function() {
 					<input type="radio" name="telephoneApplication" value="1" class="check" id="nuro">
 					<label for="nuro">NURO光でんわ 東日本エリア月額<?php echo number_format($cost->getHikariPhoneEastCost());?>円<span>(税込)</span>/西日本エリア月額<?php echo number_format($cost->getHikariPhoneWestCost());?>円<span>(税込)</span></label><br>
 					<br>
-				<a href="https://www.nuro.jp/news_release/common/hikari_denwa_fv_2104/" target="_blank">NIRO光でんわのお申し込みを頂く方は、こちらの内容一読、ご了承の上お申し込みください</a> </li>
+				<a href="https://www.nuro.jp/news_release/common/hikari_denwa_fv_2104/" target="_blank">NURO光でんわのお申し込みを頂く方は、こちらの内容一読、ご了承の上お申し込みください</a> </li>
 				<div class='numbering' style='display:none'>
 					<li class="categories">発番方法</li>
 					<li class="app">
@@ -376,6 +383,16 @@ $(window).load(function() {
 					<input type="text" name="mailingBuilding" value="<?php print $room_number; ?>">
 				</li>
 			</ul>
+
+			<ul class="form">
+			  <li class="categories">
+				<dl>
+				  <dt class="coupon">クーポンコード<br>
+					<input size="30" type="text" name="couponCode" class="validate[custom[couponCode]]" id="couponCode"></dt>
+				</dl>
+			  </li>
+			</UL>
+
 
 			<div class="privacyTitle">個人情報取得における告知・同意文</div>
                 <div class="privacy">
