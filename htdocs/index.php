@@ -1,8 +1,3 @@
-<?php
-    session_start();
-    unset($_SESSION['dunutsCp']);
-    require_once('../lib/Param/Pref.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>
