@@ -1,3 +1,4 @@
+<?php require_once('../lib/Param/Pref.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
