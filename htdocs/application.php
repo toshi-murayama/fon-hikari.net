@@ -207,7 +207,7 @@ input {
 					<input type="radio" name="telephoneApplication" value="1" class="check" id="nuro">
 					<label for="nuro">NURO光でんわ 東日本エリア月額<?php echo number_format($cost->getHikariPhoneEastCost());?>円<span>(税込)</span>/西日本エリア月額<?php echo number_format($cost->getHikariPhoneWestCost());?>円<span>(税込)</span></label><br>
 					<br>
-				<a href="https://www.nuro.jp/news_release/common/hikari_denwa_fv_2104/" target="_blank">NIRO光でんわのお申し込みを頂く方は、こちらの内容一読、ご了承の上お申し込みください</a> </li>
+				<a href="https://www.nuro.jp/news_release/common/hikari_denwa_fv_2104/" target="_blank">NURO光でんわのお申し込みを頂く方は、こちらの内容一読、ご了承の上お申し込みください</a> </li>
 				<div class='numbering' style='display:none'>
 					<li class="categories">発番方法</li>
 					<li class="app">
