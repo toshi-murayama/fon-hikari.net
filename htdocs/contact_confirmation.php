@@ -1,4 +1,4 @@
-<!--<?php
+<?php
 session_start();
 
 function h($h_string){
@@ -10,8 +10,8 @@ function h($h_string){
 function check_empty($target,$target_name){
 	global $error;
 	if (empty($target)) {
-		$error .= '<p class="error">' . $target_name . 'を入力してください</p>';	
-	}	
+		$error .= '<p class="error">' . $target_name . 'を入力してください</p>';
+	}
 }
 
 // トークンをセッションにセット
@@ -40,7 +40,7 @@ if($consent != '同意する') {
 
 if (!preg_match("/^[ァ-ヶー]+$/u", $first_name_kana)) {
 	$error .= '<p class="error">姓（カナ）が半角カタカナではありません</p>';
-} 
+}
 
 if (!preg_match("/^[ァ-ヶー]+$/u", $second_name_kana)) {
 	$error .= '<p class="error">名（カナ）が半角カタカナではありません</p>';
@@ -59,11 +59,11 @@ check_empty($mail,'メールアドレス');
 check_empty($content,'お問い合わせ内容');
 
 
-if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {	
+if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
 	$error .= '<p class="error">メールアドレスを正しい形で入力してください</p>';
 }
 
-?>-->
+?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 <head>
@@ -83,7 +83,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <?php include "include/ogp.html";?>
 <!----css---->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/animate.css"> 
+<link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/style_form.css">
 <!----js---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -94,7 +94,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-	<?php 
+	<?php
 		if(isset($_COOKIE['affiliate'])) {
 			include "include/header_affiliate_form.html";
 		} else {
@@ -109,11 +109,11 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 	?>
 		<form method="post" action="contact_thanks">
 				<input type="hidden" value="<?php print $first_name; ?>" name="姓">
-				<input type="hidden" value="<?php print $first_name_kana; ?>" name="姓（カナ）">	
-				<input type="hidden" value="<?php print $second_name; ?>" name="名">				
+				<input type="hidden" value="<?php print $first_name_kana; ?>" name="姓（カナ）">
+				<input type="hidden" value="<?php print $second_name; ?>" name="名">
 				<input type="hidden" value="<?php print $second_name_kana; ?>" name="名（カナ）">
-				<input type="hidden" value="<?php print $tel; ?>" name="電話番号">		
-				<input type="hidden" value="<?php print $mail; ?>" name="メールアドレス">	
+				<input type="hidden" value="<?php print $tel; ?>" name="電話番号">
+				<input type="hidden" value="<?php print $mail; ?>" name="メールアドレス">
 				<input type="hidden" value="<?php print $consent; ?>" name="同意文、利用約款">
 				<input type="hidden" value="<?php print $content; ?>" name="お問い合わせ内容">
 				<input type="hidden" value="<?php print h($_SESSION['tk']); ?>" name="tk">
@@ -156,7 +156,7 @@ if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\
 			</dl>
 		</form>
 	</section>
-	<?php 
+	<?php
 	if(isset($_COOKIE['affiliate'])) {
 		include "include/footer_affiliate.html";
 	} else {
