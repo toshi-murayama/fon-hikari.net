@@ -1,6 +1,7 @@
 <?php
     session_start();
     unset($_SESSION['dunutsCp']);
+    require_once('../lib/Param/Pref.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Fon光 超高速光回線インターネット</title>
+<title>Fon光 高速光回線インターネット</title>
 <meta name="viewport" id="viewport" content="width=device-width">
 <meta name="description" content="月額4,378円！Fon光で快適なインターネット生活を送ろう">
 <meta name="keywords" content="Fon,Fon光,nuro,nuro光,NTT,プロバイダ,高速,2Gbps,WiFi,ルーター,WiMAX,Softbank,縛りなしWiF">
@@ -22,29 +23,55 @@
 <!--style-->
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/style_lp.css">
+<link rel="stylesheet" href="css/validationEngine.jquery.css">
+<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="css/slick-theme.css">
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/slick.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>
+
+<script src="js/lp_index.js"></script>
+<script src="js/jquery.validationEngine.js"></script>
+<script src="js/jquery.validationEngine-ja.js"></script>
+<script src="js/jquery.jpostal.min.js"></script>
+<script src="js/ajaxzip3.js"></script>
 <!--tag-->
 <?php include "include/tag_head.html";?>
 </head>
 <body>
 <?php include "include/tag_start.html";?>
 <?php setcookie('affiliate', '', time() - 1, '/')?>
-<p id="cursor"></p>
-<div id="stalker"></div>
 
     <?php include "include/header.html";?>
     <div id="wrap">
         <section id="top">
             <article>
-                <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
-                <h2>月額<span>¥4,378</span></h2>
-                <p>※ 記載の金額は全て税込金額です。</p>
-                <div></div>
-                <p>超高速インターネット回線</p>
-                <p>下り最大 2Gbps</p>
+                <div id="firstview">
+                    <div class="fv1">
+                        <div class="content">
+                            <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
+                            <h2>月額<span>¥4,378</span></h2>
+                            <p>※ 記載の金額は全て税込金額です。</p>
+                            <div></div>
+                            <p>高速インターネット回線</p>
+                            <p>下り最大 2Gbps</p>
+                        </div>
+                    </div>
+                    <div class="fv2">
+                        <div class="content">
+                            <h1>2Gbpsの高速回線で</h1>
+                            <h2>ゲームや動画もサクサク動く</h2>
+                            <p>※ 記載の金額は全て税込金額です。</p>
+                            <div></div>
+                            <p>定額安心価格</p>
+                            <p>豊富なセット割も</p>
+                        </div>
+                    </div>
+                </div>
                 <ul>
                     <li>
                         <a href="area"></a>
@@ -62,26 +89,17 @@
                             <dd>>> ご不明点をサポートします</dd>
                         </dl>
                     </li>
-                    <li>
-                        <a href="tel:0120-966-486"></a>
-                        <span><img src="img/top_tel_ico.svg" alt=""></span>
-                        <dl>
-                            <dt>電話で申し込み</dt>
-                            <dd>>> 0120-966-486</dd>
-                        </dl>
-                        <em>13:00-17:00(土日祝除く)</em>
-                    </li>
                 </ul>
             </article>
         </section>
 
         <section id="summary">
             <article>
-                <h2>下り最大2Gbpsの超高速光回線</h2>
-                <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用したインターネットサービスです。
-インターネット網からお客さまのご自宅まで弊社がサービス提供しており、高品質で安心なインターネットライフをお楽しみいただけます。
-国際標準規格であるGPON※2の採用と、専用に開発されたホームゲートウェイを組み合わせたことで、個人宅向け商用サービスで下り最大2Gbpsを
-実現しています。</p>
+                <h2>下り最大2Gbpsの高速光回線</h2>
+                <p>Fon光はソニーネットワークコミュニケーションズ株式会社が提供しているNURO光回線を利用した高速の光ファイバーサービスです。<br>
+                個人宅向け商用FYYHサービスとしては高速の、下り最大2Gbpsの高速回線を実現しました。<br>
+                動画や音楽コンテンツファイルのダウンロード、ストリーミングサービス、ブラウジングもストレスなく快適に。<br>
+                あなたのインターネットライフをより一層楽しい世界へと導きます。</p>
                 <div class="speed_img">
                     <div class="fon">
                         <div class="provider"><img src="img/fon_logo_w.svg" alt="Fon光"></div>
@@ -157,49 +175,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="recommend">
-            <article>
-                <ul>
-                    <li class="bEffect01">
-                        <a href="#summary">
-                            <dl>
-                                <dd>
-                                    <img src="img/movie_ico.svg" alt="">
-                                </dd>
-                                <dt>高速回線</dt>
-                                <dd>下り最大2Gbpsの超高速回線
-                                    ゲームや複数人で動画も見てもサクサク！</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="bEffect02">
-                        <a href="#plan">
-                            <dl>
-                                <dd>
-                                    <img src="img/money_ico.svg" alt="">
-                                </dd>
-                                <dt>おとくな料金</dt>
-                                <dd>業界最安値級の料金プラン
-                                    月々のお支払いがお得になります。</dd>
-                            </dl>
-                        </a>
-                    </li>
-                    <li class="bEffect03">
-                        <a href="option">
-                            <dl>
-                                <dd>
-                                    <img src="img/tel_ico.svg" alt="">
-                                </dd>
-                                <dt>魅力的なオプション</dt>
-                                <dd>NURO光でんわやリモートサポートなど
-                                    お客様にお楽しみいただけるオプションを用意しています。</dd>
-                            </dl>
-                        </a>
-                    </li>
-                </ul>
-            </article>
-        </section>
-
         <section id="plan">
             <article>
                 <div class="box">
@@ -208,7 +183,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
     音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
                 </div>
                 <div class="box">
-                    <h3>月額基本料金<em>¥4,378</em></h3>
+                    <h3>月額基本料金<em>3,980円</em><span>(税込4,378円)</span></h3>
                     <ul>
                         <li>
                             <img src="img/koji_ico.svg" alt="">
@@ -221,7 +196,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/doc_ico.svg" alt="">
                             <dl>
                                 <dt>契約事務手数料</dt>
-                                <dd>¥3,300</dd>
+                                <dd>¥3,000
+                                <small>(¥3,300税込)</small></dd>
                             </dl>
                         </li>
                         <li>
@@ -235,7 +211,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/x_ico.svg" alt="">
                             <dl>
                                 <dt>契約解除料</dt>
-                                <dd>¥21,780</dd>
+                                <dd>¥19,800
+                                <small>(¥21,780税込)</small></dd>
                             </dl>
                         </li>
                     </ul>
@@ -247,18 +224,44 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
-        <section id="optionArea">
+        <section id="recommend">
             <article>
-                <h2>オプション</h2>
-                <p>Fon光には様々なオプションがあります。みなさんの生活をサポートするために用意しました。</p>
-                <ul>
-                    <li>NURO光でんわ</li>
-                    <li>ひかりTV for NURO</li>
-                    <li>まとめてでんき</li>
-                    <li>リモートサポート</li>
-                    <li>カスペルスキーセキュリティ</li>
-                </ul>
-                <a href="option">詳しくはこちらから</a>
+                <h2>インターネットを使うなら<img src="img/fon_logo.svg" alt="Fon光">がおすすめ!</h2>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="img/recommend_img01.svg" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>下り2Gbpsの高速回線</dt>
+                            <dd>大容量を使うゲームのダウンロードや、NET FLIXなどでの映画鑑賞など、家族みんなのインターネットがノンストレス。</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="img/recommend_img02.svg" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>ずーっと定額安心価格</dt>
+                            <dd>一定期間限定割引の、のちのち高くなるわかりにくい料金ではなく、最初から3,980円(4,378円税込)の定額安心価格。プロバイダ料金もかかりません。
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="boxL">
+                        <img src="img/recommend_img03.svg" alt="">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>セットでお得に使える</dt>
+                            <dd>ソフトバンクのスマホ割引や、フォン・ジャパンで運営するポケットWiFiとのセット割引で、おうちの通信をまとめてお得に使えます。多彩なオプションもご用意しております。<br>
+                            <a href="option">お得な特典付きオプションについてこちら</a></dd>
+                        </dl>
+                    </div>
+                </div>
             </article>
         </section>
 
@@ -340,6 +343,140 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
 
+        <section id="mobileWifi">
+            <article>
+                <h2>お引越し期間中のインターネットもWiFiレンタルをお得にご提供！</h2>
+                <div class="content">
+                    <div class="boxL">
+                        <img src="img/mobilewifi.svg" alt="">
+                    </div>
+                    <div class="boxL">
+                        現在の開通期間目安<br>
+                        戸建の場合：1〜2ヶ月
+                        集合住宅の場合：1〜3ヶ月
+                    </div>
+                </div>
+                <div class="btnArea">
+                    <a href="area.php">お申し込みはこちら</a>
+                    <a href="contact.php">お問い合わせはこちら</a>
+                </div>
+            </article>
+        </section>
+
+        <section id="estimate" class="dot">
+            <article>
+                <h2>簡単見積もり</h2>
+                <p>すぐに見積もり額を表示します。専門スタッフが詳しい料金などをお電話にてお伝えいたします。詳しくは<a target="_blank" href="/privacy.php">こちら</a>。</p>
+                <div id="formBox1">
+                    <form action="" id="lp_form1">
+                        <div class="formContent">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>回線</dt>
+                                        <dd>
+                                            <input type="radio" name="fonHikariLine" value="Fon光回線" id="" checked><label for="">Fon光</label>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                            <ul class="option">
+                                <li>
+                                    <dl>
+                                        <dt>オプション</dt>
+                                        <dd>
+                                            <input type="checkbox" name="hikariPhone" value="あり" id="hikariPhone"><label for="hikariPhone">ひかり電話</label>
+                                            <input type="checkbox" name="remortSupport" value="あり" id="remortSupport"><label for="remortSupport">リモートサポート</label>
+                                            <br>
+                                            <input type="checkbox" name="hikariTVforNURO" value="あり" id="hikariTVforNURO"><label for="hikariTVforNURO">ひかりTV for NURO</label>
+                                            <input type="checkbox" name="collectivelyElectricity" value="あり" id="collectivelyElectricity"><label for="collectivelyElectricity">まとめでんき</label>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>お名前<span>必須</span></dt>
+                                        <dd>
+                                            <input type="text" name="name" value="" placeholder="フォン太郎" class="validate[required]">
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>フリガナ<span>必須</span></dt>
+                                        <dd>
+                                            <input type="text" name="nameKana" value="" placeholder="フォンタロウ" class="validate[required],[custom[zenkaku_kana]]">
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>電話番号<span>必須</span></dt>
+                                        <dd>
+                                            <input type="tel" name="phoneNumber" value="" placeholder="08012345678(ハイフンなし)" class="validate[required],[custom[onlyNumberSp]]">
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>郵便番号<span>必須</span></dt>
+                                        <dd>
+                                            <input type="tel" name="postalCode" value="" placeholder="1231234(ハイフンなし)" class="validate[required],[custom[zip]]" minlength='7' maxlength='7' oninput="value = value.replace(/[^0-9]+/i,'');" onkeyup="AjaxZip3.zip2addr(this,'','installationPref','address');">
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>都道府県<span>必須</span></dt>
+                                        <dd>
+                                            <select name="installationPref" id="prefectures" class="validate[required]">
+                                                <option value="" selected>都道府県を選択</option>
+
+                                            <?php foreach(Pref::PREFS as $pref) { ?>
+
+                                                <option value=<?php print $pref?>><?php print $pref?></option>
+
+                                            <?php } ?>
+
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>以降の住所<span>必須</span></dt>
+                                        <dd>
+                                            <input type="text" name="address" value="" placeholder="◯◯区池袋1-1-1" class="validate[required]">
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>建物</dt>
+                                        <dd>
+                                            <input type="radio" name="buildingType" value="戸建" id="buildingType_c" checked><label for="buildingType_c">戸建</label>
+                                            <input type="radio" name="buildingType" value="集合" id="buildingType_d"><label for="buildingType_d">集合</label>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>建物名</dt>
+                                        <dd>
+                                            <input type="text" name="buildingName" value="" placeholder="Fonビル1F">
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                            <button type="button" id="send_mixdata1">お見積りをする</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </section>
+
         <section id="provide">
             <article>
                 <h2>サービス提供エリア</h2>
@@ -379,6 +516,21 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
             </article>
         </section>
     </div>
+
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="modalContents">
+                <div id="mixdata_response">
+                    <!-- 結果を出力する -->
+                </div>
+            </div>
+            <div id="closeModal" class="closeModal" style="font-size: 40px;">
+                ×
+            </div>
+        </div>
+    </section>
 
     <?php include "include/footer.html";?>
 </body>
