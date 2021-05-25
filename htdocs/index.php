@@ -49,12 +49,10 @@
                 <div id="firstview">
                     <div class="fv1">
                         <div class="content">
-                            <h1>Fon光で快適な<br>インターネット生活を送ろう</h1>
-                            <h2>月額<span>¥4,378</span></h2>
-                            <p>※ 記載の金額は全て税込金額です。</p>
+                            <h1>高速NURO光回線が</h1>
+                            <h2>月額<span>¥3,980</span><br class="sp">
+								<small>(税込4,378円)</small></h2>
                             <div></div>
-                            <p>高速インターネット回線</p>
-                            <p>下り最大 2Gbps</p>
                         </div>
                     </div>
                     <div class="fv2">
