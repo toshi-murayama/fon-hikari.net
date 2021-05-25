@@ -1457,8 +1457,7 @@ footer {
 /*-----area-----*/
 #provide {
   padding: 50px 0;
-  background: url(../img/map.svg) no-repeat 75% 50%, linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
-  background-size: contain; }
+  background: linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%); }
   #provide article {
     width: 90%;
     max-width: 1000px;
@@ -1490,7 +1489,7 @@ footer {
           margin-top: 30px;
           text-decoration: none; }
       #provide article .box .boxR {
-        display: none; }
+        width: 50%; }
 
 #popup_area {
   padding: 5% 0;
@@ -1793,7 +1792,8 @@ footer {
           #top article #firstview .fv1 .content h2 {
             font-size: 30px;
             font-weight: 900;
-            width: 100%; }
+            width: 100%;
+            line-height: 1; }
             #top article #firstview .fv1 .content h2 span {
               font-size: 60px; }
             #top article #firstview .fv1 .content h2 small {
@@ -2494,9 +2494,7 @@ footer {
 
   /*-----area-----*/
   #provide {
-    padding: 30px 0;
-    background: url(../img/map.svg) no-repeat 90% 85%, linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
-    background-size: 150px; }
+    padding: 30px 0; }
     #provide article {
       width: 90%;
       max-width: 1000px;
@@ -2527,8 +2525,6 @@ footer {
             border-radius: 5px;
             margin-top: 30px;
             text-decoration: none; }
-        #provide article .box .boxR {
-          display: none; }
 
   /*-----support-----*/
   #support {
