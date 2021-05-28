@@ -219,6 +219,9 @@ class Mail
                 case 'construction' :
                     $content .= '【 業務備考 】 ' . $v . self::LINE;
                 break;
+                case 'couponCode' :
+                    $content .= '【 クーポンコード 】 ' . $v . self::LINE;
+                break;
                 default :
                 $content .= '【 '. $k . ' 】 ' . $v . self::LINE;
             }
@@ -329,6 +332,12 @@ class Mail
         // 工事希望日
         $content .= '《希望工事日》' . self::LINE;
         $content .= $data['construction'] . self::LINE;
+
+        // クーポンコード
+        if($data['couponCode']) {
+            $content .= '《クーポンコード》' . self::LINE;
+            $content .= $data['couponCode'] . self::LINE;
+        }
 
         $content .= '※工事内容により追加工事費が発生する場合がございます。' . self::LINE;
         $content .= '※付加サービスはプランにより価格が異なります。' . self::LINE;
