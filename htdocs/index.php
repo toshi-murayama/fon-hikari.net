@@ -476,15 +476,16 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <h2>サービス提供エリア</h2>
                 <div class="box">
                     <div class="boxL">北海道<br>
-    関東（東京、神奈川、埼玉、千葉、茨城、栃木、群馬）<br>
-    東海（愛知、静岡、岐阜、三重）<br>
-    関西（大阪、兵庫、京都、滋賀、奈良）<br>
-    九州（福岡、佐賀）<br>
-    ※一部エリアを除く
+						関東（東京、神奈川、埼玉、千葉、茨城、栃木、群馬）<br>
+						東海（愛知、静岡、岐阜、三重）<br>
+						関西（大阪、兵庫、京都、滋賀、奈良）<br>
+						九州（福岡、佐賀）<br>
+						中国（広島、岡山）<br>
+						※一部エリアを除く
                     <a href="area">エリア検索する</a>
                 </div>
                 <div class="boxR">
-                    <img src="img/map.svg" alt="map">
+                    <img src="img/map_jp.svg" alt="map">
                 </div>
                 </div>
             </article>

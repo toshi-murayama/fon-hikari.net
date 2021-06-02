@@ -1590,8 +1590,7 @@ footer {
 /*-----area-----*/
 #provide{
     padding: 50px 0;
-    background: url(../img/map.svg) no-repeat 75% 50%,linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
-    background-size: contain;
+    background: linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
     article{
         width: 90%;
         max-width: 1000px;
@@ -1622,7 +1621,7 @@ footer {
                 }
             }
             .boxR{
-                display: none;
+                width: 50%;
             }
         }
     }
@@ -1976,6 +1975,7 @@ footer {
                             font-size: 30px;
                             font-weight: 900;
                             width: 100%;
+							line-height: 1;
                             span{
                                 font-size: 60px;
                             }
@@ -2771,8 +2771,6 @@ footer {
     /*-----area-----*/
     #provide{
         padding: 30px 0;
-        background: url(../img/map.svg) no-repeat 90% 85%,linear-gradient(61.56deg, #f6f6f6 0%, #ffffff 100%);
-        background-size: 150px;
         article{
             width: 90%;
             max-width: 1000px;
@@ -2801,9 +2799,6 @@ footer {
                         margin-top: 30px;
                         text-decoration: none;
                     }
-                }
-                .boxR{
-                    display: none;
                 }
             }
         }
