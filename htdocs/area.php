@@ -100,11 +100,11 @@ $(function(){
 
 		<?php if ($shibarinashiFlag) { ?>
 
-		<h2>fon光エリア検索</h2>
+		<h2>Fon光エリア検索</h2>
 
 		<?php } else { ?>
 
-		<h2>fon光お申し込み</h2>
+		<h2>Fon光お申し込み</h2>
 
 		<?php } ?>
 
@@ -151,7 +151,7 @@ $(function(){
 				<section id="modalArea" class="modalArea">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ok.png" alt=""/></p>
-						<div class="answer">fon光提供エリアとなっています<br>
+						<div class="answer">Fon光提供エリアとなっています<br>
 							<span>今すぐお申し込み頂けます</span></div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
@@ -173,7 +173,7 @@ $(function(){
 				<section id="modalArea02" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_ng.png" alt=""/></p>
-						<div class="answer">fon光提供エリア外となっています</div>
+						<div class="answer">Fon光提供エリア外となっています。</div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
 
@@ -189,8 +189,8 @@ $(function(){
 				<section id="modalArea03" class="modalArea" style="display: none;">
 					<div class="modalWrapper">
 						<p><img src="img/img_pc_subtle.png" alt=""/></p>
-						<div class="answer">fon光提供未確定エリアとなっています<br>
-						<span>詳細についてはお問い合わせください。</span></div>
+						<div class="answer">Fon光提供先行予約エリアとなっています。<br>
+						<span>一部提供が出来ないエリアもございます。詳細についてはお問い合わせください。</span></div>
 						<div class="street_address">東京都 豊島区 池袋2丁目</div>
 						<div id="closeModal" class="closeModal">×</div>
 						<input type="submit" value="お問い合わせする" id="submit">
