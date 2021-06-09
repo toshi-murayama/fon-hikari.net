@@ -157,7 +157,7 @@
                     "alertText": "* 『HELLO』と入力してください"
                 },
 				"couponCode" :{
-                	"regex": /^fondonuts202106$/,
+                	"regex": /^(fondonuts202106|fhgamesoftcp2021)$/,
                     "alertText": "* クーポンコードが正しくありません",
 				},
             };
