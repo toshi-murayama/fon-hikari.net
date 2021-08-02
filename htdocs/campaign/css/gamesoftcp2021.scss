@@ -282,52 +282,115 @@ footer {
                 font-size: 25px;
                 margin: 0;
             }
+            #btn{
+                width: 80%;
+                max-width: 350px;
+                font-size: 25px;
+                background: $gradient;
+                text-align: center;
+                cursor: pointer;
+                padding: 20px 0;
+                margin-top: 50px;
+                border: none;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
         }
     }
 }
 
-/*-----price-----*/
-#price_wrap{
-    width: 100%;
+/*-----plan-----*/
+#plan{
+    padding: 120px 0;
     background: #666;
-    #price{
+    color: #fff;
+    article{
         width: 90%;
-        max-width: 1200px;
+        max-width: 1100px;
         height: 100%;
         margin: 0 auto;
-        padding: 100px 0 120px;
+        align-items: center;
+        .logo{
+            width: 120px;
+        }
         h2{
             color: #fff;
             font-size: 60px;
             font-weight: bold;
             text-align: center;
+            margin: 30px 0 60px;
             span{
-                color: $red;
+                color: $orange;
             }
         }
-        .description{
-            margin-top: 50px;
+        .box{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+            margin-bottom: 30px;
             h3{
-                color: #fff;
+                font-size: 30px;
+                width: 30%;
+                font-weight: 900;
+            }
+            h4{
+                align-items: center;
                 font-size: 24px;
-                em{
-                    color: $red;
-                    font-size: 72px;
-                    font-weight: 900;
-                    display: block;
-                }
                 span{
                     text-align: right;
                     display: block;
+                    color: $orange;
+                }
+                em{
+                    display: block;
+                    font-size: 72px;
+                    font-weight: 900;
+                    color: $orange;
+                    sup{
+                        font-size: 14px;
+                    }
                 }
             }
             ul{
-                color: #fff;
-                font-size: 24px;
+                width: 70%;
+                li{
+                    border: 1px solid #fff;
+                    display: flex;
+                    padding: 10px;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 50px;
+                    }
+                    dl{
+                        width: 150px;
+                        margin-left: 10px;
+                        dt{}
+                        dd{
+                            font-size: 36px;
+                            font-weight: 900;
+                            color: $orange;
+                            line-height: 0.6em;
+                            margin: 10px 0;
+                            sup{
+                                font-size: 40%;
+                            }
+                            small{
+                                font-size: 40%;
+                            }
+                        }
+                    }
+                }
             }
+        }
+        >p{
+            font-size: 12px;
         }
         .img{
             display: flex;
@@ -338,8 +401,48 @@ footer {
                 width: 30%;
             }
         }
+        .flex{
+            width:70%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            .fon{
+                width: 45%;
+                max-width: 300px;
+                background: #FFD300;
+                text-align: center;
+                margin: 80px auto 0;
+                border-radius: 10px;
+                a{
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: bold;
+                    padding: 15px 0;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
+            .contact{
+                width: 45%;
+                max-width: 300px;
+                background: #EC7103;
+                text-align: center;
+                margin: 80px auto 0;
+                border-radius: 10px;
+                a{
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: bold;
+                    padding: 15px 0;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
+        }
     }
 }
+
 
 /*-----price-----*/
 #flow_wrap{
@@ -370,7 +473,7 @@ footer {
         }
         ul{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             flex-wrap: wrap;
             margin: 100px auto 80px;
             li{
@@ -751,6 +854,12 @@ footer {
                 dd{
                     font-size: 18px;
                 }
+                #btn{
+                    width: 80%;
+                    font-size: 20px;
+                    margin: 50px auto 0;
+                    padding: 15px 0;
+                }
             }
         }
     }
@@ -781,6 +890,91 @@ footer {
             }
         }
     }
+
+    /*-----plan-----*/
+    #plan{
+        padding: 80px 0;
+        article{
+            width: 90%;
+            .logo{
+                width: 100px;
+            }
+            h2{
+                font-size: 30px;
+                margin: 30px 0 50px;
+            }
+            .box{
+                display: block;
+                justify-content: space-between;
+                align-items: center;
+                h3{
+                    font-size: 30px;
+                    width: 30%;
+                    font-weight: 900;
+                }
+                p{
+
+                    margin-bottom: 30px;
+                }
+                h4{
+                    align-items: center;
+                    font-size: 24px;
+                    em{
+                        display: block;
+                        font-size: 72px;
+                        font-weight: 900;
+                        line-height: 1em;
+                        margin-bottom: 30px;
+                    }
+                }
+                ul{
+                    width: 100%;
+                    li{
+                        border: 1px solid #fff;
+                        display: flex;
+                        padding: 10px;
+                        text-align: center;
+                        justify-content: center;
+                        img{
+                            width: 30px;
+                        }
+                        dl{
+                            width: 130px;
+                            margin-left: 10px;
+                            dt{}
+                            dd{
+                                font-size: 24px;
+                                font-weight: 900;
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+            .img{
+                margin-top: 40px;
+            }
+            .flex{
+                width:100%;
+                display: block;
+                .fon{
+                    width: 80%;
+                    margin: 80px auto 0;
+                    a{
+                        font-size: 20px;
+                    }
+                }
+                .contact{
+                    width: 80%;
+                    margin: 40px auto 0;
+                    a{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
 
     /*-----price-----*/
     #flow_wrap{
@@ -933,5 +1127,19 @@ footer {
             }
         }
     }
-
+}
+@media screen and (max-width: 1000px) and (min-width: 641px) {
+    #present{
+        .contents{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            img{
+                width: 45%;
+            }
+            dl{
+                width: 45%;
+            }
+        }
+    }
 }

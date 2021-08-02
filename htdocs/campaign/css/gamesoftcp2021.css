@@ -260,60 +260,161 @@ footer article .boxR .inner > ul li img {
   font-size: 25px;
   margin: 0;
 }
-
-/*-----price-----*/
-#price_wrap {
-  width: 100%;
-  background: #666;
+#present .contents dl #btn {
+  width: 80%;
+  max-width: 350px;
+  font-size: 25px;
+  background: linear-gradient(61.56deg, #f7454b 0%, #e0656b 100%);
+  text-align: center;
+  cursor: pointer;
+  padding: 20px 0;
+  margin-top: 50px;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
-#price_wrap #price {
+#present .contents dl #btn a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+/*-----plan-----*/
+#plan {
+  padding: 120px 0;
+  background: #666;
+  color: #fff;
+}
+#plan article {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1100px;
   height: 100%;
   margin: 0 auto;
-  padding: 100px 0 120px;
+  align-items: center;
 }
-#price_wrap #price h2 {
+#plan article .logo {
+  width: 120px;
+}
+#plan article h2 {
   color: #fff;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
+  margin: 30px 0 60px;
 }
-#price_wrap #price h2 span {
-  color: #f7454b;
+#plan article h2 span {
+  color: #f39500;
 }
-#price_wrap #price .description {
-  margin-top: 50px;
+#plan article .box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
 }
-#price_wrap #price .description h3 {
-  color: #fff;
+#plan article .box h3 {
+  font-size: 30px;
+  width: 30%;
+  font-weight: 900;
+}
+#plan article .box h4 {
+  align-items: center;
   font-size: 24px;
 }
-#price_wrap #price .description h3 em {
-  color: #f7454b;
-  font-size: 72px;
-  font-weight: 900;
-  display: block;
-}
-#price_wrap #price .description h3 span {
+#plan article .box h4 span {
   text-align: right;
   display: block;
+  color: #f39500;
 }
-#price_wrap #price .description ul {
-  color: #fff;
-  font-size: 24px;
+#plan article .box h4 em {
+  display: block;
+  font-size: 72px;
+  font-weight: 900;
+  color: #f39500;
 }
-#price_wrap #price .img {
+#plan article .box h4 em sup {
+  font-size: 14px;
+}
+#plan article .box ul {
+  width: 70%;
+}
+#plan article .box ul li {
+  border: 1px solid #fff;
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#plan article .box ul li img {
+  width: 50px;
+}
+#plan article .box ul li dl {
+  width: 150px;
+  margin-left: 10px;
+}
+#plan article .box ul li dl dd {
+  font-size: 36px;
+  font-weight: 900;
+  color: #f39500;
+  line-height: 0.6em;
+  margin: 10px 0;
+}
+#plan article .box ul li dl dd sup {
+  font-size: 40%;
+}
+#plan article .box ul li dl dd small {
+  font-size: 40%;
+}
+#plan article > p {
+  font-size: 12px;
+}
+#plan article .img {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 80px;
 }
-#price_wrap #price .img img {
+#plan article .img img {
   width: 30%;
+}
+#plan article .flex {
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#plan article .flex .fon {
+  width: 45%;
+  max-width: 300px;
+  background: #FFD300;
+  text-align: center;
+  margin: 80px auto 0;
+  border-radius: 10px;
+}
+#plan article .flex .fon a {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px 0;
+  text-decoration: none;
+  display: block;
+}
+#plan article .flex .contact {
+  width: 45%;
+  max-width: 300px;
+  background: #EC7103;
+  text-align: center;
+  margin: 80px auto 0;
+  border-radius: 10px;
+}
+#plan article .flex .contact a {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px 0;
+  text-decoration: none;
+  display: block;
 }
 
 /*-----price-----*/
@@ -347,7 +448,7 @@ footer article .boxR .inner > ul li img {
 }
 #flow_wrap #flow ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 100px auto 80px;
 }
@@ -714,6 +815,12 @@ footer article .boxR .inner > ul li img {
   #present .contents dl dd {
     font-size: 18px;
   }
+  #present .contents dl #btn {
+    width: 80%;
+    font-size: 20px;
+    margin: 50px auto 0;
+    padding: 15px 0;
+  }
 
   /*-----price-----*/
   #price_wrap #price {
@@ -738,6 +845,88 @@ footer article .boxR .inner > ul li img {
   }
   #price_wrap #price .img img {
     width: 33%;
+  }
+
+  /*-----plan-----*/
+  #plan {
+    padding: 80px 0;
+  }
+  #plan article {
+    width: 90%;
+  }
+  #plan article .logo {
+    width: 100px;
+  }
+  #plan article h2 {
+    font-size: 30px;
+    margin: 30px 0 50px;
+  }
+  #plan article .box {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #plan article .box h3 {
+    font-size: 30px;
+    width: 30%;
+    font-weight: 900;
+  }
+  #plan article .box p {
+    margin-bottom: 30px;
+  }
+  #plan article .box h4 {
+    align-items: center;
+    font-size: 24px;
+  }
+  #plan article .box h4 em {
+    display: block;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1em;
+    margin-bottom: 30px;
+  }
+  #plan article .box ul {
+    width: 100%;
+  }
+  #plan article .box ul li {
+    border: 1px solid #fff;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  #plan article .box ul li img {
+    width: 30px;
+  }
+  #plan article .box ul li dl {
+    width: 130px;
+    margin-left: 10px;
+  }
+  #plan article .box ul li dl dd {
+    font-size: 24px;
+    font-weight: 900;
+    color: #f39500;
+  }
+  #plan article .img {
+    margin-top: 40px;
+  }
+  #plan article .flex {
+    width: 100%;
+    display: block;
+  }
+  #plan article .flex .fon {
+    width: 80%;
+    margin: 80px auto 0;
+  }
+  #plan article .flex .fon a {
+    font-size: 20px;
+  }
+  #plan article .flex .contact {
+    width: 80%;
+    margin: 40px auto 0;
+  }
+  #plan article .flex .contact a {
+    font-size: 20px;
   }
 
   /*-----price-----*/
@@ -885,3 +1074,18 @@ footer article .boxR .inner > ul li img {
     background: #ccc;
   }
 }
+@media screen and (max-width: 1000px) and (min-width: 641px) {
+  #present .contents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #present .contents img {
+    width: 45%;
+  }
+  #present .contents dl {
+    width: 45%;
+  }
+}
+
+/*# sourceMappingURL=gamesoftcp2021.css.map */

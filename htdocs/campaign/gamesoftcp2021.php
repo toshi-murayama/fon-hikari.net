@@ -46,12 +46,6 @@
                     <li class="slide-item">
                         <img src="img/gamesoftcp2021/main_02.png" alt="メインビジュアル02">
                     </li>
-                    <!-- <li class="slide-item">
-                        <img src="img/gamesoftcp2021/main_01_sp.png" alt="メインビジュアル01" class="sp">
-                    </li>
-                    <li class="slide-item">
-                        <img src="img/gamesoftcp2021/main_02_sp.png" alt="メインビジュアル02" class="sp">
-                    </li> -->
                 </ul>
             </article>
             <article class="sp">
@@ -80,31 +74,75 @@
                             大人気モンスターハンターライズやMiitopia、バイオハザードヴィレッジも選び放題！<br>
                             8,000円(税込)以下のお好きなゲームソフトをプレゼント！
                         </dd>
+                        <dd id="btn">
+                            <a href="#application">お申し込みはこちら</a>
+                        </dd>
                     </dl>
                 </div>
             </article>
         </section>
 
-        <section id="price_wrap">
-            <article id="price">
-                <h2><span>価格</span>×<span>SPEED</span>で圧倒的な光回線</h2>
-                <div class="description">
-                    <h3>
-                        月額基本料金
-                        <em>3,980円</em>
-                        <span>（税込4,378円）</span>
-                    </h3>
+        <section id="plan">
+            <article>
+                <a href="https://fon-hikari.net/" target="_blank">
+                    <img src="img/gamesoftcp2021/fon_logo.png" alt="ロゴ" class="logo">
+                </a>
+                <h2><span>価格</span>×<span>SPEED</span>で圧倒的な<br class="sp">光回線</h2>
+                <div class="box">
+                    <h3>料金</h3>
+                    <p>Fon光は、下り2Gbpsの超高速光回線と、無線LANがついて月額4,378円でご利用頂ける光ファイバーインターネットサービスです。音楽も動画もゲームも、ダウンロード/アップロード共にストレス無く快適にご利用頂けます。工事の後、細かい設定無くすぐにお使い頂くことが可能です。</p>
+                </div>
+                <div class="box">
+                    <h4>月額基本料金<em>3,980円</em><span>(税込4,378円)</span></h4>
                     <ul>
-                        <li>圧倒的なスピード　2Gbps</li>
-                        <li>ずーっと安心の定額制</li>
-                        <li>WiFi内蔵でスマホもラクラク</li>
-                        <li>プロバイダ不要で、面倒をとっぱらい</li>
+                        <li>
+                            <img src="img/gamesoftcp2021/koji_ico.svg" alt="">
+                            <dl>
+                                <dt>工事費</dt>
+                                <dd>無料<sup>※1</sup></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="img/gamesoftcp2021/doc_ico.svg" alt="">
+                            <dl>
+                                <dt>契約事務手数料</dt>
+                                <dd>¥3,000
+                                <small>(¥3,300税込)</small></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="img/gamesoftcp2021/calender_ico.svg" alt="">
+                            <dl>
+                                <dt>契約期間</dt>
+                                <dd>2年更新</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <img src="img/gamesoftcp2021/x_ico.svg" alt="">
+                            <dl>
+                                <dt>契約解除料</dt>
+                                <dd>¥19,800
+                                <small>(¥21,780税込)</small></dd>
+                            </dl>
+                        </li>
                     </ul>
                 </div>
+                <p>※ 記載の金額は全て税込金額です。</p>
+                <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
+                <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
+                <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
                 <div class="img">
                     <img src="img/gamesoftcp2021/price_01.png" alt="">
                     <img src="img/gamesoftcp2021/price_02.png" alt="">
                     <img src="img/gamesoftcp2021/price_03.png" alt="">
+                </div>
+                <div class="flex">
+                    <div class="fon">
+                        <a href="https://fon-hikari.net/" target="_blank">詳しくはこちら</a>
+                    </div>
+                    <div class="contact">
+                        <a href="../../contact.php" target="_blank">お問い合わせ</a>
+                    </div>
                 </div>
             </article>
         </section>
@@ -158,7 +196,7 @@
                     〈対象〉いずれも必須となります。<br>
                     ①対象期間中のお申込を頂いたお客様　②一回目の工事が完了して開通の目処が立っている方、もしくは開通されている方<br>
                     〈申込対象期間〉<br>
-                    2021年7月〇日14：00～2021年8月31日13：59まで<br>
+                    2021年8月1日(日)14：00～2021年10月31日(日)13：59まで<br>
                     〈申請方法〉<br>
                     運営担当より上記対象の段階でご希望の確認メールをお送りし、そのメールにご返信後、確認が出来次第弊社より発送させて頂きます。
                 </p>
@@ -184,7 +222,7 @@
                         ①対象期間中のお申込を頂いたお客様<br>
                         ②一回目の工事が完了して開通の目処が立っている方、もしくは開通されている方<br>
                         〈申込対象期間〉<br>
-                        2021年7月〇日14：00～2021年8月31日13：59まで<br>
+                        2021年8月1日(日)14：00～2021年10月31日(日)13：59まで<br>
                         〈申請方法〉<br>
                         運営担当より上記対象の段階でご希望の確認メールをお送りし、そのメールにご返信後、確認が出来次第弊社より発送させて頂きます。
                     </dd>
