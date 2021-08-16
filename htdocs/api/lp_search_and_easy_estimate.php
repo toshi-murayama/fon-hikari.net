@@ -111,8 +111,8 @@ $headers = '';
 if(isProd()) {
     $to = 'support@fon-hikari.net,scramask@gmail.com,fononepiecetest@gmail.com';
 } else {
-    // NOTE: STGで試験する場合は、自分のmailを設定する.
-    $to = 'onepiecetakaie@gmail.com, onepiecetomisaki@gmail.com';
+    // NOTE: STGで試験する場合は、自分のmailを設定する. ENVで設定したほうがいいけど.
+    $to = 'fononepiecetest@gmail.com';
 }
 $headers ='From: support@fon-hikari.net' . "\r\n";
 mb_send_mail($to, $title, $content, $headers, '-f support@fon-hikari.net');
@@ -180,7 +180,7 @@ function sendHatarakuDBErrorMail(string $result){
     mb_internal_encoding("UTF-8");
 
     $error_subject =  "Fon光管理者通知メール【重要】Fon光LPリストの働くDBインポート登録に失敗しました。";
-    $to = mb_convert_encoding("support@fon-hikari.net,scramask@gmail.com,onepiecetakaie@gmail.com, fononepiecetest@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
+    $to = mb_convert_encoding("support@fon-hikari.net,scramask@gmail.com, fononepiecetest@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
     $org = mb_convert_encoding("フォン・ジャパン株式会社", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');

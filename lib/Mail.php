@@ -40,8 +40,8 @@ class Mail
 
         $headers ='';
         if(isProd()) {
-            $to = 'support@fon-hikari.net,fononepiecetest@gmail.com';
-            $headers ='Bcc: onepiecetakaie@gmail.com' . "\r\n";
+            $to = 'support@fon-hikari.net';
+            $headers ='Bcc: fononepiecetest@gmail.com' . "\r\n";
         } else {
             $to = self::getStgToAddress();
         }
@@ -69,7 +69,7 @@ class Mail
         $headers ='';
         if(isProd()) {
             $headers  = "From: support@fon-hikari.net\r\n";
-            $headers .='Bcc: onepiecetakaie@gmail.com,fononepiecetest@gmail.com' . "\r\n";
+            $headers .='Bcc: fononepiecetest@gmail.com' . "\r\n";
         }
         return mb_send_mail(
             $to,
@@ -87,7 +87,7 @@ class Mail
     static private function getStgToAddress(): string
     {
         // NOTE: STGで試験する場合は、自分のmailを設定する.
-        return 'onepiecetakaie@gmail.com, onepiecetomisaki@gmail.com';
+        return 'fononepiecetest@gmail.com';
     }
     /**
      * 申込本文（管理者）
@@ -407,7 +407,7 @@ class Mail
 
         $error_subject =  "Fon光管理者通知メール【重要】申込の働くDBインポート登録に失敗しました。";
 
-        $to = mb_convert_encoding("support@fon-hikari.net, onepiecetakaie@gmail.com,fononepiecetest@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
+        $to = mb_convert_encoding("support@fon-hikari.net, fononepiecetest@gmail.com", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $subject = mb_convert_encoding($error_subject, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $text = mb_convert_encoding($error_mail, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
         $org = mb_convert_encoding("フォン・ジャパン株式会社", 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS');
