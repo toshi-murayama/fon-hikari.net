@@ -106,7 +106,7 @@ class HatarakuDbInsert
         if( preg_match( $goldexPattern, trim( $dataAll['couponCode']) ) ) {
             // GOLDEXのクーポンのパターンマッチしたものは，DBの以下の項目にも書き込む
             $ret['values']['116899'] = 'その他' ;  //：申込経路 [選択肢(1件選択)]
-            $ret['values']['117748'] = 'ゴールデックス';  // ：CP [テキスト(1行)]
+            $ret['values']['117748'] = 'GOLDEX';  // ：CP [テキスト(1行)]
         }
 
         return $ret ;
