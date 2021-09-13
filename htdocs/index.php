@@ -49,7 +49,7 @@
                 <div id="firstview">
                     <div class="fv1">
                         <div class="content">
-                            <h1>高速NURO光回線が</h1>
+                            <h1>高速光回線が</h1>
                             <h2>月額<span>¥3,980</span><br class="sp">
 								<small>(税込4,378円)</small></h2>
                             <div></div>
