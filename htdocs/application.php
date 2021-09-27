@@ -415,7 +415,7 @@ input {
                 </div>
             <div class="pdfTitle">重要事項説明書/契約約款</div>
             <div class="pdfBtn">
-                <a href="pdf/hikari_jyusetsu.pdf" target="_blank">重要事項説明書<br>ダウンロード</a>
+                <a href="pdf/hikari_jyusetsu.pdf?t=20210927" target="_blank">重要事項説明書<br>ダウンロード</a>
                 <a href="pdf/hikari_kiyaku.pdf" target="_blank">契約約款<br>ダウンロード</a>
             </div>
 			<p class="agree_box">
