@@ -57,14 +57,14 @@ $(function(){
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-	<?php 
+	<?php
 		if(isset($_COOKIE['affiliate'])) {
 			include "include/header_affiliate_form.html";
 		} else {
 			include "include/header_form.html";
 		}
 	?>
-	
+
 	<div id="layer_board_area">
 		<div class="layer_board_bg"></div>
 		<div id="popup_area" class="layer_board">
@@ -211,7 +211,7 @@ $(function(){
 					</div>
 				</section>
 			</div>
-			
+
 		</form>
 	</section>
 
@@ -237,7 +237,7 @@ $(function(){
 			// FromのEnterキーを無効.
 			if (e.which === 13) {
         		return false;
-    		}			
+    		}
 		});
 
 		$('#address-search').change(function() {
@@ -258,7 +258,7 @@ $(function(){
 
 		$('#openModal').click(function() {
 			$('.modalArea').hide();
-			
+
 			var hasError = false;
 			var address = $('#address-search').val();
 			var town = $('#address-search-result option:selected').val();
@@ -335,7 +335,7 @@ $(function(){
 			},
 		})
 		.done(function(data) {
-			
+
 			if(data) {
 				// 念の為.
 				$('#appForm').attr('action', 'application');
