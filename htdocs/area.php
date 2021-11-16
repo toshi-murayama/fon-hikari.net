@@ -8,6 +8,31 @@ if (isset($_GET['shibarinashi'])) {
 	$shibarinashiFlag = true;
 }
 
+// 主にメンテナンスなどによる，サービスの一時停止用．
+// 古くなった物は随時削除していくことが望ましい．
+function serviceUnavailable( $now , &$information ){
+
+    // プラン刷新に伴うサービス停止 2021年11月24日16:00～24：00でのWEB申込受付不可
+    if( ((new DateTime('2021-11-24 16:00:00') < $now )
+         && ($now < new DateTime('2021-11-25 00:00:00')) )){
+        $information = 'メンテナンス中<BR>11月24日(水) 16:00 ～24:00';
+        return true;
+    }
+
+    return false; // submit 使用可．
+}
+
+$now = new DateTime();
+// $now = new Datetime('2021-11-24 16:00:01'); // for test
+
+$information = '';
+if( serviceUnavailable( $now , $information ) ){
+    $disabledSubmit = ' disabled="disabled" '; // お申し込みSubmitボタン使用可否
+}
+else{
+    $disabledSubmit = '';
+}
+
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
@@ -98,6 +123,10 @@ $(function(){
 	</div>
 	<section id="area_search">
 
+		<?php if( $information != ''){ ?>
+		<p class="error"><?= $information ?></p>
+		<?php } ?>
+
 		<?php if ($shibarinashiFlag) { ?>
 
 		<h2>Fon光エリア検索</h2>
@@ -163,7 +192,7 @@ $(function(){
 
 						<?php } else { ?>
 
-						<input type="submit" value="お申し込みする" id="submit">
+						<input type="submit" value="お申し込みする" id="submit" <?= $disabledSubmit ?> >
 
 						<?php } ?>
 
