@@ -259,7 +259,7 @@ class Mail
         $content .= date( "Y/m/d (D) H:i:s" ) . self::LINE;
         $content .= '【Fon光】' . self::LINE;
         $content .= '《契約期間》' . self::LINE;
-        $content .= '36か月（自動更新）' . self::LINE;
+        $content .= '36ヶ月（自動更新）' . self::LINE;
         $content .= '《Fon光月額利用料》' . self::LINE;
         $content .= '月額：' . $cost->getFee4MailContent($cost->getHikariLineCost()) . self::LINE;
         if($data['isCp']) {
@@ -271,7 +271,7 @@ class Mail
             $content .= '0円' . self::LINE;
         } else {
             $content .= '《工事費：分割》' . self::LINE;
-            $content .= '44,000 円（ 36 か月の分割払い※ ２カ月目：1,230円、3カ月目～35カ月目：1,222円、36ヶ月目：2,444円）' . self::LINE;
+            $content .= '44,000 円（ 36ヶ月の分割払い※ ２ヶ月目：1,230円、3ヶ月目～35カ月目：1,222円、36ヶ月目：2,444円）' . self::LINE;
             $content .= '※ 同額の工事費割引が適用されますので、実質無料となります' . self::LINE;
             $content .= '《契約事務手数料》' . self::LINE;
             $content .= $cost->getFee4MailContent($cost->getAdminFee()) . self::LINE;
