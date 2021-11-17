@@ -193,7 +193,7 @@ $(function(){
 
 						<?php if ($shibarinashiFlag) { ?>
 
-						<input type="button" value="セット割を申し込む" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');">
+						<input type="button" value="セット割を申し込む" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');" <?= $disabledSubmit ?> >
 						Fon光単体のお申し込みは<a href="/" target="_blank" style="margin-top: 1rem;">こちら</a>
 
 						<?php } else { ?>
