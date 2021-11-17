@@ -1,4 +1,4 @@
-<?php require_once('../lib/Param/Pref.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -198,7 +198,7 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/calender_ico.svg" alt="">
                             <dl>
                                 <dt>契約期間</dt>
-                                <dd>2年更新<sup>※2</sup></dd>
+                                <dd>3年更新<sup>※2</sup></dd>
                             </dl>
                         </li>
                         <li>
@@ -212,10 +212,42 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                     </ul>
                 </div>
                 <p>※ 記載の金額は全て税込金額です。</p>
-                <p>※1 工事費44,000 円（ 1,466 円 X 30 か月の分割払い）を、工事費割引1,466 円 X 30 か月が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
+                <p>※1 工事費44,000円を36ヶ月の分割払い（2ヶ月目：1,230円、3ヶ月目～35ヶ月目：1,222円、36ヶ月目：2,444円）を、同額の工事費割引が適用されます。明細上で相殺いたしますので、工事費は実質無料となります。</p>
                 <p>※ 基本工事以外の内容をご希望のお客様は以下の内容にて対応可能です。サポートセンターへお申し付けください</p>
                 <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
                 <p>※2 継続契約期間のないコースもご用意ございます。月額基本料金：初回請求：5,864円（税込）、2回目請求以降：5,845円（税込）（各種特典の付帯はございません。）</p>
+				<p>※2年契約プラン（定期契約あり）のお申込みは2021年11月24日を持って終了いたしました。</p>
+				<p>※縛りなしWiFiセット割ページ（<a href="https://shibarinashi-wifi.jp/fon_hikari/" target="_blank">https://shibarinashi-wifi.jp/fon_hikari/</a>）も同様の変更お願いします。</p>
+				<div class="old-plan">
+					<h4>2021年11月25日よりFon 光のサービスラインアップを刷新いたしました。<br>
+						2021年11月24日以前にお申込のお客様は下記よりご確認いただけます。</h4>
+					<table>
+  <tbody>
+    <tr>
+      <td class="white">&nbsp;</td>
+      <td class="white">月額基本料金</td>
+      <td class="white">契約期間</td>
+      <td class="white">基本工事費割賦期間</td>
+      <td class="white">更新期間</td>
+    </tr>
+    <tr>
+      <td class="white">新プラン</td>
+      <td>4,378円</td>
+      <td>3年</td>
+      <td>36ヶ月</td>
+      <td>3ヶ月（36〜38ヶ月）</td>
+    </tr>
+    <tr>
+      <td class="white">旧プラン</td>
+      <td>4,378円</td>
+      <td>2年</td>
+      <td>30ヶ月</td>
+      <td>1ヶ月（25ヶ月）</td>
+    </tr>
+  </tbody>
+</table>
+					<p>※ご利用開始日に関わらず、2021年11月24日までにお申込をされたお客様は旧プランでのご契約となります。新旧プランの切り替えは不可となります。ご注意ください。</p>
+				</div>
             </article>
         </section>
 
