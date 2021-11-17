@@ -15,7 +15,14 @@ function serviceUnavailable( $now , &$information ){
     // プラン刷新に伴うサービス停止 2021年11月24日16:00～24：00でのWEB申込受付不可
     if( ((new DateTime('2021-11-24 16:00:00') < $now )
          && ($now < new DateTime('2021-11-25 00:00:00')) )){
-        $information = 'メンテナンス中<BR>11月24日(水) 16:00 ～24:00';
+        $information = '<div class="maintenance">
+		<p class="tit">メンテナンス中</p>
+		<p class="text">ただいまメンテナンスのため一時サービスを停止しております。<br class="sp">
+		大変ご不便をおかけいたしますが、今しばらくお待ちください。<br>
+		<br>
+		【メンテナンス期間】<br>
+		11月24日(水) 16:00 ～24:00</p>
+		</div>';
         return true;
     }
 
@@ -122,7 +129,6 @@ $(function(){
 		</div>
 	</div>
 	<section id="area_search">
-
 		<?php if( $information != ''){ ?>
 		<p class="error"><?= $information ?></p>
 		<?php } ?>

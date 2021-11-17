@@ -86,6 +86,23 @@ a:active {}
 	height: auto;
 }
 
+#area_search .maintenance{
+	width: 100%;
+	margin: 15px 0;
+	border: 1px solid #ef7b00;
+	padding: 10px;
+	box-sizing: border-box;
+	color: #ef7b00;
+	text-align: center;
+}
+
+#area_search .maintenance .tit{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
 
 /*エリア検索*/
 #area_search,
@@ -974,6 +991,11 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+	
+#area_search .maintenance .sp{
+	display: none;
+}
+	
 #area_search,
 #application,
 #confirmation,
