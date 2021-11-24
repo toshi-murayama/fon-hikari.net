@@ -108,121 +108,121 @@ class Mail
             if (empty($v)) continue;
 
             switch($k) {
-                case 'applicationClassification' :
-                    $content .= '【 申込区分 】 ' . self::APPLICATIOIN_CLASSIFICATION[$v] . self::LINE;
+            case 'applicationClassification' :
+                $content .= '【 申込区分 】 ' . self::APPLICATIOIN_CLASSIFICATION[$v] . self::LINE;
                 break;
-                case 'lastName' :
-                    $content .= '【 氏名（姓） 】 ' . $v . self::LINE;
+            case 'lastName' :
+                $content .= '【 氏名（姓） 】 ' . $v . self::LINE;
                 break;
-                case 'firstName' :
-                    $content .= '【 氏名（名） 】 ' . $v . self::LINE;
+            case 'firstName' :
+                $content .= '【 氏名（名） 】 ' . $v . self::LINE;
                 break;
-                case 'lastNameKana' :
-                    $content .= '【 フリガナ（セイ） 】 ' . $v . self::LINE;
+            case 'lastNameKana' :
+                $content .= '【 フリガナ（セイ） 】 ' . $v . self::LINE;
                 break;
-                case 'firstNameKana' :
-                    $content .= '【 フリガナ（メイ） 】 ' . $v . self::LINE;
+            case 'firstNameKana' :
+                $content .= '【 フリガナ（メイ） 】 ' . $v . self::LINE;
                 break;
-                case 'sex' :
-                    $content .= '【 性別 】 ' . self::SEX[$v] . self::LINE;
+            case 'sex' :
+                $content .= '【 性別 】 ' . self::SEX[$v] . self::LINE;
                 break;
-                case 'birthday' :
-                    $content .= '【 生年月日 】 ' . $v . self::LINE;
+            case 'birthday' :
+                $content .= '【 生年月日 】 ' . $v . self::LINE;
                 break;
-                case 'phoneNumber' :
-                    $content .= '【 携帯番号 】 ' . $v . self::LINE;
+            case 'phoneNumber' :
+                $content .= '【 携帯番号 】 ' . $v . self::LINE;
                 break;
-                case 'fixedLine' :
-                    $content .= '【 固定電話番号 】 ' . $v . self::LINE;
+            case 'fixedLine' :
+                $content .= '【 固定電話番号 】 ' . $v . self::LINE;
                 break;
-                case 'mailAddress' :
-                    $content .= '【 メールアドレス 】 ' . $v . self::LINE;
+            case 'mailAddress' :
+                $content .= '【 メールアドレス 】 ' . $v . self::LINE;
                 break;
-                case 'postalCode' :
-                    $content .= '【 郵便番号 】 ' . $v . self::LINE;
+            case 'postalCode' :
+                $content .= '【 郵便番号 】 ' . $v . self::LINE;
                 break;
-                case 'installationPref' :
-                    $content .= '【 都道府県 】 ' . $v . self::LINE;
+            case 'installationPref' :
+                $content .= '【 都道府県 】 ' . $v . self::LINE;
                 break;
-                case 'installationMunicipalities' :
-                    $content .= '【 市区町村 】 ' . $v . self::LINE;
+            case 'installationMunicipalities' :
+                $content .= '【 市区町村 】 ' . $v . self::LINE;
                 break;
-                case 'installationTown' :
-                    $content .= '【 町名・丁目 】 ' . $v . self::LINE;
+            case 'installationTown' :
+                $content .= '【 町名・丁目 】 ' . $v . self::LINE;
                 break;
-                case 'installationAddress' :
-                    $content .= '【 番地・号 】 ' . $v . self::LINE;
+            case 'installationAddress' :
+                $content .= '【 番地・号 】 ' . $v . self::LINE;
                 break;
-                case 'installationBuilding' :
-                    $content .= '【 建物名・部屋番号 】 ' . $v . self::LINE;
+            case 'installationBuilding' :
+                $content .= '【 建物名・部屋番号 】 ' . $v . self::LINE;
                 break;
-                case 'ownership' :
-                    $content .= '【 所有携帯 】 ' . self::OWNERSHIP[$v] . self::LINE;
+            case 'ownership' :
+                $content .= '【 所有携帯 】 ' . self::OWNERSHIP[$v] . self::LINE;
                 break;
-                case 'mailingDestination' :
-                    $content .= '【 入会書類郵送希望先 】 ' . self::MAILING_DESTONATION[$v] . self::LINE;
+            case 'mailingDestination' :
+                $content .= '【 入会書類郵送希望先 】 ' . self::MAILING_DESTONATION[$v] . self::LINE;
                 break;
-                case 'mailingPostalCode' :
-                    $content .= '【 郵送先郵便番号 】 ' . $v . self::LINE;
+            case 'mailingPostalCode' :
+                $content .= '【 郵送先郵便番号 】 ' . $v . self::LINE;
                 break;
-                case 'mailingPrefName' :
-                    $content .= '【 郵送先都道府県 】 ' . $v . self::LINE;
+            case 'mailingPrefName' :
+                $content .= '【 郵送先都道府県 】 ' . $v . self::LINE;
                 break;
-                case 'mailingMunicipalities' :
-                    $content .= '【 郵送先市区町村 】 ' . $v . self::LINE;
+            case 'mailingMunicipalities' :
+                $content .= '【 郵送先市区町村 】 ' . $v . self::LINE;
                 break;
-                case 'mailingTown' :
-                    $content .= '【 郵送先町名・丁目 】 ' . $v . self::LINE;
+            case 'mailingTown' :
+                $content .= '【 郵送先町名・丁目 】 ' . $v . self::LINE;
                 break;
-                case 'mailingAddress' :
-                    $content .= '【 郵送先番地・号 】 ' . $v . self::LINE;
+            case 'mailingAddress' :
+                $content .= '【 郵送先番地・号 】 ' . $v . self::LINE;
                 break;
-                case 'mailingBuilding' :
-                    $content .= '【 郵送先建物名・部屋番号 】 ' . $v . self::LINE;
+            case 'mailingBuilding' :
+                $content .= '【 郵送先建物名・部屋番号 】 ' . $v . self::LINE;
                 break;
-                case 'telephoneApplication' :
-                    $content .= '【 ひかり電話申込 】 ' . self::ON_OR_OFF[$v] . self::LINE;
+            case 'telephoneApplication' :
+                $content .= '【 ひかり電話申込 】 ' . self::ON_OR_OFF[$v] . self::LINE;
                 break;
-                case 'homeType' :
-                    $content .= '【 物件種類 】 ' . self::HOME_TYPES[$v] . self::LINE;
+            case 'homeType' :
+                $content .= '【 物件種類 】 ' . self::HOME_TYPES[$v] . self::LINE;
                 break;
-                case 'numberingMethod' :
-                    $content .= '【 電話番号種類 】 ' .self::NUMBERING_METHOD[$v] . self::LINE;
+            case 'numberingMethod' :
+                $content .= '【 電話番号種類 】 ' .self::NUMBERING_METHOD[$v] . self::LINE;
                 break;
-                case 'remortSupport' :
-                    $content .= '【 リモートサポート 】 ' . self::ON_OR_OFF[$v] . self::LINE;
+            case 'remortSupport' :
+                $content .= '【 リモートサポート 】 ' . self::ON_OR_OFF[$v] . self::LINE;
                 break;
-                case 'affiOrderNumber' :
-                    $content .= '【 アフィリエイトID 】 ' . $v . self::LINE;
+            case 'affiOrderNumber' :
+                $content .= '【 アフィリエイトID 】 ' . $v . self::LINE;
                 break;
-                case 'collectivelyElectricity' :
-                    $content .= '【 まとめてでんき 】 ' . self::ON_OR_OFF[$v] . self::LINE;
+            case 'collectivelyElectricity' :
+                $content .= '【 まとめてでんき 】 ' . self::ON_OR_OFF[$v] . self::LINE;
                 break;
-                case 'hikariTV' :
-                    $content .= '【 ひかりTV for NURO申込 】 ' . self::ON_OR_OFF[$v] . self::LINE;
+            case 'hikariTV' :
+                $content .= '【 ひかりTV for NURO申込 】 ' . self::ON_OR_OFF[$v] . self::LINE;
                 break;
-                case 'hikariTvPlan' :
-                    $content .= '【 ひかりTVプラン 対応番号 】 ' . $v . self::LINE;
+            case 'hikariTvPlan' :
+                $content .= '【 ひかりTVプラン 対応番号 】 ' . $v . self::LINE;
                 break;
-                case 'hikariTvPlanString' :
-                    $content .= '【 ひかりTVプラン 】 ' . $v . self::LINE;
+            case 'hikariTvPlanString' :
+                $content .= '【 ひかりTVプラン 】 ' . $v . self::LINE;
                 break;
-                case 'hikariTvPlanApplication' :
-                    $content .= '【 ひかりTV一契約目申込 】 ' . $v . self::LINE;
+            case 'hikariTvPlanApplication' :
+                $content .= '【 ひかりTV一契約目申込 】 ' . $v . self::LINE;
                 break;
-                case 'hikariTvPlanTuner' :
-                    $content .= '【 ひかりTV一契約目チューナーレンタル 】 ' . $v . self::LINE;
+            case 'hikariTvPlanTuner' :
+                $content .= '【 ひかりTV一契約目チューナーレンタル 】 ' . $v . self::LINE;
                 break;
-                case 'kasperskySecurity' :
-                    $content .= '【 カスペルスキーセキュリティー 】 ' . self::ON_OR_OFF[$v] . self::LINE;
+            case 'kasperskySecurity' :
+                $content .= '【 カスペルスキーセキュリティー 】 ' . self::ON_OR_OFF[$v] . self::LINE;
                 break;
-                case 'construction' :
-                    $content .= '【 業務備考 】 ' . $v . self::LINE;
+            case 'construction' :
+                $content .= '【 業務備考 】 ' . $v . self::LINE;
                 break;
-                case 'couponCode' :
-                    $content .= '【 クーポンコード 】 ' . $v . self::LINE;
+            case 'couponCode' :
+                $content .= '【 クーポンコード 】 ' . $v . self::LINE;
                 break;
-                default :
+            default :
                 $content .= '【 '. $k . ' 】 ' . $v . self::LINE;
             }
         }
@@ -259,7 +259,7 @@ class Mail
         $content .= date( "Y/m/d (D) H:i:s" ) . self::LINE;
         $content .= '【Fon光】' . self::LINE;
         $content .= '《契約期間》' . self::LINE;
-        $content .= '24か月（自動更新）' . self::LINE;
+        $content .= '36ヶ月（自動更新）' . self::LINE;
         $content .= '《Fon光月額利用料》' . self::LINE;
         $content .= '月額：' . $cost->getFee4MailContent($cost->getHikariLineCost()) . self::LINE;
         if($data['isCp']) {
@@ -271,8 +271,8 @@ class Mail
             $content .= '0円' . self::LINE;
         } else {
             $content .= '《工事費：分割》' . self::LINE;
-            $content .= '44,000 円（税込）（1,467 円（税込） X 30 か月の分割払い）' . self::LINE;
-            $content .= '※ 工事費割引1,467 円（税込） X 30 か月割引が適用されますので、実質無料となります。' . self::LINE;
+            $content .= '44,000 円（ 36ヶ月の分割払い※ ２ヶ月目：1,230円、3ヶ月目～35カ月目：1,222円、36ヶ月目：2,444円）' . self::LINE;
+            $content .= '※ 同額の工事費割引が適用されますので、実質無料となります' . self::LINE;
             $content .= '《契約事務手数料》' . self::LINE;
             $content .= $cost->getFee4MailContent($cost->getAdminFee()) . self::LINE;
         }

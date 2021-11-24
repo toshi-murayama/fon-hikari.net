@@ -8,6 +8,40 @@ if (isset($_GET['shibarinashi'])) {
 	$shibarinashiFlag = true;
 }
 
+// 主にメンテナンスなどによる，サービスの一時停止用．
+// 古くなった物は随時削除していくことが望ましい．
+function serviceUnavailable( $now , &$information ){
+
+    // プラン刷新に伴うサービス停止 2021年11月24日16:00～24：00でのWEB申込受付不可
+    if( ((new DateTime('2021-11-24 16:00:00') < $now )
+         && ($now < new DateTime('2021-11-25 00:00:00')) )){
+        $information = <<<INFORMATION
+<div class="maintenance">
+<p class="tit">メンテナンス中</p>
+<p class="text">ただいまメンテナンスのため一時サービスを停止しております。<br class="sp">
+大変ご不便をおかけいたしますが、今しばらくお待ちください。<br>
+<br>
+【メンテナンス期間】<br>
+11月24日(水) 16:00 ～24:00</p>
+</div>
+INFORMATION;
+        return true;
+    }
+
+    return false; // submit 使用可．
+}
+
+$now = new DateTime();
+// $now = new Datetime('2021-11-24 16:00:01'); // for test
+
+$information = '';
+if( serviceUnavailable( $now , $information ) ){
+    $disabledSubmit = ' disabled="disabled" '; // お申し込みSubmitボタン使用可否
+}
+else{
+    $disabledSubmit = '';
+}
+
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
@@ -57,14 +91,14 @@ $(function(){
 <?php include "include/tag_start.html";?>
 <p id="cursor"></p>
 <div id="stalker"></div>
-	<?php 
+	<?php
 		if(isset($_COOKIE['affiliate'])) {
 			include "include/header_affiliate_form.html";
 		} else {
 			include "include/header_form.html";
 		}
 	?>
-	
+
 	<div id="layer_board_area">
 		<div class="layer_board_bg"></div>
 		<div id="popup_area" class="layer_board">
@@ -97,6 +131,7 @@ $(function(){
 		</div>
 	</div>
 	<section id="area_search">
+      <?= $information ?>
 
 		<?php if ($shibarinashiFlag) { ?>
 
@@ -158,12 +193,12 @@ $(function(){
 
 						<?php if ($shibarinashiFlag) { ?>
 
-						<input type="button" value="セット割を申し込む" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');">
+						<input type="button" value="セット割を申し込む" onclick="window.open('https://shibarinashi-wifi.jp/application','_blank');" <?= $disabledSubmit ?> >
 						Fon光単体のお申し込みは<a href="/" target="_blank" style="margin-top: 1rem;">こちら</a>
 
 						<?php } else { ?>
 
-						<input type="submit" value="お申し込みする" id="submit">
+						<input type="submit" value="お申し込みする" id="submit" <?= $disabledSubmit ?> >
 
 						<?php } ?>
 
@@ -211,7 +246,7 @@ $(function(){
 					</div>
 				</section>
 			</div>
-			
+
 		</form>
 	</section>
 
@@ -237,7 +272,7 @@ $(function(){
 			// FromのEnterキーを無効.
 			if (e.which === 13) {
         		return false;
-    		}			
+    		}
 		});
 
 		$('#address-search').change(function() {
@@ -258,7 +293,7 @@ $(function(){
 
 		$('#openModal').click(function() {
 			$('.modalArea').hide();
-			
+
 			var hasError = false;
 			var address = $('#address-search').val();
 			var town = $('#address-search-result option:selected').val();
@@ -335,7 +370,7 @@ $(function(){
 			},
 		})
 		.done(function(data) {
-			
+
 			if(data) {
 				// 念の為.
 				$('#appForm').attr('action', 'application');
