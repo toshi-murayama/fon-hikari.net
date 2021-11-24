@@ -198,7 +198,8 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                             <img src="img/calender_ico.svg" alt="">
                             <dl>
                                 <dt>契約期間</dt>
-                                <dd>3年更新<sup>※2</sup></dd>
+                                <dd>初年度3年<sup>※2</sup><br>
+									<small>(以降2年更新)</small></dd>
                             </dl>
                         </li>
                         <li>
@@ -224,21 +225,21 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
 					<table>
   <tbody>
     <tr>
-      <td class="white">&nbsp;</td>
+      <th class="white">&nbsp;</td>
       <td class="white">月額基本料金</td>
       <td class="white">契約期間</td>
       <td class="white">基本工事費割賦期間</td>
       <td class="white">更新期間</td>
     </tr>
     <tr>
-      <td class="white">新プラン</td>
+      <th class="white">新プラン</td>
       <td>4,378円</td>
-      <td>3年</td>
+      <td>初年度3年<br>以降2年更新</td>
       <td>36ヶ月</td>
-      <td>3ヶ月（36〜38ヶ月）</td>
+      <td>3ヶ月<br>（初年度36～38ヶ月目、以降24ヶ月目～26ヶ月目ごと）</td>
     </tr>
     <tr>
-      <td class="white">旧プラン</td>
+      <th class="white">旧プラン</td>
       <td>4,378円</td>
       <td>2年</td>
       <td>30ヶ月</td>

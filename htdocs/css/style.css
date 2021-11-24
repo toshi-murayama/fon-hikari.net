@@ -1067,7 +1067,7 @@ footer {
           #plan article .box ul li img {
             width: 50px; }
           #plan article .box ul li dl {
-            width: 180px;
+            width: 200px;
             margin-left: 10px; }
             #plan article .box ul li dl dd {
               font-size: 36px;
@@ -1099,12 +1099,11 @@ footer {
           border-right: 1px solid #fff;
           border-bottom: 1px solid #fff;
           text-align: center; }
-          #plan article .old-plan table th.white,
-          #plan article .old-plan table td.white {
-            background: #fff;
-            color: #333;
-            border-right: 1px solid #333;
-            border-bottom: 1px solid #333; }
+        #plan article .old-plan table .white {
+          background: #fff;
+          color: #333;
+          border-right: 1px solid #333;
+          border-bottom: 1px solid #333; }
       #plan article .old-plan p {
         font-size: 12px;
         text-align: left; }
@@ -2268,14 +2267,13 @@ footer {
                 color: #f39500; }
       #plan article .old-plan h4 {
         font-size: 4vw; }
-      #plan article .old-plan table {
-        width: 100%;
-        margin: 15px 0;
-        border-top: 1px solid #fff;
-        border-left: 1px solid #fff; }
-        #plan article .old-plan table th,
-        #plan article .old-plan table td {
-          padding: 5px; }
+      #plan article .old-plan table th,
+      #plan article .old-plan table td {
+        padding: 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
+      #plan article .old-plan table td {
+        width: 23%; }
 
   /*-----optionArea-----*/
   #optionArea {
