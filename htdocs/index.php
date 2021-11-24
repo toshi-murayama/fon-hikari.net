@@ -218,7 +218,6 @@ GPON(Gigabit capable passive optical networks)とはITU-T標準化規格G.984シ
                 <p>〇屋内LAN工事：￥12,430　〇屋内電話設置工事：￥12,430　〇屋外LAN・電話工事：￥18,040</p>
                 <p>※2 継続契約期間のないコースもご用意ございます。月額基本料金：初回請求：5,864円（税込）、2回目請求以降：5,845円（税込）（各種特典の付帯はございません。）</p>
 				<p>※2年契約プラン（定期契約あり）のお申込みは2021年11月24日を持って終了いたしました。</p>
-				<p>※縛りなしWiFiセット割ページ（<a href="https://shibarinashi-wifi.jp/fon_hikari/" target="_blank">https://shibarinashi-wifi.jp/fon_hikari/</a>）も同様の変更お願いします。</p>
 				<div class="old-plan">
 					<h4>2021年11月25日よりFon 光のサービスラインアップを刷新いたしました。<br>
 						2021年11月24日以前にお申込のお客様は下記よりご確認いただけます。</h4>
