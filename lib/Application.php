@@ -53,10 +53,12 @@ class Service {
 		// 働くDBインポート
 		$error = self::AddHatarakuDb($_POST);
 		if (!empty($error)) {
-            $libApplicationLogger->error('DB Error');
+            $libApplicationLogger->error('DB Error $error:'. var_export($error, true) );
             $libApplicationLogger->debug('END exec() C');
 			return $error;
 		}
+        $libApplicationLogger->debug('$error:'. var_export($error, true) );
+
 		// メール送信
         $ret = self::sendMail($_POST);
         $libApplicationLogger->debug('END exec() D');
