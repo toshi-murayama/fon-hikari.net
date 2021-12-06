@@ -18,99 +18,98 @@ $error = Service::exec();
 $logger->debug('after Service::exec();');
 $logger->debug('$error : '. var_export($error, true) );
 
-cloudBackup($logger, $error, '99999999' ); // IDはダミー
+if( $error == '' ){
+    cloudBackup($logger, $error, '99999999' ); // IDはダミー
+}
 
-
-function cloudBackup($logger, $error, $recordid ){
+///////////////////////////////////////////////////////////////////////////
+function cloudBackup($logger, $error, $recordid ) {
     $logger->debug('START cloudBackup()');
-    if( empty($error) ){
-        //契約形態．
-        if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
-            $cbParams['pracontact'] = '1';
-        }
-        else { // 個人
-            $cbParams['pracontact'] = '0';
-        }
-        $cbParams['pracompany']  = '' ; // ないはず．
 
-        $cbParams['pradname1']  = htmlspecialchars($_POST['lastdNname'] );
-        $cbParams['pradname2']  = htmlspecialchars($_POST['firstName'] );
-        $cbParams['pranameread2'] = htmlspecialchars($_POST['lastNameKana'] );
-        $cbParams['pranameread2'] = htmlspecialchars($_POST['firstNameKana'] );
-        if( $POST['sex'] == 'men'){
-            $cbParams['pragender'] = '0';
-        }
-        else {// women
-            $cbParams['pragender'] = '1';
-        }
-        $cbParams['prabirthday'] = htmlspecialchars( str_replace('/','', $_POST['birthday']) );
-        $cbParams['pramail'] = htmlspecialchars($_POST['mailAddress'] );
-        $cbParams['praphone'] = htmlspecialchars($_POST['phoneNumber'] );
-        $cbParams['prapostal'] = htmlspecialchars($_POST['postalCode'] );
-
-        // 発送先住所
-        if( $_POST['mailingDestination'] =='0' ) { // 0: 設置場所と同じ
-            $cbParams['praaddress'] = htmlspecialchars( $_POST['postalCode']
-                                                        . $_POST['installationPrefName']
-                                                        . $_POST['installationMunicipalities']
-                                                        . $_POST['installationTown']
-                                                        . $_POST['installationAddress']
-                                                        . $_POST['installationBuilding'] );
-        }
-        else { // 1: 別住所に送る
-            $cbParams['praaddress'] = htmlspecialchars( $_POST['mailingPostalCode']
-                                                        . $_POST['mailingPrefName']
-                                                        . $_POST['mailingMunicipalities']
-                                                        . $_POST['mailingTown']
-                                                        . $_POST['mailingAddress']
-                                                        . $_POST['mailingBuilding'] );
-        }
-        $cbParams['pratodofuken'] = $_POST['installationPrefName'];
-
-        $cbParams['pradbid'] = '101234' ;// FON光は固定
-        $cbParams['prarecordid'] = $recordid ; // TODO
-        $logger->debug('$cbParams : '. var_export( $cbParams, true) );
-
-        // メール
-        $adminMailParams = [];
-        if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
-            $adminMailParams['契約形態'] = '法人';
-        }
-        else {
-            $adminMailParams['契約形態'] = '個人';
-        }
-        $adminMailParams['会社名'] = '--';
-        $adminMailParams['お名前'] = $_POST['lastdNname'] .' '. $_POST['firstNname'] ;
-        $adminMailParams['フリガナ'] = $_POST['lastdNnameKana'] .' '. $_POST['firstNnameKana'] ;
-        if( $_POST['sex'] == 'men' ){
-            $adminMailParams['性別'] = '男性';
-        }
-        else {
-            $adminMailParams['性別'] = '女性';
-        }
-
-        $adminMailParams['生年月日'] = $_POST['birthday'];
-        $adminMailParams['メールアドレス'] = $_POST['mailAddress'];
-        $adminMailParams['電話番号'] = $_POST['phoneNumber'];
-        $adminMailParams['郵便番号'] = $_POST['postalCode'];
-        $adminMailParams['都道府県'] = $_POST['installationPref'];
-        $adminMailParams['契約住所'] = $_POST['installationMunicipalities']
-                                     .' '. $_POST['installationTown']
-                                     .' '. $_POST['installationAddress']
-                                     .' '. $_POST['installationBuilding'];
-        $adminMailParams['お支払い方法'] = 'クレカのみ';
-        $adminMailParams['クラウドバックアップ月額（税込)'] = '550円';
-        $adminMailParams['月額合計料金(税込)'] =  '550円' ;
-        // $adminMailParams['GMO ID'] = '--0' ; // TODO
-        $adminMailParams['働くDBのテーブル'] = 'Fon光(固定）';
-        $adminMailParams['テーブルのレコードID'] = $recordid ; // TODO
-        $logger->debug(' $adminMailParams : '. var_export( $adminMailParams, true) );
-
-
-        // TODO メール送信
-
-        $logger->debug('START cloudBackup()');
+    //契約形態．
+    if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
+        $cbParams['pracontact'] = '1';
     }
+    else { // 個人
+        $cbParams['pracontact'] = '0';
+    }
+    $cbParams['pracompany']  = '' ; // ないはず．
+
+    $cbParams['pradname1']  = htmlspecialchars($_POST['lastName'] );
+    $cbParams['pradname2']  = htmlspecialchars($_POST['firstName'] );
+    $cbParams['pranameread1'] = htmlspecialchars($_POST['lastNameKana'] );
+    $cbParams['pranameread2'] = htmlspecialchars($_POST['firstNameKana'] );
+    if( $POST['sex'] == 'men'){
+        $cbParams['pragender'] = '0';
+    }
+    else {// women
+        $cbParams['pragender'] = '1';
+    }
+    $cbParams['prabirthday'] = htmlspecialchars( str_replace('/','', $_POST['birthday']) );
+    $cbParams['pramail'] = htmlspecialchars($_POST['mailAddress'] );
+    $cbParams['praphone'] = htmlspecialchars($_POST['phoneNumber'] );
+    $cbParams['prapostal'] = htmlspecialchars($_POST['postalCode'] );
+
+    // 発送先住所
+    if( $_POST['mailingDestination'] =='0' ) { // 0: 設置場所と同じ
+        $cbParams['praaddress'] = htmlspecialchars(  $_POST['installationPref'] .' '
+                                                    . $_POST['installationMunicipalities'] .' '
+                                                    . $_POST['installationTown'] .' '
+                                                    . $_POST['installationAddress'] .' '
+                                                    . $_POST['installationBuilding'] );
+    }
+    else { // 1: 別住所に送る
+        $cbParams['praaddress'] = htmlspecialchars(  $_POST['mailingPref'] .' '
+                                                    . $_POST['mailingMunicipalities'] .' '
+                                                    . $_POST['mailingTown'] .' '
+                                                    . $_POST['mailingAddress'] .' '
+                                                    . $_POST['mailingBuilding'] );
+    }
+    $cbParams['pratodofuken'] = $_POST['installationPref'];
+
+    $cbParams['pradbid'] = '101234' ;// FON光は固定
+    $cbParams['prarecordid'] = $recordid ; // TODO
+    $logger->debug('$cbParams : '. var_export( $cbParams, true) );
+
+    // メール
+    $adminMailParams = [];
+    if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
+        $adminMailParams['契約形態'] = '法人';
+    }
+    else {
+        $adminMailParams['契約形態'] = '個人';
+    }
+    $adminMailParams['会社名'] = '--';
+    $adminMailParams['お名前'] = $_POST['lastName'] .' '. $_POST['firstName'] ;
+    $adminMailParams['フリガナ'] = $_POST['lastNameKana'] .' '. $_POST['firstNameKana'] ;
+    if( $_POST['sex'] == 'men' ){
+        $adminMailParams['性別'] = '男性';
+    }
+    else {
+        $adminMailParams['性別'] = '女性';
+    }
+
+    $adminMailParams['生年月日'] = $_POST['birthday'];
+    $adminMailParams['メールアドレス'] = $_POST['mailAddress'];
+    $adminMailParams['電話番号'] = $_POST['phoneNumber'];
+    $adminMailParams['郵便番号'] = $_POST['postalCode'];
+    $adminMailParams['都道府県'] = $_POST['installationPref'];
+    $adminMailParams['契約住所'] = $_POST['installationMunicipalities']
+                                 .' '. $_POST['installationTown']
+                                 .' '. $_POST['installationAddress']
+                                 .' '. $_POST['installationBuilding'];
+    $adminMailParams['お支払い方法'] = 'クレカのみ';
+    $adminMailParams['クラウドバックアップ月額（税込)'] = '550円';
+    $adminMailParams['月額合計料金(税込)'] =  '550円' ;
+    // $adminMailParams['GMO ID'] = '--0' ; // TODO
+    $adminMailParams['働くDBのテーブル'] = 'Fon光(固定）';
+    $adminMailParams['テーブルのレコードID'] = $recordid ; // TODO
+    $logger->debug(' $adminMailParams : '. var_export( $adminMailParams, true) );
+
+
+    // TODO メール送信
+
+    $logger->debug('END cloudBackup()');
 }
 
 ?>
@@ -155,7 +154,7 @@ function cloudBackup($logger, $error, $recordid ){
 	<section id="thanks">
 		<h2>Fon光お申し込み</h2>
 		<h3>04 お申し込み完了</h3>
-		<?php if (empty($error)) { ?>
+		<?php if ( $error == '' ) { ?>
 
 		<div class="search_text">お申し込みありがとうございます。</div>
 		<p class="text">後程弊社担当よりお電話にてご連絡させて頂きます。お電話をもってお申し込み完了となります。<br>
