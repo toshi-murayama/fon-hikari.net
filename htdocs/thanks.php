@@ -1,6 +1,79 @@
 <?php
-	require_once('../lib/Application.php');
-	$error = Service::exec();
+require_once('../lib/Application.php');
+require_once '../vendor/autoload.php';
+require_once '../config.php';
+
+use Param\HatarakuDbInsert;
+use Monolog\Logger;
+use Monolog\Handler\RotatingFileHandler;
+
+$logger = new Logger('thanks.php');
+$logger->pushHandler(new RotatingFileHandler($GLOBALS['DEBUG_LOG_DIR']. 'debug.log' , 5 ,
+                                             $GLOBALS['DEBUG_LOG_LEVEL']) );
+$logger->debug('==== START ====');
+$logger->debug('$_POST : '. var_export($_POST, true) );
+
+$logger->debug('before Service::exec();');
+$error = Service::exec();
+$logger->debug('after Service::exec();');
+$logger->debug('$error : '. var_export($error, true) );
+
+cloudBackup($logger, $error, '99999999' ); // IDはダミー
+
+
+function cloudBackup($logger, $error, $recordid ){
+    $logger->debug('START cloudBackup()');
+    if( empty($error) ){
+        //契約形態．
+        if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
+            $cbParams['pracontact'] = '1';
+        }
+        else { // 個人
+            $cbParams['pracontact'] = '0';
+        }
+        $cbParams['pracompany']  = '' ; // ないはず．
+
+        $cbParams['pradname1']  = htmlspecialchars($_POST['lastdNname'] );
+        $cbParams['pradname2']  = htmlspecialchars($_POST['firstName'] );
+        $cbParams['pranameread2'] = htmlspecialchars($_POST['lastNameKana'] );
+        $cbParams['pranameread2'] = htmlspecialchars($_POST['firstNameKana'] );
+        if( $sec == 'men'){
+            $cbParams['pragender'] = '0';
+        }
+        else {// women
+            $cbParams['pragender'] = '1';
+        }
+        $cbParams['prabirthday'] = htmlspecialchars( str_replace('/','', $_POST['birthday']) );
+        $cbParams['pramail'] = htmlspecialchars($_POST['mailAddress'] );
+        $cbParams['praphone'] = htmlspecialchars($_POST['phoneNumber'] );
+        $cbParams['prapostal'] = htmlspecialchars($_POST['postalCode'] );
+
+        // 発送先住所
+        if( $_POST['mailingDestination'] =='0' ) { // 0: 設置場所と同じ
+            $cbParams['praaddress'] = htmlspecialchars( $_POST['postalCode']
+                                                        . $_POST['installationPrefName']
+                                                        . $_POST['installationMunicipalities']
+                                                        . $_POST['installationTown']
+                                                        . $_POST['installationAddress']
+                                                        . $_POST['installationBuilding'] );
+        }
+        else { // 1: 別住所に送る
+            $cbParams['praaddress'] = htmlspecialchars( $_POST['mailingPostalCode']
+                                                        . $_POST['mailingPrefName']
+                                                        . $_POST['mailingMunicipalities']
+                                                        . $_POST['mailingTown']
+                                                        . $_POST['mailingAddress']
+                                                        . $_POST['mailingBuilding'] );
+        }
+
+        $cbParams['pradbid'] = '101234' ;// FON光は固定
+        $cbParams['prarecordid'] = $recordid ; // TODO
+
+        $logger->debug('$cbParams : '. var_export( $cbParams, true) );
+        $logger->debug('START cloudBackup()');
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -50,6 +123,27 @@
 		0120-966-486よりお電話させて頂きますので<br>
 		フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>
 		</p>
+		<?php if( $cloudBackup == 'ON' ){ ?>
+        <form method="POST" action="https://cloud-option.com/">
+          <input type="hidden" name="pracontact" value="<?= $cbParams['pracontact'] ?>">
+          <input type="hidden" name="pracompany" value="<?= $cbParams['pracompany'] ?>">
+          <input type="hidden" name="praname1" value="<?= $cbParams['pradname1'] ?>">
+          <input type="hidden" name="praname2" value="<?= $cbParams['pradname2'] ?>">
+          <input type="hidden" name="pranameread1" value="<?= $cbParams['pranameread2'] ?>">
+          <input type="hidden" name="pranameread2" value="<?= $cbParams['pranameread2'] ?>">
+          <input type="hidden" name="pragender" value="<?= $cbParams['pragender'] ?>">
+          <input type="hidden" name="prabirthday" value="<?= $cbParams['prabirthday'] ?>">
+          <input type="hidden" name="pramail" value="<?= $cbParams['pramail'] ?>">
+          <input type="hidden" name="praphone" value="<?= $cbParams['praphone'] ?>">
+          <input type="hidden" name="prapostal" value="<?= $cbParams['prapostal'] ?>">
+          <input type="hidden" name="praaddress" value="<?= $cbParams['praaddress'] ?>">
+
+          <input type="hidden" name="pradbid" value="<?= $cbParams['pradbid'] ?>">
+          <input type="hidden" name="prarecordid" value="<?= $cbParams['prarecordid'] ?>">
+
+          <button type="submit" value="送信する">引き続きクラウドバックアップのお申し込みへ</button>
+        </form>
+		<?php } /* cludBackup */ ?>
 	<?php } else { ?>
 
 		<p class="error" style="margin: 0 0 4em; text-align:center;">

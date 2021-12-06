@@ -52,6 +52,9 @@ $kasperskySecurity = h($_POST['kasperskySecurity']);
 $construction = h($_POST['construction']);
 $couponCode = h($_POST['couponCode']);
 
+// $cloudBackup = h($_POST['cloudBackup']); // TO DO
+$cloudBackup = 'YES'; //☆☆☆☆☆  DUMMY  ☆☆☆☆☆☆
+
 // 性別表示
 if($sex == '1') {
     $sexString = '男性';
