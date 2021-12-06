@@ -18,13 +18,21 @@ $error = Service::exec();
 $logger->debug('after Service::exec();');
 $logger->debug('$error : '. var_export($error, true) );
 
+$cbParams = [];
 if( $error == '' ){
-    cloudBackup($logger, $error, '99999999' ); // IDはダミー
+    cloudBackup($logger, $error, $cbParams, '99999999' ); // IDはダミー
 }
 
 ///////////////////////////////////////////////////////////////////////////
-function cloudBackup($logger, $error, $recordid ) {
+function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $logger->debug('START cloudBackup()');
+
+    $cbParams['cloudBackup'] = $_POST['cloudBackup'];
+    if( $cbParams['cloudBackup'] != 'YES' ){
+        $logger->debug('$cbParams : '. var_export( $cbParams, true) );
+        $logger->debug('END cloudBackup() A');
+        return;
+    }
 
     //契約形態．
     if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
@@ -109,7 +117,8 @@ function cloudBackup($logger, $error, $recordid ) {
 
     // TODO メール送信
 
-    $logger->debug('END cloudBackup()');
+    $logger->debug('END cloudBackup() B');
+    return;
 }
 
 ?>
@@ -161,13 +170,13 @@ function cloudBackup($logger, $error, $recordid ) {
 		0120-966-486よりお電話させて頂きますので<br>
 		フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>
 		</p>
-		<?php if( $cloudBackup == 'ON' ){ ?>
+		<?php if( $cbParams['cloudBackup'] == 'YES' ){ ?>
         <form method="POST" action="https://cloud-option.com/">
           <input type="hidden" name="pracontact" value="<?= $cbParams['pracontact'] ?>">
           <input type="hidden" name="pracompany" value="<?= $cbParams['pracompany'] ?>">
           <input type="hidden" name="praname1" value="<?= $cbParams['pradname1'] ?>">
           <input type="hidden" name="praname2" value="<?= $cbParams['pradname2'] ?>">
-          <input type="hidden" name="pranameread1" value="<?= $cbParams['pranameread2'] ?>">
+          <input type="hidden" name="pranameread1" value="<?= $cbParams['pranameread1'] ?>">
           <input type="hidden" name="pranameread2" value="<?= $cbParams['pranameread2'] ?>">
           <input type="hidden" name="pragender" value="<?= $cbParams['pragender'] ?>">
           <input type="hidden" name="prabirthday" value="<?= $cbParams['prabirthday'] ?>">

@@ -159,7 +159,8 @@
 			<input type="hidden" value="<?= h($_SESSION['tk']); ?>" name="tk">
 			<input type="hidden" name="confirmationSubmitFlag" value="1">
 			<input type="hidden" name="couponCode" value="<?= $couponCode ?>">
-			<input type="hidden" name="cloudBackup" value="<?= $cloudBackup ?>">
+			<!--			<input type="hidden" name="cloudBackup" value="<?= $cloudBackup ?>">  -->
+			<input type="hidden" name="cloudBackup" value="YES"> 
 		</form>
 	</section>
 	<?php
