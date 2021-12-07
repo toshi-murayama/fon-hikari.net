@@ -92,7 +92,7 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     else { // 0 個人
         $adminMailParams['契約形態'] = '個人';
     }
-    $adminMailParams['会社名'] = '--';
+    //    $adminMailParams['会社名'] = '--'; //「会社名」を入力してない
     $adminMailParams['お名前'] = $_POST['lastName'] .' '. $_POST['firstName'] ;
     $adminMailParams['フリガナ'] = $_POST['lastNameKana'] .' '. $_POST['firstNameKana'] ;
     // 性別： クラウドバックアップ連携では 「0:男,1:女] なので注意
@@ -116,8 +116,8 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $adminMailParams['クラウドバックアップ月額（税込)'] = '550円';
     $adminMailParams['月額合計料金(税込)'] =  '550円' ;
     // $adminMailParams['GMO ID'] = '--0' ; // TODO
-    $adminMailParams['働くDBのテーブル'] = 'Fon光(固定）';
-    $adminMailParams['テーブルのレコードID'] = $recordid ; // TODO
+    $adminMailParams['働くDBのテーブル'] = '101234 : Fon光';
+    $adminMailParams['テーブルのレコードID'] = $recordid ;
     $logger->debug(' $adminMailParams : '. var_export( $adminMailParams, true) );
 
 
