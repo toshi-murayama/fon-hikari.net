@@ -71,7 +71,7 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
                                                     . $_POST['installationBuilding'] );
     }
     else { // 1: 別住所に送る
-        $cbParams['praaddress'] = htmlspecialchars(  $_POST['mailingPref'] .' '
+        $cbParams['praaddress'] = htmlspecialchars(  $_POST['mailingPrefName'] .' '
                                                     . $_POST['mailingMunicipalities'] .' '
                                                     . $_POST['mailingTown'] .' '
                                                     . $_POST['mailingAddress'] .' '
