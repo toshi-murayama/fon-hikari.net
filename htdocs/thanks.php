@@ -39,11 +39,11 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     }
 
     //契約形態．
-    if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
-        $cbParams['pracontact'] = '1';
+    if( $_POST['applicationClassification'] == 'corporation' ) {
+        $cbParams['pracontact'] = '1'; // 法人
     }
-    else { // 個人
-        $cbParams['pracontact'] = '0';
+    else {
+        $cbParams['pracontact'] = '0'; // 個人
     }
     $cbParams['pracompany']  = '--' ; // 企業名としては入力してない．
 
@@ -51,11 +51,14 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $cbParams['pradname2']  = htmlspecialchars($_POST['firstName'] );
     $cbParams['pranameread1'] = htmlspecialchars($_POST['lastNameKana'] );
     $cbParams['pranameread2'] = htmlspecialchars($_POST['firstNameKana'] );
-    if( $POST['sex'] == 'men'){
-        $cbParams['pragender'] = '0';
+
+    // 性別： application.php では「1:男,2:女] ，
+    // クラウドバックアップ連携では 「0:男,1:女] なので注意
+    if( $_POST['sex'] == '1'){
+        $cbParams['pragender'] = '0'; // 男
     }
-    else {// women
-        $cbParams['pragender'] = '1';
+    else {
+        $cbParams['pragender'] = '1'; // 女
     }
     $cbParams['prabirthday'] = htmlspecialchars( str_replace('/','', $_POST['birthday']) );
     $cbParams['pramail'] = htmlspecialchars($_POST['mailAddress'] );
@@ -95,10 +98,11 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $adminMailParams['会社名'] = '--';
     $adminMailParams['お名前'] = $_POST['lastName'] .' '. $_POST['firstName'] ;
     $adminMailParams['フリガナ'] = $_POST['lastNameKana'] .' '. $_POST['firstNameKana'] ;
-    if( $_POST['sex'] == 'men' ){
+    // 性別： クラウドバックアップ連携では 「0:男,1:女] なので注意
+    if( $_POST['sex'] == '1' ){
         $adminMailParams['性別'] = '男性';
     }
-    else {
+    else { // 2
         $adminMailParams['性別'] = '女性';
     }
 
