@@ -14,14 +14,17 @@ $logger->pushHandler(new RotatingFileHandler($GLOBALS['DEBUG_LOG_DIR']. 'debug.l
 $logger->debug('==== START ====');
 $logger->debug('$_POST : '. var_export($_POST, true) );
 
+$retVals = [
+    'keyId' => 'XXXXXXX',
+];
 $logger->debug('before Service::exec();');
-$error = Service::exec();
+$error = Service::exec( $retVals );
 $logger->debug('after Service::exec();');
 $logger->debug('$error : '. var_export($error, true) );
 
 $cbParams = [];
 if( $error == '' ){
-    cloudBackup($logger, $error, $cbParams, '99999999' ); // IDはダミー
+    cloudBackup($logger, $error, $cbParams, $retVals['keyId'] ); 
 }
 
 ///////////////////////////////////////////////////////////////////////////

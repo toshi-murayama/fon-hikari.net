@@ -109,6 +109,12 @@ class HatarakuDbInsert
             $ret['values']['117748'] = 'GOLDEX';  // ：CP [テキスト(1行)]
         }
 
+        // クラウドバックアップ連携
+        if( $dataAll['cloudBackup'] == 'YES' ){
+            $ret['values']['119585'] = '有り（申し込み待ち）'; //【クラウドバックアップ】
+            $ret['values']['117749'] = '3000'; // 【Amazonギフト券】
+        }
+
         return $ret ;
     }
     /**

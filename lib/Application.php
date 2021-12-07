@@ -26,7 +26,7 @@ class Service {
 	 *
 	 * @return string エラー文字列、正常なら空文字.
 	 */
-	static public function exec(): string {
+	static public function exec( &$retVals ): string {
         global $libApplicationLogger;
         $libApplicationLogger->debug('START exec()');
         $libApplicationLogger->debug('$_POST : '. var_export($_POST, true ) );
@@ -51,7 +51,7 @@ class Service {
 		$_POST['isCp'] = isCP();
 
 		// 働くDBインポート
-		$error = self::AddHatarakuDb($_POST);
+		$error = self::AddHatarakuDb($_POST, $retVals);
 		if (!empty($error)) {
             $libApplicationLogger->error('DB Error $error:'. var_export($error, true) );
             $libApplicationLogger->debug('END exec() C');
@@ -71,7 +71,7 @@ class Service {
 	 * @param array $data
 	 * @return string エラー文字列、正常なら空文字.
 	 */
-	private static function AddHatarakuDb(array $data): string {
+	private static function AddHatarakuDb(array $data, array &$retVals): string {
         global $libApplicationLogger;
         $libApplicationLogger->debug('START AddHatarakuDb()');
 		// ポストの値から、働くDBの値を生成.
@@ -98,6 +98,12 @@ class Service {
 			return 'お申し込みに失敗しました。お手数ですがサポート窓口までお問い合わせください。';
 		}
 
+        $libApplicationLogger->debug('$hatarakuDb->responseBody : '
+                                     . var_export($hatarakuDb->responseBody , true) );
+
+        $temp = json_decode( $hatarakuDb->responseBody, true);
+        $retVals['keyId'] = $temp['items']['keyId'] ;
+        $libApplicationLogger->debug('$retVals : '. var_export($retVals ,true) );
         $libApplicationLogger->debug('END AddHatarakuDb() B');
 		return '';
 	}
