@@ -171,7 +171,7 @@
                 </div>
                 <div id="cb" class="box">
                     <div class="boxL">
-                        <img src="img/cm_img.png" alt="クラウドバックアップ">
+                        <img src="img/cb_img.png" alt="クラウドバックアップ">
                     </div>
                     <div class="boxR">
                         <dl>
@@ -183,10 +183,10 @@
                         </dl>
                         <dl>
                             <dt>世代管理バックアップ</dt>
-                            <dd>容量無制限でファイルごとに最大１０世代までバックアップ。</dd>
+                            <dd>容量無制限でファイルごとに最大10世代までバックアップ。</dd>
                         </dl>
                         <dl>
-                            <dt>マルチＯＳ/キャリア対応</dt>
+                            <dt>マルチOS/キャリア対応</dt>
                             <dd>iOS/Android、キャリアを問わず利用可能。</dd>
                         </dl>
                         <dl>
