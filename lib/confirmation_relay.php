@@ -81,6 +81,14 @@ if ($ownership == '1') {
     $ownershipString = '持ち家';
 }
 
+//クラウドバックアップ
+if( $cloudBackup == 'YES'){
+    $cloudBackupString = 'あり' ;
+}
+else{
+    $cloudBackupString = 'なし' ;
+}
+
 // 光電話申込表示
 if ($telephoneApplication == '0') {
     $telephoneApplicationString = 'なし';
