@@ -65,6 +65,12 @@
                             <img src="img/denki_ico.svg" alt="まとめてでんき">まとめてでんき
                         </label>
                     </li>
+                    <li>
+                        <input type="radio" name="option_set" id="button4">
+                        <label for="button4">
+                            <img src="img/denki_ico.svg" alt="クラウドバックアップ">クラウドバックアップ
+                        </label>
+                    </li>
                 </ul>
                 <div id="hikari_tel" class="box">
                     <div class="boxL">
@@ -163,7 +169,34 @@
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
-            </article>
+                <div id="cb" class="box">
+                    <div class="boxL">
+                        <img src="img/cb_img.png" alt="クラウドバックアップ">
+                    </div>
+                    <div class="boxR">
+                        <dl>
+                            <dt>クラウドバックアップ</dt>
+                            <dd>
+                                スマートフォンやタブレットに保存したデータを容量無制限でクラウド上に保管でいるサービスです。<br>
+								更に全自動でバックアップを行うので面倒な作業が必要ありません。
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>世代管理バックアップ</dt>
+                            <dd>容量無制限でファイルごとに最大10世代までバックアップ。</dd>
+                        </dl>
+                        <dl>
+                            <dt>マルチOS/キャリア対応</dt>
+                            <dd>iOS/Android、キャリアを問わず利用可能。</dd>
+                        </dl>
+                        <dl>
+                            <dt>高セキリュティ</dt>
+                            <dd>高度な暗号アルゴリズム（AES-256）を利用し、三段階の暗号化を実現。</dd>
+                        </dl>
+                        <a href="https://www.accessell.co.jp/cloud_backup/" target="_blank" class="btn">詳細はこちら</a>
+                    </div>
+                </div>
+			</article>
 
             <article>
                 <h2>PC環境をサポートするオプション</h2>
