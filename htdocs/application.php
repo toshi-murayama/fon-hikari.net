@@ -203,7 +203,7 @@ input {
 				<li class="categories">クラウドバックアップ</li>
 				<li class="app">
 				  <input type="radio" name="cloudBackup" value="NO" id="cloudBackupNo"  checked="checked">
-				  <label for="cloudBackupYes">申し込まない</label>
+				  <label for="cloudBackupNo">申し込まない</label>
 				  <input type="radio" name="cloudBackup" value="YES" id="cloudBackupYes">
 				  <label for="cloudBackupYes">申し込む</label>
 				</li>
