@@ -39,13 +39,10 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     }
 
     //契約形態．
-    if( $_POST['applicationClassification'] == 'corporation' ) {
-        $cbParams['pracontact'] = '1'; // 法人
-    }
-    else {
-        $cbParams['pracontact'] = '0'; // 個人
-    }
-    $cbParams['pracompany']  = '--' ; // 企業名としては入力してない．
+    // 双方共に，0:個人，1:法人
+    $cbParams['pracontact'] = $_POST['applicationClassification'];
+
+    $cbParams['pracompany']  = '' ; // 企業名としては入力してない．
 
     $cbParams['pradname1']  = htmlspecialchars($_POST['lastName'] );
     $cbParams['pradname2']  = htmlspecialchars($_POST['firstName'] );
@@ -89,10 +86,10 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     ////////////////////////////////////////////
     // メール のパラメータ
     $adminMailParams = [];
-    if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
+    if( $_POST['applicationClassification'] == '1' ) { // 法人
         $adminMailParams['契約形態'] = '法人';
     }
-    else {
+    else { // 0 個人
         $adminMailParams['契約形態'] = '個人';
     }
     $adminMailParams['会社名'] = '--';
