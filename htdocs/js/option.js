@@ -1,20 +1,30 @@
 $(function(){
 	$('#hikari_tv').hide();
 	$('#denki').hide();
+	$('#cb').hide();
 	$("#button1").click(function() {
 		$("#hikari_tel").fadeIn();
 		$("#hikari_tv").fadeOut();
 		$("#denki").fadeOut();
+		$("#cb").fadeOut();
 	});
 	$("#button2").click(function() {
 		$("#hikari_tel").fadeOut();
 		$("#hikari_tv").fadeIn();
 		$("#denki").fadeOut();
+		$("#cb").fadeOut();
 	});
 	$("#button3").click(function() {
 		$("#hikari_tel").fadeOut();
 		$("#hikari_tv").fadeOut();
 		$("#denki").fadeIn();
+		$("#cb").fadeOut();
+	});
+	$("#button4").click(function() {
+		$("#hikari_tel").fadeOut();
+		$("#hikari_tv").fadeOut();
+		$("#denki").fadeOut();
+		$("#cb").fadeIn();
 	});
 });
 
