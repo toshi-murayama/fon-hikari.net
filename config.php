@@ -13,6 +13,6 @@ $DEBUG_LOG_DIR = __DIR__ . '/log/';  // デバッグ用
 // 管理者
 
 $SUPPORT_CLOUDBACKUP_EMAIL =[
-    'FROM' => ['support@fon-hikari.net' => 'クラウドバックアップ'],
-    'TO' => ['support@fon-hikari.net' => 'クラウドバックアップ'],
+    'FROM' => ['support@fon-hikari.net' => 'オプション申込フォーム'],
+    'TO' => ['support@fon-hikari.net' => 'fon光 管理者'],
 ];

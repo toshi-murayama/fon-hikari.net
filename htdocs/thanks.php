@@ -2,6 +2,7 @@
 require_once('../lib/Application.php');
 require_once '../vendor/autoload.php';
 require_once '../config.php';
+require_once '../lib/SupportMailUtil2.php';
 
 use Param\HatarakuDbInsert;
 use Monolog\Logger;
@@ -41,7 +42,7 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     else { // 個人
         $cbParams['pracontact'] = '0';
     }
-    $cbParams['pracompany']  = '' ; // ないはず．
+    $cbParams['pracompany']  = '--' ; // 企業名としては入力してない．
 
     $cbParams['pradname1']  = htmlspecialchars($_POST['lastName'] );
     $cbParams['pradname2']  = htmlspecialchars($_POST['firstName'] );
@@ -79,7 +80,8 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $cbParams['prarecordid'] = $recordid ; // TODO
     $logger->debug('$cbParams : '. var_export( $cbParams, true) );
 
-    // メール
+    ////////////////////////////////////////////
+    // メール のパラメータ
     $adminMailParams = [];
     if( $_POST['applicationClassification'] == 'corporation' ) { // 法人
         $adminMailParams['契約形態'] = '法人';
@@ -115,7 +117,37 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $logger->debug(' $adminMailParams : '. var_export( $adminMailParams, true) );
 
 
-    // TODO メール送信
+    //////////////////////
+    // メール送信
+    $mailConfig = $GLOBALS['SUPPORT_CLOUDBACKUP_EMAIL'] ;
+    $logger->debug('$mailConfig : '. var_export($mailConfig, true) );
+
+    // 管理者むけ．
+    $date = (new DateTime())->format('Y/m/d (D) H:i:s');
+    $adminMsgTop = <<< MSG
+Fonでんき 担当者様
+以下の内容で「Fonでんき クラウドサービス連携」のお申込みがありました。
+
+受け付け日時： {$date}
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+MSG;
+
+        $adminMsgBottom = <<< MSG
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+■□━━━━━━━━━━━━━━━━━━━━━━━□■
+
+MAIL：support@fon-hikari.net
+MSG;
+
+    $mailUtil = new SupportMailUtil2( $logger ) ;
+    $mailUtil->setAdminTopAndBottom( $adminMsgTop , $adminMsgBottom );
+    $mailUtil->adminMessageText( [], $adminMailParams) ;
+
+    $mailUtil->sendAdmin( '[新規申込] オプション商品',
+                          $mailConfig['FROM'],
+                          $mailConfig['TO'] );
 
     $logger->debug('END cloudBackup() B');
     return;
