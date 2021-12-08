@@ -80,7 +80,7 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $cbParams['pratodofuken'] = $_POST['installationPref'];
 
     $cbParams['pradbid'] = '101234' ;// FON光は固定
-    $cbParams['prarecordid'] = $recordid ; // TODO
+    $cbParams['prarecordid'] = $recordid ;
     $logger->debug('$cbParams : '. var_export( $cbParams, true) );
 
     ////////////////////////////////////////////
@@ -115,7 +115,7 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     $adminMailParams['お支払い方法'] = 'クレカのみ';
     $adminMailParams['クラウドバックアップ月額（税込)'] = '550円';
     $adminMailParams['月額合計料金(税込)'] =  '550円' ;
-    // $adminMailParams['GMO ID'] = '--0' ; // TODO
+
     $adminMailParams['働くDBのテーブル'] = '101234 : Fon光';
     $adminMailParams['テーブルのレコードID'] = $recordid ;
     $logger->debug(' $adminMailParams : '. var_export( $adminMailParams, true) );
