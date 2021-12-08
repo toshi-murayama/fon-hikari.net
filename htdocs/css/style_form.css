@@ -363,6 +363,7 @@ a:active {}
 #confirmation .form li.categories,
 #contact .form li.categories{
 	padding-top: 30px;
+	font-weight: bold;
 }
 #application dl,
 #contact dl{
@@ -383,6 +384,54 @@ a:active {}
     padding-right: 0;
     margin: 0 auto 80px;
 }
+#application .app .cp_cloud_backup{
+	width: 100%;
+	margin: 0 0 10px;
+	border: 3px solid #fdc700;
+	padding: 15px;
+	box-sizing: border-box;
+	background: url("../img/bg_cloud_backup.png")no-repeat;
+	background-size: cover;
+}
+#application .app .cp_cloud_backup h6{
+	font-size: 20px;
+	margin: 0 0 15px;
+	padding: 0;
+	text-align: center;
+	line-height: 1.2;
+}
+#application .app .cp_cloud_backup h6 span{
+	color: #f39500;
+	font-size: 30px;
+}
+#application .app .cp_cloud_backup .cp_text{
+	padding: 15px;
+	background: rgba(243,194,0,0.25);
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+#application .app .cp_cloud_backup .cp_text p{
+	color: #f39500;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+#application .app .cp_cloud_backup .cp_text span{
+	font-size: 12px;
+}
+#application .app .cp_cloud_backup .cp_btn{
+	text-align: center;
+	margin: 10px 0 0;
+}
+#application .app .cp_cloud_backup .cp_btn a{
+	padding: 10px;
+	box-sizing: border-box;
+	background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
+    border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+
 #application input[type=text],
 #application input[type=tel],
 #contact input[type=text]{
@@ -1261,6 +1310,24 @@ img{
 #confirmation li p{
 	padding: 20px 10px;
 	margin-top: 10px;
+}
+	
+#application .app .cp_cloud_backup h6{
+	font-size: 4.5vw;
+	margin: 0 0 10px;
+	padding: 0;
+}
+#application .app .cp_cloud_backup h6 span{
+	font-size: 6vw;
+}
+#application .app .cp_cloud_backup .cp_text{
+	padding: 15px 10px;
+}
+#application .app .cp_cloud_backup .cp_text p{
+	font-size: 14px;
+}
+#application .app .cp_cloud_backup .cp_text span{
+	font-size: 11px;
 }
 
 	}
