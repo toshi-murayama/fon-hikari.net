@@ -202,6 +202,18 @@ input {
 			<ul class="form">
 				<li class="categories">クラウドバックアップ</li>
 				<li class="app">
+					<div class="cp_cloud_backup">
+						<h6>Amazonギフトコード<span>3,000</span>円分<span><br>プレゼントキャンペーン！！</span></h6>
+						<div class="cp_text">Fon光開通半年後にAmazonギフトコード3,000円分をご登録のEメールアドレスに送付いたします。<br>
+							<p>キャンペーン適応には、クラウドバックアップ（月額550円/初月無料）のお申し込みが必須となります。</p>
+							【注意事項】<br>
+							<span>※クラウドバックアップのお申し込みはクレジットカード払いのみとなります。<br>
+								※2ヶ月目以降は電話にてお取り外しが可能なオプションです。<br>
+								※Fon光ご利用開始（回線開通日）までにお支払方法のご登録が完了していること。<br>
+								※特典お受け取りまで、Fon光のご利用料金のお支払いに延滞が一度もなく、ご契約継続状態であること。</span>
+						</div>
+						<div class="cp_btn"><a href="https://www.accessell.co.jp/cloud_backup/" target="_blank">詳細はこちら</a></div>
+					</div>
 				  <input type="radio" name="cloudBackup" value="NO" id="cloudBackupNo"  checked="checked">
 				  <label for="cloudBackupNo">申し込まない</label>
 				  <input type="radio" name="cloudBackup" value="YES" id="cloudBackupYes">
