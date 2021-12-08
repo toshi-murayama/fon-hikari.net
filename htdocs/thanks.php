@@ -129,8 +129,8 @@ function cloudBackup($logger, $error, &$cbParams, $recordid ) {
     // 管理者むけ．
     $date = (new DateTime())->format('Y/m/d (D) H:i:s');
     $adminMsgTop = <<< MSG
-Fonでんき 担当者様
-以下の内容で「Fonでんき クラウドサービス連携」のお申込みがありました。
+Fon光 担当者様
+以下の内容で「Fon光 クラウドサービス連携」のお申込みがありました。
 
 受け付け日時： {$date}
 
