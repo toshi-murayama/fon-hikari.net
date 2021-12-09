@@ -890,8 +890,53 @@ a:active {}
 	border-radius: 5px;
 }
 #thanks .text{
-	margin: 10px 0 80px;
+	margin: 10px 0 50px;
 	font-size: 12px;
+}
+#thanks .cp_cloud_backup{
+	width: 100%;
+	margin: 0 0 50px;
+	border: 3px solid #fdc700;
+	padding: 15px;
+	box-sizing: border-box;
+	background: url("../img/bg_cloud_backup.png")no-repeat;
+	background-size: cover;
+}
+#thanks .cp_cloud_backup h6{
+	font-size: 20px;
+	margin: 0 0 15px;
+	padding: 0;
+	text-align: center;
+	line-height: 1.2;
+}
+#thanks .cp_cloud_backup h6 span{
+	color: #f39500;
+	font-size: 30px;
+}
+#thanks .cp_cloud_backup .cp_text{
+	padding: 15px;
+	background: rgba(243,194,0,0.25);
+	box-sizing: border-box;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+#thanks .cp_cloud_backup .cp_btn{
+	text-align: center;
+	margin-top: 15px;
+}
+#thanks .cp_cloud_backup .cp_btn button{
+	border: none;
+	padding: 10px;
+	box-sizing: border-box;
+	background: linear-gradient(61.56deg, #FFD300 0%, #EC7103 100%);
+    border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+#thanks .cp_cloud_backup .cp_btn button:hover{
+	opacity: 0.7;
 }
 
 #contact h3{
@@ -1328,6 +1373,22 @@ img{
 }
 #application .app .cp_cloud_backup .cp_text span{
 	font-size: 11px;
+}
+	
+#thanks .cp_cloud_backup{
+	margin: 0 0 30px;
+	padding: 10px;
+}
+#thanks .cp_cloud_backup h6{
+	font-size: 4.5vw;
+	margin: 0 0 10px;
+	padding: 0;
+}
+#thanks .cp_cloud_backup h6 span{
+	font-size: 6vw;
+}
+#thanks .cp_cloud_backup .cp_text{
+	padding: 15px 10px;
 }
 
 	}
