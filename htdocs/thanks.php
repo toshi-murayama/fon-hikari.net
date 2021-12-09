@@ -1,4 +1,4 @@
-<?php/*
+<?php
 require_once('../lib/Application.php');
 require_once '../vendor/autoload.php';
 require_once '../config.php';
@@ -156,7 +156,6 @@ MSG;
     $logger->debug('END cloudBackup() B');
     return;
 }
-*/
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -206,9 +205,17 @@ MSG;
 		0120-966-486よりお電話させて頂きますので<br>
 		フリーダイヤル等の着信拒否設定をされている方は設定解除をお願い致します。<br>
 		</p>
-		
+
 		<?php if( $cbParams['cloudBackup'] == 'YES' ){ ?>
         <form method="POST" action="https://cloud-option.com/">
+          <div class="cp_cloud_backup">
+			<h6>Amazonギフトコード<span>3,000</span>円分<span><br>プレゼントキャンペーン！！</span></h6>
+			<div class="cp_text">クラウドバックアップのお申し込みへチェックを入れた方は、下記ボタンよりお申し込みを完了させてください。</div>
+			<div class="cp_btn">
+			  <button type="submit" value="送信する">引き続きクラウドバックアップのお申し込みへ</button>
+            </div>
+          </div>
+
           <input type="hidden" name="pracontact" value="<?= $cbParams['pracontact'] ?>">
           <input type="hidden" name="pracompany" value="<?= $cbParams['pracompany'] ?>">
           <input type="hidden" name="praname1" value="<?= $cbParams['pradname1'] ?>">
@@ -225,17 +232,9 @@ MSG;
           <input type="hidden" name="pratodofuken" value="<?= $cbParams['pratodofuken'] ?>">
           <input type="hidden" name="pradbid" value="<?= $cbParams['pradbid'] ?>">
           <input type="hidden" name="prarecordid" value="<?= $cbParams['prarecordid'] ?>">
-
-          <div class="cp_cloud_backup">
-			<h6>Amazonギフトコード<span>3,000</span>円分<span><br>プレゼントキャンペーン！！</span></h6>
-			<div class="cp_text">クラウドバックアップのお申し込みへチェックを入れた方は、下記ボタンよりお申し込みを完了させてください。</div>
-			<div class="cp_btn">
-				<button type="submit" value="送信する">引き続きクラウドバックアップのお申し込みへ</button>
-			</div>
-		</div>
         </form>
 		<?php } /* cludBackup */ ?>
-	<?php } else { ?>
+	<?php } else { /* error表示 */ ?>
 
 		<p class="error" style="margin: 0 0 4em; text-align:center;">
 
