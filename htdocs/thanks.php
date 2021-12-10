@@ -207,6 +207,7 @@ MSG;
 		</p>
 
 		<?php if( $cbParams['cloudBackup'] == 'YES' ){ ?>
+		<!--
         <form method="POST" action="https://cloud-option.com/">
           <div class="cp_cloud_backup">
 			<h6>Amazonギフトコード<span>3,000</span>円分<span><br>プレゼントキャンペーン！！</span></h6>
@@ -233,6 +234,7 @@ MSG;
           <input type="hidden" name="pradbid" value="<?= $cbParams['pradbid'] ?>">
           <input type="hidden" name="prarecordid" value="<?= $cbParams['prarecordid'] ?>">
         </form>
+		-->
 		<?php } /* cludBackup */ ?>
 	<?php } else { /* error表示 */ ?>
 

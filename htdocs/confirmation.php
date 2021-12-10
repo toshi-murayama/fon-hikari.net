@@ -85,7 +85,7 @@
 			</ul>
 			<h4>オプション</h4>
 			<ul class="form">
-				<li class="categories">クラウドバックアップ</li><li><p><?= $cloudBackupString?></p></li>
+			  <!--  <li class="categories">クラウドバックアップ</li><li><p><?= $cloudBackupString?></p></li> -->
 
 				<li class="categories">光電話申込</li><li><p><?= $telephoneApplicationString; ?></p></li>
 				<div <?php if ($telephoneApplication == "0") { ?> style="display:none"<?php } ?> >
