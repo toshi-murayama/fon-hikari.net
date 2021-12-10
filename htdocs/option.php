@@ -65,12 +65,12 @@
                             <img src="img/denki_ico.svg" alt="まとめてでんき">まとめてでんき
                         </label>
                     </li>
-                    <li>
+                    <!--<li>
                         <input type="radio" name="option_set" id="button4">
                         <label for="button4">
                             <img src="img/denki_ico.svg" alt="クラウドバックアップ">クラウドバックアップ
                         </label>
-                    </li>
+                    </li>-->
                 </ul>
                 <div id="hikari_tel" class="box">
                     <div class="boxL">
@@ -169,7 +169,7 @@
                         <a href="area" class="btn">今すぐお申し込み</a>
                     </div>
                 </div>
-                <div id="cb" class="box">
+                <!--<div id="cb" class="box">
                     <div class="boxL">
                         <img src="img/cb_img.png" alt="クラウドバックアップ">
                     </div>
@@ -195,7 +195,7 @@
                         </dl>
                         <a href="https://www.accessell.co.jp/cloud_backup/" target="_blank" class="btn">詳細はこちら</a>
                     </div>
-                </div>
+                </div>-->
 			</article>
 
             <article>
