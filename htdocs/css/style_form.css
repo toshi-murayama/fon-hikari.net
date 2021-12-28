@@ -667,11 +667,22 @@ a:active {}
 	margin: -30px 0 50px;
 }
 
-#application .agree_box,
-#contact .agree_box{
+#application .agree_box{
 	text-align: center;
 	margin: 30px 0 70px 5px;
 }
+#contact .agree_box{
+	text-align: center;
+	margin: 30px 0 20px 5px;
+}
+#contact .info{
+	margin: 0 0 50px;
+	text-align: center;
+}
+#contact .info span{
+	font-weight: bold;
+}
+
 #application .btn,
 #contact .btn{
 	width: 420px;
@@ -868,7 +879,6 @@ a:active {}
 	margin-top: 15px;
 	border-radius: 5px;
 }
-
 #thanks h3{
 	font-size: 16px;
 	font-weight: bold;

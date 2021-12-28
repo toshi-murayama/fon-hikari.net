@@ -114,6 +114,9 @@ $(function(){
 				同意する
 			</label>
 		</p>
+		<div class="info"><span>年末年始の営業について</span><br>
+			12月30日(木)〜1月3日(月)まで、弊社年末年始によりお休みをさせて頂きます。<br>
+			期間中に頂きましたメールでのお問合せは1月4日より順次返答してまいります。</div>
 		<dl class="btn">
 			<dt><input type="button" value="戻る" id="backBtn" onclick="history.back()"></dt>
 			<dd><input type="submit" name="submit" value="確認画面へ" id="submit"></dd>
