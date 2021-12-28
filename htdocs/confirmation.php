@@ -1,5 +1,5 @@
-<?php/*
-	require_once('../lib/confirmation_relay.php');*/
+<?php
+	require_once('../lib/confirmation_relay.php');
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
