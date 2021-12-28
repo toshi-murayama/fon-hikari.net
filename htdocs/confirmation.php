@@ -85,23 +85,23 @@
 			</ul>
 			<h4>オプション</h4>
 			<ul class="form">
-			  <!--  <li class="categories">クラウドバックアップ</li><li><p><?= $cloudBackupString?></p></li> -->
+			  <li class="categories">クラウドバックアップ</li><li><p><?= $cloudBackupString?></p></li>
 
-				<li class="categories">光電話申込</li><li><p><?= $telephoneApplicationString; ?></p></li>
-				<div <?php if ($telephoneApplication == "0") { ?> style="display:none"<?php } ?> >
-					<li class="categories">発番方法</li><li><p><?= $numberingMethodString; ?></p></li>
-				</div>
-				<div <?php if ($numberingMethod == "0") { ?> style="display:none" <?php } ?> >
-					<li class="categories">固定電話番号</li><li><p><?= $fixedLine; ?></p></li>
-				</div>
-				<li class="categories">リモートサポート</li><li><p><?= $remortSupportString; ?></p></li>
-				<li class="categories">まとめてでんき</li><li><p><?= $collectivelyElectricityString; ?></p></li>
-				<li class="categories">ひかりTV for NURO申込</li><li><p><?= $hikariTVString; ?></p></li>
-				<div <?php if ($hikariTV == "0") { ?> style="display:none"<?php } ?> >
-					<li class="categories">ひかりTV プラン</li><li><p><?= $hikariTvPlanString; ?></p></li>
-				</div>
-				<li class="categories">カスペルスキーセキュリティー</li><li><p><?= $kasperskySecurityString; ?></p></li>
-				<li class="categories">希望工事日</li><li><p><?= nl2br($construction); ?></p></li>
+			  <li class="categories">光電話申込</li><li><p><?= $telephoneApplicationString; ?></p></li>
+			  <div <?php if ($telephoneApplication == "0") { ?> style="display:none"<?php } ?> >
+				<li class="categories">発番方法</li><li><p><?= $numberingMethodString; ?></p></li>
+			  </div>
+			  <div <?php if ($numberingMethod == "0") { ?> style="display:none" <?php } ?> >
+				<li class="categories">固定電話番号</li><li><p><?= $fixedLine; ?></p></li>
+			  </div>
+			  <li class="categories">リモートサポート</li><li><p><?= $remortSupportString; ?></p></li>
+			  <li class="categories">まとめてでんき</li><li><p><?= $collectivelyElectricityString; ?></p></li>
+			  <li class="categories">ひかりTV for NURO申込</li><li><p><?= $hikariTVString; ?></p></li>
+			  <div <?php if ($hikariTV == "0") { ?> style="display:none"<?php } ?> >
+				<li class="categories">ひかりTV プラン</li><li><p><?= $hikariTvPlanString; ?></p></li>
+			  </div>
+			  <li class="categories">カスペルスキーセキュリティー</li><li><p><?= $kasperskySecurityString; ?></p></li>
+			  <li class="categories">希望工事日</li><li><p><?= nl2br($construction); ?></p></li>
 			</ul>
 			<h4>入会書類郵送先</h4>
 			<ul class="form">

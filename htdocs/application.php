@@ -200,7 +200,6 @@ input {
 			</ul>
 			<h4>オプション</h4>
 			<ul class="form">
-			  <!--
 				<li class="categories">クラウドバックアップ</li>
 				<li class="app">
 					<div class="cp_cloud_backup">
@@ -220,7 +219,6 @@ input {
 				  <input type="radio" name="cloudBackup" value="YES" id="cloudBackupYes">
 				  <label for="cloudBackupYes">申し込む</label>
 				</li>
-				-->
 
 				<li class="categories">光電話申込</li>
 				<li class="app">
