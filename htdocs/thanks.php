@@ -207,7 +207,7 @@ MSG;
 		</p>
 
 		<?php if( $cbParams['cloudBackup'] == 'YES' ){ ?>
-        <form method="POST" action="https://cloud-option.com/">
+        <form method="POST" action="https://cloud-option.com/fon-hikari">
           <div class="cp_cloud_backup">
 			<h6>Amazonギフトコード<span>3,000</span>円分<span><br>プレゼントキャンペーン！！</span></h6>
 			<div class="cp_text">クラウドバックアップのお申し込みへチェックを入れた方は、下記ボタンよりお申し込みを完了させてください。</div>
